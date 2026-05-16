@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PJe Dashboard — CON1 Piracicaba</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+  :root {
+    --bg: #f5f4f0; --surface: #ffffff; --surface2: #f0efe9;
+    --border: rgba(0,0,0,0.08); --border2: rgba(0,0,0,0.15);
+    --text: #1a1a18; --muted: #6b6b67;
+    --accent: #185FA5; --accent-light: #e6f1fb;
+    --red: #E24B4A; --red-light: #fcebeb;
+    --green: #1D9E75; --green-light: #eaf3de;
+    --amber: #BA7517; --amber-light: #faeeda;
+    --radius: 10px; --radius-sm: 6px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #181816; --surface: #242422; --surface2: #2e2e2b;
+      --border: rgba(255,255,255,0.08); --border2: rgba(255,255,255,0.15);
+      --text: #f0efe9; --muted: #9a9a94;
+      --accent: #5ba3e8; --accent-light: #0c2a44;
+      --red-light: #3a1010; --amber-light: #2a1e05; --green-light: #0d2a1a;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system,'Segoe UI',sans-serif; font-size: 14px; }
+
+  .topbar { background: var(--surface); border-bottom: 1px solid var(--border); padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; z-index: 100; flex-wrap: wrap; gap: 8px; }
+  .topbar-left { display: flex; align-items: center; gap: 12px; }
+  .logo { width: 32px; height: 32px; background: var(--accent); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 13px; flex-shrink: 0; }
+  .topbar h1 { font-size: 15px; font-weight: 600; }
+  .topbar-right { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .badge { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 600; background: var(--accent-light); color: var(--accent); }
+  .badge.red { background: var(--red-light); color: var(--red); }
+  .alertbar { background: var(--red-light); border-bottom: 1px solid rgba(226,75,74,0.2); padding: 8px 24px; font-size: 12px; color: var(--red); display: none; align-items: center; gap: 8px; }
+  .alertbar.show { display: flex; }
+  .main { padding: 20px 24px; max-width: 1400px; margin: 0 auto; }
+
+  .tabs { display: flex; gap: 2px; background: var(--surface2); border-radius: var(--radius); padding: 4px; margin-bottom: 20px; width: fit-content; flex-wrap: wrap; }
+  .tab { padding: 7px 14px; border-radius: 7px; border: none; background: none; color: var(--muted); font-size: 13px; cursor: pointer; font-family: inherit; transition: all 0.15s; font-weight: 500; }
+  .tab.active { background: var(--surface); color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+  .section { display: none; }
+  .section.active { display: block; }
+
+  .summary-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-bottom: 20px; }
+  .sum-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; }
+  .sum-card .slabel { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
+  .sum-card .sval { font-size: 26px; font-weight: 700; line-height: 1; }
+  .sum-card .sdelta { font-size: 11px; margin-top: 5px; color: var(--muted); }
+  .sum-card .sdelta.up { color: var(--red); }
+  .sum-card .sdelta.down { color: var(--green); }
+
+  .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 10px; margin-bottom: 20px; }
+  .task-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; cursor: pointer; transition: all 0.15s; position: relative; }
+  .task-card:hover { border-color: var(--accent); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+  .task-card.crit { border-left: 3px solid var(--red); }
+  .task-card .tlabel { font-size: 12px; color: var(--muted); margin-bottom: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .task-card .tval { font-size: 26px; font-weight: 700; line-height: 1; }
+  .task-card .tdelta { font-size: 11px; margin-top: 5px; }
+  .task-card .tdelta.up { color: var(--red); }
+  .task-card .tdelta.down { color: var(--green); }
+  .task-card .tdelta.flat { color: var(--muted); }
+  .task-card .talert { position: absolute; top: 10px; right: 10px; width: 8px; height: 8px; border-radius: 50%; background: var(--red); }
+
+  /* ANTIGOS SECTION */
+  .task-selector { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; align-items: center; }
+  .task-selector label { font-size: 12px; color: var(--muted); font-weight: 500; }
+  .task-selector select { background: var(--surface); border: 1px solid var(--border2); border-radius: var(--radius-sm); padding: 7px 12px; color: var(--text); font-size: 13px; font-family: inherit; }
+  .snap-selector { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 16px; }
+  .snap-selector label { font-size: 12px; color: var(--muted); font-weight: 500; }
+  .snap-selector select { background: var(--surface); border: 1px solid var(--border2); border-radius: var(--radius-sm); padding: 7px 12px; color: var(--text); font-size: 13px; font-family: inherit; }
+
+  .antigos-table-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 16px; }
+  .antigos-header { padding: 14px 16px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+  .antigos-header .ah-title { font-size: 14px; font-weight: 600; }
+  .antigos-header .ah-sub { font-size: 12px; color: var(--muted); }
+  .antigos-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .antigos-table th { text-align: left; padding: 10px 14px; color: var(--muted); font-weight: 500; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; border-bottom: 1px solid var(--border); background: var(--surface2); }
+  .antigos-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+  .antigos-table tr:last-child td { border-bottom: none; }
+  .antigos-table tr:hover td { background: var(--surface2); }
+  .rank-badge { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; font-size: 11px; font-weight: 600; background: var(--surface2); color: var(--muted); }
+  .rank-badge.top3 { background: var(--amber-light); color: var(--amber); }
+  .rank-badge.top1 { background: var(--red-light); color: var(--red); }
+  .proc-num { font-family: 'Courier New', monospace; font-size: 12px; color: var(--accent); }
+  .data-cell { font-size: 12px; }
+  .idade-cell { font-size: 11px; padding: 3px 8px; border-radius: 20px; font-weight: 600; display: inline-block; }
+  .idade-critica { background: var(--red-light); color: var(--red); }
+  .idade-alerta { background: var(--amber-light); color: var(--amber); }
+  .idade-ok { background: var(--green-light); color: var(--green); }
+
+  /* EVOLUÇÃO */
+  .chart-container { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 16px; }
+  .chart-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 8px; }
+  .chart-title { font-size: 14px; font-weight: 600; }
+  .chart-sub { font-size: 12px; color: var(--muted); }
+  .chart-wrap { position: relative; }
+
+  /* HISTÓRICO */
+  .history-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .history-table th { text-align: left; padding: 10px 14px; color: var(--muted); font-weight: 500; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); }
+  .history-table td { padding: 11px 14px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+  .history-table tr:hover td { background: var(--surface2); }
+  .history-table tr:last-child td { border-bottom: none; }
+
+  /* AUTOMÁTICO */
+  .auto-box { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 16px; }
+  .auto-box h3 { font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+  .auto-box p { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 12px; }
+  .step { display: flex; gap: 12px; margin-bottom: 10px; align-items: flex-start; }
+  .step-num { width: 22px; height: 22px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+  .step-text { font-size: 13px; color: var(--muted); line-height: 1.6; }
+  .step-text strong { color: var(--text); }
+
+  /* BUTTONS */
+  .btn-primary { background: var(--accent); color: #fff; border: none; padding: 9px 18px; border-radius: var(--radius-sm); font-size: 13px; font-weight: 600; cursor: pointer; font-family: inherit; }
+  .btn-primary:hover { opacity: 0.9; }
+  .btn-secondary { background: var(--surface); border: 1px solid var(--border2); color: var(--text); padding: 9px 16px; border-radius: var(--radius-sm); font-size: 13px; cursor: pointer; font-family: inherit; }
+  .btn-secondary:hover { background: var(--surface2); }
+  .btn-danger { background: var(--red-light); border: 1px solid rgba(226,75,74,0.3); color: var(--red); padding: 7px 14px; border-radius: var(--radius-sm); font-size: 12px; cursor: pointer; font-family: inherit; }
+
+  .empty { text-align: center; padding: 48px 24px; color: var(--muted); font-size: 14px; }
+  #last-update { font-size: 11px; color: var(--muted); }
+
+  .form-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; margin-bottom: 16px; }
+  .form-field { display: flex; flex-direction: column; gap: 4px; }
+  .form-field label { font-size: 12px; color: var(--muted); font-weight: 500; }
+  .form-field input { background: var(--surface); border: 1px solid var(--border2); border-radius: var(--radius-sm); padding: 8px 10px; color: var(--text); font-size: 14px; font-family: inherit; }
+  .form-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+
+  .info-tag { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; padding: 2px 8px; border-radius: 20px; background: var(--accent-light); color: var(--accent); font-weight: 500; }
+
+  @media (max-width: 600px) { .main { padding: 12px; } .topbar { padding: 0 12px; } }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-left">
+    <div class="logo">PJe</div>
+    <div>
+      <div style="font-size:15px;font-weight:600;">CON1 — Piracicaba</div>
+      <div id="last-update">Aguardando dados...</div>
+    </div>
+  </div>
+  <div class="topbar-right">
+    <span id="total-badge" class="badge">— processos</span>
+    <span id="alert-badge" class="badge red" style="display:none;"></span>
+  </div>
+</div>
+
+<div class="alertbar" id="alertbar">
+  ⚠️ <span id="alert-text"></span>
+</div>
+
+<div class="main">
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('painel')">📊 Painel</button>
+    <button class="tab" onclick="switchTab('antigos')">🕐 Mais Antigos</button>
+    <button class="tab" onclick="switchTab('evolucao')">📈 Evolução</button>
+    <button class="tab" onclick="switchTab('historico')">🗂️ Histórico</button>
+    <button class="tab" onclick="switchTab('registrar')">✏️ Registrar</button>
+    <button class="tab" onclick="switchTab('automatico')">⚙️ Automático</button>
+  </div>
+
+  <!-- PAINEL -->
+  <div class="section active" id="tab-painel">
+    <div class="summary-row">
+      <div class="sum-card"><div class="slabel">Total de processos</div><div class="sval" id="s-total">—</div><div class="sdelta" id="s-total-d"></div></div>
+      <div class="sum-card"><div class="slabel">Prazos vencidos</div><div class="sval" id="s-prazos" style="color:var(--red)">—</div><div class="sdelta" id="s-prazos-d"></div></div>
+      <div class="sum-card"><div class="slabel">Minutar (total)</div><div class="sval" id="s-minutar">—</div><div class="sdelta" id="s-minutar-d"></div></div>
+      <div class="sum-card"><div class="slabel">Snapshots</div><div class="sval" id="s-snaps">0</div><div class="sdelta" id="s-snaps-d" style="font-size:11px;color:var(--muted);"></div></div>
+    </div>
+    <div class="cards-grid" id="cards-grid">
+      <div class="empty" style="grid-column:1/-1">Carregue um JSON para ver os dados.</div>
+    </div>
+  </div>
+
+  <!-- MAIS ANTIGOS -->
+  <div class="section" id="tab-antigos">
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px;align-items:center;">
+      <div class="task-selector">
+        <label>Tarefa:</label>
+        <select id="antigos-task" onchange="renderAntigos()"></select>
+      </div>
+      <div class="snap-selector">
+        <label>Snapshot:</label>
+        <select id="antigos-snap" onchange="renderAntigos()"></select>
+      </div>
+    </div>
+    <div id="antigos-content">
+      <div class="empty">Carregue um JSON com dados de processos mais antigos.</div>
+    </div>
+  </div>
+
+  <!-- EVOLUÇÃO -->
+  <div class="section" id="tab-evolucao">
+    <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:16px;">
+      <label style="font-size:12px;color:var(--muted);font-weight:500;">Tarefa:</label>
+      <select id="evo-task" onchange="renderLineChart()" style="background:var(--surface);border:1px solid var(--border2);border-radius:var(--radius-sm);padding:7px 12px;color:var(--text);font-size:13px;font-family:inherit;"></select>
+    </div>
+    <div class="chart-container">
+      <div class="chart-header"><div><div class="chart-title" id="line-title">Evolução</div><div class="chart-sub" id="line-sub"></div></div></div>
+      <div class="chart-wrap" style="height:260px;"><canvas id="line-chart" role="img" aria-label="Evolução da tarefa selecionada"></canvas></div>
+    </div>
+    <div class="chart-container">
+      <div class="chart-header"><div><div class="chart-title">Comparativo — último snapshot</div><div class="chart-sub" id="bar-sub"></div></div></div>
+      <div class="chart-wrap" style="height:300px;"><canvas id="bar-chart" role="img" aria-label="Comparativo de todas as tarefas"></canvas></div>
+    </div>
+  </div>
+
+  <!-- HISTÓRICO -->
+  <div class="section" id="tab-historico">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+      <div style="font-size:15px;font-weight:600;">Snapshots salvos</div>
+      <button class="btn-danger" onclick="clearAll()">🗑️ Limpar tudo</button>
+    </div>
+    <div class="chart-container" style="padding:0;overflow:hidden;" id="history-container">
+      <div class="empty">Nenhum snapshot registrado.</div>
+    </div>
+  </div>
+
+  <!-- REGISTRAR MANUAL -->
+  <div class="section" id="tab-registrar">
+    <div style="font-size:15px;font-weight:600;margin-bottom:4px;">Registro manual</div>
+    <div style="font-size:12px;color:var(--muted);margin-bottom:16px;" id="reg-time"></div>
+    <div class="form-grid" id="form-grid"></div>
+    <div class="form-actions">
+      <button class="btn-primary" onclick="saveSnapshot()">💾 Salvar</button>
+      <button class="btn-secondary" onclick="loadSample()">📋 Dados de exemplo</button>
+      <button class="btn-secondary" onclick="clearForm()">🗑️ Limpar</button>
+    </div>
+    <p style="font-size:12px;color:var(--muted);">Para registrar os 100 mais antigos, use o script Python e importe o JSON.</p>
+  </div>
+
+  <!-- AUTOMÁTICO -->
+  <div class="section" id="tab-automatico">
+    <div class="auto-box">
+      <h3>📂 Importar / Exportar dados</h3>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px;">
+        <label class="btn-primary" style="cursor:pointer;">📂 Carregar JSON <input type="file" accept=".json" onchange="loadJSON(event)" style="display:none;"></label>
+        <button class="btn-secondary" onclick="exportJSON()">⬇️ Exportar dados</button>
+      </div>
+      <p>Após rodar o <code style="background:var(--surface2);padding:1px 5px;border-radius:3px;">pje_coletor.py</code>, clique em "Carregar JSON" e selecione o arquivo <code style="background:var(--surface2);padding:1px 5px;border-radius:3px;">pje_dados.json</code> gerado.</p>
+    </div>
+    <div class="auto-box">
+      <h3>🤖 Como usar o script atualizado</h3>
+      <div class="step"><div class="step-num">1</div><div class="step-text">Abra o terminal: <strong>Windows + R → cmd → Enter</strong></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text">Navegue até a pasta: <strong>cd Desktop\PJE-Dashboard</strong></div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text">Rode o script: <strong>python pje_coletor.py</strong></div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-text">Faça login no Firefox que abrir e pressione <strong>Enter</strong> no terminal</div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-text">Aguarde — o script vai entrar em cada tarefa e coletar os 100 mais antigos automaticamente</div></div>
+      <div class="step"><div class="step-num">6</div><div class="step-text">Volte aqui, clique em <strong>"📂 Carregar JSON"</strong> e veja os dados</div></div>
+      <p style="margin-top:8px;font-size:12px;color:var(--muted);">⚠️ A coleta completa das 15 tarefas pode levar 10–20 minutos dependendo da velocidade da rede.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+const TASKS = [
+  {key:'acordo',           label:'Acordo',                    thresh:null},
+  {key:'analisar',         label:'Analisar e Assinar',        thresh:null},
+  {key:'analises',         label:'Análises',                  thresh:null},
+  {key:'arquivados',       label:'Arquivados',                thresh:null},
+  {key:'audiencia',        label:'Audiência',                 thresh:20000},
+  {key:'comunicacao',      label:'Comunicação e Expedientes', thresh:null},
+  {key:'cumprimento',      label:'Cumprimento de Providências',thresh:3000},
+  {key:'minutar_decisao',  label:'Minutar Decisão',           thresh:null},
+  {key:'minutar_despacho', label:'Minutar Despacho',          thresh:null},
+  {key:'minutar_ed',       label:'Minutar ED',                thresh:null},
+  {key:'minutar_sentenca', label:'Minutar Sentença',          thresh:null},
+  {key:'novos',            label:'Novos Processos',           thresh:null},
+  {key:'outros',           label:'Outros',                    thresh:7000},
+  {key:'prazos',           label:'Prazos Vencidos',           thresh:500},
+  {key:'recebimento',      label:'Recebimento e Remessa',     thresh:null},
+];
+
+const SAMPLE = {acordo:1,analisar:200,analises:1313,arquivados:0,audiencia:21810,comunicacao:173,cumprimento:3628,minutar_decisao:260,minutar_despacho:37,minutar_ed:15,minutar_sentenca:5,novos:1774,outros:7526,prazos:819,recebimento:0};
+
+let snapshots = [];
+let lineChart = null, barChart = null;
+
+function loadData() {
+  try { const d = localStorage.getItem('pje_con1_v3'); if(d) snapshots = JSON.parse(d); } catch(e) { snapshots = []; }
+}
+function saveData() {
+  try { localStorage.setItem('pje_con1_v3', JSON.stringify(snapshots.slice(-500))); } catch(e) {}
+}
+function fmtDate(ts) {
+  const d = new Date(ts);
+  return d.toLocaleDateString('pt-BR') + ' ' + d.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
+}
+function fmt(n) { return Number(n).toLocaleString('pt-BR'); }
+
+function calcIdade(dataStr) {
+  if(!dataStr) return null;
+  try {
+    const parts = dataStr.split(' ')[0].split('/');
+    if(parts.length < 3) return null;
+    const d = new Date(parseInt(parts[2]), parseInt(parts[1])-1, parseInt(parts[0]));
+    const dias = Math.floor((Date.now() - d.getTime()) / 86400000);
+    return dias;
+  } catch(e) { return null; }
+}
+
+function idadeHtml(dias) {
+  if(dias === null) return '<span style="color:var(--muted);font-size:11px;">—</span>';
+  let cls = 'idade-ok', txt = dias + ' dias';
+  if(dias > 365) { cls = 'idade-critica'; txt = Math.floor(dias/365) + 'a ' + (dias%365) + 'd'; }
+  else if(dias > 180) { cls = 'idade-alerta'; }
+  return `<span class="idade-cell ${cls}">${txt}</span>`;
+}
+
+function switchTab(t) {
+  document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  const tabs = ['painel','antigos','evolucao','historico','registrar','automatico'];
+  document.querySelectorAll('.tab')[tabs.indexOf(t)].classList.add('active');
+  document.getElementById('tab-'+t).classList.add('active');
+  if(t==='evolucao') { populateEvoSelect(); renderLineChart(); renderBarChart(); }
+  if(t==='historico') renderHistorico();
+  if(t==='painel') renderPainel();
+  if(t==='antigos') { populateAntigosSelects(); renderAntigos(); }
+  if(t==='registrar') document.getElementById('reg-time').textContent = fmtDate(Date.now());
+}
+
+function renderPainel() {
+  const grid = document.getElementById('cards-grid');
+  if(!snapshots.length) {
+    grid.innerHTML = '<div class="empty" style="grid-column:1/-1">Carregue um JSON na aba ⚙️ Automático para ver os dados.</div>';
+    document.getElementById('last-update').textContent = 'Aguardando dados...';
+    document.getElementById('total-badge').textContent = '— processos';
+    ['s-total','s-prazos','s-minutar'].forEach(id => document.getElementById(id).textContent = '—');
+    document.getElementById('s-snaps').textContent = '0';
+    return;
+  }
+  const last = snapshots[snapshots.length-1];
+  const prev = snapshots.length>1 ? snapshots[snapshots.length-2] : null;
+  document.getElementById('last-update').textContent = 'Atualizado: ' + fmtDate(last.ts);
+  document.getElementById('total-badge').textContent = fmt(last.total) + ' processos';
+  document.getElementById('s-total').textContent = fmt(last.total);
+  document.getElementById('s-prazos').textContent = fmt(last.data.prazos||0);
+  const min = (last.data.minutar_decisao||0)+(last.data.minutar_despacho||0)+(last.data.minutar_ed||0)+(last.data.minutar_sentenca||0);
+  document.getElementById('s-minutar').textContent = fmt(min);
+  document.getElementById('s-snaps').textContent = snapshots.length;
+  if(snapshots.length>1) document.getElementById('s-snaps-d').textContent = 'desde ' + new Date(snapshots[0].ts).toLocaleDateString('pt-BR');
+
+  const dHtml = (cur, p, key) => {
+    if(!p) return '';
+    const d = (cur.data[key]||0)-(p.data[key]||0);
+    if(d>0) return `<div class="sdelta up">▲ +${fmt(d)}</div>`;
+    if(d<0) return `<div class="sdelta down">▼ ${fmt(d)}</div>`;
+    return '<div class="sdelta">Sem variação</div>';
+  };
+  document.getElementById('s-total-d').innerHTML = prev ? (()=>{const d=last.total-prev.total;return d>0?`<div class="sdelta up">▲ +${fmt(d)}</div>`:d<0?`<div class="sdelta down">▼ ${fmt(d)}</div>`:'<div class="sdelta">Sem variação</div>'})():'';
+  document.getElementById('s-prazos-d').innerHTML = dHtml(last,prev,'prazos');
+
+  grid.innerHTML = '';
+  TASKS.forEach(t => {
+    const val = last.data[t.key]||0;
+    const pval = prev?(prev.data[t.key]||0):null;
+    const d = pval!==null?val-pval:null;
+    const isCrit = t.thresh&&val>=t.thresh;
+    const hasAntigos = last.antigos && last.antigos[t.key] && last.antigos[t.key].length > 0;
+    const div = document.createElement('div');
+    div.className = 'task-card'+(isCrit?' crit':'');
+    div.onclick = () => { switchTab('antigos'); document.getElementById('antigos-task').value=t.key; renderAntigos(); };
+    let dHtml2 = '';
+    if(d!==null){if(d>0)dHtml2=`<div class="tdelta up">▲ +${fmt(d)}</div>`;else if(d<0)dHtml2=`<div class="tdelta down">▼ ${fmt(d)}</div>`;else dHtml2='<div class="tdelta flat">Sem variação</div>';}
+    div.innerHTML = `${isCrit?'<div class="talert"></div>':''}<div class="tlabel" title="${t.label}">${t.label}</div><div class="tval">${fmt(val)}</div>${dHtml2}${hasAntigos?'<div style="font-size:10px;color:var(--accent);margin-top:4px;">🕐 ver mais antigos</div>':''}`;
+    grid.appendChild(div);
+  });
+  checkAlerts();
+}
+
+function populateAntigosSelects() {
+  const ts = document.getElementById('antigos-task');
+  if(ts.options.length!==TASKS.length) {
+    ts.innerHTML = '';
+    TASKS.forEach(t => { const o=document.createElement('option'); o.value=t.key; o.textContent=t.label; ts.appendChild(o); });
+  }
+  const ss = document.getElementById('antigos-snap');
+  ss.innerHTML = '';
+  [...snapshots].reverse().forEach((s,i) => {
+    const o = document.createElement('option');
+    o.value = snapshots.length-1-i;
+    o.textContent = fmtDate(s.ts) + (i===0?' (mais recente)':'');
+    ss.appendChild(o);
+  });
+}
+
+function renderAntigos() {
+  const key = document.getElementById('antigos-task')?.value || TASKS[0].key;
+  const snapIdx = parseInt(document.getElementById('antigos-snap')?.value ?? snapshots.length-1);
+  const content = document.getElementById('antigos-content');
+  const taskLabel = TASKS.find(t=>t.key===key)?.label || key;
+
+  if(!snapshots.length) { content.innerHTML = '<div class="empty">Carregue um JSON na aba ⚙️ Automático.</div>'; return; }
+
+  const snap = snapshots[snapIdx];
+  if(!snap) { content.innerHTML = '<div class="empty">Snapshot não encontrado.</div>'; return; }
+
+  const antigos = snap.antigos?.[key];
+  const qtd = snap.data?.[key] || 0;
+
+  if(!antigos || antigos.length === 0) {
+    content.innerHTML = `<div class="antigos-table-wrap"><div class="antigos-header"><div><div class="ah-title">${taskLabel}</div><div class="ah-sub">${fmt(qtd)} processos — sem dados de antiguidade (rode o script atualizado)</div></div></div></div>`;
+    return;
+  }
+
+  let rows = '';
+  antigos.forEach((p, i) => {
+    const dias = calcIdade(p.desde);
+    const rankCls = i===0?'rank-badge top1':i<3?'rank-badge top3':'rank-badge';
+    rows += `<tr>
+      <td><span class="${rankCls}">${p.rank||i+1}</span></td>
+      <td><span class="proc-num">${p.numero}</span></td>
+      <td class="data-cell">${p.desde||'—'}</td>
+      <td>${idadeHtml(dias)}</td>
+    </tr>`;
+  });
+
+  // Calcula processo mais antigo
+  const maisAntigo = antigos[0];
+  const diasMaisAntigo = calcIdade(maisAntigo?.desde);
+
+  content.innerHTML = `
+    <div class="antigos-table-wrap">
+      <div class="antigos-header">
+        <div>
+          <div class="ah-title">${taskLabel}</div>
+          <div class="ah-sub">${fmt(qtd)} processos no total — exibindo os ${antigos.length} mais antigos | snapshot: ${fmtDate(snap.ts)}</div>
+        </div>
+        ${diasMaisAntigo!==null?`<span class="info-tag">⏱️ Mais antigo: ${diasMaisAntigo} dias</span>`:''}
+      </div>
+      <div style="overflow-x:auto;">
+        <table class="antigos-table">
+          <thead><tr><th>#</th><th>Processo</th><th>Na tarefa desde</th><th>Idade</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+    </div>`;
+}
+
+function populateEvoSelect() {
+  const sel = document.getElementById('evo-task');
+  if(sel.options.length===TASKS.length) return;
+  sel.innerHTML = '';
+  TASKS.forEach(t => { const o=document.createElement('option'); o.value=t.key; o.textContent=t.label; sel.appendChild(o); });
+}
+
+function renderLineChart() {
+  const key = document.getElementById('evo-task')?.value || TASKS[0].key;
+  const label = TASKS.find(t=>t.key===key)?.label||key;
+  const labels = snapshots.map(s=>fmtDate(s.ts));
+  const data = snapshots.map(s=>s.data[key]||0);
+  document.getElementById('line-title').textContent = 'Evolução — '+label;
+  document.getElementById('line-sub').textContent = snapshots.length+' snapshot(s)';
+  const ctx = document.getElementById('line-chart').getContext('2d');
+  if(lineChart) lineChart.destroy();
+  lineChart = new Chart(ctx,{type:'line',data:{labels,datasets:[{label,data,borderColor:'#185FA5',backgroundColor:'rgba(24,95,165,0.07)',tension:0.3,fill:true,pointRadius:4,pointBackgroundColor:'#185FA5'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{font:{size:11},maxRotation:45,autoSkip:true,maxTicksLimit:8},grid:{color:'rgba(0,0,0,0.05)'}},y:{ticks:{font:{size:11}},grid:{color:'rgba(0,0,0,0.05)'}}}}});
+}
+
+function renderBarChart() {
+  if(!snapshots.length) return;
+  const last = snapshots[snapshots.length-1];
+  document.getElementById('bar-sub').textContent = fmtDate(last.ts);
+  const labels = TASKS.map(t=>t.label.split(' ').slice(0,2).join(' '));
+  const data = TASKS.map(t=>last.data[t.key]||0);
+  const colors = TASKS.map(t=>t.thresh&&(last.data[t.key]||0)>=t.thresh?'#E24B4A':'#185FA5');
+  const ctx = document.getElementById('bar-chart').getContext('2d');
+  if(barChart) barChart.destroy();
+  barChart = new Chart(ctx,{type:'bar',data:{labels,datasets:[{label:'Processos',data,backgroundColor:colors,borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{font:{size:10},maxRotation:45,autoSkip:false},grid:{display:false}},y:{ticks:{font:{size:11}},grid:{color:'rgba(0,0,0,0.05)'}}}}});
+}
+
+function renderHistorico() {
+  const c = document.getElementById('history-container');
+  if(!snapshots.length){c.innerHTML='<div class="empty">Nenhum snapshot.</div>';return;}
+  let html=`<table class="history-table"><thead><tr><th>#</th><th>Data / Hora</th><th>Total</th><th>Prazos</th><th>Com dados de antiguidade</th><th>Ações</th></tr></thead><tbody>`;
+  [...snapshots].reverse().forEach((s,ri)=>{
+    const i=snapshots.length-1-ri;
+    const temAntigos = s.antigos && Object.values(s.antigos).some(a=>a&&a.length>0);
+    html+=`<tr><td style="color:var(--muted);font-size:12px;">${snapshots.length-ri}</td><td>${fmtDate(s.ts)}</td><td style="font-weight:600;">${fmt(s.total)}</td><td style="color:${(s.data.prazos||0)>=500?'var(--red)':'inherit'}">${fmt(s.data.prazos||0)}</td><td>${temAntigos?'<span style="color:var(--green);font-size:12px;">✓ sim</span>':'<span style="color:var(--muted);font-size:12px;">— não</span>'}</td><td><button class="btn-danger" style="padding:4px 10px;font-size:11px;" onclick="deleteSnap(${i})">🗑️</button></td></tr>`;
+  });
+  html+='</tbody></table>';
+  c.innerHTML=html;
+}
+
+function deleteSnap(i){if(!confirm('Excluir?'))return;snapshots.splice(i,1);saveData();renderHistorico();renderPainel();}
+function clearAll(){if(!confirm('Apagar tudo?'))return;snapshots=[];saveData();renderHistorico();renderPainel();}
+
+function buildForm(){
+  const g=document.getElementById('form-grid');g.innerHTML='';
+  TASKS.forEach(t=>{g.innerHTML+=`<div class="form-field"><label>${t.label}</label><input type="number" min="0" id="inp_${t.key}" value="0"></div>`;});
+}
+function loadSample(){TASKS.forEach(t=>{const el=document.getElementById('inp_'+t.key);if(el)el.value=SAMPLE[t.key]||0;});}
+function clearForm(){TASKS.forEach(t=>{const el=document.getElementById('inp_'+t.key);if(el)el.value=0;});}
+function saveSnapshot(){
+  const snap={ts:Date.now(),data:{},antigos:{}};let total=0;
+  TASKS.forEach(t=>{const v=parseInt(document.getElementById('inp_'+t.key)?.value)||0;snap.data[t.key]=v;snap.antigos[t.key]=[];total+=v;});
+  snap.total=total;snapshots.push(snap);saveData();checkAlerts();switchTab('painel');
+}
+
+function checkAlerts(){
+  if(!snapshots.length)return;
+  const last=snapshots[snapshots.length-1];
+  const alerts=TASKS.filter(t=>t.thresh&&(last.data[t.key]||0)>=t.thresh).map(t=>`${t.label}: ${fmt(last.data[t.key])}`);
+  const bar=document.getElementById('alertbar');
+  const ab=document.getElementById('alert-badge');
+  if(alerts.length){bar.className='alertbar show';document.getElementById('alert-text').textContent='Filas críticas: '+alerts.join(' | ');ab.textContent=alerts.length+' alertas';ab.style.display='inline';}
+  else{bar.className='alertbar';ab.style.display='none';}
+}
+
+function loadJSON(event){
+  const file=event.target.files[0];if(!file)return;
+  const reader=new FileReader();
+  reader.onload=e=>{
+    try{
+      const data=JSON.parse(e.target.result);
+      if(Array.isArray(data)){
+        snapshots=[...snapshots,...data].sort((a,b)=>a.ts-b.ts);
+        const seen=new Set();
+        snapshots=snapshots.filter(s=>{if(seen.has(s.ts))return false;seen.add(s.ts);return true;});
+        saveData();renderPainel();checkAlerts();
+        alert('✅ '+data.length+' snapshot(s) importados!');
+      }
+    }catch(err){alert('Erro ao ler JSON: '+err.message);}
+  };
+  reader.readAsText(file);
+}
+
+function exportJSON(){
+  const blob=new Blob([JSON.stringify(snapshots,null,2)],{type:'application/json'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);
+  a.download='pje_dados_'+new Date().toISOString().slice(0,10)+'.json';a.click();
+}
+
+loadData();buildForm();renderPainel();checkAlerts();
+document.getElementById('reg-time').textContent=fmtDate(Date.now());
+</script>
+</body>
+</html>
