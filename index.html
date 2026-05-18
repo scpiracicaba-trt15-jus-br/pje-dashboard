@@ -3,731 +3,2361 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PJe Dashboard — Piracicaba</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<title>Secretaria Conjunta de Piracicaba — Portal Interno</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg:#f5f4f0;--surface:#fff;--surface2:#f0efe9;--border:rgba(0,0,0,.08);--border2:rgba(0,0,0,.15);
-  --text:#1a1a18;--muted:#6b6b67;--accent:#185FA5;--accent-light:#e6f1fb;
-  --red:#E24B4A;--red-light:#fcebeb;--green:#1D9E75;--green-light:#eaf3de;
-  --amber:#BA7517;--amber-light:#faeeda;--radius:10px;--radius-sm:6px;
+  --navy: #0a1628;
+  --navy-mid: #122240;
+  --navy-soft: #1b3560;
+  --gold: #c9a84c;
+  --gold-light: #e8c97a;
+  --gold-pale: #f5e8c4;
+  --cream: #faf7f0;
+  --white: #ffffff;
+  --text-dark: #0a1628;
+  --text-mid: #2d4470;
+  --text-muted: #5e7099;
+  --border: rgba(10,22,40,0.12);
+  --border-gold: rgba(201,168,76,0.35);
+  --accent-con: #1a5f8c;
+  --accent-liq: #2e7d5e;
+  --accent-exe: #7c3a6b;
+  --accent-dam: #8b4513;
+  --radius: 6px;
+  --radius-lg: 12px;
 }
-@media(prefers-color-scheme:dark){:root{
-  --bg:#181816;--surface:#242422;--surface2:#2e2e2b;--border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.15);
-  --text:#f0efe9;--muted:#9a9a94;--accent:#5ba3e8;--accent-light:#0c2a44;
-  --red-light:#3a1010;--amber-light:#2a1e05;--green-light:#0d2a1a;
-}}
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:-apple-system,'Segoe UI',sans-serif;font-size:14px}
-.topbar{background:var(--surface);border-bottom:1px solid var(--border);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100;flex-wrap:wrap;gap:8px}
-.topbar-left{display:flex;align-items:center;gap:12px}
-.logo{width:32px;height:32px;background:var(--accent);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:13px;flex-shrink:0}
-.topbar-right{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.badge{font-size:11px;padding:3px 10px;border-radius:20px;font-weight:600;background:var(--accent-light);color:var(--accent)}
-.badge.red{background:var(--red-light);color:var(--red)}
-.alertbar{background:var(--red-light);border-bottom:1px solid rgba(226,75,74,.2);padding:8px 24px;font-size:12px;color:var(--red);display:none;align-items:center;gap:8px}
-.alertbar.show{display:flex}
-.main{padding:20px 24px;max-width:1400px;margin:0 auto}
 
-/* VARA SELECTOR */
-.vara-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px;align-items:center}
-.vara-tab{padding:6px 14px;border-radius:20px;border:1px solid var(--border2);background:none;color:var(--muted);font-size:12px;cursor:pointer;font-family:inherit;font-weight:500;transition:all .15s}
-.vara-tab.active{background:var(--accent);color:#fff;border-color:var(--accent)}
-.vara-tab:hover:not(.active){background:var(--surface2)}
-.vara-label{font-size:11px;color:var(--muted);margin-right:4px}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-.tabs{display:flex;gap:2px;background:var(--surface2);border-radius:var(--radius);padding:4px;margin-bottom:20px;width:fit-content;flex-wrap:wrap}
-.tab{padding:7px 14px;border-radius:7px;border:none;background:none;color:var(--muted);font-size:13px;cursor:pointer;font-family:inherit;transition:all .15s;font-weight:500}
-.tab.active{background:var(--surface);color:var(--text);box-shadow:0 1px 3px rgba(0,0,0,.1)}
-.section{display:none}
-.section.active{display:block}
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
 
-.summary-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:20px}
-.sum-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px}
-.sum-card .slabel{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
-.sum-card .sval{font-size:26px;font-weight:700;line-height:1}
-.sum-card .sdelta{font-size:11px;margin-top:5px;color:var(--muted)}
-.sum-card .sdelta.up{color:var(--red)}
-.sum-card .sdelta.down{color:var(--green)}
+/* NAV */
+nav {
+  background: var(--navy);
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 2px solid var(--gold);
+}
 
-.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin-bottom:20px}
-.task-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;cursor:pointer;transition:all .15s;position:relative}
-.task-card:hover{border-color:var(--accent);transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.08)}
-.task-card.crit{border-left:3px solid var(--red)}
-.task-card .tlabel{font-size:12px;color:var(--muted);margin-bottom:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.task-card .tval{font-size:26px;font-weight:700;line-height:1}
-.task-card .tdelta{font-size:11px;margin-top:5px}
-.task-card .tdelta.up{color:var(--red)}
-.task-card .tdelta.down{color:var(--green)}
-.task-card .tdelta.flat{color:var(--muted)}
-.task-card .talert{position:absolute;top:10px;right:10px;width:8px;height:8px;border-radius:50%;background:var(--red)}
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
 
-.chart-container{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px}
-.chart-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
-.chart-title{font-size:14px;font-weight:600}
-.chart-sub{font-size:12px;color:var(--muted)}
-.chart-wrap{position:relative}
+.nav-brand {
+  padding: 14px 24px;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
 
-/* MULTI-VARA COMPARATIVO */
-.vara-compare-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-bottom:20px}
-.vara-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px}
-.vara-card .vc-name{font-size:13px;font-weight:600;margin-bottom:8px;color:var(--accent)}
-.vara-card .vc-total{font-size:22px;font-weight:700;line-height:1}
-.vara-card .vc-sub{font-size:11px;color:var(--muted);margin-top:4px}
-.vara-card .vc-delta{font-size:11px;margin-top:4px}
-.vara-card .vc-delta.up{color:var(--red)}
-.vara-card .vc-delta.down{color:var(--green)}
+.nav-brand .emblem {
+  width: 32px;
+  height: 32px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--navy);
+  flex-shrink: 0;
+}
 
-/* ANTIGOS */
-.antigos-table-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:16px}
-.antigos-header{padding:14px 16px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
-.antigos-header .ah-title{font-size:14px;font-weight:600}
-.antigos-header .ah-sub{font-size:12px;color:var(--muted)}
-.antigos-table{width:100%;border-collapse:collapse;font-size:13px}
-.antigos-table th{text-align:left;padding:10px 14px;color:var(--muted);font-weight:500;font-size:11px;text-transform:uppercase;letter-spacing:.04em;border-bottom:1px solid var(--border);background:var(--surface2)}
-.antigos-table td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:middle}
-.antigos-table tr:last-child td{border-bottom:none}
-.antigos-table tr:hover td{background:var(--surface2)}
-.rank-badge{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;font-size:11px;font-weight:600;background:var(--surface2);color:var(--muted)}
-.rank-badge.top3{background:var(--amber-light);color:var(--amber)}
-.rank-badge.top1{background:var(--red-light);color:var(--red)}
-.proc-num{font-family:'Courier New',monospace;font-size:12px;color:var(--accent)}
-.idade-cell{font-size:11px;padding:3px 8px;border-radius:20px;font-weight:600;display:inline-block}
-.idade-critica{background:var(--red-light);color:var(--red)}
-.idade-alerta{background:var(--amber-light);color:var(--amber)}
-.idade-ok{background:var(--green-light);color:var(--green)}
-.info-tag{display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:2px 8px;border-radius:20px;background:var(--accent-light);color:var(--accent);font-weight:500}
+.nav-brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
 
-.history-table{width:100%;border-collapse:collapse;font-size:13px}
-.history-table th{text-align:left;padding:10px 14px;color:var(--muted);font-weight:500;font-size:11px;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--border)}
-.history-table td{padding:11px 14px;border-bottom:1px solid var(--border);vertical-align:middle}
-.history-table tr:hover td{background:var(--surface2)}
-.history-table tr:last-child td{border-bottom:none}
+.nav-brand-text .title {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--gold-light);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
 
-.auto-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px}
-.auto-box h3{font-size:14px;font-weight:600;margin-bottom:8px}
-.auto-box p{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px}
-.step{display:flex;gap:12px;margin-bottom:10px;align-items:flex-start}
-.step-num{width:22px;height:22px;border-radius:50%;background:var(--accent);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
-.step-text{font-size:13px;color:var(--muted);line-height:1.6}
-.step-text strong{color:var(--text)}
+.nav-brand-text .sub {
+  font-size: 10px;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.02em;
+}
 
-.btn-primary{background:var(--accent);color:#fff;border:none;padding:9px 18px;border-radius:var(--radius-sm);font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}
-.btn-primary:hover{opacity:.9}
-.btn-secondary{background:var(--surface);border:1px solid var(--border2);color:var(--text);padding:9px 16px;border-radius:var(--radius-sm);font-size:13px;cursor:pointer;font-family:inherit}
-.btn-secondary:hover{background:var(--surface2)}
-.btn-danger{background:var(--red-light);border:1px solid rgba(226,75,74,.3);color:var(--red);padding:7px 14px;border-radius:var(--radius-sm);font-size:12px;cursor:pointer;font-family:inherit}
+.nav-links {
+  display: flex;
+  align-items: stretch;
+  list-style: none;
+  flex: 1;
+  overflow-x: auto;
+}
 
-.form-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-bottom:16px}
-.form-field{display:flex;flex-direction:column;gap:4px}
-.form-field label{font-size:12px;color:var(--muted);font-weight:500}
-.form-field input{background:var(--surface);border:1px solid var(--border2);border-radius:var(--radius-sm);padding:8px 10px;color:var(--text);font-size:14px;font-family:inherit}
-.form-actions{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.nav-links a {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  height: 56px;
+  font-size: 12.5px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  transition: color 0.2s, background 0.2s;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+}
 
-.empty{text-align:center;padding:48px 24px;color:var(--muted);font-size:14px}
-select{background:var(--surface);border:1px solid var(--border2);border-radius:var(--radius-sm);padding:7px 12px;color:var(--text);font-size:13px;font-family:inherit}
-#last-update{font-size:11px;color:var(--muted)}
-.section-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
-.section-row label{font-size:12px;color:var(--muted);font-weight:500}
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--gold-light);
+  background: rgba(255,255,255,0.04);
+  border-bottom-color: var(--gold);
+}
 
-/* TEMPO MÉDIO */
-.tempo-info{font-size:12px;color:var(--muted);margin-bottom:12px;line-height:1.6}
+/* HERO */
+.hero {
+  background: var(--navy);
+  padding: 52px 24px 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 320px; height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.hero-left h1 {
+  font-family: 'Fraunces', serif;
+  font-size: 36px;
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.hero-left h1 em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+
+.hero-left p {
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.5);
+  max-width: 460px;
+  line-height: 1.6;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 24px;
+  flex-shrink: 0;
+}
+
+.hero-stat {
+  text-align: center;
+  padding: 16px 20px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: var(--radius);
+}
+
+.hero-stat .num {
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--gold-light);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.hero-stat .label {
+  font-size: 11px;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* MAIN LAYOUT */
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+/* SECTION */
+.section {
+  margin-bottom: 56px;
+  display: none;
+}
+
+.section.active { display: block; }
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 28px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-header h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--navy);
+}
+
+.section-header .tag {
+  font-size: 11px;
+  padding: 3px 10px;
+  background: var(--gold-pale);
+  color: var(--text-mid);
+  border-radius: 20px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+/* ORGANOGRAMA */
+.org-chart {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  overflow-x: auto;
+}
+
+.org-level {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.org-top {
+  background: var(--navy);
+  color: white;
+  border-radius: var(--radius);
+  padding: 16px 24px;
+  text-align: center;
+  position: relative;
+}
+
+.org-top::after {
+  content: '';
+  position: absolute;
+  bottom: -20px; left: 50%;
+  transform: translateX(-50%);
+  width: 2px; height: 20px;
+  background: var(--border-gold);
+}
+
+.org-top .title {
+  font-family: 'Fraunces', serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--gold-light);
+  margin-bottom: 2px;
+}
+
+.org-top .person {
+  font-size: 12px;
+  color: rgba(255,255,255,0.65);
+}
+
+.org-row {
+  display: grid;
+  gap: 12px;
+  position: relative;
+}
+
+.org-row::before {
+  content: '';
+  position: absolute;
+  top: -20px; left: 50%;
+  transform: translateX(-50%);
+  width: 2px; height: 20px;
+  background: var(--border-gold);
+}
+
+.org-row.cols-2 { grid-template-columns: 1fr 1fr; }
+.org-row.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.org-row.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.org-row.cols-5 { grid-template-columns: 1fr 1fr 1fr 1fr 1fr; }
+
+.org-box {
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  background: white;
+  text-align: center;
+}
+
+.org-box.con { border-top: 3px solid var(--accent-con); }
+.org-box.liq { border-top: 3px solid var(--accent-liq); }
+.org-box.exe { border-top: 3px solid var(--accent-exe); }
+.org-box.dam { border-top: 3px solid var(--accent-dam); }
+.org-box.daa { border-top: 3px solid var(--navy); }
+.org-box.cejusc { border-top: 3px solid var(--gold); }
+
+.org-box .dept {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.org-box.con .dept { color: var(--accent-con); }
+.org-box.liq .dept { color: var(--accent-liq); }
+.org-box.exe .dept { color: var(--accent-exe); }
+.org-box.dam .dept { color: var(--accent-dam); }
+.org-box.daa .dept { color: var(--navy); }
+.org-box.cejusc .dept { color: #a07a00; }
+
+.org-box .name {
+  font-size: 11.5px;
+  color: var(--text-mid);
+  line-height: 1.4;
+}
+
+.org-box .name strong {
+  display: block;
+  font-size: 12px;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+/* OJ CARDS */
+.oj-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.oj-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.oj-card:hover {
+  box-shadow: 0 4px 20px rgba(10,22,40,0.1);
+  transform: translateY(-2px);
+}
+
+.oj-card-header {
+  padding: 16px 20px 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.oj-icon {
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fraunces', serif;
+  font-size: 15px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.oj-card.con .oj-icon { background: rgba(26,95,140,0.1); color: var(--accent-con); }
+.oj-card.liq .oj-icon { background: rgba(46,125,94,0.1); color: var(--accent-liq); }
+.oj-card.exe .oj-icon { background: rgba(124,58,107,0.1); color: var(--accent-exe); }
+.oj-card.dam .oj-icon { background: rgba(139,69,19,0.1); color: var(--accent-dam); }
+
+.oj-card-title { font-size: 15px; font-weight: 500; margin-bottom: 2px; }
+.oj-card-sub { font-size: 12px; color: var(--text-muted); }
+
+.oj-card-body { padding: 0 20px 18px; }
+
+.oj-attr-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 6px 0;
+  border-top: 0.5px solid var(--border);
+  font-size: 12.5px;
+}
+
+.oj-attr-row:first-child { border-top: none; }
+.oj-attr-row .key { color: var(--text-muted); }
+.oj-attr-row .val { font-weight: 500; color: var(--text-dark); }
+
+.oj-pill {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+  background: var(--gold-pale);
+  color: var(--text-mid);
+  margin: 2px;
+}
+
+.oj-card-footer {
+  padding: 10px 20px;
+  background: var(--cream);
+  border-top: 1px solid var(--border);
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
+/* DETAIL MODAL */
+.detail-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(10,22,40,0.65);
+  z-index: 200;
+  overflow-y: auto;
+}
+
+.detail-overlay.open { display: flex; align-items: flex-start; justify-content: center; padding: 40px 20px; }
+
+.detail-panel {
+  background: white;
+  width: 100%;
+  max-width: 720px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+}
+
+.detail-header {
+  padding: 24px 28px 20px;
+  background: var(--navy);
+  color: white;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.detail-header-left h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--gold-light);
+  margin-bottom: 4px;
+}
+
+.detail-header-left p { font-size: 13px; color: rgba(255,255,255,0.55); }
+
+.detail-close {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: rgba(255,255,255,0.7);
+  width: 32px; height: 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.detail-close:hover { background: rgba(255,255,255,0.2); }
+
+.detail-body { padding: 24px 28px; }
+
+.detail-section {
+  margin-bottom: 24px;
+}
+
+.detail-section h4 {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.team-card {
+  padding: 10px 12px;
+  background: var(--cream);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.team-card .tc-name { font-size: 12.5px; font-weight: 500; color: var(--text-dark); }
+.team-card .tc-role {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.badge-cj3 { background: #e8eaf6; color: #3949ab; }
+.badge-cj1 { background: #e8f5e9; color: #2e7d32; }
+.badge-fc5 { background: #fce4ec; color: #c62828; }
+.badge-fc4 { background: #fff3e0; color: #e65100; }
+.badge-fc2 { background: #f3e5f5; color: #7b1fa2; }
+.badge-fc1 { background: #e0f2f1; color: #00695c; }
+
+.badge {
+  display: inline-block;
+  padding: 1px 7px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.atrib-list { list-style: none; }
+.atrib-list li {
+  padding: 7px 0;
+  border-bottom: 0.5px solid var(--border);
+  font-size: 13px;
+  color: var(--text-mid);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.atrib-list li::before {
+  content: '→';
+  color: var(--gold);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* INFO CARDS */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.info-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+}
+
+.info-card .ic-num {
+  font-family: 'Fraunces', serif;
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--navy);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.info-card .ic-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.info-card .ic-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid var(--border);
+}
+
+/* VARAS GRID */
+.varas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.vara-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+}
+
+.vara-card .vc-name { font-size: 13px; font-weight: 500; margin-bottom: 4px; }
+.vara-card .vc-info { font-size: 11.5px; color: var(--text-muted); }
+.vara-card .vc-total {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--text-mid);
+}
+
+.vara-card .vc-total span {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--navy);
+}
+
+/* MAGISTRADOS TABLE */
+.magistrados-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+}
+
+.magistrados-table th {
+  text-align: left;
+  padding: 10px 14px;
+  background: var(--cream);
+  border-bottom: 1px solid var(--border);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.magistrados-table td {
+  padding: 9px 14px;
+  border-bottom: 0.5px solid var(--border);
+  color: var(--text-mid);
+}
+
+.magistrados-table tr:last-child td { border-bottom: none; }
+.magistrados-table tr:hover td { background: rgba(0,0,0,0.015); }
+
+.magistrados-table .vt-name { font-weight: 500; color: var(--text-dark); }
+.magistrados-table .juiz-name { font-weight: 500; color: var(--navy); }
+
+/* LINKS / VIDEOS */
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+.link-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s;
+}
+
+.link-card:hover { border-color: var(--gold); }
+
+.link-card .lc-icon {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+  background: var(--cream);
+}
+
+.link-card .lc-title { font-size: 13px; font-weight: 500; margin-bottom: 3px; }
+.link-card .lc-desc { font-size: 11.5px; color: var(--text-muted); line-height: 1.4; }
+
+/* FÉRIAS */
+.ferias-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+}
+
+.ferias-table th {
+  text-align: left;
+  padding: 10px 14px;
+  background: var(--cream);
+  border-bottom: 1px solid var(--border);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.ferias-table td {
+  padding: 9px 14px;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.ferias-table tr:hover td { background: rgba(0,0,0,0.015); }
+
+.ferias-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+/* SEARCH */
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 16px;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: var(--text-dark);
+  background: transparent;
+  flex: 1;
+}
+
+.search-bar input::placeholder { color: var(--text-muted); }
+.search-bar .search-icon { color: var(--text-muted); font-size: 16px; }
+
+/* ACCORDION */
+.accordion { border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; background: white; }
+.accordion + .accordion { margin-top: 10px; }
+
+.acc-header {
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+  gap: 12px;
+}
+
+.acc-header:hover { background: var(--cream); }
+
+.acc-title { font-size: 14px; font-weight: 500; color: var(--navy); }
+.acc-sub { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+.acc-arrow { transition: transform 0.2s; color: var(--text-muted); font-size: 18px; }
+.accordion.open .acc-arrow { transform: rotate(180deg); }
+
+.acc-body { display: none; padding: 0 20px 18px; border-top: 1px solid var(--border); }
+.accordion.open .acc-body { display: block; }
+
+/* PASSIVO CHARTS */
+.passivo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.passivo-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+}
+
+.passivo-card h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); margin-bottom: 16px; }
+
+.bar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+.bar-label { width: 80px; color: var(--text-muted); flex-shrink: 0; text-align: right; }
+.bar-track { flex: 1; height: 6px; background: var(--cream); border-radius: 3px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 3px; transition: width 1s ease; }
+.bar-num { width: 48px; text-align: right; font-weight: 500; color: var(--text-dark); font-size: 11.5px; }
+
+/* TABS */
+.tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 24px;
+  overflow-x: auto;
+}
+
+.tab-btn {
+  padding: 10px 18px;
+  border: none;
+  background: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  color: var(--text-muted);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+
+.tab-btn:hover { color: var(--text-dark); }
+.tab-btn.active { color: var(--navy); border-bottom-color: var(--navy); font-weight: 500; }
+
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* NOTICES */
+.notice {
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.notice.info { background: #e3f2fd; color: #0d47a1; border-left: 3px solid #1565c0; }
+.notice.gold { background: var(--gold-pale); color: #7a5c00; border-left: 3px solid var(--gold); }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-inner { flex-direction: column; align-items: flex-start; }
+  .hero-stats { flex-wrap: wrap; }
+  .org-row.cols-5 { grid-template-columns: 1fr 1fr; }
+  .org-row.cols-4 { grid-template-columns: 1fr 1fr; }
+  .passivo-grid { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
-<div class="topbar">
-  <div class="topbar-left">
-    <div class="logo">PJe</div>
-    <div>
-      <div style="font-size:15px;font-weight:600;">Piracicaba — Todas as Varas</div>
-      <div id="last-update">Aguardando dados...</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="#" onclick="showSection('home')">
+      <div class="emblem">SC</div>
+      <div class="nav-brand-text">
+        <span class="title">Secretaria Conjunta</span>
+        <span class="sub">Piracicaba &amp; Outras · TRT15</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#" onclick="showSection('home')" id="nav-home" class="active">Início</a></li>
+      <li><a href="#" onclick="showSection('organograma')" id="nav-organograma">Organograma</a></li>
+      <li><a href="#" onclick="showSection('ojs')" id="nav-ojs">Órgãos Julgadores</a></li>
+      <li><a href="#" onclick="showSection('magistrados')" id="nav-magistrados">Magistrados</a></li>
+      <li><a href="#" onclick="showSection('acervo')" id="nav-acervo">Acervo</a></li>
+      <li><a href="#" onclick="showSection('ferias')" id="nav-ferias">Férias 2026</a></li>
+      <li><a href="#" onclick="showSection('videos')" id="nav-videos">Vídeos &amp; Links</a></li>
+      <li><a href="#" onclick="showSection('rotinas')" id="nav-rotinas">Rotinas</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <h1>Portal <em>Interno</em><br>Secretaria Conjunta</h1>
+      <p>Piracicaba, Americana, Araras, Leme, Rio Claro, Mogi Guaçu, Sumaré, Hortolândia, São João da Boa Vista, 1ª e 2ª Limeira, Santa Bárbara d'Oeste — 15 unidades, 158 servidores.</p>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="num">71.347</div>
+        <div class="label">Processos total</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">158</div>
+        <div class="label">Servidores</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">15</div>
+        <div class="label">Varas</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">10</div>
+        <div class="label">OJs</div>
+      </div>
     </div>
   </div>
-  <div class="topbar-right">
-    <span id="total-badge" class="badge">— processos</span>
-    <span id="alert-badge" class="badge red" style="display:none;"></span>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<!-- HOME -->
+<div id="section-home" class="section active">
+  <div class="section-header">
+    <h2>Visão Geral</h2>
+    <span class="tag">Apuração 13/07/2025</span>
+  </div>
+
+  <div class="notice gold">
+    <span>⚡</span>
+    <span><strong>Acesso rápido:</strong> Use o menu superior para navegar entre organograma, OJs, magistrados, acervo, escalas de férias, vídeos instrucionais e rotinas.</span>
+  </div>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <div class="ic-num">34.580</div>
+      <div class="ic-label">Processos — Conhecimento</div>
+      <div class="ic-sub">665 processos/servidor</div>
+    </div>
+    <div class="info-card">
+      <div class="ic-num">10.294</div>
+      <div class="ic-label">Processos — Liquidação</div>
+      <div class="ic-sub">343 processos/servidor</div>
+    </div>
+    <div class="info-card">
+      <div class="ic-num">26.473</div>
+      <div class="ic-label">Processos — Execução</div>
+      <div class="ic-sub">715 processos/servidor</div>
+    </div>
+    <div class="info-card">
+      <div class="ic-num">600</div>
+      <div class="ic-label">Proc./Servidor (total)</div>
+      <div class="ic-sub">168 tramitáveis/servidor</div>
+    </div>
+  </div>
+
+  <div class="section-header" style="margin-top: 32px;">
+    <h2>Fases Processuais</h2>
+  </div>
+
+  <div class="passivo-grid">
+    <div class="passivo-card">
+      <h4>Distribuição por fase</h4>
+      <div class="bar-row">
+        <span class="bar-label">Conhecimento</span>
+        <div class="bar-track"><div class="bar-fill" style="width:49%; background:var(--accent-con)"></div></div>
+        <span class="bar-num">34.580</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Execução</span>
+        <div class="bar-track"><div class="bar-fill" style="width:37%; background:var(--accent-exe)"></div></div>
+        <span class="bar-num">26.473</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Liquidação</span>
+        <div class="bar-track"><div class="bar-fill" style="width:14%; background:var(--accent-liq)"></div></div>
+        <span class="bar-num">10.294</span>
+      </div>
+    </div>
+
+    <div class="passivo-card">
+      <h4>Contatos Principais</h4>
+      <div class="atrib-list">
+        <div class="bar-row" style="font-size:12.5px; border-bottom:0.5px solid var(--border); padding-bottom:7px">
+          <span style="font-weight:500; color:var(--navy)">Matheus Junqueira Harder</span>
+          <span style="color:var(--text-muted); margin-left:auto">Diretor SC</span>
+        </div>
+        <div class="bar-row" style="font-size:12.5px; border-bottom:0.5px solid var(--border); padding-bottom:7px">
+          <span style="font-weight:500">Rodrigo Gonçalves Dias Agostineto</span>
+          <span style="color:var(--text-muted); margin-left:auto">Assessor Gestão</span>
+        </div>
+        <div class="bar-row" style="font-size:12.5px">
+          <span>📧 saapa@trt15.jus.br</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-header" style="margin-top:32px">
+    <h2>Cidades Atendidas</h2>
+    <span class="tag">31 cidades · 2.764.447 habitantes</span>
+  </div>
+
+  <div class="varas-grid">
+    <div class="vara-card">
+      <div class="vc-name">1ª, 2ª e 3ª VT Piracicaba</div>
+      <div class="vc-info">OJ 0012 / 0051 / 0137</div>
+      <div class="vc-total">CON: <span>3 varas</span></div>
+    </div>
+    <div class="vara-card">
+      <div class="vc-name">1ª e 2ª VT Americana</div>
+      <div class="vc-info">OJ 0007 / 0099</div>
+      <div class="vc-total">Pop: <span>237.240</span></div>
+    </div>
+    <div class="vara-card">
+      <div class="vc-name">VT Araras</div>
+      <div class="vc-info">OJ 0046</div>
+      <div class="vc-total">Pop: <span>130.866</span></div>
+    </div>
+    <div class="vara-card">
+      <div class="vc-name">VT Leme</div>
+      <div class="vc-info">OJ 0134</div>
+      <div class="vc-total">Pop: <span>98.161</span></div>
+    </div>
+    <div class="vara-card">
+      <div class="vc-name">VT Rio Claro</div>
+      <div class="vc-info">OJ 0010</div>
+      <div class="vc-total">Pop: <span>208.857</span></div>
+    </div>
+    <div class="vara-card">
+      <div class="vc-name">VT Mogi Guaçu</div>
+      <div class="vc-info">OJ 0071</div>
+      <div class="vc-total">Pop: <span>153.658</span></div>
+    </div>
+    <div class="vara-card">
+      <div class="vc-name">VT Sumaré</div>
+      <div class="vc-info">OJ 0122</div>
+      <div class="vc-total">Pop: <span>279.545</span></div>
+    </div>
+    <div class="vara-card">
+      <div class="vc-name">VT Hortolândia</div>
+      <div class="vc-info">OJ 0152</div>
+      <div class="vc-total">Pop: <span>236.641</span></div>
+    </div>
+    <div class="vara-card">
+      <div class="vc-name">VT São João da Boa Vista</div>
+      <div class="vc-info">OJ 0034</div>
+      <div class="vc-total">Pop: <span>92.319</span></div>
+    </div>
+    <div class="vara-card">
+      <div class="vc-name">VT Santa Bárbara d'Oeste</div>
+      <div class="vc-info">OJ 0086</div>
+      <div class="vc-total">Pop: <span>183.347</span></div>
+    </div>
+    <div class="vara-card">
+      <div class="vc-name">1ª e 2ª VT Limeira</div>
+      <div class="vc-info">OJ 0014 / 0128</div>
+      <div class="vc-total">Pop: <span>300.728</span></div>
+    </div>
   </div>
 </div>
-<div class="alertbar" id="alertbar">⚠️ <span id="alert-text"></span></div>
 
-<div class="main">
-  <!-- SELETOR DE VARA -->
-  <div style="margin-bottom:16px;">
-    <span class="vara-label">Vara:</span>
-    <div class="vara-tabs" id="vara-tabs"></div>
+<!-- ORGANOGRAMA -->
+<div id="section-organograma" class="section">
+  <div class="section-header">
+    <h2>Organograma</h2>
+    <span class="tag">Secretaria Conjunta de Piracicaba</span>
+  </div>
+
+  <div class="notice info">
+    <span>ℹ️</span>
+    <span>Total: 158 servidores · DAA: 17 · CON: 54 · LIQ: 33 · EXE: 42 · DAM: 06 · CEJUSC: 05 · Oficiais de Justiça: 24 · Assistentes de Juízes: 30</span>
+  </div>
+
+  <div class="org-chart">
+    <div class="org-level">
+
+      <div class="org-top">
+        <div class="title">Direção da Secretaria Conjunta</div>
+        <div class="person">Matheus Junqueira Harder · CJ3 · Diretor</div>
+        <div class="person" style="margin-top:4px;">Rodrigo G. D. Agostineto · CJ3 · Assessor de Gestão</div>
+      </div>
+
+      <div class="org-row cols-3" style="margin-top:28px">
+        <div class="org-box daa">
+          <div class="dept">DAA</div>
+          <div class="name">Divisão de Atend. e Administração<br><strong>Rogerio Zambon Canale</strong><br><strong>Claudir de Oliveira Junior</strong></div>
+        </div>
+        <div class="org-box cejusc">
+          <div class="dept">CEJUSC</div>
+          <div class="name">CEJUSC Piracicaba<br><strong>Ana Luisa de Faria</strong><br>CEJUSC Limeira<br><strong>Alexandre Francischetti</strong></div>
+        </div>
+        <div class="org-box dam">
+          <div class="dept">DAM</div>
+          <div class="name">Div. Apoio aos Magistrados<br><strong>Rafael Serra Cardoso</strong></div>
+        </div>
+      </div>
+
+      <div class="org-row cols-2" style="margin-top:20px">
+        <div class="org-box con">
+          <div class="dept">Assessoria de Conhecimento</div>
+          <div class="name">CON1 + CON2<br><strong>Deise Maria Cassaniga Azevedo</strong><br><strong>Silvana Marcelino Braz</strong><br><span style="font-size:11px;color:#666">54 servidores</span></div>
+        </div>
+        <div class="org-box liq">
+          <div class="dept">Assessoria de Liquidação</div>
+          <div class="name">LIQ1 + LIQ2<br><strong>Wellington George Braga Paz</strong><br><strong>Vanderlei Baldessin / Paulo Sergio Salvador</strong><br><span style="font-size:11px;color:#666">33 servidores</span></div>
+        </div>
+      </div>
+
+      <div class="org-row cols-4" style="margin-top:20px">
+        <div class="org-box exe">
+          <div class="dept">EXE1</div>
+          <div class="name">Trâmites Iniciais<br><strong>Roberta E. A. Tetzlaff</strong><br><strong>Eduardo A. Veloso</strong></div>
+        </div>
+        <div class="org-box exe">
+          <div class="dept">EXE2</div>
+          <div class="name">Pesquisas Avançadas<br><strong>Fabio Ajudarte Lopes</strong><br><strong>Filipe Shinzato Colevati</strong></div>
+        </div>
+        <div class="org-box exe">
+          <div class="dept">EXE3</div>
+          <div class="name">Expropriação / DIVEX<br><strong>Marco César de Oliveira Wan-Meyl</strong><br><strong>Nilton Rafael de Barros Silva</strong></div>
+        </div>
+        <div class="org-box exe">
+          <div class="dept">EXE4</div>
+          <div class="name">Precatórios / Garimpo<br><strong>João Gabriel da Silva Silveira</strong><br><strong>Liliana Squarizzi F. Cantarim</strong></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- OJs -->
+<div id="section-ojs" class="section">
+  <div class="section-header">
+    <h2>Órgãos Julgadores</h2>
+    <span class="tag">10 OJs · clique para detalhes</span>
+  </div>
+
+  <div class="oj-grid" id="oj-grid">
+
+    <div class="oj-card con" onclick="openOJ('con1')">
+      <div class="oj-card-header">
+        <div class="oj-icon">C1</div>
+        <div><div class="oj-card-title">CON1</div><div class="oj-card-sub">Assessoria de Conhecimento 1</div></div>
+      </div>
+      <div class="oj-card-body">
+        <div class="oj-attr-row"><span class="key">Chefes</span><span class="val">Deise C. Azevedo / Silvana Braz</span></div>
+        <div class="oj-attr-row"><span class="key">Fase</span><span class="val">Audiências e instrução processual</span></div>
+        <div class="oj-attr-row"><span class="key">Servidores</span><span class="val">~32 (excl. CJ3)</span></div>
+        <div class="oj-attr-row"><span class="key">Tarefas-chave</span></div>
+        <div>
+          <span class="oj-pill">Triagem inicial</span>
+          <span class="oj-pill">Designação audiência</span>
+          <span class="oj-pill">Despacho saneador</span>
+          <span class="oj-pill">Tutelas iniciais</span>
+        </div>
+      </div>
+      <div class="oj-card-footer">Seção pré-pauta + Seção pós-pauta</div>
+    </div>
+
+    <div class="oj-card con" onclick="openOJ('con2')">
+      <div class="oj-card-header">
+        <div class="oj-icon">C2</div>
+        <div><div class="oj-card-title">CON2</div><div class="oj-card-sub">Assessoria de Conhecimento 2</div></div>
+      </div>
+      <div class="oj-card-body">
+        <div class="oj-attr-row"><span class="key">Chefes</span><span class="val">Deise C. Azevedo / Silvana Braz</span></div>
+        <div class="oj-attr-row"><span class="key">Fase</span><span class="val">Julgamento e recursos</span></div>
+        <div class="oj-attr-row"><span class="key">Servidores</span><span class="val">~20 (excl. CJ3)</span></div>
+        <div class="oj-attr-row"><span class="key">Tarefas-chave</span></div>
+        <div>
+          <span class="oj-pill">Conclusão sentença</span>
+          <span class="oj-pill">Controle razões finais</span>
+          <span class="oj-pill">Incidentes</span>
+          <span class="oj-pill">Trânsito em julgado</span>
+          <span class="oj-pill">Remessa 2º grau</span>
+        </div>
+      </div>
+      <div class="oj-card-footer">Seção 02 (1 FC5) · Mediador André Rocha</div>
+    </div>
+
+    <div class="oj-card liq" onclick="openOJ('liq1')">
+      <div class="oj-card-header">
+        <div class="oj-icon">L1</div>
+        <div><div class="oj-card-title">LIQ1</div><div class="oj-card-sub">Assessoria de Liquidação 1</div></div>
+      </div>
+      <div class="oj-card-body">
+        <div class="oj-attr-row"><span class="key">Chefe</span><span class="val">Wellington George Braga Paz</span></div>
+        <div class="oj-attr-row"><span class="key">Fase</span><span class="val">Pré-Homologação</span></div>
+        <div class="oj-attr-row"><span class="key">Servidores</span><span class="val">12 (excl. CJ3/CJ1)</span></div>
+        <div class="oj-attr-row"><span class="key">Acervo LIQ1</span><span class="val">7.346 processos</span></div>
+        <div>
+          <span class="oj-pill">Despacho cálculo</span>
+          <span class="oj-pill">Obrigação de fazer</span>
+          <span class="oj-pill">Valores incontroversos</span>
+          <span class="oj-pill">PJeCalc</span>
+        </div>
+      </div>
+      <div class="oj-card-footer">Cálculos + perícias contábeis</div>
+    </div>
+
+    <div class="oj-card liq" onclick="openOJ('liq2')">
+      <div class="oj-card-header">
+        <div class="oj-icon">L2</div>
+        <div><div class="oj-card-title">LIQ2</div><div class="oj-card-sub">Assessoria de Liquidação 2</div></div>
+      </div>
+      <div class="oj-card-body">
+        <div class="oj-attr-row"><span class="key">Chefes</span><span class="val">Vanderlei Baldessin / Paulo Sergio Salvador</span></div>
+        <div class="oj-attr-row"><span class="key">Fase</span><span class="val">Homologação e Cumprimento Espontâneo</span></div>
+        <div class="oj-attr-row"><span class="key">Servidores</span><span class="val">18 (excl. CJ3/CJ1)</span></div>
+        <div class="oj-attr-row"><span class="key">Acervo LIQ2</span><span class="val">2.331 processos</span></div>
+        <div>
+          <span class="oj-pill">Homologação cálculos</span>
+          <span class="oj-pill">Liberação valores</span>
+          <span class="oj-pill">Parcelamento</span>
+          <span class="oj-pill">Incidentes pós-homol.</span>
+        </div>
+      </div>
+      <div class="oj-card-footer">20 servidores · Acervo 2.331 proc.</div>
+    </div>
+
+    <div class="oj-card exe" onclick="openOJ('exe1')">
+      <div class="oj-card-header">
+        <div class="oj-icon">E1</div>
+        <div><div class="oj-card-title">EXE1</div><div class="oj-card-sub">Assessoria de Execução I</div></div>
+      </div>
+      <div class="oj-card-body">
+        <div class="oj-attr-row"><span class="key">Chefes</span><span class="val">Roberta Tetzlaff / Eduardo Veloso</span></div>
+        <div class="oj-attr-row"><span class="key">Fase</span><span class="val">Trâmites Iniciais</span></div>
+        <div class="oj-attr-row"><span class="key">Servidores</span><span class="val">7 (excl. CJ3/CJ1)</span></div>
+        <div class="oj-attr-row"><span class="key">Acervo EXE1</span><span class="val">5.000 processos</span></div>
+        <div>
+          <span class="oj-pill">SISBAJUD início</span>
+          <span class="oj-pill">Mandadão</span>
+          <span class="oj-pill">CNIB</span>
+          <span class="oj-pill">Art. 884 CLT</span>
+        </div>
+      </div>
+      <div class="oj-card-footer">9 servidores (incl. assessores)</div>
+    </div>
+
+    <div class="oj-card exe" onclick="openOJ('exe2')">
+      <div class="oj-card-header">
+        <div class="oj-icon">E2</div>
+        <div><div class="oj-card-title">EXE2</div><div class="oj-card-sub">Assessoria de Execução II</div></div>
+      </div>
+      <div class="oj-card-body">
+        <div class="oj-attr-row"><span class="key">Chefes</span><span class="val">Fabio Ajudarte Lopes / Filipe Colevati</span></div>
+        <div class="oj-attr-row"><span class="key">Fase</span><span class="val">Não Garantida: Execuções Individuais</span></div>
+        <div class="oj-attr-row"><span class="key">Servidores</span><span class="val">7 (excl. CJ3/CJ1)</span></div>
+        <div class="oj-attr-row"><span class="key">Acervo EXE2</span><span class="val">4.932 processos</span></div>
+        <div>
+          <span class="oj-pill">Pesquisas avançadas</span>
+          <span class="oj-pill">CCS / COAF</span>
+          <span class="oj-pill">SIMBA</span>
+          <span class="oj-pill">Reunião exec.</span>
+          <span class="oj-pill">IDPJ</span>
+        </div>
+      </div>
+      <div class="oj-card-footer">8 servidores (incl. assessores)</div>
+    </div>
+
+    <div class="oj-card exe" onclick="openOJ('exe3')">
+      <div class="oj-card-header">
+        <div class="oj-icon">E3</div>
+        <div><div class="oj-card-title">EXE3</div><div class="oj-card-sub">Assessoria de Execução III</div></div>
+      </div>
+      <div class="oj-card-body">
+        <div class="oj-attr-row"><span class="key">Chefes</span><span class="val">Marco César Wan-Meyl / Nilton Rafael Silva</span></div>
+        <div class="oj-attr-row"><span class="key">Fase</span><span class="val">Expropriação e Execuções Unificadas</span></div>
+        <div class="oj-attr-row"><span class="key">Servidores</span><span class="val">10 (excl. CJ3/CJ1)</span></div>
+        <div class="oj-attr-row"><span class="key">Acervo EXE3</span><span class="val">4.416 processos</span></div>
+        <div>
+          <span class="oj-pill">Hasta pública</span>
+          <span class="oj-pill">Alienação particular</span>
+          <span class="oj-pill">Grandes devedores</span>
+          <span class="oj-pill">Garimpo</span>
+          <span class="oj-pill">DIVEX</span>
+        </div>
+      </div>
+      <div class="oj-card-footer">9 servidores + DIVEX (3 servidores)</div>
+    </div>
+
+    <div class="oj-card exe" onclick="openOJ('exe4')">
+      <div class="oj-card-header">
+        <div class="oj-icon">E4</div>
+        <div><div class="oj-card-title">EXE4</div><div class="oj-card-sub">Assessoria de Execução IV</div></div>
+      </div>
+      <div class="oj-card-body">
+        <div class="oj-attr-row"><span class="key">Chefes</span><span class="val">João Gabriel Silveira / Liliana S. F. Cantarim</span></div>
+        <div class="oj-attr-row"><span class="key">Fase</span><span class="val">Precatórios, Garimpo e RJ/Falência</span></div>
+        <div class="oj-attr-row"><span class="key">Servidores</span><span class="val">9 (excl. CJ3/CJ1)</span></div>
+        <div class="oj-attr-row"><span class="key">Acervo EXE4</span><span class="val">9.737 processos</span></div>
+        <div>
+          <span class="oj-pill">Precatórios / RPV</span>
+          <span class="oj-pill">RJ/Falência</span>
+          <span class="oj-pill">Cert. habilitação</span>
+          <span class="oj-pill">Garimpo PJe</span>
+        </div>
+      </div>
+      <div class="oj-card-footer">12 servidores (incl. assessores)</div>
+    </div>
+
+    <div class="oj-card dam" onclick="openOJ('dam')">
+      <div class="oj-card-header">
+        <div class="oj-icon" style="font-size:13px">DAM</div>
+        <div><div class="oj-card-title">DAM</div><div class="oj-card-sub">Divisão de Apoio aos Magistrados</div></div>
+      </div>
+      <div class="oj-card-body">
+        <div class="oj-attr-row"><span class="key">Chefe</span><span class="val">Rafael Serra Cardoso (CJ1)</span></div>
+        <div class="oj-attr-row"><span class="key">Servidores</span><span class="val">4 (excl. CJ3/CJ1)</span></div>
+        <div class="oj-attr-row"><span class="key">Acervo DAM</span><span class="val">553 processos</span></div>
+        <div>
+          <span class="oj-pill">Minutas de sentença</span>
+          <span class="oj-pill">Incidentes execução</span>
+          <span class="oj-pill">Emb. à Execução</span>
+          <span class="oj-pill">Pós-sentença</span>
+        </div>
+      </div>
+      <div class="oj-card-footer">Fernanda Godoy D'Avila · Ana Paula Mesquini</div>
+    </div>
+
+    <div class="oj-card exe" onclick="openOJ('divex')">
+      <div class="oj-card-header">
+        <div class="oj-icon" style="font-size:12px">DIV</div>
+        <div><div class="oj-card-title">DIVEX</div><div class="oj-card-sub">Divisão de Execução de Piracicaba</div></div>
+      </div>
+      <div class="oj-card-body">
+        <div class="oj-attr-row"><span class="key">Chefe</span><span class="val">Ana Sylvia Reis Couto Fernandes (CJ1)</span></div>
+        <div class="oj-attr-row"><span class="key">Servidores</span><span class="val">3 (Merval Braga · Camila Zanetti)</span></div>
+        <div>
+          <span class="oj-pill">Hasta pública</span>
+          <span class="oj-pill">Investigação patrimonial</span>
+          <span class="oj-pill">Reunião de execuções</span>
+        </div>
+      </div>
+      <div class="oj-card-footer">Vinculada à EXE3 · investigação + expropriação</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- MAGISTRADOS -->
+<div id="section-magistrados" class="section">
+  <div class="section-header">
+    <h2>Magistrados</h2>
+    <span class="tag">15 varas do trabalho</span>
+  </div>
+
+  <div class="search-bar">
+    <span class="search-icon">🔍</span>
+    <input type="text" placeholder="Buscar magistrado ou vara..." oninput="filterMagistrados(this.value)" id="mag-search">
+  </div>
+
+  <div style="background:white; border:1px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; overflow-x:auto;">
+    <table class="magistrados-table" id="mag-table">
+      <thead>
+        <tr>
+          <th>Vara</th>
+          <th>Final (processos)</th>
+          <th>Magistrado(a)</th>
+          <th>Secretário(a)</th>
+          <th>Assistente</th>
+          <th>Próximas férias</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="vt-name">1ª VT Americana (0007)</td>
+          <td>PAR</td>
+          <td class="juiz-name">Solange Denise Belchior Santaella</td>
+          <td>Sandra Segato Gazzeta / Cláudia Pastor</td>
+          <td>Anaisa Santos Freitas</td>
+          <td><span class="ferias-badge">25/06–14/07</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">1ª VT Americana (0007)</td>
+          <td>ÍMPAR</td>
+          <td class="juiz-name">Fabio Camera Capone</td>
+          <td>Sandra Segato Gazzeta / Cláudia Pastor</td>
+          <td>Karen Sacilotto Pinheiro</td>
+          <td><span class="ferias-badge">20/07–08/08</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">2ª VT Americana (0099)</td>
+          <td>PAR</td>
+          <td class="juiz-name">Milena Casacio Ferreira Beraldo</td>
+          <td>Marina Lira da Silveira Pinto</td>
+          <td>Julia Bispo Pitta Inojosa</td>
+          <td><span class="ferias-badge">11/07–30/07</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">2ª VT Americana (0099)</td>
+          <td>ÍMPAR</td>
+          <td class="juiz-name">Marcelo Luis de Souza Ferreira</td>
+          <td>Rogéria Helena Franzini Corazza</td>
+          <td>Kellen Cristine Petreche</td>
+          <td><span class="ferias-badge">15/06–04/07</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">VT Araras (0046)</td>
+          <td>2,4,6</td>
+          <td class="juiz-name">Renata Mendes Cardoso de Castro Pereira</td>
+          <td>Maria Lúcia Alves Cavalcante</td>
+          <td>Lucimara Leandro</td>
+          <td><span class="ferias-badge">14/07–12/08</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">VT Araras (0046)</td>
+          <td>0,1,3,5,7,8,9</td>
+          <td class="juiz-name">Andre Luiz Tavares de Castro Pereira</td>
+          <td>Cristina Ziani de Moura</td>
+          <td>Willian Martins de Oliveira</td>
+          <td><span class="ferias-badge">15/07–03/08</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">VT Hortolândia (0152)</td>
+          <td>PAR</td>
+          <td class="juiz-name">Patricia Juliana Marchi Alves</td>
+          <td>Débora Cerqueira Simão</td>
+          <td>Cristina Barroca</td>
+          <td><span class="ferias-badge">15/07–03/08</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">VT Hortolândia (0152)</td>
+          <td>ÍMPAR</td>
+          <td class="juiz-name">Luciane Cristina Muraro de Freitas</td>
+          <td>Elenira de Andrade Bicalho</td>
+          <td>Chrystiane Beck Silva</td>
+          <td><span class="ferias-badge">22/06–11/07</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">VT Leme (0134)</td>
+          <td>PAR</td>
+          <td class="juiz-name">Lady Ane de Paula Santos Della Rocca</td>
+          <td>Daniele Fernanda Stefani</td>
+          <td>Nei Hamilton Fernandes Silva</td>
+          <td><span class="ferias-badge">23/06–12/07</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">VT Leme (0134)</td>
+          <td>ÍMPAR</td>
+          <td class="juiz-name">Regina Rodrigues Urbano</td>
+          <td>Dheise Monique Euphrasi</td>
+          <td>Silvia Helena Notario Lenzi</td>
+          <td><span class="ferias-badge">15/07–03/08</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">1ª VT Limeira (0014)</td>
+          <td>PAR</td>
+          <td class="juiz-name">Thiago Henrique Ament</td>
+          <td>Gabriel de Oliveira Silva / Tatiana Maeyama</td>
+          <td>Marcelo Minutti</td>
+          <td><span class="ferias-badge">22/04–11/05</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">1ª VT Limeira (0014)</td>
+          <td>ÍMPAR</td>
+          <td class="juiz-name">Erika de Franceschi</td>
+          <td>Gabriel de Oliveira Silva / Tatiana Maeyama</td>
+          <td>Juliano Gislon Luciano</td>
+          <td><span class="ferias-badge">22/06–21/07</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">2ª VT Limeira (0128)</td>
+          <td>PAR</td>
+          <td class="juiz-name">Carolina Popoff Ferreira da Costa</td>
+          <td>Luciana Rodrigues / Cleilson Damasceno</td>
+          <td>—</td>
+          <td><span class="ferias-badge">21/02–12/03</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">2ª VT Limeira (0128)</td>
+          <td>ÍMPAR</td>
+          <td class="juiz-name">Artur Ribeiro Gudwin</td>
+          <td>Luciana Rodrigues / Cleilson Damasceno</td>
+          <td>Jander Eduardo de Andrade</td>
+          <td><span class="ferias-badge">15/07–03/08</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">VT Mogi Guaçu (0071)</td>
+          <td>PAR</td>
+          <td class="juiz-name">Luis Furian Zorzetto</td>
+          <td>Paula de Carvalho Ambar Lima</td>
+          <td>Gisele Basso Garres</td>
+          <td><span class="ferias-badge">15/07–03/08</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">VT Mogi Guaçu (0071)</td>
+          <td>ÍMPAR</td>
+          <td class="juiz-name">Leticia Gouveia Antonioli</td>
+          <td>Anita Bueno de Moraes Narciso Ferreira</td>
+          <td>Bruno Vivas Bitencourt</td>
+          <td><span class="ferias-badge">15/06–14/07</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">1ª VT Piracicaba (0012)</td>
+          <td>PAR</td>
+          <td class="juiz-name">Aparecido Batista de Oliveira</td>
+          <td>Sandra Regina da Conceição Amaral / Romilda M. Germano</td>
+          <td>—</td>
+          <td><span class="ferias-badge">15/06–14/07</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">1ª VT Piracicaba (0012)</td>
+          <td>ÍMPAR</td>
+          <td class="juiz-name">Vilson Antonio Previde</td>
+          <td>Sandra Regina da Conceição Amaral / Romilda M. Germano</td>
+          <td>Christina Aliende Juliao Gonzalez</td>
+          <td><span class="ferias-badge">19/02–10/03</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">2ª VT Piracicaba (0051)</td>
+          <td>PAR</td>
+          <td class="juiz-name">Carlos Eduardo Vianna Mendes</td>
+          <td>Adriana Pertile Municelli / Joseane de Menezes Conde</td>
+          <td>Rene Jose Zambon</td>
+          <td><span class="ferias-badge">09/02–28/02</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">2ª VT Piracicaba (0051)</td>
+          <td>ÍMPAR</td>
+          <td class="juiz-name">Eduardo Alexandre da Silva</td>
+          <td>Adriana Pertile Municelli / Joseane de Menezes Conde</td>
+          <td>Natália Delboni Barros de Sena</td>
+          <td><span class="ferias-badge">01/07–30/07</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">3ª VT Piracicaba (0137)</td>
+          <td>PAR</td>
+          <td class="juiz-name">Erica Escarassatte</td>
+          <td>Erika Cristina Mendes de Campos Garcia / Celina Pereira</td>
+          <td>Saulo Terra Costa</td>
+          <td><span class="ferias-badge">17/01–05/02</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">3ª VT Piracicaba (0137)</td>
+          <td>ÍMPAR</td>
+          <td class="juiz-name">Emanuele Pessatti Siqueira Rocha</td>
+          <td>Erika Cristina Mendes de Campos Garcia / Celina Pereira</td>
+          <td>Gianluca de Almeida</td>
+          <td><span class="ferias-badge">15/06–14/07</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">VT Rio Claro (0010)</td>
+          <td>PAR</td>
+          <td class="juiz-name">Flavia Farias de Arruda Corseuil</td>
+          <td>Naara de Lucas Barbalho</td>
+          <td>Jairo Maurano Machado / Laura Sant Ana Castro</td>
+          <td><span class="ferias-badge">20/07–18/08</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">VT Rio Claro (0010)</td>
+          <td>ÍMPAR</td>
+          <td class="juiz-name">Felipe Bernardes Rodrigues</td>
+          <td>Michelli Cristina Borges Sampaio</td>
+          <td>Waldomiro Antonio Rizato Junior</td>
+          <td><span class="ferias-badge">26/06–15/07</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">VT Santa Bárbara (0086)</td>
+          <td>PAR</td>
+          <td class="juiz-name">Cristiane Kawanaka de Pontes</td>
+          <td>Leandro Mac Fadden Negri</td>
+          <td>Caroline Fiamenghi Misse Gouvêa</td>
+          <td><span class="ferias-badge">13/07–01/08</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">VT Santa Bárbara (0086)</td>
+          <td>ÍMPAR</td>
+          <td class="juiz-name">Henrique Macedo Hinz</td>
+          <td>Aguinaldo Junior Yamamoto Peres</td>
+          <td>Eduardo Luis Leite Ferraz</td>
+          <td><span class="ferias-badge">06/04–25/04</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">VT São João da Boa Vista (0034)</td>
+          <td>PAR</td>
+          <td class="juiz-name">Cristiane Souza de Castro Toledo</td>
+          <td>Ana Claudia Rodrigues Abreu Bergonsini</td>
+          <td>Guilherme Braz Cayres</td>
+          <td><span class="ferias-badge">27/04–16/05</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">VT São João da Boa Vista (0034)</td>
+          <td>ÍMPAR</td>
+          <td class="juiz-name">Iara Maria Rodrigues</td>
+          <td>Emerson Alexandre Viola</td>
+          <td>Mariana Fiamenghi Misse Isaac</td>
+          <td><span class="ferias-badge">20/05–08/06</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">VT Sumaré (0122)</td>
+          <td>0,1,2,3</td>
+          <td class="juiz-name">Ronaldo Capelari</td>
+          <td>Thiago Donizete Mendanha</td>
+          <td>Ivan Gabriel Franca de Negri</td>
+          <td><span class="ferias-badge">13/04–02/05</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">VT Sumaré (0122)</td>
+          <td>4,5,6</td>
+          <td class="juiz-name">Francina Nunes da Costa</td>
+          <td>Fabiana de Lemos Pedro</td>
+          <td>Juliana Rodrigues Lameira Belchior</td>
+          <td><span class="ferias-badge">02/07–31/07</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">VT Sumaré (0122)</td>
+          <td>7,8,9</td>
+          <td class="juiz-name">Carla Gabriella Grah Sens</td>
+          <td>Michel Aquino de Souza</td>
+          <td>Thais Bernardes Carvalho</td>
+          <td><span class="ferias-badge">23/03–11/04</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ACERVO -->
+<div id="section-acervo" class="section">
+  <div class="section-header">
+    <h2>Acervo Processual</h2>
+    <span class="tag">Dados de 13/07/2025</span>
   </div>
 
   <div class="tabs">
-    <button class="tab active" onclick="switchTab('painel')">📊 Painel</button>
-    <button class="tab" onclick="switchTab('comparativo')">🏛️ Multi-vara</button>
-    <button class="tab" onclick="switchTab('antigos')">🕐 Mais Antigos</button>
-    <button class="tab" onclick="switchTab('evolucao')">📈 Evolução</button>
-    <button class="tab" onclick="switchTab('tempo')">⏱️ Tempo médio</button>
-    <button class="tab" onclick="switchTab('historico')">🗂️ Histórico</button>
-    <button class="tab" onclick="switchTab('automatico')">⚙️ Automático</button>
+    <button class="tab-btn active" onclick="showTab('tab-con', this)">Conhecimento</button>
+    <button class="tab-btn" onclick="showTab('tab-liq', this)">Liquidação</button>
+    <button class="tab-btn" onclick="showTab('tab-exe', this)">Execução</button>
   </div>
 
-  <!-- PAINEL -->
-  <div class="section active" id="tab-painel">
-    <div class="summary-row">
-      <div class="sum-card"><div class="slabel">Total de processos</div><div class="sval" id="s-total">—</div><div class="sdelta" id="s-total-d"></div></div>
-      <div class="sum-card"><div class="slabel">Prazos vencidos</div><div class="sval" id="s-prazos" style="color:var(--red)">—</div><div class="sdelta" id="s-prazos-d"></div></div>
-      <div class="sum-card"><div class="slabel">Minutar (total)</div><div class="sval" id="s-minutar">—</div></div>
-      <div class="sum-card"><div class="slabel">Snapshots</div><div class="sval" id="s-snaps">0</div><div class="sdelta" id="s-snaps-d" style="font-size:11px;color:var(--muted);"></div></div>
-    </div>
-    <div class="cards-grid" id="cards-grid">
-      <div class="empty" style="grid-column:1/-1">Carregue um JSON na aba ⚙️ Automático.</div>
-    </div>
-  </div>
-
-  <!-- MULTI-VARA -->
-  <div class="section" id="tab-comparativo">
-    <div class="chart-container" style="margin-bottom:20px;">
-      <div class="chart-header">
-        <div><div class="chart-title">Total de processos por vara — último snapshot</div><div class="chart-sub" id="comp-sub"></div></div>
+  <div id="tab-con" class="tab-content active">
+    <div class="info-grid" style="margin-bottom:20px">
+      <div class="info-card">
+        <div class="ic-num" style="color:var(--accent-con)">34.580</div>
+        <div class="ic-label">Total Conhecimento</div>
+        <div class="ic-sub">52 servidores CON</div>
       </div>
-      <div class="chart-wrap" style="height:280px;"><canvas id="vara-bar-chart" role="img" aria-label="Comparativo de processos por vara"></canvas></div>
-    </div>
-    <div class="chart-container" style="margin-bottom:20px;">
-      <div class="chart-header">
-        <div><div class="chart-title">Evolução histórica por vara</div><div class="chart-sub" id="comp-evo-sub"></div></div>
-        <select id="comp-task-select" onchange="renderComparativoEvo()"></select>
+      <div class="info-card">
+        <div class="ic-num">7.491</div>
+        <div class="ic-label">Acervo Tramitável</div>
+        <div class="ic-sub">144 proc./servidor tramitável</div>
       </div>
-      <div class="chart-wrap" style="height:280px;"><canvas id="vara-line-chart" role="img" aria-label="Evolução histórica por vara"></canvas></div>
-    </div>
-    <div id="vara-cards-grid" class="vara-compare-grid"></div>
-  </div>
-
-  <!-- MAIS ANTIGOS -->
-  <div class="section" id="tab-antigos">
-    <div class="section-row">
-      <label>Tarefa:</label>
-      <select id="antigos-task" onchange="renderAntigos()"></select>
-      <label>Snapshot:</label>
-      <select id="antigos-snap" onchange="renderAntigos()"></select>
-    </div>
-    <div id="antigos-content"><div class="empty">Carregue um JSON na aba ⚙️ Automático.</div></div>
-  </div>
-
-  <!-- EVOLUÇÃO -->
-  <div class="section" id="tab-evolucao">
-    <div class="section-row">
-      <label>Tarefa:</label>
-      <select id="evo-task" onchange="renderLineChart()"></select>
-    </div>
-    <div class="chart-container">
-      <div class="chart-header"><div><div class="chart-title" id="line-title">Evolução</div><div class="chart-sub" id="line-sub"></div></div></div>
-      <div class="chart-wrap" style="height:260px;"><canvas id="line-chart" role="img" aria-label="Evolução da tarefa"></canvas></div>
-    </div>
-    <div class="chart-container">
-      <div class="chart-header"><div><div class="chart-title">Comparativo — todos os snapshots</div><div class="chart-sub" id="bar-sub"></div></div></div>
-      <div class="section-row" style="margin-bottom:8px;">
-        <label>Snapshot:</label>
-        <select id="bar-snap-select" onchange="renderBarChart()"></select>
+      <div class="info-card">
+        <div class="ic-num">665</div>
+        <div class="ic-label">Proc./Servidor</div>
+        <div class="ic-sub">Acervo total</div>
       </div>
-      <div class="chart-wrap" style="height:300px;"><canvas id="bar-chart" role="img" aria-label="Comparativo de tarefas"></canvas></div>
+    </div>
+
+    <div class="passivo-card" style="background:white; border:1px solid var(--border); border-radius:var(--radius-lg); padding:20px;">
+      <h4 style="font-size:11px; text-transform:uppercase; letter-spacing:0.04em; color:var(--text-muted); margin-bottom:14px;">Acervo por vara — Conhecimento</h4>
+      <div class="bar-row"><span class="bar-label">1ª VT PIR</span><div class="bar-track"><div class="bar-fill" style="width:85%; background:var(--accent-con)"></div></div><span class="bar-num">4.548</span></div>
+      <div class="bar-row"><span class="bar-label">2ª VT AME</span><div class="bar-track"><div class="bar-fill" style="width:74%; background:var(--accent-con)"></div></div><span class="bar-num">4.006</span></div>
+      <div class="bar-row"><span class="bar-label">Mogi Guaçu</span><div class="bar-track"><div class="bar-fill" style="width:73%; background:var(--accent-con)"></div></div><span class="bar-num">3.959</span></div>
+      <div class="bar-row"><span class="bar-label">3ª VT PIR</span><div class="bar-track"><div class="bar-fill" style="width:71%; background:var(--accent-con)"></div></div><span class="bar-num">3.838</span></div>
+      <div class="bar-row"><span class="bar-label">2ª VT PIR</span><div class="bar-track"><div class="bar-fill" style="width:68%; background:var(--accent-con)"></div></div><span class="bar-num">3.720</span></div>
+      <div class="bar-row"><span class="bar-label">1ª VT AME</span><div class="bar-track"><div class="bar-fill" style="width:68%; background:var(--accent-con)"></div></div><span class="bar-num">3.712</span></div>
+      <div class="bar-row"><span class="bar-label">Rio Claro</span><div class="bar-track"><div class="bar-fill" style="width:49%; background:var(--accent-con)"></div></div><span class="bar-num">2.707</span></div>
+      <div class="bar-row"><span class="bar-label">Araras</span><div class="bar-track"><div class="bar-fill" style="width:40%; background:var(--accent-con)"></div></div><span class="bar-num">2.170</span></div>
+      <div class="bar-row"><span class="bar-label">Leme</span><div class="bar-track"><div class="bar-fill" style="width:24%; background:var(--accent-con)"></div></div><span class="bar-num">1.315</span></div>
     </div>
   </div>
 
-  <!-- TEMPO MÉDIO -->
-  <div class="section" id="tab-tempo">
-    <div class="tempo-info">
-      Este gráfico mostra o <strong>tempo médio (em dias) que processos levaram para sair de cada tarefa</strong>, 
-      calculado comparando snapshots consecutivos — processos que estavam em uma tarefa e não aparecem mais no snapshot seguinte.
-      Quanto menor o número, mais rápido os processos saem da fila.
-    </div>
-    <div class="chart-container">
-      <div class="chart-header">
-        <div><div class="chart-title">Tempo médio de permanência por tarefa (dias)</div><div class="chart-sub" id="tempo-sub"></div></div>
+  <div id="tab-liq" class="tab-content">
+    <div class="info-grid" style="margin-bottom:20px">
+      <div class="info-card">
+        <div class="ic-num" style="color:var(--accent-liq)">10.294</div>
+        <div class="ic-label">Total Liquidação</div>
+        <div class="ic-sub">30 servidores LIQ</div>
       </div>
-      <div class="chart-wrap" style="height:320px;"><canvas id="tempo-chart" role="img" aria-label="Tempo médio de permanência"></canvas></div>
-    </div>
-    <div class="chart-container">
-      <div class="chart-header">
-        <div><div class="chart-title" id="tempo-evo-title">Evolução do tempo médio — selecione uma tarefa</div><div class="chart-sub" id="tempo-evo-sub"></div></div>
-        <select id="tempo-task-select" onchange="renderTempoEvo()"></select>
+      <div class="info-card">
+        <div class="ic-num">2.983</div>
+        <div class="ic-label">Acervo Tramitável</div>
+        <div class="ic-sub">99 proc./servidor tramitável</div>
       </div>
-      <div class="chart-wrap" style="height:260px;"><canvas id="tempo-evo-chart" role="img" aria-label="Evolução do tempo médio de permanência"></canvas></div>
+      <div class="info-card">
+        <div class="ic-num">7.346</div>
+        <div class="ic-label">LIQ1 (pré-homol.)</div>
+        <div class="ic-sub">2.331 em LIQ2 (homol.)</div>
+      </div>
+    </div>
+    <div class="passivo-card" style="background:white; border:1px solid var(--border); border-radius:var(--radius-lg); padding:20px;">
+      <h4 style="font-size:11px; text-transform:uppercase; letter-spacing:0.04em; color:var(--text-muted); margin-bottom:14px;">Distribuição LIQ</h4>
+      <div class="bar-row"><span class="bar-label">LIQ1</span><div class="bar-track"><div class="bar-fill" style="width:71%; background:var(--accent-liq)"></div></div><span class="bar-num">7.346</span></div>
+      <div class="bar-row"><span class="bar-label">LIQ2</span><div class="bar-track"><div class="bar-fill" style="width:23%; background:var(--accent-liq)"></div></div><span class="bar-num">2.331</span></div>
+      <div class="bar-row"><span class="bar-label">Aguard. acordo</span><div class="bar-track"><div class="bar-fill" style="width:28%; background:#ccc)"></div></div><span class="bar-num">2.919</span></div>
+      <div class="bar-row"><span class="bar-label">Análise</span><div class="bar-track"><div class="bar-fill" style="width:16%; background:#ccc"></div></div><span class="bar-num">1.631</span></div>
     </div>
   </div>
 
-  <!-- HISTÓRICO -->
-  <div class="section" id="tab-historico">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
-      <div style="font-size:15px;font-weight:600;">Snapshots salvos</div>
-      <button class="btn-danger" onclick="clearAll()">🗑️ Limpar tudo</button>
+  <div id="tab-exe" class="tab-content">
+    <div class="info-grid" style="margin-bottom:20px">
+      <div class="info-card">
+        <div class="ic-num" style="color:var(--accent-exe)">26.473</div>
+        <div class="ic-label">Total Execução</div>
+        <div class="ic-sub">37 servidores EXE+DAM</div>
+      </div>
+      <div class="info-card">
+        <div class="ic-num">9.509</div>
+        <div class="ic-label">Acervo Tramitável</div>
+        <div class="ic-sub">257 proc./servidor tramitável</div>
+      </div>
     </div>
-    <div class="chart-container" style="padding:0;overflow:hidden;" id="history-container">
-      <div class="empty">Nenhum snapshot.</div>
+    <div class="passivo-card" style="background:white; border:1px solid var(--border); border-radius:var(--radius-lg); padding:20px;">
+      <h4 style="font-size:11px; text-transform:uppercase; letter-spacing:0.04em; color:var(--text-muted); margin-bottom:14px;">Distribuição por OJ de execução</h4>
+      <div class="bar-row"><span class="bar-label">EXE4</span><div class="bar-track"><div class="bar-fill" style="width:93%; background:var(--accent-exe)"></div></div><span class="bar-num">9.737</span></div>
+      <div class="bar-row"><span class="bar-label">EXE1</span><div class="bar-track"><div class="bar-fill" style="width:48%; background:var(--accent-exe)"></div></div><span class="bar-num">5.000</span></div>
+      <div class="bar-row"><span class="bar-label">EXE2</span><div class="bar-track"><div class="bar-fill" style="width:47%; background:var(--accent-exe)"></div></div><span class="bar-num">4.932</span></div>
+      <div class="bar-row"><span class="bar-label">EXE3</span><div class="bar-track"><div class="bar-fill" style="width:42%; background:var(--accent-exe)"></div></div><span class="bar-num">4.416</span></div>
+      <div class="bar-row"><span class="bar-label">DAM</span><div class="bar-track"><div class="bar-fill" style="width:5%; background:var(--accent-dam)"></div></div><span class="bar-num">553</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- FÉRIAS -->
+<div id="section-ferias" class="section">
+  <div class="section-header">
+    <h2>Escala de Férias 2026</h2>
+    <span class="tag">Magistrados e Servidores</span>
+  </div>
+
+  <div class="notice info">
+    <span>📅</span>
+    <span>Consulta de férias de magistrados: <a href="https://satelites.trt15.jus.br/designacoes/index.jsp" target="_blank" style="color:inherit;font-weight:500">satelites.trt15.jus.br/designacoes</a></span>
+  </div>
+
+  <div class="tabs">
+    <button class="tab-btn active" onclick="showTab('tab-f-mag', this)">Magistrados</button>
+    <button class="tab-btn" onclick="showTab('tab-f-srv', this)">Servidores (DAA)</button>
+  </div>
+
+  <div id="tab-f-mag" class="tab-content active">
+    <div style="background:white; border:1px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; overflow-x:auto;">
+      <table class="ferias-table">
+        <thead><tr><th>Magistrado(a)</th><th>Vara</th><th>Período 1</th><th>Período 2</th><th>Dias</th></tr></thead>
+        <tbody>
+          <tr><td>Solange Denise Belchior Santaella</td><td>1ª VT Americana</td><td><span class="ferias-badge">25/06–14/07</span></td><td><span class="ferias-badge">18/11–17/12</span></td><td>20+30</td></tr>
+          <tr><td>Fabio Camera Capone</td><td>1ª VT Americana</td><td><span class="ferias-badge">20/07–08/08</span></td><td><span class="ferias-badge">19/10–07/11</span></td><td>20+20</td></tr>
+          <tr><td>Milena Casacio Ferreira Beraldo</td><td>2ª VT Americana</td><td><span class="ferias-badge">11/07–30/07</span></td><td><span class="ferias-badge">25/11–14/12</span></td><td>20+20</td></tr>
+          <tr><td>Marcelo Luis de Souza Ferreira</td><td>2ª VT Americana</td><td><span class="ferias-badge">15/06–04/07</span></td><td><span class="ferias-badge">17/01–05/02</span></td><td>20+20</td></tr>
+          <tr><td>Renata Mendes Cardoso de Castro Pereira</td><td>VT Araras</td><td><span class="ferias-badge">14/07–12/08</span></td><td><span class="ferias-badge">21/01–09/02</span></td><td>30+20</td></tr>
+          <tr><td>Andre Luiz Tavares de Castro Pereira</td><td>VT Araras</td><td><span class="ferias-badge">15/07–03/08</span></td><td><span class="ferias-badge">21/01–09/02</span></td><td>20+20</td></tr>
+          <tr><td>Patricia Juliana Marchi Alves</td><td>VT Hortolândia</td><td><span class="ferias-badge">15/07–03/08</span></td><td><span class="ferias-badge">18/11–07/12</span></td><td>20+20</td></tr>
+          <tr><td>Luciane Cristina Muraro de Freitas</td><td>VT Hortolândia</td><td><span class="ferias-badge">22/06–11/07</span></td><td><span class="ferias-badge">21/09–10/10</span></td><td>20+20</td></tr>
+          <tr><td>Lady Ane de Paula Santos Della Rocca</td><td>VT Leme</td><td><span class="ferias-badge">23/06–12/07</span></td><td><span class="ferias-badge">24/09–13/10</span></td><td>20+20</td></tr>
+          <tr><td>Regina Rodrigues Urbano</td><td>VT Leme</td><td><span class="ferias-badge">12/03–31/03</span></td><td><span class="ferias-badge">15/07–03/08</span></td><td>20+20</td></tr>
+          <tr><td>Thiago Henrique Ament</td><td>1ª VT Limeira</td><td><span class="ferias-badge">22/04–11/05</span></td><td><span class="ferias-badge">21/09–10/10</span></td><td>20+20</td></tr>
+          <tr><td>Erika de Franceschi</td><td>1ª VT Limeira</td><td><span class="ferias-badge">22/01–10/02</span></td><td><span class="ferias-badge">22/06–21/07</span></td><td>20+30</td></tr>
+          <tr><td>Aparecido Batista de Oliveira</td><td>1ª VT Piracicaba</td><td><span class="ferias-badge">15/06–14/07</span></td><td><span class="ferias-badge">18/11–17/12</span></td><td>30+30</td></tr>
+          <tr><td>Vilson Antonio Previde</td><td>1ª VT Piracicaba</td><td><span class="ferias-badge">19/02–10/03</span></td><td><span class="ferias-badge">20/07–18/08</span></td><td>20+30</td></tr>
+          <tr><td>Carlos Eduardo Vianna Mendes</td><td>2ª VT Piracicaba</td><td><span class="ferias-badge">07/01–26/01</span></td><td><span class="ferias-badge">09/02–28/02</span></td><td>20+20</td></tr>
+          <tr><td>Eduardo Alexandre da Silva</td><td>2ª VT Piracicaba</td><td><span class="ferias-badge">01/07–30/07</span></td><td><span class="ferias-badge">18/11–17/12</span></td><td>30+30</td></tr>
+          <tr><td>Erica Escarassatte</td><td>3ª VT Piracicaba</td><td><span class="ferias-badge">17/01–05/02</span></td><td><span class="ferias-badge">20/07–08/08</span></td><td>20+20</td></tr>
+          <tr><td>Emanuele Pessatti Siqueira Rocha</td><td>3ª VT Piracicaba</td><td><span class="ferias-badge">15/06–14/07</span></td><td><span class="ferias-badge">18/11–17/12</span></td><td>30+30</td></tr>
+          <tr><td>Flavia Farias de Arruda Corseuil</td><td>VT Rio Claro</td><td><span class="ferias-badge">20/07–18/08</span></td><td><span class="ferias-badge">03/11–22/11</span></td><td>30+20</td></tr>
+          <tr><td>Felipe Bernardes Rodrigues</td><td>VT Rio Claro</td><td><span class="ferias-badge">26/06–15/07</span></td><td><span class="ferias-badge">29/11–18/12</span></td><td>20+20</td></tr>
+          <tr><td>Cristiane Kawanaka de Pontes</td><td>VT Santa Bárbara</td><td><span class="ferias-badge">26/01–14/02</span></td><td><span class="ferias-badge">13/07–01/08</span></td><td>20+20</td></tr>
+          <tr><td>Henrique Macedo Hinz</td><td>VT Santa Bárbara</td><td><span class="ferias-badge">06/04–25/04</span></td><td><span class="ferias-badge">28/11–17/12</span></td><td>20+20</td></tr>
+          <tr><td>Cristiane Souza de Castro Toledo</td><td>VT São João da B. Vista</td><td><span class="ferias-badge">27/04–16/05</span></td><td><span class="ferias-badge">15/06–04/07</span></td><td>20+20</td></tr>
+          <tr><td>Iara Maria Rodrigues</td><td>VT São João da B. Vista</td><td><span class="ferias-badge">20/05–08/06</span></td><td><span class="ferias-badge">16/09–05/10</span></td><td>20+20</td></tr>
+          <tr><td>Ronaldo Capelari</td><td>VT Sumaré</td><td><span class="ferias-badge">13/04–02/05</span></td><td><span class="ferias-badge">17/08–05/09</span></td><td>20+20</td></tr>
+          <tr><td>Francina Nunes da Costa</td><td>VT Sumaré</td><td><span class="ferias-badge">02/07–31/07</span></td><td><span class="ferias-badge">19/11–18/12</span></td><td>30+30</td></tr>
+          <tr><td>Carla Gabriella Grah Sens</td><td>VT Sumaré</td><td><span class="ferias-badge">23/03–11/04</span></td><td><span class="ferias-badge">17/09–06/10</span></td><td>20+20</td></tr>
+          <tr><td>Luis Furian Zorzetto</td><td>VT Mogi Guaçu</td><td><span class="ferias-badge">15/07–03/08</span></td><td><span class="ferias-badge">16/09–15/10</span></td><td>20+30</td></tr>
+          <tr><td>Leticia Gouveia Antonioli</td><td>VT Mogi Guaçu</td><td><span class="ferias-badge">12/01–10/02</span></td><td><span class="ferias-badge">15/06–14/07</span></td><td>30+30</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
-  <!-- AUTOMÁTICO -->
-  <div class="section" id="tab-automatico">
-    <div class="auto-box">
-      <h3>📂 Importar / Exportar</h3>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px;">
-        <label class="btn-primary" style="cursor:pointer;">📂 Carregar JSON <input type="file" accept=".json" onchange="loadJSON(event)" style="display:none;"></label>
-        <button class="btn-secondary" onclick="exportJSON()">⬇️ Exportar dados</button>
+  <div id="tab-f-srv" class="tab-content">
+    <div class="notice gold">
+      <span>📌</span>
+      <span>Escala completa dos servidores do DAA disponível na aba "DAA - reserva" da planilha. Consulte o Drive compartilhado para dados detalhados por cidade.</span>
+    </div>
+    <div style="background:white; border:1px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; overflow-x:auto;">
+      <table class="ferias-table">
+        <thead><tr><th>Cidade / Servidor(a)</th><th>OJ</th><th>Período de Férias 2026</th></tr></thead>
+        <tbody>
+          <tr><td colspan="3" style="font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.04em;color:var(--text-muted);background:var(--cream);padding:8px 14px;">Piracicaba</td></tr>
+          <tr><td>Mauricio Jose Roque</td><td>LIQ1</td><td>—</td></tr>
+          <tr><td>Rogerio Zambon Canale (DAA)</td><td>DAA</td><td><span class="ferias-badge">23/03–31/03</span></td></tr>
+          <tr><td>Angela Beatriz Gonçales (DAA)</td><td>DAA</td><td><span class="ferias-badge">05/05–03/06</span></td></tr>
+          <tr><td>Luiz Paolieri Neto (DAA)</td><td>DAA</td><td><span class="ferias-badge">07/01–16/01</span></td></tr>
+          <tr><td colspan="3" style="font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.04em;color:var(--text-muted);background:var(--cream);padding:8px 14px;">Americana</td></tr>
+          <tr><td>Natalina Maria Borges Xavier</td><td>CON1</td><td>—</td></tr>
+          <tr><td>Nilza Misael Ferreira</td><td>CON1</td><td>—</td></tr>
+          <tr><td colspan="3" style="font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.04em;color:var(--text-muted);background:var(--cream);padding:8px 14px;">Leme</td></tr>
+          <tr><td>Ivi Cristina Indalecio Bueno</td><td>CON1</td><td><span class="ferias-badge">13/07–01/08 e 04/12–18/12</span></td></tr>
+          <tr><td>Anelise Lino de Queiroz</td><td>EXE1</td><td>—</td></tr>
+          <tr><td colspan="3" style="font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.04em;color:var(--text-muted);background:var(--cream);padding:8px 14px;">Araras</td></tr>
+          <tr><td>José Adriano Fiori</td><td>LIQ1</td><td><span class="ferias-badge">08/06–22/06 e 14/09–28/09</span></td></tr>
+          <tr><td>Isabela Freitas de Souza</td><td>—</td><td><span class="ferias-badge">16/03–30/03 e 04/12–18/12</span></td></tr>
+          <tr><td>Roberta Rodrigues Urbano</td><td>CON2</td><td>—</td></tr>
+          <tr><td colspan="3" style="font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.04em;color:var(--text-muted);background:var(--cream);padding:8px 14px;">Mogi Guaçu</td></tr>
+          <tr><td>Sueli Aparecida Binatti</td><td>EXE4</td><td><span class="ferias-badge">08–22/06 e 14–28/09</span></td></tr>
+          <tr><td>Fernando Brait Garros</td><td>EXE3</td><td><span class="ferias-badge">06–17/04 e 01–18/12</span></td></tr>
+          <tr><td colspan="3" style="font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.04em;color:var(--text-muted);background:var(--cream);padding:8px 14px;">Rio Claro</td></tr>
+          <tr><td>Regina Célia Bernardi Jorge</td><td>EXE4</td><td><span class="ferias-badge">07–16/01</span></td></tr>
+          <tr><td>Daniel Carlos Alves de Pilla</td><td>EXE2</td><td><span class="ferias-badge">02/02–12/02 e 20/09–09/10</span></td></tr>
+          <tr><td>Mariangela Miranda Duarte</td><td>—</td><td><span class="ferias-badge">25/06–08/07 e 28/09–03/10 e 09–18/12</span></td></tr>
+          <tr><td colspan="3" style="font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.04em;color:var(--text-muted);background:var(--cream);padding:8px 14px;">Sumaré</td></tr>
+          <tr><td>Eneias Cristiano Eler</td><td>LIQ1</td><td><span class="ferias-badge">21–30/1 · 8–17/9 · 9–18/12</span></td></tr>
+          <tr><td>Fabiana de Lemos Pedro</td><td>CON1</td><td><span class="ferias-badge">7–21/1 · 17–31/7</span></td></tr>
+          <tr><td>Maria Luiza Guerra Martinelli</td><td>LIQ2</td><td><span class="ferias-badge">23–31/3 · 8–17/9 · 8–18/12</span></td></tr>
+          <tr><td>Marcelo Alves Pereira (DAA)</td><td>DAA</td><td><span class="ferias-badge">9–13/2 · 13–19/7 · 1–18/12</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- VÍDEOS & LINKS -->
+<div id="section-videos" class="section">
+  <div class="section-header">
+    <h2>Vídeos Instrucionais &amp; Links Úteis</h2>
+    <span class="tag">Repositório de recursos</span>
+  </div>
+
+  <div class="notice info">
+    <span>🎬</span>
+    <span>Vídeos do Especializa &amp; Equaliza 15 e materiais de capacitação. Acesse o Drive compartilhado para a versão completa e atualizada.</span>
+  </div>
+
+  <div class="section-header" style="margin-top:20px; margin-bottom:16px">
+    <h2 style="font-size:16px">Apresentações e Vídeos</h2>
+  </div>
+
+  <div class="links-grid">
+    <a class="link-card" href="https://gamma.app/docs/Especializa-e-Equaliza15-uduqhb05v8pvy1w?mode=doc" target="_blank">
+      <div class="lc-icon">🎯</div>
+      <div>
+        <div class="lc-title">Apresentação Inicial — Novas Unidades</div>
+        <div class="lc-desc">Gamma.app — Especializa &amp; Equaliza 15</div>
       </div>
-      <p>Após rodar o <code style="background:var(--surface2);padding:1px 5px;border-radius:3px;">pje_coletor.py</code>, carregue o <code style="background:var(--surface2);padding:1px 5px;border-radius:3px;">pje_dados.json</code>.</p>
+    </a>
+    <a class="link-card" href="https://gamma.app/docs/PROJETO-ESPECIALIZA-EQUALIZA-15--vk6crn5t1ri71i0?mode=doc" target="_blank">
+      <div class="lc-icon">📋</div>
+      <div>
+        <div class="lc-title">Apresentação para OABs</div>
+        <div class="lc-desc">Projeto Especializa &amp; Equaliza 15</div>
+      </div>
+    </a>
+    <a class="link-card" href="https://gamma.app/docs/Plano-de-Saneamento-e-Preparacao-para-adesao-a-Secretaria-Conjunt-u9wzfvn47bq88cy?mode=doc" target="_blank">
+      <div class="lc-icon">🗂️</div>
+      <div>
+        <div class="lc-title">Plano de Saneamento</div>
+        <div class="lc-desc">Preparação para novas unidades</div>
+      </div>
+    </a>
+    <a class="link-card" href="https://gamma.app/docs/PROJETO-ESPECIALIZA-EQUALIZA-15-0ma9r762z0df8mq?mode=doc" target="_blank">
+      <div class="lc-icon">⚖️</div>
+      <div>
+        <div class="lc-title">Apresentação para Magistrados</div>
+        <div class="lc-desc">Especializa &amp; Equaliza 15</div>
+      </div>
+    </a>
+    <a class="link-card" href="https://gamma.app/docs/Secretaria-Conjunta-de-Piracicaba-zn7zsov7nn884ig?mode=doc" target="_blank">
+      <div class="lc-icon">🔢</div>
+      <div>
+        <div class="lc-title">Apresentação — Peritos Contábeis</div>
+        <div class="lc-desc">Secretaria Conjunta de Piracicaba</div>
+      </div>
+    </a>
+    <a class="link-card" href="https://gamma.app/docs/PAUTA-REUNIAO-COM-PERITOS-ya2h2gdu3ca7ptb?mode=doc" target="_blank">
+      <div class="lc-icon">🩺</div>
+      <div>
+        <div class="lc-title">Apresentação — Peritos Engenheiros/Médicos</div>
+        <div class="lc-desc">Pauta de reunião com peritos</div>
+      </div>
+    </a>
+    <a class="link-card" href="https://www.canva.com/design/DAGxXN_aLnA/HkjjHe8Lu1dRjsMmFaFHww/view" target="_blank">
+      <div class="lc-icon">🔗</div>
+      <div>
+        <div class="lc-title">Link de Integração — Novas Unidades</div>
+        <div class="lc-desc">Canva — fluxo de integração</div>
+      </div>
+    </a>
+    <a class="link-card" href="https://www.canva.com/design/DAGxRPNXm7o/YMpdBXHrHRhORlo3yXyFSQ/view" target="_blank">
+      <div class="lc-icon">📸</div>
+      <div>
+        <div class="lc-title">Fotos da Equipe</div>
+        <div class="lc-desc">Secretaria Conjunta de Piracicaba</div>
+      </div>
+    </a>
+  </div>
+
+  <div class="section-header" style="margin-top:32px; margin-bottom:16px">
+    <h2 style="font-size:16px">Sistemas e Ferramentas</h2>
+  </div>
+
+  <div class="links-grid">
+    <a class="link-card" href="https://satelites.trt15.jus.br/designacoes/index.jsp" target="_blank">
+      <div class="lc-icon">📅</div>
+      <div>
+        <div class="lc-title">Consulta Férias Magistrados</div>
+        <div class="lc-desc">Satélites TRT15 — designações</div>
+      </div>
+    </a>
+    <div class="link-card" style="cursor:default">
+      <div class="lc-icon">🏦</div>
+      <div>
+        <div class="lc-title">Balcão Virtual — 2025</div>
+        <div class="lc-desc">meet.google.com/ppp-bsyz-vqn</div>
+      </div>
     </div>
-    <div class="auto-box">
-      <h3>🤖 Como usar o script multi-vara</h3>
-      <div class="step"><div class="step-num">1</div><div class="step-text">Abra o terminal: <strong>Windows + R → cmd → Enter</strong></div></div>
-      <div class="step"><div class="step-num">2</div><div class="step-text">Navegue: <strong>cd Desktop\PJE-Dashboard</strong></div></div>
-      <div class="step"><div class="step-num">3</div><div class="step-text">Rode: <strong>python pje_coletor.py</strong></div></div>
-      <div class="step"><div class="step-num">4</div><div class="step-text">Faça login, vá ao painel e pressione <strong>Enter</strong></div></div>
-      <div class="step"><div class="step-num">5</div><div class="step-text">Aguarde — o script percorre todas as 10 varas automaticamente (~40-60 min)</div></div>
-      <div class="step"><div class="step-num">6</div><div class="step-text">Carregue o JSON aqui e veja todos os dados</div></div>
+    <div class="link-card" style="cursor:default">
+      <div class="lc-icon">📧</div>
+      <div>
+        <div class="lc-title">E-mail da Secretaria</div>
+        <div class="lc-desc">saapa@trt15.jus.br</div>
+      </div>
     </div>
+    <div class="link-card" style="cursor:default">
+      <div class="lc-icon">🏛️</div>
+      <div>
+        <div class="lc-title">Comprovante BB</div>
+        <div class="lc-desc">pso7850.atend.trt15@bb.com.br<br>ag4056@caixa.gov.br</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ROTINAS -->
+<div id="section-rotinas" class="section">
+  <div class="section-header">
+    <h2>Rotinas &amp; Procedimentos</h2>
+    <span class="tag">Mantra diário · Atribuições</span>
+  </div>
+
+  <div class="accordion open">
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div>
+        <div class="acc-title">Mantra Diário do Gestor</div>
+        <div class="acc-sub">Verificações e tarefas essenciais diárias</div>
+      </div>
+      <span class="acc-arrow">▾</span>
+    </div>
+    <div class="acc-body">
+      <ul class="atrib-list">
+        <li>Verificar e encaminhar GIGS DAA-URGENTE (mesmo dia) e DAA-ATENÇÃO (sem data)</li>
+        <li>Analisar escaninho de petições não apreciadas — manter zerado</li>
+        <li>Verificar novos depósitos judiciais — assinar e juntar diariamente</li>
+        <li>Conferir situação de alvará (Aguardando conferência → filtrar e finalizar)</li>
+        <li>Zerar a tarefa Prazos Vencidos diariamente (encaminhar à Análise ou tramitar diretamente)</li>
+        <li>Verificar Triagem Inicial — zerada diariamente pelos secretários de audiência</li>
+        <li>Cumprimento de Providências — GIGS deve coincidir com vencimento do sobrestamento ou 30 dias após parcela de acordo</li>
+        <li>Sanear semanalmente: Arquivo provisório, Concluso ao magistrado, PEC, Elaborar decisão/despacho</li>
+        <li>Leitura e resposta de Chat (presumida em 15 min) e e-mails</li>
+        <li>Promover reuniões quinzenais com a equipe e comparecer às reuniões com a Corregedoria (R.A.S.)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="accordion" style="margin-top:10px">
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div>
+        <div class="acc-title">Regras para Petições (Escaninho)</div>
+        <div class="acc-sub">Quais excluir, quais analisar</div>
+      </div>
+      <span class="acc-arrow">▾</span>
+    </div>
+    <div class="acc-body">
+      <p style="font-size:13px; color:var(--text-muted); margin-bottom:12px; font-weight:500">Petições a excluir sem análise:</p>
+      <ul class="atrib-list">
+        <li>Carta de preposição, substabelecimento, renúncia, procuração</li>
+        <li>Contestação, contrarrazões, réplica, razões finais</li>
+        <li>Embargos de declaração, recurso ordinário (Rad/AI)</li>
+        <li>Manifestação genérica (exceto processos em "Aguardando audiência", "Cumprimento de acordo" e "Arquivo")</li>
+        <li>Petições em tarefas intermediárias (PEC, Análise, Triagem inicial, Aguardando prazo, CP, PV, Recebimento)</li>
+      </ul>
+      <p style="font-size:13px; color:var(--text-muted); margin: 12px 0; font-weight:500">Petições urgentes (não excluir — despachar):</p>
+      <ul class="atrib-list">
+        <li>Acordo para homologação</li>
+        <li>SISBAJUD: desbloqueio de vencimentos/proventos ou por excesso de execução</li>
+        <li>Tutela antecipada / liminar</li>
+        <li>Pedido de expedição de alvará em processo com prioridade de tramitação</li>
+        <li>Levantamento de indisponibilidade ou de penhora</li>
+        <li>Notícia de descumprimento de acordo</li>
+        <li>Pedido de desistência do processo</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="accordion" style="margin-top:10px">
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div>
+        <div class="acc-title">Atribuições das Assessorias — Resumo</div>
+        <div class="acc-sub">CON, LIQ, EXE e DAM</div>
+      </div>
+      <span class="acc-arrow">▾</span>
+    </div>
+    <div class="acc-body">
+      <div class="tabs" style="margin-bottom:16px">
+        <button class="tab-btn active" onclick="showTab('tab-r-con', this)">CON1/CON2</button>
+        <button class="tab-btn" onclick="showTab('tab-r-liq', this)">LIQ1/LIQ2</button>
+        <button class="tab-btn" onclick="showTab('tab-r-exe', this)">EXE1→EXE4</button>
+        <button class="tab-btn" onclick="showTab('tab-r-dam', this)">DAM</button>
+      </div>
+      <div id="tab-r-con" class="tab-content active">
+        <ul class="atrib-list">
+          <li><strong>CON1:</strong> Triagem inicial, despacho saneador, designação de audiência, notificações, encaminhamento de tutelas ao gabinete, análise de exceção de incompetência, cumprimento das atas</li>
+          <li><strong>CON2:</strong> Conclusão de sentença, controle de razões finais, processamento de incidentes e recursos, remessa ao 2º grau, recebimento de instância superior, registro de trânsito em julgado</li>
+          <li>Seção de Perícias/Diligências: controle de perícias, SISDOV, agenda unificada de peritos</li>
+        </ul>
+      </div>
+      <div id="tab-r-liq" class="tab-content">
+        <ul class="atrib-list">
+          <li><strong>LIQ1:</strong> Início da liquidação com despacho para cálculo e cumprimento de obrigação de fazer, liberação de valores incontroversos, controle de perícias, PJeCalc, parceria com calculistas</li>
+          <li><strong>LIQ2:</strong> Homologação de cálculos com liberação de valores, processamento de incidentes e recursos, parcelamento, retificação de cálculos, finalização do processo após pagamento espontâneo</li>
+        </ul>
+      </div>
+      <div id="tab-r-exe" class="tab-content">
+        <ul class="atrib-list">
+          <li><strong>EXE1:</strong> SISBAJUD início, mandadão, CNIB, início da execução com relatório "Processos Vinculados a Determinado Réu", concentração de atos por reclamada, art. 884 CLT</li>
+          <li><strong>EXE2:</strong> Pesquisas avançadas (CCS, COAF, SIMBA, CAGED, INFOSEG), inclusão de novos devedores (IDPJ, grupo econômico), sobrestamento/prescrição intercorrente</li>
+          <li><strong>EXE3:</strong> Hasta pública, alienação particular, grandes devedores, reunião de execuções, garimpo, carta de alienação/arrematação, DIVEX</li>
+          <li><strong>EXE4:</strong> Precatórios, RPV, RJ/Falência, certidão de habilitação, garimpo PJe, gestão de documentos, e-doc, planejamento para eliminação de arquivos</li>
+        </ul>
+      </div>
+      <div id="tab-r-dam" class="tab-content">
+        <ul class="atrib-list">
+          <li>Elaborar minutas de sentença dos incidentes em execução (Embargos à Execução e Impugnação à Sentença de Liquidação)</li>
+          <li>Designar servidor da LIQ para parecer de cálculos para subsidiar minuta de sentença</li>
+          <li>Realizar atos pós-sentença — cumprimento das determinações (mandado, alvará, intimação etc.)</li>
+          <li>Após vencimento de prazo, devolver à assessoria de origem para prosseguimento</li>
+          <li>Processamento dos incidentes das sentenças de execução e liberação de valores incontroversos</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion" style="margin-top:10px">
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div>
+        <div class="acc-title">Classificação de Urgências (DAA)</div>
+        <div class="acc-sub">Urgente · Atenção · Não urgente</div>
+      </div>
+      <span class="acc-arrow">▾</span>
+    </div>
+    <div class="acc-body">
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:8px">
+        <div style="background:#fde8e8; border:1px solid #f0b0b0; border-radius:var(--radius); padding:12px">
+          <div style="font-size:11px; font-weight:500; text-transform:uppercase; letter-spacing:0.04em; color:#c62828; margin-bottom:8px">🔴 Urgente — Imediato</div>
+          <ul style="font-size:12px; color:#7b1f1f; list-style:none">
+            <li style="padding:3px 0">• Desbloqueio de numerário impenhorável</li>
+            <li style="padding:3px 0">• Levantamento de restrições em proc. quitados</li>
+            <li style="padding:3px 0">• Tutelas de urgência / liminares</li>
+            <li style="padding:3px 0">• Sustação de leilões próximos</li>
+            <li style="padding:3px 0">• Proc. com audiência/perícia &lt; 30 dias</li>
+            <li style="padding:3px 0">• Acordo pendente de homologação</li>
+          </ul>
+        </div>
+        <div style="background:#fff8e1; border:1px solid #ffe082; border-radius:var(--radius); padding:12px">
+          <div style="font-size:11px; font-weight:500; text-transform:uppercase; letter-spacing:0.04em; color:#e65100; margin-bottom:8px">🟡 Atenção — Não Imediato</div>
+          <ul style="font-size:12px; color:#7f3a00; list-style:none">
+            <li style="padding:3px 0">• Situações que comprometem perícia</li>
+            <li style="padding:3px 0">• Depósitos judiciais não despachados</li>
+            <li style="padding:3px 0">• Certidões para falência/recuperação</li>
+            <li style="padding:3px 0">• Redesignação de audiências distantes</li>
+            <li style="padding:3px 0">• Processo "perdido" em tarefa</li>
+            <li style="padding:3px 0">• Ofícios ligados ao andamento processual</li>
+          </ul>
+        </div>
+        <div style="background:#e8f5e9; border:1px solid #a5d6a7; border-radius:var(--radius); padding:12px">
+          <div style="font-size:11px; font-weight:500; text-transform:uppercase; letter-spacing:0.04em; color:#1b5e20; margin-bottom:8px">🟢 Não Urgente — Sem providência</div>
+          <ul style="font-size:12px; color:#2e7d32; list-style:none">
+            <li style="padding:3px 0">• Todos os demais casos</li>
+            <li style="padding:3px 0">• Extrair informações do PJe</li>
+            <li style="padding:3px 0">• Verificar ordem cronológica</li>
+            <li style="padding:3px 0">• Informar ao advogado / parte</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /main -->
+
+<!-- OJ DETAIL MODAL -->
+<div class="detail-overlay" id="oj-modal">
+  <div class="detail-panel">
+    <div class="detail-header">
+      <div class="detail-header-left">
+        <h3 id="modal-title">—</h3>
+        <p id="modal-sub">—</p>
+      </div>
+      <button class="detail-close" onclick="closeOJ()">✕</button>
+    </div>
+    <div class="detail-body" id="modal-body"></div>
   </div>
 </div>
 
 <script>
-const TASKS = [
-  {key:'acordo',label:'Acordo',thresh:null},
-  {key:'analisar',label:'Analisar e Assinar',thresh:null},
-  {key:'analises',label:'Análises',thresh:null},
-  {key:'arquivados',label:'Arquivados',thresh:null},
-  {key:'audiencia',label:'Audiência',thresh:20000},
-  {key:'comunicacao',label:'Comunicação e Expedientes',thresh:null},
-  {key:'cumprimento',label:'Cumprimento de Providências',thresh:3000},
-  {key:'minutar_decisao',label:'Minutar Decisão',thresh:null},
-  {key:'minutar_despacho',label:'Minutar Despacho',thresh:null},
-  {key:'minutar_ed',label:'Minutar ED',thresh:null},
-  {key:'minutar_sentenca',label:'Minutar Sentença',thresh:null},
-  {key:'novos',label:'Novos Processos',thresh:null},
-  {key:'outros',label:'Outros',thresh:7000},
-  {key:'prazos',label:'Prazos Vencidos',thresh:500},
-  {key:'recebimento',label:'Recebimento e Remessa',thresh:null},
-];
-
-const VARAS = ['CON1','CON2','LIQ1','LIQ2','EXE1','EXE2','EXE3','EXE4','DAM','DIVEX'];
-const VARA_COLORS = ['#185FA5','#E24B4A','#1D9E75','#BA7517','#7B5EA7','#E67E22','#16A085','#C0392B','#2980B9','#8E44AD'];
-const SAMPLE = {acordo:1,analisar:218,analises:1388,arquivados:0,audiencia:21808,comunicacao:168,cumprimento:3615,minutar_decisao:259,minutar_despacho:34,minutar_ed:15,minutar_sentenca:5,novos:1794,outros:7487,prazos:832,recebimento:0};
-
-let snapshots = [];
-let currentVara = 'CON1';
-let charts = {};
-
-function loadData() {
-  try { const d=localStorage.getItem('pje_v4'); if(d) snapshots=JSON.parse(d); } catch(e) { snapshots=[]; }
-}
-function saveData() {
-  try { localStorage.setItem('pje_v4', JSON.stringify(snapshots.slice(-500))); } catch(e) {}
-}
-function fmtDate(ts) {
-  const d=new Date(ts);
-  return d.toLocaleDateString('pt-BR')+' '+d.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
-}
-function fmt(n) { return Number(n||0).toLocaleString('pt-BR'); }
-
-function getVaraData(snap, vara) {
-  if (snap.varas && snap.varas[vara]) return snap.varas[vara];
-  // Compatibilidade com snapshots antigos (só CON1)
-  if (vara === 'CON1') return {qtds: snap.data || {}, antigos: snap.antigos || {}, total: snap.total || 0};
-  return null;
-}
-
-function calcIdade(dataStr) {
-  if(!dataStr) return null;
-  try {
-    const parts = dataStr.split(' ')[0].split('/');
-    if(parts.length<3) return null;
-    const d = new Date(parseInt(parts[2]), parseInt(parts[1])-1, parseInt(parts[0]));
-    return Math.floor((Date.now()-d.getTime())/86400000);
-  } catch(e) { return null; }
-}
-
-function idadeHtml(dias) {
-  if(dias===null) return '<span style="color:var(--muted);font-size:11px;">—</span>';
-  let cls='idade-ok',txt=dias+' dias';
-  if(dias>365){cls='idade-critica';txt=Math.floor(dias/365)+'a '+(dias%365)+'d';}
-  else if(dias>180){cls='idade-alerta';}
-  return `<span class="idade-cell ${cls}">${txt}</span>`;
-}
-
-function buildVaraTabs() {
-  const c = document.getElementById('vara-tabs');
-  c.innerHTML = '';
-  const all = document.createElement('button');
-  all.className = 'vara-tab' + (currentVara==='ALL'?' active':'');
-  all.textContent = '🏛️ Todas';
-  all.onclick = () => { currentVara='ALL'; buildVaraTabs(); renderPainel(); };
-  c.appendChild(all);
-  VARAS.forEach(v => {
-    const btn = document.createElement('button');
-    btn.className = 'vara-tab' + (currentVara===v?' active':'');
-    btn.textContent = v;
-    btn.onclick = () => { currentVara=v; buildVaraTabs(); renderPainel(); checkAlerts(); };
-    c.appendChild(btn);
-  });
-}
-
-function getCurrentData(snap) {
-  if (currentVara === 'ALL') {
-    // Soma todas as varas
-    const qtds = {};
-    TASKS.forEach(t => { qtds[t.key] = 0; });
-    let total = 0;
-    if (snap.varas) {
-      Object.values(snap.varas).forEach(v => {
-        TASKS.forEach(t => { qtds[t.key] += (v.qtds?.[t.key]||0); });
-        total += v.total||0;
-      });
-    } else {
-      TASKS.forEach(t => { qtds[t.key] = snap.data?.[t.key]||0; });
-      total = snap.total||0;
-    }
-    return {qtds, total};
+const ojData = {
+  con1: {
+    title: 'CON1 — Assessoria de Conhecimento 1',
+    sub: 'Audiências e instrução processual',
+    chefes: [
+      { name: 'Deise Maria Cassaniga Azevedo', role: 'CJ3', cargo: 'Assessora-chefe' },
+      { name: 'Silvana Marcelino Braz', role: 'CJ3', cargo: 'Assessora-chefe' }
+    ],
+    equipe: [
+      { name: 'Rinaldo Pistolini', role: 'FC5' }, { name: 'Claudia Ferraz de Camargo', role: 'FC5' },
+      { name: 'Celio Aparecido Trombetta', role: 'FC5' }, { name: 'Ana Paula D Elia Vinhal', role: 'FC5' },
+      { name: 'Sandra Regina da Conceição Amaral', role: 'FC4' }, { name: 'Adriana Aparecida Pertile Municelli', role: 'FC4' },
+      { name: 'Erika Cristina Mendes de Campos Garcia', role: 'FC4' }, { name: 'Romilda Maria de Arruda Germano', role: 'FC4' },
+      { name: 'Joseane de Menezes Conde', role: 'FC2' }, { name: 'Celina Jacintho Pereira', role: 'FC4' },
+      { name: 'Claudia Maria Pastor', role: 'FC4' }, { name: 'Sandra Maria Segato Gazzeta', role: 'FC4' },
+      { name: 'Marina Lira Da Silveira Pinto', role: 'FC4' }, { name: 'Rogeria Helena Ap. Franzini Corazza', role: 'FC4' },
+      { name: 'Michelli Cristina Borges Sampaio', role: 'FC4' }, { name: 'Naara de Lucas Barbalho', role: 'FC4' },
+      { name: 'Cristina Ziani de Moura', role: 'FC4' }, { name: 'Maria Lúcia Alves Cavalcante', role: 'FC4' }
+    ],
+    atrib: ['Triagem inicial de novos processos','Despacho saneador','Designação de audiência','Notificação das partes','Encaminhar tutelas iniciais ao gabinete','Audiências iniciais, unas e de instrução','Cumprimento de atas','Análise de exceção de incompetência','Controle de perícias e diligências (Seção 02)','SISDOV'],
+    acervo: '~18.000 proc. em CON1 (acervo compartilhado)'
+  },
+  con2: {
+    title: 'CON2 — Assessoria de Conhecimento 2',
+    sub: 'Julgamento e recursos',
+    chefes: [
+      { name: 'Deise Maria Cassaniga Azevedo', role: 'CJ3', cargo: 'Assessora-chefe' },
+      { name: 'Silvana Marcelino Braz', role: 'CJ3', cargo: 'Assessora-chefe' }
+    ],
+    equipe: [
+      { name: 'Daniele Fernanda Stefani', role: 'FC4' }, { name: 'Dheise Monique Euphrasio', role: 'FC4' },
+      { name: 'Anita Bueno de Moraes Narciso', role: 'FC4' }, { name: 'Paula de Carvalho Ambar Lima', role: 'FC4' },
+      { name: 'Ana Claudia Rodrigues Abreu Bergonsini', role: 'FC4' }, { name: 'Emerson Alexandre Viola', role: 'FC5' },
+      { name: 'Elenira de Andrade Bicalho', role: 'FC4' }, { name: 'Débora Cerqueira Simão', role: 'FC4' },
+      { name: 'Aguinaldo Junior Yamamoto Peres', role: 'FC4' }, { name: 'Leandro Mac Fadden Negri', role: 'FC4' },
+      { name: 'Fabiana de Lemos Pedro', role: 'FC4' }, { name: 'Thiago Donizete Mendanha', role: 'FC4' },
+      { name: 'Michel Aquino de Souza', role: 'FC4' }, { name: 'Tatiana Maeyama', role: 'FC4' },
+      { name: 'Gabriel de Oliveira Silva', role: 'FC4' }, { name: 'André Luiz Fernandes Rocha (Mediador)', role: 'FC2' }
+    ],
+    atrib: ['Conclusão de sentença','Controle de razões finais','Processamento de incidentes e recursos','Remessa ao 2º grau','Recebimento de instância superior','Registro de trânsito em julgado','Encaminhamento pós-TJ para LIQ, EXE ou Arquivo'],
+    acervo: '2.747 proc. em CON2'
+  },
+  liq1: {
+    title: 'LIQ1 — Assessoria de Liquidação 1',
+    sub: 'Pré-Homologação · Cálculos e perícias',
+    chefes: [
+      { name: 'Wellington George Braga Paz', role: 'CJ3', cargo: 'Assessor-chefe' }
+    ],
+    equipe: [
+      { name: 'Heitor Augusto Scarpari Costa', role: 'FC5' }, { name: 'Tiago Souza Dias', role: 'FC2' },
+      { name: 'Maria Cecília Silveira Granato', role: 'FC2' }, { name: 'Mariana Penachioni Zangirolami', role: 'FC2' },
+      { name: 'Maria Cristina Ferreira Rodrigues de Lara', role: 'FC2' }, { name: 'Mauricio Jose Roque', role: 'FC2' },
+      { name: 'Marcio Roberto Vallim', role: 'FC2' }, { name: 'Gabriela Aparecida Severino de Andrade Tavares', role: 'FC2' },
+      { name: 'José Adriano Fiori', role: 'FC2' }, { name: 'Celso de Arruda Moreira', role: 'FC2' },
+      { name: 'Joao Victor Medeiros de Lucena', role: 'FC2' }, { name: 'Eneias Cristiano Eler', role: 'FC2' }
+    ],
+    atrib: ['Despacho inicial para cálculo e cumprimento de obrigação de fazer','Liberação de valores incontroversos durante apresentação de cálculos','Controle de perícias (designação, agenda, cobrança)','Tramitação no PJeCalc','Acordo do conhecimento','Nomeação de peritos (excepcional)','Demais intercorrências até processo apto para homologação'],
+    acervo: '7.346 processos em LIQ1'
+  },
+  liq2: {
+    title: 'LIQ2 — Assessoria de Liquidação 2',
+    sub: 'Homologação e Cumprimento Espontâneo',
+    chefes: [
+      { name: 'Vanderlei Baldessin', role: 'CJ1', cargo: 'Chefe de Divisão' },
+      { name: 'Paulo Sergio Salvador', role: 'CJ3', cargo: 'Assessor-chefe' }
+    ],
+    equipe: [
+      { name: 'Cristiany Contreras', role: 'FC5' }, { name: 'Juliana Marconi Penteado Pessin', role: 'FC4' },
+      { name: 'Jailton Leite da Silva', role: 'FC4' }, { name: 'Leandro Jose Christofoletti', role: 'FC4' },
+      { name: 'Renata Fabiana Parpinelli Ishihara', role: 'FC4' }, { name: 'Jose Carlos Merce', role: 'FC4' },
+      { name: 'Carolina Monteiro da Silveira', role: 'FC4' }, { name: 'Tiago Filipe Calegari', role: 'FC4' },
+      { name: 'Marcia Regina Marques de Paula', role: 'FC4' }, { name: 'Maria da Penha Alves Gomes Santos', role: 'FC4' },
+      { name: 'Rafaela Cabral Burato', role: 'FC4' }, { name: 'Marcelo de Jesus Rangel Monteiro', role: 'FC4' },
+      { name: 'Welder de Oliveira Moraes', role: 'FC4' }, { name: 'Fabiano Maiolini', role: 'FC4' },
+      { name: 'Mariana Cechinato Lorenzete', role: 'FC4' }, { name: 'Thais Furquim Soledade Neves Dela Vale', role: 'FC4' },
+      { name: 'Maria Luiza Guerra Martinelli', role: 'FC1' }, { name: 'Daiane Carla Santos Ledo Marques', role: 'FC2' }
+    ],
+    atrib: ['Homologação de cálculos com liberação de valores','Processamento de incidentes e recursos','Parcelamento','Retificação de cálculos','Parecer de incidentes','Liberação de valores pós-homologação','Finalização do processo após pagamento espontâneo'],
+    acervo: '2.331 processos em LIQ2'
+  },
+  exe1: {
+    title: 'EXE1 — Assessoria de Execução I',
+    sub: 'Trâmites Iniciais · Garantia e Mandadão',
+    chefes: [
+      { name: 'Roberta Elena Agostineto Tetzlaff', role: 'CJ3', cargo: 'Assessora-chefe' },
+      { name: 'Eduardo Augusto Veloso', role: 'CJ3', cargo: 'Assessor-chefe' }
+    ],
+    equipe: [
+      { name: 'Cristiane Ciolin Setin Pedro', role: 'FC5' }, { name: 'Janet Helena Faveri', role: 'FC5' },
+      { name: 'Maria Gardinali de Lima', role: 'FC2' }, { name: 'Daniela Hertel Grassmann', role: 'FC2' },
+      { name: 'Anelise Lino de Queiroz', role: 'FC2' }, { name: 'Wallace Diego Resende', role: 'FC2' },
+      { name: 'Neusa Aparecida Asbahr Bais', role: 'FC2' }
+    ],
+    atrib: ['SISBAJUD: início da execução — relatório "Processos Vinculados a um Determinado Réu"','Concentração dos atos: agrupamento por reclamada para IDPJ, SISBAJUD e mandadão','SISBAJUD integral: art. 884 CLT, liberação, incidentes → DAM','SISBAJUD parcial: intimar, liberar, EXEPJe, mandadão, CNIB','SISBAJUD negativo: mandadão + CNIB → EXE2 como frustrada','Retorno com garantia: art. 884 CLT, incidentes → DAM ou expropriação EXE3','Retorno sem garantia: 30 dias → EXE2 ou EXE3','Cartas precatórias e classes especiais (alvará, arresto, HTE, extijU, monitório)'],
+    acervo: '5.000 processos em EXE1'
+  },
+  exe2: {
+    title: 'EXE2 — Assessoria de Execução II',
+    sub: 'Pesquisas Avançadas e Reunião de Execuções',
+    chefes: [
+      { name: 'Fabio Ajudarte Lopes', role: 'CJ3', cargo: 'Assessor-chefe' },
+      { name: 'Filipe Shinzato Colevati', role: 'CJ3', cargo: 'Assessor-chefe' }
+    ],
+    equipe: [
+      { name: 'Marcio Elias Soares Gonçalves Siqueira', role: 'FC5' }, { name: 'Juliana Fiamenghi Misse Correia', role: 'FC5' },
+      { name: 'Daniel Carlos Alves de Pilla', role: 'FC1' }, { name: 'Eline Ana Sampaio Coradi Castro', role: 'FC2' },
+      { name: 'Calefe Alexandre de Oliveira', role: 'FC2' }, { name: 'Antenor Donida Bartoli', role: 'FC2' }
+    ],
+    atrib: ['Pesquisas avançadas de bens: CCS, COAF, SIMBA, CAGED, INFOSEG','Inclusão de devedores localizados até garantia e trânsito','Novos devedores: grupo econômico, sócios retirantes/ocultos, fraude, IDPJ','Execução frustrada: intima exequente (30 dias), GIGS de 2 anos, sobrestamento art. 11-A CLT','Planilha compartilhada de grandes devedores','Reunião de execuções individuais'],
+    acervo: '4.932 processos em EXE2'
+  },
+  exe3: {
+    title: 'EXE3 — Assessoria de Execução III',
+    sub: 'Expropriação, Execuções Coletivas e Garimpo',
+    chefes: [
+      { name: 'Marco César de Oliveira Wan-Meyl', role: 'CJ3', cargo: 'Assessor-chefe' },
+      { name: 'Nilton Rafael de Barros Silva', role: 'CJ3', cargo: 'Assessor-chefe' }
+    ],
+    equipe: [
+      { name: 'Cristina Ceratti', role: 'FC5' }, { name: 'Filipe Pereira dos Santos', role: 'FC5' },
+      { name: 'Antônio Abel de Lucca Júnior', role: 'FC2' }, { name: 'Fernando Brait Garros', role: 'FC2' },
+      { name: 'Agnelo Welington Silveira Castro', role: 'FC2' }, { name: 'Thayane Criscia Souto de Oliveira', role: 'FC2' },
+      { name: 'Milton Roberto da Silva', role: 'FC2' },
+      { name: 'Ana Sylvia Reis Couto Fernandes (DIVEX)', role: 'CJ1' },
+      { name: 'Merval Eliel Medeiros Braga (DIVEX)', role: 'FC2' },
+      { name: 'Camila dos Santos Zanetti (DIVEX)', role: 'FC2' }
+    ],
+    atrib: ['DIVEX Hasta pública — todos procedimentos de hasta','Expropriação: alienação particular e hasta pública (EXEPJE)','Carta de alienação/arrematação/adjudicação','Seção de Reunião de Execuções × DIVEX (investigação patrimonial)','Reunião de grandes devedores','Garimpo: todos os procedimentos (exceto processos físicos de VTs aglutinadas)','Execuções coletivas e unificadas'],
+    acervo: '4.416 processos em EXE3 + DIVEX'
+  },
+  exe4: {
+    title: 'EXE4 — Assessoria de Execução IV',
+    sub: 'Precatórios, Garimpo e RJ/Falência',
+    chefes: [
+      { name: 'João Gabriel da Silva Silveira', role: 'CJ3', cargo: 'Assessor-chefe' },
+      { name: 'Liliana Squarizzi Ferreira Cantarim', role: 'CJ3', cargo: 'Assessora-chefe' }
+    ],
+    equipe: [
+      { name: 'Elda Kesia de Almeida', role: 'FC5' }, { name: 'Alexandre de Brito Silva', role: 'FC5' },
+      { name: 'Regina Célia Bernardi Jorge', role: 'FC2' }, { name: 'Sueli Aparecida Binati', role: 'FC2' },
+      { name: 'Julio Cesar Cano', role: 'FC2' }, { name: 'José Luis Buratto', role: 'FC2' },
+      { name: 'Aparecida Maria Barbosa Zuqueto', role: 'FC2' }, { name: 'Marcia Helena Domenici', role: 'FC1' },
+      { name: 'Carmen Lucianita de Sene Bargas Giao', role: 'FC2' }, { name: 'Cristiane Cornelio Donega', role: 'FC5' }
+    ],
+    atrib: ['Setor de Precatórios: alinhar procedimentos com Assessoria de Precatórios, atualizar para liberação de valores','Garimpo: Depósitos judiciais e recursais','RJ/Falência: certidão de habilitação no Juízo Falimentar e Recuperação Judicial','IDPJ na fase de falência: apreciar e incluir sócios + SISBAJUD','Gestão de documentos: desarquivamento físico, e-DOC, planejamento de eliminação','Critérios para quadro de credores'],
+    acervo: '9.737 processos em EXE4'
+  },
+  dam: {
+    title: 'DAM — Divisão de Apoio aos Magistrados',
+    sub: 'Minutas de sentença e atos pós-decisão',
+    chefes: [
+      { name: 'Rafael Serra Cardoso', role: 'CJ1', cargo: 'Chefe da Divisão' }
+    ],
+    equipe: [
+      { name: 'Fernanda Godoy D\'Avila', role: 'FC2' },
+      { name: 'Ana Paula Fernandes Mesquini', role: 'FC2' }
+    ],
+    atrib: ['Elaborar minutas de sentença dos incidentes em execução (Embargos à Execução, Impugnação à Sentença de Liquidação)','Designar servidor da LIQ para parecer de cálculos (subsidiar minuta)','Realizar atos pós-sentença (mandado, alvará, intimação)','Processar incidentes das sentenças de execução','Liberação de valores incontroversos pós-sentença','Após vencimento de prazo, devolver à assessoria de origem'],
+    acervo: '553 processos em DAM'
+  },
+  divex: {
+    title: 'DIVEX — Divisão de Execução de Piracicaba',
+    sub: 'Investigação patrimonial e hasta pública',
+    chefes: [
+      { name: 'Ana Sylvia Reis Couto Fernandes', role: 'CJ1', cargo: 'Chefe da Divisão' }
+    ],
+    equipe: [
+      { name: 'Merval Eliel Medeiros Braga', role: 'FC2' },
+      { name: 'Camila dos Santos Zanetti', role: 'FC2' }
+    ],
+    atrib: ['Hasta pública: todos os procedimentos relativos a leilões','Alienação por iniciativa particular','Seção de investigação patrimonial','Reunião de execuções: processos de grandes devedores','Vinculada à EXE3'],
+    acervo: 'Incluído no acervo EXE3'
   }
-  const vd = getVaraData(snap, currentVara);
-  if (!vd) return null;
-  return {qtds: vd.qtds||{}, total: vd.total||0};
-}
+};
 
-function switchTab(t) {
-  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
-  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-  const tabs=['painel','comparativo','antigos','evolucao','tempo','historico','automatico'];
-  document.querySelectorAll('.tab')[tabs.indexOf(t)].classList.add('active');
-  document.getElementById('tab-'+t).classList.add('active');
-  if(t==='evolucao'){populateSelects();renderLineChart();populateBarSnapSelect();renderBarChart();}
-  if(t==='historico') renderHistorico();
-  if(t==='painel') renderPainel();
-  if(t==='antigos'){populateAntigosSelects();renderAntigos();}
-  if(t==='comparativo'){populateCompTaskSelect();renderComparativo();renderComparativoEvo();}
-  if(t==='tempo'){populateTempoSelects();renderTempoChart();renderTempoEvo();}
-}
+const badgeClass = r => {
+  const m = { 'CJ3':'badge-cj3','CJ1':'badge-cj1','FC5':'badge-fc5','FC4':'badge-fc4','FC2':'badge-fc2','FC1':'badge-fc1' };
+  return m[r] || 'badge-fc2';
+};
 
-function renderPainel() {
-  const grid = document.getElementById('cards-grid');
-  if(!snapshots.length) {
-    grid.innerHTML='<div class="empty" style="grid-column:1/-1">Carregue um JSON na aba ⚙️ Automático.</div>';
-    document.getElementById('last-update').textContent='Aguardando dados...';
-    document.getElementById('total-badge').textContent='— processos';
-    ['s-total','s-prazos','s-minutar'].forEach(id=>document.getElementById(id).textContent='—');
-    document.getElementById('s-snaps').textContent='0';
-    return;
-  }
-  const last = snapshots[snapshots.length-1];
-  const prev = snapshots.length>1?snapshots[snapshots.length-2]:null;
-  const cur = getCurrentData(last);
-  const prv = prev?getCurrentData(prev):null;
-  if (!cur) { grid.innerHTML='<div class="empty" style="grid-column:1/-1">Dados desta vara não disponíveis neste snapshot.</div>'; return; }
+function openOJ(id) {
+  const d = ojData[id];
+  if (!d) return;
+  document.getElementById('modal-title').textContent = d.title;
+  document.getElementById('modal-sub').textContent = d.sub;
 
-  document.getElementById('last-update').textContent='Atualizado: '+fmtDate(last.ts)+(currentVara!=='ALL'?' — '+currentVara:'');
-  document.getElementById('total-badge').textContent=fmt(cur.total)+' processos';
-  document.getElementById('s-total').textContent=fmt(cur.total);
-  document.getElementById('s-prazos').textContent=fmt(cur.qtds.prazos||0);
-  const min=(cur.qtds.minutar_decisao||0)+(cur.qtds.minutar_despacho||0)+(cur.qtds.minutar_ed||0)+(cur.qtds.minutar_sentenca||0);
-  document.getElementById('s-minutar').textContent=fmt(min);
-  document.getElementById('s-snaps').textContent=snapshots.length;
-  if(snapshots.length>1) document.getElementById('s-snaps-d').textContent='desde '+new Date(snapshots[0].ts).toLocaleDateString('pt-BR');
-
-  const dHtml=(v,pv,key)=>{if(!pv)return '';const d=(v.qtds[key]||0)-(pv.qtds[key]||0);if(d>0)return`<div class="sdelta up">▲ +${fmt(d)}</div>`;if(d<0)return`<div class="sdelta down">▼ ${fmt(d)}</div>`;return'<div class="sdelta">Sem variação</div>';};
-  document.getElementById('s-total-d').innerHTML=prv?(()=>{const d=cur.total-prv.total;return d>0?`<div class="sdelta up">▲ +${fmt(d)}</div>`:d<0?`<div class="sdelta down">▼ ${fmt(d)}</div>`:'<div class="sdelta">Sem variação</div>'})():'';
-  document.getElementById('s-prazos-d').innerHTML=dHtml(cur,prv,'prazos');
-
-  grid.innerHTML='';
-  TASKS.forEach(t=>{
-    const val=cur.qtds[t.key]||0;
-    const pval=prv?(prv.qtds[t.key]||0):null;
-    const d=pval!==null?val-pval:null;
-    const isCrit=t.thresh&&val>=t.thresh;
-    const vd=getVaraData(last,currentVara==='ALL'?'CON1':currentVara);
-    const hasAntigos=vd&&vd.antigos&&vd.antigos[t.key]&&vd.antigos[t.key].length>0;
-    const div=document.createElement('div');
-    div.className='task-card'+(isCrit?' crit':'');
-    div.onclick=()=>{switchTab('antigos');document.getElementById('antigos-task').value=t.key;renderAntigos();};
-    let dHtml2='';
-    if(d!==null){if(d>0)dHtml2=`<div class="tdelta up">▲ +${fmt(d)}</div>`;else if(d<0)dHtml2=`<div class="tdelta down">▼ ${fmt(d)}</div>`;else dHtml2='<div class="tdelta flat">Sem variação</div>';}
-    div.innerHTML=`${isCrit?'<div class="talert"></div>':''}<div class="tlabel" title="${t.label}">${t.label}</div><div class="tval">${fmt(val)}</div>${dHtml2}${hasAntigos?'<div style="font-size:10px;color:var(--accent);margin-top:4px;">🕐 ver mais antigos</div>':''}`;
-    grid.appendChild(div);
+  let html = '';
+  html += `<div class="detail-section"><h4>Chefia</h4><div class="team-grid">`;
+  d.chefes.forEach(c => {
+    html += `<div class="team-card"><div class="tc-name">${c.name}</div><div class="tc-role"><span class="badge ${badgeClass(c.role)}">${c.role}</span> ${c.cargo}</div></div>`;
   });
-  checkAlerts();
+  html += `</div></div>`;
+
+  html += `<div class="detail-section"><h4>Equipe (${d.equipe.length} servidores)</h4><div class="team-grid">`;
+  d.equipe.forEach(e => {
+    html += `<div class="team-card"><div class="tc-name">${e.name}</div><div class="tc-role"><span class="badge ${badgeClass(e.role)}">${e.role}</span></div></div>`;
+  });
+  html += `</div></div>`;
+
+  html += `<div class="detail-section"><h4>Atribuições</h4><ul class="atrib-list">`;
+  d.atrib.forEach(a => { html += `<li>${a}</li>`; });
+  html += `</ul></div>`;
+
+  html += `<div class="detail-section"><h4>Acervo</h4><p style="font-family:'Fraunces',serif;font-size:20px;font-weight:300;color:var(--navy)">${d.acervo}</p></div>`;
+
+  document.getElementById('modal-body').innerHTML = html;
+  document.getElementById('oj-modal').classList.add('open');
 }
 
-function renderComparativo() {
-  if(!snapshots.length) return;
-  const last = snapshots[snapshots.length-1];
-  document.getElementById('comp-sub').textContent=fmtDate(last.ts);
+function closeOJ() {
+  document.getElementById('oj-modal').classList.remove('open');
+}
 
-  const varasDisp = VARAS.filter(v=>getVaraData(last,v));
-  const totais = varasDisp.map(v=>{const d=getVaraData(last,v);return d?d.total:0;});
-  const colors = varasDisp.map((_,i)=>VARA_COLORS[i%VARA_COLORS.length]);
+document.getElementById('oj-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeOJ();
+});
 
-  const ctx=document.getElementById('vara-bar-chart').getContext('2d');
-  if(charts.varaBar) charts.varaBar.destroy();
-  charts.varaBar=new Chart(ctx,{type:'bar',data:{labels:varasDisp,datasets:[{label:'Processos',data:totais,backgroundColor:colors,borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{font:{size:12}},grid:{display:false}},y:{ticks:{font:{size:11}},grid:{color:'rgba(0,0,0,.05)'}}}}});
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById('section-'+id).classList.add('active');
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  document.getElementById('nav-'+id).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  return false;
+}
 
-  // Cards por vara
-  const grid=document.getElementById('vara-cards-grid');
-  const prev=snapshots.length>1?snapshots[snapshots.length-2]:null;
-  grid.innerHTML='';
-  varasDisp.forEach((v,i)=>{
-    const d=getVaraData(last,v);
-    const dp=prev?getVaraData(prev,v):null;
-    const delta=dp?d.total-dp.total:null;
-    const card=document.createElement('div');
-    card.className='vara-card';
-    card.style.borderTop=`3px solid ${VARA_COLORS[i%VARA_COLORS.length]}`;
-    let dHtml='';
-    if(delta!==null){if(delta>0)dHtml=`<div class="vc-delta up">▲ +${fmt(delta)}</div>`;else if(delta<0)dHtml=`<div class="vc-delta down">▼ ${fmt(delta)}</div>`;else dHtml='<div class="vc-delta" style="color:var(--muted)">Sem variação</div>';}
-    card.innerHTML=`<div class="vc-name">${v}</div><div class="vc-total">${fmt(d.total)}</div><div class="vc-sub">processos totais</div>${dHtml}`;
-    grid.appendChild(card);
+function showTab(id, btn) {
+  const parent = btn.closest('.section') || btn.closest('.acc-body') || document.body;
+  const scope = parent.querySelectorAll('.tab-content');
+  scope.forEach(t => t.classList.remove('active'));
+  const buttons = btn.closest('.tabs').querySelectorAll('.tab-btn');
+  buttons.forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+
+function toggleAcc(header) {
+  header.parentElement.classList.toggle('open');
+}
+
+function filterMagistrados(val) {
+  const rows = document.querySelectorAll('#mag-table tbody tr');
+  const q = val.toLowerCase();
+  rows.forEach(r => {
+    r.style.display = r.textContent.toLowerCase().includes(q) ? '' : 'none';
   });
 }
-
-function populateCompTaskSelect() {
-  const sel=document.getElementById('comp-task-select');
-  if(sel.options.length===TASKS.length) return;
-  sel.innerHTML='';
-  TASKS.forEach(t=>{const o=document.createElement('option');o.value=t.key;o.textContent=t.label;sel.appendChild(o);});
-}
-
-function renderComparativoEvo() {
-  if(!snapshots.length) return;
-  const key=document.getElementById('comp-task-select')?.value||TASKS[0].key;
-  const label=TASKS.find(t=>t.key===key)?.label||key;
-  document.getElementById('comp-evo-sub').textContent=label;
-  const labels=snapshots.map(s=>fmtDate(s.ts));
-  const datasets=VARAS.map((v,i)=>{
-    const data=snapshots.map(s=>{const d=getVaraData(s,v);return d?((d.qtds||{})[key]||0):null;});
-    if(data.every(d=>d===null||d===0)) return null;
-    return{label:v,data,borderColor:VARA_COLORS[i%VARA_COLORS.length],backgroundColor:'transparent',tension:.3,pointRadius:3};
-  }).filter(Boolean);
-  const ctx=document.getElementById('vara-line-chart').getContext('2d');
-  if(charts.varaLine) charts.varaLine.destroy();
-  charts.varaLine=new Chart(ctx,{type:'line',data:{labels,datasets},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:12,font:{size:11}}}},scales:{x:{ticks:{font:{size:11},maxRotation:45,autoSkip:true,maxTicksLimit:8},grid:{color:'rgba(0,0,0,.05)'}},y:{ticks:{font:{size:11}},grid:{color:'rgba(0,0,0,.05)'}}}}});
-}
-
-function populateAntigosSelects() {
-  const ts=document.getElementById('antigos-task');
-  if(ts.options.length!==TASKS.length){ts.innerHTML='';TASKS.forEach(t=>{const o=document.createElement('option');o.value=t.key;o.textContent=t.label;ts.appendChild(o);});}
-  const ss=document.getElementById('antigos-snap');
-  ss.innerHTML='';
-  [...snapshots].reverse().forEach((s,i)=>{const o=document.createElement('option');o.value=snapshots.length-1-i;o.textContent=fmtDate(s.ts)+(i===0?' (mais recente)':'');ss.appendChild(o);});
-}
-
-function renderAntigos() {
-  const key=document.getElementById('antigos-task')?.value||TASKS[0].key;
-  const snapIdx=parseInt(document.getElementById('antigos-snap')?.value??snapshots.length-1);
-  const content=document.getElementById('antigos-content');
-  const taskLabel=TASKS.find(t=>t.key===key)?.label||key;
-  if(!snapshots.length){content.innerHTML='<div class="empty">Carregue um JSON.</div>';return;}
-  const snap=snapshots[snapIdx];
-  if(!snap){content.innerHTML='<div class="empty">Snapshot não encontrado.</div>';return;}
-
-  const vara=currentVara==='ALL'?'CON1':currentVara;
-  const vd=getVaraData(snap,vara);
-  const antigos=vd?.antigos?.[key];
-  const qtd=vd?.qtds?.[key]||0;
-
-  if(!antigos||antigos.length===0){
-    content.innerHTML=`<div class="antigos-table-wrap"><div class="antigos-header"><div><div class="ah-title">${taskLabel} — ${vara}</div><div class="ah-sub">${fmt(qtd)} processos — sem dados de antiguidade</div></div></div></div>`;
-    return;
-  }
-  let rows='';
-  antigos.forEach((p,i)=>{
-    const dias=calcIdade(p.desde);
-    const rankCls=i===0?'rank-badge top1':i<3?'rank-badge top3':'rank-badge';
-    rows+=`<tr><td><span class="${rankCls}">${p.rank||i+1}</span></td><td><span class="proc-num">${p.numero}</span></td><td style="font-size:12px;">${p.desde||'—'}</td><td>${idadeHtml(dias)}</td></tr>`;
-  });
-  const maisAntigo=antigos[0];
-  const diasMaisAntigo=calcIdade(maisAntigo?.desde);
-  content.innerHTML=`<div class="antigos-table-wrap"><div class="antigos-header"><div><div class="ah-title">${taskLabel} — ${vara}</div><div class="ah-sub">${fmt(qtd)} processos | ${antigos.length} mais antigos | ${fmtDate(snap.ts)}</div></div>${diasMaisAntigo!==null?`<span class="info-tag">⏱️ Mais antigo: ${diasMaisAntigo} dias</span>`:''}</div><div style="overflow-x:auto;"><table class="antigos-table"><thead><tr><th>#</th><th>Processo</th><th>Na tarefa desde</th><th>Idade</th></tr></thead><tbody>${rows}</tbody></table></div></div>`;
-}
-
-function populateSelects() {
-  const evo=document.getElementById('evo-task');
-  if(evo.options.length!==TASKS.length){evo.innerHTML='';TASKS.forEach(t=>{const o=document.createElement('option');o.value=t.key;o.textContent=t.label;evo.appendChild(o);});}
-}
-
-function populateBarSnapSelect() {
-  const sel=document.getElementById('bar-snap-select');
-  sel.innerHTML='';
-  [...snapshots].reverse().forEach((s,i)=>{const o=document.createElement('option');o.value=snapshots.length-1-i;o.textContent=fmtDate(s.ts)+(i===0?' (mais recente)':'');sel.appendChild(o);});
-}
-
-function renderLineChart() {
-  const key=document.getElementById('evo-task')?.value||TASKS[0].key;
-  const label=TASKS.find(t=>t.key===key)?.label||key;
-  const vara=currentVara==='ALL'?null:currentVara;
-  const labels=snapshots.map(s=>fmtDate(s.ts));
-  const data=snapshots.map(s=>{const d=vara?getVaraData(s,vara):getCurrentData(s);return(d?.qtds||d?.data||{})[key]||0;});
-  document.getElementById('line-title').textContent='Evolução — '+label+(vara?' ('+vara+')':'');
-  document.getElementById('line-sub').textContent=snapshots.length+' snapshot(s)';
-  const ctx=document.getElementById('line-chart').getContext('2d');
-  if(charts.line) charts.line.destroy();
-  charts.line=new Chart(ctx,{type:'line',data:{labels,datasets:[{label,data,borderColor:'#185FA5',backgroundColor:'rgba(24,95,165,.07)',tension:.3,fill:true,pointRadius:4,pointBackgroundColor:'#185FA5'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{font:{size:11},maxRotation:45,autoSkip:true,maxTicksLimit:8},grid:{color:'rgba(0,0,0,.05)'}},y:{ticks:{font:{size:11}},grid:{color:'rgba(0,0,0,.05)'}}}}});
-}
-
-function renderBarChart() {
-  const snapIdx=parseInt(document.getElementById('bar-snap-select')?.value??snapshots.length-1);
-  if(snapshots.length===0||snapIdx<0||snapIdx>=snapshots.length) return;
-  const snap=snapshots[snapIdx];
-  const vara=currentVara==='ALL'?null:currentVara;
-  const d=vara?getVaraData(snap,vara):getCurrentData(snap);
-  if(!d) return;
-  document.getElementById('bar-sub').textContent=fmtDate(snap.ts)+(vara?' — '+vara:'');
-  const qtds=d.qtds||d.data||{};
-  const labels=TASKS.map(t=>t.label.split(' ').slice(0,2).join(' '));
-  const data=TASKS.map(t=>qtds[t.key]||0);
-  const colors=TASKS.map(t=>t.thresh&&(qtds[t.key]||0)>=t.thresh?'#E24B4A':'#185FA5');
-  const ctx=document.getElementById('bar-chart').getContext('2d');
-  if(charts.bar) charts.bar.destroy();
-  charts.bar=new Chart(ctx,{type:'bar',data:{labels,datasets:[{label:'Processos',data,backgroundColor:colors,borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{font:{size:10},maxRotation:45,autoSkip:false},grid:{display:false}},y:{ticks:{font:{size:11}},grid:{color:'rgba(0,0,0,.05)'}}}}});
-}
-
-// TEMPO MÉDIO DE PERMANÊNCIA
-function calcTempoMedio() {
-  if(snapshots.length<2) return {};
-  const vara=currentVara==='ALL'?'CON1':currentVara;
-  const tempos={};
-  TASKS.forEach(t=>{tempos[t.key]=[];});
-
-  for(let i=1;i<snapshots.length;i++){
-    const prev=snapshots[i-1];
-    const curr=snapshots[i];
-    const dp=getVaraData(prev,vara);
-    const dc=getVaraData(curr,vara);
-    if(!dp||!dc) continue;
-
-    TASKS.forEach(t=>{
-      const antPrev=dp.antigos?.[t.key]||[];
-      const antCurr=dc.antigos?.[t.key]||[];
-      if(!antPrev.length) return;
-
-      const numsCurr=new Set(antCurr.map(p=>p.numero));
-      const saidos=antPrev.filter(p=>!numsCurr.has(p.numero));
-
-      saidos.forEach(p=>{
-        const dias=calcIdade(p.desde);
-        if(dias!==null&&dias>0) tempos[t.key].push(dias);
-      });
-    });
-  }
-
-  const resultado={};
-  TASKS.forEach(t=>{
-    const vals=tempos[t.key];
-    resultado[t.key]=vals.length>0?Math.round(vals.reduce((a,b)=>a+b,0)/vals.length):null;
-  });
-  return resultado;
-}
-
-function populateTempoSelects() {
-  const sel=document.getElementById('tempo-task-select');
-  if(sel.options.length===TASKS.length) return;
-  sel.innerHTML='';
-  TASKS.forEach(t=>{const o=document.createElement('option');o.value=t.key;o.textContent=t.label;sel.appendChild(o);});
-}
-
-function renderTempoChart() {
-  if(snapshots.length<2){document.getElementById('tempo-sub').textContent='Necessário pelo menos 2 snapshots com dados de antiguidade.';return;}
-  const tempos=calcTempoMedio();
-  const labels=TASKS.filter(t=>tempos[t.key]!==null).map(t=>t.label.split(' ').slice(0,2).join(' '));
-  const data=TASKS.filter(t=>tempos[t.key]!==null).map(t=>tempos[t.key]);
-  const colors=data.map(v=>v>365?'#E24B4A':v>180?'#BA7517':'#1D9E75');
-  document.getElementById('tempo-sub').textContent='Baseado em '+snapshots.length+' snapshots — processos que saíram da tarefa entre coletas';
-  const ctx=document.getElementById('tempo-chart').getContext('2d');
-  if(charts.tempo) charts.tempo.destroy();
-  charts.tempo=new Chart(ctx,{type:'bar',data:{labels,datasets:[{label:'Dias médios',data,backgroundColor:colors,borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>`${ctx.parsed.y} dias em média`}}},scales:{x:{ticks:{font:{size:10},maxRotation:45,autoSkip:false},grid:{display:false}},y:{ticks:{font:{size:11}},grid:{color:'rgba(0,0,0,.05)'},title:{display:true,text:'Dias',font:{size:11}}}}}});
-}
-
-function renderTempoEvo() {
-  if(snapshots.length<2) return;
-  const key=document.getElementById('tempo-task-select')?.value||TASKS[0].key;
-  const label=TASKS.find(t=>t.key===key)?.label||key;
-  const vara=currentVara==='ALL'?'CON1':currentVara;
-  document.getElementById('tempo-evo-title').textContent='Evolução do tempo médio — '+label;
-
-  const pontos=[];
-  for(let i=1;i<snapshots.length;i++){
-    const prev=snapshots[i-1];
-    const curr=snapshots[i];
-    const dp=getVaraData(prev,vara);
-    const dc=getVaraData(curr,vara);
-    if(!dp||!dc) continue;
-    const antPrev=dp.antigos?.[key]||[];
-    const antCurr=dc.antigos?.[key]||[];
-    const numsCurr=new Set(antCurr.map(p=>p.numero));
-    const saidos=antPrev.filter(p=>!numsCurr.has(p.numero));
-    const dias=saidos.map(p=>calcIdade(p.desde)).filter(d=>d!==null&&d>0);
-    const media=dias.length>0?Math.round(dias.reduce((a,b)=>a+b,0)/dias.length):null;
-    pontos.push({ts:curr.ts,media,saidos:saidos.length});
-  }
-
-  const labels=pontos.map(p=>fmtDate(p.ts));
-  const data=pontos.map(p=>p.media);
-  document.getElementById('tempo-evo-sub').textContent=pontos.reduce((a,p)=>a+(p.saidos||0),0)+' processos saíram desta tarefa no período analisado';
-
-  const ctx=document.getElementById('tempo-evo-chart').getContext('2d');
-  if(charts.tempoEvo) charts.tempoEvo.destroy();
-  charts.tempoEvo=new Chart(ctx,{type:'line',data:{labels,datasets:[{label:'Dias médios',data,borderColor:'#185FA5',backgroundColor:'rgba(24,95,165,.07)',tension:.3,fill:true,pointRadius:4,pointBackgroundColor:'#185FA5',spanGaps:true}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{font:{size:11},maxRotation:45,autoSkip:true,maxTicksLimit:8},grid:{color:'rgba(0,0,0,.05)'}},y:{ticks:{font:{size:11}},grid:{color:'rgba(0,0,0,.05)'},title:{display:true,text:'Dias',font:{size:11}}}}}});
-}
-
-function renderHistorico() {
-  const c=document.getElementById('history-container');
-  if(!snapshots.length){c.innerHTML='<div class="empty">Nenhum snapshot.</div>';return;}
-  const varasDisponiveis=snap=>snap.varas?Object.keys(snap.varas):['CON1'];
-  let html=`<table class="history-table"><thead><tr><th>#</th><th>Data / Hora</th><th>Total</th><th>Varas</th><th>Ações</th></tr></thead><tbody>`;
-  [...snapshots].reverse().forEach((s,ri)=>{
-    const i=snapshots.length-1-ri;
-    const varas=varasDisponiveis(s).join(', ');
-    html+=`<tr><td style="color:var(--muted);font-size:12px;">${snapshots.length-ri}</td><td>${fmtDate(s.ts)}</td><td style="font-weight:600;">${fmt(s.total)}</td><td style="font-size:12px;color:var(--muted)">${varas}</td><td><button class="btn-danger" style="padding:4px 10px;font-size:11px;" onclick="deleteSnap(${i})">🗑️</button></td></tr>`;
-  });
-  html+='</tbody></table>';
-  c.innerHTML=html;
-}
-
-function deleteSnap(i){if(!confirm('Excluir?'))return;snapshots.splice(i,1);saveData();renderHistorico();renderPainel();}
-function clearAll(){if(!confirm('Apagar tudo?'))return;snapshots=[];saveData();renderHistorico();renderPainel();}
-
-function checkAlerts() {
-  if(!snapshots.length) return;
-  const last=snapshots[snapshots.length-1];
-  const cur=getCurrentData(last);
-  if(!cur) return;
-  const thresholds=[{key:'prazos',thresh:500},{key:'audiencia',thresh:20000},{key:'cumprimento',thresh:3000},{key:'outros',thresh:7000}];
-  const alerts=thresholds.filter(({key,thresh})=>(cur.qtds[key]||0)>=thresh).map(({key})=>{const t=TASKS.find(t=>t.key===key);return`${t.label}: ${fmt(cur.qtds[key])}`});
-  const bar=document.getElementById('alertbar');
-  const ab=document.getElementById('alert-badge');
-  if(alerts.length){bar.className='alertbar show';document.getElementById('alert-text').textContent='Filas críticas: '+alerts.join(' | ');ab.textContent=alerts.length+' alertas';ab.style.display='inline';}
-  else{bar.className='alertbar';ab.style.display='none';}
-}
-
-function loadJSON(event) {
-  const file=event.target.files[0];if(!file) return;
-  const reader=new FileReader();
-  reader.onload=e=>{
-    try{
-      const data=JSON.parse(e.target.result);
-      if(Array.isArray(data)){
-        snapshots=[...snapshots,...data].sort((a,b)=>a.ts-b.ts);
-        const seen=new Set();
-        snapshots=snapshots.filter(s=>{if(seen.has(s.ts))return false;seen.add(s.ts);return true;});
-        saveData();renderPainel();checkAlerts();buildVaraTabs();
-        alert('✅ '+data.length+' snapshot(s) importados!');
-      }
-    }catch(err){alert('Erro ao ler JSON: '+err.message);}
-  };
-  reader.readAsText(file);
-}
-
-function exportJSON(){
-  const blob=new Blob([JSON.stringify(snapshots,null,2)],{type:'application/json'});
-  const a=document.createElement('a');a.href=URL.createObjectURL(blob);
-  a.download='pje_dados_'+new Date().toISOString().slice(0,10)+'.json';a.click();
-}
-
-// Init
-loadData();
-buildVaraTabs();
-renderPainel();
-checkAlerts();
 </script>
 </body>
 </html>
