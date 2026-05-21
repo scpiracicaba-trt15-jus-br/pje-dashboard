@@ -1151,9 +1151,15 @@ nav {
           <div class="dept">EXE2</div>
           <div class="name">Pesquisas Avançadas<br><strong>Fabio Ajudarte Lopes</strong><br><strong>Filipe Shinzato Colevati</strong></div>
         </div>
-        <div class="org-box exe">
-          <div class="dept">EXE3</div>
-          <div class="name">Expropriação / DIVEX<br><strong>Marco César de Oliveira Wan-Meyl</strong><br><strong>Nilton Rafael de Barros Silva</strong><br><strong>Ana Sylvia Reis Couto Fernandes</strong></div>
+        <div class="org-box exe" style="padding:0; overflow:hidden;">
+          <div style="padding:12px 14px 8px; border-bottom:1px solid rgba(124,58,107,0.2);">
+            <div class="dept">EXE3</div>
+            <div class="name">Expropriação<br><strong>Marco César de Oliveira Wan-Meyl</strong><br><strong>Nilton Rafael de Barros Silva</strong></div>
+          </div>
+          <div style="padding:8px 14px 12px; background:rgba(124,58,107,0.05);">
+            <div class="dept" style="font-size:11px; margin-bottom:4px;">DIVEX</div>
+            <div class="name" style="font-size:12px;"><strong>Ana Sylvia Reis Couto Fernandes</strong></div>
+          </div>
         </div>
         <div class="org-box exe">
           <div class="dept">EXE4</div>
@@ -1330,6 +1336,22 @@ nav {
       
     </div>
 
+    <div class="oj-card daa" onclick="openOJ('cejusc')" style="border-top:3px solid var(--gold)">
+      <div class="oj-card-header">
+        <div class="oj-icon" style="background:var(--gold-pale);color:#a07a00;font-size:11px">CEJ</div>
+        <div><div class="oj-card-title" style="color:#a07a00">CEJUSC</div><div class="oj-card-sub">Centro Judiciário de Solução de Conflitos</div></div>
+      </div>
+      <div class="oj-card-body">
+        <div class="oj-attr-row"><span class="key">Assessores Responsáveis</span><span class="val">Ana Luisa de Faria · Alexandre Francischetti</span></div>
+        <div class="oj-attr-row"><span class="key">Tarefas-chave</span></div>
+        <div>
+          <span class="oj-pill">Mediação</span>
+          <span class="oj-pill">Conciliação</span>
+          <span class="oj-pill">Acordos pré-processuais</span>
+        </div>
+      </div>
+    </div>
+
     <div class="oj-card daa" onclick="openOJ('daa')">
       <div class="oj-card-header">
         <div class="oj-icon" style="font-size:12px">DAA</div>
@@ -1367,7 +1389,7 @@ nav {
     <div class="oj-card daa" onclick="openOJ('ojs')">
       <div class="oj-card-header">
         <div class="oj-icon" style="background:rgba(10,22,40,0.08);color:var(--navy);font-size:12px">OJ</div>
-        <div><div class="oj-card-title">Oficiais de Justiça</div><div class="oj-card-sub">28 oficiais · 11 cidades</div></div>
+        <div><div class="oj-card-title">Oficiais de Justiça</div><div class="oj-card-sub">25 oficiais · 11 cidades</div></div>
       </div>
       <div class="oj-card-body">
         <div class="oj-attr-row"><span class="key">Piracicaba</span><span class="val">6 oficiais</span></div>
@@ -1764,9 +1786,10 @@ nav {
 
   <div class="tabs">
     <button class="tab-btn active" onclick="showTab('tab-f-mag', this)">Magistrados</button>
-    <button class="tab-btn" onclick="showTab('tab-f-srv', this)">Servidores (DAA)</button>
+    <button class="tab-btn" onclick="showTab('tab-f-srv', this)">Servidores</button>
   </div>
 
+  <!-- MAGISTRADOS -->
   <div id="tab-f-mag" class="tab-content active">
     <div style="background:white; border:1px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; overflow-x:auto;">
       <table class="ferias-table">
@@ -1782,66 +1805,232 @@ nav {
           <tr><td>Luciane Cristina Muraro de Freitas</td><td>VT Hortolândia</td><td><span class="ferias-badge">22/06–11/07</span></td><td><span class="ferias-badge">21/09–10/10</span></td><td>20+20</td></tr>
           <tr><td>Lady Ane de Paula Santos Della Rocca</td><td>VT Leme</td><td><span class="ferias-badge">23/06–12/07</span></td><td><span class="ferias-badge">24/09–13/10</span></td><td>20+20</td></tr>
           <tr><td>Regina Rodrigues Urbano</td><td>VT Leme</td><td><span class="ferias-badge">12/03–31/03</span></td><td><span class="ferias-badge">15/07–03/08</span></td><td>20+20</td></tr>
-          <tr><td>Thiago Henrique Ament</td><td>1ª VT Limeira</td><td><span class="ferias-badge">22/04–11/05</span></td><td><span class="ferias-badge">21/09–10/10</span></td><td>20+20</td></tr>
-          <tr><td>Erika de Franceschi</td><td>1ª VT Limeira</td><td><span class="ferias-badge">22/01–10/02</span></td><td><span class="ferias-badge">22/06–21/07</span></td><td>20+30</td></tr>
+          <tr><td>Thiago Henrique Ament</td><td>1ª VT Limeira</td><td><span class="ferias-badge">22/04–11/05</span></td><td><span class="ferias-badge">28/06–17/07</span></td><td>20+20</td></tr>
+          <tr><td>Erika de Franceschi</td><td>1ª VT Limeira</td><td><span class="ferias-badge">22/01–10/02</span></td><td><span class="ferias-badge">21/09–10/10</span></td><td>20+20</td></tr>
           <tr><td>Aparecido Batista de Oliveira</td><td>1ª VT Piracicaba</td><td><span class="ferias-badge">15/06–14/07</span></td><td><span class="ferias-badge">18/11–17/12</span></td><td>30+30</td></tr>
           <tr><td>Vilson Antonio Previde</td><td>1ª VT Piracicaba</td><td><span class="ferias-badge">19/02–10/03</span></td><td><span class="ferias-badge">20/07–18/08</span></td><td>20+30</td></tr>
-          <tr><td>Carlos Eduardo Vianna Mendes</td><td>2ª VT Piracicaba</td><td><span class="ferias-badge">07/01–26/01</span></td><td><span class="ferias-badge">09/02–28/02</span></td><td>20+20</td></tr>
-          <tr><td>Eduardo Alexandre da Silva</td><td>2ª VT Piracicaba</td><td><span class="ferias-badge">01/07–30/07</span></td><td><span class="ferias-badge">18/11–17/12</span></td><td>30+30</td></tr>
-          <tr><td>Erica Escarassatte</td><td>3ª VT Piracicaba</td><td><span class="ferias-badge">17/01–05/02</span></td><td><span class="ferias-badge">20/07–08/08</span></td><td>20+20</td></tr>
-          <tr><td>Emanuele Pessatti Siqueira Rocha</td><td>3ª VT Piracicaba</td><td><span class="ferias-badge">15/06–14/07</span></td><td><span class="ferias-badge">18/11–17/12</span></td><td>30+30</td></tr>
-          <tr><td>Flavia Farias de Arruda Corseuil</td><td>VT Rio Claro</td><td><span class="ferias-badge">20/07–18/08</span></td><td><span class="ferias-badge">03/11–22/11</span></td><td>30+20</td></tr>
-          <tr><td>Felipe Bernardes Rodrigues</td><td>VT Rio Claro</td><td><span class="ferias-badge">26/06–15/07</span></td><td><span class="ferias-badge">29/11–18/12</span></td><td>20+20</td></tr>
+          <tr><td>Carlos Eduardo Vianna Mendes</td><td>2ª VT Piracicaba</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Eduardo Alexandre da Silva</td><td>2ª VT Piracicaba</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Erica Escarassatte</td><td>3ª VT Piracicaba</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Emanuele Pessatti Siqueira Rocha</td><td>3ª VT Piracicaba</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Flavia Farias de Arruda Corseuil</td><td>VT Rio Claro</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Felipe Bernardes Rodrigues</td><td>VT Rio Claro</td><td>—</td><td>—</td><td>—</td></tr>
           <tr><td>Cristiane Kawanaka de Pontes</td><td>VT Santa Bárbara</td><td><span class="ferias-badge">26/01–14/02</span></td><td><span class="ferias-badge">13/07–01/08</span></td><td>20+20</td></tr>
-          <tr><td>Henrique Macedo Hinz</td><td>VT Santa Bárbara</td><td><span class="ferias-badge">06/04–25/04</span></td><td><span class="ferias-badge">28/11–17/12</span></td><td>20+20</td></tr>
-          <tr><td>Cristiane Souza de Castro Toledo</td><td>VT São João da B. Vista</td><td><span class="ferias-badge">27/04–16/05</span></td><td><span class="ferias-badge">15/06–04/07</span></td><td>20+20</td></tr>
-          <tr><td>Iara Maria Rodrigues</td><td>VT São João da B. Vista</td><td><span class="ferias-badge">20/05–08/06</span></td><td><span class="ferias-badge">16/09–05/10</span></td><td>20+20</td></tr>
+          <tr><td>Henrique Macedo Hinz</td><td>VT Santa Bárbara</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Cristiane Souza de Castro Toledo</td><td>VT São João da B. Vista</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Iara Maria Rodrigues</td><td>VT São João da B. Vista</td><td>—</td><td>—</td><td>—</td></tr>
           <tr><td>Ronaldo Capelari</td><td>VT Sumaré</td><td><span class="ferias-badge">13/04–02/05</span></td><td><span class="ferias-badge">17/08–05/09</span></td><td>20+20</td></tr>
-          <tr><td>Francina Nunes da Costa</td><td>VT Sumaré</td><td><span class="ferias-badge">02/07–31/07</span></td><td><span class="ferias-badge">19/11–18/12</span></td><td>30+30</td></tr>
+          <tr><td>Francina Nunes da Costa</td><td>VT Sumaré</td><td>—</td><td>—</td><td>—</td></tr>
           <tr><td>Carla Gabriella Grah Sens</td><td>VT Sumaré</td><td><span class="ferias-badge">23/03–11/04</span></td><td><span class="ferias-badge">17/09–06/10</span></td><td>20+20</td></tr>
-          <tr><td>Luis Furian Zorzetto</td><td>VT Mogi Guaçu</td><td><span class="ferias-badge">15/07–03/08</span></td><td><span class="ferias-badge">16/09–15/10</span></td><td>20+30</td></tr>
-          <tr><td>Leticia Gouveia Antonioli</td><td>VT Mogi Guaçu</td><td><span class="ferias-badge">12/01–10/02</span></td><td><span class="ferias-badge">15/06–14/07</span></td><td>30+30</td></tr>
+          <tr><td>Luis Furian Zorzetto</td><td>VT Mogi Guaçu</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Leticia Gouveia Antonioli</td><td>VT Mogi Guaçu</td><td>—</td><td>—</td><td>—</td></tr>
         </tbody>
       </table>
     </div>
   </div>
 
+  <!-- SERVIDORES -->
   <div id="tab-f-srv" class="tab-content">
-    <div class="notice gold">
-      <span>📌</span>
-      <span>Escala completa dos servidores do DAA disponível na aba "DAA - reserva" da planilha. Consulte o Drive compartilhado para dados detalhados por cidade.</span>
-    </div>
     <div style="background:white; border:1px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; overflow-x:auto;">
       <table class="ferias-table">
-        <thead><tr><th>Cidade / Servidor(a)</th><th>OJ</th><th>Período de Férias 2026</th></tr></thead>
+        <thead><tr><th>Servidor(a)</th><th>Setor</th><th>1º Período</th><th>2º Período</th><th>3º Período</th></tr></thead>
         <tbody>
-          <tr><td colspan="3" style="font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.04em;color:var(--text-muted);background:var(--cream);padding:8px 14px;">Piracicaba</td></tr>
-          <tr><td>Mauricio Jose Roque</td><td>LIQ1</td><td>—</td></tr>
-          <tr><td>Rogerio Zambon Canale (DAA)</td><td>DAA</td><td><span class="ferias-badge">23/03–31/03</span></td></tr>
-          <tr><td>Angela Beatriz Gonçales (DAA)</td><td>DAA</td><td><span class="ferias-badge">05/05–03/06</span></td></tr>
-          <tr><td>Luiz Paolieri Neto (DAA)</td><td>DAA</td><td><span class="ferias-badge">07/01–16/01</span></td></tr>
-          <tr><td colspan="3" style="font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.04em;color:var(--text-muted);background:var(--cream);padding:8px 14px;">Americana</td></tr>
-          <tr><td>Natalina Maria Borges Xavier</td><td>CON1</td><td>—</td></tr>
-          <tr><td>Nilza Misael Ferreira</td><td>CON1</td><td>—</td></tr>
-          <tr><td colspan="3" style="font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.04em;color:var(--text-muted);background:var(--cream);padding:8px 14px;">Leme</td></tr>
-          <tr><td>Ivi Cristina Indalecio Bueno</td><td>CON1</td><td><span class="ferias-badge">13/07–01/08 e 04/12–18/12</span></td></tr>
-          <tr><td>Anelise Lino de Queiroz</td><td>EXE1</td><td>—</td></tr>
-          <tr><td colspan="3" style="font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.04em;color:var(--text-muted);background:var(--cream);padding:8px 14px;">Araras</td></tr>
-          <tr><td>José Adriano Fiori</td><td>LIQ1</td><td><span class="ferias-badge">08/06–22/06 e 14/09–28/09</span></td></tr>
-          <tr><td>Isabela Freitas de Souza</td><td>—</td><td><span class="ferias-badge">16/03–30/03 e 04/12–18/12</span></td></tr>
-          <tr><td>Roberta Rodrigues Urbano</td><td>CON2</td><td>—</td></tr>
-          <tr><td colspan="3" style="font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.04em;color:var(--text-muted);background:var(--cream);padding:8px 14px;">Mogi Guaçu</td></tr>
-          <tr><td>Sueli Aparecida Binatti</td><td>EXE4</td><td><span class="ferias-badge">08–22/06 e 14–28/09</span></td></tr>
-          <tr><td>Fernando Brait Garros</td><td>EXE3</td><td><span class="ferias-badge">06–17/04 e 01–18/12</span></td></tr>
-          <tr><td colspan="3" style="font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.04em;color:var(--text-muted);background:var(--cream);padding:8px 14px;">Rio Claro</td></tr>
-          <tr><td>Regina Célia Bernardi Jorge</td><td>EXE4</td><td><span class="ferias-badge">07–16/01</span></td></tr>
-          <tr><td>Daniel Carlos Alves de Pilla</td><td>EXE2</td><td><span class="ferias-badge">02/02–12/02 e 20/09–09/10</span></td></tr>
-          <tr><td>Mariangela Miranda Duarte</td><td>—</td><td><span class="ferias-badge">25/06–08/07 e 28/09–03/10 e 09–18/12</span></td></tr>
-          <tr><td colspan="3" style="font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.04em;color:var(--text-muted);background:var(--cream);padding:8px 14px;">Sumaré</td></tr>
-          <tr><td>Eneias Cristiano Eler</td><td>LIQ1</td><td><span class="ferias-badge">21–30/1 · 8–17/9 · 9–18/12</span></td></tr>
-          <tr><td>Fabiana de Lemos Pedro</td><td>CON1</td><td><span class="ferias-badge">7–21/1 · 17–31/7</span></td></tr>
-          <tr><td>Maria Luiza Guerra Martinelli</td><td>LIQ2</td><td><span class="ferias-badge">23–31/3 · 8–17/9 · 8–18/12</span></td></tr>
-          <tr><td>Marcelo Alves Pereira (DAA)</td><td>DAA</td><td><span class="ferias-badge">9–13/2 · 13–19/7 · 1–18/12</span></td></tr>
+
+          <!-- DIREÇÃO -->
+          <tr><td colspan="5" style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-muted);background:var(--cream);padding:8px 14px;">Direção</td></tr>
+          <tr><td>Matheus Junqueira Harder</td><td>Direção</td><td><span class="ferias-badge">19/01–28/01</span></td><td>—</td><td>—</td></tr>
+          <tr><td>Rodrigo Gonçalves Dias Agostineto</td><td>Direção</td><td><span class="ferias-badge">07/01–16/01</span></td><td><span class="ferias-badge">01/07–10/07</span></td><td><span class="ferias-badge">09/12–18/12</span></td></tr>
+
+          <!-- DAA -->
+          <tr><td colspan="5" style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-muted);background:var(--cream);padding:8px 14px;">DAA</td></tr>
+          <tr><td>Claudir de Oliveira Junior</td><td>DAA</td><td><span class="ferias-badge">05/02–13/02</span></td><td><span class="ferias-badge">13/10–23/10</span></td><td><span class="ferias-badge">09/12–18/12</span></td></tr>
+          <tr><td>Rogerio Zambon Canale</td><td>DAA</td><td><span class="ferias-badge">23/03–31/03</span></td><td><span class="ferias-badge">13/07–24/07</span></td><td><span class="ferias-badge">03/11–11/11</span></td></tr>
+          <tr><td>Angela Beatriz Gonçales</td><td>DAA</td><td><span class="ferias-badge">05/05–03/06</span></td><td>—</td><td>—</td></tr>
+          <tr><td>Luiz Paolieri Neto</td><td>DAA</td><td><span class="ferias-badge">07/01–16/01</span></td><td><span class="ferias-badge">02/07–10/07</span></td><td><span class="ferias-badge">07/12–18/12</span></td></tr>
+          <tr><td>Rosana Mazuchi Welsk</td><td>DAA</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Luzia Danielle dos Santos</td><td>DAA</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Fábio Pereira da Silva</td><td>DAA</td><td><span class="ferias-badge">04/05–18/05</span></td><td><span class="ferias-badge">13/10–27/10</span></td><td>—</td></tr>
+          <tr><td>Gabriela Suemi Iguei dos Santos</td><td>DAA</td><td><span class="ferias-badge">17/03–31/03</span></td><td>—</td><td>—</td></tr>
+          <tr><td>Everton Carpinete de Oliveira</td><td>DAA</td><td><span class="ferias-badge">08/06–16/06</span></td><td><span class="ferias-badge">18/06–08/07</span></td><td>—</td></tr>
+          <tr><td>Regiane Simoni Franco</td><td>DAA</td><td><span class="ferias-badge">02/03–11/03</span></td><td><span class="ferias-badge">24/06–03/07</span></td><td><span class="ferias-badge">30/09–09/10</span></td></tr>
+          <tr><td>Reginaldo Zimbres</td><td>DAA</td><td><span class="ferias-badge">06/04–17/04</span></td><td><span class="ferias-badge">19/08–04/09</span></td><td>—</td></tr>
+          <tr><td>Marcelo Alves Pereira</td><td>DAA</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Luis Gustavo Fernandes</td><td>DAA</td><td>—</td><td>—</td><td><span class="ferias-badge">19/11–19/12</span></td></tr>
+          <tr><td>Roberto Francisco Nogueira Corsi</td><td>DAA</td><td><span class="ferias-badge">05/05–22/05</span></td><td>—</td><td>—</td></tr>
+          <tr><td>Maria Lucia Ramos Buzon Silva</td><td>DAA</td><td><span class="ferias-badge">12/01–16/01</span></td><td><span class="ferias-badge">06/04–13/04</span></td><td><span class="ferias-badge">03/11–19/11</span></td></tr>
+          <tr><td>Vanessa Mateus Yamaji</td><td>DAA</td><td><span class="ferias-badge">19/01–30/01</span></td><td><span class="ferias-badge">13/07–24/07</span></td><td><span class="ferias-badge">13/12–18/12</span></td></tr>
+          <tr><td>Rute Vera Lucia de Oliveira</td><td>DAA</td><td><span class="ferias-badge">20/05–03/06</span></td><td><span class="ferias-badge">03/11–17/11</span></td><td>—</td></tr>
+
+          <!-- CON1 -->
+          <tr><td colspan="5" style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-muted);background:var(--cream);padding:8px 14px;">CON1</td></tr>
+          <tr><td>Deise Maria Cassaniga Azevedo</td><td>CON1</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Silvana Marcelino Braz</td><td>CON1</td><td><span class="ferias-badge">02/02–13/02</span></td><td><span class="ferias-badge">10/08–28/08</span></td><td>—</td></tr>
+          <tr><td>Claudia Ferraz de Camargo</td><td>CON1</td><td><span class="ferias-badge">07/01–09/01</span></td><td><span class="ferias-badge">09/02–13/02</span></td><td>—</td></tr>
+          <tr><td>Barbara Padovani Minholo Hoffmann</td><td>CON1</td><td><span class="ferias-badge">07/01–26/01</span></td><td><span class="ferias-badge">13/07–22/07</span></td><td>—</td></tr>
+          <tr><td>Sandra Regina da Conceição Amaral</td><td>CON1</td><td><span class="ferias-badge">06/04–15/04</span></td><td><span class="ferias-badge">13/07–22/07</span></td><td><span class="ferias-badge">21/10–30/10</span></td></tr>
+          <tr><td>Adriana Aparecida Pertile Municelli</td><td>CON1</td><td><span class="ferias-badge">07/01–19/01</span></td><td><span class="ferias-badge">13/07–22/07</span></td><td><span class="ferias-badge">05/10–09/10</span></td></tr>
+          <tr><td>Erika Cristina Mendes de Campos Garcia</td><td>CON1</td><td><span class="ferias-badge">12/01–26/01</span></td><td>a definir</td><td>—</td></tr>
+          <tr><td>Romilda Maria de Arruda Germano</td><td>CON1</td><td><span class="ferias-badge">23/02–27/02</span></td><td><span class="ferias-badge">22/04–30/04</span></td><td><span class="ferias-badge">03/11–19/11</span></td></tr>
+          <tr><td>Debora Assis de Oliveira Bissi</td><td>CON1</td><td><span class="ferias-badge">07/01–16/01</span></td><td><span class="ferias-badge">13/07–22/07</span></td><td><span class="ferias-badge">23/11–02/12</span></td></tr>
+          <tr><td>Celina Jacintho Pereira</td><td>CON1</td><td><span class="ferias-badge">07/01–11/01</span></td><td><span class="ferias-badge">06/04–17/04</span></td><td><span class="ferias-badge">19/10–31/10</span></td></tr>
+          <tr><td>Claudia Maria Pastor</td><td>CON1</td><td><span class="ferias-badge">07/01–16/01</span></td><td><span class="ferias-badge">13/07–01/08</span></td><td>—</td></tr>
+          <tr><td>Sandra Maria Segato Gazzeta</td><td>CON1</td><td><span class="ferias-badge">07/01–23/01</span></td><td><span class="ferias-badge">29/06–11/07</span></td><td>—</td></tr>
+          <tr><td>Marina Lira Da Silveira Pinto</td><td>CON1</td><td><span class="ferias-badge">07/01–16/01</span></td><td><span class="ferias-badge">08/09–17/09</span></td><td><span class="ferias-badge">01/12–10/12</span></td></tr>
+          <tr><td>Rogeria Helena Aparecida Franzini Corazza</td><td>CON1</td><td><span class="ferias-badge">16/03–30/03</span></td><td><span class="ferias-badge">13/10–27/10</span></td><td>—</td></tr>
+          <tr><td>Michelli Cristina Borges Sampaio</td><td>CON1</td><td><span class="ferias-badge">03/11–22/11</span></td><td>—</td><td>—</td></tr>
+          <tr><td>Naara de Lucas Barbalho</td><td>CON1</td><td><span class="ferias-badge">13/07–22/07</span></td><td><span class="ferias-badge">13/10–01/11</span></td><td>—</td></tr>
+          <tr><td>Cristina Ziani de Moura</td><td>CON1</td><td><span class="ferias-badge">16/01–30/01</span></td><td><span class="ferias-badge">14/07–23/07</span></td><td><span class="ferias-badge">14/12–18/12</span></td></tr>
+          <tr><td>Maria Lúcia Alves Cavalcante</td><td>CON1</td><td><span class="ferias-badge">13/07–27/07</span></td><td>—</td><td>—</td></tr>
+          <tr><td>Daniele Fernanda Stefani</td><td>CON1</td><td><span class="ferias-badge">07/01–12/01</span></td><td>a definir</td><td><span class="ferias-badge">08/09–11/09</span></td></tr>
+          <tr><td>Dheise Monique Euphrasio</td><td>CON1</td><td><span class="ferias-badge">11/08–23/08</span></td><td><span class="ferias-badge">03/11–19/11</span></td><td>—</td></tr>
+          <tr><td>Anita Bueno de Moraes Narciso</td><td>CON1</td><td><span class="ferias-badge">06/04–16/04</span></td><td><span class="ferias-badge">01/12–18/12</span></td><td>a definir</td></tr>
+          <tr><td>Paula de Carvalho Ambar Lima</td><td>CON1</td><td><span class="ferias-badge">13/10–22/10</span></td><td>—</td><td>—</td></tr>
+          <tr><td>Ana Claudia Rodrigues Abreu Bergonsini</td><td>CON1</td><td><span class="ferias-badge">07/01–16/01</span></td><td><span class="ferias-badge">29/06–08/07</span></td><td><span class="ferias-badge">26/08–04/09</span></td></tr>
+          <tr><td>Emerson Alexandre Viola</td><td>CON1</td><td><span class="ferias-badge">18/12/25–23/01</span></td><td>—</td><td>—</td></tr>
+          <tr><td>Elenira de Andrade Bicalho</td><td>CON1</td><td><span class="ferias-badge">06/04–15/04</span></td><td><span class="ferias-badge">29/06–08/07</span></td><td><span class="ferias-badge">21/09–30/09</span></td></tr>
+          <tr><td>Aguinaldo Junior Yamamoto Peres</td><td>CON1</td><td><span class="ferias-badge">06/04–17/04</span></td><td>—</td><td>—</td></tr>
+          <tr><td>Leandro Mac Fadden Negri</td><td>CON1</td><td><span class="ferias-badge">06/01–30/01</span></td><td><span class="ferias-badge">13/07–31/07</span></td><td><span class="ferias-badge">13/12–18/12</span></td></tr>
+          <tr><td>Fabiana de Lemos Pedro</td><td>CON1</td><td><span class="ferias-badge">07/01–21/01</span></td><td><span class="ferias-badge">17/07–31/07</span></td><td>—</td></tr>
+          <tr><td>Thiago Donizete Mendanha</td><td>CON1</td><td><span class="ferias-badge">13/07–24/07</span></td><td><span class="ferias-badge">01/12–18/12</span></td><td>—</td></tr>
+          <tr><td>Michel Aquino de Souza</td><td>CON1</td><td><span class="ferias-badge">06/04–17/04</span></td><td><span class="ferias-badge">28/09–02/10</span></td><td><span class="ferias-badge">23/11–05/12</span></td></tr>
+          <tr><td>Tatiana Maeyama</td><td>CON1</td><td><span class="ferias-badge">09/01–16/01</span></td><td><span class="ferias-badge">13/07–24/07</span></td><td><span class="ferias-badge">09/12–18/12</span></td></tr>
+          <tr><td>Gabriel de Oliveira Silva</td><td>CON1</td><td><span class="ferias-badge">07/01–05/02</span></td><td>—</td><td>—</td></tr>
+          <tr><td>Cleilson Damasceno de Oliveira</td><td>CON1</td><td><span class="ferias-badge">16/07–13/08</span></td><td>—</td><td>—</td></tr>
+          <tr><td>Luciana Cristina Rodrigues</td><td>CON1</td><td><span class="ferias-badge">07/01–04/02</span></td><td>—</td><td>—</td></tr>
+          <tr><td>André Luiz Fernandes Rocha</td><td>CON1</td><td><span class="ferias-badge">07/01–16/01</span></td><td><span class="ferias-badge">13/07–22/07</span></td><td><span class="ferias-badge">09/12–18/12</span></td></tr>
+
+          <!-- CON2 -->
+          <tr><td colspan="5" style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-muted);background:var(--cream);padding:8px 14px;">CON2</td></tr>
+          <tr><td>Rinaldo Pistolini</td><td>CON2</td><td>—</td><td><span class="ferias-badge">22/04–08/05</span></td><td><span class="ferias-badge">13/10–29/10</span></td></tr>
+          <tr><td>Celio Aparecido Trombetta</td><td>CON2</td><td><span class="ferias-badge">22/06–03/07</span></td><td><span class="ferias-badge">15/09–02/10</span></td><td>—</td></tr>
+          <tr><td>Ana Paula D Elia Vinhal</td><td>CON2</td><td><span class="ferias-badge">07/01–21/01</span></td><td><span class="ferias-badge">02/03–06/03</span></td><td><span class="ferias-badge">13/07–22/07</span></td></tr>
+          <tr><td>Natalina Maria Borges Xavier</td><td>CON2</td><td><span class="ferias-badge">27/07–10/08</span></td><td><span class="ferias-badge">04/12–18/12</span></td><td>—</td></tr>
+          <tr><td>Nilza Misael Ferreira</td><td>CON2</td><td>—</td><td><span class="ferias-badge">25/08–04/09</span></td><td><span class="ferias-badge">03/11–13/11</span></td></tr>
+          <tr><td>Rosana Sueli Britto de Jesus</td><td>CON2</td><td><span class="ferias-badge">17/03–31/03</span></td><td>—</td><td>—</td></tr>
+          <tr><td>Maria Goretti Guimarães Vieira</td><td>CON2</td><td><span class="ferias-badge">25/05–03/06</span></td><td><span class="ferias-badge">05/10–14/10</span></td><td><span class="ferias-badge">09/12–18/12</span></td></tr>
+          <tr><td>Tatiana Maffeis da Cunha</td><td>CON2</td><td><span class="ferias-badge">19/02–03/03</span></td><td><span class="ferias-badge">13/07–24/07</span></td><td><span class="ferias-badge">23/11–27/11</span></td></tr>
+          <tr><td>Roberta Rodrigues Urbano</td><td>CON2</td><td><span class="ferias-badge">25/05–03/06</span></td><td><span class="ferias-badge">13/07–24/07</span></td><td><span class="ferias-badge">09/12–18/12</span></td></tr>
+          <tr><td>Ivi Cristina Indalecio Bueno</td><td>CON2</td><td><span class="ferias-badge">13/07–01/08</span></td><td><span class="ferias-badge">09/12–18/12</span></td><td>—</td></tr>
+          <tr><td>Isabela Freitas de Souza</td><td>CON2</td><td><span class="ferias-badge">16/03–30/03</span></td><td><span class="ferias-badge">04/12–18/12</span></td><td>—</td></tr>
+          <tr><td>Sisenando Gomes Calixto de Sousa</td><td>CON2</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Mariangela Miranda Duarte</td><td>CON2</td><td><span class="ferias-badge">25/06–08/07</span></td><td><span class="ferias-badge">28/09–03/10</span></td><td><span class="ferias-badge">09/12–18/12</span></td></tr>
+          <tr><td>Domingos Jose de Munno</td><td>CON2</td><td><span class="ferias-badge">06/04–17/04</span></td><td>—</td><td>—</td></tr>
+          <tr><td>Claudia Elisa Betti Pedro Bom</td><td>CON2</td><td><span class="ferias-badge">18/03–23/03</span></td><td><span class="ferias-badge">13/07–17/07</span></td><td><span class="ferias-badge">01/12–19/12</span></td></tr>
+          <tr><td>Alessandro Costa</td><td>CON2</td><td><span class="ferias-badge">02/03–31/03</span></td><td>—</td><td>—</td></tr>
+          <tr><td>Neusa Aparecida Asbahr Bais</td><td>CON2</td><td><span class="ferias-badge">06/01–15/01</span></td><td><span class="ferias-badge">08/06–17/06</span></td><td><span class="ferias-badge">03/11–12/11</span></td></tr>
+          <tr><td>Aparecida de Fatima de Souza Franco</td><td>CON2</td><td><span class="ferias-badge">13/07–24/07</span></td><td><span class="ferias-badge">01/12–18/12</span></td><td>—</td></tr>
+          <tr><td>Dulce Maria Vasconcellos Seixas</td><td>CON2</td><td><span class="ferias-badge">07/01–16/01</span></td><td><span class="ferias-badge">04/05–12/05</span></td><td><span class="ferias-badge">08/09–18/09</span></td></tr>
+          <tr><td>Sonia Cristina dos Santos Franco</td><td>CON2</td><td><span class="ferias-badge">07/01–16/01</span></td><td><span class="ferias-badge">17/07–31/07</span></td><td>a definir</td></tr>
+
+          <!-- LIQ1 -->
+          <tr><td colspan="5" style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-muted);background:var(--cream);padding:8px 14px;">LIQ1</td></tr>
+          <tr><td>Wellington George Braga Paz</td><td>LIQ1</td><td><span class="ferias-badge">19/01–30/01</span></td><td><span class="ferias-badge">16/03–20/03</span></td><td><span class="ferias-badge">06/07–18/07</span></td></tr>
+          <tr><td>Heitor Augusto Scarpari Costa</td><td>LIQ1</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Tiago Souza Dias</td><td>LIQ1</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Maria Cecília Silveira Granato</td><td>LIQ1</td><td><span class="ferias-badge">07/01–16/01</span></td><td>—</td><td><span class="ferias-badge">09/12–18/12</span></td></tr>
+          <tr><td>Mariana Penachioni Zangirolami</td><td>LIQ1</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Maria Cristina Ferreira Rodrigues de Lara</td><td>LIQ1</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Mauricio Jose Roque</td><td>LIQ1</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Marcio Roberto Vallim</td><td>LIQ1</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Gabriela Aparecida Severino de Andrade Tavares</td><td>LIQ1</td><td><span class="ferias-badge">19/01–23/01</span></td><td><span class="ferias-badge">08/06–19/06</span></td><td><span class="ferias-badge">28/09–10/10</span></td></tr>
+          <tr><td>José Adriano Fiori</td><td>LIQ1</td><td><span class="ferias-badge">08/06–22/06</span></td><td><span class="ferias-badge">21/09–05/10</span></td><td>—</td></tr>
+          <tr><td>Celso de Arruda Moreira</td><td>LIQ1</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Joao Victor Medeiros de Lucena</td><td>LIQ1</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Eneias Cristiano Eler</td><td>LIQ1</td><td>—</td><td>—</td><td>—</td></tr>
+
+          <!-- LIQ2 -->
+          <tr><td colspan="5" style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-muted);background:var(--cream);padding:8px 14px;">LIQ2</td></tr>
+          <tr><td>Paulo Sergio Salvador</td><td>LIQ2</td><td><span class="ferias-badge">06/04–10/04</span></td><td><span class="ferias-badge">18/05–22/05</span></td><td><span class="ferias-badge">30/09–19/10</span></td></tr>
+          <tr><td>Vanderlei Baldessin</td><td>LIQ2</td><td><span class="ferias-badge">06/05–15/05</span></td><td><span class="ferias-badge">13/07–22/07</span></td><td><span class="ferias-badge">10/11–19/11</span></td></tr>
+          <tr><td>Cristiany Contreras</td><td>LIQ2</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Juliana Marconi Penteado Pessin</td><td>LIQ2</td><td><span class="ferias-badge">13/07–24/07</span></td><td><span class="ferias-badge">12/11–19/11</span></td><td><span class="ferias-badge">09/12–18/12</span></td></tr>
+          <tr><td>Jailton Leite da Silva</td><td>LIQ2</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Leandro Jose Christofoletti</td><td>LIQ2</td><td><span class="ferias-badge">23/03–30/03</span></td><td><span class="ferias-badge">11/08–21/08</span></td><td><span class="ferias-badge">03/11–13/11</span></td></tr>
+          <tr><td>Renata Fabiana Parpinelli Ishihara</td><td>LIQ2</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Jose Carlos Merce</td><td>LIQ2</td><td><span class="ferias-badge">07/01–09/01</span></td><td><span class="ferias-badge">06/07–17/07</span></td><td><span class="ferias-badge">09/11–23/11</span></td></tr>
+          <tr><td>Carolina Monteiro da Silveira</td><td>LIQ2</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Tiago Filipe Calegari</td><td>LIQ2</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Marcia Regina Marques de Paula</td><td>LIQ2</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Maria da Penha Alves Gomes Santos</td><td>LIQ2</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Rafaela Cabral Burato</td><td>LIQ2</td><td><span class="ferias-badge">22/04–30/04</span></td><td><span class="ferias-badge">11/08–14/08</span></td><td><span class="ferias-badge">13/10–29/10</span></td></tr>
+          <tr><td>Marcelo de Jesus Rangel Monteiro</td><td>LIQ2</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Welder de Oliveira Moraes</td><td>LIQ2</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Fabiano Maiolini</td><td>LIQ2</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Mariana Cechinato Lorenzete</td><td>LIQ2</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Thais Furquim Soledade Neves Dela Vale</td><td>LIQ2</td><td><span class="ferias-badge">16/03–31/03</span></td><td><span class="ferias-badge">13/07–30/07</span></td><td><span class="ferias-badge">09/12–18/12</span></td></tr>
+          <tr><td>Maria Luiza Guerra Martinelli</td><td>LIQ2</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Daiane Carla Santos Ledo Marques</td><td>LIQ2</td><td>—</td><td>—</td><td>—</td></tr>
+
+          <!-- EXE1 -->
+          <tr><td colspan="5" style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-muted);background:var(--cream);padding:8px 14px;">EXE1</td></tr>
+          <tr><td>Roberta Elena Agostineto Tetzlaff</td><td>EXE1</td><td><span class="ferias-badge">04/02–13/02</span></td><td><span class="ferias-badge">03/11–19/11</span></td><td>—</td></tr>
+          <tr><td>Eduardo Augusto Veloso</td><td>EXE1</td><td><span class="ferias-badge">13/07–24/07</span></td><td><span class="ferias-badge">22/10–29/10</span></td><td><span class="ferias-badge">09/12–18/12</span></td></tr>
+          <tr><td>Cristiane Ciolin Setin Pedro</td><td>EXE1</td><td><span class="ferias-badge">07/01–16/01</span></td><td><span class="ferias-badge">10/03–31/03</span></td><td>—</td></tr>
+          <tr><td>Janet Helena Faveri</td><td>EXE1</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Maria Gardinali de Lima</td><td>EXE1</td><td><span class="ferias-badge">06/07–17/07</span></td><td><span class="ferias-badge">03/11–13/11</span></td><td>—</td></tr>
+          <tr><td>Daniela Hertel Grassmann</td><td>EXE1</td><td><span class="ferias-badge">06/04–17/04</span></td><td><span class="ferias-badge">11/08–17/08</span></td><td><span class="ferias-badge">09/11–19/11</span></td></tr>
+          <tr><td>Anelise Lino de Queiroz</td><td>EXE1</td><td><span class="ferias-badge">22/04–30/04</span></td><td><span class="ferias-badge">13/07–16/07</span></td><td><span class="ferias-badge">13/10–29/10</span></td></tr>
+          <tr><td>Wallace Diego Resende</td><td>EXE1</td><td><span class="ferias-badge">07/01–23/01</span></td><td><span class="ferias-badge">13/07–25/07</span></td><td>—</td></tr>
+          <tr><td>Sabrina Noronha Costa Costantini</td><td>EXE1</td><td><span class="ferias-badge">19/01–23/01</span></td><td><span class="ferias-badge">06/07–20/07</span></td><td><span class="ferias-badge">13/10–22/10</span></td></tr>
+
+          <!-- EXE2 -->
+          <tr><td colspan="5" style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-muted);background:var(--cream);padding:8px 14px;">EXE2</td></tr>
+          <tr><td>Fabio Ajudarte Lopes</td><td>EXE2</td><td><span class="ferias-badge">19/01–23/01</span></td><td><span class="ferias-badge">13/07–24/07</span></td><td><span class="ferias-badge">23/11–04/12</span></td></tr>
+          <tr><td>Filipe Shinzato Colevati</td><td>EXE2</td><td><span class="ferias-badge">06/04–17/04</span></td><td><span class="ferias-badge">03/11–19/11</span></td><td>—</td></tr>
+          <tr><td>Marcio Elias Soares Gonçalves Siqueira</td><td>EXE2</td><td><span class="ferias-badge">06/04–17/04</span></td><td><span class="ferias-badge">11/08–17/08</span></td><td><span class="ferias-badge">09/12–18/12</span></td></tr>
+          <tr><td>Juliana Fiamenghi Misse Correia</td><td>EXE2</td><td><span class="ferias-badge">07/01–16/01</span></td><td><span class="ferias-badge">13/07–31/07</span></td><td>—</td></tr>
+          <tr><td>Daniel Carlos Alves de Pilla</td><td>EXE2</td><td><span class="ferias-badge">02/02–12/02</span></td><td><span class="ferias-badge">20/09–09/10</span></td><td>—</td></tr>
+          <tr><td>Eline Ana Sampaio Coradi Castro</td><td>EXE2</td><td><span class="ferias-badge">27/07–14/08</span></td><td><span class="ferias-badge">28/09–02/10</span></td><td><span class="ferias-badge">14/12–18/12</span></td></tr>
+          <tr><td>Calefe Alexandre de Oliveira</td><td>EXE2</td><td><span class="ferias-badge">06/04–17/04</span></td><td><span class="ferias-badge">13/07–24/07</span></td><td><span class="ferias-badge">23/11–28/11</span></td></tr>
+          <tr><td>Antenor Donida Bartoli</td><td>EXE2</td><td><span class="ferias-badge">12/01–16/01</span></td><td><span class="ferias-badge">16/07–31/07</span></td><td>—</td></tr>
+
+          <!-- EXE3/DIVEX -->
+          <tr><td colspan="5" style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-muted);background:var(--cream);padding:8px 14px;">EXE3 / DIVEX</td></tr>
+          <tr><td>Marco César de Oliveira Wan-Meyl</td><td>EXE3</td><td><span class="ferias-badge">12/08–04/09</span></td><td><span class="ferias-badge">20/11–19/12</span></td><td>—</td></tr>
+          <tr><td>Nilton Rafael de Barros Silva</td><td>EXE3</td><td>—</td><td><span class="ferias-badge">13/07–22/07</span></td><td><span class="ferias-badge">05/11–19/11</span></td></tr>
+          <tr><td>Ana Sylvia Reis Couto Fernandes</td><td>DIVEX</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Cristina Ceratti</td><td>EXE3</td><td><span class="ferias-badge">09/03–23/03</span></td><td><span class="ferias-badge">16/09–30/09</span></td><td>—</td></tr>
+          <tr><td>Filipe Pereira dos Santos</td><td>EXE3</td><td><span class="ferias-badge">07/01–16/01</span></td><td><span class="ferias-badge">01/06–10/06</span></td><td><span class="ferias-badge">01/12–10/12</span></td></tr>
+          <tr><td>Antônio Abel de Lucca Júnior</td><td>EXE3</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Fernando Brait Garros</td><td>EXE3</td><td><span class="ferias-badge">06/04–17/04</span></td><td><span class="ferias-badge">01/12–18/12</span></td><td>—</td></tr>
+          <tr><td>Agnelo Welington Silveira Castro</td><td>EXE3</td><td><span class="ferias-badge">03/08–01/09</span></td><td>—</td><td>—</td></tr>
+          <tr><td>Thayane Criscia Souto de Oliveira</td><td>EXE3</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Débora Cerqueira Simão</td><td>EXE3</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Milton Roberto da Silva</td><td>EXE3</td><td><span class="ferias-badge">07/01–16/01</span></td><td><span class="ferias-badge">29/06–18/07</span></td><td>—</td></tr>
+          <tr><td>Merval Eliel Medeiros Braga</td><td>DIVEX</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Camila dos Santos Zanetti</td><td>DIVEX</td><td>—</td><td>—</td><td>—</td></tr>
+
+          <!-- EXE4 -->
+          <tr><td colspan="5" style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-muted);background:var(--cream);padding:8px 14px;">EXE4</td></tr>
+          <tr><td>João Gabriel da Silva Silveira</td><td>EXE4</td><td><span class="ferias-badge">07/01–16/01</span></td><td><span class="ferias-badge">16/07–31/07</span></td><td><span class="ferias-badge">16/11–19/11</span></td></tr>
+          <tr><td>Liliana Squarizzi Ferreira Cantarim</td><td>EXE4</td><td><span class="ferias-badge">23/02–27/02</span></td><td><span class="ferias-badge">22/06–03/07</span></td><td><span class="ferias-badge">28/09–10/10</span></td></tr>
+          <tr><td>Elda Kesia de Almeida</td><td>EXE4</td><td><span class="ferias-badge">22/04–30/04</span></td><td><span class="ferias-badge">11/08–21/08</span></td><td><span class="ferias-badge">09/12–18/12</span></td></tr>
+          <tr><td>Alexandre de Brito Silva</td><td>EXE4</td><td><span class="ferias-badge">07/01–21/01</span></td><td><span class="ferias-badge">13/07–27/07</span></td><td>—</td></tr>
+          <tr><td>Regina Célia Bernardi Jorge</td><td>EXE4</td><td><span class="ferias-badge">13/05–27/05</span></td><td><span class="ferias-badge">14/09–18/09</span></td><td><span class="ferias-badge">03/11–12/11</span></td></tr>
+          <tr><td>Sueli Aparecida Binati</td><td>EXE4</td><td><span class="ferias-badge">01/06–15/06</span></td><td><span class="ferias-badge">08/09–22/09</span></td><td>—</td></tr>
+          <tr><td>Julio Cesar Cano</td><td>EXE4</td><td><span class="ferias-badge">01/11–30/11</span></td><td>—</td><td>—</td></tr>
+          <tr><td>José Luis Buratto</td><td>EXE4</td><td><span class="ferias-badge">06/04–20/04</span></td><td><span class="ferias-badge">16/10–30/10</span></td><td>—</td></tr>
+          <tr><td>Aparecida Maria Barbosa Zuqueto</td><td>EXE4</td><td><span class="ferias-badge">26/01–03/02</span></td><td><span class="ferias-badge">30/06–08/07</span></td><td><span class="ferias-badge">31/08–11/09</span></td></tr>
+          <tr><td>Marcia Helena Domenici</td><td>EXE4</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Carmen Lucianita de Sene Bargas Giao</td><td>EXE4</td><td><span class="ferias-badge">17/06–23/06</span></td><td><span class="ferias-badge">20/07–31/07</span></td><td><span class="ferias-badge">08/09–18/09</span></td></tr>
+
+          <!-- DAM -->
+          <tr><td colspan="5" style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-muted);background:var(--cream);padding:8px 14px;">DAM</td></tr>
+          <tr><td>Rafael Serra Cardoso</td><td>DAM</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Cristiane Cornelio Donega</td><td>DAM</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Fernanda Godoy D'Avila</td><td>DAM</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Ana Paula Fernandes Mesquini</td><td>DAM</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Thiago Cesar Costa</td><td>DAM</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Fernando Belam</td><td>DAM</td><td>—</td><td>—</td><td>—</td></tr>
+
+          <!-- CEJUSC -->
+          <tr><td colspan="5" style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-muted);background:var(--cream);padding:8px 14px;">CEJUSC</td></tr>
+          <tr><td>Ana Luisa de Faria</td><td>CEJUSC</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Alexandre Francischetti</td><td>CEJUSC</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Joseane de Menezes Conde</td><td>CEJUSC</td><td><span class="ferias-badge">16/07–31/07</span></td><td><span class="ferias-badge">01/12–16/12</span></td><td>—</td></tr>
+          <tr><td>Maria Jose Dainez</td><td>CEJUSC</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Silvia Raquel Alves de Oliveira</td><td>CEJUSC</td><td>—</td><td>—</td><td>—</td></tr>
+
         </tbody>
       </table>
     </div>
@@ -2113,7 +2302,7 @@ nav {
 const ojData = {
   ojs: {
     title: 'Oficiais de Justiça',
-    sub: '28 oficiais distribuídos por 11 cidades',
+    sub: '25 oficiais distribuídos por 11 cidades',
     chefes: [],
     equipe: [
       { name: 'André Luis Bahia Rodrigues', role: 'OJ', cidade: 'Piracicaba' },
@@ -2156,15 +2345,44 @@ const ojData = {
       { name: 'Silvana Marcelino Braz', role: 'CJ3', cargo: 'Assessora-chefe' }
     ],
     equipe: [
-      { name: 'Rinaldo Pistolini', role: 'FC5' }, { name: 'Claudia Ferraz de Camargo', role: 'FC5' },
-      { name: 'Celio Aparecido Trombetta', role: 'FC5' }, { name: 'Ana Paula D Elia Vinhal', role: 'FC5' },
-      { name: 'Sandra Regina da Conceição Amaral', role: 'FC4' }, { name: 'Adriana Aparecida Pertile Municelli', role: 'FC4' },
-      { name: 'Erika Cristina Mendes de Campos Garcia', role: 'FC4' }, { name: 'Romilda Maria de Arruda Germano', role: 'FC4' },
-      { name: 'Joseane de Menezes Conde', role: 'FC2' }, { name: 'Celina Jacintho Pereira', role: 'FC4' },
-      { name: 'Claudia Maria Pastor', role: 'FC4' }, { name: 'Sandra Maria Segato Gazzeta', role: 'FC4' },
-      { name: 'Marina Lira Da Silveira Pinto', role: 'FC4' }, { name: 'Rogeria Helena Ap. Franzini Corazza', role: 'FC4' },
-      { name: 'Michelli Cristina Borges Sampaio', role: 'FC4' }, { name: 'Naara de Lucas Barbalho', role: 'FC4' },
-      { name: 'Cristina Ziani de Moura', role: 'FC4' }, { name: 'Maria Lúcia Alves Cavalcante', role: 'FC4' }
+      { name: 'Claudia Ferraz de Camargo', role: 'FC5' },
+      { name: 'Barbara Padovani Minholo Hoffmann', role: 'FC5' },
+      { name: 'Sandra Regina da Conceição Amaral', role: 'FC4' },
+      { name: 'Adriana Aparecida Pertile Municelli', role: 'FC4' },
+      { name: 'Erika Cristina Mendes de Campos Garcia', role: 'FC4' },
+      { name: 'Romilda Maria de Arruda Germano', role: 'FC4' },
+      { name: 'Joseane de Menezes Conde', role: 'FC2' },
+      { name: 'Celina Jacintho Pereira', role: 'FC4' },
+      { name: 'Claudia Maria Pastor', role: 'FC4' },
+      { name: 'Sandra Maria Segato Gazzeta', role: 'FC4' },
+      { name: 'Marina Lira Da Silveira Pinto', role: 'FC4' },
+      { name: 'Rogeria Helena Aparecida Franzini Corazza', role: 'FC4' },
+      { name: 'Michelli Cristina Borges Sampaio', role: 'FC4' },
+      { name: 'Naara de Lucas Barbalho', role: 'FC4' },
+      { name: 'Cristina Ziani de Moura', role: 'FC4' },
+      { name: 'Maria Lúcia Alves Cavalcante', role: 'FC4' },
+      { name: 'Daniele Fernanda Stefani', role: 'FC4' },
+      { name: 'Dheise Monique Euphrasio', role: 'FC4' },
+      { name: 'Anita Bueno de Moraes Narciso', role: 'FC4' },
+      { name: 'Paula de Carvalho Ambar Lima', role: 'FC4' },
+      { name: 'Ana Claudia Rodrigues Abreu Bergonsini', role: 'FC4' },
+      { name: 'Emerson Alexandre Viola', role: 'FC5' },
+      { name: 'Elenira de Andrade Bicalho', role: 'FC4' },
+      { name: 'Débora Cerqueira Simão', role: 'FC4' },
+      { name: 'Aguinaldo Junior Yamamoto Peres', role: 'FC4' },
+      { name: 'Leandro Mac Fadden Negri', role: 'FC4' },
+      { name: 'Fabiana de Lemos Pedro', role: 'FC4' },
+      { name: 'Thiago Donizete Mendanha', role: 'FC4' },
+      { name: 'Michel Aquino de Souza', role: 'FC4' },
+      { name: 'Tatiana Maeyama', role: 'FC4' },
+      { name: 'Gabriel de Oliveira Silva', role: 'FC4' },
+      { name: 'Cleilson Damasceno de Oliveira', role: 'FC4' },
+      { name: 'Luciana Cristina Rodrigues', role: 'FC4' },
+      { name: 'Tatiana Maffeis da Cunha', role: 'FC4' },
+      { name: 'Debora Assis de Oliveira Bissi', role: 'FC4' },
+      { name: 'Luzia Danielle dos Santos', role: 'FC4' },
+      { name: 'Paula Burque Besson Boconcelo (Área de Apoio Bauru)', role: 'FC4' },
+      { name: 'André Luiz Fernandes Rocha (Mediador)', role: 'FC2' }
     ],
     atrib: ['Triagem inicial de novos processos','Despacho saneador','Designação de audiência','Notificação das partes','Encaminhar tutelas iniciais ao gabinete','Audiências iniciais, unas e de instrução','Cumprimento de atas','Análise de exceção de incompetência','Controle de perícias e diligências (Seção 02)','SISDOV'],
     acervo: '48.164 processos em CON1'
@@ -2177,14 +2395,24 @@ const ojData = {
       { name: 'Silvana Marcelino Braz', role: 'CJ3', cargo: 'Assessora-chefe' }
     ],
     equipe: [
-      { name: 'Daniele Fernanda Stefani', role: 'FC4' }, { name: 'Dheise Monique Euphrasio', role: 'FC4' },
-      { name: 'Anita Bueno de Moraes Narciso', role: 'FC4' }, { name: 'Paula de Carvalho Ambar Lima', role: 'FC4' },
-      { name: 'Ana Claudia Rodrigues Abreu Bergonsini', role: 'FC4' }, { name: 'Emerson Alexandre Viola', role: 'FC5' },
-      { name: 'Elenira de Andrade Bicalho', role: 'FC4' }, { name: 'Débora Cerqueira Simão', role: 'FC4' },
-      { name: 'Aguinaldo Junior Yamamoto Peres', role: 'FC4' }, { name: 'Leandro Mac Fadden Negri', role: 'FC4' },
-      { name: 'Fabiana de Lemos Pedro', role: 'FC4' }, { name: 'Thiago Donizete Mendanha', role: 'FC4' },
-      { name: 'Michel Aquino de Souza', role: 'FC4' }, { name: 'Tatiana Maeyama', role: 'FC4' },
-      { name: 'Gabriel de Oliveira Silva', role: 'FC4' }, { name: 'André Luiz Fernandes Rocha (Mediador)', role: 'FC2' }
+      { name: 'Rinaldo Pistolini', role: 'FC5' },
+      { name: 'Celio Aparecido Trombetta', role: 'FC5' },
+      { name: 'Ana Paula D Elia Vinhal', role: 'FC5' },
+      { name: 'Rosana Sueli Britto de Jesus', role: 'FC4' },
+      { name: 'Maria Goretti Guimarães Vieira', role: 'FC4' },
+      { name: 'Roberta Rodrigues Urbano', role: 'FC4' },
+      { name: 'Ivi Cristina Indalecio Bueno', role: 'FC4' },
+      { name: 'Isabela Freitas de Souza', role: 'FC4' },
+      { name: 'Sisenando Gomes Calixto de Sousa', role: 'FC4' },
+      { name: 'Mariangela Miranda Duarte', role: 'FC4' },
+      { name: 'Barbara Padovani Minholo Hoffmann', role: 'FC5' },
+      { name: 'Domingos Jose de Munno', role: 'FC4' },
+      { name: 'Claudia Elisa Betti Pedro Bom', role: 'FC4' },
+      { name: 'Alessandro Costa', role: 'FC4' },
+      { name: 'Sabrina Noronha Costa Costantini', role: 'FC4' },
+      { name: 'Aparecida de Fatima de Souza Franco', role: 'FC4' },
+      { name: 'Sonia Cristina dos Santos Franco', role: 'FC4' },
+      { name: 'Dulce Maria Vasconcellos Seixas', role: 'FC4' }
     ],
     atrib: ['Conclusão de sentença','Controle de razões finais','Processamento de incidentes e recursos','Remessa ao 2º grau','Recebimento de instância superior','Registro de trânsito em julgado','Encaminhamento pós-TJ para LIQ, EXE ou Arquivo','Controle de perícias'],
     acervo: '2.747 proc. em CON2'
@@ -2266,15 +2494,13 @@ const ojData = {
       { name: 'Nilton Rafael de Barros Silva', role: 'CJ3', cargo: 'Assessor-chefe' }
     ],
     equipe: [
-      { name: 'Cristina Ceratti', role: 'FC5' }, { name: 'Filipe Pereira dos Santos', role: 'FC5' },
-      { name: 'Antônio Abel de Lucca Júnior', role: 'FC2' }, { name: 'Fernando Brait Garros', role: 'FC2' },
-      { name: 'Agnelo Welington Silveira Castro', role: 'FC2' }, { name: 'Thayane Criscia Souto de Oliveira', role: 'FC2' },
-      { name: 'Milton Roberto da Silva', role: 'FC2' },
-      { name: 'Ana Sylvia Reis Couto Fernandes (DIVEX)', role: 'CJ1' },
-      { name: 'Marco César de Oliveira Wan-Meyl', role: 'CJ3' },
-      { name: 'Nilton Rafael de Barros Silva', role: 'CJ3' },
-      { name: 'Merval Eliel Medeiros Braga (DIVEX)', role: 'FC2' },
-      { name: 'Camila dos Santos Zanetti (DIVEX)', role: 'FC2' }
+      { name: 'Cristina Ceratti', role: 'FC5' },
+      { name: 'Filipe Pereira dos Santos', role: 'FC5' },
+      { name: 'Antônio Abel de Lucca Júnior', role: 'FC2' },
+      { name: 'Fernando Brait Garros', role: 'FC2' },
+      { name: 'Agnelo Welington Silveira Castro', role: 'FC2' },
+      { name: 'Thayane Criscia Souto de Oliveira', role: 'FC2' },
+      { name: 'Milton Roberto da Silva', role: 'FC2' }
     ],
     atrib: ['DIVEX Hasta pública — todos procedimentos de hasta','Expropriação: alienação particular e hasta pública (EXEPJE)','Carta de alienação/arrematação/adjudicação','Seção de Reunião de Execuções × DIVEX (investigação patrimonial)','Reunião de grandes devedores','Garimpo: todos os procedimentos (exceto processos físicos de VTs aglutinadas)','Execuções coletivas e unificadas'],
     acervo: '4.416 processos em EXE3 + DIVEX'
@@ -2295,6 +2521,17 @@ const ojData = {
     ],
     atrib: ['Setor de Precatórios: alinhar procedimentos com Assessoria de Precatórios, atualizar para liberação de valores','Garimpo: Depósitos judiciais e recursais','RJ/Falência: certidão de habilitação no Juízo Falimentar e Recuperação Judicial','IDPJ na fase de falência: apreciar e incluir sócios + SISBAJUD','Gestão de documentos: desarquivamento físico, e-DOC, planejamento de eliminação','Critérios para quadro de credores'],
     acervo: '9.737 processos em EXE4'
+  },
+  cejusc: {
+    title: 'CEJUSC — Centro Judiciário de Solução de Conflitos',
+    sub: 'Mediação e Conciliação · Piracicaba e Limeira',
+    chefes: [
+      { name: 'Ana Luisa de Faria', role: 'CJ1', cargo: 'Responsável — Piracicaba' },
+      { name: 'Alexandre Francischetti', role: 'CJ1', cargo: 'Responsável — Limeira' }
+    ],
+    equipe: [],
+    atrib: ['Sessões de mediação e conciliação pré-processuais e processuais','Homologação de acordos','Triagem e encaminhamento de casos aptos à autocomposição','Gestão da pauta de sessões','Articulação com magistrados coordenadores'],
+    acervo: 'Atendimento às varas da SC Piracicaba'
   },
   daa: {
     title: 'DAA — Divisão de Atendimento e Administração',
@@ -2346,7 +2583,7 @@ const ojData = {
       { name: 'Merval Eliel Medeiros Braga', role: 'FC2' },
       { name: 'Camila dos Santos Zanetti', role: 'FC2' }
     ],
-    atrib: ['Hasta pública: todos os procedimentos relativos a leilões','Alienação por iniciativa particular','Seção de investigação patrimonial','Reunião de execuções: processos de grandes devedores','Vinculada à EXE3'],
+    atrib: ['Hasta pública: todos os procedimentos relativos a leilões','Alienação por iniciativa particular','Seção de investigação patrimonial','Reunião de execuções: processos de grandes devedores'],
     acervo: 'Incluído no acervo EXE3'
   }
 };
@@ -2400,7 +2637,9 @@ function openOJ(id) {
 
   html += `<div class="detail-section"><h4>Equipe (${d.equipe.length} servidores)</h4><div class="team-grid">`;
   d.equipe.forEach(e => {
-    html += `<div class="team-card"><div class="tc-name">${e.name}</div><div class="tc-role"><span class="badge ${badgeClass(e.role)}">${e.role}</span></div></div>`;
+    const isCJ = e.role && e.role.startsWith('CJ');
+    const badge = isCJ ? `<span class="badge ${badgeClass(e.role)}">${e.role}</span> ` : '';
+    html += `<div class="team-card"><div class="tc-name">${e.name}</div><div class="tc-role">${badge}</div></div>`;
   });
   html += `</div></div>`;
 
