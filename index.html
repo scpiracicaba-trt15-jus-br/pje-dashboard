@@ -895,9 +895,10 @@ nav {
       <li><a href="#" onclick="showSection('organograma')" id="nav-organograma">Organograma</a></li>
       <li><a href="#" onclick="showSection('ojs')" id="nav-ojs">Órgãos Julgadores</a></li>
       <li><a href="#" onclick="showSection('magistrados')" id="nav-magistrados">Magistrados</a></li>
-      <li><a href="#" onclick="showSection('acervo')" id="nav-acervo">Acervo</a></li>
+      <li><a href="#" onclick="showSection('acervo')" id="nav-acervo">GIGs &amp; Robôs</a></li>
       <li><a href="#" onclick="showSection('ferias')" id="nav-ferias">Férias 2026</a></li>
       <li><a href="#" onclick="showSection('videos')" id="nav-videos">Vídeos &amp; Links</a></li>
+      <li><a href="#" onclick="showSection('estagiarios')" id="nav-estagiarios">Estagiários</a></li>
       <li><a href="#" onclick="showSection('rotinas')" id="nav-rotinas">Rotinas</a></li>
     </ul>
   </div>
@@ -1705,72 +1706,54 @@ nav {
 <!-- ACERVO -->
 <div id="section-acervo" class="section">
   <div class="section-header">
-    <h2>Acervo Processual</h2>
-    <span class="tag">Dados de 20/05/2026</span>
+    <h2>GIGs &amp; Robôs</h2>
+    <span class="tag">Ferramentas e GIGs</span>
   </div>
-
-  <div class="info-grid" style="margin-bottom:28px">
-    <div class="info-card" style="border-top:3px solid var(--accent-con)">
-      <div class="ic-num" style="color:var(--accent-con)">48.164</div>
-      <div class="ic-label">CON1</div>
-      <div class="ic-sub">Assessoria de Conhecimento 1</div>
+  <!-- ROBÔS -->
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-bottom:28px">
+    <div style="background:white;border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px">
+      <div style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:6px">⚙️ AVJT — Assistente Virtual JT</div>
+      <div style="font-size:12px;color:var(--text-muted);margin-bottom:10px">Extensão Firefox para automação no PJe-JT</div>
+      <a href="https://addons.mozilla.org/pt-BR/firefox/addon/assistentevirtual-justrabalho/" target="_blank" style="display:inline-block;background:var(--navy);color:white;font-size:12px;padding:6px 14px;border-radius:6px;text-decoration:none">Instalar AVJT</a>
     </div>
-    <div class="info-card" style="border-top:3px solid var(--accent-con)">
-      <div class="ic-num" style="color:var(--accent-con)">2.747</div>
-      <div class="ic-label">CON2</div>
-      <div class="ic-sub">Assessoria de Conhecimento 2</div>
+    <div style="background:white;border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px">
+      <div style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:6px">⚙️ +PJe (maisPJe)</div>
+      <div style="font-size:12px;color:var(--text-muted);margin-bottom:10px">Módulo de Automatização Interna — TRT 12ª Região</div>
+      <a href="https://portal.trt12.jus.br/pje/mais-pje" target="_blank" style="display:inline-block;background:var(--navy);color:white;font-size:12px;padding:6px 14px;border-radius:6px;text-decoration:none">Instalar +PJe</a>
     </div>
-    <div class="info-card" style="border-top:3px solid var(--accent-liq)">
-      <div class="ic-num" style="color:var(--accent-liq)">7.346</div>
-      <div class="ic-label">LIQ1</div>
-      <div class="ic-sub">Pré-homologação</div>
+    <div style="background:white;border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px">
+      <div style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:6px">⚙️ Quinzinho</div>
+      <div style="font-size:12px;color:var(--text-muted);margin-bottom:8px">Automação de pauta e distribuição</div>
+      <a href="https://drive.google.com/file/d/10FyQ6kzgylPlXNEYFPzZMMxLWa0YP-Hx/view?pli=1" target="_blank" style="display:inline-block;background:var(--navy);color:white;font-size:12px;padding:6px 14px;border-radius:6px;text-decoration:none;margin-bottom:6px">Instalar Quinzinho (.xpi)</a><br>
+      <a href="https://docs.google.com/document/d/15ZVDzr6ijtcCsjAW0FMPT26Pj-yf38zUuveglKtu_UE/edit" target="_blank" style="display:inline-block;background:var(--gold);color:var(--navy);font-size:12px;padding:6px 14px;border-radius:6px;text-decoration:none;margin-bottom:8px">Manual de Instalação</a>
+      <div style="background:#f5f5f5;border-radius:6px;padding:8px">
+        <div style="font-size:11px;color:var(--text-muted);margin-bottom:4px">ID para magistrados (colar no Quinzinho):</div>
+        <code style="font-size:11px;word-break:break-all">1Z1Z-nKT_Sb7mHuGS3C8U873ky-IOG1l9eIvgI3hAf44</code>
+      </div>
     </div>
-    <div class="info-card" style="border-top:3px solid var(--accent-liq)">
-      <div class="ic-num" style="color:var(--accent-liq)">2.331</div>
-      <div class="ic-label">LIQ2</div>
-      <div class="ic-sub">Homologação e cumprimento</div>
-    </div>
-    <div class="info-card" style="border-top:3px solid var(--accent-exe)">
-      <div class="ic-num" style="color:var(--accent-exe)">5.000</div>
-      <div class="ic-label">EXE1</div>
-      <div class="ic-sub">Trâmites iniciais</div>
-    </div>
-    <div class="info-card" style="border-top:3px solid var(--accent-exe)">
-      <div class="ic-num" style="color:var(--accent-exe)">4.932</div>
-      <div class="ic-label">EXE2</div>
-      <div class="ic-sub">Pesquisas avançadas</div>
-    </div>
-    <div class="info-card" style="border-top:3px solid var(--accent-exe)">
-      <div class="ic-num" style="color:var(--accent-exe)">4.416</div>
-      <div class="ic-label">EXE3</div>
-      <div class="ic-sub">Expropriação / DIVEX</div>
-    </div>
-    <div class="info-card" style="border-top:3px solid var(--accent-exe)">
-      <div class="ic-num" style="color:var(--accent-exe)">9.737</div>
-      <div class="ic-label">EXE4</div>
-      <div class="ic-sub">Precatórios / Garimpo</div>
-    </div>
-    <div class="info-card" style="border-top:3px solid var(--accent-dam)">
-      <div class="ic-num" style="color:var(--accent-dam)">777</div>
-      <div class="ic-label">DAM</div>
-      <div class="ic-sub">Divisão de Apoio aos Magistrados</div>
-    </div>
-    <div class="info-card" style="border-top:3px solid #555">
-      <div class="ic-num" style="color:#555">48</div>
-      <div class="ic-label">DIVEX</div>
-      <div class="ic-sub">Divisão de Execução</div>
+    <div style="background:white;border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px">
+      <div style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:6px">⚙️ SISE — Soluções Integradas JT</div>
+      <div style="font-size:12px;color:var(--text-muted);margin-bottom:10px">Extensão Firefox para integração de sistemas JT</div>
+      <a href="https://addons.mozilla.org/pt-BR/firefox/addon/solucoes-integradas-para-jt/" target="_blank" style="display:inline-block;background:var(--navy);color:white;font-size:12px;padding:6px 14px;border-radius:6px;text-decoration:none">Instalar SISE</a>
     </div>
   </div>
 
-  <div class="passivo-card" style="background:white; border:1px solid var(--border); border-radius:var(--radius-lg); padding:20px;">
-    <h4 style="font-size:14px; text-transform:uppercase; letter-spacing:0.04em; color:var(--text-muted); margin-bottom:14px;">Distribuição por Fase</h4>
-    <div class="bar-row"><span class="bar-label">CON</span><div class="bar-track"><div class="bar-fill" style="width:100%; background:var(--accent-con)"></div></div><span class="bar-num">50.911</span></div>
-    <div class="bar-row"><span class="bar-label">EXE total</span><div class="bar-track"><div class="bar-fill" style="width:91%; background:var(--accent-exe)"></div></div><span class="bar-num">46.421</span></div>
-    <div class="bar-row"><span class="bar-label">LIQ total</span><div class="bar-track"><div class="bar-fill" style="width:47%; background:var(--accent-liq)"></div></div><span class="bar-num">24.118</span></div>
-    <div class="bar-row"><span class="bar-label">DAM</span><div class="bar-track"><div class="bar-fill" style="width:2%; background:var(--accent-dam)"></div></div><span class="bar-num">777</span></div>
-    <div class="bar-row"><span class="bar-label">DIVEX</span><div class="bar-track"><div class="bar-fill" style="width:0.1%; background:#555)"></div></div><span class="bar-num">48</span></div>
+  <div class="section-header" style="margin-top:8px;margin-bottom:16px">
+    <h2 style="font-size:20px">GIGs da Secretaria Conjunta</h2>
+    <span class="tag">Documento oficial</span>
+  </div>
+
+  <div style="background:white;border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;display:flex;align-items:center;gap:20px">
+    <div style="font-size:36px">📄</div>
+    <div>
+      <div style="font-size:14px;font-weight:600;color:var(--navy);margin-bottom:6px">Documento completo de GIGs e Configurações PJe</div>
+      <div style="font-size:13px;color:var(--text-muted);margin-bottom:14px">Autogigs, chips por fase, configurações de automação, ordens de serviço e instruções de instalação dos robôs.</div>
+      <a href="https://docs.google.com/document/d/1-v_LptXZWrRAtFqnkiNlQdOa2IFD3rtZRw5vWmSIxXE/edit?tab=t.0" target="_blank" style="display:inline-block;background:var(--navy);color:white;font-size:13px;font-weight:500;padding:10px 20px;border-radius:8px;text-decoration:none">📂 Abrir documento de GIGs</a>
+    </div>
   </div>
 </div>
+
+
 
 <!-- FÉRIAS -->
 <div id="section-ferias" class="section">
@@ -2124,6 +2107,43 @@ nav {
         <div class="lc-desc">Satélites TRT15 — designações</div>
       </div>
     </a>
+  </div>
+</div>
+
+<!-- ESTAGIÁRIOS -->
+<div id="section-estagiarios" class="section">
+  <div class="section-header">
+    <h2>Estagiários da SC de Piracicaba</h2>
+    <span class="tag">22 estagiários</span>
+  </div>
+  <div style="background:white;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;overflow-x:auto">
+    <table class="ferias-table">
+      <thead><tr><th>Nome</th><th>Cidade / Setor</th><th>Início</th><th>Término</th></tr></thead>
+      <tbody>
+        <tr><td>Carlos Roberto Santos Della Rocca</td><td>Limeira — CEJUSC</td><td>—</td><td><span class="ferias-badge">30/09/2026</span></td></tr>
+        <tr><td>Guilherme Chacur</td><td>Piracicaba — CEJUSC</td><td>—</td><td><span class="ferias-badge">28/02/2028</span></td></tr>
+        <tr><td>Victor Hugo Bailarin</td><td>Piracicaba — CEJUSC</td><td>—</td><td><span class="ferias-badge">31/10/2027</span></td></tr>
+        <tr><td>Beatriz Pasquini Garcia (convênio)</td><td>Santa Bárbara d'Oeste</td><td>—</td><td><span class="ferias-badge">05/05/2027</span></td></tr>
+        <tr><td>Estefania Faustino de Sousa</td><td>Sumaré</td><td>—</td><td><span class="ferias-badge">31/08/2027</span></td></tr>
+        <tr><td>Graziele Prado de Oliveira</td><td>Limeira</td><td>—</td><td><span class="ferias-badge">30/09/2027</span></td></tr>
+        <tr><td>Isabela Corazza Teodoro</td><td>Piracicaba</td><td>—</td><td><span class="ferias-badge">31/01/2027</span></td></tr>
+        <tr><td>Julia Fernanda da Costa</td><td>Santa Bárbara d'Oeste</td><td>—</td><td><span class="ferias-badge">28/02/2027</span></td></tr>
+        <tr><td>Nicole Camille da Silva</td><td>Americana</td><td>—</td><td><span class="ferias-badge">30/04/2027</span></td></tr>
+        <tr><td>Rafaella Aparecida do Carmo Claus</td><td>Americana</td><td>—</td><td><span class="ferias-badge">31/12/2026</span></td></tr>
+        <tr><td>Raissa Ferreira Paiva</td><td>Piracicaba</td><td>—</td><td><span class="ferias-badge">30/09/2026</span></td></tr>
+        <tr><td>Alessandra Lagacci</td><td>Araras</td><td><span class="ferias-badge">04/05/2026</span></td><td>—</td></tr>
+        <tr><td>Alisson Henrique de Oliveira</td><td>Limeira</td><td>—</td><td><span class="ferias-badge">31/10/2026</span></td></tr>
+        <tr><td>Fernanda Rodrigues Alves Cardoso</td><td>Hortolândia</td><td>—</td><td><span class="ferias-badge">30/06/2027</span></td></tr>
+        <tr><td>Fernando Aparecido Felix Junior</td><td>São João da Boa Vista</td><td>—</td><td><span class="ferias-badge">31/12/2026</span></td></tr>
+        <tr><td>Giovanna Prazeres Martins Justo</td><td>Limeira</td><td><span class="ferias-badge">06/04/2026</span></td><td>—</td></tr>
+        <tr><td>Livia de Oliveira Gomes</td><td>Mogi Guaçu</td><td>—</td><td><span class="ferias-badge">29/02/2028</span></td></tr>
+        <tr><td>Mariah Stephani de Oliveira</td><td>Leme</td><td>—</td><td><span class="ferias-badge">31/08/2027</span></td></tr>
+        <tr><td>Sarah da Silva Pinheiro</td><td>Piracicaba — DAM</td><td>—</td><td><span class="ferias-badge">30/01/2028</span></td></tr>
+        <tr><td>Tatiana da Conceição Cardoso Macedo</td><td>Piracicaba</td><td>—</td><td><span class="ferias-badge">31/10/2026</span></td></tr>
+        <tr><td>Larissa Saldanha Bastos</td><td>Piracicaba</td><td>—</td><td><span class="ferias-badge">30/06/2027</span></td></tr>
+        <tr><td>Pedro Afonso Mota Garcia Ramos</td><td>Santa Bárbara d'Oeste</td><td>—</td><td><span class="ferias-badge">31/12/2026</span></td></tr>
+      </tbody>
+    </table>
   </div>
 </div>
 
