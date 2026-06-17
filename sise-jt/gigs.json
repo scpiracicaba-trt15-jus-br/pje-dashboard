@@ -742,6 +742,20 @@
 "tipo":"CON - SOBRESTAMENTO TEMA XXXX - STF / TST"
 },
 {
+"agrupador":"CONHECIMENTO",
+"comentario":"",
+"cor":"#BA7517",
+"destaque": true,
+"legenda":"",
+"observacao":"",
+"prazo":"30",
+"responsavel":"",
+"rotulo":"🏛️ DECISÃO DE EXCEÇÃO DE INCOMPETÊNCIA",
+"salvar": false,
+"separador":"",
+"tipo":"CON - GABINETE - JULGAR EXCEÇÃO"
+},
+{
 "agrupador":"LIQUIDAÇÃO",
 "comentario":"",
 "cor":"#00ca33",
