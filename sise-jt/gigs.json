@@ -756,6 +756,20 @@
 "tipo":"CON - GABINETE - JULGAR EXCEÇÃO"
 },
 {
+"agrupador":"CONHECIMENTO",
+"comentario":"",
+"cor":"#BA7517",
+"destaque": true,
+"legenda":"",
+"observacao":"",
+"prazo":"0",
+"responsavel":"",
+"rotulo":"🏛️ DELIBERAÇÕES PELO JUÍZO",
+"salvar": true,
+"separador":"",
+"tipo":"CON - GABINETE - DELIBERAÇÕES PELO JUÍZO"
+},
+{
 "agrupador":"LIQUIDAÇÃO",
 "comentario":"",
 "cor":"#00ca33",
