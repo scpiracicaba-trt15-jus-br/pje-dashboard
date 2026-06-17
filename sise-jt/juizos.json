@@ -1,0 +1,127 @@
+{
+	"1ª Vara do Trabalho de Americana": {
+		"FABIO CAMERA CAPONE":
+			[1,3,5,7,9,"Férias de 20/07/2026 a 08/08/2026"],
+		"SOLANGE DENISE BELCHIOR SANTAELLA":
+			[0,2,4,6,8,"Férias de 25/06/2026 a 14/07/2026"]
+	},
+
+	"2ª Vara do Trabalho de Americana": {
+		"MARCELO LUIS DE SOUZA FERREIRA":
+			["Férias de 15/06/2026 a 04/07/2026"],
+		"MILENA CASACIO FERREIRA BERALDO":
+			[0,2,4,6,8,1,3,5,7,9,"Férias de 11/07/2026 a 30/07/2026"]
+	},
+
+	"1ª Vara do Trabalho de Piracicaba": {
+		"VILSON ANTONIO PREVIDE":
+			[1,3,5,7,9,0,2,4,6,8,"Férias de 20/07/2026 a 18/08/2026"],
+		"APARECIDO BATISTA DE OLIVEIRA":
+			["Férias de 15/06/2026 a 14/07/2026"]
+	},
+
+	"2ª Vara do Trabalho de Piracicaba": {
+		"EDUARDO ALEXANDRE DA SILVA":
+			[1,3,5,7,9,"Férias de 01/07/2026 a 30/07/2026"],
+		"CARLOS EDUARDO VIANNA MENDES":
+			[0,2,4,6,8]
+	},
+
+	"3ª Vara do Trabalho de Piracicaba": {
+		"EMANUELE PESSATTI SIQUEIRA ROCHA":
+			[1,3,5,7,9,"Férias de 26/06/2026 a 15/07/2026"],
+		"ERICA ESCARASSATTE":
+			[0,2,4,6,8,"Férias de 16/07/2026 a 04/08/2026"]
+	},
+
+	"Vara do Trabalho de Leme": {
+		"REGINA RODRIGUES URBANO":
+			[1,3,5,7,9,"Férias de 31/08/2026 a 19/09/2026"],
+		"LADY ANE DE PAULA SANTOS DELLA ROCCA":
+			[0,2,4,6,8,"Férias de 23/06/2026 a 12/07/2026"]
+	},
+
+	"Vara do Trabalho de Araras": {
+		"ANDRE LUIZ TAVARES DE CASTRO PEREIRA":
+			[0,1,3,5,7,8,9,"Férias de 14/07/2026 a 12/08/2026"],
+		"RENATA MENDES CARDOSO DE CASTRO PEREIRA":
+			[2,4,6,"Férias de 14/07/2026 a 12/08/2026"]
+	},
+
+	"Vara do Trabalho de Mogi Guaçu": {
+		"LETICIA GOUVEIA ANTONIOLI":
+			["Férias de 15/06/2026 a 14/07/2026"],
+		"LUIS FURIAN ZORZETTO":
+			[0,2,4,6,8,1,3,5,7,9,"Férias de 15/07/2026 a 03/08/2026"]
+	},
+
+	"Vara do Trabalho de Rio Claro": {
+		"FELIPE BERNARDES RODRIGUES":
+			["Férias de 15/06/2026 a 14/07/2026"],
+		"FLAVIA FARIAS DE ARRUDA CORSEUIL":
+			[0,2,4,6,8,1,3,5,7,9,"Férias de 20/07/2026 a 18/08/2026"]
+	},
+
+	"Vara do Trabalho de Hortolândia": {
+		"LUCIANE CRISTINA MURARO DE FREITAS":
+			["Férias de 15/06/2026 a 14/07/2026"],
+		"PATRICIA JULIANA MARCHI ALVES":
+			[0,2,4,6,8,1,3,5,7,9,"Férias de 15/07/2026 a 03/08/2026"]
+	},
+
+	"1ª Vara do Trabalho de Limeira": {
+		"ERIKA DE FRANCESCHI":
+			[1,3,5,7,9,"Férias de 22/06/2026 a 21/07/2026"],
+		"THIAGO HENRIQUE AMENT":
+			[0,2,4,6,8,"Férias de 21/09/2026 a 10/10/2026"]
+	},
+
+	"2ª Vara do Trabalho de Limeira": {
+		"ARTUR RIBEIRO GUDWIN":
+			[1,3,5,7,9,"Férias de 15/07/2026 a 03/08/2026"],
+		"CAROLINA POPOFF FERREIRA DA COSTA":
+			[0,2,4,6,8,"Férias de 21/09/2026 a 10/10/2026"]
+	},
+
+	"Vara do Trabalho de Sumaré": {
+		"RONALDO CAPELARI":
+			[0,1,2,3,"Férias de 01/09/2026 a 20/09/2026"],
+		"FRANCINA NUNES DA COSTA":
+			[4,5,6,"Férias de 12/08/2026 a 31/08/2026"],
+		"CARLA GABRIELLA GRAH SENS":
+			[7,8,9,"Férias de 21/09/2026 a 10/10/2026"]
+	},
+
+	"Vara do Trabalho de Santa Bárbara D'Oeste": {
+		"HENRIQUE MACEDO HINZ":
+			[1,3,5,7,9,"Férias de 08/08/2026 a 27/08/2026"],
+		"CRISTIANE KAWANAKA DE PONTES":
+			[0,2,4,6,8,"Férias de 13/07/2026 a 01/08/2026"]
+	},
+
+	"Vara do Trabalho de São João da Boa Vista": {
+		"CRISTIANE SOUZA DE CASTRO TOLEDO":
+			["Férias de 15/06/2026 a 15/07/2026"],
+		"IARA MARIA RODRIGUES":
+			["Férias de 24/05/2026 a 20/09/2026"],
+		"EDUARDO COSTA GONZALES":
+			[0,1,2,3,4,5,6,7,8,9]
+	},
+
+	"Postos Avançados":[
+		"CON1 - Piracicaba",
+		"CON2 - Piracicaba",
+		"LIQ1 - Piracicaba",
+		"LIQ2 - Piracicaba",
+		"EXE1 - Piracicaba",
+		"EXE2 - Piracicaba",
+		"EXE3 - Piracicaba",
+		"EXE4 - Piracicaba",
+		"DIVEX - Piracicaba",
+		"Órgão Centralizador de Leilões Judiciais de Piracicaba",
+		"DAM - Piracicaba",
+		"Juizado Especial da Infância e Adolescência de Campinas",
+		"1º Núcleo de Justiça 4.0"
+	]
+
+}
