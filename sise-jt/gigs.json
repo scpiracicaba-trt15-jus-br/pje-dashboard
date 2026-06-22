@@ -708,7 +708,7 @@
 "observacao":"",
 "prazo":"30",
 "responsavel":"",
-"rotulo":"⏳🔀 AGUARDNDO SOLUÇÃO DE OUTRO PROCESSO",
+"rotulo":"⏳🔀 AGUARDANDO SOLUÇÃO DE OUTRO PROCESSO",
 "salvar": true,
 "separador":"",
 "tipo":"CON - aguardando solução de outro processo"
@@ -740,6 +740,34 @@
 "salvar": true,
 "separador":"",
 "tipo":"CON - SOBRESTAMENTO TEMA XXXX - STF / TST"
+},
+{
+"agrupador":"CONHECIMENTO",
+"comentario":"",
+"cor":"#BA7517",
+"destaque": true,
+"legenda":"",
+"observacao":"",
+"prazo":"30",
+"responsavel":"",
+"rotulo":"🏛️ DECISÃO DE EXCEÇÃO DE INCOMPETÊNCIA",
+"salvar": false,
+"separador":"",
+"tipo":"CON - GABINETE - JULGAR EXCEÇÃO"
+},
+{
+"agrupador":"CONHECIMENTO",
+"comentario":"",
+"cor":"#BA7517",
+"destaque": true,
+"legenda":"",
+"observacao":"",
+"prazo":"0",
+"responsavel":"",
+"rotulo":"🏛️ DELIBERAÇÕES PELO JUÍZO",
+"salvar": true,
+"separador":"",
+"tipo":"CON - GABINETE - DELIBERAÇÕES PELO JUÍZO"
 },
 {
 "agrupador":"LIQUIDAÇÃO",
