@@ -753,6 +753,20 @@
 "rotulo":"🤝 ACORDO",
 "salvar": false,
 "separador":"",
+"tipo":"CON - acordo"
+},
+{
+"agrupador":"LIQUIDAÇÃO",
+"comentario":"",
+"cor":"#00ca33",
+"destaque": false,
+"legenda":"",
+"observacao":"",
+"prazo":"",
+"responsavel":"",
+"rotulo":"🤝 ACORDO",
+"salvar": false,
+"separador":"",
 "tipo":"LIQ - acordo"
 },
 {
@@ -968,6 +982,48 @@
 {
 "agrupador":"LIQUIDAÇÃO",
 "comentario":"",
+"cor":"#00ca33",
+"destaque": false,
+"legenda":"",
+"observacao":"",
+"prazo":"",
+"responsavel":"",
+"rotulo":"DESPACHO APRESENTAÇÃO CÁLCULOS",
+"salvar": true,
+"separador":"",
+"tipo":"LIQ1 - Despacho apresentação cálculos"
+},
+{
+"agrupador":"LIQUIDAÇÃO",
+"comentario":"",
+"cor":"#00ca33",
+"destaque": false,
+"legenda":"",
+"observacao":"",
+"prazo":"",
+"responsavel":"",
+"rotulo":"DESPACHO IMPUGNAÇÃO CÁLCULOS APRESENTADOS",
+"salvar": true,
+"separador":"",
+"tipo":"LIQ1 - Despacho impugnação cálculos apresentados"
+},
+{
+"agrupador":"LIQUIDAÇÃO",
+"comentario":"",
+"cor":"#00ca33",
+"destaque": false,
+"legenda":"",
+"observacao":"",
+"prazo":"",
+"responsavel":"",
+"rotulo":"FALÊNCIA/RJ",
+"salvar": true,
+"separador":"",
+"tipo":"LIQ1 - FALÊNCIA/RJ"
+},
+{
+"agrupador":"LIQUIDAÇÃO",
+"comentario":"",
 "cor":"#ff0dd7",
 "destaque": false,
 "legenda":"",
@@ -1090,6 +1146,20 @@
 "salvar": true,
 "separador":"",
 "tipo":"LIQ - sobrestamento - solução do processo principal"
+},
+{
+"agrupador":"LIQUIDAÇÃO",
+"comentario":"",
+"cor":"#00b6ad",
+"destaque": false,
+"legenda":"",
+"observacao":"",
+"prazo":"25",
+"responsavel":"",
+"rotulo":"🧮 HOMOLOGAR CÁLCULOS",
+"salvar": false,
+"separador":"",
+"tipo":"EXE - homologar cálculos"
 },
 {
 "agrupador":"EXECUÇÃO",
