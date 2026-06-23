@@ -36,9 +36,9 @@
 
 	"Vara do Trabalho de Leme": {
 		"REGINA RODRIGUES URBANO":
-			[1,3,5,7,9,"Férias de 31/08/2026 a 19/09/2026"],
+			[0,2,4,6,8,1,3,5,7,9,"Férias de 31/08/2026 a 19/09/2026"],
 		"LADY ANE DE PAULA SANTOS DELLA ROCCA":
-			[0,2,4,6,8,"Férias de 23/06/2026 a 12/07/2026"]
+			["Férias de 23/06/2026 a 12/07/2026"]
 	},
 
 	"Vara do Trabalho de Araras": {
