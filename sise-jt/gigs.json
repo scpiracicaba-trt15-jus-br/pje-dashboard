@@ -778,7 +778,7 @@
 "observacao":"",
 "prazo":"",
 "responsavel":"",
-"rotulo":"🤝 ACORDO-CON (AGUARDAR CUMPRIMENTO)",
+"rotulo":"🤝 ACORDO-CON /AGUARDAR CUMPRIMENTO",
 "salvar": false,
 "separador":"",
 "tipo":"CON - acordo"
@@ -792,7 +792,7 @@
 "observacao":"",
 "prazo":"",
 "responsavel":"",
-"rotulo":"🤝 ACORDO-LIQ (AGUARDAR CUMPRIMENTO)",
+"rotulo":"🤝 ACORDO-LIQ /AGUARDAR CUMPRIMENTO",
 "salvar": false,
 "separador":"",
 "tipo":"LIQ - acordo"
@@ -862,7 +862,7 @@
 "observacao":"",
 "prazo":"30",
 "responsavel":"",
-"rotulo":"📋 LAUDO AGUARDAR (PERITO DESIGNADO)",
+"rotulo":"📋 LAUDO AGUARDAR /PERITO DESIGNADO",
 "salvar": true,
 "separador":"",
 "tipo":"LIQ - laudo"
@@ -876,7 +876,7 @@
 "observacao":"",
 "prazo":"5",
 "responsavel":"",
-"rotulo":"✅🫱🫲 ACORDO-LIQ (PARA HOMOLOGAÇÃO)",
+"rotulo":"✅🫱🫲 ACORDO-LIQ /PARA HOMOLOGAÇÃO",
 "salvar": true,
 "separador":"HOMOLOGAÇÃO",
 "tipo":"LIQ - homologar acordo"
