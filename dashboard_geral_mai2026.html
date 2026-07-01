@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Geral — Secretaria Conjunta de Piracicaba</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#1A6CC8;--blue-l:#E8F1FB;
+  --teal:#0F8A6A;--teal-l:#E0F4EE;
+  --amber:#B86A00;--amber-l:#FBF0DC;
+  --red:#C03030;--red-l:#FBEAEA;
+  --purple:#6044C8;--purple-l:#EEEAFB;
+  --coral:#C8440A;--coral-l:#FAEAE2;
+  --slate:#2E6B8A;--slate-l:#E0EEF5;
+  --ink:#1A1A1A;--ink2:#444;--ink3:#888;
+  --line:#E2DFD8;--bg:#F6F4EF;--surface:#FFF;--radius:10px;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink)}
+.header{background:var(--ink);color:#fff;padding:24px 36px 20px;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.header-title{font-size:22px;font-weight:600;letter-spacing:-.3px}
+.header-sub{font-size:13px;color:#aaa;margin-top:2px}
+.header-period{font-family:'DM Mono',monospace;font-size:12px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:6px;padding:6px 12px;color:#ddd}
+.body{padding:24px 32px 48px;max-width:1440px;margin:0 auto}
+.sl{font-size:10px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--ink3);margin:28px 0 10px;display:flex;align-items:center;gap:8px}
+.sl::after{content:'';flex:1;height:1px;background:var(--line)}
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:10px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px 12px;position:relative;overflow:hidden}
+.kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent,var(--blue))}
+.kpi-label{font-size:11px;color:var(--ink3);line-height:1.3;margin-bottom:6px}
+.kpi-val{font-size:22px;font-weight:600;line-height:1;font-family:'DM Mono',monospace}
+.kpi-delta{display:inline-flex;align-items:center;gap:3px;font-size:11px;margin-top:6px;font-weight:500;padding:2px 6px;border-radius:4px}
+.up{background:var(--teal-l);color:var(--teal)}.down{background:var(--red-l);color:var(--red)}.neu{background:var(--amber-l);color:var(--amber)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+@media(max-width:900px){.g2,.g3{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px 16px}
+.card-full{grid-column:1/-1}
+.ct{font-size:12px;font-weight:600;color:var(--ink2);text-transform:uppercase;letter-spacing:.7px;margin-bottom:3px}
+.cn{font-size:11px;color:var(--ink3);margin-bottom:12px;line-height:1.4}
+.cw{position:relative;width:100%}
+.leg{display:flex;flex-wrap:wrap;gap:8px 14px;margin-bottom:10px;font-size:11px;color:var(--ink2)}
+.li{display:flex;align-items:center;gap:5px}
+.ld{width:9px;height:9px;border-radius:2px;flex-shrink:0}
+.ctable{width:100%;border-collapse:collapse;font-size:12px}
+.ctable th{text-align:left;padding:6px 10px;font-size:10px;font-weight:600;color:var(--ink3);text-transform:uppercase;letter-spacing:.6px;border-bottom:2px solid var(--line)}
+.ctable td{padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:middle}
+.ctable tr:last-child td{border-bottom:none}
+.ctable tr:hover td{background:#faf9f7}
+.pill{display:inline-block;padding:2px 7px;border-radius:4px;font-size:11px;font-weight:600}
+.pill.up{background:var(--teal-l);color:var(--teal)}.pill.down{background:var(--red-l);color:var(--red)}.pill.neu{background:var(--amber-l);color:var(--amber)}
+.mono{font-family:'DM Mono',monospace}
+.mt{margin-top:14px}
+</style>
+</head>
+<body>
+<div class="header">
+  <div>
+    <div class="header-title">Secretaria Conjunta de Piracicaba</div>
+    <div class="header-sub">Dashboard de Desempenho Processual</div>
+  </div>
+  <div class="header-period">out/2025 → mai/2026</div>
+</div>
+<div class="body">
+
+<div class="sl">Indicadores principais — out/2025 × mai/2026</div>
+<div class="kpi-grid">
+  <div class="kpi" style="--accent:var(--blue)"><div class="kpi-label">Casos novos (mai/26)</div><div class="kpi-val">3.849</div><div class="kpi-delta up">▲ 6,4% vs out/25</div></div>
+  <div class="kpi" style="--accent:var(--teal)"><div class="kpi-label">Conciliações (mai/26)</div><div class="kpi-val">1.184</div><div class="kpi-delta up">▲ 5,1% vs out/25</div></div>
+  <div class="kpi" style="--accent:var(--amber)"><div class="kpi-label">Acervo total (mai/26)</div><div class="kpi-val">140.224</div><div class="kpi-delta down">▲ 13,4% vs out/25</div></div>
+  <div class="kpi" style="--accent:var(--purple)"><div class="kpi-label">Tutelas provisórias (mai/26)</div><div class="kpi-val">384</div><div class="kpi-delta up">▼ 7,7% vs out/25</div></div>
+  <div class="kpi" style="--accent:var(--blue)"><div class="kpi-label">RO pendentes (mai/26)</div><div class="kpi-val">5.566</div><div class="kpi-delta down">▲ 73,4% vs out/25</div></div>
+  <div class="kpi" style="--accent:var(--red)"><div class="kpi-label">Embargos decl. (mai/26)</div><div class="kpi-val">1.322</div><div class="kpi-delta up">▼ 19,0% vs out/25</div></div>
+  <div class="kpi" style="--accent:var(--teal)"><div class="kpi-label">Contrib. prev. (mai/26)</div><div class="kpi-val mono" style="font-size:18px">R$ 5,9M</div><div class="kpi-delta up">▲ 30,8% vs out/25</div></div>
+  <div class="kpi" style="--accent:var(--coral)"><div class="kpi-label">Valores — acordo (mai/26)</div><div class="kpi-val mono" style="font-size:18px">R$ 44,1M</div><div class="kpi-delta up">▲ 51,9% vs out/25</div></div>
+</div>
+
+<!-- CASOS NOVOS -->
+<div class="sl">Casos novos &amp; movimento processual</div>
+<div class="g2">
+  <div class="card">
+    <div class="ct">Casos novos × baixados × conciliações</div>
+    <div class="cn">Inclui redistribuições · evolução mensal</div>
+    <div class="leg">
+      <div class="li"><span class="ld" style="background:#1A6CC8"></span>Casos novos</div>
+      <div class="li"><span class="ld" style="background:#C03030"></span>Baixados conhecimento</div>
+      <div class="li"><span class="ld" style="background:#0F8A6A"></span>Conciliações</div>
+    </div>
+    <div class="cw" style="height:230px"><canvas id="cNovos"></canvas></div>
+  </div>
+  <div class="card">
+    <div class="ct">Processos baixados por fase</div>
+    <div class="cn">Conhecimento · Liquidação · Execução forçada</div>
+    <div class="leg">
+      <div class="li"><span class="ld" style="background:#1A6CC8"></span>Conhecimento</div>
+      <div class="li"><span class="ld" style="background:#0F8A6A"></span>Liquidação</div>
+      <div class="li"><span class="ld" style="background:#B86A00"></span>Exec. forçada</div>
+    </div>
+    <div class="cw" style="height:230px"><canvas id="cBaixados"></canvas></div>
+  </div>
+</div>
+
+<!-- ACERVO -->
+<div class="sl">Acervo — processos pendentes por fase</div>
+<div class="g2">
+  <div class="card">
+    <div class="ct">Pendentes de finalização (acervo total)</div>
+    <div class="cn">Barras empilhadas por fase</div>
+    <div class="leg">
+      <div class="li"><span class="ld" style="background:#1A6CC8"></span>Conhecimento</div>
+      <div class="li"><span class="ld" style="background:#0F8A6A"></span>Liquidação</div>
+      <div class="li"><span class="ld" style="background:#C03030"></span>Exec. forçada</div>
+    </div>
+    <div class="cw" style="height:250px"><canvas id="cPendFin"></canvas></div>
+  </div>
+  <div class="card">
+    <div class="ct">Pendentes de baixa por fase</div>
+    <div class="cn">Evolução mensal do acervo aguardando baixa</div>
+    <div class="leg">
+      <div class="li"><span class="ld" style="background:#1A6CC8"></span>Conhecimento</div>
+      <div class="li"><span class="ld" style="background:#0F8A6A"></span>Liquidação</div>
+      <div class="li"><span class="ld" style="background:#C03030"></span>Exec. forçada</div>
+    </div>
+    <div class="cw" style="height:250px"><canvas id="cPendBaixa"></canvas></div>
+  </div>
+</div>
+
+<!-- ARQUIVAMENTOS -->
+<div class="sl">Arquivamentos por fase</div>
+<div class="g3">
+  <div class="card">
+    <div class="ct">Conhecimento — geral &amp; definitivo</div>
+    <div class="cn">Fase de conhecimento</div>
+    <div class="leg">
+      <div class="li"><span class="ld" style="background:#6044C8"></span>Geral</div>
+      <div class="li"><span class="ld" style="background:#C8440A"></span>Definitivo</div>
+    </div>
+    <div class="cw" style="height:190px"><canvas id="cArqConhec"></canvas></div>
+  </div>
+  <div class="card">
+    <div class="ct">Liquidação — arq. definitivo</div>
+    <div class="cn">Finalizados por arquivamento definitivo</div>
+    <div class="leg"><div class="li"><span class="ld" style="background:#0F8A6A"></span>Liquidação</div></div>
+    <div class="cw" style="height:190px"><canvas id="cArqLiq"></canvas></div>
+  </div>
+  <div class="card">
+    <div class="ct">Exec. forçada — arq. definitivo</div>
+    <div class="cn">Finalizados por arquivamento definitivo</div>
+    <div class="leg"><div class="li"><span class="ld" style="background:#B86A00"></span>Exec. forçada</div></div>
+    <div class="cw" style="height:190px"><canvas id="cArqExec"></canvas></div>
+  </div>
+</div>
+
+<!-- JULGAMENTOS -->
+<div class="sl">Julgamentos de mérito</div>
+<div class="card">
+  <div class="ct">Procedente · Procedente em parte · Improcedente</div>
+  <div class="cn">Evolução mensal dos julgamentos por resultado</div>
+  <div class="leg">
+    <div class="li"><span class="ld" style="background:#0F8A6A"></span>Procedente</div>
+    <div class="li"><span class="ld" style="background:#1A6CC8"></span>Proced. em parte</div>
+    <div class="li"><span class="ld" style="background:#C03030"></span>Improcedente</div>
+  </div>
+  <div class="cw" style="height:220px"><canvas id="cJulg"></canvas></div>
+</div>
+
+<!-- VALORES PAGOS -->
+<div class="sl">Valores pagos &amp; arrecadados</div>
+<div class="g2">
+  <div class="card">
+    <div class="ct">Valores pagos aos demandantes (R$)</div>
+    <div class="cn">Acordo · Pagamento espontâneo · Execução</div>
+    <div class="leg">
+      <div class="li"><span class="ld" style="background:#1A6CC8"></span>Acordo</div>
+      <div class="li"><span class="ld" style="background:#0F8A6A"></span>Pagto espontâneo</div>
+      <div class="li"><span class="ld" style="background:#B86A00"></span>Execução</div>
+    </div>
+    <div class="cw" style="height:240px"><canvas id="cPagos"></canvas></div>
+  </div>
+  <div class="card">
+    <div class="ct">Valores arrecadados (R$)</div>
+    <div class="cn">Contrib. previdenciária · IR · Custas</div>
+    <div class="leg">
+      <div class="li"><span class="ld" style="background:#6044C8"></span>Contrib. prev.</div>
+      <div class="li"><span class="ld" style="background:#C03030"></span>IR</div>
+      <div class="li"><span class="ld" style="background:#C8440A"></span>Custas</div>
+    </div>
+    <div class="cw" style="height:240px"><canvas id="cArrec"></canvas></div>
+  </div>
+</div>
+
+<div class="card mt">
+  <div class="ct">Total pago aos demandantes por mês (R$)</div>
+  <div class="cn">Somatório de acordo + pagamento espontâneo + execução</div>
+  <div class="leg"><div class="li"><span class="ld" style="background:#1A6CC8"></span>Total pago</div></div>
+  <div class="cw" style="height:180px"><canvas id="cTotalPago"></canvas></div>
+</div>
+
+<!-- TUTELAS / EMBARGOS -->
+<div class="sl">Tutelas provisórias &amp; embargos de declaração</div>
+<div class="g2">
+  <div class="card">
+    <div class="ct">Tutelas provisórias pendentes</div>
+    <div class="cn">Pico em fev/26 (696); queda expressiva em mai/26 (384)</div>
+    <div class="leg"><div class="li"><span class="ld" style="background:#6044C8"></span>Tutelas pendentes</div></div>
+    <div class="cw" style="height:190px"><canvas id="cTutelas"></canvas></div>
+  </div>
+  <div class="card">
+    <div class="ct">Embargos de declaração pendentes</div>
+    <div class="cn">Queda consistente desde nov/25; mai/26: 1.322</div>
+    <div class="leg"><div class="li"><span class="ld" style="background:#C03030"></span>Embargos pendentes</div></div>
+    <div class="cw" style="height:190px"><canvas id="cEmbargos"></canvas></div>
+  </div>
+</div>
+
+<!-- RECURSOS ORDINÁRIOS -->
+<div class="sl">Recursos ordinários &amp; adesivos</div>
+<div class="g2">
+  <div class="card">
+    <div class="ct">Recursos ordinários — pendentes × remetidos</div>
+    <div class="cn">Pendentes em alta contínua; recorde de remessas em mai/26 (2.136)</div>
+    <div class="leg">
+      <div class="li"><span class="ld" style="background:#1A6CC8"></span>Pendentes</div>
+      <div class="li"><span class="ld" style="background:#0F8A6A"></span>Remetidos</div>
+    </div>
+    <div class="cw" style="height:210px"><canvas id="cRO"></canvas></div>
+  </div>
+  <div class="card">
+    <div class="ct">Recursos adesivos — pendentes × remetidos</div>
+    <div class="cn">Pendentes chegaram a 315; recorde de remessas em mai/26 (120)</div>
+    <div class="leg">
+      <div class="li"><span class="ld" style="background:#6044C8"></span>Pendentes</div>
+      <div class="li"><span class="ld" style="background:#C8440A"></span>Remetidos</div>
+    </div>
+    <div class="cw" style="height:210px"><canvas id="cRA"></canvas></div>
+  </div>
+</div>
+
+<!-- AGRAVOS -->
+<div class="sl">Agravos de instrumento — AI-AP e AI-RO</div>
+<div class="g2">
+  <div class="card">
+    <div class="ct">AI em Agravo de Petição — pendentes × remetidos</div>
+    <div class="cn">Pico de remessas em mar/26 (51) e mai/26 (42)</div>
+    <div class="leg">
+      <div class="li"><span class="ld" style="background:#1A6CC8"></span>Pendentes</div>
+      <div class="li"><span class="ld" style="background:#B86A00"></span>Remetidos</div>
+    </div>
+    <div class="cw" style="height:210px"><canvas id="cAIAP"></canvas></div>
+  </div>
+  <div class="card">
+    <div class="ct">AI em Recurso Ordinário — pendentes × remetidos</div>
+    <div class="cn">Volumes baixos; sem remessas em abr/26</div>
+    <div class="leg">
+      <div class="li"><span class="ld" style="background:#6044C8"></span>Pendentes</div>
+      <div class="li"><span class="ld" style="background:#C03030"></span>Remetidos</div>
+    </div>
+    <div class="cw" style="height:210px"><canvas id="cAIRO"></canvas></div>
+  </div>
+</div>
+
+<!-- AGRAVOS DE PETIÇÃO -->
+<div class="sl">Agravos de petição</div>
+<div class="card">
+  <div class="ct">Agravos de petição — pendentes × remetidos</div>
+  <div class="cn">Recorde de remessas em mai/26 (354); pendentes em 518</div>
+  <div class="leg">
+    <div class="li"><span class="ld" style="background:#2E6B8A"></span>Pendentes</div>
+    <div class="li"><span class="ld" style="background:#C03030"></span>Remetidos</div>
+  </div>
+  <div class="cw" style="height:200px"><canvas id="cAP"></canvas></div>
+</div>
+
+<!-- TABELA -->
+<div class="sl">Tabela comparativa — out/2025 × mai/2026</div>
+<div class="card">
+  <table class="ctable">
+    <thead>
+      <tr>
+        <th>Indicador</th>
+        <th style="text-align:right">out/25</th><th style="text-align:right">nov/25</th>
+        <th style="text-align:right">dez/25</th><th style="text-align:right">jan/26</th>
+        <th style="text-align:right">fev/26</th><th style="text-align:right">mar/26</th>
+        <th style="text-align:right">abr/26</th><th style="text-align:right">mai/26</th>
+        <th style="text-align:right">Var. out↔mai</th>
+      </tr>
+    </thead>
+    <tbody id="tBody"></tbody>
+  </table>
+</div>
+
+</div><!-- /body -->
+<script>
+const MES=['out/25','nov/25','dez/25','jan/26','fev/26','mar/26','abr/26','mai/26'];
+const fmt=v=>v.toLocaleString('pt-BR');
+const fmtM=v=>'R$ '+(v/1e6).toFixed(2).replace('.',',')+' M';
+const fmtK=v=>(v/1000).toFixed(0)+'k';
+
+const BASE={responsive:true,maintainAspectRatio:false,animation:{duration:600},plugins:{legend:{display:false}},scales:{x:{grid:{color:'#f0ede8'},ticks:{font:{size:11}}},y:{grid:{color:'#f0ede8'},ticks:{font:{size:11}}}}};
+function opts(cb,stacked){const o=JSON.parse(JSON.stringify(BASE));if(cb)o.scales.y.ticks.callback=cb;if(stacked){o.scales.x.stacked=true;o.scales.y.stacked=true;}return o;}
+function ds(l,d,c,dash){return{label:l,data:d,borderColor:c,backgroundColor:c+'18',fill:!dash,tension:.35,pointRadius:4,borderWidth:2.2,...(dash?{borderDash:[5,3],fill:false}:{})};}
+function dsB(l,d,c){return{label:l,data:d,backgroundColor:c,borderRadius:3,borderSkipped:false};}
+function dsA(l,d,c){return{label:l,data:d,borderColor:c,backgroundColor:c+'18',fill:true,tension:.35,pointRadius:4,borderWidth:2.2};}
+function line(id,dsets,cb){new Chart(document.getElementById(id),{type:'line',data:{labels:MES,datasets:dsets},options:opts(cb)});}
+function bar(id,dsets,cb,stk){new Chart(document.getElementById(id),{type:'bar',data:{labels:MES,datasets:dsets},options:opts(cb,stk)});}
+
+line('cNovos',[
+  dsA('Casos novos',[3723,3025,2995,2785,3257,4037,3949,3849],'#1A6CC8'),
+  ds('Baixados',   [2632,1749,2184,1422,2116,2944,2033,2993],'#C03030',true),
+  ds('Conciliações',[1127,1016,671,462,918,1344,1081,1184],'#0F8A6A',true),
+],v=>fmt(v));
+
+bar('cBaixados',[
+  dsB('Conhecimento',[2632,1749,2184,1422,2116,2944,2033,2993],'#1A6CC8'),
+  dsB('Liquidação',  [1146,1251,929,484,1847,1149,741,707],'#0F8A6A'),
+  dsB('Exec. forç.', [561,561,361,350,527,816,619,971],'#B86A00'),
+],v=>fmt(v));
+
+bar('cPendFin',[
+  dsB('Conhecimento', [62038,63428,64236,65205,66455,67822,69862,71305],'#1A6CC8'),
+  dsB('Liquidação',   [19531,19589,23223,23621,22796,22610,22933,23593],'#0F8A6A'),
+  dsB('Exec. forç.',  [42803,43359,43591,43736,44351,44901,45211,45326],'#C03030'),
+],v=>fmtK(v),true);
+
+bar('cPendBaixa',[
+  dsB('Conhecimento', [41813,43041,43827,45168,46272,47346,49137,49929],'#1A6CC8'),
+  dsB('Liquidação',   [19142,19214,22854,23254,22429,22226,22560,23168],'#0F8A6A'),
+  dsB('Exec. forç.',  [36124,36572,36690,36824,37371,37789,38005,37963],'#C03030'),
+],v=>fmtK(v),true);
+
+bar('cArqConhec',[
+  dsB('Geral',    [118,128,90,63,134,221,158,167],'#6044C8'),
+  dsB('Definitivo',[675,309,549,556,548,725,348,458],'#C8440A'),
+],v=>fmt(v));
+
+bar('cArqLiq',[dsB('Liquidação',[1144,1246,930,480,1838,1112,733,641],'#0F8A6A')],v=>fmt(v));
+bar('cArqExec',[dsB('Exec.',[472,472,252,346,468,704,544,828],'#B86A00')],v=>fmt(v));
+
+bar('cJulg',[
+  dsB('Procedente',       [199,140,103,119,129,216,143,180],'#0F8A6A'),
+  dsB('Proced. em parte', [1201,930,840,699,851,1198,1021,1400],'#1A6CC8'),
+  dsB('Improcedente',     [411,306,272,228,303,426,378,480],'#C03030'),
+],v=>fmt(v));
+
+bar('cPagos',[
+  dsB('Acordo',          [29011749.76,27946414.16,20557126.29,38399394.01,26538300.80,25082465.77,15774266.11,44059727.87],'#1A6CC8'),
+  dsB('Pagto espontâneo',[20540514.55,20768815.10,17191880.18,14505981.22,27308410.86,22219322.33,17168940.16,31029265.19],'#0F8A6A'),
+  dsB('Execução',        [4392425.43,2607841.57,7838806.44,1737747.38,2174026.48,4163564.94,3490060.01,6730839.02],'#B86A00'),
+],v=>fmtM(v));
+
+bar('cArrec',[
+  dsB('Contrib. prev.',[4548585.16,4855321.72,4401682.45,3853126.95,6317833.68,5046874.91,3160157.30,5948880.45],'#6044C8'),
+  dsB('IR',            [240898.18,181508.07,563066.11,105979.01,509672.11,271592.60,315238.59,357939.72],'#C03030'),
+  dsB('Custas',        [240641.11,180665.74,178565.45,164546.48,371839.95,464289.40,401384.14,592434.22],'#C8440A'),
+],v=>fmtM(v));
+
+const tp=[
+  29011749.76+20540514.55+4392425.43,
+  27946414.16+20768815.10+2607841.57,
+  20557126.29+17191880.18+7838806.44,
+  38399394.01+14505981.22+1737747.38,
+  26538300.80+27308410.86+2174026.48,
+  25082465.77+22219322.33+4163564.94,
+  15774266.11+17168940.16+3490060.01,
+  44059727.87+31029265.19+6730839.02,
+];
+line('cTotalPago',[dsA('Total',tp,'#1A6CC8')],v=>fmtM(v));
+
+line('cTutelas',[dsA('Tutelas',[416,484,555,630,696,658,504,384],'#6044C8')],v=>fmt(v));
+line('cEmbargos',[dsA('Embargos',[1631,1718,1500,1442,1510,1519,1283,1322],'#C03030')],v=>fmt(v));
+
+line('cRO',[
+  dsA('Pendentes',[3209,3958,3784,3875,4620,4848,5485,5566],'#1A6CC8'),
+  ds('Remetidos', [1274,751,1363,904,1065,1734,980,2136],'#0F8A6A',true),
+],v=>fmt(v));
+
+line('cRA',[
+  dsA('Pendentes',[123,156,136,144,188,236,263,315],'#6044C8'),
+  ds('Remetidos', [64,51,63,40,39,80,55,120],'#C8440A',true),
+],v=>fmt(v));
+
+line('cAIAP',[
+  dsA('Pendentes',[31,32,31,38,36,32,40,27],'#1A6CC8'),
+  ds('Remetidos', [11,12,9,6,25,51,27,42],'#B86A00',true),
+],v=>fmt(v));
+
+line('cAIRO',[
+  dsA('Pendentes',[11,13,12,10,11,14,13,16],'#6044C8'),
+  ds('Remetidos', [6,2,2,3,2,3,0,2],'#C03030',true),
+],v=>fmt(v));
+
+line('cAP',[
+  dsA('Pendentes',[636,634,541,547,531,472,552,518],'#2E6B8A'),
+  ds('Remetidos', [167,169,194,102,179,263,183,354],'#C03030',true),
+],v=>fmt(v));
+
+// Tabela
+const rows=[
+  ['Casos novos (incl. redistribuição)',[3723,3025,2995,2785,3257,4037,3949,3849],false],
+  ['Conciliações',[1127,1016,671,462,918,1344,1081,1184],false],
+  ['Proc. baixados — conhecimento',[2632,1749,2184,1422,2116,2944,2033,2993],false],
+  ['Proc. baixados — liquidação',[1146,1251,929,484,1847,1149,741,707],false],
+  ['Proc. baixados — exec. forçada',[561,561,361,350,527,816,619,971],false],
+  ['Pend. finalização — conhecimento',[62038,63428,64236,65205,66455,67822,69862,71305],false],
+  ['Pend. finalização — liquidação',[19531,19589,23223,23621,22796,22610,22933,23593],false],
+  ['Pend. finalização — exec. forçada',[42803,43359,43591,43736,44351,44901,45211,45326],false],
+  ['Pend. baixa — conhecimento',[41813,43041,43827,45168,46272,47346,49137,49929],false],
+  ['Pend. baixa — liquidação',[19142,19214,22854,23254,22429,22226,22560,23168],false],
+  ['Pend. baixa — exec. forçada',[36124,36572,36690,36824,37371,37789,38005,37963],false],
+  ['Arq. definitivo — conhecimento',[675,309,549,556,548,725,348,458],false],
+  ['Arq. definitivo — liquidação',[1144,1246,930,480,1838,1112,733,641],false],
+  ['Arq. definitivo — exec. forçada',[472,472,252,346,468,704,544,828],false],
+  ['Tutelas provisórias pendentes',[416,484,555,630,696,658,504,384],false],
+  ['Embargos de declaração pendentes',[1631,1718,1500,1442,1510,1519,1283,1322],false],
+  ['RO pendentes de remessa',[3209,3958,3784,3875,4620,4848,5485,5566],false],
+  ['RO remetidos',[1274,751,1363,904,1065,1734,980,2136],false],
+  ['Recursos adesivos pendentes',[123,156,136,144,188,236,263,315],false],
+  ['Recursos adesivos remetidos',[64,51,63,40,39,80,55,120],false],
+  ['AI-AP pendentes',[31,32,31,38,36,32,40,27],false],
+  ['AI-AP remetidos',[11,12,9,6,25,51,27,42],false],
+  ['AI-RO pendentes',[11,13,12,10,11,14,13,16],false],
+  ['AI-RO remetidos',[6,2,2,3,2,3,0,2],false],
+  ['Agravos de petição pendentes',[636,634,541,547,531,472,552,518],false],
+  ['Agravos de petição remetidos',[167,169,194,102,179,263,183,354],false],
+  ['Valores pagos — acordo (R$)',[29011749.76,27946414.16,20557126.29,38399394.01,26538300.80,25082465.77,15774266.11,44059727.87],true],
+  ['Valores pagos — espontâneo (R$)',[20540514.55,20768815.10,17191880.18,14505981.22,27308410.86,22219322.33,17168940.16,31029265.19],true],
+  ['Valores pagos — execução (R$)',[4392425.43,2607841.57,7838806.44,1737747.38,2174026.48,4163564.94,3490060.01,6730839.02],true],
+  ['Contrib. previdenciária (R$)',[4548585.16,4855321.72,4401682.45,3853126.95,6317833.68,5046874.91,3160157.30,5948880.45],true],
+  ['Imposto de Renda (R$)',[240898.18,181508.07,563066.11,105979.01,509672.11,271592.60,315238.59,357939.72],true],
+  ['Custas processuais (R$)',[240641.11,180665.74,178565.45,164546.48,371839.95,464289.40,401384.14,592434.22],true],
+];
+const tbody=document.getElementById('tBody');
+rows.forEach(([label,vals,isCurr])=>{
+  const disp=isCurr?fmtM:v=>v.toLocaleString('pt-BR');
+  const v0=vals[0],vf=vals[7],pct=(vf-v0)/v0*100;
+  const sinal=pct>=0?'▲':'▼';
+  const cls=Math.abs(pct)<1?'neu':pct>0?'up':'down';
+  // para acervo e pendentes, alta é ruim; para baixados e remetidos, alta é boa
+  const acervo=['Pend. finalização','Pend. baixa','Embargos','RO pendentes','Recursos adesivos pendentes','AI-AP pendentes','AI-RO pendentes','Agravos de petição pendentes','Tutelas'];
+  const isAcervo=acervo.some(k=>label.startsWith(k)||label.includes('pendentes'));
+  const realCls=Math.abs(pct)<1?'neu':(pct>0?(isAcervo?'down':'up'):(isAcervo?'up':'down'));
+  tbody.innerHTML+=`<tr>
+    <td>${label}</td>
+    ${vals.map(v=>`<td class="mono" style="text-align:right">${disp(v)}</td>`).join('')}
+    <td style="text-align:right"><span class="pill ${realCls}">${sinal} ${Math.abs(pct).toFixed(1).replace('.',',')}%</span></td>
+  </tr>`;
+});
+</script>
+</body>
+</html>
