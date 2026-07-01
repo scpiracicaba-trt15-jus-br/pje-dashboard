@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prazos Médios — Secretaria Conjunta de Piracicaba</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#1A6CC8;--blue-l:#E8F1FB;
+  --teal:#0F8A6A;--teal-l:#E0F4EE;
+  --amber:#B86A00;--amber-l:#FBF0DC;
+  --red:#C03030;--red-l:#FBEAEA;
+  --purple:#6044C8;--purple-l:#EEEAFB;
+  --coral:#C8440A;--coral-l:#FAEAE2;
+  --ink:#1A1A1A;--ink2:#444;--ink3:#888;
+  --line:#E2DFD8;--bg:#F6F4EF;--surface:#FFF;--radius:10px;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink)}
+.header{background:var(--ink);color:#fff;padding:24px 36px 20px;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.header-title{font-size:22px;font-weight:600;letter-spacing:-.3px}
+.header-sub{font-size:13px;color:#aaa;margin-top:2px}
+.header-period{font-family:'DM Mono',monospace;font-size:12px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:6px;padding:6px 12px;color:#ddd}
+.body{padding:24px 32px 48px;max-width:1440px;margin:0 auto}
+.sl{font-size:10px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--ink3);margin:28px 0 10px;display:flex;align-items:center;gap:8px}
+.sl::after{content:'';flex:1;height:1px;background:var(--line)}
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px 12px;position:relative;overflow:hidden}
+.kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent,var(--blue))}
+.kpi-label{font-size:11px;color:var(--ink3);line-height:1.3;margin-bottom:6px}
+.kpi-val{font-size:26px;font-weight:600;line-height:1;font-family:'DM Mono',monospace}
+.kpi-unit{font-size:12px;color:var(--ink3);margin-top:2px}
+.kpi-delta{display:inline-flex;align-items:center;gap:3px;font-size:11px;margin-top:6px;font-weight:500;padding:2px 6px;border-radius:4px}
+.up{background:var(--teal-l);color:var(--teal)}.down{background:var(--red-l);color:var(--red)}.neu{background:var(--amber-l);color:var(--amber)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:860px){.g2{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px 16px}
+.ct{font-size:12px;font-weight:600;color:var(--ink2);text-transform:uppercase;letter-spacing:.7px;margin-bottom:3px}
+.cn{font-size:11px;color:var(--ink3);margin-bottom:12px;line-height:1.4}
+.cw{position:relative;width:100%}
+.leg{display:flex;flex-wrap:wrap;gap:8px 14px;margin-bottom:10px;font-size:11px;color:var(--ink2)}
+.li{display:flex;align-items:center;gap:5px}
+.ld{width:9px;height:9px;border-radius:2px;flex-shrink:0}
+.fb{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;padding:2px 8px;border-radius:4px;margin-bottom:10px}
+.fc{background:var(--blue-l);color:var(--blue)}
+.fl{background:var(--teal-l);color:var(--teal)}
+.fe{background:var(--amber-l);color:var(--amber)}
+.fg{background:var(--purple-l);color:var(--purple)}
+.ctable{width:100%;border-collapse:collapse;font-size:12px}
+.ctable th{text-align:left;padding:6px 10px;font-size:10px;font-weight:600;color:var(--ink3);text-transform:uppercase;letter-spacing:.6px;border-bottom:2px solid var(--line)}
+.ctable td{padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:middle}
+.ctable tr:last-child td{border-bottom:none}
+.ctable tr:hover td{background:#faf9f7}
+.pill{display:inline-block;padding:2px 7px;border-radius:4px;font-size:11px;font-weight:600}
+.pill.up{background:var(--teal-l);color:var(--teal)}.pill.down{background:var(--red-l);color:var(--red)}.pill.neu{background:var(--amber-l);color:var(--amber)}
+.mono{font-family:'DM Mono',monospace}
+</style>
+</head>
+<body>
+<div class="header">
+  <div>
+    <div class="header-title">Secretaria Conjunta de Piracicaba</div>
+    <div class="header-sub">Dashboard de Prazos Médios Processuais</div>
+  </div>
+  <div class="header-period">out/2025 → mai/2026 &nbsp;·&nbsp; valores em dias</div>
+</div>
+<div class="body">
+
+<!-- KPIs -->
+<div class="sl">Destaques — comparativo out/2025 × mai/2026</div>
+<div class="kpi-grid">
+  <div class="kpi" style="--accent:var(--blue)"><div class="kpi-label">Ajuizamento → sentença</div><div class="kpi-val">359</div><div class="kpi-unit">dias (mai/26)</div><div class="kpi-delta down">▲ 1,7% vs out/25 (352 d)</div></div>
+  <div class="kpi" style="--accent:var(--blue)"><div class="kpi-label">Conclusão → prolação sentença</div><div class="kpi-val">19</div><div class="kpi-unit">dias (mai/26)</div><div class="kpi-delta up">▼ 41,5% vs out/25 (32 d)</div></div>
+  <div class="kpi" style="--accent:var(--blue)"><div class="kpi-label">1ª audiência → enc. instrução</div><div class="kpi-val">205</div><div class="kpi-unit">dias (mai/26)</div><div class="kpi-delta down">▲ 28,0% vs out/25 (160 d)</div></div>
+  <div class="kpi" style="--accent:var(--blue)"><div class="kpi-label">Últ. aud. → conclusão</div><div class="kpi-val">35</div><div class="kpi-unit">dias (mai/26)</div><div class="kpi-delta up">▼ 29,1% vs out/25 (50 d)</div></div>
+  <div class="kpi" style="--accent:var(--teal)"><div class="kpi-label">Liquidação → homologação</div><div class="kpi-val">256</div><div class="kpi-unit">dias (mai/26)</div><div class="kpi-delta down">▲ 5,0% vs out/25 (244 d)</div></div>
+  <div class="kpi" style="--accent:var(--amber)"><div class="kpi-label">Exec. forçada → extinção (privado)</div><div class="kpi-val">1.180</div><div class="kpi-unit">dias (mai/26)</div><div class="kpi-delta up">▼ 16,6% vs out/25 (1.414 d)</div></div>
+  <div class="kpi" style="--accent:var(--amber)"><div class="kpi-label">Exec. forçada → extinção (público)</div><div class="kpi-val">484</div><div class="kpi-unit">dias (mai/26)</div><div class="kpi-delta up">▼ 44,5% vs out/25 (871 d)</div></div>
+  <div class="kpi" style="--accent:var(--red)"><div class="kpi-label">Ciclo completo — ajuiz. → extinção</div><div class="kpi-val">1.277</div><div class="kpi-unit">dias (mai/26)</div><div class="kpi-delta up">▼ 1,5% vs out/25 (1.297 d)</div></div>
+  <div class="kpi" style="--accent:var(--purple)"><div class="kpi-label">Ajuizamento → arquivamento</div><div class="kpi-val">1.744</div><div class="kpi-unit">dias (mai/26)</div><div class="kpi-delta down">▲ 44,9% vs out/25 (1.204 d)</div></div>
+  <div class="kpi" style="--accent:var(--coral)"><div class="kpi-label">Cumpr. sentença → extinção (privado)</div><div class="kpi-val">629</div><div class="kpi-unit">dias (mai/26)</div><div class="kpi-delta neu">▲ 5,9% vs out/25 (594 d)</div></div>
+</div>
+
+<!-- CONHECIMENTO -->
+<div class="sl">Fase de conhecimento</div>
+<div class="g2">
+  <div class="card">
+    <span class="fb fc">Conhecimento</span>
+    <div class="ct">Ajuizamento → sentença &amp; etapas macro</div>
+    <div class="cn">Prazos do ajuizamento até cada marco processual (dias)</div>
+    <div class="leg">
+      <div class="li"><span class="ld" style="background:#1A6CC8"></span>Ajuiz. → sentença</div>
+      <div class="li"><span class="ld" style="background:#6044C8"></span>Ajuiz. → 1ª aud.</div>
+      <div class="li"><span class="ld" style="background:#0F8A6A"></span>Ajuiz. → enc. instrução</div>
+    </div>
+    <div class="cw" style="height:230px"><canvas id="cC1"></canvas></div>
+  </div>
+  <div class="card">
+    <span class="fb fc">Conhecimento</span>
+    <div class="ct">Prazos internos — instrução até sentença</div>
+    <div class="cn">Prazos medidos entre marcos internos da fase (dias)</div>
+    <div class="leg">
+      <div class="li"><span class="ld" style="background:#C03030"></span>1ª aud. → enc. instrução</div>
+      <div class="li"><span class="ld" style="background:#C07010"></span>Últ. aud. → conclusão</div>
+      <div class="li"><span class="ld" style="background:#1A6CC8"></span>Conclusão → sentença</div>
+    </div>
+    <div class="cw" style="height:230px"><canvas id="cC2"></canvas></div>
+  </div>
+</div>
+
+<!-- LIQUIDAÇÃO -->
+<div class="sl">Fase de liquidação</div>
+<div class="card">
+  <span class="fb fl">Liquidação</span>
+  <div class="ct">Início da liquidação → homologação dos cálculos</div>
+  <div class="cn">Pico em jan/26 (288 d); recuperação em abr/26 e mai/26</div>
+  <div class="leg"><div class="li"><span class="ld" style="background:#0F8A6A"></span>Prazo médio (dias)</div></div>
+  <div class="cw" style="height:200px"><canvas id="cLiq"></canvas></div>
+</div>
+
+<!-- EXECUÇÃO FORÇADA -->
+<div class="sl">Fase de execução forçada</div>
+<div class="g2">
+  <div class="card">
+    <span class="fb fe">Execução forçada</span>
+    <div class="ct">Exec. forçada → extinção — ente privado</div>
+    <div class="cn">Pico em jan/26 (1.971 d); queda expressiva em mai/26 (1.180 d)</div>
+    <div class="leg"><div class="li"><span class="ld" style="background:#B86A00"></span>Ente privado (dias)</div></div>
+    <div class="cw" style="height:210px"><canvas id="cEP"></canvas></div>
+  </div>
+  <div class="card">
+    <span class="fb fe">Execução forçada</span>
+    <div class="ct">Exec. forçada → extinção — ente público</div>
+    <div class="cn">Queda sustentada: 871 d (out/25) → 484 d (mai/26)</div>
+    <div class="leg"><div class="li"><span class="ld" style="background:#6044C8"></span>Ente público (dias)</div></div>
+    <div class="cw" style="height:210px"><canvas id="cEPub"></canvas></div>
+  </div>
+</div>
+
+<!-- CUMPRIMENTO -->
+<div class="sl">Cumprimento de sentença &amp; execução de título extrajudicial</div>
+<div class="g2">
+  <div class="card">
+    <span class="fb fe">Cumprimento</span>
+    <div class="ct">Início cumprimento → extinção — ente privado</div>
+    <div class="cn">Pico em abr/26 (1.064 d); recuperação forte em mai/26 (629 d)</div>
+    <div class="leg"><div class="li"><span class="ld" style="background:#B86A00"></span>Ente privado (dias)</div></div>
+    <div class="cw" style="height:210px"><canvas id="cCP"></canvas></div>
+  </div>
+  <div class="card">
+    <span class="fb fe">Cumprimento</span>
+    <div class="ct">Início cumprimento → extinção — ente público</div>
+    <div class="cn">Oscilação; pico em fev/26 (864 d); mai/26: 740 d</div>
+    <div class="leg"><div class="li"><span class="ld" style="background:#C03030"></span>Ente público (dias)</div></div>
+    <div class="cw" style="height:210px"><canvas id="cCPub"></canvas></div>
+  </div>
+</div>
+
+<!-- CICLO COMPLETO -->
+<div class="sl">Visão geral — ciclo completo e arquivamento</div>
+<div class="g2">
+  <div class="card">
+    <span class="fb fg">Ciclo completo</span>
+    <div class="ct">Ajuizamento → extinção do cumprimento/exec.</div>
+    <div class="cn">Pico em abr/26 (1.837 d); recuperação em mai/26 (1.277 d)</div>
+    <div class="leg"><div class="li"><span class="ld" style="background:#C8440A"></span>Ajuiz. → extinção (dias)</div></div>
+    <div class="cw" style="height:200px"><canvas id="cCiclo"></canvas></div>
+  </div>
+  <div class="card">
+    <span class="fb fg">Arquivamento</span>
+    <div class="ct">Ajuizamento → arquivamento</div>
+    <div class="cn">Alta consistente; mai/26 atingiu 1.744 d</div>
+    <div class="leg"><div class="li"><span class="ld" style="background:#6044C8"></span>Ajuiz. → arquivamento (dias)</div></div>
+    <div class="cw" style="height:200px"><canvas id="cArq"></canvas></div>
+  </div>
+</div>
+
+<!-- RADAR -->
+<div class="sl">Comparativo radar — out/2025 × mai/2026 (prazos normalizados)</div>
+<div class="card">
+  <div class="ct">Perfil de prazos — out/2025 vs mai/2026</div>
+  <div class="cn">Valores normalizados pelo maior prazo do período. Quanto mais próximo do centro, menor o prazo.</div>
+  <div class="leg">
+    <div class="li"><span class="ld" style="background:#1A6CC8"></span>out/2025</div>
+    <div class="li"><span class="ld" style="background:#C03030"></span>mai/2026</div>
+  </div>
+  <div class="cw" style="height:400px"><canvas id="cRadar"></canvas></div>
+</div>
+
+<!-- TABELA -->
+<div class="sl">Tabela completa de prazos médios — out/2025 a mai/2026</div>
+<div class="card">
+  <table class="ctable" id="tTabela">
+    <thead>
+      <tr>
+        <th>Indicador</th>
+        <th style="text-align:center">Fase</th>
+        <th style="text-align:right">out/25</th>
+        <th style="text-align:right">nov/25</th>
+        <th style="text-align:right">dez/25</th>
+        <th style="text-align:right">jan/26</th>
+        <th style="text-align:right">fev/26</th>
+        <th style="text-align:right">mar/26</th>
+        <th style="text-align:right">abr/26</th>
+        <th style="text-align:right">mai/26</th>
+        <th style="text-align:right">Var. out↔mai</th>
+      </tr>
+    </thead>
+    <tbody id="tBody"></tbody>
+  </table>
+</div>
+
+</div><!-- /body -->
+
+<script>
+window.addEventListener('load', function() {
+
+  var MES = ['out/25','nov/25','dez/25','jan/26','fev/26','mar/26','abr/26','mai/26'];
+
+  var BASE_CFG = {
+    responsive: true,
+    maintainAspectRatio: false,
+    animation: { duration: 600 },
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { grid: { color: '#f0ede8' }, ticks: { font: { size: 11 } } },
+      y: { grid: { color: '#f0ede8' }, ticks: { font: { size: 11 }, callback: function(v){ return v + ' d'; } } }
+    }
+  };
+
+  function lineCfg(datasets, ymin) {
+    var cfg = JSON.parse(JSON.stringify(BASE_CFG));
+    if (ymin !== undefined) cfg.scales.y.min = ymin;
+    return { type: 'line', data: { labels: MES, datasets: datasets }, options: cfg };
+  }
+
+  function barCfg(datasets, ymin) {
+    var cfg = JSON.parse(JSON.stringify(BASE_CFG));
+    if (ymin !== undefined) cfg.scales.y.min = ymin;
+    datasets = datasets.map(function(d) {
+      return Object.assign({}, d, { borderRadius: 3, borderSkipped: false });
+    });
+    return { type: 'bar', data: { labels: MES, datasets: datasets }, options: cfg };
+  }
+
+  function dsLine(label, data, color, dash) {
+    var d = {
+      label: label, data: data,
+      borderColor: color, backgroundColor: color + '18',
+      fill: !dash, tension: 0.35, pointRadius: 4.5, borderWidth: 2.2
+    };
+    if (dash) { d.borderDash = [5,3]; d.fill = false; }
+    return d;
+  }
+
+  function dsBar(label, data, color) {
+    return { label: label, data: data, backgroundColor: color };
+  }
+
+  // CONHECIMENTO 1
+  new Chart(document.getElementById('cC1'), lineCfg([
+    dsLine('Ajuiz.→sentença',      [352.48,329.97,355.96,379.78,376.81,355.12,341.04,358.55], '#1A6CC8'),
+    dsLine('Ajuiz.→1a aud.',       [174.33,158.33,158.99,192.52,196.71,191.49,187.37,176.13], '#6044C8', true),
+    dsLine('Ajuiz.→enc.instrucao', [305.19,339.26,326.18,383.66,345.67,336.81,347.24,349.06], '#0F8A6A', true)
+  ]));
+
+  // CONHECIMENTO 2
+  new Chart(document.getElementById('cC2'), lineCfg([
+    dsLine('1a aud.→enc.instrucao', [160.08,193.80,178.96,244.13,195.51,188.82,210.91,204.98], '#C03030'),
+    dsLine('Ult.aud.→conclusao',    [49.60,45.32,46.48,73.49,61.71,48.98,54.21,35.18],         '#C07010', true),
+    dsLine('Conclusao→sentenca',    [31.79,25.58,23.77,35.03,26.02,28.45,23.13,18.60],          '#1A6CC8', true)
+  ]));
+
+  // LIQUIDAÇÃO
+  new Chart(document.getElementById('cLiq'), barCfg([
+    dsBar('Liquidacao', [243.79,230.59,249.64,288.15,283.23,266.15,242.53,256.06], '#0F8A6A')
+  ], 200));
+
+  // EXEC FORÇADA PRIVADO
+  new Chart(document.getElementById('cEP'), lineCfg([
+    dsLine('Privado', [1414.14,1480.75,1001.05,1971.45,1441.03,1307.69,1456.22,1179.58], '#B86A00')
+  ]));
+
+  // EXEC FORÇADA PÚBLICO
+  new Chart(document.getElementById('cEPub'), lineCfg([
+    dsLine('Publico', [871.13,415.91,351.04,533.88,678.00,455.63,418.85,483.67], '#6044C8')
+  ]));
+
+  // CUMPRIMENTO PRIVADO
+  new Chart(document.getElementById('cCP'), lineCfg([
+    dsLine('Privado', [594.36,625.69,568.13,769.45,741.73,836.12,1064.12,629.36], '#B86A00')
+  ]));
+
+  // CUMPRIMENTO PÚBLICO
+  new Chart(document.getElementById('cCPub'), lineCfg([
+    dsLine('Publico', [810.66,690.66,591.76,676.98,864.27,541.23,686.83,739.91], '#C03030')
+  ]));
+
+  // CICLO COMPLETO
+  new Chart(document.getElementById('cCiclo'), lineCfg([
+    dsLine('Ciclo', [1297.04,1372.03,1284.15,1402.69,1424.58,1480.73,1837.48,1277.01], '#C8440A')
+  ]));
+
+  // ARQUIVAMENTO
+  new Chart(document.getElementById('cArq'), lineCfg([
+    dsLine('Arq', [1203.80,1211.36,1089.43,1428.67,1120.09,1459.21,1491.11,1744.37], '#6044C8')
+  ]));
+
+  // RADAR
+  var rLabels = [
+    'Ajuiz. sentenca',
+    'Ajuiz. 1a aud.',
+    '1a aud. enc. instr.',
+    'Ult. aud. conclusao',
+    'Conclusao sentenca',
+    'Liq. homologacao',
+    'Exec. ext. priv.',
+    'Exec. ext. pub.',
+    'Cump. ext. priv.',
+    'Cump. ext. pub.'
+  ];
+
+  var vOut = [352.48, 174.33, 160.08, 49.60, 31.79, 243.79, 1414.14, 871.13, 594.36, 810.66];
+  var vMai = [358.55, 176.13, 204.98, 35.18, 18.60, 256.06, 1179.58, 483.67, 629.36, 739.91];
+
+  var normOut = [];
+  var normMai = [];
+  for (var i = 0; i < vOut.length; i++) {
+    var mx = Math.max(vOut[i], vMai[i]);
+    normOut.push(parseFloat((vOut[i] / mx * 100).toFixed(1)));
+    normMai.push(parseFloat((vMai[i] / mx * 100).toFixed(1)));
+  }
+
+  new Chart(document.getElementById('cRadar'), {
+    type: 'radar',
+    data: {
+      labels: rLabels,
+      datasets: [
+        {
+          label: 'out/2025',
+          data: normOut,
+          borderColor: '#1A6CC8',
+          backgroundColor: 'rgba(26,108,200,0.12)',
+          pointRadius: 4,
+          borderWidth: 2,
+          pointBackgroundColor: '#1A6CC8'
+        },
+        {
+          label: 'mai/2026',
+          data: normMai,
+          borderColor: '#C03030',
+          backgroundColor: 'rgba(192,48,48,0.10)',
+          pointRadius: 4,
+          borderWidth: 2,
+          borderDash: [4,3],
+          pointBackgroundColor: '#C03030'
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: { duration: 600 },
+      plugins: {
+        legend: {
+          display: true,
+          labels: { font: { size: 12 }, color: '#444' }
+        }
+      },
+      scales: {
+        r: {
+          beginAtZero: true,
+          max: 100,
+          ticks: { stepSize: 20, font: { size: 10 }, callback: function(v){ return v + '%'; } },
+          pointLabels: { font: { size: 11 }, color: '#444' }
+        }
+      }
+    }
+  });
+
+  // TABELA
+  var rows = [
+    { label: 'Ajuiz. ate 1a audiencia',              fase: 'Conhecimento', fc: 'fc', vals: [174.33,158.33,158.99,192.52,196.71,191.49,187.37,176.13] },
+    { label: '1a aud. ate enc. instrucao',            fase: 'Conhecimento', fc: 'fc', vals: [160.08,193.80,178.96,244.13,195.51,188.82,210.91,204.98] },
+    { label: 'Ult. aud. ate conclusao',               fase: 'Conhecimento', fc: 'fc', vals: [49.60,45.32,46.48,73.49,61.71,48.98,54.21,35.18] },
+    { label: 'Conclusao ate prolacao sentenca',       fase: 'Conhecimento', fc: 'fc', vals: [31.79,25.58,23.77,35.03,26.02,28.45,23.13,18.60] },
+    { label: 'Ajuiz. ate enc. instrucao',             fase: 'Conhecimento', fc: 'fc', vals: [305.19,339.26,326.18,383.66,345.67,336.81,347.24,349.06] },
+    { label: 'Ajuiz. ate sentenca',                   fase: 'Conhecimento', fc: 'fc', vals: [352.48,329.97,355.96,379.78,376.81,355.12,341.04,358.55] },
+    { label: 'Liquidacao ate homologacao calculos',   fase: 'Liquidacao',   fc: 'fl', vals: [243.79,230.59,249.64,288.15,283.23,266.15,242.53,256.06] },
+    { label: 'Exec. forcada ate extincao (privado)',  fase: 'Exec. forcada',fc: 'fe', vals: [1414.14,1480.75,1001.05,1971.45,1441.03,1307.69,1456.22,1179.58] },
+    { label: 'Exec. forcada ate extincao (publico)',  fase: 'Exec. forcada',fc: 'fe', vals: [871.13,415.91,351.04,533.88,678.00,455.63,418.85,483.67] },
+    { label: 'Cumprimento ate extincao (privado)',    fase: 'Cumprimento',  fc: 'fe', vals: [594.36,625.69,568.13,769.45,741.73,836.12,1064.12,629.36] },
+    { label: 'Cumprimento ate extincao (publico)',    fase: 'Cumprimento',  fc: 'fe', vals: [810.66,690.66,591.76,676.98,864.27,541.23,686.83,739.91] },
+    { label: 'Ajuiz. ate extincao exec. completa',   fase: 'Geral',        fc: 'fg', vals: [1297.04,1372.03,1284.15,1402.69,1424.58,1480.73,1837.48,1277.01] },
+    { label: 'Ajuiz. ate arquivamento',               fase: 'Geral',        fc: 'fg', vals: [1203.80,1211.36,1089.43,1428.67,1120.09,1459.21,1491.11,1744.37] }
+  ];
+
+  var tbody = document.getElementById('tBody');
+  rows.forEach(function(row) {
+    var vals = row.vals;
+    var maxVal = Math.max.apply(null, vals);
+    var v0 = vals[0];
+    var vf = vals[7];
+    var pct = (vf - v0) / v0 * 100;
+    var sinal = pct >= 0 ? 'a' : 'v';
+    var sinalChar = pct >= 0 ? '&#9650;' : '&#9660;';
+    // Para prazos: queda = melhoria = up (verde)
+    var cls = Math.abs(pct) < 2 ? 'neu' : (pct > 0 ? 'down' : 'up');
+
+    var cells = vals.map(function(v) {
+      var hi = v === maxVal ? ' style="background:#fff5f5;color:#c03030;font-weight:600"' : '';
+      return '<td class="mono" style="text-align:right' + (v === maxVal ? ';background:#fff5f5;color:#c03030;font-weight:600' : '') + '">' + v.toFixed(2).replace('.', ',') + '</td>';
+    }).join('');
+
+    tbody.innerHTML += '<tr>' +
+      '<td>' + row.label + '</td>' +
+      '<td style="text-align:center"><span class="fb ' + row.fc + '" style="margin:0">' + row.fase + '</span></td>' +
+      cells +
+      '<td style="text-align:right"><span class="pill ' + cls + '">' + sinalChar + ' ' + Math.abs(pct).toFixed(1).replace('.', ',') + '%</span></td>' +
+      '</tr>';
+  });
+
+}); // end load
+</script>
+</body>
+</html>
