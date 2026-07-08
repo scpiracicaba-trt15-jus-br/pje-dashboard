@@ -2,8 +2,8 @@
 	"1ª Vara do Trabalho de Americana": {
 		"FABIO CAMERA CAPONE":
 			[0,2,4,6,8,1,3,5,7,9,"Férias de 20/07/2026 a 08/08/2026"],
-		"SOLANGE DENISE BELCHIOR SANTAELLA":
-			["Férias de 25/06/2026 a 14/07/2026"]
+		"ARTUR RIBEIRO GUDWIN":
+			["Férias de 10/06/2026 a 09/07/2026"]
 	},
 
 	"2ª Vara do Trabalho de Americana": {
@@ -16,7 +16,7 @@
 	"1ª Vara do Trabalho de Piracicaba": {
 		"VILSON ANTONIO PREVIDE":
 			[1,3,5,7,9,0,2,4,6,8,"Férias de 20/07/2026 a 18/08/2026"],
-		"APARECIDO BATISTA DE OLIVEIRA":
+		"":
 			["Férias de 15/06/2026 a 14/07/2026"]
 	},
 
@@ -56,7 +56,7 @@
 	},
 
 	"Vara do Trabalho de Rio Claro": {
-		"FELIPE BERNARDES RODRIGUES":
+		"":
 			["Férias de 15/06/2026 a 14/07/2026"],
 		"FLAVIA FARIAS DE ARRUDA CORSEUIL":
 			[0,2,4,6,8,1,3,5,7,9,"Férias de 20/07/2026 a 18/08/2026"]
@@ -72,12 +72,12 @@
 	"1ª Vara do Trabalho de Limeira": {
 		"ERIKA DE FRANCESCHI":
 			["Férias de 22/06/2026 a 21/07/2026"],
-		"THIAGO HENRIQUE AMENT":
+		"":
 			[1,3,5,7,9,0,2,4,6,8,"Férias de 21/09/2026 a 10/10/2026"]
 	},
 
 	"2ª Vara do Trabalho de Limeira": {
-		"ARTUR RIBEIRO GUDWIN":
+		"":
 			["Férias de 10/06/2026 a 09/07/2026"],
 		"CAROLINA POPOFF FERREIRA DA COSTA":
 			[1,3,5,7,9,0,2,4,6,8,"Férias de 21/09/2026 a 10/10/2026"]
@@ -101,7 +101,7 @@
 
 	"Vara do Trabalho de São João da Boa Vista": {
 		"CRISTIANE SOUZA DE CASTRO TOLEDO":
-			["Férias de 15/06/2026 a 15/07/2026"],
+			["Férias de 15/06/2026 a 24/07/2026"],
 		"IARA MARIA RODRIGUES":
 			["Férias de 24/05/2026 a 20/09/2026"],
 		"EDUARDO COSTA GONZALES":
