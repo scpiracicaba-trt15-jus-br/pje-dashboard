@@ -17,7 +17,7 @@
 		"VILSON ANTONIO PREVIDE":
 			[1,3,5,7,9,"Férias de 20/07/2026 a 18/08/2026"],
 		"BRUNO FURTADO SILVEIRA":
-			[0,2,4,6,8],
+			[0,2,4,6,8]
 	},
 
 	"2ª Vara do Trabalho de Piracicaba": {
@@ -38,7 +38,7 @@
 		"REGINA RODRIGUES URBANO":
 			[1,3,5,7,9,"Férias de 31/08/2026 a 19/09/2026"],
 		"LADY ANE DE PAULA SANTOS DELLA ROCCA":
-			[0,2,4,6,8,]
+			[0,2,4,6,8]
 	},
 
 	"Vara do Trabalho de Araras": {
@@ -56,10 +56,10 @@
 	},
 
 	"Vara do Trabalho de Rio Claro": {
-		"":
-			["Férias de 15/06/2026 a 14/07/2026"],
+		"ERIKA FERRARI ZANELLA":
+			[1,3,5,7,9],
 		"FLAVIA FARIAS DE ARRUDA CORSEUIL":
-			[0,2,4,6,8,1,3,5,7,9,"Férias de 20/07/2026 a 18/08/2026"]
+			[0,2,4,6,8,"Férias de 20/07/2026 a 18/08/2026"]
 	},
 
 	"Vara do Trabalho de Hortolândia": {
@@ -72,15 +72,15 @@
 	"1ª Vara do Trabalho de Limeira": {
 		"ERIKA DE FRANCESCHI":
 			["Férias de 22/06/2026 a 21/07/2026"],
-		"":
-			[1,3,5,7,9,0,2,4,6,8,"Férias de 21/09/2026 a 10/10/2026"]
+		"RICARDO TSUIOSHI FUKUDA SANCHEZ":
+			[1,3,5,7,9,0,2,4,6,8]
 	},
 
 	"2ª Vara do Trabalho de Limeira": {
-		"":
-			["Férias de 10/06/2026 a 09/07/2026"],
+		"PAULA CRISTINA CAETANO DA SILVA":
+			[1,3,5,7,9],
 		"CAROLINA POPOFF FERREIRA DA COSTA":
-			[1,3,5,7,9,0,2,4,6,8,"Férias de 21/09/2026 a 10/10/2026"]
+			[0,2,4,6,8,"Férias de 21/09/2026 a 10/10/2026"]
 	},
 
 	"Vara do Trabalho de Sumaré": {
