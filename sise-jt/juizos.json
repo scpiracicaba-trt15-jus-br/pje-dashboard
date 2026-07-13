@@ -3,21 +3,21 @@
 		"FABIO CAMERA CAPONE":
 			[0,2,4,6,8,1,3,5,7,9,"Férias de 20/07/2026 a 08/08/2026"],
 		"ARTUR RIBEIRO GUDWIN":
-			["Férias de 10/06/2026 a 09/07/2026"]
+			["Férias de 10/06/2026 a 17/08/2026"]
 	},
 
 	"2ª Vara do Trabalho de Americana": {
 		"MARCELO LUIS DE SOUZA FERREIRA":
-			["Férias de 15/06/2026 a 04/07/2026"],
+			[0,2,4,6,8,1,3,5,7,9],
 		"MILENA CASACIO FERREIRA BERALDO":
-			[0,2,4,6,8,1,3,5,7,9,"Férias de 11/07/2026 a 30/07/2026"]
+			["Férias de 11/07/2026 a 30/07/2026"]
 	},
 
 	"1ª Vara do Trabalho de Piracicaba": {
 		"VILSON ANTONIO PREVIDE":
-			[1,3,5,7,9,0,2,4,6,8,"Férias de 20/07/2026 a 18/08/2026"],
-		"":
-			["Férias de 15/06/2026 a 14/07/2026"]
+			[1,3,5,7,9,"Férias de 20/07/2026 a 18/08/2026"],
+		"BRUNO FURTADO SILVEIRA":
+			[0,2,4,6,8],
 	},
 
 	"2ª Vara do Trabalho de Piracicaba": {
@@ -36,9 +36,9 @@
 
 	"Vara do Trabalho de Leme": {
 		"REGINA RODRIGUES URBANO":
-			[0,2,4,6,8,1,3,5,7,9,"Férias de 31/08/2026 a 19/09/2026"],
+			[1,3,5,7,9,"Férias de 31/08/2026 a 19/09/2026"],
 		"LADY ANE DE PAULA SANTOS DELLA ROCCA":
-			["Férias de 23/06/2026 a 12/07/2026"]
+			[0,2,4,6,8,]
 	},
 
 	"Vara do Trabalho de Araras": {
