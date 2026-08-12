@@ -44,7 +44,7 @@
 	"Vara do Trabalho de Araras": {
 		"ANDRE LUIZ TAVARES DE CASTRO PEREIRA":
 			["Férias de 14/07/2026 a 12/08/2026"],
-		"FABIO CAMERA CAPONE":
+		"ERICA ESCARASSATTE":
 			[0,1,2,3,4,5,6,7,8,9],
 		"RENATA MENDES CARDOSO DE CASTRO PEREIRA":
 			["Férias de 14/07/2026 a 12/08/2026"]
@@ -89,9 +89,9 @@
 		"RONALDO CAPELARI":
 			[0,1,2,3,"Férias de 01/09/2026 a 20/09/2026"],
 		"FRANCINA NUNES DA COSTA":
-			[4,5,6,"Férias de 12/08/2026 a 31/08/2026"],
+			["Férias de 12/08/2026 a 31/08/2026"],
 		"CARLA GABRIELLA GRAH SENS":
-			[7,8,9,"Férias de 21/09/2026 a 10/10/2026"]
+			[4,5,6,7,8,9,"Férias de 21/09/2026 a 10/10/2026"]
 	},
 
 	"Vara do Trabalho de Santa Bárbara D'Oeste": {
