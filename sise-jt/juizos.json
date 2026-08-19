@@ -15,9 +15,9 @@
 
 	"1ª Vara do Trabalho de Piracicaba": {
 		"VILSON ANTONIO PREVIDE":
-			["Férias de 20/07/2026 a 18/08/2026"],
+			[1,3,5,7,9],
 		"BRUNO FURTADO SILVEIRA":
-			[0,2,4,6,8,1,3,5,7,9]
+			[0,2,4,6,8]
 	},
 
 	"2ª Vara do Trabalho de Piracicaba": {
@@ -57,9 +57,9 @@
 
 	"Vara do Trabalho de Rio Claro": {
 		"ERIKA FERRARI ZANELLA":
-			[1,3,5,7,9,0,2,4,6,8],
+			[1,3,5,7,9],
 		"FLAVIA FARIAS DE ARRUDA CORSEUIL":
-			["Férias de 20/07/2026 a 18/08/2026"]
+			[0,2,4,6,8]
 	},
 
 	"Vara do Trabalho de Hortolândia": {
