@@ -80,7 +80,7 @@
 		"PAULA CRISTINA CAETANO DA SILVA":
 			["Férias"],
 		"CAROLINA POPOFF FERREIRA DA COSTA":
-			[1,3,5,7,9,0,2,4,6,8,"Férias de 21/09/2026 a 10/10/2026"]
+			[1,3,5,7,9,0,2,4,6,8]
 	},
 
 	"Vara do Trabalho de Sumaré": {
@@ -93,8 +93,6 @@
 	},
 
 	"Vara do Trabalho de Santa Bárbara D'Oeste": {
-		"HENRIQUE MACEDO HINZ":
-			["Férias de 08/08/2026 a 27/11/2026"],
 		"CRISTIANE KAWANAKA DE PONTES":
 			[1,3,5,7,9,0,2,4,6,8]
 	},
