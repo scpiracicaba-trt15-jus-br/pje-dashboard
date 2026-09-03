@@ -366,6 +366,20 @@
 {
 "agrupador":"CONHECIMENTO",
 "comentario":"",
+"cor":"#14c5de",
+"destaque": true,
+"legenda":"",
+"observacao":"",
+"prazo":"",
+"responsavel":"",
+"rotulo":"➗ TUTELA",
+"salvar": true,
+"separador":"",
+"tipo":"TUTELA PENDENTE"
+},
+{
+"agrupador":"CONHECIMENTO",
+"comentario":"",
 "cor":"#585858",
 "destaque": false,
 "legenda":"ENTE PÚBLICO - MATÉRIA DE DIREITO - APÓS VENCIMENTO DO GIGS ENVIAR PARA JULGAMENTO",
