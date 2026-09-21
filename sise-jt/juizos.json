@@ -78,18 +78,18 @@
 
 	"2ª Vara do Trabalho de Limeira": {
 		"NATALIA SCASSIOTTA NEVES":
-			["Férias de 16/09/2026 a 05/10/2026"],
+			[1,3,5,7,9,0,2,4,6,8],
 		"CAROLINA POPOFF FERREIRA DA COSTA":
-			[1,3,5,7,9,0,2,4,6,8]
+			["Férias de 21/09/2026 a 10/10/2026"]
 	},
 
 	"Vara do Trabalho de Sumaré": {
 		"RONALDO CAPELARI":
-			["Férias de 01/09/2026 a 20/09/2026"],
+			["0,1,2,3,7,8,9"],
 		"FRANCINA NUNES DA COSTA":
-			[4,5,6,0,1,2,3],
+			[4,5,6],
 		"CARLA GABRIELLA GRAH SENS":
-			[7,8,9]
+			["Férias de 21/09/2026 a 10/10/2026"]
 	},
 
 	"Vara do Trabalho de Santa Bárbara D'Oeste": {
