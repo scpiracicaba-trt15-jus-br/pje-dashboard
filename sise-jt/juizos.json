@@ -50,9 +50,9 @@
 
 	"Vara do Trabalho de Mogi Guaçu": {
 		"LETICIA GOUVEIA ANTONIOLI":
-			[1,3,5,7,9],
+			[0,2,4,6,8,1,3,5,7,9],
 		"LUIS FURIAN ZORZETTO":
-			[0,2,4,6,8]
+			["Férias de 16/09/2026 a 15/10/2026"]
 	},
 
 	"Vara do Trabalho de Rio Claro": {
