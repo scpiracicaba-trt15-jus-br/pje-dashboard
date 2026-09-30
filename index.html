@@ -673,6 +673,53 @@ nav {
 .magistrados-table .vt-name { font-weight: 500; color: var(--text-dark); }
 .magistrados-table .juiz-name { font-weight: 500; color: var(--navy); }
 
+
+/* MAGISTRADOS — grupos e afastamentos (atualização 30/09/2026) */
+.magistrados-table tr.mag-group td {
+  background: var(--cream); color: var(--navy); font-weight: 600;
+  font-size: 22px; padding: 12px 14px; border-top: 1px solid var(--border-gold);
+}
+.mag-func { display:inline-block; margin-left:6px; padding:1px 7px; border-radius:20px;
+  font-size:18px; font-weight:500; background: var(--gold-pale); color:#7a5c12; }
+.mag-none { color: var(--text-muted); }
+.mag-func-titular { background:#e8eaf6; color:#283593; }
+.mag-func-auxiliar { background:#e0f2f1; color:#00695c; }
+.mag-func-subst { background:#f3f4f6; color:#4b5563; }
+.magistrados-table .mag-assist { color: var(--text-dark); }
+
+.afast-badge { display:inline-block; padding:2px 8px; border-radius:20px; font-size:20px;
+  font-weight:500; background:#e3f2fd; color:#1565c0; white-space:nowrap; }
+.afast-badge.afast-ativo { background:#fdecea; color:#b71c1c; }
+.afast-badge.afast-futuro { background:#fff4e0; color:#9a5b00; }
+.afast-badge.afast-fim { background:#eef0f3; color:#6b7280; }
+.mag-legend { display:flex; flex-wrap:wrap; gap:18px; margin:0 0 14px; font-size:20px; color:var(--text-muted); }
+.mag-legend > span { display:flex; align-items:center; gap:6px; }
+
+
+/* CANAL YOUTUBE */
+.yt-channel { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+  background:white; border:1px solid var(--border); border-left:4px solid #c4302b; border-radius:var(--radius-lg); padding:16px 20px; margin-top:20px; }
+.yt-channel-info { display:flex; align-items:center; gap:14px; }
+.yt-logo { width:44px; height:44px; border-radius:50%; background:#c4302b; color:white; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+.yt-sub { background:#c4302b; color:white; text-decoration:none; padding:8px 16px; border-radius:20px; font-weight:500; font-size:15px; }
+.yt-sub:hover, .yt-sub:focus-visible { background:#a52520; }
+.yt-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:14px; }
+.yt-card { background:white; border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; text-decoration:none; color:inherit; display:flex; flex-direction:column; }
+.yt-card:hover, .yt-card:focus-visible { border-color:var(--gold); }
+.yt-thumb { position:relative; aspect-ratio:16/9; background:var(--cream); }
+.yt-thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+.yt-num { position:absolute; left:8px; top:8px; background:var(--navy); color:white; font-size:13px; font-weight:600; padding:2px 8px; border-radius:4px; }
+.yt-body { padding:12px 14px; }
+/* ESTAGIÁRIOS */
+.est-oj { display:inline-block; padding:1px 8px; border-radius:4px; background:var(--gold-pale); color:#7a5c12; font-size:14px; font-weight:500; white-space:nowrap; }
+.est-atv summary { cursor:pointer; color:var(--navy-soft); font-size:14px; }
+.est-atv p { margin:6px 0 0; font-size:14px; line-height:1.45; max-width:48ch; color:var(--text-mid); }
+.ferias-badge.est-alerta { background:#fff4e0; color:#9a5b00; }
+.ferias-badge.est-vencido { background:#fdecea; color:#b71c1c; }
+.ferias-badge.est-erro { background:#f3e5f5; color:#7b1fa2; }
+.afast-badge.afast-hist, .ferias-badge.afast-hist { background:#eef0f3; color:#4b5563; }
+.ferias-table tr.mag-group td { background:var(--cream); color:var(--navy); font-weight:600; border-top:1px solid var(--border-gold); }
+
 /* LINKS / VIDEOS */
 .links-grid {
   display: grid;
@@ -909,15 +956,15 @@ nav {
   <div class="hero-inner">
     <div class="hero-left">
       <h1>Portal <em>Interno</em><br>Secretaria Conjunta</h1>
-      <p>Piracicaba, Americana, Araras, Leme, Rio Claro, Mogi Guaçu, Sumaré, Hortolândia, São João da Boa Vista, Limeira, Santa Bárbara d'Oeste — 15 unidades, 158 servidores.</p>
+      <p>Piracicaba, Americana, Araras, Leme, Rio Claro, Mogi Guaçu, Sumaré, Hortolândia, São João da Boa Vista, Limeira, Santa Bárbara d'Oeste — 15 unidades, 156 servidores.</p>
     </div>
     <div class="hero-stats">
       <div class="hero-stat">
-        <div class="num">122.275</div>
+        <div class="num">122.914</div>
         <div class="label">Acervo total</div>
       </div>
       <div class="hero-stat">
-        <div class="num">158</div>
+        <div class="num">156</div>
         <div class="label">Servidores</div>
       </div>
       <div class="hero-stat">
@@ -939,7 +986,7 @@ nav {
 <div id="section-home" class="section active">
   <div class="section-header">
     <h2>Visão Geral</h2>
-    <span class="tag">Apuração 20/05/2026</span>
+    <span class="tag">Apuração 30/09/2026</span>
   </div>
 
   <div class="notice gold">
@@ -949,34 +996,34 @@ nav {
 
   <div class="info-grid">
     <div class="info-card" style="border-top:3px solid var(--accent-con)">
-      <div class="ic-num" style="color:var(--accent-con)">50.911</div>
+      <div class="ic-num" style="color:var(--accent-con)">50.223</div>
       <div class="ic-label">Acervo do Conhecimento</div>
     </div>
     <div class="info-card" style="border-top:3px solid var(--accent-liq)">
-      <div class="ic-num" style="color:var(--accent-liq)">24.118</div>
+      <div class="ic-num" style="color:var(--accent-liq)">25.684</div>
       <div class="ic-label">Acervo de Liquidação</div>
     </div>
     <div class="info-card" style="border-top:3px solid var(--accent-exe)">
-      <div class="ic-num" style="color:var(--accent-exe)">46.421</div>
+      <div class="ic-num" style="color:var(--accent-exe)">46.371</div>
       <div class="ic-label">Acervo Execução</div>
     </div>
     <div class="info-card" style="border-top:3px solid var(--accent-dam)">
-      <div class="ic-num" style="color:var(--accent-dam)">777</div>
+      <div class="ic-num" style="color:var(--accent-dam)">585</div>
       <div class="ic-label">Acervo DAM</div>
     </div>
     <div class="info-card" style="border-top:3px solid #555">
-      <div class="ic-num" style="color:#555">48</div>
+      <div class="ic-num" style="color:#555">51</div>
       <div class="ic-label">Acervo DIVEX</div>
     </div>
     <div class="info-card" style="border-top: 3px solid var(--gold);">
-      <div class="ic-num" style="color:var(--navy)">122.275</div>
+      <div class="ic-num" style="color:var(--navy)">122.914</div>
       <div class="ic-label">Acervo Total</div>
     </div>
   </div>
 
   <div class="section-header" style="margin-top: 32px;">
     <h2>Fases Processuais</h2>
-    <span class="tag">Acervo Total: 122.275</span>
+    <span class="tag">Acervo Total: 122.914</span>
   </div>
 
   <div class="passivo-grid">
@@ -984,28 +1031,28 @@ nav {
       <h4>Distribuição por fase</h4>
       <div class="bar-row">
         <span class="bar-label">Conhecimento</span>
-        <div class="bar-track"><div class="bar-fill" style="width:42%; background:var(--accent-con)"></div></div>
-        <span class="bar-num">50.911</span>
+        <div class="bar-track"><div class="bar-fill" style="width:41%; background:var(--accent-con)"></div></div>
+        <span class="bar-num">50.223</span>
       </div>
       <div class="bar-row">
         <span class="bar-label">Execução</span>
         <div class="bar-track"><div class="bar-fill" style="width:38%; background:var(--accent-exe)"></div></div>
-        <span class="bar-num">46.421</span>
+        <span class="bar-num">46.371</span>
       </div>
       <div class="bar-row">
         <span class="bar-label">Liquidação</span>
-        <div class="bar-track"><div class="bar-fill" style="width:20%; background:var(--accent-liq)"></div></div>
-        <span class="bar-num">24.118</span>
+        <div class="bar-track"><div class="bar-fill" style="width:21%; background:var(--accent-liq)"></div></div>
+        <span class="bar-num">25.684</span>
       </div>
       <div class="bar-row">
         <span class="bar-label">DAM</span>
-        <div class="bar-track"><div class="bar-fill" style="width:1%; background:var(--accent-dam)"></div></div>
-        <span class="bar-num">777</span>
+        <div class="bar-track"><div class="bar-fill" style="width:0.5%; background:var(--accent-dam)"></div></div>
+        <span class="bar-num">585</span>
       </div>
       <div class="bar-row">
         <span class="bar-label">DIVEX</span>
         <div class="bar-track"><div class="bar-fill" style="width:0.1%; background:#555"></div></div>
-        <span class="bar-num">48</span>
+        <span class="bar-num">51</span>
       </div>
     </div>
 
@@ -1120,7 +1167,7 @@ nav {
 
   <div class="notice info">
     <span>ℹ️</span>
-    <span>Total: 158 servidores · DAA: 17 · CON: 54 · LIQ: 33 · EXE: 42 · DAM: 06 · CEJUSC: 05 · Oficiais de Justiça: 24 · Assistentes de Juízes: 30</span>
+    <span>Total: 156 servidores · DAA: 17 · CON: 52 · LIQ: 32 · EXE: 43 · DAM: 06 · CEJUSC: 05 · Oficiais de Justiça: 24 · Assistentes de Juízes: 30</span>
   </div>
 
   <div class="org-chart">
@@ -1146,7 +1193,7 @@ nav {
         </div>
         <div class="org-box cejusc">
           <div class="dept">CEJUSC</div>
-          <div class="name">CEJUSC Piracicaba<br><strong>Ana Luisa de Faria</strong><br>CEJUSC Limeira<br><strong>Alexandre Francischetti</strong></div>
+          <div class="name">CEJUSC Piracicaba<br><strong>Ana Luisa de Faria</strong><br>Maria Jose Dainez<br>CEJUSC Limeira<br><strong>Alexandre Francischetti</strong><br>Silvia Raquel Alves de Oliveira</div>
         </div>
         <div class="org-box dam">
           <div class="dept">DAM</div>
@@ -1378,6 +1425,7 @@ nav {
       </div>
       <div class="oj-card-body">
         <div class="oj-attr-row"><span class="key">Assessores Responsáveis</span><span class="val">Ana Luisa de Faria · Alexandre Francischetti</span></div>
+        <div class="oj-attr-row"><span class="key">Equipe</span><span class="val">Piracicaba: Maria Jose Dainez · Limeira: Silvia Raquel Alves de Oliveira</span></div>
         <div class="oj-attr-row"><span class="key">Tarefas-chave</span></div>
         <div>
           <span class="oj-pill">Mediação</span>
@@ -1463,274 +1511,442 @@ nav {
 <div id="section-magistrados" class="section">
   <div class="section-header">
     <h2>Magistrados</h2>
-    <span class="tag">15 varas do trabalho</span>
+    <span class="tag">15 varas do trabalho · atualizado em 30/09/2026</span>
   </div>
 
   <div class="search-bar">
     <span class="search-icon">🔍</span>
-    <input type="text" placeholder="Buscar magistrado ou vara..." oninput="filterMagistrados(this.value)" id="mag-search">
+    <input type="text" placeholder="Buscar magistrado, vara, secretário ou assistente..." oninput="filterMagistrados(this.value)" id="mag-search">
+  </div>
+
+  <div class="mag-legend">
+    <span><span class="afast-badge afast-ativo">Em curso</span> afastado hoje</span>
+    <span><span class="afast-badge afast-futuro">Programado</span> afastamento futuro</span>
+    <span><span class="afast-badge afast-fim">Encerrado</span> já terminou</span>
   </div>
 
   <div style="background:white; border:1px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; overflow-x:auto;">
     <table class="magistrados-table" id="mag-table">
       <thead>
         <tr>
-          <th>Vara</th>
+          <th>Vara / Unidade</th>
           <th>Final (processos)</th>
           <th>Magistrado(a)</th>
-          <th>Secretário(a)</th>
+          <th>Função</th>
+          <th>Secretário(a) de audiência</th>
           <th>Assistente</th>
-          <th>Próximas férias</th>
+          <th>Afastamento</th>
         </tr>
       </thead>
       <tbody>
+        <tr class="mag-group"><td colspan="7">Varas da Secretaria Conjunta</td></tr>
         <tr>
           <td class="vt-name">1ª VT Americana (0007)</td>
           <td>PAR</td>
-          <td class="juiz-name">Solange Denise Belchior Santaella</td>
-          <td>Sandra Segato Gazzeta / Cláudia Pastor</td>
-          <td>Anaisa Santos Freitas</td>
-          <td><span class="ferias-badge">25/06–14/07</span></td>
+          <td class="juiz-name">Artur Ribeiro Gudwin</td>
+          <td><span class="mag-func mag-func-titular">Titular</span></td>
+          <td>Sandra Maria Segato Gazzeta</td>
+          <td class="mag-assist">Rafaela Gomes Arruda</td>
+          <td><span class="mag-none">—</span></td>
         </tr>
         <tr>
           <td class="vt-name">1ª VT Americana (0007)</td>
           <td>ÍMPAR</td>
           <td class="juiz-name">Fabio Camera Capone</td>
-          <td>Sandra Segato Gazzeta / Cláudia Pastor</td>
-          <td>Karen Sacilotto Pinheiro</td>
-          <td><span class="ferias-badge">20/07–08/08</span></td>
+          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
+          <td>Claudia Maria Pastor</td>
+          <td class="mag-assist">Karen Sacilotto Pinheiro</td>
+          <td><span class="mag-none">—</span></td>
         </tr>
         <tr>
           <td class="vt-name">2ª VT Americana (0099)</td>
           <td>PAR</td>
           <td class="juiz-name">Milena Casacio Ferreira Beraldo</td>
+          <td><span class="mag-func mag-func-titular">Titular</span></td>
           <td>Marina Lira da Silveira Pinto</td>
-          <td>Julia Bispo Pitta Inojosa</td>
-          <td><span class="ferias-badge">11/07–30/07</span></td>
+          <td class="mag-assist">Julia Bispo Pitta Inojosa</td>
+          <td><span class="mag-none">—</span></td>
         </tr>
         <tr>
           <td class="vt-name">2ª VT Americana (0099)</td>
           <td>ÍMPAR</td>
           <td class="juiz-name">Marcelo Luis de Souza Ferreira</td>
-          <td>Rogéria Helena Franzini Corazza</td>
-          <td>Kellen Cristine Petreche</td>
-          <td><span class="ferias-badge">15/06–04/07</span></td>
-        </tr>
-        <tr>
-          <td class="vt-name">VT Araras (0046)</td>
-          <td>2,4,6</td>
-          <td class="juiz-name">Renata Mendes Cardoso de Castro Pereira</td>
-          <td>Maria Lúcia Alves Cavalcante</td>
-          <td>Lucimara Leandro</td>
-          <td><span class="ferias-badge">14/07–12/08</span></td>
+          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
+          <td>Rogéria Helena Aparecida Franzini Corazza</td>
+          <td class="mag-assist">Kellen Cristine Petreche</td>
+          <td><span class="mag-none">—</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT Araras (0046)</td>
           <td>0,1,3,5,7,8,9</td>
           <td class="juiz-name">Andre Luiz Tavares de Castro Pereira</td>
+          <td><span class="mag-func mag-func-titular">Titular</span></td>
           <td>Cristina Ziani de Moura</td>
-          <td>Willian Martins de Oliveira</td>
-          <td><span class="ferias-badge">15/07–03/08</span></td>
+          <td class="mag-assist">Willian Martins de Oliveira</td>
+          <td><span class="mag-none">—</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">VT Araras (0046)</td>
+          <td>2,4,6</td>
+          <td class="juiz-name">Renata Mendes Cardoso de Castro Pereira</td>
+          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
+          <td>Maria Lúcia Alves Cavalcante</td>
+          <td class="mag-assist">Lucimara Leandro</td>
+          <td><span class="mag-none">—</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT Hortolândia (0152)</td>
           <td>PAR</td>
           <td class="juiz-name">Patricia Juliana Marchi Alves</td>
+          <td><span class="mag-func mag-func-titular">Titular</span></td>
           <td>Débora Cerqueira Simão</td>
-          <td>Cristina Barroca</td>
-          <td><span class="ferias-badge">15/07–03/08</span></td>
+          <td class="mag-assist">Cristina Barroca</td>
+          <td><span class="mag-none">—</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT Hortolândia (0152)</td>
           <td>ÍMPAR</td>
           <td class="juiz-name">Luciane Cristina Muraro de Freitas</td>
+          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
           <td>Elenira de Andrade Bicalho</td>
-          <td>Chrystiane Beck Silva</td>
-          <td><span class="ferias-badge">22/06–11/07</span></td>
+          <td class="mag-assist">Chrystiane Beck Silva</td>
+          <td><span class="afast-badge" data-de="2026-09-17" data-ate="2026-10-10">Férias · 17/09–10/10</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT Leme (0134)</td>
           <td>PAR</td>
           <td class="juiz-name">Lady Ane de Paula Santos Della Rocca</td>
+          <td><span class="mag-func mag-func-titular">Titular</span></td>
           <td>Daniele Fernanda Stefani</td>
-          <td>Nei Hamilton Fernandes Silva</td>
-          <td><span class="ferias-badge">23/06–12/07</span></td>
+          <td class="mag-assist">Nei Hamilton Fernandes Silva</td>
+          <td><span class="mag-none">—</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT Leme (0134)</td>
           <td>ÍMPAR</td>
           <td class="juiz-name">Regina Rodrigues Urbano</td>
-          <td>Dheise Monique Euphrasi</td>
-          <td>Silvia Helena Notario Lenzi</td>
-          <td><span class="ferias-badge">15/07–03/08</span></td>
+          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
+          <td>Dheise Monique Euphrasio</td>
+          <td class="mag-assist">Silvia Helena Notario</td>
+          <td><span class="mag-none">—</span></td>
         </tr>
         <tr>
           <td class="vt-name">1ª VT Limeira (0014)</td>
           <td>PAR</td>
-          <td class="juiz-name">Thiago Henrique Ament</td>
-          <td>Gabriel de Oliveira Silva / Tatiana Maeyama</td>
-          <td>Marcelo Minutti</td>
-          <td><span class="ferias-badge">22/04–11/05</span></td>
+          <td class="juiz-name">Sofia Lima Dutra</td>
+          <td><span class="mag-func mag-func-titular">Titular</span></td>
+          <td>Gabriel de Oliveira Silva</td>
+          <td class="mag-assist">Anna Caroline Pacelli</td>
+          <td><span class="mag-none">—</span></td>
         </tr>
         <tr>
           <td class="vt-name">1ª VT Limeira (0014)</td>
           <td>ÍMPAR</td>
           <td class="juiz-name">Erika de Franceschi</td>
-          <td>Gabriel de Oliveira Silva / Tatiana Maeyama</td>
-          <td>Juliano Gislon Luciano</td>
-          <td><span class="ferias-badge">22/06–21/07</span></td>
+          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
+          <td>Tatiana Maeyama</td>
+          <td class="mag-assist">Juliano Gislon Luciano</td>
+          <td><span class="mag-none">—</span></td>
         </tr>
         <tr>
           <td class="vt-name">2ª VT Limeira (0128)</td>
           <td>PAR</td>
           <td class="juiz-name">Carolina Popoff Ferreira da Costa</td>
-          <td>Luciana Rodrigues / Cleilson Damasceno</td>
-          <td>—</td>
-          <td><span class="ferias-badge">21/02–12/03</span></td>
+          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
+          <td>Luciana Cristina Rodrigues / Cleilson Damasceno de Oliveira</td>
+          <td class="mag-assist">Thiago Cesar Costa</td>
+          <td><span class="afast-badge" data-de="2026-09-21" data-ate="2026-10-10">Férias · 21/09–10/10</span></td>
         </tr>
         <tr>
           <td class="vt-name">2ª VT Limeira (0128)</td>
           <td>ÍMPAR</td>
-          <td class="juiz-name">Artur Ribeiro Gudwin</td>
-          <td>Luciana Rodrigues / Cleilson Damasceno</td>
-          <td>Jander Eduardo de Andrade</td>
-          <td><span class="ferias-badge">15/07–03/08</span></td>
+          <td class="juiz-name">Natalia Scassiotta Neves</td>
+          <td><span class="mag-func mag-func-titular">Titular</span></td>
+          <td>Luciana Cristina Rodrigues / Cleilson Damasceno de Oliveira</td>
+          <td class="mag-assist">Luciana Antunes Pimenta de Oliveira</td>
+          <td><span class="afast-badge" data-de="2026-09-16" data-ate="2026-10-05">Férias · 16/09–05/10</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT Mogi Guaçu (0071)</td>
           <td>PAR</td>
           <td class="juiz-name">Luis Furian Zorzetto</td>
+          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
           <td>Paula de Carvalho Ambar Lima</td>
-          <td>Gisele Basso Garres</td>
-          <td><span class="ferias-badge">15/07–03/08</span></td>
+          <td class="mag-assist">Gisele Basso Garres</td>
+          <td><span class="afast-badge" data-de="2026-09-16" data-ate="2026-10-15">Férias · 16/09–15/10</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT Mogi Guaçu (0071)</td>
           <td>ÍMPAR</td>
           <td class="juiz-name">Leticia Gouveia Antonioli</td>
+          <td><span class="mag-func mag-func-titular">Titular</span></td>
           <td>Anita Bueno de Moraes Narciso Ferreira</td>
-          <td>Bruno Vivas Bitencourt</td>
-          <td><span class="ferias-badge">15/06–14/07</span></td>
+          <td class="mag-assist">Bruno Vivas Bitencourt</td>
+          <td><span class="mag-none">—</span></td>
         </tr>
         <tr>
           <td class="vt-name">1ª VT Piracicaba (0012)</td>
           <td>PAR</td>
-          <td class="juiz-name">Aparecido Batista de Oliveira</td>
-          <td>Sandra Regina da Conceição Amaral / Romilda M. Germano</td>
-          <td>—</td>
-          <td><span class="ferias-badge">15/06–14/07</span></td>
+          <td class="juiz-name">Karine Vaz de Melo Mattos Abreu</td>
+          <td><span class="mag-func mag-func-titular">Titular</span></td>
+          <td>Sandra Regina da Conceição Amaral / Romilda Maria de Arruda Germano</td>
+          <td class="mag-assist">Rita Cassia Bueno de Moraes</td>
+          <td><span class="afast-badge" data-de="2026-09-28" data-ate="2026-10-05">Compensação · 28/09–05/10</span></td>
         </tr>
         <tr>
           <td class="vt-name">1ª VT Piracicaba (0012)</td>
           <td>ÍMPAR</td>
           <td class="juiz-name">Vilson Antonio Previde</td>
-          <td>Sandra Regina da Conceição Amaral / Romilda M. Germano</td>
-          <td>Christina Aliende Juliao Gonzalez</td>
-          <td><span class="ferias-badge">19/02–10/03</span></td>
+          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
+          <td>Sandra Regina da Conceição Amaral / Romilda Maria de Arruda Germano</td>
+          <td class="mag-assist">Christina Aliende Juliao Gonzalez</td>
+          <td><span class="mag-none">—</span></td>
         </tr>
         <tr>
           <td class="vt-name">2ª VT Piracicaba (0051)</td>
           <td>PAR</td>
           <td class="juiz-name">Carlos Eduardo Vianna Mendes</td>
-          <td>Adriana Pertile Municelli / Joseane de Menezes Conde</td>
-          <td>Rene Jose Zambon</td>
-          <td><span class="ferias-badge">09/02–28/02</span></td>
+          <td><span class="mag-func mag-func-titular">Titular</span></td>
+          <td>Adriana Aparecida Pertile Municelli / Joseane de Menezes Conde</td>
+          <td class="mag-assist">Rene Jose Zambon</td>
+          <td><span class="mag-none">—</span></td>
         </tr>
         <tr>
           <td class="vt-name">2ª VT Piracicaba (0051)</td>
           <td>ÍMPAR</td>
           <td class="juiz-name">Eduardo Alexandre da Silva</td>
-          <td>Adriana Pertile Municelli / Joseane de Menezes Conde</td>
-          <td>Natália Delboni Barros de Sena</td>
-          <td><span class="ferias-badge">01/07–30/07</span></td>
+          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
+          <td>Adriana Aparecida Pertile Municelli / Joseane de Menezes Conde</td>
+          <td class="mag-assist">Mirela Bragalda Atakiama</td>
+          <td><span class="afast-badge" data-de="2026-11-18" data-ate="2026-12-17">Férias · 18/11–17/12</span></td>
         </tr>
         <tr>
           <td class="vt-name">3ª VT Piracicaba (0137)</td>
           <td>PAR</td>
           <td class="juiz-name">Erica Escarassatte</td>
-          <td>Erika Cristina Mendes de Campos Garcia / Celina Pereira</td>
-          <td>Saulo Terra Costa</td>
-          <td><span class="ferias-badge">17/01–05/02</span></td>
+          <td><span class="mag-func mag-func-titular">Titular</span></td>
+          <td>Erika Cristina Mendes de Campos Garcia / Celina Jacintho Pereira</td>
+          <td class="mag-assist">Saulo Terra Costa</td>
+          <td><span class="mag-none">—</span></td>
         </tr>
         <tr>
           <td class="vt-name">3ª VT Piracicaba (0137)</td>
           <td>ÍMPAR</td>
           <td class="juiz-name">Emanuele Pessatti Siqueira Rocha</td>
-          <td>Erika Cristina Mendes de Campos Garcia / Celina Pereira</td>
-          <td>Gianluca de Almeida</td>
-          <td><span class="ferias-badge">15/06–14/07</span></td>
+          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
+          <td>Erika Cristina Mendes de Campos Garcia / Celina Jacintho Pereira</td>
+          <td class="mag-assist">Gianluca de Almeida</td>
+          <td><span class="afast-badge" data-de="2026-11-29" data-ate="2026-12-18">Férias · 29/11–18/12</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT Rio Claro (0010)</td>
           <td>PAR</td>
           <td class="juiz-name">Flavia Farias de Arruda Corseuil</td>
+          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
           <td>Naara de Lucas Barbalho</td>
-          <td>Jairo Maurano Machado / Laura Sant Ana Castro</td>
-          <td><span class="ferias-badge">20/07–18/08</span></td>
+          <td class="mag-assist">Jairo Maurano Machado / Laura Sant Ana Castro</td>
+          <td><span class="afast-badge" data-de="2026-11-03" data-ate="2026-11-22">Afastamento · 03/11–22/11</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT Rio Claro (0010)</td>
           <td>ÍMPAR</td>
-          <td class="juiz-name">Felipe Bernardes Rodrigues</td>
+          <td class="juiz-name">Erika Ferrari Zanella</td>
+          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
           <td>Michelli Cristina Borges Sampaio</td>
-          <td>Waldomiro Antonio Rizato Junior</td>
-          <td><span class="ferias-badge">26/06–15/07</span></td>
+          <td class="mag-assist">Henrique Amaral de Lima Netto</td>
+          <td><span class="afast-badge" data-de="2026-10-19" data-ate="2026-11-07">Férias · 19/10–07/11</span></td>
         </tr>
         <tr>
-          <td class="vt-name">VT Santa Bárbara (0086)</td>
+          <td class="vt-name">VT Santa Bárbara d&#x27;Oeste (0086)</td>
           <td>PAR</td>
           <td class="juiz-name">Cristiane Kawanaka de Pontes</td>
+          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
           <td>Leandro Mac Fadden Negri</td>
-          <td>Caroline Fiamenghi Misse Gouvêa</td>
-          <td><span class="ferias-badge">13/07–01/08</span></td>
+          <td class="mag-assist">Caroline Fiamenghi Misse Gouvêa</td>
+          <td><span class="afast-badge" data-de="2026-09-09" data-ate="2026-10-08">Férias · 09/09–08/10</span></td>
         </tr>
         <tr>
-          <td class="vt-name">VT Santa Bárbara (0086)</td>
+          <td class="vt-name">VT Santa Bárbara d&#x27;Oeste (0086)</td>
           <td>ÍMPAR</td>
           <td class="juiz-name">Henrique Macedo Hinz</td>
+          <td><span class="mag-func mag-func-titular">Titular</span></td>
           <td>Aguinaldo Junior Yamamoto Peres</td>
-          <td>Eduardo Luis Leite Ferraz</td>
-          <td><span class="ferias-badge">06/04–25/04</span></td>
+          <td class="mag-assist">Eduardo Luis Leite Ferraz</td>
+          <td><span class="afast-badge" data-de="2026-08-08" data-ate="2026-11-27">Licença · 08/08–27/11</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">VT Santa Bárbara d&#x27;Oeste (0086)</td>
+          <td>TODOS</td>
+          <td class="juiz-name">Eduardo Costa Gonzales</td>
+          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
+          <td>—</td>
+          <td class="mag-assist">Mirela Bragalda Atakiama</td>
+          <td><span class="mag-none">—</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT São João da Boa Vista (0034)</td>
           <td>PAR</td>
           <td class="juiz-name">Cristiane Souza de Castro Toledo</td>
-          <td>Ana Claudia Rodrigues Abreu Bergonsini</td>
-          <td>Guilherme Braz Cayres</td>
-          <td><span class="ferias-badge">27/04–16/05</span></td>
+          <td><span class="mag-func mag-func-titular">Titular</span></td>
+          <td>Ana Claudia Rodrigues Abreu</td>
+          <td class="mag-assist">Guilherme Braz Cayres</td>
+          <td><span class="mag-none">—</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT São João da Boa Vista (0034)</td>
           <td>ÍMPAR</td>
-          <td class="juiz-name">Iara Maria Rodrigues</td>
+          <td class="juiz-name">Ricardo Tsuioshi Fukuda Sanchez</td>
+          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
           <td>Emerson Alexandre Viola</td>
-          <td>Mariana Fiamenghi Misse Isaac</td>
-          <td><span class="ferias-badge">20/05–08/06</span></td>
+          <td class="mag-assist">Camila Pinheiro Conceição de Mendonça</td>
+          <td><span class="mag-none">—</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">VT São João da Boa Vista (0034)</td>
+          <td>—</td>
+          <td class="juiz-name">Iara Maria Rodrigues</td>
+          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
+          <td>—</td>
+          <td class="mag-assist">Roberto Francisco Nogueira Corsi</td>
+          <td><span class="afast-badge" data-de="" data-ate="2027-02-05">Licença gestante · até 05/02/2027</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT Sumaré (0122)</td>
           <td>0,1,2,3</td>
           <td class="juiz-name">Ronaldo Capelari</td>
+          <td><span class="mag-func mag-func-titular">Titular</span></td>
           <td>Thiago Donizete Mendanha</td>
-          <td>Ivan Gabriel Franca de Negri</td>
-          <td><span class="ferias-badge">13/04–02/05</span></td>
+          <td class="mag-assist">Ivan Gabriel Franca de Negri</td>
+          <td><span class="mag-none">—</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT Sumaré (0122)</td>
           <td>4,5,6</td>
           <td class="juiz-name">Francina Nunes da Costa</td>
-          <td>Fabiana de Lemos Pedro</td>
-          <td>Juliana Rodrigues Lameira Belchior</td>
-          <td><span class="ferias-badge">02/07–31/07</span></td>
+          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
+          <td>Daniel Carlos Alves de Pilla</td>
+          <td class="mag-assist">Juliana Rodrigues Lameira Belchior</td>
+          <td><span class="afast-badge" data-de="2026-11-29" data-ate="2026-12-18">Férias · 29/11–18/12</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT Sumaré (0122)</td>
           <td>7,8,9</td>
           <td class="juiz-name">Carla Gabriella Grah Sens</td>
+          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
           <td>Michel Aquino de Souza</td>
-          <td>Thais Bernardes Carvalho</td>
-          <td><span class="ferias-badge">23/03–11/04</span></td>
+          <td class="mag-assist">Thais Bernardes Carvalho</td>
+          <td><span class="afast-badge" data-de="2026-09-21" data-ate="2026-10-10">Férias · 21/09–10/10</span></td>
+        </tr>
+        <tr class="mag-group"><td colspan="7">Auxílio fixo — Simetria</td></tr>
+        <tr>
+          <td class="vt-name">Auxílio fixo — Simetria</td>
+          <td>—</td>
+          <td class="juiz-name">Cleverson Oliveira Alarcon Lima</td>
+          <td><span class="mag-func mag-func-auxiliar">Auxiliar</span></td>
+          <td>Luzia Danielle dos Santos Fabiano</td>
+          <td class="mag-assist">Elizabeth Correa de Lima</td>
+          <td><span class="afast-badge" data-de="2026-10-29" data-ate="2026-11-17">Férias · 29/10–17/11</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">Auxílio fixo — Simetria</td>
+          <td>—</td>
+          <td class="juiz-name">Renata Nunes de Melo</td>
+          <td><span class="mag-func mag-func-auxiliar">Auxiliar</span></td>
+          <td>Paula Burque Besson Boconcelo</td>
+          <td class="mag-assist">Luciana Almeida Moraes</td>
+          <td><span class="afast-badge" data-de="2026-10-29" data-ate="2026-11-17">Afastamento · 29/10–17/11</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">Auxílio fixo — Simetria</td>
+          <td>—</td>
+          <td class="juiz-name">Gustavo Castro Picchi Martins</td>
+          <td><span class="mag-func mag-func-auxiliar">Auxiliar</span></td>
+          <td>Tatiana Maffeis da Cunha</td>
+          <td class="mag-assist">Cristiano de Mello</td>
+          <td><span class="mag-none">—</span></td>
+        </tr>
+        <tr class="mag-group"><td colspan="7">Divisão de Execução e CEJUSCs</td></tr>
+        <tr>
+          <td class="vt-name">Divisão de Execução</td>
+          <td>—</td>
+          <td class="juiz-name">Fabio Camera Capone</td>
+          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
+          <td>—</td>
+          <td class="mag-assist">Karen Sacilotto Pinheiro</td>
+          <td><span class="mag-none">—</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">CEJUSC Piracicaba</td>
+          <td>—</td>
+          <td class="juiz-name">Eduardo Alexandre da Silva</td>
+          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
+          <td>—</td>
+          <td class="mag-assist">Mirela Bragalda Atakiama</td>
+          <td><span class="afast-badge" data-de="" data-ate="">Férias · sem datas</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">CEJUSC Limeira</td>
+          <td>—</td>
+          <td class="juiz-name">Erika Ferrari Zanella</td>
+          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
+          <td>—</td>
+          <td class="mag-assist"><span class="mag-none">—</span></td>
+          <td><span class="afast-badge" data-de="" data-ate="">Férias · sem datas</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">CEJUSC Limeira</td>
+          <td>—</td>
+          <td class="juiz-name">Carolina Popoff Ferreira da Costa</td>
+          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
+          <td>—</td>
+          <td class="mag-assist"><span class="mag-none">—</span></td>
+          <td><span class="afast-badge" data-de="2026-09-21" data-ate="2026-10-10">Férias · 21/09–10/10</span></td>
+        </tr>
+        <tr class="mag-group"><td colspan="7">Magistrados atuando em mais de uma Secretaria Conjunta</td></tr>
+        <tr>
+          <td class="vt-name">VT Registro</td>
+          <td>—</td>
+          <td class="juiz-name">Felipe Bernardes Rodrigues</td>
+          <td><span class="mag-func mag-func-titular">Titular</span></td>
+          <td>Marcio Henrique Rodrigues dos Santos de Freitas / Atila Cabral Branco</td>
+          <td class="mag-assist">Waldomiro Antonio Rizato Junior</td>
+          <td><span class="mag-none">—</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">VT Campo Limpo Paulista</td>
+          <td>—</td>
+          <td class="juiz-name">Solange Denise Belchior Santaella</td>
+          <td><span class="mag-func mag-func-titular">Titular</span></td>
+          <td>Marta Rocha Sanches</td>
+          <td class="mag-assist">Anaisa Santos Freitas</td>
+          <td><span class="mag-none">—</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">4ª VT Campinas</td>
+          <td>—</td>
+          <td class="juiz-name">Aparecido Batista de Oliveira</td>
+          <td><span class="mag-func mag-func-titular">Titular</span></td>
+          <td>Gleiciane Ferreira dos Santos</td>
+          <td class="mag-assist">Andrea Azevedo</td>
+          <td><span class="mag-none">—</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">12ª VT Campinas</td>
+          <td>—</td>
+          <td class="juiz-name">Thiago Henrique Ament</td>
+          <td><span class="mag-func mag-func-titular">Titular</span></td>
+          <td>Tamyres Miranda Alves</td>
+          <td class="mag-assist">Marcelo Minutti</td>
+          <td><span class="mag-none">—</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">VT Mogi Mirim</td>
+          <td>—</td>
+          <td class="juiz-name">Vanessa Cristina Pereira Salomao</td>
+          <td><span class="mag-func mag-func-titular">Titular</span></td>
+          <td>Camila Santana Araujo Mutti</td>
+          <td class="mag-assist">Mariana Fiamenghi Misse Isaac</td>
+          <td><span class="mag-none">—</span></td>
         </tr>
       </tbody>
     </table>
@@ -1808,39 +2024,60 @@ nav {
 
   <!-- MAGISTRADOS -->
   <div id="tab-f-mag" class="tab-content active">
+    <div class="mag-legend">
+      <span><span class="afast-badge afast-ativo">Em curso</span> afastado hoje</span>
+      <span><span class="afast-badge afast-futuro">Programado</span></span>
+      <span><span class="afast-badge afast-fim">Encerrado</span></span>
+      <span>Atualizado em 30/09/2026</span>
+    </div>
     <div style="background:white; border:1px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; overflow-x:auto;">
-      <table class="ferias-table">
-        <thead><tr><th>Magistrado(a)</th><th>Vara</th><th>Período 1</th><th>Período 2</th><th>Dias</th></tr></thead>
+      <table class="ferias-table" id="ferias-mag-table">
+        <thead><tr><th>Magistrado(a)</th><th>Vara / Unidade</th><th>Afastamento atual ou próximo</th><th>Períodos da escala anterior</th></tr></thead>
         <tbody>
-          <tr><td>Solange Denise Belchior Santaella</td><td>1ª VT Americana</td><td><span class="ferias-badge">25/06–14/07</span></td><td><span class="ferias-badge">18/11–17/12</span></td><td>20+30</td></tr>
-          <tr><td>Fabio Camera Capone</td><td>1ª VT Americana</td><td><span class="ferias-badge">20/07–08/08</span></td><td><span class="ferias-badge">19/10–07/11</span></td><td>20+20</td></tr>
-          <tr><td>Milena Casacio Ferreira Beraldo</td><td>2ª VT Americana</td><td><span class="ferias-badge">11/07–30/07</span></td><td><span class="ferias-badge">25/11–14/12</span></td><td>20+20</td></tr>
-          <tr><td>Marcelo Luis de Souza Ferreira</td><td>2ª VT Americana</td><td><span class="ferias-badge">15/06–04/07</span></td><td><span class="ferias-badge">17/01–05/02</span></td><td>20+20</td></tr>
-          <tr><td>Renata Mendes Cardoso de Castro Pereira</td><td>VT Araras</td><td><span class="ferias-badge">14/07–12/08</span></td><td><span class="ferias-badge">21/01–09/02</span></td><td>30+20</td></tr>
-          <tr><td>Andre Luiz Tavares de Castro Pereira</td><td>VT Araras</td><td><span class="ferias-badge">15/07–03/08</span></td><td><span class="ferias-badge">21/01–09/02</span></td><td>20+20</td></tr>
-          <tr><td>Patricia Juliana Marchi Alves</td><td>VT Hortolândia</td><td><span class="ferias-badge">15/07–03/08</span></td><td><span class="ferias-badge">18/11–07/12</span></td><td>20+20</td></tr>
-          <tr><td>Luciane Cristina Muraro de Freitas</td><td>VT Hortolândia</td><td><span class="ferias-badge">22/06–11/07</span></td><td><span class="ferias-badge">21/09–10/10</span></td><td>20+20</td></tr>
-          <tr><td>Lady Ane de Paula Santos Della Rocca</td><td>VT Leme</td><td><span class="ferias-badge">23/06–12/07</span></td><td><span class="ferias-badge">24/09–13/10</span></td><td>20+20</td></tr>
-          <tr><td>Regina Rodrigues Urbano</td><td>VT Leme</td><td><span class="ferias-badge">12/03–31/03</span></td><td><span class="ferias-badge">15/07–03/08</span></td><td>20+20</td></tr>
-          <tr><td>Thiago Henrique Ament</td><td>1ª VT Limeira</td><td><span class="ferias-badge">22/04–11/05</span></td><td><span class="ferias-badge">28/06–17/07</span></td><td>20+20</td></tr>
-          <tr><td>Erika de Franceschi</td><td>1ª VT Limeira</td><td><span class="ferias-badge">22/01–10/02</span></td><td><span class="ferias-badge">21/09–10/10</span></td><td>20+20</td></tr>
-          <tr><td>Aparecido Batista de Oliveira</td><td>1ª VT Piracicaba</td><td><span class="ferias-badge">15/06–14/07</span></td><td><span class="ferias-badge">18/11–17/12</span></td><td>30+30</td></tr>
-          <tr><td>Vilson Antonio Previde</td><td>1ª VT Piracicaba</td><td><span class="ferias-badge">19/02–10/03</span></td><td><span class="ferias-badge">20/07–18/08</span></td><td>20+30</td></tr>
-          <tr><td>Carlos Eduardo Vianna Mendes</td><td>2ª VT Piracicaba</td><td>—</td><td>—</td><td>—</td></tr>
-          <tr><td>Eduardo Alexandre da Silva</td><td>2ª VT Piracicaba</td><td>—</td><td>—</td><td>—</td></tr>
-          <tr><td>Erica Escarassatte</td><td>3ª VT Piracicaba</td><td>—</td><td>—</td><td>—</td></tr>
-          <tr><td>Emanuele Pessatti Siqueira Rocha</td><td>3ª VT Piracicaba</td><td>—</td><td>—</td><td>—</td></tr>
-          <tr><td>Flavia Farias de Arruda Corseuil</td><td>VT Rio Claro</td><td>—</td><td>—</td><td>—</td></tr>
-          <tr><td>Felipe Bernardes Rodrigues</td><td>VT Rio Claro</td><td>—</td><td>—</td><td>—</td></tr>
-          <tr><td>Cristiane Kawanaka de Pontes</td><td>VT Santa Bárbara</td><td><span class="ferias-badge">26/01–14/02</span></td><td><span class="ferias-badge">13/07–01/08</span></td><td>20+20</td></tr>
-          <tr><td>Henrique Macedo Hinz</td><td>VT Santa Bárbara</td><td>—</td><td>—</td><td>—</td></tr>
-          <tr><td>Cristiane Souza de Castro Toledo</td><td>VT São João da B. Vista</td><td>—</td><td>—</td><td>—</td></tr>
-          <tr><td>Iara Maria Rodrigues</td><td>VT São João da B. Vista</td><td>—</td><td>—</td><td>—</td></tr>
-          <tr><td>Ronaldo Capelari</td><td>VT Sumaré</td><td><span class="ferias-badge">13/04–02/05</span></td><td><span class="ferias-badge">17/08–05/09</span></td><td>20+20</td></tr>
-          <tr><td>Francina Nunes da Costa</td><td>VT Sumaré</td><td>—</td><td>—</td><td>—</td></tr>
-          <tr><td>Carla Gabriella Grah Sens</td><td>VT Sumaré</td><td><span class="ferias-badge">23/03–11/04</span></td><td><span class="ferias-badge">17/09–06/10</span></td><td>20+20</td></tr>
-          <tr><td>Luis Furian Zorzetto</td><td>VT Mogi Guaçu</td><td>—</td><td>—</td><td>—</td></tr>
-          <tr><td>Leticia Gouveia Antonioli</td><td>VT Mogi Guaçu</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr class="mag-group"><td colspan="4">Varas da Secretaria Conjunta</td></tr>
+          <tr><td class="juiz-name">Artur Ribeiro Gudwin</td><td>1ª VT Americana</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="mag-none">—</span></td></tr>
+          <tr><td class="juiz-name">Fabio Camera Capone</td><td>1ª VT Americana · DIVEX</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="ferias-badge afast-hist">20/07–08/08</span> <span class="ferias-badge afast-hist">19/10–07/11</span> <span class="mag-none">(20+20 dias)</span></td></tr>
+          <tr><td class="juiz-name">Milena Casacio Ferreira Beraldo</td><td>2ª VT Americana</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="ferias-badge afast-hist">11/07–30/07</span> <span class="ferias-badge afast-hist">25/11–14/12</span> <span class="mag-none">(20+20 dias)</span></td></tr>
+          <tr><td class="juiz-name">Marcelo Luis de Souza Ferreira</td><td>2ª VT Americana</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="ferias-badge afast-hist">15/06–04/07</span> <span class="ferias-badge afast-hist">17/01–05/02</span> <span class="mag-none">(20+20 dias)</span></td></tr>
+          <tr><td class="juiz-name">Andre Luiz Tavares de Castro Pereira</td><td>VT Araras</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="ferias-badge afast-hist">15/07–03/08</span> <span class="ferias-badge afast-hist">21/01–09/02</span> <span class="mag-none">(20+20 dias)</span></td></tr>
+          <tr><td class="juiz-name">Renata Mendes Cardoso de Castro Pereira</td><td>VT Araras</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="ferias-badge afast-hist">14/07–12/08</span> <span class="ferias-badge afast-hist">21/01–09/02</span> <span class="mag-none">(30+20 dias)</span></td></tr>
+          <tr><td class="juiz-name">Patricia Juliana Marchi Alves</td><td>VT Hortolândia</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="ferias-badge afast-hist">15/07–03/08</span> <span class="ferias-badge afast-hist">18/11–07/12</span> <span class="mag-none">(20+20 dias)</span></td></tr>
+          <tr><td class="juiz-name">Luciane Cristina Muraro de Freitas</td><td>VT Hortolândia</td><td><span class="afast-badge" data-de="2026-09-17" data-ate="2026-10-10">Férias · 17/09–10/10</span></td><td><span class="ferias-badge afast-hist">22/06–11/07</span> <span class="ferias-badge afast-hist">21/09–10/10</span> <span class="mag-none">(20+20 dias)</span></td></tr>
+          <tr><td class="juiz-name">Lady Ane de Paula Santos Della Rocca</td><td>VT Leme</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="ferias-badge afast-hist">23/06–12/07</span> <span class="ferias-badge afast-hist">24/09–13/10</span> <span class="mag-none">(20+20 dias)</span></td></tr>
+          <tr><td class="juiz-name">Regina Rodrigues Urbano</td><td>VT Leme</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="ferias-badge afast-hist">12/03–31/03</span> <span class="ferias-badge afast-hist">15/07–03/08</span> <span class="mag-none">(20+20 dias)</span></td></tr>
+          <tr><td class="juiz-name">Sofia Lima Dutra</td><td>1ª VT Limeira</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="mag-none">—</span></td></tr>
+          <tr><td class="juiz-name">Erika de Franceschi</td><td>1ª VT Limeira</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="ferias-badge afast-hist">22/01–10/02</span> <span class="ferias-badge afast-hist">21/09–10/10</span> <span class="mag-none">(20+20 dias)</span></td></tr>
+          <tr><td class="juiz-name">Carolina Popoff Ferreira da Costa</td><td>2ª VT Limeira · CEJUSC Limeira</td><td><span class="afast-badge" data-de="2026-09-21" data-ate="2026-10-10">Férias · 21/09–10/10</span></td><td><span class="mag-none">—</span></td></tr>
+          <tr><td class="juiz-name">Natalia Scassiotta Neves</td><td>2ª VT Limeira</td><td><span class="afast-badge" data-de="2026-09-16" data-ate="2026-10-05">Férias · 16/09–05/10</span></td><td><span class="mag-none">—</span></td></tr>
+          <tr><td class="juiz-name">Luis Furian Zorzetto</td><td>VT Mogi Guaçu</td><td><span class="afast-badge" data-de="2026-09-16" data-ate="2026-10-15">Férias · 16/09–15/10</span></td><td><span class="mag-none">—</span></td></tr>
+          <tr><td class="juiz-name">Leticia Gouveia Antonioli</td><td>VT Mogi Guaçu</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="mag-none">—</span></td></tr>
+          <tr><td class="juiz-name">Karine Vaz de Melo Mattos Abreu</td><td>1ª VT Piracicaba</td><td><span class="afast-badge" data-de="2026-09-28" data-ate="2026-10-05">Compensação · 28/09–05/10</span></td><td><span class="mag-none">—</span></td></tr>
+          <tr><td class="juiz-name">Vilson Antonio Previde</td><td>1ª VT Piracicaba</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="ferias-badge afast-hist">19/02–10/03</span> <span class="ferias-badge afast-hist">20/07–18/08</span> <span class="mag-none">(20+30 dias)</span></td></tr>
+          <tr><td class="juiz-name">Carlos Eduardo Vianna Mendes</td><td>2ª VT Piracicaba</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="mag-none">—</span></td></tr>
+          <tr><td class="juiz-name">Eduardo Alexandre da Silva</td><td>2ª VT Piracicaba · CEJUSC Piracicaba</td><td><span class="afast-badge" data-de="2026-11-18" data-ate="2026-12-17">Férias · 18/11–17/12</span></td><td><span class="mag-none">—</span></td></tr>
+          <tr><td class="juiz-name">Erica Escarassatte</td><td>3ª VT Piracicaba</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="mag-none">—</span></td></tr>
+          <tr><td class="juiz-name">Emanuele Pessatti Siqueira Rocha</td><td>3ª VT Piracicaba</td><td><span class="afast-badge" data-de="2026-11-29" data-ate="2026-12-18">Férias · 29/11–18/12</span></td><td><span class="mag-none">—</span></td></tr>
+          <tr><td class="juiz-name">Flavia Farias de Arruda Corseuil</td><td>VT Rio Claro</td><td><span class="afast-badge" data-de="2026-11-03" data-ate="2026-11-22">Afastamento · 03/11–22/11</span></td><td><span class="mag-none">—</span></td></tr>
+          <tr><td class="juiz-name">Erika Ferrari Zanella</td><td>VT Rio Claro · CEJUSC Limeira</td><td><span class="afast-badge" data-de="2026-10-19" data-ate="2026-11-07">Férias · 19/10–07/11</span></td><td><span class="mag-none">—</span></td></tr>
+          <tr><td class="juiz-name">Cristiane Kawanaka de Pontes</td><td>VT Santa Bárbara</td><td><span class="afast-badge" data-de="2026-09-09" data-ate="2026-10-08">Férias · 09/09–08/10</span></td><td><span class="ferias-badge afast-hist">26/01–14/02</span> <span class="ferias-badge afast-hist">13/07–01/08</span> <span class="mag-none">(20+20 dias)</span></td></tr>
+          <tr><td class="juiz-name">Henrique Macedo Hinz</td><td>VT Santa Bárbara</td><td><span class="afast-badge" data-de="2026-08-08" data-ate="2026-11-27">Licença · 08/08–27/11</span></td><td><span class="mag-none">—</span></td></tr>
+          <tr><td class="juiz-name">Eduardo Costa Gonzales</td><td>VT Santa Bárbara</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="mag-none">—</span></td></tr>
+          <tr><td class="juiz-name">Cristiane Souza de Castro Toledo</td><td>VT São João da B. Vista</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="mag-none">—</span></td></tr>
+          <tr><td class="juiz-name">Ricardo Tsuioshi Fukuda Sanchez</td><td>VT São João da B. Vista</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="mag-none">—</span></td></tr>
+          <tr><td class="juiz-name">Iara Maria Rodrigues</td><td>VT São João da B. Vista</td><td><span class="afast-badge" data-de="" data-ate="2027-02-05">Licença gestante · até 05/02/2027</span></td><td><span class="mag-none">—</span></td></tr>
+          <tr><td class="juiz-name">Ronaldo Capelari</td><td>VT Sumaré</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="ferias-badge afast-hist">13/04–02/05</span> <span class="ferias-badge afast-hist">17/08–05/09</span> <span class="mag-none">(20+20 dias)</span></td></tr>
+          <tr><td class="juiz-name">Francina Nunes da Costa</td><td>VT Sumaré</td><td><span class="afast-badge" data-de="2026-11-29" data-ate="2026-12-18">Férias · 29/11–18/12</span></td><td><span class="mag-none">—</span></td></tr>
+          <tr><td class="juiz-name">Carla Gabriella Grah Sens</td><td>VT Sumaré</td><td><span class="afast-badge" data-de="2026-09-21" data-ate="2026-10-10">Férias · 21/09–10/10</span></td><td><span class="ferias-badge afast-hist">23/03–11/04</span> <span class="ferias-badge afast-hist">17/09–06/10</span> <span class="mag-none">(20+20 dias)</span></td></tr>
+          <tr class="mag-group"><td colspan="4">Auxílio fixo — Simetria</td></tr>
+          <tr><td class="juiz-name">Cleverson Oliveira Alarcon Lima</td><td>Simetria (auxiliar)</td><td><span class="afast-badge" data-de="2026-10-29" data-ate="2026-11-17">Férias · 29/10–17/11</span></td><td><span class="mag-none">—</span></td></tr>
+          <tr><td class="juiz-name">Renata Nunes de Melo</td><td>Simetria (auxiliar)</td><td><span class="afast-badge" data-de="2026-10-29" data-ate="2026-11-17">Afastamento · 29/10–17/11</span></td><td><span class="mag-none">—</span></td></tr>
+          <tr><td class="juiz-name">Gustavo Castro Picchi Martins</td><td>Simetria (auxiliar)</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="mag-none">—</span></td></tr>
+          <tr class="mag-group"><td colspan="4">Atuando em mais de uma Secretaria Conjunta</td></tr>
+          <tr><td class="juiz-name">Felipe Bernardes Rodrigues</td><td>VT Registro</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="mag-none">—</span></td></tr>
+          <tr><td class="juiz-name">Solange Denise Belchior Santaella</td><td>VT Campo Limpo Paulista</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="ferias-badge afast-hist">25/06–14/07</span> <span class="ferias-badge afast-hist">18/11–17/12</span> <span class="mag-none">(20+30 dias)</span></td></tr>
+          <tr><td class="juiz-name">Aparecido Batista de Oliveira</td><td>4ª VT Campinas</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="ferias-badge afast-hist">15/06–14/07</span> <span class="ferias-badge afast-hist">18/11–17/12</span> <span class="mag-none">(30+30 dias)</span></td></tr>
+          <tr><td class="juiz-name">Thiago Henrique Ament</td><td>12ª VT Campinas</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="ferias-badge afast-hist">22/04–11/05</span> <span class="ferias-badge afast-hist">28/06–17/07</span> <span class="mag-none">(20+20 dias)</span></td></tr>
+          <tr><td class="juiz-name">Vanessa Cristina Pereira Salomao</td><td>VT Mogi Mirim</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="mag-none">—</span></td></tr>
         </tbody>
       </table>
     </div>
@@ -1924,7 +2161,6 @@ nav {
           <tr><td>Natalina Maria Borges Xavier</td><td>CON2</td><td><span class="ferias-badge">27/07–10/08</span></td><td><span class="ferias-badge">04/12–18/12</span></td><td>—</td></tr>
           <tr><td>Nilza Misael Ferreira</td><td>CON2</td><td>—</td><td><span class="ferias-badge">25/08–04/09</span></td><td><span class="ferias-badge">03/11–13/11</span></td></tr>
           <tr><td>Rosana Sueli Britto de Jesus</td><td>CON2</td><td><span class="ferias-badge">17/03–31/03</span></td><td>—</td><td>—</td></tr>
-          <tr><td>Maria Goretti Guimarães Vieira</td><td>CON2</td><td><span class="ferias-badge">25/05–03/06</span></td><td><span class="ferias-badge">05/10–14/10</span></td><td><span class="ferias-badge">09/12–18/12</span></td></tr>
           <tr><td>Tatiana Maffeis da Cunha</td><td>CON2</td><td><span class="ferias-badge">19/02–03/03</span></td><td><span class="ferias-badge">13/07–24/07</span></td><td><span class="ferias-badge">23/11–27/11</span></td></tr>
           <tr><td>Roberta Rodrigues Urbano</td><td>CON2</td><td><span class="ferias-badge">25/05–03/06</span></td><td><span class="ferias-badge">13/07–24/07</span></td><td><span class="ferias-badge">09/12–18/12</span></td></tr>
           <tr><td>Ivi Cristina Indalecio Bueno</td><td>CON2</td><td><span class="ferias-badge">13/07–01/08</span></td><td><span class="ferias-badge">09/12–18/12</span></td><td>—</td></tr>
@@ -1937,7 +2173,6 @@ nav {
           <tr><td>Neusa Aparecida Asbahr Bais</td><td>CON2</td><td><span class="ferias-badge">06/01–15/01</span></td><td><span class="ferias-badge">08/06–17/06</span></td><td><span class="ferias-badge">03/11–12/11</span></td></tr>
           <tr><td>Aparecida de Fatima de Souza Franco</td><td>CON2</td><td><span class="ferias-badge">13/07–24/07</span></td><td><span class="ferias-badge">01/12–18/12</span></td><td>—</td></tr>
           <tr><td>Dulce Maria Vasconcellos Seixas</td><td>CON2</td><td><span class="ferias-badge">07/01–16/01</span></td><td><span class="ferias-badge">04/05–12/05</span></td><td><span class="ferias-badge">08/09–18/09</span></td></tr>
-          <tr><td>Sonia Cristina dos Santos Franco</td><td>CON2</td><td><span class="ferias-badge">07/01–16/01</span></td><td><span class="ferias-badge">17/07–31/07</span></td><td>a definir</td></tr>
 
           <!-- LIQ1 -->
           <tr><td colspan="5" style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-muted);background:var(--cream);padding:8px 14px;">LIQ1</td></tr>
@@ -1964,7 +2199,6 @@ nav {
           <tr><td>Jailton Leite da Silva</td><td>LIQ2</td><td>—</td><td>—</td><td>—</td></tr>
           <tr><td>Leandro Jose Christofoletti</td><td>LIQ2</td><td><span class="ferias-badge">23/03–30/03</span></td><td><span class="ferias-badge">11/08–21/08</span></td><td><span class="ferias-badge">03/11–13/11</span></td></tr>
           <tr><td>Renata Fabiana Parpinelli Ishihara</td><td>LIQ2</td><td>—</td><td>—</td><td>—</td></tr>
-          <tr><td>Jose Carlos Merce</td><td>LIQ2</td><td><span class="ferias-badge">07/01–09/01</span></td><td><span class="ferias-badge">06/07–17/07</span></td><td><span class="ferias-badge">09/11–23/11</span></td></tr>
           <tr><td>Carolina Monteiro da Silveira</td><td>LIQ2</td><td>—</td><td>—</td><td>—</td></tr>
           <tr><td>Tiago Filipe Calegari</td><td>LIQ2</td><td>—</td><td>—</td><td>—</td></tr>
           <tr><td>Marcia Regina Marques de Paula</td><td>LIQ2</td><td>—</td><td>—</td><td>—</td></tr>
@@ -2000,6 +2234,7 @@ nav {
           <tr><td>Eline Ana Sampaio Coradi Castro</td><td>EXE2</td><td><span class="ferias-badge">27/07–14/08</span></td><td><span class="ferias-badge">28/09–02/10</span></td><td><span class="ferias-badge">14/12–18/12</span></td></tr>
           <tr><td>Calefe Alexandre de Oliveira</td><td>EXE2</td><td><span class="ferias-badge">06/04–17/04</span></td><td><span class="ferias-badge">13/07–24/07</span></td><td><span class="ferias-badge">23/11–28/11</span></td></tr>
           <tr><td>Antenor Donida Bartoli</td><td>EXE2</td><td><span class="ferias-badge">12/01–16/01</span></td><td><span class="ferias-badge">16/07–31/07</span></td><td>—</td></tr>
+          <tr><td>Sonia Cristina dos Santos Franco</td><td>EXE2</td><td><span class="ferias-badge">07/01–16/01</span></td><td><span class="ferias-badge">17/07–31/07</span></td><td>a definir</td></tr>
 
           <!-- EXE3/DIVEX -->
           <tr><td colspan="5" style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-muted);background:var(--cream);padding:8px 14px;">EXE3 / DIVEX</td></tr>
@@ -2063,11 +2298,97 @@ nav {
 
   <div class="notice info">
     <span>🎬</span>
-    <span>Vídeos do Especializa &amp; Equaliza 15 e materiais de capacitação. Acesse o Drive compartilhado para a versão completa e atualizada.</span>
+    <span>Videoaulas no canal <a href="https://www.youtube.com/@servidorema%C3%A7aoscpira" target="_blank" style="color:inherit;font-weight:500">Servidor em Ação</a>, apresentações do Especializa &amp; Equaliza 15 e materiais de capacitação.</span>
   </div>
 
-  <div class="section-header" style="margin-top:24px; margin-bottom:16px">
-    <h2 style="font-size:20px">Videoaulas da SC de Piracicaba</h2>
+  <div class="yt-channel">
+    <div class="yt-channel-info">
+      <div class="yt-logo">▶</div>
+      <div>
+        <h2 style="font-size:20px;margin:0 0 4px">Servidor em Ação — Prática na Justiça do Trabalho</h2>
+        <p class="lc-desc" style="margin:0">Nosso canal no YouTube: vídeos curtos e práticos sobre ferramentas, configurações e rotinas de CON, LIQ e EXE.</p>
+      </div>
+    </div>
+    <a class="yt-sub" href="https://www.youtube.com/@servidorema%C3%A7aoscpira" target="_blank" rel="noopener">Abrir o canal</a>
+  </div>
+
+  <div class="section-header" style="margin-top:20px; margin-bottom:12px">
+    <h2 style="font-size:17px">Configuração do navegador e extensões</h2>
+  </div>
+  <div class="yt-grid">
+    <a class="yt-card" href="https://www.youtube.com/watch?v=Ws-yktia1J4" target="_blank" rel="noopener">
+      <div class="yt-thumb"><img src="https://i.ytimg.com/vi/Ws-yktia1J4/mqdefault.jpg" alt="" loading="lazy"><span class="yt-num">1</span></div>
+      <div class="yt-body">
+        <div class="lc-title">Configurando os favoritos do navegador</div>
+        <div class="lc-desc">Como criar e organizar a barra de favoritos do Firefox com os atalhos usados na rotina da Secretaria (PJe, sistemas e portal).</div>
+      </div>
+    </a>
+    <a class="yt-card" href="https://www.youtube.com/watch?v=EqstjjGbb-c" target="_blank" rel="noopener">
+      <div class="yt-thumb"><img src="https://i.ytimg.com/vi/EqstjjGbb-c/mqdefault.jpg" alt="" loading="lazy"><span class="yt-num">2</span></div>
+      <div class="yt-body">
+        <div class="lc-title">Instalando a extensão SISE no Firefox</div>
+        <div class="lc-desc">Passo a passo para instalar a extensão SISE — Soluções Integradas JT e deixá-la pronta para uso no PJe.</div>
+      </div>
+    </a>
+    <a class="yt-card" href="https://www.youtube.com/watch?v=UdW_TGa8JI0" target="_blank" rel="noopener">
+      <div class="yt-thumb"><img src="https://i.ytimg.com/vi/UdW_TGa8JI0/mqdefault.jpg" alt="" loading="lazy"><span class="yt-num">3</span></div>
+      <div class="yt-body">
+        <div class="lc-title">Instalando as extensões AVJT e Quinzinho no Firefox</div>
+        <div class="lc-desc">Instalação do Assistente Virtual JT (AVJT) e do Quinzinho, usados na automação de tarefas e na pauta.</div>
+      </div>
+    </a>
+    <a class="yt-card" href="https://www.youtube.com/watch?v=pzLoqSga_kQ" target="_blank" rel="noopener">
+      <div class="yt-thumb"><img src="https://i.ytimg.com/vi/pzLoqSga_kQ/mqdefault.jpg" alt="" loading="lazy"><span class="yt-num">4</span></div>
+      <div class="yt-body">
+        <div class="lc-title">Instalando a extensão +PJe no Firefox</div>
+        <div class="lc-desc">Como instalar o +PJe (maisPJe), o módulo de automatização do TRT-12 usado nas assessorias.</div>
+      </div>
+    </a>
+    <a class="yt-card" href="https://www.youtube.com/watch?v=AA83KDRwcaM" target="_blank" rel="noopener">
+      <div class="yt-thumb"><img src="https://i.ytimg.com/vi/AA83KDRwcaM/mqdefault.jpg" alt="" loading="lazy"><span class="yt-num">5</span></div>
+      <div class="yt-body">
+        <div class="lc-title">Configurando acesso rápido no PJe, AUTOGIGS e escolha de magistrado</div>
+        <div class="lc-desc">Configuração dos atalhos de acesso rápido no PJe, dos AUTOGIGS e da seleção do magistrado para os atos.</div>
+      </div>
+    </a>
+  </div>
+
+  <div class="section-header" style="margin-top:24px; margin-bottom:12px">
+    <h2 style="font-size:17px">Série SISE — Soluções Integradas JT</h2>
+  </div>
+  <div class="yt-grid">
+    <a class="yt-card" href="https://www.youtube.com/watch?v=vgHdYRsxHWw" target="_blank" rel="noopener">
+      <div class="yt-thumb"><img src="https://i.ytimg.com/vi/vgHdYRsxHWw/mqdefault.jpg" alt="" loading="lazy"><span class="yt-num">SISE 01</span></div>
+      <div class="yt-body">
+        <div class="lc-title">Consulta de depósitos judiciais</div>
+        <div class="lc-desc">Como usar o SISE para consultar depósitos judiciais vinculados aos processos.</div>
+      </div>
+    </a>
+    <a class="yt-card" href="https://www.youtube.com/watch?v=vOQDIFQat3U" target="_blank" rel="noopener">
+      <div class="yt-thumb"><img src="https://i.ytimg.com/vi/vOQDIFQat3U/mqdefault.jpg" alt="" loading="lazy"><span class="yt-num">SISE 02</span></div>
+      <div class="yt-body">
+        <div class="lc-title">Designação de audiência e intimações</div>
+        <div class="lc-desc">Uso do SISE para designar audiências e gerar as intimações correspondentes.</div>
+      </div>
+    </a>
+    <a class="yt-card" href="https://www.youtube.com/watch?v=TmQnoozyESE" target="_blank" rel="noopener">
+      <div class="yt-thumb"><img src="https://i.ytimg.com/vi/TmQnoozyESE/mqdefault.jpg" alt="" loading="lazy"><span class="yt-num">SISE 03</span></div>
+      <div class="yt-body">
+        <div class="lc-title">Envio de GIGS entre OJs e envio ao arquivo</div>
+        <div class="lc-desc">Como encaminhar GIGS de um órgão julgador para outro e enviar processos ao arquivo pelo SISE.</div>
+      </div>
+    </a>
+    <a class="yt-card" href="https://www.youtube.com/watch?v=p2twEiFSikM" target="_blank" rel="noopener">
+      <div class="yt-thumb"><img src="https://i.ytimg.com/vi/p2twEiFSikM/mqdefault.jpg" alt="" loading="lazy"><span class="yt-num">SISE 04</span></div>
+      <div class="yt-body">
+        <div class="lc-title">Nova configuração de magistrados no SISE</div>
+        <div class="lc-desc">Como atualizar a configuração de magistrados no SISE (arquivo juizos.json) após mudanças na escala.</div>
+      </div>
+    </a>
+  </div>
+
+  <div class="section-header" style="margin-top:28px; margin-bottom:16px">
+    <h2 style="font-size:20px">Outras videoaulas (Drive)</h2>
   </div>
 
   <div class="links-grid">
@@ -2162,34 +2483,50 @@ nav {
 <div id="section-estagiarios" class="section">
   <div class="section-header">
     <h2>Estagiários da SC de Piracicaba</h2>
-    <span class="tag">22 estagiários</span>
+    <span class="tag">25 estagiários</span>
+  </div>
+  <div class="notice info">
+    <span>📘</span>
+    <span>Normas de referência: Ato Regulamentar GP nº 012/2024 e Recomendação CR nº 001/2024 (TRT da 15ª Região). Cada estagiário tem um relatório de atividades próprio, mantido pela DAA.</span>
+  </div>
+  <div class="search-bar">
+    <span class="search-icon">🔍</span>
+    <input type="text" placeholder="Buscar estagiário, cidade, assessoria ou assessor..." oninput="filterEstagiarios(this.value)">
+  </div>
+  <div class="mag-legend">
+    <span><span class="ferias-badge est-alerta">Termina em até 60 dias</span></span>
+    <span><span class="ferias-badge est-vencido">Contrato encerrado</span></span>
+    <span><span class="ferias-badge est-erro">Datas a conferir</span></span>
   </div>
   <div style="background:white;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;overflow-x:auto">
-    <table class="ferias-table">
-      <thead><tr><th>Nome</th><th>Cidade / Setor</th><th>Início</th><th>Término</th></tr></thead>
+    <table class="ferias-table" id="est-table">
+      <thead><tr><th>Nome</th><th>OJ inicial</th><th>Cidade</th><th>Horário</th><th>Assessor(a)</th><th>Início</th><th>Término</th><th>Atividades</th></tr></thead>
       <tbody>
-        <tr><td>Carlos Roberto Santos Della Rocca</td><td>Limeira — CEJUSC</td><td>—</td><td><span class="ferias-badge">30/09/2026</span></td></tr>
-        <tr><td>Guilherme Chacur</td><td>Piracicaba — CEJUSC</td><td>—</td><td><span class="ferias-badge">28/02/2028</span></td></tr>
-        <tr><td>Victor Hugo Bailarin</td><td>Piracicaba — CEJUSC</td><td>—</td><td><span class="ferias-badge">31/10/2027</span></td></tr>
-        <tr><td>Beatriz Pasquini Garcia (convênio)</td><td>Santa Bárbara d'Oeste</td><td>—</td><td><span class="ferias-badge">05/05/2027</span></td></tr>
-        <tr><td>Estefania Faustino de Sousa</td><td>Sumaré</td><td>—</td><td><span class="ferias-badge">31/08/2027</span></td></tr>
-        <tr><td>Graziele Prado de Oliveira</td><td>Limeira</td><td>—</td><td><span class="ferias-badge">30/09/2027</span></td></tr>
-        <tr><td>Isabela Corazza Teodoro</td><td>Piracicaba</td><td>—</td><td><span class="ferias-badge">31/01/2027</span></td></tr>
-        <tr><td>Julia Fernanda da Costa</td><td>Santa Bárbara d'Oeste</td><td>—</td><td><span class="ferias-badge">28/02/2027</span></td></tr>
-        <tr><td>Nicole Camille da Silva</td><td>Americana</td><td>—</td><td><span class="ferias-badge">30/04/2027</span></td></tr>
-        <tr><td>Rafaella Aparecida do Carmo Claus</td><td>Americana</td><td>—</td><td><span class="ferias-badge">31/12/2026</span></td></tr>
-        <tr><td>Raissa Ferreira Paiva</td><td>Piracicaba</td><td>—</td><td><span class="ferias-badge">30/09/2026</span></td></tr>
-        <tr><td>Alessandra Lagacci</td><td>Araras</td><td><span class="ferias-badge">04/05/2026</span></td><td>—</td></tr>
-        <tr><td>Alisson Henrique de Oliveira</td><td>Limeira</td><td>—</td><td><span class="ferias-badge">31/10/2026</span></td></tr>
-        <tr><td>Fernanda Rodrigues Alves Cardoso</td><td>Hortolândia</td><td>—</td><td><span class="ferias-badge">30/06/2027</span></td></tr>
-        <tr><td>Fernando Aparecido Felix Junior</td><td>São João da Boa Vista</td><td>—</td><td><span class="ferias-badge">31/12/2026</span></td></tr>
-        <tr><td>Giovanna Prazeres Martins Justo</td><td>Limeira</td><td><span class="ferias-badge">06/04/2026</span></td><td>—</td></tr>
-        <tr><td>Livia de Oliveira Gomes</td><td>Mogi Guaçu</td><td>—</td><td><span class="ferias-badge">29/02/2028</span></td></tr>
-        <tr><td>Mariah Stephani de Oliveira</td><td>Leme</td><td>—</td><td><span class="ferias-badge">31/08/2027</span></td></tr>
-        <tr><td>Sarah da Silva Pinheiro</td><td>Piracicaba — DAM</td><td>—</td><td><span class="ferias-badge">30/01/2028</span></td></tr>
-        <tr><td>Tatiana da Conceição Cardoso Macedo</td><td>Piracicaba</td><td>—</td><td><span class="ferias-badge">31/10/2026</span></td></tr>
-        <tr><td>Larissa Saldanha Bastos</td><td>Piracicaba</td><td>—</td><td><span class="ferias-badge">30/06/2027</span></td></tr>
-        <tr><td>Pedro Afonso Mota Garcia Ramos</td><td>Santa Bárbara d'Oeste</td><td>—</td><td><span class="ferias-badge">31/12/2026</span></td></tr>
+        <tr><td class="vt-name">Guilherme Chacur</td><td><span class="est-oj">CEJUSC</span></td><td>Piracicaba — CEJUSC</td><td>—</td><td>—</td><td>01/03/2026</td><td><span class="ferias-badge est-fim" data-fim="2028-02-28" data-ini="2026-03-01">28/02/2028</span></td><td><span class="mag-none">A preencher</span></td></tr>
+        <tr><td class="vt-name">Karolyne Batistella da Costa Silva</td><td><span class="est-oj">CEJUSC</span></td><td>Limeira — CEJUSC</td><td>—</td><td>—</td><td>01/06/2026</td><td><span class="ferias-badge est-fim" data-fim="2028-05-30" data-ini="2026-06-01">30/05/2028</span></td><td><span class="mag-none">A preencher</span></td></tr>
+        <tr><td class="vt-name">Susy da Silva Ribeiro</td><td><span class="est-oj">CEJUSC</span></td><td>Limeira — CEJUSC</td><td>—</td><td>—</td><td>01/02/2026</td><td><span class="ferias-badge est-fim" data-fim="2026-12-31" data-ini="2026-02-01">31/12/2026</span></td><td><span class="mag-none">A preencher</span></td></tr>
+        <tr><td class="vt-name">Victor Hugo Bailarin</td><td><span class="est-oj">CEJUSC</span></td><td>Piracicaba — CEJUSC</td><td>—</td><td>—</td><td>01/11/2025</td><td><span class="ferias-badge est-fim" data-fim="2027-10-31" data-ini="2025-11-01">31/10/2027</span></td><td><span class="mag-none">A preencher</span></td></tr>
+        <tr><td class="vt-name">Fernanda Rodrigues Alves Cardoso</td><td><span class="est-oj">CON1</span></td><td>Hortolândia</td><td>—</td><td>Deise</td><td>01/07/2025</td><td><span class="ferias-badge est-fim" data-fim="2027-06-30" data-ini="2025-07-01">30/06/2027</span></td><td><details class="est-atv"><summary>Ver atividades</summary><p>Triagem, preparação da ata de audiência, atendimento presencial, elaboração de despacho, conferência da pauta, relatórios da EXE2.</p></details></td></tr>
+        <tr><td class="vt-name">Micaeli de Brito Ferreira</td><td><span class="est-oj">DAA + CON1</span></td><td>Americana</td><td>12h–18h</td><td>Deise</td><td>01/06/2026</td><td><span class="ferias-badge est-fim" data-fim="2028-05-30" data-ini="2026-06-01">30/05/2028</span></td><td><details class="est-atv"><summary>Ver atividades</summary><p>Atendimento ao público no balcão; auxílio na redação de minutas de ofícios e e-mails; desarquivamento; serviços de malote; minutas de despachos e decisões; triagem; verificação de malote digital.</p></details></td></tr>
+        <tr><td class="vt-name">Beatriz Pasquini Garcia (convênio)</td><td><span class="est-oj">DAA + CON1</span></td><td>Santa Bárbara d&#x27;Oeste</td><td>—</td><td>Deise</td><td>—</td><td><span class="ferias-badge est-fim" data-fim="2027-05-05" data-ini="">05/05/2027</span></td><td><details class="est-atv"><summary>Ver atividades</summary><p>Triagem inicial dos processos do gabinete do juiz Henrique Macedo Hinz; elaboração de despachos; organização da ata de audiência; comunicações, expedientes e intimações; atendimento ao balcão presencial.</p></details></td></tr>
+        <tr><td class="vt-name">Estefania Faustino de Sousa</td><td><span class="est-oj">DAA + CON1</span></td><td>Sumaré</td><td>—</td><td>Deise</td><td>01/09/2025</td><td><span class="ferias-badge est-fim" data-fim="2027-08-31" data-ini="2025-09-01">31/08/2027</span></td><td><details class="est-atv"><summary>Ver atividades</summary><p>Triagem inicial dos processos da VT de Sumaré; atendimento ao balcão presencial; despachos quando necessário; organização da ata de audiência; comunicações, expedientes e intimações; juntada e digitalização de documentos; análise de petições, manifestações e andamento dos processos.</p></details></td></tr>
+        <tr><td class="vt-name">Julia Fernanda da Costa</td><td><span class="est-oj">DAA + CON1</span></td><td>Santa Bárbara d&#x27;Oeste</td><td>—</td><td>Deise</td><td>01/03/2025</td><td><span class="ferias-badge est-fim" data-fim="2027-02-28" data-ini="2025-03-01">28/02/2027</span></td><td><details class="est-atv"><summary>Ver atividades</summary><p>Atendimento ao balcão presencial; triagem inicial dos processos do gabinete da juíza Cristiane Kawanaka de Pontes; inclusão dos processos da triagem na pauta; despachos e intimações.</p></details></td></tr>
+        <tr><td class="vt-name">Nicole Camille da Silva</td><td><span class="est-oj">DAA + CON1</span></td><td>Americana</td><td>12h–18h</td><td>Deise</td><td>01/05/2025</td><td><span class="ferias-badge est-fim" data-fim="2027-04-30" data-ini="2025-05-01">30/04/2027</span></td><td><details class="est-atv"><summary>Ver atividades</summary><p>Atendimento presencial no balcão, triagem de processos da 1ª VT de Americana e juntada de documentos eletrônicos (e-mails).</p></details></td></tr>
+        <tr><td class="vt-name">Raissa Ferreira Paiva</td><td><span class="est-oj">DAA + CON1</span></td><td>Piracicaba</td><td>—</td><td>Deise</td><td>01/10/2024</td><td><span class="ferias-badge est-fim" data-fim="2026-09-30" data-ini="2024-10-01">30/09/2026</span></td><td><details class="est-atv"><summary>Ver atividades</summary><p>Triagem dos finais ímpares das 3 varas de Piracicaba, de Araras e do cumprimento de sentença de Mogi Guaçu; elaboração de despachos e minutas.</p></details></td></tr>
+        <tr><td class="vt-name">Alessandra Lagacci</td><td><span class="est-oj">DAA + CON2</span></td><td>Araras</td><td>12h–18h</td><td>Rinaldo (quando possível)</td><td>01/05/2026</td><td><span class="ferias-badge est-fim" data-fim="2026-12-30" data-ini="2026-05-01">30/12/2026</span></td><td><span class="mag-none">A preencher</span></td></tr>
+        <tr><td class="vt-name">Aline Depieri de Souza Duarte</td><td><span class="est-oj">DAA + CON2</span></td><td>Mogi Guaçu</td><td>12h–18h</td><td>Paulo (2ª e 3ª feira)</td><td>01/06/2026</td><td><span class="ferias-badge est-fim" data-fim="2027-12-31" data-ini="2026-06-01">31/12/2027</span></td><td><span class="mag-none">A preencher</span></td></tr>
+        <tr><td class="vt-name">Fernando Aparecido Felix Junior</td><td><span class="est-oj">DAA + CON2</span></td><td>São João da Boa Vista</td><td>12h–18h</td><td>Rinaldo (quando possível)</td><td>01/03/2025</td><td><span class="ferias-badge est-fim" data-fim="2026-12-31" data-ini="2025-03-01">31/12/2026</span></td><td><details class="est-atv"><summary>Ver atividades</summary><p>Triagem inicial; atendimento ao balcão e telefone; protocolo em autos físicos; sentenças de embargos à execução; desarquivamento de autos físicos; certidões de objeto e pé e habilitação de crédito no juízo falimentar; alvarás de seguro-desemprego/FGTS; despachos de início da liquidação; nomeação de peritos contábeis; análise de pressupostos de RO; certidões de notificações devolvidas.</p></details></td></tr>
+        <tr><td class="vt-name">Giovanna Prazeres Martins Justo</td><td><span class="est-oj">DAA + CON2</span></td><td>Limeira</td><td>12h–18h</td><td>Rinaldo (5ª e 6ª feira)</td><td>01/04/2026</td><td><span class="ferias-badge est-fim" data-fim="2026-12-31" data-ini="2026-04-01">31/12/2026</span></td><td><span class="mag-none">A preencher</span></td></tr>
+        <tr><td class="vt-name">Livia de Oliveira Gomes</td><td><span class="est-oj">DAA + CON2</span></td><td>Mogi Guaçu</td><td>12h–18h</td><td>Paulo (4ª e 6ª feira)</td><td>01/03/2026</td><td><span class="ferias-badge est-fim" data-fim="2028-02-29" data-ini="2026-03-01">29/02/2028</span></td><td><details class="est-atv"><summary>Ver atividades</summary><p>Atendimento ao balcão presencial; recebimento de malote físico; análise de pauta e pré-pauta; manejo, certidões, migração ao PJe e arquivamento de processos físicos.</p></details></td></tr>
+        <tr><td class="vt-name">Polyana Gachet Ochialla</td><td><span class="est-oj">DAA + CON2</span></td><td>Limeira</td><td>12h–18h</td><td>Rinaldo (5ª e 6ª feira)</td><td>01/06/2026</td><td><span class="ferias-badge est-fim" data-fim="2028-05-30" data-ini="2026-06-01">30/05/2028</span></td><td><span class="mag-none">A preencher</span></td></tr>
+        <tr><td class="vt-name">Sarah da Silva Pinheiro</td><td><span class="est-oj">DAA + CON2</span></td><td>Piracicaba — DAM</td><td>12h–18h</td><td>Rinaldo (6ª feira)</td><td>01/02/2026</td><td><span class="ferias-badge est-fim" data-fim="2028-01-30" data-ini="2026-02-01">30/01/2028</span></td><td><details class="est-atv"><summary>Ver atividades</summary><p>Atendimento ao balcão presencial; desarquivamento de processos físicos; atendimento e autuação de processos Jus Postulandi; auxílio nos e-mails, malote digital e cartas precatórias quando solicitado; verificação dos malotes físicos; migração de processos CCLE.</p></details></td></tr>
+        <tr><td class="vt-name">Helen Caroline Theodoro Ferreira de Lima</td><td><span class="est-oj">DAA + CON2</span></td><td>Piracicaba</td><td>12h–18h</td><td>Paulo</td><td>01/06/2026</td><td><span class="ferias-badge est-fim" data-fim="2026-05-30" data-ini="2026-06-01">30/05/2026</span></td><td><span class="mag-none">A preencher</span></td></tr>
+        <tr><td class="vt-name">Graziele Prado de Oliveira</td><td><span class="est-oj">EXE1</span></td><td>Limeira</td><td>—</td><td>Eduardo</td><td>01/10/2025</td><td><span class="ferias-badge est-fim" data-fim="2027-09-30" data-ini="2025-10-01">30/09/2027</span></td><td><details class="est-atv"><summary>Ver atividades</summary><p>Atendimento ao balcão presencial; desarquivamento de processos físicos; atendimento e autuação de processos Jus Postulandi; auxílio nos e-mails, malote digital e cartas precatórias quando solicitado; verificação dos malotes físicos; migração de processos CCLE.</p></details></td></tr>
+        <tr><td class="vt-name">Tatiana da Conceição Cardoso Macedo</td><td><span class="est-oj">EXE2</span></td><td>Piracicaba</td><td>—</td><td>Fábio</td><td>01/11/2024</td><td><span class="ferias-badge est-fim" data-fim="2026-10-31" data-ini="2024-11-01">31/10/2026</span></td><td><details class="est-atv"><summary>Ver atividades</summary><p>Pressupostos, processamento e remessa de agravo de petição; notificações e regularização de inconsistências do e-Carta; análise de pendências e restrições em processos a arquivar; alguns despachos de execução frustrada e sentenças de prescrição intercorrente; mandado de penhora e avaliação — tudo sob supervisão.</p></details></td></tr>
+        <tr><td class="vt-name">Gabriela Amorim Sterde</td><td><span class="est-oj">EXE2</span></td><td>Piracicaba</td><td>—</td><td>Fábio</td><td>01/06/2026</td><td><span class="ferias-badge est-fim" data-fim="2026-12-31" data-ini="2026-06-01">31/12/2026</span></td><td><span class="mag-none">A preencher</span></td></tr>
+        <tr><td class="vt-name">Alisson Henrique de Oliveira</td><td><span class="est-oj">EXE3</span></td><td>Limeira</td><td>—</td><td>Nilton</td><td>01/11/2024</td><td><span class="ferias-badge est-fim" data-fim="2026-10-31" data-ini="2024-11-01">31/10/2026</span></td><td><details class="est-atv"><summary>Ver atividades</summary><p>Atendimento ao balcão presencial; desarquivamento de processos físicos; atendimento e autuação de processos Jus Postulandi; auxílio nos e-mails, malote digital e cartas precatórias quando solicitado; verificação dos malotes físicos; migração de processos CCLE.</p></details></td></tr>
+        <tr><td class="vt-name">Mariah Stephani de Oliveira</td><td><span class="est-oj">LIQ1</span></td><td>Leme</td><td>—</td><td>Wellington</td><td>01/09/2025</td><td><span class="ferias-badge est-fim" data-fim="2027-08-31" data-ini="2025-09-01">31/08/2027</span></td><td><details class="est-atv"><summary>Ver atividades</summary><p>Atendimento ao público no balcão e telefone; minutas de despacho inicial na LIQ e de decisões de embargos de declaração e impugnações à execução.</p></details></td></tr>
+        <tr><td class="vt-name">Larissa Saldanha Bastos</td><td><span class="est-oj">LIQ2</span></td><td>Piracicaba</td><td>—</td><td>Paulo</td><td>01/11/2025</td><td><span class="ferias-badge est-fim" data-fim="2027-06-30" data-ini="2025-11-01">30/06/2027</span></td><td><details class="est-atv"><summary>Ver atividades</summary><p>Processamento e remessa de recursos na fase de execução, com supervisão.</p></details></td></tr>
       </tbody>
     </table>
   </div>
@@ -2467,7 +2804,6 @@ const ojData = {
       { name: 'Celio Aparecido Trombetta', role: 'FC5' },
       { name: 'Ana Paula D Elia Vinhal', role: 'FC5' },
       { name: 'Rosana Sueli Britto de Jesus', role: 'FC4' },
-      { name: 'Maria Goretti Guimarães Vieira', role: 'FC4' },
       { name: 'Roberta Rodrigues Urbano', role: 'FC4' },
       { name: 'Ivi Cristina Indalecio Bueno', role: 'FC4' },
       { name: 'Isabela Freitas de Souza', role: 'FC4' },
@@ -2479,7 +2815,6 @@ const ojData = {
       { name: 'Alessandro Costa', role: 'FC4' },
       { name: 'Sabrina Noronha Costa Costantini', role: 'FC4' },
       { name: 'Aparecida de Fatima de Souza Franco', role: 'FC4' },
-      { name: 'Sonia Cristina dos Santos Franco', role: 'FC4' },
       { name: 'Dulce Maria Vasconcellos Seixas', role: 'FC4' }
     ],
     atrib: ['Conclusão de sentença','Controle de razões finais','Processamento de incidentes e recursos','Remessa ao 2º grau','Recebimento de instância superior','Registro de trânsito em julgado','Encaminhamento pós-TJ para LIQ, EXE ou Arquivo','Controle de perícias'],
@@ -2512,13 +2847,13 @@ const ojData = {
     equipe: [
       { name: 'Cristiany Contreras', role: 'FC5' }, { name: 'Juliana Marconi Penteado Pessin', role: 'FC4' },
       { name: 'Jailton Leite da Silva', role: 'FC4' }, { name: 'Leandro Jose Christofoletti', role: 'FC4' },
-      { name: 'Renata Fabiana Parpinelli Ishihara', role: 'FC4' }, { name: 'Jose Carlos Merce', role: 'FC4' },
+      { name: 'Renata Fabiana Parpinelli Ishihara', role: 'FC4' }, { name: 'Daiane Carla Santos Ledo Marques', role: 'FC4' },
       { name: 'Carolina Monteiro da Silveira', role: 'FC4' }, { name: 'Tiago Filipe Calegari', role: 'FC4' },
       { name: 'Marcia Regina Marques de Paula', role: 'FC4' }, { name: 'Maria da Penha Alves Gomes Santos', role: 'FC4' },
       { name: 'Rafaela Cabral Burato', role: 'FC4' }, { name: 'Marcelo de Jesus Rangel Monteiro', role: 'FC4' },
       { name: 'Welder de Oliveira Moraes', role: 'FC4' }, { name: 'Fabiano Maiolini', role: 'FC4' },
       { name: 'Mariana Cechinato Lorenzete', role: 'FC4' }, { name: 'Thais Furquim Soledade Neves Dela Vale', role: 'FC4' },
-      { name: 'Maria Luiza Guerra Martinelli', role: 'FC1' }, { name: 'Daiane Carla Santos Ledo Marques', role: 'FC2' }
+      { name: 'Maria Luiza Guerra Martinelli', role: 'FC1' }
     ],
     atrib: ['Homologação de cálculos com liberação de valores','Processamento de incidentes e recursos','Parcelamento','Retificação de cálculos','Parecer de incidentes','Liberação de valores pós-homologação','Finalização do processo após pagamento espontâneo'],
     acervo: '2.331 processos em LIQ2'
@@ -2549,7 +2884,8 @@ const ojData = {
     equipe: [
       { name: 'Marcio Elias Soares Gonçalves Siqueira', role: 'FC5' }, { name: 'Juliana Fiamenghi Misse Correia', role: 'FC5' },
       { name: 'Daniel Carlos Alves de Pilla', role: 'FC1' }, { name: 'Eline Ana Sampaio Coradi Castro', role: 'FC2' },
-      { name: 'Calefe Alexandre de Oliveira', role: 'FC2' }, { name: 'Antenor Donida Bartoli', role: 'FC2' }
+      { name: 'Calefe Alexandre de Oliveira', role: 'FC2' }, { name: 'Antenor Donida Bartoli', role: 'FC2' },
+      { name: 'Sonia Cristina dos Santos Franco', role: 'FC4' }
     ],
     atrib: ['Pesquisas avançadas de bens: CCS, COAF, SIMBA, CAGED, INFOSEG','Inclusão de devedores localizados até garantia e trânsito','Novos devedores: grupo econômico, sócios retirantes/ocultos, fraude, IDPJ','Execução frustrada: intima exequente (30 dias), GIGS de 2 anos, sobrestamento art. 11-A CLT','Planilha compartilhada de grandes devedores','Reunião de execuções individuais'],
     acervo: '4.932 processos em EXE2'
@@ -2597,7 +2933,10 @@ const ojData = {
       { name: 'Ana Luisa de Faria', role: 'CJ1', cargo: 'Responsável — Piracicaba' },
       { name: 'Alexandre Francischetti', role: 'CJ1', cargo: 'Responsável — Limeira' }
     ],
-    equipe: [],
+    equipe: [
+      { name: 'Maria Jose Dainez', role: '', cargo: 'CEJUSC Piracicaba' },
+      { name: 'Silvia Raquel Alves de Oliveira', role: '', cargo: 'CEJUSC Limeira' }
+    ],
     atrib: ['Sessões de mediação e conciliação pré-processuais e processuais','Homologação de acordos','Triagem e encaminhamento de casos aptos à autocomposição','Gestão da pauta de sessões','Articulação com magistrados coordenadores'],
     acervo: 'Atendimento às varas da SC Piracicaba'
   },
@@ -2707,7 +3046,7 @@ function openOJ(id) {
   d.equipe.forEach(e => {
     const isCJ = e.role && e.role.startsWith('CJ');
     const badge = isCJ ? `<span class="badge ${badgeClass(e.role)}">${e.role}</span> ` : '';
-    html += `<div class="team-card"><div class="tc-name">${e.name}</div><div class="tc-role">${badge}</div></div>`;
+    html += `<div class="team-card"><div class="tc-name">${e.name}</div><div class="tc-role">${badge}${e.cargo || ''}</div></div>`;
   });
   html += `</div></div>`;
 
@@ -2752,12 +3091,55 @@ function toggleAcc(header) {
 }
 
 function filterMagistrados(val) {
-  const rows = document.querySelectorAll('#mag-table tbody tr');
-  const q = val.toLowerCase();
-  rows.forEach(r => {
-    r.style.display = r.textContent.toLowerCase().includes(q) ? '' : 'none';
+  const norm = t => t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const q = norm(val);
+  let group = null, groupHits = 0;
+  const closeGroup = () => { if (group) group.style.display = (groupHits || !q) ? '' : 'none'; };
+  document.querySelectorAll('#mag-table tbody tr').forEach(r => {
+    if (r.classList.contains('mag-group')) { closeGroup(); group = r; groupHits = 0; return; }
+    const hit = norm(r.textContent).includes(q);
+    r.style.display = hit ? '' : 'none';
+    if (hit) groupHits++;
+  });
+  closeGroup();
+}
+
+(function markAfastamentos() {
+  const today = new Date(); today.setHours(0,0,0,0);
+  const parse = s => s ? new Date(s + 'T00:00:00') : null;
+  document.querySelectorAll('#mag-table .afast-badge[data-ate]').forEach(b => {
+    const de = parse(b.dataset.de), ate = parse(b.dataset.ate);
+    let cls = '';
+    if (ate && ate < today) cls = 'afast-fim';
+    else if (de && de > today) cls = 'afast-futuro';
+    else if (ate || de) cls = 'afast-ativo';
+    if (cls) b.classList.add(cls);
+  });
+})();
+
+function filterEstagiarios(val) {
+  const norm = t => t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const q = norm(val);
+  document.querySelectorAll('#est-table tbody tr').forEach(r => {
+    r.style.display = norm(r.textContent).includes(q) ? '' : 'none';
   });
 }
+
+(function marcarPrazos() {
+  const hoje = new Date(); hoje.setHours(0,0,0,0);
+  const d = s => s ? new Date(s + 'T00:00:00') : null;
+  document.querySelectorAll('#ferias-mag-table .afast-badge[data-ate]').forEach(b => {
+    const de = d(b.dataset.de), ate = d(b.dataset.ate);
+    b.classList.add(ate && ate < hoje ? 'afast-fim' : (de && de > hoje ? 'afast-futuro' : 'afast-ativo'));
+  });
+  document.querySelectorAll('#est-table .est-fim').forEach(b => {
+    const fim = d(b.dataset.fim), ini = d(b.dataset.ini);
+    if (ini && fim && fim < ini) { b.classList.add('est-erro'); b.title = 'Término anterior ao início — conferir'; return; }
+    const dias = (fim - hoje) / 86400000;
+    if (dias < 0) b.classList.add('est-vencido');
+    else if (dias <= 60) b.classList.add('est-alerta');
+  });
+})();
 </script>
 </body>
 </html>
