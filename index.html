@@ -997,6 +997,24 @@ nav {
 .man-form button { font: inherit; font-size: 16px; font-weight: 600; padding: 10px; border: 0; border-radius: 8px; background: var(--navy); color: #fff; cursor: pointer; }
 .man-hint { font-size: 13px; color: var(--text-muted); margin: 12px 0 0; line-height: 1.45; }
 .man-msg { display: block; font-size: 14px; color: var(--accent-liq); margin-top: 6px; min-height: 1em; }
+
+/* normativos */
+.norm-list { display: grid; gap: 14px; }
+.norm-card { display: grid; grid-template-columns: 96px minmax(0,1fr); gap: 18px; background: #fff; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 20px; border-left: 5px solid var(--gold); }
+.norm-card.pend { opacity: .75; border-left-color: var(--border); }
+.norm-num { align-self: start; min-height: 96px; background: var(--navy); color: var(--gold-light); border-radius: 12px; display: grid; place-content: center; text-align: center; font-size: 14px; letter-spacing: .1em; line-height: 1.1; padding: 12px 0; }
+.norm-num b { font-family: 'Fraunces', serif; font-size: 36px; font-weight: 500; letter-spacing: 0; }
+.norm-num small { font-size: 13px; color: rgba(255,255,255,.6); }
+.norm-body h3 { font-family: 'Fraunces', serif; font-size: 24px; font-weight: 500; color: var(--navy); margin: 0 0 4px; }
+.norm-meta { font-size: 15px; color: var(--text-muted); margin: 0 0 8px; }
+.norm-em { font-size: 17px; color: var(--text-mid); margin: 0 0 10px; line-height: 1.5; }
+.norm-det { margin: 0 0 12px; }
+.norm-det summary { cursor: pointer; font-weight: 500; color: var(--navy); font-size: 16px; }
+.norm-det ul { margin: 10px 0 0; padding-left: 20px; display: grid; gap: 6px; font-size: 16px; color: var(--text-mid); line-height: 1.5; }
+.norm-btn { display: inline-block; padding: 9px 16px; border-radius: 99px; background: var(--navy); color: #fff; text-decoration: none; font-weight: 500; font-size: 15px; }
+.norm-btn:hover { background: var(--navy-soft); }
+.norm-soon { display: inline-block; font-size: 14px; padding: 4px 12px; border-radius: 99px; background: var(--gold-pale); color: #7a5c12; }
+@media (max-width: 560px) { .norm-card { grid-template-columns: 1fr; } .norm-num { grid-auto-flow: column; gap: 8px; justify-content: start; padding: 8px 14px; } }
 </style>
 </head>
 <body>
@@ -1013,7 +1031,8 @@ nav {
     </a>
     <ul class="nav-links">
       <li><a href="#" onclick="showSection('organograma')" id="nav-organograma" class="active">Organograma</a></li>
-      <li><a href="#" onclick="showSection('home')" id="nav-home">Início</a></li>
+      <li><a href="#" onclick="showSection('home')" id="nav-home">Visão Geral</a></li>
+      <li><a href="#" onclick="showSection('normativos')" id="nav-normativos">Normativos Internos</a></li>
       <li><a href="#" onclick="showSection('ojs')" id="nav-ojs">Órgãos Julgadores</a></li>
       <li><a href="#" onclick="showSection('magistrados')" id="nav-magistrados">Magistrados</a></li>
       <li><a href="#" onclick="showSection('acervo')" id="nav-acervo">GIGs &amp; Robôs</a></li>
@@ -1229,6 +1248,58 @@ nav {
       <div class="vc-info" style="font-size:11px;color:var(--text-muted);margin-top:3px">Cordeirópolis, Iracemápolis e Limeira</div>
       <div class="vc-total">Pop: <span>349.280</span></div>
     </div>
+  </div>
+</div>
+
+<!-- NORMATIVOS INTERNOS -->
+<div id="section-normativos" class="section">
+  <div class="section-header">
+    <h2>Normativos Internos</h2>
+    <span class="tag">Ordens de Serviço da Secretaria Conjunta</span>
+  </div>
+  <div class="notice info">
+    <span>📜</span>
+    <span>Ordens de Serviço editadas pelos Juízes Coordenadores da Secretaria Conjunta de Piracicaba. Clique para abrir o texto integral.</span>
+  </div>
+  <div class="norm-list">
+
+    <article class="norm-card pend">
+      <div class="norm-num">OS<br><b>01</b><small>2026</small></div>
+      <div class="norm-body">
+        <h3>Ordem de Serviço nº 01/2026</h3>
+        <p class="norm-em">Norma base de procedimentos da Secretaria Conjunta, alterada pela OS nº 03/2026.</p>
+        <span class="norm-soon">Documento será disponibilizado em breve</span>
+      </div>
+    </article>
+
+    <article class="norm-card pend">
+      <div class="norm-num">OS<br><b>02</b><small>2026</small></div>
+      <div class="norm-body">
+        <h3>Ordem de Serviço nº 02/2026</h3>
+        <p class="norm-em">&nbsp;</p>
+        <span class="norm-soon">Documento será disponibilizado em breve</span>
+      </div>
+    </article>
+
+    <article class="norm-card">
+      <div class="norm-num">OS<br><b>03</b><small>2026</small></div>
+      <div class="norm-body">
+        <h3>Ordem de Serviço nº 03/2026 — SISBAJUD</h3>
+        <p class="norm-meta">Piracicaba, 9 de setembro de 2026 · Altera a OS nº 01/2026</p>
+        <p class="norm-em">Dispensa a minuta de despacho de designação de audiências, fixa parâmetros de bloqueio, desbloqueio e transferência de valores via SISBAJUD e padroniza as certidões dos Oficiais de Justiça.</p>
+        <details class="norm-det">
+          <summary>Pontos principais</summary>
+          <ul>
+            <li><b>Audiências (art. 12-A):</b> designação lançada direto em pauta e notificação padronizada pela Secretaria, sem minuta de despacho. A audiência de instrução continua dependendo de despacho do magistrado.</li>
+            <li><b>SISBAJUD (art. 35-A):</b> transferência apenas a partir de R$ 500,00 em execuções acima de R$ 5.000,00; R$ 200,00 nas de até R$ 5.000,00; R$ 500,00 por reclamante no processo piloto. Valores menores são desbloqueados de imediato, sem despacho.</li>
+            <li><b>Resultado negativo ou valor ínfimo (art. 35-B):</b> certidão padronizada citando a OS, sem conclusão ao magistrado.</li>
+            <li><b>Certidões dos Oficiais de Justiça (arts. 35-C e 35-D):</b> modelos padronizados e descrição obrigatória no PJe: “Certidão de penhora negativa”, “total” ou “parcial”.</li>
+          </ul>
+        </details>
+        <a class="norm-btn" href="normativos/os-03-2026-sisbajud.pdf" target="_blank" rel="noopener">Abrir PDF ↗</a>
+      </div>
+    </article>
+
   </div>
 </div>
 
@@ -2855,8 +2926,8 @@ const ojData = {
     "cargo": "Apoio"
    },
    {
-    "name": "Dulce Maria Vasconcellos Seixas",
-    "role": "",
+    "name": "Debora Assis de Oliveira",
+    "role": "FC2",
     "cargo": "Apoio"
    }
   ],
@@ -3399,8 +3470,8 @@ const ojData = {
     "cargo": "Assistente"
    },
    {
-    "name": "Debora Assis de Oliveira",
-    "role": "FC2",
+    "name": "Dulce Maria Vasconcellos Seixas",
+    "role": "",
     "cargo": "Servidor(a)"
    },
    {
