@@ -923,6 +923,80 @@ nav {
   .passivo-grid { grid-template-columns: 1fr; }
   .team-grid { grid-template-columns: 1fr; }
 }
+
+/* organograma clicável + varas por equipe */
+.org-group { margin: 26px 0 10px; font-size: 16px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--text-muted); text-align: center; }
+.org-row.cols-1 { grid-template-columns: minmax(0, 360px); justify-content: center; }
+.org-click { font: inherit; text-align: center; width: 100%; display: block; cursor: pointer; transition: transform .15s, box-shadow .15s; }
+.org-click:hover, .org-click:focus-visible { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(10,22,40,.12); }
+.org-more { margin-top: 8px; font-size: 16px; font-weight: 500; color: var(--text-muted); }
+.org-click:hover .org-more { color: var(--navy); }
+.org-link { font: inherit; font-size: 17px; background: none; border: 1px dashed var(--border); border-radius: 99px; padding: 6px 14px; cursor: pointer; color: var(--text-muted); }
+.org-link:hover { color: var(--navy); border-color: var(--navy); }
+@media (max-width: 900px) { .org-row.cols-5, .org-row.cols-4, .org-row.cols-3 { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .org-row.cols-5, .org-row.cols-4, .org-row.cols-3, .org-row.cols-2 { grid-template-columns: 1fr; } }
+.vara-list { display: grid; gap: 12px; }
+.vara-card { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+.vara-head { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; padding: 10px 14px; background: rgba(26,95,140,0.07); font-weight: 600; color: var(--navy); font-size: 18px; }
+.vara-final { font-size: 13px; font-weight: 500; color: var(--text-muted); }
+.vara-gab { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 10px; padding: 9px 14px; border-top: 1px solid var(--border); font-size: 16px; }
+.vg-mag { font-weight: 500; color: var(--text-dark); }
+.vg-sec { color: var(--text-muted); }
+@media (max-width: 640px) { .vara-gab { grid-template-columns: 1fr; gap: 2px; } }
+
+/* ===== organograma enxuto + página da unidade ===== */
+.org-map { display: grid; gap: 18px; }
+.org-band { display: grid; grid-template-columns: 200px minmax(0,1fr); gap: 16px; align-items: start; background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 18px; }
+.ob-label { font-family: 'Fraunces', serif; font-size: 24px; color: var(--navy); padding-top: 10px; }
+.ob-tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; }
+.org-tile { position: relative; display: grid; gap: 2px; padding: 16px 40px 16px 18px; border-radius: 12px; border: 1px solid var(--border); border-left: 5px solid var(--tc, var(--navy)); background: #fff; text-decoration: none; color: var(--text-dark); transition: transform .15s, box-shadow .15s; }
+.org-tile:hover, .org-tile:focus-visible { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(10,22,40,.12); }
+.org-tile.gest { --tc: var(--gold); } .org-tile.daa { --tc: var(--navy); } .org-tile.cejusc { --tc: var(--gold); }
+.org-tile.dam { --tc: var(--accent-dam); } .org-tile.con { --tc: var(--accent-con); } .org-tile.liq { --tc: var(--accent-liq); } .org-tile.exe { --tc: var(--accent-exe); }
+.ot-sig { font-size: 24px; font-weight: 600; letter-spacing: .04em; color: var(--tc, var(--navy)); }
+.ot-name { font-size: 17px; color: var(--text-muted); line-height: 1.3; }
+.ot-go { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); font-size: 22px; color: var(--text-muted); }
+.org-tile:hover .ot-go { color: var(--tc, var(--navy)); }
+@media (max-width: 760px) { .org-band { grid-template-columns: 1fr; } .ob-label { padding-top: 0; } }
+
+.unit-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+.unit-back { font-size: 17px; font-weight: 500; color: var(--navy); text-decoration: none; padding: 8px 14px; border: 1px solid var(--border); border-radius: 99px; background: #fff; }
+.unit-back:hover { border-color: var(--navy); }
+.unit-nav { display: flex; gap: 6px; flex-wrap: wrap; }
+.unit-nav a { font-size: 14px; padding: 5px 10px; border-radius: 99px; border: 1px solid var(--border); background: #fff; color: var(--text-muted); text-decoration: none; }
+.unit-nav a.on, .unit-nav a:hover { background: var(--navy); color: #fff; border-color: var(--navy); }
+.unit-hero { background: var(--navy); color: #fff; border-radius: var(--radius-lg); padding: 24px 28px; margin-bottom: 18px; border-left: 8px solid var(--tc, var(--gold)); }
+.unit-hero h2 { font-family: 'Fraunces', serif; font-size: 34px; font-weight: 500; color: var(--gold-light); margin: 0 0 4px; }
+.unit-hero p { margin: 0; font-size: 19px; color: rgba(255,255,255,.7); }
+.unit-stats { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+.unit-stats span { font-size: 15px; padding: 4px 12px; border-radius: 99px; background: rgba(255,255,255,.1); color: #fff; }
+.unit-grid { display: grid; grid-template-columns: minmax(0,1fr) 360px; gap: 18px; align-items: start; }
+@media (max-width: 1000px) { .unit-grid { grid-template-columns: 1fr; } }
+.unit-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 20px; margin-bottom: 18px; }
+.unit-card h4 { font-size: 15px; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); margin: 0 0 14px; font-weight: 600; }
+.unit-side { position: sticky; top: 90px; }
+.unit-search { width: 100%; font: inherit; font-size: 17px; padding: 10px 14px; border: 1px solid var(--border); border-radius: 10px; margin-bottom: 12px; }
+.person-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; }
+.person { display: flex; gap: 12px; align-items: center; padding: 10px 12px; border: 1px solid var(--border); border-radius: 10px; }
+.person .av { flex: none; width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; font-weight: 600; font-size: 15px; background: rgba(10,22,40,.07); color: var(--navy); }
+.person.lead { background: var(--gold-pale); border-color: var(--border-gold); }
+.person.lead .av { background: var(--gold); color: var(--navy); }
+.person .pn { font-weight: 500; font-size: 17px; color: var(--text-dark); line-height: 1.25; }
+.person .pr { font-size: 14px; color: var(--text-muted); line-height: 1.3; margin-top: 2px; }
+.person .badge { margin-right: 4px; font-size: 12px; padding: 1px 6px; }
+.man-list { display: grid; gap: 8px; margin-bottom: 14px; }
+.man-item { display: flex; gap: 10px; align-items: center; padding: 10px 12px; border: 1px solid var(--border); border-radius: 10px; text-decoration: none; color: var(--text-dark); }
+.man-item:hover { border-color: var(--navy); }
+.man-item .mi-ic { font-size: 20px; }
+.man-item .mi-t { flex: 1; font-size: 16px; line-height: 1.3; }
+.man-item .mi-tag { font-size: 12px; color: var(--text-muted); }
+.man-item button { border: 0; background: none; cursor: pointer; font-size: 16px; color: var(--text-muted); }
+.man-empty { font-size: 15px; color: var(--text-muted); padding: 8px 0; }
+.man-form { display: grid; gap: 8px; }
+.man-form input, .man-form select { font: inherit; font-size: 16px; padding: 9px 12px; border: 1px solid var(--border); border-radius: 8px; background: #fff; }
+.man-form button { font: inherit; font-size: 16px; font-weight: 600; padding: 10px; border: 0; border-radius: 8px; background: var(--navy); color: #fff; cursor: pointer; }
+.man-hint { font-size: 13px; color: var(--text-muted); margin: 12px 0 0; line-height: 1.45; }
+.man-msg { display: block; font-size: 14px; color: var(--accent-liq); margin-top: 6px; min-height: 1em; }
 </style>
 </head>
 <body>
@@ -930,7 +1004,7 @@ nav {
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a class="nav-brand" href="#" onclick="showSection('home')">
+    <a class="nav-brand" href="#" onclick="return backToOrg()">
       <div class="emblem">SC</div>
       <div class="nav-brand-text">
         <span class="title">Secretaria Conjunta</span>
@@ -938,8 +1012,8 @@ nav {
       </div>
     </a>
     <ul class="nav-links">
-      <li><a href="#" onclick="showSection('home')" id="nav-home" class="active">Início</a></li>
-      <li><a href="#" onclick="showSection('organograma')" id="nav-organograma">Organograma</a></li>
+      <li><a href="#" onclick="showSection('organograma')" id="nav-organograma" class="active">Organograma</a></li>
+      <li><a href="#" onclick="showSection('home')" id="nav-home">Início</a></li>
       <li><a href="#" onclick="showSection('ojs')" id="nav-ojs">Órgãos Julgadores</a></li>
       <li><a href="#" onclick="showSection('magistrados')" id="nav-magistrados">Magistrados</a></li>
       <li><a href="#" onclick="showSection('acervo')" id="nav-acervo">GIGs &amp; Robôs</a></li>
@@ -956,7 +1030,7 @@ nav {
   <div class="hero-inner">
     <div class="hero-left">
       <h1>Portal <em>Interno</em><br>Secretaria Conjunta</h1>
-      <p>Piracicaba, Americana, Araras, Leme, Rio Claro, Mogi Guaçu, Sumaré, Hortolândia, São João da Boa Vista, Limeira, Santa Bárbara d'Oeste — 15 unidades, 156 servidores.</p>
+      <p>Piracicaba, Americana, Araras, Leme, Rio Claro, Mogi Guaçu, Sumaré, Hortolândia, São João da Boa Vista, Limeira, Santa Bárbara d'Oeste — 15 unidades, 158 servidores.</p>
     </div>
     <div class="hero-stats">
       <div class="hero-stat">
@@ -964,7 +1038,7 @@ nav {
         <div class="label">Acervo total</div>
       </div>
       <div class="hero-stat">
-        <div class="num">156</div>
+        <div class="num">158</div>
         <div class="label">Servidores</div>
       </div>
       <div class="hero-stat">
@@ -983,7 +1057,7 @@ nav {
 <div class="main">
 
 <!-- HOME -->
-<div id="section-home" class="section active">
+<div id="section-home" class="section">
   <div class="section-header">
     <h2>Visão Geral</h2>
     <span class="tag">Apuração 30/09/2026</span>
@@ -1159,97 +1233,118 @@ nav {
 </div>
 
 <!-- ORGANOGRAMA -->
-<div id="section-organograma" class="section">
+<div id="section-organograma" class="section active">
   <div class="section-header">
     <h2>Organograma</h2>
-    <span class="tag">Secretaria Conjunta de Piracicaba</span>
+    <span class="tag">Clique em uma unidade para abrir a página dela</span>
   </div>
-
-  <div class="notice info">
-    <span>ℹ️</span>
-    <span>Total: 156 servidores · DAA: 17 · CON: 52 · LIQ: 32 · EXE: 43 · DAM: 06 · CEJUSC: 05 · Oficiais de Justiça: 24 · Assistentes de Juízes: 30</span>
-  </div>
-
-  <div class="org-chart">
-    <div class="org-level">
-
-      <div class="org-top" style="background: var(--gold); margin-bottom:8px;">
-        <div class="title" style="color:var(--navy); font-size:18px; font-weight:700;">Gestão da Secretaria Conjunta Piracicaba</div>
-        <div class="person" style="color:var(--navy); font-weight:500; margin-top:6px; font-size:15px;">Juízes Coordenadores da Secretaria Conjunta de Piracicaba</div>
-        <div class="person" style="color:var(--navy); font-weight:600; margin-top:4px; font-size:15px;">Dra. Erica Escarassatte</div>
-        <div class="person" style="color:var(--navy); font-weight:600; font-size:15px;">Dr. Vilson Antonio Previde</div>
+  <div class="org-map">
+    <div class="org-band">
+      <div class="ob-label">Gestão</div>
+      <div class="ob-tiles">
+      <a class="org-tile gest" href="#unidade/gestao" onclick="return openUnit('gestao')">
+        <span class="ot-sig">GESTÃO</span><span class="ot-name">Juízes coordenadores e Direção</span><span class="ot-go">→</span>
+      </a>
       </div>
-
-      <div class="org-top">
-        <div class="title">Direção da Secretaria Conjunta</div>
-        <div class="person">Matheus Junqueira Harder · CJ3 · Diretor</div>
-        <div class="person" style="margin-top:4px;">Rodrigo G. D. Agostineto · CJ3 · Assessor de Gestão</div>
-      </div>
-
-      <div class="org-row cols-3" style="margin-top:28px">
-        <div class="org-box daa">
-          <div class="dept">DAA</div>
-          <div class="name">Divisão de Atend. e Administração<br><strong>Rogerio Zambon Canale</strong><br><strong>Claudir de Oliveira Junior</strong></div>
-        </div>
-        <div class="org-box cejusc">
-          <div class="dept">CEJUSC</div>
-          <div class="name">CEJUSC Piracicaba<br><strong>Ana Luisa de Faria</strong><br>Maria Jose Dainez<br>CEJUSC Limeira<br><strong>Alexandre Francischetti</strong><br>Silvia Raquel Alves de Oliveira</div>
-        </div>
-        <div class="org-box dam">
-          <div class="dept">DAM</div>
-          <div class="name">Div. Apoio aos Magistrados<br><strong>Rafael Serra Cardoso</strong></div>
-        </div>
-      </div>
-
-      <div class="org-row cols-2" style="margin-top:20px">
-        <div class="org-box con" style="padding:0; overflow:hidden;">
-          <div style="padding:10px 14px 8px; border-bottom:1px solid rgba(30,90,120,0.2);">
-            <div class="dept">CON1</div>
-            <div class="name">Assessoria de Conhecimento 1<br><strong>Deise Maria Cassaniga Azevedo</strong></div>
-          </div>
-          <div style="padding:8px 14px 12px; background:rgba(30,90,120,0.04);">
-            <div class="dept" style="font-size:11px; margin-bottom:4px;">CON2</div>
-            <div class="name" style="font-size:12px;">Assessoria de Conhecimento 2<br><strong>Silvana Marcelino Braz</strong></div>
-          </div>
-        </div>
-        <div class="org-box liq" style="padding:0; overflow:hidden;">
-          <div style="padding:10px 14px 8px; border-bottom:1px solid rgba(30,120,80,0.2);">
-            <div class="dept">LIQ1</div>
-            <div class="name">Assessoria de Liquidação 1<br><strong>Wellington George Braga Paz</strong></div>
-          </div>
-          <div style="padding:8px 14px 12px; background:rgba(30,120,80,0.04);">
-            <div class="dept" style="font-size:11px; margin-bottom:4px;">LIQ2</div>
-            <div class="name" style="font-size:12px;">Assessoria de Liquidação 2<br><strong>Paulo Sergio Salvador</strong><br><strong>Vanderlei Baldessin</strong></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="org-row cols-4" style="margin-top:20px">
-        <div class="org-box exe">
-          <div class="dept">EXE1</div>
-          <div class="name">Trâmites Iniciais<br><strong>Roberta E. A. Tetzlaff</strong><br><strong>Eduardo A. Veloso</strong></div>
-        </div>
-        <div class="org-box exe">
-          <div class="dept">EXE2</div>
-          <div class="name">Pesquisas Avançadas<br><strong>Fabio Ajudarte Lopes</strong><br><strong>Filipe Shinzato Colevati</strong></div>
-        </div>
-        <div class="org-box exe" style="padding:0; overflow:hidden;">
-          <div style="padding:12px 14px 8px; border-bottom:1px solid rgba(124,58,107,0.2);">
-            <div class="dept">EXE3</div>
-            <div class="name">Expropriação<br><strong>Marco César de Oliveira Wan-Meyl</strong><br><strong>Nilton Rafael de Barros Silva</strong></div>
-          </div>
-          <div style="padding:8px 14px 12px; background:rgba(124,58,107,0.05);">
-            <div class="dept" style="font-size:11px; margin-bottom:4px;">DIVEX</div>
-            <div class="name" style="font-size:12px;"><strong>Ana Sylvia Reis Couto Fernandes</strong></div>
-          </div>
-        </div>
-        <div class="org-box exe">
-          <div class="dept">EXE4</div>
-          <div class="name">Precatórios / Garimpo<br><strong>João Gabriel da Silva Silveira</strong><br><strong>Liliana Squarizzi F. Cantarim</strong></div>
-        </div>
-      </div>
-
     </div>
+    <div class="org-band">
+      <div class="ob-label">Apoio</div>
+      <div class="ob-tiles">
+      <a class="org-tile daa" href="#unidade/daa" onclick="return openUnit('daa')">
+        <span class="ot-sig">DAA</span><span class="ot-name">Divisão de Atendimento e Administração</span><span class="ot-go">→</span>
+      </a>
+      <a class="org-tile cejusc" href="#unidade/cejusc" onclick="return openUnit('cejusc')">
+        <span class="ot-sig">CEJUSC</span><span class="ot-name">Centros de Solução de Conflitos</span><span class="ot-go">→</span>
+      </a>
+      <a class="org-tile dam" href="#unidade/dam" onclick="return openUnit('dam')">
+        <span class="ot-sig">DAM</span><span class="ot-name">Divisão de Apoio aos Magistrados</span><span class="ot-go">→</span>
+      </a>
+      </div>
+    </div>
+    <div class="org-band">
+      <div class="ob-label">Conhecimento</div>
+      <div class="ob-tiles">
+      <a class="org-tile con" href="#unidade/con-eq1" onclick="return openUnit('con-eq1')">
+        <span class="ot-sig">CON · EQ 01</span><span class="ot-name">Conhecimento · Equipe 01</span><span class="ot-go">→</span>
+      </a>
+      <a class="org-tile con" href="#unidade/con-eq2" onclick="return openUnit('con-eq2')">
+        <span class="ot-sig">CON · EQ 02</span><span class="ot-name">Conhecimento · Equipe 02</span><span class="ot-go">→</span>
+      </a>
+      <a class="org-tile con" href="#unidade/con-eq3" onclick="return openUnit('con-eq3')">
+        <span class="ot-sig">CON · EQ 03</span><span class="ot-name">Conhecimento · Equipe 03</span><span class="ot-go">→</span>
+      </a>
+      <a class="org-tile con" href="#unidade/con2" onclick="return openUnit('con2')">
+        <span class="ot-sig">CON2</span><span class="ot-name">Conhecimento 2</span><span class="ot-go">→</span>
+      </a>
+      </div>
+    </div>
+    <div class="org-band">
+      <div class="ob-label">Liquidação</div>
+      <div class="ob-tiles">
+      <a class="org-tile liq" href="#unidade/liq1" onclick="return openUnit('liq1')">
+        <span class="ot-sig">LIQ1</span><span class="ot-name">Pré-Homologação</span><span class="ot-go">→</span>
+      </a>
+      <a class="org-tile liq" href="#unidade/liq2" onclick="return openUnit('liq2')">
+        <span class="ot-sig">LIQ2</span><span class="ot-name">Homologação e Cumprimento</span><span class="ot-go">→</span>
+      </a>
+      </div>
+    </div>
+    <div class="org-band">
+      <div class="ob-label">Execução</div>
+      <div class="ob-tiles">
+      <a class="org-tile exe" href="#unidade/exe1" onclick="return openUnit('exe1')">
+        <span class="ot-sig">EXE1</span><span class="ot-name">Trâmites Iniciais</span><span class="ot-go">→</span>
+      </a>
+      <a class="org-tile exe" href="#unidade/exe2" onclick="return openUnit('exe2')">
+        <span class="ot-sig">EXE2</span><span class="ot-name">Pesquisas Avançadas</span><span class="ot-go">→</span>
+      </a>
+      <a class="org-tile exe" href="#unidade/exe3" onclick="return openUnit('exe3')">
+        <span class="ot-sig">EXE3</span><span class="ot-name">Expropriação</span><span class="ot-go">→</span>
+      </a>
+      <a class="org-tile exe" href="#unidade/exe4" onclick="return openUnit('exe4')">
+        <span class="ot-sig">EXE4</span><span class="ot-name">Precatórios e RJ/Falência</span><span class="ot-go">→</span>
+      </a>
+      <a class="org-tile exe" href="#unidade/divex" onclick="return openUnit('divex')">
+        <span class="ot-sig">DIVEX</span><span class="ot-name">Divisão de Execução</span><span class="ot-go">→</span>
+      </a>
+      </div>
+    </div>
+    <div class="org-band">
+      <div class="ob-label">Oficiais de Justiça</div>
+      <div class="ob-tiles">
+      <a class="org-tile daa" href="#unidade/ojs" onclick="return openUnit('ojs')">
+        <span class="ot-sig">OJs</span><span class="ot-name">Oficiais de Justiça por cidade</span><span class="ot-go">→</span>
+      </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PÁGINA DA UNIDADE -->
+<div id="section-unidade" class="section">
+  <div class="unit-top">
+    <a class="unit-back" href="#" onclick="return backToOrg()">← Organograma</a>
+    <div class="unit-nav" id="unit-nav"></div>
+  </div>
+  <div class="unit-hero" id="unit-hero"></div>
+  <div class="unit-grid">
+    <div class="unit-main" id="unit-main"></div>
+    <aside class="unit-side">
+      <div class="unit-card">
+        <h4>📚 Manuais e documentos</h4>
+        <div id="man-list" class="man-list"></div>
+        <form id="man-form" class="man-form" onsubmit="return addManual(event)">
+          <input id="man-title" type="text" placeholder="Título do manual" required>
+          <input id="man-url" type="url" placeholder="Link (Drive, PDF, página…)" required>
+          <select id="man-type">
+            <option value="📘">Manual</option><option value="🎬">Vídeo</option><option value="📝">Modelo</option><option value="📄">Norma / OS</option><option value="🔗">Link</option>
+          </select>
+          <button type="submit">Adicionar</button>
+        </form>
+        <p class="man-hint">Os manuais que você adiciona aqui ficam salvos <b>neste navegador</b>. Para todos verem, use <a href="#" onclick="return copyManuais()">Copiar para publicar</a> e cole no arquivo <code>manuais.json</code> do repositório.</p>
+        <span class="man-msg" id="man-msg" aria-live="polite"></span>
+      </div>
+    </aside>
   </div>
 </div>
 
@@ -1257,251 +1352,174 @@ nav {
 <div id="section-ojs" class="section">
   <div class="section-header">
     <h2>Órgãos Julgadores</h2>
-    <span class="tag">10 OJs · clique para detalhes</span>
+    <span class="tag">Clique para ver os servidores</span>
   </div>
 
   <div class="oj-grid" id="oj-grid">
 
-    <div class="oj-card con" onclick="openOJ('con1')">
+    <div class="oj-card con" onclick="openUnit('con-eq1')\">
       <div class="oj-card-header">
-        <div class="oj-icon">C1</div>
-        <div><div class="oj-card-title">CON1</div><div class="oj-card-sub">Assessoria de Conhecimento 1</div></div>
+        <div class="oj-icon">E1</div>
+        <div><div class="oj-card-title">CON · Equipe 01</div><div class="oj-card-sub">Conhecimento</div></div>
       </div>
       <div class="oj-card-body">
-        <div class="oj-attr-row"><span class="key">Assessores Responsáveis</span><span class="val">Deise C. Azevedo / Silvana Braz</span></div>
-        <div class="oj-attr-row"><span class="key">Fase</span><span class="val">Audiências e instrução processual</span></div>
-        <div class="oj-attr-row"><span class="key">Tarefas-chave</span></div>
-        <div>
-          <span class="oj-pill">Triagem inicial</span>
-          <span class="oj-pill">Designação audiência</span>
-          <span class="oj-pill">Despacho saneador</span>
-          <span class="oj-pill">Tutelas iniciais</span>
-        </div>
+        <div class="oj-attr-row"><span class="key">Responsáveis</span><span class="val">Deise Maria Cassaniga Azevedo</span></div><div class="oj-attr-row"><span class="key">Equipe</span><span class="val">17 servidores · 3 estagiários</span></div>
+        <div><span class="oj-pill">1ª VT Piracicaba</span><span class="oj-pill">2ª VT Piracicaba</span><span class="oj-pill">3ª VT Piracicaba</span><span class="oj-pill">Santa Bárbara d'Oeste</span><span class="oj-pill">Sumaré</span></div>
       </div>
-      
     </div>
 
-    <div class="oj-card con" onclick="openOJ('con2')">
+    <div class="oj-card con" onclick="openUnit('con-eq2')\">
+      <div class="oj-card-header">
+        <div class="oj-icon">E2</div>
+        <div><div class="oj-card-title">CON · Equipe 02</div><div class="oj-card-sub">Conhecimento</div></div>
+      </div>
+      <div class="oj-card-body">
+        <div class="oj-attr-row"><span class="key">Responsáveis</span><span class="val">Wellington George Braga Paz</span></div><div class="oj-attr-row"><span class="key">Equipe</span><span class="val">18 servidores · 3 estagiários</span></div>
+        <div><span class="oj-pill">1ª VT Americana</span><span class="oj-pill">2ª VT Americana</span><span class="oj-pill">Leme</span><span class="oj-pill">São João da Boa Vista</span><span class="oj-pill">1ª VT Limeira</span><span class="oj-pill">2ª VT Limeira</span></div>
+      </div>
+    </div>
+
+    <div class="oj-card con" onclick="openUnit('con-eq3')\">
+      <div class="oj-card-header">
+        <div class="oj-icon">E3</div>
+        <div><div class="oj-card-title">CON · Equipe 03</div><div class="oj-card-sub">Conhecimento</div></div>
+      </div>
+      <div class="oj-card-body">
+        <div class="oj-attr-row"><span class="key">Responsáveis</span><span class="val">Silvana Marcelino Braz</span></div><div class="oj-attr-row"><span class="key">Equipe</span><span class="val">18 servidores · 2 estagiários</span></div>
+        <div><span class="oj-pill">Rio Claro</span><span class="oj-pill">Araras</span><span class="oj-pill">Mogi Guaçu</span><span class="oj-pill">Hortolândia</span><span class="oj-pill">Simetria Bauru</span></div>
+      </div>
+    </div>
+
+    <div class="oj-card con" onclick="openUnit('con2')\">
       <div class="oj-card-header">
         <div class="oj-icon">C2</div>
-        <div><div class="oj-card-title">CON2</div><div class="oj-card-sub">Assessoria de Conhecimento 2</div></div>
+        <div><div class="oj-card-title">CON2</div><div class="oj-card-sub">Conhecimento 2</div></div>
       </div>
       <div class="oj-card-body">
-        <div class="oj-attr-row"><span class="key">Assessores Responsáveis</span><span class="val">Deise C. Azevedo / Silvana Braz</span></div>
-        <div class="oj-attr-row"><span class="key">Fase</span><span class="val">Julgamento e recursos</span></div>
-        <div class="oj-attr-row"><span class="key">Tarefas-chave</span></div>
-        <div>
-          <span class="oj-pill">Conclusão sentença</span>
-          <span class="oj-pill">Controle razões finais</span>
-          <span class="oj-pill">Incidentes</span>
-          <span class="oj-pill">Trânsito em julgado</span>
-          <span class="oj-pill">Remessa 2º grau</span>
-          <span class="oj-pill">Controle de Perícias</span>
-        </div>
+        <div class="oj-attr-row"><span class="key">Responsáveis</span><span class="val">Heitor Augusto Scarpari Costa (FC5)</span></div><div class="oj-attr-row"><span class="key">Equipe</span><span class="val">3 servidores · 6 estagiários</span></div>
+        <div><span class="oj-pill">Apoio ao Conhecimento</span></div>
       </div>
-      
     </div>
 
-    <div class="oj-card liq" onclick="openOJ('liq1')">
+    <div class="oj-card liq" onclick="openUnit('liq1')\">
       <div class="oj-card-header">
         <div class="oj-icon">L1</div>
         <div><div class="oj-card-title">LIQ1</div><div class="oj-card-sub">Assessoria de Liquidação 1</div></div>
       </div>
       <div class="oj-card-body">
-        <div class="oj-attr-row"><span class="key">Assessores Responsáveis</span><span class="val">Wellington George Braga Paz</span></div>
-        <div class="oj-attr-row"><span class="key">Fase</span><span class="val">Pré-Homologação</span></div>
-        <div class="oj-attr-row"><span class="key">Tarefas-chave</span></div>
-        <div>
-          <span class="oj-pill">Despacho cálculo</span>
-          <span class="oj-pill">Obrigação de fazer</span>
-          <span class="oj-pill">Valores incontroversos</span>
-          <span class="oj-pill">PJeCalc</span>
-        </div>
+        <div class="oj-attr-row"><span class="key">Responsáveis</span><span class="val">Vanderlei Baldessin</span></div><div class="oj-attr-row"><span class="key">Equipe</span><span class="val">13 servidores · 2 estagiários</span></div>
+        <div><span class="oj-pill">1ª VT Piracicaba</span><span class="oj-pill">2ª VT Piracicaba</span><span class="oj-pill">3ª VT Piracicaba</span><span class="oj-pill">Santa Bárbara d'Oeste</span><span class="oj-pill">Sumaré</span></div>
       </div>
-      
     </div>
 
-    <div class="oj-card liq" onclick="openOJ('liq2')">
+    <div class="oj-card liq" onclick="openUnit('liq2')\">
       <div class="oj-card-header">
         <div class="oj-icon">L2</div>
         <div><div class="oj-card-title">LIQ2</div><div class="oj-card-sub">Assessoria de Liquidação 2</div></div>
       </div>
       <div class="oj-card-body">
-        <div class="oj-attr-row"><span class="key">Assessores Responsáveis</span><span class="val">Vanderlei Baldessin / Paulo Sergio Salvador</span></div>
-        <div class="oj-attr-row"><span class="key">Fase</span><span class="val">Homologação e Cumprimento Espontâneo</span></div>
-        <div class="oj-attr-row"><span class="key">Tarefas-chave</span></div>
-        <div>
-          <span class="oj-pill">Homologação cálculos</span>
-          <span class="oj-pill">Liberação valores</span>
-          <span class="oj-pill">Parcelamento</span>
-          <span class="oj-pill">Incidentes pós-homol.</span>
-        </div>
+        <div class="oj-attr-row"><span class="key">Responsáveis</span><span class="val">Paulo Sergio Salvador</span></div><div class="oj-attr-row"><span class="key">Equipe</span><span class="val">18 servidores · 2 estagiários</span></div>
+        <div><span class="oj-pill">1ª VT Piracicaba</span><span class="oj-pill">2ª VT Piracicaba</span><span class="oj-pill">3ª VT Piracicaba</span><span class="oj-pill">Santa Bárbara d'Oeste</span><span class="oj-pill">Sumaré</span></div>
       </div>
-      
     </div>
 
-    <div class="oj-card exe" onclick="openOJ('exe1')">
+    <div class="oj-card exe" onclick="openUnit('exe1')\">
       <div class="oj-card-header">
         <div class="oj-icon">E1</div>
         <div><div class="oj-card-title">EXE1</div><div class="oj-card-sub">Assessoria de Execução I</div></div>
       </div>
       <div class="oj-card-body">
-        <div class="oj-attr-row"><span class="key">Assessores Responsáveis</span><span class="val">Roberta Tetzlaff / Eduardo Veloso</span></div>
-        <div class="oj-attr-row"><span class="key">Fase</span><span class="val">Trâmites Iniciais</span></div>
-        <div class="oj-attr-row"><span class="key">Tarefas-chave</span></div>
-        <div>
-          <span class="oj-pill">SISBAJUD início</span>
-          <span class="oj-pill">Mandadão</span>
-          <span class="oj-pill">CNIB</span>
-          <span class="oj-pill">Art. 884 CLT</span>
-        </div>
+        <div class="oj-attr-row"><span class="key">Responsáveis</span><span class="val">Roberta Elena Agostineto Tetzlaff · Eduardo Augusto Veloso</span></div><div class="oj-attr-row"><span class="key">Equipe</span><span class="val">10 servidores · 2 estagiários</span></div>
+        <div><span class="oj-pill">1ª VT Piracicaba</span><span class="oj-pill">2ª VT Piracicaba</span><span class="oj-pill">3ª VT Piracicaba</span><span class="oj-pill">Santa Bárbara d'Oeste</span><span class="oj-pill">Sumaré</span></div>
       </div>
-      
     </div>
 
-    <div class="oj-card exe" onclick="openOJ('exe2')">
+    <div class="oj-card exe" onclick="openUnit('exe2')\">
       <div class="oj-card-header">
         <div class="oj-icon">E2</div>
         <div><div class="oj-card-title">EXE2</div><div class="oj-card-sub">Assessoria de Execução II</div></div>
       </div>
       <div class="oj-card-body">
-        <div class="oj-attr-row"><span class="key">Assessores Responsáveis</span><span class="val">Fabio Ajudarte Lopes / Filipe Colevati</span></div>
-        <div class="oj-attr-row"><span class="key">Fase</span><span class="val">Não Garantida: Execuções Individuais</span></div>
-        <div class="oj-attr-row"><span class="key">Tarefas-chave</span></div>
-        <div>
-          <span class="oj-pill">Pesquisas avançadas</span>
-          <span class="oj-pill">CCS / COAF</span>
-          <span class="oj-pill">SIMBA</span>
-          <span class="oj-pill">Reunião exec.</span>
-          <span class="oj-pill">IDPJ</span>
-        </div>
+        <div class="oj-attr-row"><span class="key">Responsáveis</span><span class="val">Fabio Ajudarte Lopes · Filipe Shinzato Colevati</span></div><div class="oj-attr-row"><span class="key">Equipe</span><span class="val">9 servidores · 1 estagiários</span></div>
+        <div><span class="oj-pill">1ª VT Piracicaba</span><span class="oj-pill">2ª VT Piracicaba</span><span class="oj-pill">3ª VT Piracicaba</span><span class="oj-pill">Santa Bárbara d'Oeste</span><span class="oj-pill">Sumaré</span></div>
       </div>
-      
     </div>
 
-    <div class="oj-card exe" onclick="openOJ('exe3')">
+    <div class="oj-card exe" onclick="openUnit('exe3')\">
       <div class="oj-card-header">
         <div class="oj-icon">E3</div>
         <div><div class="oj-card-title">EXE3</div><div class="oj-card-sub">Assessoria de Execução III</div></div>
       </div>
       <div class="oj-card-body">
-        <div class="oj-attr-row"><span class="key">Assessores Responsáveis</span><span class="val">Marco César Wan-Meyl / Nilton Rafael Silva</span></div>
-        <div class="oj-attr-row"><span class="key">Fase</span><span class="val">Expropriação e Execuções Unificadas</span></div>
-        <div class="oj-attr-row"><span class="key">Tarefas-chave</span></div>
-        <div>
-          <span class="oj-pill">Hasta pública</span>
-          <span class="oj-pill">Alienação particular</span>
-          <span class="oj-pill">Grandes devedores</span>
-          <span class="oj-pill">Garimpo</span>
-          <span class="oj-pill">DIVEX</span>
-        </div>
+        <div class="oj-attr-row"><span class="key">Responsáveis</span><span class="val">Marco César de Oliveira Wan-Meyl · Nilton Rafael de Barros Silva</span></div><div class="oj-attr-row"><span class="key">Equipe</span><span class="val">9 servidores · 2 estagiários</span></div>
+        <div><span class="oj-pill">1ª VT Piracicaba</span><span class="oj-pill">2ª VT Piracicaba</span><span class="oj-pill">3ª VT Piracicaba</span><span class="oj-pill">Santa Bárbara d'Oeste</span><span class="oj-pill">Sumaré</span></div>
       </div>
-      
     </div>
 
-    <div class="oj-card exe" onclick="openOJ('exe4')">
+    <div class="oj-card exe" onclick="openUnit('exe4')\">
       <div class="oj-card-header">
         <div class="oj-icon">E4</div>
         <div><div class="oj-card-title">EXE4</div><div class="oj-card-sub">Assessoria de Execução IV</div></div>
       </div>
       <div class="oj-card-body">
-        <div class="oj-attr-row"><span class="key">Assessores Responsáveis</span><span class="val">João Gabriel Silveira / Liliana S. F. Cantarim</span></div>
-        <div class="oj-attr-row"><span class="key">Fase</span><span class="val">Precatórios, Garimpo e RJ/Falência</span></div>
-        <div class="oj-attr-row"><span class="key">Tarefas-chave</span></div>
-        <div>
-          <span class="oj-pill">Precatórios / RPV</span>
-          <span class="oj-pill">RJ/Falência</span>
-          <span class="oj-pill">Cert. habilitação</span>
-          <span class="oj-pill">Garimpo PJe</span>
-        </div>
-      </div>
-      
-    </div>
-
-    <div class="oj-card daa" onclick="openOJ('cejusc')" style="border-top:3px solid var(--gold)">
-      <div class="oj-card-header">
-        <div class="oj-icon" style="background:var(--gold-pale);color:#a07a00;font-size:11px">CEJ</div>
-        <div><div class="oj-card-title" style="color:#a07a00">CEJUSC</div><div class="oj-card-sub">Centro Judiciário de Solução de Conflitos</div></div>
-      </div>
-      <div class="oj-card-body">
-        <div class="oj-attr-row"><span class="key">Assessores Responsáveis</span><span class="val">Ana Luisa de Faria · Alexandre Francischetti</span></div>
-        <div class="oj-attr-row"><span class="key">Equipe</span><span class="val">Piracicaba: Maria Jose Dainez · Limeira: Silvia Raquel Alves de Oliveira</span></div>
-        <div class="oj-attr-row"><span class="key">Tarefas-chave</span></div>
-        <div>
-          <span class="oj-pill">Mediação</span>
-          <span class="oj-pill">Conciliação</span>
-          <span class="oj-pill">Acordos pré-processuais</span>
-        </div>
+        <div class="oj-attr-row"><span class="key">Responsáveis</span><span class="val">Joao Gabriel da Silva Silveira · Liliana Squarizzi Ferreira Cantarim</span></div><div class="oj-attr-row"><span class="key">Equipe</span><span class="val">13 servidores</span></div>
+        <div><span class="oj-pill">1ª VT Piracicaba</span><span class="oj-pill">2ª VT Piracicaba</span><span class="oj-pill">3ª VT Piracicaba</span><span class="oj-pill">Santa Bárbara d'Oeste</span><span class="oj-pill">Sumaré</span></div>
       </div>
     </div>
 
-    <div class="oj-card daa" onclick="openOJ('daa')">
-      <div class="oj-card-header">
-        <div class="oj-icon" style="font-size:12px">DAA</div>
-        <div><div class="oj-card-title">DAA</div><div class="oj-card-sub">Divisão de Atend. e Administração</div></div>
-      </div>
-      <div class="oj-card-body">
-        <div class="oj-attr-row"><span class="key">Assessores Responsáveis</span><span class="val">Rogerio Zambon Canale · Claudir de Oliveira Junior</span></div>
-        <div class="oj-attr-row"><span class="key">Tarefas-chave</span></div>
-        <div>
-          <span class="oj-pill">Atendimento ao público</span>
-          <span class="oj-pill">Protocolo</span>
-          <span class="oj-pill">Administração geral</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="oj-card dam" onclick="openOJ('dam')">
-      <div class="oj-card-header">
-        <div class="oj-icon" style="font-size:13px">DAM</div>
-        <div><div class="oj-card-title">DAM</div><div class="oj-card-sub">Divisão de Apoio aos Magistrados</div></div>
-      </div>
-      <div class="oj-card-body">
-        <div class="oj-attr-row"><span class="key">Assessores Responsáveis</span><span class="val">Rafael Serra Cardoso (CJ1)</span></div>
-        <div class="oj-attr-row"><span class="key">Tarefas-chave</span></div>
-        <div>
-          <span class="oj-pill">Minutas de sentença</span>
-          <span class="oj-pill">Incidentes execução</span>
-          <span class="oj-pill">Emb. à Execução</span>
-          <span class="oj-pill">Pós-sentença</span>
-        </div>
-      </div>
-      
-    </div>
-
-    <div class="oj-card daa" onclick="openOJ('ojs')">
-      <div class="oj-card-header">
-        <div class="oj-icon" style="background:rgba(10,22,40,0.08);color:var(--navy);font-size:12px">OJ</div>
-        <div><div class="oj-card-title">Oficiais de Justiça</div><div class="oj-card-sub">25 oficiais · 11 cidades</div></div>
-      </div>
-      <div class="oj-card-body">
-        <div class="oj-attr-row"><span class="key">Piracicaba</span><span class="val">6 oficiais</span></div>
-        <div class="oj-attr-row"><span class="key">Americana</span><span class="val">3 oficiais</span></div>
-        <div class="oj-attr-row"><span class="key">Demais cidades</span><span class="val">19 oficiais</span></div>
-        <div class="oj-attr-row"><span class="key">Tarefas-chave</span></div>
-        <div>
-          <span class="oj-pill">Cumprimento de mandados</span>
-          <span class="oj-pill">Diligências externas</span>
-        </div>
-      </div>
-      
-    </div>
-
-    <div class="oj-card exe" onclick="openOJ('divex')">
+    <div class="oj-card exe" onclick="openUnit('divex')\">
       <div class="oj-card-header">
         <div class="oj-icon" style="font-size:12px">DIV</div>
         <div><div class="oj-card-title">DIVEX</div><div class="oj-card-sub">Divisão de Execução de Piracicaba</div></div>
       </div>
       <div class="oj-card-body">
-        <div class="oj-attr-row"><span class="key">Assessores Responsáveis</span><span class="val">Ana Sylvia Reis Couto Fernandes (CJ1)</span></div>
-        <div class="oj-attr-row"><span class="key">Tarefas-chave</span></div>
-        <div>
-          <span class="oj-pill">Hasta pública</span>
-          <span class="oj-pill">Investigação patrimonial</span>
-          <span class="oj-pill">Reunião de execuções</span>
-        </div>
+        <div class="oj-attr-row"><span class="key">Responsáveis</span><span class="val">Ana Sylvia Reis Couto Fernandes</span></div><div class="oj-attr-row"><span class="key">Equipe</span><span class="val">3 servidores</span></div>
+        <div><span class="oj-pill">1ª VT Piracicaba</span><span class="oj-pill">2ª VT Piracicaba</span><span class="oj-pill">3ª VT Piracicaba</span><span class="oj-pill">Santa Bárbara d'Oeste</span><span class="oj-pill">Sumaré</span></div>
       </div>
-      
+    </div>
+
+    <div class="oj-card dam" onclick="openUnit('dam')\">
+      <div class="oj-card-header">
+        <div class="oj-icon" style="font-size:12px">DAM</div>
+        <div><div class="oj-card-title">DAM</div><div class="oj-card-sub">Divisão de Apoio aos Magistrados</div></div>
+      </div>
+      <div class="oj-card-body">
+        <div class="oj-attr-row"><span class="key">Responsáveis</span><span class="val">Rafael Serra Cardoso</span></div><div class="oj-attr-row"><span class="key">Equipe</span><span class="val">3 servidores</span></div>
+        <div><span class="oj-pill">1ª VT Piracicaba</span><span class="oj-pill">2ª VT Piracicaba</span><span class="oj-pill">3ª VT Piracicaba</span><span class="oj-pill">Santa Bárbara d'Oeste</span><span class="oj-pill">Sumaré</span></div>
+      </div>
+    </div>
+
+    <div class="oj-card daa" onclick="openUnit('daa')\">
+      <div class="oj-card-header">
+        <div class="oj-icon" style="font-size:12px">DAA</div>
+        <div><div class="oj-card-title">DAA</div><div class="oj-card-sub">Divisão de Atend. e Administração</div></div>
+      </div>
+      <div class="oj-card-body">
+        <div class="oj-attr-row"><span class="key">Responsáveis</span><span class="val">Claudir de Oliveira Junior · Rogerio Zambon Canale</span></div><div class="oj-attr-row"><span class="key">Equipe</span><span class="val">17 servidores</span></div>
+        <div><span class="oj-pill">1ª VT Piracicaba</span><span class="oj-pill">2ª VT Piracicaba</span><span class="oj-pill">3ª VT Piracicaba</span><span class="oj-pill">Santa Bárbara d'Oeste</span><span class="oj-pill">Sumaré</span></div>
+      </div>
+    </div>
+
+    <div class="oj-card daa" onclick="openUnit('cejusc')\">
+      <div class="oj-card-header">
+        <div class="oj-icon" style="font-size:12px">CEJ</div>
+        <div><div class="oj-card-title">CEJUSC</div><div class="oj-card-sub">Centro Judiciário de Solução de Conflitos</div></div>
+      </div>
+      <div class="oj-card-body">
+        <div class="oj-attr-row"><span class="key">Responsáveis</span><span class="val">Ana Luisa de Faria · Alexandre Francischetti</span></div><div class="oj-attr-row"><span class="key">Equipe</span><span class="val">4 servidores · 3 estagiários</span></div>
+        <div><span class="oj-pill">1ª VT Piracicaba</span><span class="oj-pill">2ª VT Piracicaba</span><span class="oj-pill">3ª VT Piracicaba</span><span class="oj-pill">Santa Bárbara d'Oeste</span><span class="oj-pill">Sumaré</span></div>
+      </div>
+    </div>
+
+    <div class="oj-card daa" onclick="openUnit('ojs')\">
+      <div class="oj-card-header">
+        <div class="oj-icon">OJ</div>
+        <div><div class="oj-card-title">Oficiais de Justiça</div><div class="oj-card-sub">27 oficiais · 11 cidades</div></div>
+      </div>
+      <div class="oj-card-body">
+        <div class="oj-attr-row"><span class="key">Equipe</span><span class="val">27 servidores</span></div>
+        <div><span class="oj-pill">1ª VT Piracicaba</span><span class="oj-pill">2ª VT Piracicaba</span><span class="oj-pill">3ª VT Piracicaba</span><span class="oj-pill">Santa Bárbara d'Oeste</span><span class="oj-pill">Sumaré</span></div>
+      </div>
     </div>
 
   </div>
@@ -1511,7 +1529,7 @@ nav {
 <div id="section-magistrados" class="section">
   <div class="section-header">
     <h2>Magistrados</h2>
-    <span class="tag">15 varas do trabalho · atualizado em 30/09/2026</span>
+    <span class="tag">15 varas do trabalho · atualizado em 13/11/2026</span>
   </div>
 
   <div class="search-bar">
@@ -1547,13 +1565,13 @@ nav {
           <td><span class="mag-func mag-func-titular">Titular</span></td>
           <td>Sandra Maria Segato Gazzeta</td>
           <td class="mag-assist">Rafaela Gomes Arruda</td>
-          <td><span class="mag-none">—</span></td>
+          <td><span class="afast-badge" data-de="2026-11-28" data-ate="2026-12-17">Férias · 28/11–17/12</span></td>
         </tr>
         <tr>
           <td class="vt-name">1ª VT Americana (0007)</td>
           <td>ÍMPAR</td>
           <td class="juiz-name">Fabio Camera Capone</td>
-          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
+          <td><span class="mag-func mag-func-auxiliar">Auxílio Fixo</span></td>
           <td>Claudia Maria Pastor</td>
           <td class="mag-assist">Karen Sacilotto Pinheiro</td>
           <td><span class="mag-none">—</span></td>
@@ -1565,14 +1583,14 @@ nav {
           <td><span class="mag-func mag-func-titular">Titular</span></td>
           <td>Marina Lira da Silveira Pinto</td>
           <td class="mag-assist">Julia Bispo Pitta Inojosa</td>
-          <td><span class="mag-none">—</span></td>
+          <td><span class="afast-badge" data-de="" data-ate="2026-11-13">Afastamento · até 13/11/2026</span></td>
         </tr>
         <tr>
           <td class="vt-name">2ª VT Americana (0099)</td>
           <td>ÍMPAR</td>
           <td class="juiz-name">Marcelo Luis de Souza Ferreira</td>
-          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
-          <td>Rogéria Helena Aparecida Franzini Corazza</td>
+          <td><span class="mag-func mag-func-auxiliar">Auxílio Fixo</span></td>
+          <td>Rogeria Helena Aparecida Franzini Corazza</td>
           <td class="mag-assist">Kellen Cristine Petreche</td>
           <td><span class="mag-none">—</span></td>
         </tr>
@@ -1589,8 +1607,8 @@ nav {
           <td class="vt-name">VT Araras (0046)</td>
           <td>2,4,6</td>
           <td class="juiz-name">Renata Mendes Cardoso de Castro Pereira</td>
-          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
-          <td>Maria Lúcia Alves Cavalcante</td>
+          <td><span class="mag-func mag-func-auxiliar">Auxílio Fixo</span></td>
+          <td>Maria Lucia Alves Cavalcante</td>
           <td class="mag-assist">Lucimara Leandro</td>
           <td><span class="mag-none">—</span></td>
         </tr>
@@ -1599,25 +1617,25 @@ nav {
           <td>PAR</td>
           <td class="juiz-name">Patricia Juliana Marchi Alves</td>
           <td><span class="mag-func mag-func-titular">Titular</span></td>
-          <td>Débora Cerqueira Simão</td>
+          <td>Debora Cerqueira Simao</td>
           <td class="mag-assist">Cristina Barroca</td>
-          <td><span class="mag-none">—</span></td>
+          <td><span class="afast-badge" data-de="2026-11-28" data-ate="2026-12-17">Férias · 28/11–17/12</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT Hortolândia (0152)</td>
           <td>ÍMPAR</td>
           <td class="juiz-name">Luciane Cristina Muraro de Freitas</td>
-          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
+          <td><span class="mag-func mag-func-auxiliar">Auxílio Fixo</span></td>
           <td>Elenira de Andrade Bicalho</td>
           <td class="mag-assist">Chrystiane Beck Silva</td>
-          <td><span class="afast-badge" data-de="2026-09-17" data-ate="2026-10-10">Férias · 17/09–10/10</span></td>
+          <td><span class="mag-none">—</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT Leme (0134)</td>
           <td>PAR</td>
           <td class="juiz-name">Lady Ane de Paula Santos Della Rocca</td>
           <td><span class="mag-func mag-func-titular">Titular</span></td>
-          <td>Daniele Fernanda Stefani</td>
+          <td>Dheise Monique Euphrasio</td>
           <td class="mag-assist">Nei Hamilton Fernandes Silva</td>
           <td><span class="mag-none">—</span></td>
         </tr>
@@ -1625,8 +1643,8 @@ nav {
           <td class="vt-name">VT Leme (0134)</td>
           <td>ÍMPAR</td>
           <td class="juiz-name">Regina Rodrigues Urbano</td>
-          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
-          <td>Dheise Monique Euphrasio</td>
+          <td><span class="mag-func mag-func-auxiliar">Auxílio Fixo</span></td>
+          <td>Daniele Fernanda Stefani</td>
           <td class="mag-assist">Silvia Helena Notario</td>
           <td><span class="mag-none">—</span></td>
         </tr>
@@ -1643,7 +1661,7 @@ nav {
           <td class="vt-name">1ª VT Limeira (0014)</td>
           <td>ÍMPAR</td>
           <td class="juiz-name">Erika de Franceschi</td>
-          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
+          <td><span class="mag-func mag-func-auxiliar">Auxílio Fixo</span></td>
           <td>Tatiana Maeyama</td>
           <td class="mag-assist">Juliano Gislon Luciano</td>
           <td><span class="mag-none">—</span></td>
@@ -1652,28 +1670,28 @@ nav {
           <td class="vt-name">2ª VT Limeira (0128)</td>
           <td>PAR</td>
           <td class="juiz-name">Carolina Popoff Ferreira da Costa</td>
-          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
+          <td><span class="mag-func mag-func-auxiliar">Auxílio Fixo</span></td>
           <td>Luciana Cristina Rodrigues / Cleilson Damasceno de Oliveira</td>
           <td class="mag-assist">Thiago Cesar Costa</td>
-          <td><span class="afast-badge" data-de="2026-09-21" data-ate="2026-10-10">Férias · 21/09–10/10</span></td>
+          <td><span class="mag-none">—</span></td>
         </tr>
         <tr>
           <td class="vt-name">2ª VT Limeira (0128)</td>
           <td>ÍMPAR</td>
-          <td class="juiz-name">Natalia Scassiotta Neves</td>
-          <td><span class="mag-func mag-func-titular">Titular</span></td>
+          <td class="juiz-name">Ricardo Tsuioshi Fukuda Sanchez</td>
+          <td><span class="mag-none">—</span></td>
           <td>Luciana Cristina Rodrigues / Cleilson Damasceno de Oliveira</td>
           <td class="mag-assist">Luciana Antunes Pimenta de Oliveira</td>
-          <td><span class="afast-badge" data-de="2026-09-16" data-ate="2026-10-05">Férias · 16/09–05/10</span></td>
+          <td><span class="mag-none">—</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT Mogi Guaçu (0071)</td>
           <td>PAR</td>
           <td class="juiz-name">Luis Furian Zorzetto</td>
-          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
+          <td><span class="mag-func mag-func-auxiliar">Auxílio Fixo</span></td>
           <td>Paula de Carvalho Ambar Lima</td>
           <td class="mag-assist">Gisele Basso Garres</td>
-          <td><span class="afast-badge" data-de="2026-09-16" data-ate="2026-10-15">Férias · 16/09–15/10</span></td>
+          <td><span class="mag-none">—</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT Mogi Guaçu (0071)</td>
@@ -1689,16 +1707,16 @@ nav {
           <td>PAR</td>
           <td class="juiz-name">Karine Vaz de Melo Mattos Abreu</td>
           <td><span class="mag-func mag-func-titular">Titular</span></td>
-          <td>Sandra Regina da Conceição Amaral / Romilda Maria de Arruda Germano</td>
+          <td>Sandra Regina da Conceicao Amaral / Romilda Maria de Arruda Germano</td>
           <td class="mag-assist">Rita Cassia Bueno de Moraes</td>
-          <td><span class="afast-badge" data-de="2026-09-28" data-ate="2026-10-05">Compensação · 28/09–05/10</span></td>
+          <td><span class="mag-none">—</span></td>
         </tr>
         <tr>
           <td class="vt-name">1ª VT Piracicaba (0012)</td>
           <td>ÍMPAR</td>
           <td class="juiz-name">Vilson Antonio Previde</td>
-          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
-          <td>Sandra Regina da Conceição Amaral / Romilda Maria de Arruda Germano</td>
+          <td><span class="mag-func mag-func-auxiliar">Auxílio Fixo</span></td>
+          <td>Sandra Regina da Conceicao Amaral / Romilda Maria de Arruda Germano</td>
           <td class="mag-assist">Christina Aliende Juliao Gonzalez</td>
           <td><span class="mag-none">—</span></td>
         </tr>
@@ -1715,7 +1733,7 @@ nav {
           <td class="vt-name">2ª VT Piracicaba (0051)</td>
           <td>ÍMPAR</td>
           <td class="juiz-name">Eduardo Alexandre da Silva</td>
-          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
+          <td><span class="mag-func mag-func-auxiliar">Auxílio Fixo</span></td>
           <td>Adriana Aparecida Pertile Municelli / Joseane de Menezes Conde</td>
           <td class="mag-assist">Mirela Bragalda Atakiama</td>
           <td><span class="afast-badge" data-de="2026-11-18" data-ate="2026-12-17">Férias · 18/11–17/12</span></td>
@@ -1733,7 +1751,7 @@ nav {
           <td class="vt-name">3ª VT Piracicaba (0137)</td>
           <td>ÍMPAR</td>
           <td class="juiz-name">Emanuele Pessatti Siqueira Rocha</td>
-          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
+          <td><span class="mag-none">—</span></td>
           <td>Erika Cristina Mendes de Campos Garcia / Celina Jacintho Pereira</td>
           <td class="mag-assist">Gianluca de Almeida</td>
           <td><span class="afast-badge" data-de="2026-11-29" data-ate="2026-12-18">Férias · 29/11–18/12</span></td>
@@ -1742,50 +1760,41 @@ nav {
           <td class="vt-name">VT Rio Claro (0010)</td>
           <td>PAR</td>
           <td class="juiz-name">Flavia Farias de Arruda Corseuil</td>
-          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
+          <td><span class="mag-none">—</span></td>
           <td>Naara de Lucas Barbalho</td>
           <td class="mag-assist">Jairo Maurano Machado / Laura Sant Ana Castro</td>
-          <td><span class="afast-badge" data-de="2026-11-03" data-ate="2026-11-22">Afastamento · 03/11–22/11</span></td>
+          <td><span class="afast-badge" data-de="2026-11-03" data-ate="2026-11-22">Férias · 03/11–22/11</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT Rio Claro (0010)</td>
           <td>ÍMPAR</td>
           <td class="juiz-name">Erika Ferrari Zanella</td>
-          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
+          <td><span class="mag-none">—</span></td>
           <td>Michelli Cristina Borges Sampaio</td>
           <td class="mag-assist">Henrique Amaral de Lima Netto</td>
-          <td><span class="afast-badge" data-de="2026-10-19" data-ate="2026-11-07">Férias · 19/10–07/11</span></td>
+          <td><span class="mag-none">—</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT Santa Bárbara d&#x27;Oeste (0086)</td>
           <td>PAR</td>
           <td class="juiz-name">Cristiane Kawanaka de Pontes</td>
-          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
+          <td><span class="mag-none">—</span></td>
           <td>Leandro Mac Fadden Negri</td>
-          <td class="mag-assist">Caroline Fiamenghi Misse Gouvêa</td>
-          <td><span class="afast-badge" data-de="2026-09-09" data-ate="2026-10-08">Férias · 09/09–08/10</span></td>
+          <td class="mag-assist">Caroline Fiamenghi Misse Gouvea</td>
+          <td><span class="mag-none">—</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT Santa Bárbara d&#x27;Oeste (0086)</td>
           <td>ÍMPAR</td>
-          <td class="juiz-name">Henrique Macedo Hinz</td>
+          <td class="juiz-name">Andre Luiz Menezes Azevedo Sette</td>
           <td><span class="mag-func mag-func-titular">Titular</span></td>
           <td>Aguinaldo Junior Yamamoto Peres</td>
-          <td class="mag-assist">Eduardo Luis Leite Ferraz</td>
-          <td><span class="afast-badge" data-de="2026-08-08" data-ate="2026-11-27">Licença · 08/08–27/11</span></td>
-        </tr>
-        <tr>
-          <td class="vt-name">VT Santa Bárbara d&#x27;Oeste (0086)</td>
-          <td>TODOS</td>
-          <td class="juiz-name">Eduardo Costa Gonzales</td>
-          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
-          <td>—</td>
-          <td class="mag-assist">Mirela Bragalda Atakiama</td>
+          <td class="mag-assist">Jorge Alberto Merheje Sernaglia</td>
           <td><span class="mag-none">—</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT São João da Boa Vista (0034)</td>
-          <td>PAR</td>
+          <td>Todos</td>
           <td class="juiz-name">Cristiane Souza de Castro Toledo</td>
           <td><span class="mag-func mag-func-titular">Titular</span></td>
           <td>Ana Claudia Rodrigues Abreu</td>
@@ -1794,21 +1803,12 @@ nav {
         </tr>
         <tr>
           <td class="vt-name">VT São João da Boa Vista (0034)</td>
-          <td>ÍMPAR</td>
-          <td class="juiz-name">Ricardo Tsuioshi Fukuda Sanchez</td>
-          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
-          <td>Emerson Alexandre Viola</td>
-          <td class="mag-assist">Camila Pinheiro Conceição de Mendonça</td>
-          <td><span class="mag-none">—</span></td>
-        </tr>
-        <tr>
-          <td class="vt-name">VT São João da Boa Vista (0034)</td>
           <td>—</td>
           <td class="juiz-name">Iara Maria Rodrigues</td>
-          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
-          <td>—</td>
+          <td><span class="mag-none">—</span></td>
+          <td>Emerson Alexandre Viola</td>
           <td class="mag-assist">Roberto Francisco Nogueira Corsi</td>
-          <td><span class="afast-badge" data-de="" data-ate="2027-02-05">Licença gestante · até 05/02/2027</span></td>
+          <td><span class="afast-badge" data-de="" data-ate="2027-02-05">Afastamento · até 05/02/2027</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT Sumaré (0122)</td>
@@ -1823,7 +1823,7 @@ nav {
           <td class="vt-name">VT Sumaré (0122)</td>
           <td>4,5,6</td>
           <td class="juiz-name">Francina Nunes da Costa</td>
-          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
+          <td><span class="mag-none">—</span></td>
           <td>Daniel Carlos Alves de Pilla</td>
           <td class="mag-assist">Juliana Rodrigues Lameira Belchior</td>
           <td><span class="afast-badge" data-de="2026-11-29" data-ate="2026-12-18">Férias · 29/11–18/12</span></td>
@@ -1832,10 +1832,10 @@ nav {
           <td class="vt-name">VT Sumaré (0122)</td>
           <td>7,8,9</td>
           <td class="juiz-name">Carla Gabriella Grah Sens</td>
-          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
+          <td><span class="mag-none">—</span></td>
           <td>Michel Aquino de Souza</td>
           <td class="mag-assist">Thais Bernardes Carvalho</td>
-          <td><span class="afast-badge" data-de="2026-09-21" data-ate="2026-10-10">Férias · 21/09–10/10</span></td>
+          <td><span class="mag-none">—</span></td>
         </tr>
         <tr class="mag-group"><td colspan="7">Auxílio fixo — Simetria</td></tr>
         <tr>
@@ -1854,7 +1854,7 @@ nav {
           <td><span class="mag-func mag-func-auxiliar">Auxiliar</span></td>
           <td>Paula Burque Besson Boconcelo</td>
           <td class="mag-assist">Luciana Almeida Moraes</td>
-          <td><span class="afast-badge" data-de="2026-10-29" data-ate="2026-11-17">Afastamento · 29/10–17/11</span></td>
+          <td><span class="afast-badge" data-de="2026-10-29" data-ate="2026-11-17">Férias · 29/10–17/11</span></td>
         </tr>
         <tr>
           <td class="vt-name">Auxílio fixo — Simetria</td>
@@ -1870,7 +1870,7 @@ nav {
           <td class="vt-name">Divisão de Execução</td>
           <td>—</td>
           <td class="juiz-name">Fabio Camera Capone</td>
-          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
+          <td><span class="mag-none">—</span></td>
           <td>—</td>
           <td class="mag-assist">Karen Sacilotto Pinheiro</td>
           <td><span class="mag-none">—</span></td>
@@ -1879,28 +1879,28 @@ nav {
           <td class="vt-name">CEJUSC Piracicaba</td>
           <td>—</td>
           <td class="juiz-name">Eduardo Alexandre da Silva</td>
-          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
+          <td><span class="mag-none">—</span></td>
           <td>—</td>
           <td class="mag-assist">Mirela Bragalda Atakiama</td>
-          <td><span class="afast-badge" data-de="" data-ate="">Férias · sem datas</span></td>
+          <td><span class="afast-badge" data-de="2026-11-18" data-ate="2026-12-17">Férias · 18/11–17/12</span></td>
         </tr>
         <tr>
           <td class="vt-name">CEJUSC Limeira</td>
           <td>—</td>
           <td class="juiz-name">Erika Ferrari Zanella</td>
-          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
+          <td><span class="mag-none">—</span></td>
           <td>—</td>
-          <td class="mag-assist"><span class="mag-none">—</span></td>
-          <td><span class="afast-badge" data-de="" data-ate="">Férias · sem datas</span></td>
+          <td class="mag-assist">Henrique Amaral de Lima Netto</td>
+          <td><span class="mag-none">—</span></td>
         </tr>
         <tr>
           <td class="vt-name">CEJUSC Limeira</td>
           <td>—</td>
           <td class="juiz-name">Carolina Popoff Ferreira da Costa</td>
-          <td><span class="mag-func mag-func-subst">Substituto(a)</span></td>
+          <td><span class="mag-none">—</span></td>
           <td>—</td>
-          <td class="mag-assist"><span class="mag-none">—</span></td>
-          <td><span class="afast-badge" data-de="2026-09-21" data-ate="2026-10-10">Férias · 21/09–10/10</span></td>
+          <td class="mag-assist">Thiago Cesar Costa</td>
+          <td><span class="mag-none">—</span></td>
         </tr>
         <tr class="mag-group"><td colspan="7">Magistrados atuando em mais de uma Secretaria Conjunta</td></tr>
         <tr>
@@ -1946,6 +1946,15 @@ nav {
           <td><span class="mag-func mag-func-titular">Titular</span></td>
           <td>Camila Santana Araujo Mutti</td>
           <td class="mag-assist">Mariana Fiamenghi Misse Isaac</td>
+          <td><span class="mag-none">—</span></td>
+        </tr>
+        <tr>
+          <td class="vt-name">—</td>
+          <td>—</td>
+          <td class="juiz-name">Henrique Macedo Hinz</td>
+          <td><span class="mag-none">—</span></td>
+          <td>—</td>
+          <td class="mag-assist"><span class="mag-none">—</span></td>
           <td><span class="mag-none">—</span></td>
         </tr>
       </tbody>
@@ -2035,13 +2044,13 @@ nav {
         <thead><tr><th>Magistrado(a)</th><th>Vara / Unidade</th><th>Afastamento atual ou próximo</th><th>Períodos da escala anterior</th></tr></thead>
         <tbody>
           <tr class="mag-group"><td colspan="4">Varas da Secretaria Conjunta</td></tr>
-          <tr><td class="juiz-name">Artur Ribeiro Gudwin</td><td>1ª VT Americana</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="mag-none">—</span></td></tr>
+          <tr><td class="juiz-name">Artur Ribeiro Gudwin</td><td>1ª VT Americana</td><td><span class="afast-badge" data-de="2026-11-28" data-ate="2026-12-17">Férias · 28/11–17/12</span></td><td><span class="mag-none">—</span></td></tr>
           <tr><td class="juiz-name">Fabio Camera Capone</td><td>1ª VT Americana · DIVEX</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="ferias-badge afast-hist">20/07–08/08</span> <span class="ferias-badge afast-hist">19/10–07/11</span> <span class="mag-none">(20+20 dias)</span></td></tr>
-          <tr><td class="juiz-name">Milena Casacio Ferreira Beraldo</td><td>2ª VT Americana</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="ferias-badge afast-hist">11/07–30/07</span> <span class="ferias-badge afast-hist">25/11–14/12</span> <span class="mag-none">(20+20 dias)</span></td></tr>
+          <tr><td class="juiz-name">Milena Casacio Ferreira Beraldo</td><td>2ª VT Americana</td><td><span class="afast-badge" data-de="" data-ate="2026-11-13">Afastamento · até 13/11/2026</span></td><td><span class="ferias-badge afast-hist">11/07–30/07</span> <span class="ferias-badge afast-hist">25/11–14/12</span> <span class="mag-none">(20+20 dias)</span></td></tr>
           <tr><td class="juiz-name">Marcelo Luis de Souza Ferreira</td><td>2ª VT Americana</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="ferias-badge afast-hist">15/06–04/07</span> <span class="ferias-badge afast-hist">17/01–05/02</span> <span class="mag-none">(20+20 dias)</span></td></tr>
           <tr><td class="juiz-name">Andre Luiz Tavares de Castro Pereira</td><td>VT Araras</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="ferias-badge afast-hist">15/07–03/08</span> <span class="ferias-badge afast-hist">21/01–09/02</span> <span class="mag-none">(20+20 dias)</span></td></tr>
           <tr><td class="juiz-name">Renata Mendes Cardoso de Castro Pereira</td><td>VT Araras</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="ferias-badge afast-hist">14/07–12/08</span> <span class="ferias-badge afast-hist">21/01–09/02</span> <span class="mag-none">(30+20 dias)</span></td></tr>
-          <tr><td class="juiz-name">Patricia Juliana Marchi Alves</td><td>VT Hortolândia</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="ferias-badge afast-hist">15/07–03/08</span> <span class="ferias-badge afast-hist">18/11–07/12</span> <span class="mag-none">(20+20 dias)</span></td></tr>
+          <tr><td class="juiz-name">Patricia Juliana Marchi Alves</td><td>VT Hortolândia</td><td><span class="afast-badge" data-de="2026-11-28" data-ate="2026-12-17">Férias · 28/11–17/12</span></td><td><span class="ferias-badge afast-hist">15/07–03/08</span> <span class="ferias-badge afast-hist">18/11–07/12</span> <span class="mag-none">(20+20 dias)</span></td></tr>
           <tr><td class="juiz-name">Luciane Cristina Muraro de Freitas</td><td>VT Hortolândia</td><td><span class="afast-badge" data-de="2026-09-17" data-ate="2026-10-10">Férias · 17/09–10/10</span></td><td><span class="ferias-badge afast-hist">22/06–11/07</span> <span class="ferias-badge afast-hist">21/09–10/10</span> <span class="mag-none">(20+20 dias)</span></td></tr>
           <tr><td class="juiz-name">Lady Ane de Paula Santos Della Rocca</td><td>VT Leme</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="ferias-badge afast-hist">23/06–12/07</span> <span class="ferias-badge afast-hist">24/09–13/10</span> <span class="mag-none">(20+20 dias)</span></td></tr>
           <tr><td class="juiz-name">Regina Rodrigues Urbano</td><td>VT Leme</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="ferias-badge afast-hist">12/03–31/03</span> <span class="ferias-badge afast-hist">15/07–03/08</span> <span class="mag-none">(20+20 dias)</span></td></tr>
@@ -2057,20 +2066,20 @@ nav {
           <tr><td class="juiz-name">Eduardo Alexandre da Silva</td><td>2ª VT Piracicaba · CEJUSC Piracicaba</td><td><span class="afast-badge" data-de="2026-11-18" data-ate="2026-12-17">Férias · 18/11–17/12</span></td><td><span class="mag-none">—</span></td></tr>
           <tr><td class="juiz-name">Erica Escarassatte</td><td>3ª VT Piracicaba</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="mag-none">—</span></td></tr>
           <tr><td class="juiz-name">Emanuele Pessatti Siqueira Rocha</td><td>3ª VT Piracicaba</td><td><span class="afast-badge" data-de="2026-11-29" data-ate="2026-12-18">Férias · 29/11–18/12</span></td><td><span class="mag-none">—</span></td></tr>
-          <tr><td class="juiz-name">Flavia Farias de Arruda Corseuil</td><td>VT Rio Claro</td><td><span class="afast-badge" data-de="2026-11-03" data-ate="2026-11-22">Afastamento · 03/11–22/11</span></td><td><span class="mag-none">—</span></td></tr>
+          <tr><td class="juiz-name">Flavia Farias de Arruda Corseuil</td><td>VT Rio Claro</td><td><span class="afast-badge" data-de="2026-11-03" data-ate="2026-11-22">Férias · 03/11–22/11</span></td><td><span class="mag-none">—</span></td></tr>
           <tr><td class="juiz-name">Erika Ferrari Zanella</td><td>VT Rio Claro · CEJUSC Limeira</td><td><span class="afast-badge" data-de="2026-10-19" data-ate="2026-11-07">Férias · 19/10–07/11</span></td><td><span class="mag-none">—</span></td></tr>
           <tr><td class="juiz-name">Cristiane Kawanaka de Pontes</td><td>VT Santa Bárbara</td><td><span class="afast-badge" data-de="2026-09-09" data-ate="2026-10-08">Férias · 09/09–08/10</span></td><td><span class="ferias-badge afast-hist">26/01–14/02</span> <span class="ferias-badge afast-hist">13/07–01/08</span> <span class="mag-none">(20+20 dias)</span></td></tr>
-          <tr><td class="juiz-name">Henrique Macedo Hinz</td><td>VT Santa Bárbara</td><td><span class="afast-badge" data-de="2026-08-08" data-ate="2026-11-27">Licença · 08/08–27/11</span></td><td><span class="mag-none">—</span></td></tr>
+          <tr><td class="juiz-name">Henrique Macedo Hinz</td><td>VT Santa Bárbara</td><td><span class="afast-badge" data-de="2026-08-08" data-ate="2026-11-27">Afastamento · 08/08–27/11</span></td><td><span class="mag-none">—</span></td></tr>
           <tr><td class="juiz-name">Eduardo Costa Gonzales</td><td>VT Santa Bárbara</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="mag-none">—</span></td></tr>
           <tr><td class="juiz-name">Cristiane Souza de Castro Toledo</td><td>VT São João da B. Vista</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="mag-none">—</span></td></tr>
           <tr><td class="juiz-name">Ricardo Tsuioshi Fukuda Sanchez</td><td>VT São João da B. Vista</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="mag-none">—</span></td></tr>
-          <tr><td class="juiz-name">Iara Maria Rodrigues</td><td>VT São João da B. Vista</td><td><span class="afast-badge" data-de="" data-ate="2027-02-05">Licença gestante · até 05/02/2027</span></td><td><span class="mag-none">—</span></td></tr>
+          <tr><td class="juiz-name">Iara Maria Rodrigues</td><td>VT São João da B. Vista</td><td><span class="afast-badge" data-de="" data-ate="2027-02-05">Afastamento · até 05/02/2027</span></td><td><span class="mag-none">—</span></td></tr>
           <tr><td class="juiz-name">Ronaldo Capelari</td><td>VT Sumaré</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="ferias-badge afast-hist">13/04–02/05</span> <span class="ferias-badge afast-hist">17/08–05/09</span> <span class="mag-none">(20+20 dias)</span></td></tr>
           <tr><td class="juiz-name">Francina Nunes da Costa</td><td>VT Sumaré</td><td><span class="afast-badge" data-de="2026-11-29" data-ate="2026-12-18">Férias · 29/11–18/12</span></td><td><span class="mag-none">—</span></td></tr>
           <tr><td class="juiz-name">Carla Gabriella Grah Sens</td><td>VT Sumaré</td><td><span class="afast-badge" data-de="2026-09-21" data-ate="2026-10-10">Férias · 21/09–10/10</span></td><td><span class="ferias-badge afast-hist">23/03–11/04</span> <span class="ferias-badge afast-hist">17/09–06/10</span> <span class="mag-none">(20+20 dias)</span></td></tr>
           <tr class="mag-group"><td colspan="4">Auxílio fixo — Simetria</td></tr>
           <tr><td class="juiz-name">Cleverson Oliveira Alarcon Lima</td><td>Simetria (auxiliar)</td><td><span class="afast-badge" data-de="2026-10-29" data-ate="2026-11-17">Férias · 29/10–17/11</span></td><td><span class="mag-none">—</span></td></tr>
-          <tr><td class="juiz-name">Renata Nunes de Melo</td><td>Simetria (auxiliar)</td><td><span class="afast-badge" data-de="2026-10-29" data-ate="2026-11-17">Afastamento · 29/10–17/11</span></td><td><span class="mag-none">—</span></td></tr>
+          <tr><td class="juiz-name">Renata Nunes de Melo</td><td>Simetria (auxiliar)</td><td><span class="afast-badge" data-de="2026-10-29" data-ate="2026-11-17">Férias · 29/10–17/11</span></td><td><span class="mag-none">—</span></td></tr>
           <tr><td class="juiz-name">Gustavo Castro Picchi Martins</td><td>Simetria (auxiliar)</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="mag-none">—</span></td></tr>
           <tr class="mag-group"><td colspan="4">Atuando em mais de uma Secretaria Conjunta</td></tr>
           <tr><td class="juiz-name">Felipe Bernardes Rodrigues</td><td>VT Registro</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="mag-none">—</span></td></tr>
@@ -2313,6 +2322,19 @@ nav {
   </div>
 
   <div class="section-header" style="margin-top:20px; margin-bottom:12px">
+    <h2 style="font-size:17px">Guias de capacitação</h2>
+  </div>
+  <div class="links-grid">
+    <a class="link-card" href="guia-recurso-ordinario.html" target="_blank" rel="noopener">
+      <div class="lc-icon">⚖️</div>
+      <div>
+        <div class="lc-title">Guia de Processamento do Recurso Ordinário</div>
+        <div class="lc-desc">CON · fluxo em 10 passos, mapa mental, checklist e quiz</div>
+      </div>
+    </a>
+  </div>
+
+  <div class="section-header" style="margin-top:20px; margin-bottom:12px">
     <h2 style="font-size:17px">Configuração do navegador e extensões</h2>
   </div>
   <div class="yt-grid">
@@ -2483,7 +2505,7 @@ nav {
 <div id="section-estagiarios" class="section">
   <div class="section-header">
     <h2>Estagiários da SC de Piracicaba</h2>
-    <span class="tag">25 estagiários</span>
+    <span class="tag">26 estagiários · atualizado em 13/11/2026</span>
   </div>
   <div class="notice info">
     <span>📘</span>
@@ -2491,7 +2513,7 @@ nav {
   </div>
   <div class="search-bar">
     <span class="search-icon">🔍</span>
-    <input type="text" placeholder="Buscar estagiário, cidade, assessoria ou assessor..." oninput="filterEstagiarios(this.value)">
+    <input type="text" placeholder="Buscar estagiário, cidade, setor ou supervisor..." oninput="filterEstagiarios(this.value)">
   </div>
   <div class="mag-legend">
     <span><span class="ferias-badge est-alerta">Termina em até 60 dias</span></span>
@@ -2500,33 +2522,34 @@ nav {
   </div>
   <div style="background:white;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;overflow-x:auto">
     <table class="ferias-table" id="est-table">
-      <thead><tr><th>Nome</th><th>OJ inicial</th><th>Cidade</th><th>Horário</th><th>Assessor(a)</th><th>Início</th><th>Término</th><th>Atividades</th></tr></thead>
+      <thead><tr><th>Nome</th><th>Setor</th><th>Cidade</th><th>Supervisor(a)</th><th>Substituto(a)</th><th>Início</th><th>Término</th><th>Matrícula 2026</th><th>Atividades</th></tr></thead>
       <tbody>
-        <tr><td class="vt-name">Guilherme Chacur</td><td><span class="est-oj">CEJUSC</span></td><td>Piracicaba — CEJUSC</td><td>—</td><td>—</td><td>01/03/2026</td><td><span class="ferias-badge est-fim" data-fim="2028-02-28" data-ini="2026-03-01">28/02/2028</span></td><td><span class="mag-none">A preencher</span></td></tr>
-        <tr><td class="vt-name">Karolyne Batistella da Costa Silva</td><td><span class="est-oj">CEJUSC</span></td><td>Limeira — CEJUSC</td><td>—</td><td>—</td><td>01/06/2026</td><td><span class="ferias-badge est-fim" data-fim="2028-05-30" data-ini="2026-06-01">30/05/2028</span></td><td><span class="mag-none">A preencher</span></td></tr>
-        <tr><td class="vt-name">Susy da Silva Ribeiro</td><td><span class="est-oj">CEJUSC</span></td><td>Limeira — CEJUSC</td><td>—</td><td>—</td><td>01/02/2026</td><td><span class="ferias-badge est-fim" data-fim="2026-12-31" data-ini="2026-02-01">31/12/2026</span></td><td><span class="mag-none">A preencher</span></td></tr>
-        <tr><td class="vt-name">Victor Hugo Bailarin</td><td><span class="est-oj">CEJUSC</span></td><td>Piracicaba — CEJUSC</td><td>—</td><td>—</td><td>01/11/2025</td><td><span class="ferias-badge est-fim" data-fim="2027-10-31" data-ini="2025-11-01">31/10/2027</span></td><td><span class="mag-none">A preencher</span></td></tr>
-        <tr><td class="vt-name">Fernanda Rodrigues Alves Cardoso</td><td><span class="est-oj">CON1</span></td><td>Hortolândia</td><td>—</td><td>Deise</td><td>01/07/2025</td><td><span class="ferias-badge est-fim" data-fim="2027-06-30" data-ini="2025-07-01">30/06/2027</span></td><td><details class="est-atv"><summary>Ver atividades</summary><p>Triagem, preparação da ata de audiência, atendimento presencial, elaboração de despacho, conferência da pauta, relatórios da EXE2.</p></details></td></tr>
-        <tr><td class="vt-name">Micaeli de Brito Ferreira</td><td><span class="est-oj">DAA + CON1</span></td><td>Americana</td><td>12h–18h</td><td>Deise</td><td>01/06/2026</td><td><span class="ferias-badge est-fim" data-fim="2028-05-30" data-ini="2026-06-01">30/05/2028</span></td><td><details class="est-atv"><summary>Ver atividades</summary><p>Atendimento ao público no balcão; auxílio na redação de minutas de ofícios e e-mails; desarquivamento; serviços de malote; minutas de despachos e decisões; triagem; verificação de malote digital.</p></details></td></tr>
-        <tr><td class="vt-name">Beatriz Pasquini Garcia (convênio)</td><td><span class="est-oj">DAA + CON1</span></td><td>Santa Bárbara d&#x27;Oeste</td><td>—</td><td>Deise</td><td>—</td><td><span class="ferias-badge est-fim" data-fim="2027-05-05" data-ini="">05/05/2027</span></td><td><details class="est-atv"><summary>Ver atividades</summary><p>Triagem inicial dos processos do gabinete do juiz Henrique Macedo Hinz; elaboração de despachos; organização da ata de audiência; comunicações, expedientes e intimações; atendimento ao balcão presencial.</p></details></td></tr>
-        <tr><td class="vt-name">Estefania Faustino de Sousa</td><td><span class="est-oj">DAA + CON1</span></td><td>Sumaré</td><td>—</td><td>Deise</td><td>01/09/2025</td><td><span class="ferias-badge est-fim" data-fim="2027-08-31" data-ini="2025-09-01">31/08/2027</span></td><td><details class="est-atv"><summary>Ver atividades</summary><p>Triagem inicial dos processos da VT de Sumaré; atendimento ao balcão presencial; despachos quando necessário; organização da ata de audiência; comunicações, expedientes e intimações; juntada e digitalização de documentos; análise de petições, manifestações e andamento dos processos.</p></details></td></tr>
-        <tr><td class="vt-name">Julia Fernanda da Costa</td><td><span class="est-oj">DAA + CON1</span></td><td>Santa Bárbara d&#x27;Oeste</td><td>—</td><td>Deise</td><td>01/03/2025</td><td><span class="ferias-badge est-fim" data-fim="2027-02-28" data-ini="2025-03-01">28/02/2027</span></td><td><details class="est-atv"><summary>Ver atividades</summary><p>Atendimento ao balcão presencial; triagem inicial dos processos do gabinete da juíza Cristiane Kawanaka de Pontes; inclusão dos processos da triagem na pauta; despachos e intimações.</p></details></td></tr>
-        <tr><td class="vt-name">Nicole Camille da Silva</td><td><span class="est-oj">DAA + CON1</span></td><td>Americana</td><td>12h–18h</td><td>Deise</td><td>01/05/2025</td><td><span class="ferias-badge est-fim" data-fim="2027-04-30" data-ini="2025-05-01">30/04/2027</span></td><td><details class="est-atv"><summary>Ver atividades</summary><p>Atendimento presencial no balcão, triagem de processos da 1ª VT de Americana e juntada de documentos eletrônicos (e-mails).</p></details></td></tr>
-        <tr><td class="vt-name">Raissa Ferreira Paiva</td><td><span class="est-oj">DAA + CON1</span></td><td>Piracicaba</td><td>—</td><td>Deise</td><td>01/10/2024</td><td><span class="ferias-badge est-fim" data-fim="2026-09-30" data-ini="2024-10-01">30/09/2026</span></td><td><details class="est-atv"><summary>Ver atividades</summary><p>Triagem dos finais ímpares das 3 varas de Piracicaba, de Araras e do cumprimento de sentença de Mogi Guaçu; elaboração de despachos e minutas.</p></details></td></tr>
-        <tr><td class="vt-name">Alessandra Lagacci</td><td><span class="est-oj">DAA + CON2</span></td><td>Araras</td><td>12h–18h</td><td>Rinaldo (quando possível)</td><td>01/05/2026</td><td><span class="ferias-badge est-fim" data-fim="2026-12-30" data-ini="2026-05-01">30/12/2026</span></td><td><span class="mag-none">A preencher</span></td></tr>
-        <tr><td class="vt-name">Aline Depieri de Souza Duarte</td><td><span class="est-oj">DAA + CON2</span></td><td>Mogi Guaçu</td><td>12h–18h</td><td>Paulo (2ª e 3ª feira)</td><td>01/06/2026</td><td><span class="ferias-badge est-fim" data-fim="2027-12-31" data-ini="2026-06-01">31/12/2027</span></td><td><span class="mag-none">A preencher</span></td></tr>
-        <tr><td class="vt-name">Fernando Aparecido Felix Junior</td><td><span class="est-oj">DAA + CON2</span></td><td>São João da Boa Vista</td><td>12h–18h</td><td>Rinaldo (quando possível)</td><td>01/03/2025</td><td><span class="ferias-badge est-fim" data-fim="2026-12-31" data-ini="2025-03-01">31/12/2026</span></td><td><details class="est-atv"><summary>Ver atividades</summary><p>Triagem inicial; atendimento ao balcão e telefone; protocolo em autos físicos; sentenças de embargos à execução; desarquivamento de autos físicos; certidões de objeto e pé e habilitação de crédito no juízo falimentar; alvarás de seguro-desemprego/FGTS; despachos de início da liquidação; nomeação de peritos contábeis; análise de pressupostos de RO; certidões de notificações devolvidas.</p></details></td></tr>
-        <tr><td class="vt-name">Giovanna Prazeres Martins Justo</td><td><span class="est-oj">DAA + CON2</span></td><td>Limeira</td><td>12h–18h</td><td>Rinaldo (5ª e 6ª feira)</td><td>01/04/2026</td><td><span class="ferias-badge est-fim" data-fim="2026-12-31" data-ini="2026-04-01">31/12/2026</span></td><td><span class="mag-none">A preencher</span></td></tr>
-        <tr><td class="vt-name">Livia de Oliveira Gomes</td><td><span class="est-oj">DAA + CON2</span></td><td>Mogi Guaçu</td><td>12h–18h</td><td>Paulo (4ª e 6ª feira)</td><td>01/03/2026</td><td><span class="ferias-badge est-fim" data-fim="2028-02-29" data-ini="2026-03-01">29/02/2028</span></td><td><details class="est-atv"><summary>Ver atividades</summary><p>Atendimento ao balcão presencial; recebimento de malote físico; análise de pauta e pré-pauta; manejo, certidões, migração ao PJe e arquivamento de processos físicos.</p></details></td></tr>
-        <tr><td class="vt-name">Polyana Gachet Ochialla</td><td><span class="est-oj">DAA + CON2</span></td><td>Limeira</td><td>12h–18h</td><td>Rinaldo (5ª e 6ª feira)</td><td>01/06/2026</td><td><span class="ferias-badge est-fim" data-fim="2028-05-30" data-ini="2026-06-01">30/05/2028</span></td><td><span class="mag-none">A preencher</span></td></tr>
-        <tr><td class="vt-name">Sarah da Silva Pinheiro</td><td><span class="est-oj">DAA + CON2</span></td><td>Piracicaba — DAM</td><td>12h–18h</td><td>Rinaldo (6ª feira)</td><td>01/02/2026</td><td><span class="ferias-badge est-fim" data-fim="2028-01-30" data-ini="2026-02-01">30/01/2028</span></td><td><details class="est-atv"><summary>Ver atividades</summary><p>Atendimento ao balcão presencial; desarquivamento de processos físicos; atendimento e autuação de processos Jus Postulandi; auxílio nos e-mails, malote digital e cartas precatórias quando solicitado; verificação dos malotes físicos; migração de processos CCLE.</p></details></td></tr>
-        <tr><td class="vt-name">Helen Caroline Theodoro Ferreira de Lima</td><td><span class="est-oj">DAA + CON2</span></td><td>Piracicaba</td><td>12h–18h</td><td>Paulo</td><td>01/06/2026</td><td><span class="ferias-badge est-fim" data-fim="2026-05-30" data-ini="2026-06-01">30/05/2026</span></td><td><span class="mag-none">A preencher</span></td></tr>
-        <tr><td class="vt-name">Graziele Prado de Oliveira</td><td><span class="est-oj">EXE1</span></td><td>Limeira</td><td>—</td><td>Eduardo</td><td>01/10/2025</td><td><span class="ferias-badge est-fim" data-fim="2027-09-30" data-ini="2025-10-01">30/09/2027</span></td><td><details class="est-atv"><summary>Ver atividades</summary><p>Atendimento ao balcão presencial; desarquivamento de processos físicos; atendimento e autuação de processos Jus Postulandi; auxílio nos e-mails, malote digital e cartas precatórias quando solicitado; verificação dos malotes físicos; migração de processos CCLE.</p></details></td></tr>
-        <tr><td class="vt-name">Tatiana da Conceição Cardoso Macedo</td><td><span class="est-oj">EXE2</span></td><td>Piracicaba</td><td>—</td><td>Fábio</td><td>01/11/2024</td><td><span class="ferias-badge est-fim" data-fim="2026-10-31" data-ini="2024-11-01">31/10/2026</span></td><td><details class="est-atv"><summary>Ver atividades</summary><p>Pressupostos, processamento e remessa de agravo de petição; notificações e regularização de inconsistências do e-Carta; análise de pendências e restrições em processos a arquivar; alguns despachos de execução frustrada e sentenças de prescrição intercorrente; mandado de penhora e avaliação — tudo sob supervisão.</p></details></td></tr>
-        <tr><td class="vt-name">Gabriela Amorim Sterde</td><td><span class="est-oj">EXE2</span></td><td>Piracicaba</td><td>—</td><td>Fábio</td><td>01/06/2026</td><td><span class="ferias-badge est-fim" data-fim="2026-12-31" data-ini="2026-06-01">31/12/2026</span></td><td><span class="mag-none">A preencher</span></td></tr>
-        <tr><td class="vt-name">Alisson Henrique de Oliveira</td><td><span class="est-oj">EXE3</span></td><td>Limeira</td><td>—</td><td>Nilton</td><td>01/11/2024</td><td><span class="ferias-badge est-fim" data-fim="2026-10-31" data-ini="2024-11-01">31/10/2026</span></td><td><details class="est-atv"><summary>Ver atividades</summary><p>Atendimento ao balcão presencial; desarquivamento de processos físicos; atendimento e autuação de processos Jus Postulandi; auxílio nos e-mails, malote digital e cartas precatórias quando solicitado; verificação dos malotes físicos; migração de processos CCLE.</p></details></td></tr>
-        <tr><td class="vt-name">Mariah Stephani de Oliveira</td><td><span class="est-oj">LIQ1</span></td><td>Leme</td><td>—</td><td>Wellington</td><td>01/09/2025</td><td><span class="ferias-badge est-fim" data-fim="2027-08-31" data-ini="2025-09-01">31/08/2027</span></td><td><details class="est-atv"><summary>Ver atividades</summary><p>Atendimento ao público no balcão e telefone; minutas de despacho inicial na LIQ e de decisões de embargos de declaração e impugnações à execução.</p></details></td></tr>
-        <tr><td class="vt-name">Larissa Saldanha Bastos</td><td><span class="est-oj">LIQ2</span></td><td>Piracicaba</td><td>—</td><td>Paulo</td><td>01/11/2025</td><td><span class="ferias-badge est-fim" data-fim="2027-06-30" data-ini="2025-11-01">30/06/2027</span></td><td><details class="est-atv"><summary>Ver atividades</summary><p>Processamento e remessa de recursos na fase de execução, com supervisão.</p></details></td></tr>
+        <tr><td class="vt-name">Victor Hugo Bailarin</td><td><span class="est-oj">CON · Equipe 01</span></td><td>Piracicaba</td><td>Matheus Junqueira Harder</td><td>Claudir de Oliveira Junior</td><td>01/11/2025</td><td><span class="ferias-badge est-fim" data-fim="2027-10-31" data-ini="2025-11-01">31/10/2027</span></td><td>OK 20/08</td><td><span class="mag-none">A preencher</span></td></tr>
+        <tr><td class="vt-name">Julia Fernanda da Costa</td><td><span class="est-oj">CON · Equipe 01</span></td><td>Santa Bárbara d&#x27;Oeste</td><td>Rogerio Zambon Canale</td><td>Claudir de Oliveira Junior</td><td>01/03/2025</td><td><span class="ferias-badge est-fim" data-fim="2027-02-28" data-ini="2025-03-01">28/02/2027</span></td><td>OK 13/08</td><td><details class="est-atv"><summary>Ver atividades</summary><p>Atendimento ao balcão presencial; triagem inicial dos processos do gabinete da juíza Cristiane Kawanaka de Pontes; inclusão dos processos da triagem na pauta; despachos e intimações.</p></details></td></tr>
+        <tr><td class="vt-name">Nicolas Jorge</td><td><span class="est-oj">CON · Equipe 01</span></td><td>Santa Bárbara d&#x27;Oeste</td><td>Convênio</td><td>—</td><td>13/07/2026</td><td><span class="ferias-badge est-fim" data-fim="2027-12-31" data-ini="2026-07-13">31/12/2027</span></td><td>—</td><td><span class="mag-none">A preencher</span></td></tr>
+        <tr><td class="vt-name">Augusto Aparecido Dias de Souza</td><td><span class="est-oj">CON · Equipe 02</span></td><td>Leme</td><td>Rogerio Zambon Canale</td><td>Claudir de Oliveira Junior</td><td>03/11/2026</td><td><span class="mag-none">—</span></td><td>OK 21/09</td><td><span class="mag-none">A preencher</span></td></tr>
+        <tr><td class="vt-name">Fernanda Bueno de Andrade</td><td><span class="est-oj">CON · Equipe 02 + DAA</span></td><td>Sumaré</td><td>Claudir de Oliveira Junior</td><td>Rogerio Zambon Canale</td><td>01/05/2026</td><td><span class="ferias-badge est-fim" data-fim="2028-04-30" data-ini="2026-05-01">30/04/2028</span></td><td>OK 14/08</td><td><span class="mag-none">A preencher</span></td></tr>
+        <tr><td class="vt-name">Estefania Faustino de Sousa</td><td><span class="est-oj">CON · Equipe 02 + DAA</span></td><td>Sumaré</td><td>Claudir de Oliveira Junior</td><td>Rogerio Zambon Canale</td><td>01/09/2025</td><td><span class="ferias-badge est-fim" data-fim="2027-08-31" data-ini="2025-09-01">31/08/2027</span></td><td>OK 12/08</td><td><details class="est-atv"><summary>Ver atividades</summary><p>Triagem inicial dos processos da VT de Sumaré; atendimento ao balcão presencial; despachos quando necessário; organização da ata de audiência; comunicações, expedientes e intimações; juntada e digitalização de documentos; análise de petições, manifestações e andamento dos processos.</p></details></td></tr>
+        <tr><td class="vt-name">Fernanda Rodrigues Alves Cardoso</td><td><span class="est-oj">CON · Equipe 03</span></td><td>Hortolândia</td><td>Rogerio Zambon Canale</td><td>Claudir de Oliveira Junior</td><td>01/07/2025</td><td><span class="ferias-badge est-fim" data-fim="2027-06-30" data-ini="2025-07-01">30/06/2027</span></td><td>OK 12/08</td><td><details class="est-atv"><summary>Ver atividades</summary><p>Triagem, preparação da ata de audiência, atendimento presencial, elaboração de despacho, conferência da pauta, relatórios da EXE2.</p></details></td></tr>
+        <tr><td class="vt-name">Alessandra Lagacci</td><td><span class="est-oj">CON · Equipe 03 + DAA</span></td><td>Araras</td><td>Claudir de Oliveira Junior</td><td>Rogério Zambon Canale</td><td>01/05/2026</td><td><span class="ferias-badge est-fim" data-fim="2026-12-31" data-ini="2026-05-01">31/12/2026</span></td><td>OK 07/08</td><td><span class="mag-none">A preencher</span></td></tr>
+        <tr><td class="vt-name">Aline Depieri de Souza Duarte</td><td><span class="est-oj">CON2</span></td><td>Mogi Guaçu</td><td>Claudir de Oliveira Junior</td><td>Rogério Zambon Canale</td><td>01/06/2026</td><td><span class="ferias-badge est-fim" data-fim="2027-12-31" data-ini="2026-06-01">31/12/2027</span></td><td>OK 19/08</td><td><span class="mag-none">A preencher</span></td></tr>
+        <tr><td class="vt-name">Micaeli de Brito Ferreira</td><td><span class="est-oj">CON2</span></td><td>Americana</td><td>Claudir de Oliveira Junior</td><td>Rogério Zambon Canale</td><td>01/06/2026</td><td><span class="ferias-badge est-fim" data-fim="2028-05-30" data-ini="2026-06-01">30/05/2028</span></td><td>OK 06/08</td><td><details class="est-atv"><summary>Ver atividades</summary><p>Atendimento ao público no balcão; auxílio na redação de minutas de ofícios e e-mails; desarquivamento; serviços de malote; minutas de despachos e decisões; triagem; verificação de malote digital.</p></details></td></tr>
+        <tr><td class="vt-name">Polyana Gachet Ochialla</td><td><span class="est-oj">CON2</span></td><td>Limeira</td><td>Claudir de Oliveira Junior</td><td>Rogerio Zambon Canale</td><td>01/06/2026</td><td><span class="ferias-badge est-fim" data-fim="2028-05-30" data-ini="2026-06-01">30/05/2028</span></td><td>OK 06/08</td><td><span class="mag-none">A preencher</span></td></tr>
+        <tr><td class="vt-name">Helen Caroline Theodoro Ferreira de Lima</td><td><span class="est-oj">CON2 + DAA</span></td><td>Piracicaba — DAM</td><td>Matheus Junqueira Harder</td><td>Claudir de Oliveira Junior</td><td>01/06/2026</td><td><span class="ferias-badge est-fim" data-fim="2028-05-30" data-ini="2026-06-01">30/05/2028</span></td><td>OK 12/08</td><td><span class="mag-none">A preencher</span></td></tr>
+        <tr><td class="vt-name">Sarah da Silva Pinheiro</td><td><span class="est-oj">CON2 + DAA</span></td><td>Piracicaba — DAM</td><td>Matheus Junqueira Harder</td><td>Rogerio Zambon Canale</td><td>01/02/2026</td><td><span class="ferias-badge est-fim" data-fim="2028-01-30" data-ini="2026-02-01">30/01/2028</span></td><td>OK 12/08</td><td><details class="est-atv"><summary>Ver atividades</summary><p>Atendimento ao balcão presencial; desarquivamento de processos físicos; atendimento e autuação de processos Jus Postulandi; auxílio nos e-mails, malote digital e cartas precatórias quando solicitado; verificação dos malotes físicos; migração de processos CCLE.</p></details></td></tr>
+        <tr><td class="vt-name">Livia de Oliveira Gomes</td><td><span class="est-oj">CON2 + DAA</span></td><td>Mogi Guaçu</td><td>Claudir de Oliveira Junior</td><td>Rogerio Zambon Canale</td><td>01/03/2026</td><td><span class="ferias-badge est-fim" data-fim="2028-02-29" data-ini="2026-03-01">29/02/2028</span></td><td>OK 14/08</td><td><details class="est-atv"><summary>Ver atividades</summary><p>Atendimento ao balcão presencial; recebimento de malote físico; análise de pauta e pré-pauta; manejo, certidões, migração ao PJe e arquivamento de processos físicos.</p></details></td></tr>
+        <tr><td class="vt-name">Laura Flavia Lemes Mateus de Lima</td><td><span class="est-oj">LIQ1</span></td><td>Americana</td><td>Rogerio Zambon Canale</td><td>Claudir de Oliveira Junior</td><td>03/11/2026</td><td><span class="mag-none">—</span></td><td>OK 24/09</td><td><span class="mag-none">A preencher</span></td></tr>
+        <tr><td class="vt-name">Denis Ondei Costa</td><td><span class="est-oj">LIQ1</span></td><td>Americana</td><td>Rogerio Zambon Canale</td><td>Claudir de Oliveira Junior</td><td>03/11/2026</td><td><span class="mag-none">—</span></td><td>OK 24/09</td><td><span class="mag-none">A preencher</span></td></tr>
+        <tr><td class="vt-name">Beatriz Pasquini Garcia</td><td><span class="est-oj">LIQ2</span></td><td>Santa Bárbara d&#x27;Oeste</td><td>Convênio</td><td>—</td><td>05/05/2025</td><td><span class="ferias-badge est-fim" data-fim="2027-05-05" data-ini="2025-05-05">05/05/2027</span></td><td>—</td><td><details class="est-atv"><summary>Ver atividades</summary><p>Triagem inicial dos processos do gabinete do juiz Henrique Macedo Hinz; elaboração de despachos; organização da ata de audiência; comunicações, expedientes e intimações; atendimento ao balcão presencial.</p></details></td></tr>
+        <tr><td class="vt-name">Murilo Gerola</td><td><span class="est-oj">LIQ2</span></td><td>Santa Bárbara d&#x27;Oeste</td><td>Claudir de Oliveira Junior</td><td>Rogério Zambon Canale</td><td>03/11/2026</td><td><span class="mag-none">—</span></td><td>OK 01/10</td><td><span class="mag-none">A preencher</span></td></tr>
+        <tr><td class="vt-name">Graziele Prado de Oliveira</td><td><span class="est-oj">EXE1</span></td><td>Limeira</td><td>Rogerio Zambon Canale</td><td>Claudir de Oliveira Junior</td><td>01/10/2025</td><td><span class="ferias-badge est-fim" data-fim="2027-09-30" data-ini="2025-10-01">30/09/2027</span></td><td>OK 06/08</td><td><details class="est-atv"><summary>Ver atividades</summary><p>Atendimento ao balcão presencial; desarquivamento de processos físicos; atendimento e autuação de processos Jus Postulandi; auxílio nos e-mails, malote digital e cartas precatórias quando solicitado; verificação dos malotes físicos; migração de processos CCLE.</p></details></td></tr>
+        <tr><td class="vt-name">Maria Luisa Ferreira Mendonça</td><td><span class="est-oj">EXE1</span></td><td>Americana</td><td>Rogerio Zambon Canale</td><td>Claudir de Oliveira Junior</td><td>01/07/2026</td><td><span class="ferias-badge est-fim" data-fim="2028-08-29" data-ini="2026-07-01">29/08/2028</span></td><td>OK 12/08</td><td><span class="mag-none">A preencher</span></td></tr>
+        <tr><td class="vt-name">Larissa Saldanha Bastos</td><td><span class="est-oj">EXE2</span></td><td>Piracicaba</td><td>Matheus Junqueira Harder</td><td>Claudir de Oliveira Junior</td><td>01/11/2025</td><td><span class="ferias-badge est-fim" data-fim="2027-06-30" data-ini="2025-11-01">30/06/2027</span></td><td>OK 11/08</td><td><details class="est-atv"><summary>Ver atividades</summary><p>Processamento e remessa de recursos na fase de execução, com supervisão.</p></details></td></tr>
+        <tr><td class="vt-name">Alisson Henrique de Oliveira</td><td><span class="est-oj">EXE3</span></td><td>Limeira</td><td>Claudir de Oliveira Junior</td><td>Rogerio Zambon Canale</td><td>01/11/2024</td><td><span class="ferias-badge est-fim" data-fim="2026-10-31" data-ini="2024-11-01">31/10/2026</span></td><td>OK 06/08</td><td><details class="est-atv"><summary>Ver atividades</summary><p>Atendimento ao balcão presencial; desarquivamento de processos físicos; atendimento e autuação de processos Jus Postulandi; auxílio nos e-mails, malote digital e cartas precatórias quando solicitado; verificação dos malotes físicos; migração de processos CCLE.</p></details></td></tr>
+        <tr><td class="vt-name">Giovanna Prazeres Martins Justo</td><td><span class="est-oj">EXE3</span></td><td>Limeira</td><td>Rogerio Zambon Canale</td><td>Claudir de Oliveira Junior</td><td>01/04/2026</td><td><span class="ferias-badge est-fim" data-fim="2026-12-31" data-ini="2026-04-01">31/12/2026</span></td><td>OK 12/08</td><td><span class="mag-none">A preencher</span></td></tr>
+        <tr><td class="vt-name">Guilherme Chacur</td><td><span class="est-oj">CEJUSC Piracicaba</span></td><td>Piracicaba — CEJUSC</td><td>Ana Luisa de Faria</td><td>Matheus Junqueira Harder</td><td>01/03/2026</td><td><span class="ferias-badge est-fim" data-fim="2028-02-28" data-ini="2026-03-01">28/02/2028</span></td><td>OK 19/08</td><td><span class="mag-none">A preencher</span></td></tr>
+        <tr><td class="vt-name">Karolyne Batistella da Costa Silva</td><td><span class="est-oj">CEJUSC Limeira</span></td><td>Limeira — CEJUSC</td><td>Alexandre Francischetti</td><td>Matheus Junqueira Harder</td><td>01/06/2026</td><td><span class="ferias-badge est-fim" data-fim="2028-05-30" data-ini="2026-06-01">30/05/2028</span></td><td>OK 20/08</td><td><span class="mag-none">A preencher</span></td></tr>
+        <tr><td class="vt-name">Susy da Silva Ribeiro</td><td><span class="est-oj">CEJUSC Limeira</span></td><td>Limeira — CEJUSC</td><td>Alexandre Francischetti</td><td>Matheus Junqueira Harder</td><td>01/02/2026</td><td><span class="ferias-badge est-fim" data-fim="2026-12-31" data-ini="2026-02-01">31/12/2026</span></td><td>OK 20/08</td><td><span class="mag-none">A preencher</span></td></tr>
       </tbody>
     </table>
   </div>
@@ -2705,294 +2728,1531 @@ nav {
 
 <script>
 const ojData = {
-  ojs: {
-    title: 'Oficiais de Justiça',
-    sub: '25 oficiais distribuídos por 11 cidades',
-    chefes: [],
-    equipe: [
-      { name: 'André Luis Bahia Rodrigues', role: 'OJ', cidade: 'Piracicaba' },
-      { name: 'Cláudia Machado Sendin Boscolo', role: 'OJ', cidade: 'Piracicaba' },
-      { name: 'Djalma Batista de Oliveira', role: 'OJ', cidade: 'Piracicaba' },
-      { name: 'Nádia Maria Segatto Agostinho', role: 'OJ', cidade: 'Piracicaba' },
-      { name: 'Pedro Andrade de Albuquerque Pereira', role: 'OJ', cidade: 'Piracicaba' },
-      { name: 'Silvia Machado Sendin Merce', role: 'OJ', cidade: 'Piracicaba' },
-      { name: 'Lilian Barreto Rodrigues Queiroz', role: 'OJ', cidade: 'Americana' },
-      { name: 'Priscila de Cássia Vieira', role: 'OJ', cidade: 'Americana' },
-      { name: 'Fernanda Gonçalves Amaral Lapa', role: 'OJ', cidade: 'Americana' },
-      { name: 'Caio Togni de Carvalho', role: 'OJ', cidade: 'Mogi Guaçu' },
-      { name: 'Maria Stela Rossati', role: 'OJ', cidade: 'Mogi Guaçu' },
-      { name: 'Renato Francisco Normandia Moreira', role: 'OJ', cidade: 'Leme' },
-      { name: 'Fabricio Lima Pereira', role: 'OJ', cidade: 'Leme' },
-      { name: 'Luis Cesar Duarte Prinzo', role: 'OJ', cidade: 'Araras' },
-      { name: 'Igor Duarte de Alvarenga', role: 'OJ', cidade: 'Araras' },
-      { name: 'Renato Fernandes de Oliveira', role: 'OJ', cidade: 'Rio Claro' },
-      { name: 'Maria Rosa Pimentel Lima', role: 'OJ', cidade: 'Rio Claro' },
-      { name: 'Bruno Flores Lima', role: 'OJ', cidade: 'Rio Claro' },
-      { name: 'Luciano Henrique Colozza', role: 'OJ', cidade: 'São João da Boa Vista' },
-      { name: 'Marcos Gustavo de Oliveira', role: 'OJ', cidade: 'São João da Boa Vista' },
-      { name: 'Caio Flavio Serette', role: 'OJ', cidade: 'Hortolândia' },
-      { name: 'Cristiane Castilho Mouco', role: 'OJ', cidade: 'Hortolândia' },
-      { name: 'Carlos Eduardo Rivero Araujo Silva', role: 'OJ', cidade: 'Santa Bárbara d\'Oeste' },
-      { name: 'Luis Vicente Dondelli', role: 'OJ', cidade: 'Santa Bárbara d\'Oeste' },
-      { name: 'Lucas de Souza Pinto', role: 'OJ', cidade: 'Sumaré' },
-      { name: 'Alexandre Terra Peres Donato Santiago', role: 'OJ', cidade: 'Limeira' },
-      { name: 'Milena Rosado da Costa', role: 'OJ', cidade: 'Limeira' },
-      { name: 'Silverio Dias Araujo', role: 'OJ', cidade: 'Limeira' }
-    ],
-    atrib: ['Cumprimento de mandados judiciais','Diligências externas nas respectivas comarcas','Citações, intimações e notificações pessoais','Penhoras, arrestos e demais constrições'],
-    acervo: '28 Oficiais de Justiça ativos'
-  },
-  con1: {
-    title: 'CON1 — Assessoria de Conhecimento 1',
-    sub: 'Audiências e instrução processual',
-    chefes: [
-      { name: 'Deise Maria Cassaniga Azevedo', role: 'CJ3', cargo: 'Assessora-chefe' },
-      { name: 'Silvana Marcelino Braz', role: 'CJ3', cargo: 'Assessora-chefe' }
-    ],
-    equipe: [
-      { name: 'Claudia Ferraz de Camargo', role: 'FC5' },
-      { name: 'Barbara Padovani Minholo Hoffmann', role: 'FC5' },
-      { name: 'Sandra Regina da Conceição Amaral', role: 'FC4' },
-      { name: 'Adriana Aparecida Pertile Municelli', role: 'FC4' },
-      { name: 'Erika Cristina Mendes de Campos Garcia', role: 'FC4' },
-      { name: 'Romilda Maria de Arruda Germano', role: 'FC4' },
-      { name: 'Joseane de Menezes Conde', role: 'FC2' },
-      { name: 'Celina Jacintho Pereira', role: 'FC4' },
-      { name: 'Claudia Maria Pastor', role: 'FC4' },
-      { name: 'Sandra Maria Segato Gazzeta', role: 'FC4' },
-      { name: 'Marina Lira Da Silveira Pinto', role: 'FC4' },
-      { name: 'Rogeria Helena Aparecida Franzini Corazza', role: 'FC4' },
-      { name: 'Michelli Cristina Borges Sampaio', role: 'FC4' },
-      { name: 'Naara de Lucas Barbalho', role: 'FC4' },
-      { name: 'Cristina Ziani de Moura', role: 'FC4' },
-      { name: 'Maria Lúcia Alves Cavalcante', role: 'FC4' },
-      { name: 'Daniele Fernanda Stefani', role: 'FC4' },
-      { name: 'Dheise Monique Euphrasio', role: 'FC4' },
-      { name: 'Anita Bueno de Moraes Narciso', role: 'FC4' },
-      { name: 'Paula de Carvalho Ambar Lima', role: 'FC4' },
-      { name: 'Ana Claudia Rodrigues Abreu Bergonsini', role: 'FC4' },
-      { name: 'Emerson Alexandre Viola', role: 'FC5' },
-      { name: 'Elenira de Andrade Bicalho', role: 'FC4' },
-      { name: 'Débora Cerqueira Simão', role: 'FC4' },
-      { name: 'Aguinaldo Junior Yamamoto Peres', role: 'FC4' },
-      { name: 'Leandro Mac Fadden Negri', role: 'FC4' },
-      { name: 'Fabiana de Lemos Pedro', role: 'FC4' },
-      { name: 'Thiago Donizete Mendanha', role: 'FC4' },
-      { name: 'Michel Aquino de Souza', role: 'FC4' },
-      { name: 'Tatiana Maeyama', role: 'FC4' },
-      { name: 'Gabriel de Oliveira Silva', role: 'FC4' },
-      { name: 'Cleilson Damasceno de Oliveira', role: 'FC4' },
-      { name: 'Luciana Cristina Rodrigues', role: 'FC4' },
-      { name: 'Tatiana Maffeis da Cunha', role: 'FC4' },
-      { name: 'Debora Assis de Oliveira Bissi', role: 'FC4' },
-      { name: 'Luzia Danielle dos Santos', role: 'FC4' },
-      { name: 'Paula Burque Besson Boconcelo (Área de Apoio Bauru)', role: 'FC4' },
-      { name: 'André Luiz Fernandes Rocha (Mediador)', role: 'FC2' }
-    ],
-    atrib: ['Triagem inicial de novos processos','Despacho saneador','Designação de audiência','Notificação das partes','Encaminhar tutelas iniciais ao gabinete','Audiências iniciais, unas e de instrução','Cumprimento de atas','Análise de exceção de incompetência','Controle de perícias e diligências (Seção 02)','SISDOV'],
-    acervo: '48.164 processos em CON1'
-  },
-  con2: {
-    title: 'CON2 — Assessoria de Conhecimento 2',
-    sub: 'Julgamento e recursos',
-    chefes: [
-      { name: 'Deise Maria Cassaniga Azevedo', role: 'CJ3', cargo: 'Assessora-chefe' },
-      { name: 'Silvana Marcelino Braz', role: 'CJ3', cargo: 'Assessora-chefe' }
-    ],
-    equipe: [
-      { name: 'Rinaldo Pistolini', role: 'FC5' },
-      { name: 'Celio Aparecido Trombetta', role: 'FC5' },
-      { name: 'Ana Paula D Elia Vinhal', role: 'FC5' },
-      { name: 'Rosana Sueli Britto de Jesus', role: 'FC4' },
-      { name: 'Roberta Rodrigues Urbano', role: 'FC4' },
-      { name: 'Ivi Cristina Indalecio Bueno', role: 'FC4' },
-      { name: 'Isabela Freitas de Souza', role: 'FC4' },
-      { name: 'Sisenando Gomes Calixto de Sousa', role: 'FC4' },
-      { name: 'Mariangela Miranda Duarte', role: 'FC4' },
-      { name: 'Barbara Padovani Minholo Hoffmann', role: 'FC5' },
-      { name: 'Domingos Jose de Munno', role: 'FC4' },
-      { name: 'Claudia Elisa Betti Pedro Bom', role: 'FC4' },
-      { name: 'Alessandro Costa', role: 'FC4' },
-      { name: 'Sabrina Noronha Costa Costantini', role: 'FC4' },
-      { name: 'Aparecida de Fatima de Souza Franco', role: 'FC4' },
-      { name: 'Dulce Maria Vasconcellos Seixas', role: 'FC4' }
-    ],
-    atrib: ['Conclusão de sentença','Controle de razões finais','Processamento de incidentes e recursos','Remessa ao 2º grau','Recebimento de instância superior','Registro de trânsito em julgado','Encaminhamento pós-TJ para LIQ, EXE ou Arquivo','Controle de perícias'],
-    acervo: '2.747 proc. em CON2'
-  },
-  liq1: {
-    title: 'LIQ1 — Assessoria de Liquidação 1',
-    sub: 'Pré-Homologação · Cálculos e perícias',
-    chefes: [
-      { name: 'Wellington George Braga Paz', role: 'CJ3', cargo: 'Assessor-chefe' }
-    ],
-    equipe: [
-      { name: 'Heitor Augusto Scarpari Costa', role: 'FC5' }, { name: 'Tiago Souza Dias', role: 'FC2' },
-      { name: 'Maria Cecília Silveira Granato', role: 'FC2' }, { name: 'Mariana Penachioni Zangirolami', role: 'FC2' },
-      { name: 'Maria Cristina Ferreira Rodrigues de Lara', role: 'FC2' }, { name: 'Mauricio Jose Roque', role: 'FC2' },
-      { name: 'Marcio Roberto Vallim', role: 'FC2' }, { name: 'Gabriela Aparecida Severino de Andrade Tavares', role: 'FC2' },
-      { name: 'José Adriano Fiori', role: 'FC2' }, { name: 'Celso de Arruda Moreira', role: 'FC2' },
-      { name: 'Joao Victor Medeiros de Lucena', role: 'FC2' }, { name: 'Eneias Cristiano Eler', role: 'FC2' }
-    ],
-    atrib: ['Despacho inicial para cálculo e cumprimento de obrigação de fazer','Liberação de valores incontroversos durante apresentação de cálculos','Controle de perícias (designação, agenda, cobrança)','Tramitação no PJeCalc','Acordo do conhecimento','Nomeação de peritos (excepcional)','Demais intercorrências até processo apto para homologação'],
-    acervo: '7.346 processos em LIQ1'
-  },
-  liq2: {
-    title: 'LIQ2 — Assessoria de Liquidação 2',
-    sub: 'Homologação e Cumprimento Espontâneo',
-    chefes: [
-      { name: 'Vanderlei Baldessin', role: 'CJ1', cargo: 'Chefe de Divisão' },
-      { name: 'Paulo Sergio Salvador', role: 'CJ3', cargo: 'Assessor-chefe' }
-    ],
-    equipe: [
-      { name: 'Cristiany Contreras', role: 'FC5' }, { name: 'Juliana Marconi Penteado Pessin', role: 'FC4' },
-      { name: 'Jailton Leite da Silva', role: 'FC4' }, { name: 'Leandro Jose Christofoletti', role: 'FC4' },
-      { name: 'Renata Fabiana Parpinelli Ishihara', role: 'FC4' }, { name: 'Daiane Carla Santos Ledo Marques', role: 'FC4' },
-      { name: 'Carolina Monteiro da Silveira', role: 'FC4' }, { name: 'Tiago Filipe Calegari', role: 'FC4' },
-      { name: 'Marcia Regina Marques de Paula', role: 'FC4' }, { name: 'Maria da Penha Alves Gomes Santos', role: 'FC4' },
-      { name: 'Rafaela Cabral Burato', role: 'FC4' }, { name: 'Marcelo de Jesus Rangel Monteiro', role: 'FC4' },
-      { name: 'Welder de Oliveira Moraes', role: 'FC4' }, { name: 'Fabiano Maiolini', role: 'FC4' },
-      { name: 'Mariana Cechinato Lorenzete', role: 'FC4' }, { name: 'Thais Furquim Soledade Neves Dela Vale', role: 'FC4' },
-      { name: 'Maria Luiza Guerra Martinelli', role: 'FC1' }
-    ],
-    atrib: ['Homologação de cálculos com liberação de valores','Processamento de incidentes e recursos','Parcelamento','Retificação de cálculos','Parecer de incidentes','Liberação de valores pós-homologação','Finalização do processo após pagamento espontâneo'],
-    acervo: '2.331 processos em LIQ2'
-  },
-  exe1: {
-    title: 'EXE1 — Assessoria de Execução I',
-    sub: 'Trâmites Iniciais · Garantia e Mandadão',
-    chefes: [
-      { name: 'Roberta Elena Agostineto Tetzlaff', role: 'CJ3', cargo: 'Assessora-chefe' },
-      { name: 'Eduardo Augusto Veloso', role: 'CJ3', cargo: 'Assessor-chefe' }
-    ],
-    equipe: [
-      { name: 'Cristiane Ciolin Setin Pedro', role: 'FC5' }, { name: 'Janet Helena Faveri', role: 'FC5' },
-      { name: 'Maria Gardinali de Lima', role: 'FC2' }, { name: 'Daniela Hertel Grassmann', role: 'FC2' },
-      { name: 'Anelise Lino de Queiroz', role: 'FC2' }, { name: 'Wallace Diego Resende', role: 'FC2' },
-      { name: 'Neusa Aparecida Asbahr Bais', role: 'FC2' }
-    ],
-    atrib: ['SISBAJUD: início da execução — relatório "Processos Vinculados a um Determinado Réu"','Concentração dos atos: agrupamento por reclamada para IDPJ, SISBAJUD e mandadão','SISBAJUD integral: art. 884 CLT, liberação, incidentes → DAM','SISBAJUD parcial: intimar, liberar, EXEPJe, mandadão, CNIB','SISBAJUD negativo: mandadão + CNIB → EXE2 como frustrada','Retorno com garantia: art. 884 CLT, incidentes → DAM ou expropriação EXE3','Retorno sem garantia: 30 dias → EXE2 ou EXE3','Cartas precatórias e classes especiais (alvará, arresto, HTE, extijU, monitório)'],
-    acervo: '5.000 processos em EXE1'
-  },
-  exe2: {
-    title: 'EXE2 — Assessoria de Execução II',
-    sub: 'Pesquisas Avançadas e Reunião de Execuções',
-    chefes: [
-      { name: 'Fabio Ajudarte Lopes', role: 'CJ3', cargo: 'Assessor-chefe' },
-      { name: 'Filipe Shinzato Colevati', role: 'CJ3', cargo: 'Assessor-chefe' }
-    ],
-    equipe: [
-      { name: 'Marcio Elias Soares Gonçalves Siqueira', role: 'FC5' }, { name: 'Juliana Fiamenghi Misse Correia', role: 'FC5' },
-      { name: 'Daniel Carlos Alves de Pilla', role: 'FC1' }, { name: 'Eline Ana Sampaio Coradi Castro', role: 'FC2' },
-      { name: 'Calefe Alexandre de Oliveira', role: 'FC2' }, { name: 'Antenor Donida Bartoli', role: 'FC2' },
-      { name: 'Sonia Cristina dos Santos Franco', role: 'FC4' }
-    ],
-    atrib: ['Pesquisas avançadas de bens: CCS, COAF, SIMBA, CAGED, INFOSEG','Inclusão de devedores localizados até garantia e trânsito','Novos devedores: grupo econômico, sócios retirantes/ocultos, fraude, IDPJ','Execução frustrada: intima exequente (30 dias), GIGS de 2 anos, sobrestamento art. 11-A CLT','Planilha compartilhada de grandes devedores','Reunião de execuções individuais'],
-    acervo: '4.932 processos em EXE2'
-  },
-  exe3: {
-    title: 'EXE3 — Assessoria de Execução III',
-    sub: 'Expropriação, Execuções Coletivas e Garimpo',
-    chefes: [
-      { name: 'Marco César de Oliveira Wan-Meyl', role: 'CJ3', cargo: 'Assessor-chefe' },
-      { name: 'Nilton Rafael de Barros Silva', role: 'CJ3', cargo: 'Assessor-chefe' }
-    ],
-    equipe: [
-      { name: 'Cristina Ceratti', role: 'FC5' },
-      { name: 'Filipe Pereira dos Santos', role: 'FC5' },
-      { name: 'Antônio Abel de Lucca Júnior', role: 'FC2' },
-      { name: 'Fernando Brait Garros', role: 'FC2' },
-      { name: 'Agnelo Welington Silveira Castro', role: 'FC2' },
-      { name: 'Thayane Criscia Souto de Oliveira', role: 'FC2' },
-      { name: 'Milton Roberto da Silva', role: 'FC2' }
-    ],
-    atrib: ['DIVEX Hasta pública — todos procedimentos de hasta','Expropriação: alienação particular e hasta pública (EXEPJE)','Carta de alienação/arrematação/adjudicação','Seção de Reunião de Execuções × DIVEX (investigação patrimonial)','Reunião de grandes devedores','Garimpo: todos os procedimentos (exceto processos físicos de VTs aglutinadas)','Execuções coletivas e unificadas'],
-    acervo: '4.416 processos em EXE3 + DIVEX'
-  },
-  exe4: {
-    title: 'EXE4 — Assessoria de Execução IV',
-    sub: 'Precatórios, Garimpo e RJ/Falência',
-    chefes: [
-      { name: 'João Gabriel da Silva Silveira', role: 'CJ3', cargo: 'Assessor-chefe' },
-      { name: 'Liliana Squarizzi Ferreira Cantarim', role: 'CJ3', cargo: 'Assessora-chefe' }
-    ],
-    equipe: [
-      { name: 'Elda Kesia de Almeida', role: 'FC5' }, { name: 'Alexandre de Brito Silva', role: 'FC5' },
-      { name: 'Regina Célia Bernardi Jorge', role: 'FC2' }, { name: 'Sueli Aparecida Binati', role: 'FC2' },
-      { name: 'Julio Cesar Cano', role: 'FC2' }, { name: 'José Luis Buratto', role: 'FC2' },
-      { name: 'Aparecida Maria Barbosa Zuqueto', role: 'FC2' }, { name: 'Marcia Helena Domenici', role: 'FC1' },
-      { name: 'Carmen Lucianita de Sene Bargas Giao', role: 'FC2' }, { name: 'Cristiane Cornelio Donega', role: 'FC5' }
-    ],
-    atrib: ['Setor de Precatórios: alinhar procedimentos com Assessoria de Precatórios, atualizar para liberação de valores','Garimpo: Depósitos judiciais e recursais','RJ/Falência: certidão de habilitação no Juízo Falimentar e Recuperação Judicial','IDPJ na fase de falência: apreciar e incluir sócios + SISBAJUD','Gestão de documentos: desarquivamento físico, e-DOC, planejamento de eliminação','Critérios para quadro de credores'],
-    acervo: '9.737 processos em EXE4'
-  },
-  cejusc: {
-    title: 'CEJUSC — Centro Judiciário de Solução de Conflitos',
-    sub: 'Mediação e Conciliação · Piracicaba e Limeira',
-    chefes: [
-      { name: 'Ana Luisa de Faria', role: 'CJ1', cargo: 'Responsável — Piracicaba' },
-      { name: 'Alexandre Francischetti', role: 'CJ1', cargo: 'Responsável — Limeira' }
-    ],
-    equipe: [
-      { name: 'Maria Jose Dainez', role: '', cargo: 'CEJUSC Piracicaba' },
-      { name: 'Silvia Raquel Alves de Oliveira', role: '', cargo: 'CEJUSC Limeira' }
-    ],
-    atrib: ['Sessões de mediação e conciliação pré-processuais e processuais','Homologação de acordos','Triagem e encaminhamento de casos aptos à autocomposição','Gestão da pauta de sessões','Articulação com magistrados coordenadores'],
-    acervo: 'Atendimento às varas da SC Piracicaba'
-  },
-  daa: {
-    title: 'DAA — Divisão de Atendimento e Administração',
-    sub: 'Atendimento ao público, protocolo e administração geral',
-    chefes: [
-      { name: 'Rogerio Zambon Canale', role: 'CJ1', cargo: 'Chefe de Divisão' },
-      { name: 'Claudir de Oliveira Junior', role: 'CJ3', cargo: 'Assessor' }
-    ],
-    equipe: [
-      { name: 'Angela Beatriz Gonçales', role: 'FC2' },
-      { name: 'Luiz Paolieri Neto', role: 'FC2' },
-      { name: 'Natalina Maria Borges Xavier', role: 'FC2' },
-      { name: 'Nilza Misael Ferreira', role: 'FC2' },
-      { name: 'Fábio Pereira da Silva', role: 'FC2' },
-      { name: 'Gabriela Suemi Iguei dos Santos', role: 'FC2' },
-      { name: 'Everton Carpinete de Oliveira', role: 'FC2' },
-      { name: 'Regiane Simoni Franco', role: 'FC2' },
-      { name: 'Reginaldo Zimbres', role: 'FC2' },
-      { name: 'Marcelo Alves Pereira', role: 'FC2' },
-      { name: 'Luis Gustavo Fernandes', role: 'FC2' },
-      { name: 'Roberto Francisco Nogueira Corsi', role: 'FC2' },
-      { name: 'Maria Lucia Ramos Buzon Silva', role: 'FC2' },
-      { name: 'Vanessa Mateus Yamaji', role: 'FC2' },
-      { name: 'Rute Vera Lucia de Oliveira', role: 'FC2' }
-    ],
-    atrib: ['Atendimento ao público presencial e remoto','Protocolo de petições e documentos','Administração geral da secretaria','Controle de expediente e correspondência','Suporte administrativo às demais assessorias','Gestão de salas de audiência e agenda'],
-    acervo: 'Setor administrativo — sem acervo processual próprio'
-  },
-  dam: {
-    title: 'DAM — Divisão de Apoio aos Magistrados',
-    sub: 'Minutas de sentença e atos pós-decisão',
-    chefes: [
-      { name: 'Rafael Serra Cardoso', role: 'CJ1', cargo: 'Chefe da Divisão' }
-    ],
-    equipe: [
-      { name: 'Fernanda Godoy D\'Avila', role: 'FC2' },
-      { name: 'Ana Paula Fernandes Mesquini', role: 'FC2' }
-    ],
-    atrib: ['Elaborar minutas de sentença dos incidentes em execução (Embargos à Execução, Impugnação à Sentença de Liquidação)','Designar servidor da LIQ para parecer de cálculos (subsidiar minuta)','Realizar atos pós-sentença (mandado, alvará, intimação)','Processar incidentes das sentenças de execução','Liberação de valores incontroversos pós-sentença','Após vencimento de prazo, devolver à assessoria de origem'],
-    acervo: '553 processos em DAM'
-  },
-  divex: {
-    title: 'DIVEX — Divisão de Execução de Piracicaba',
-    sub: 'Investigação patrimonial e hasta pública',
-    chefes: [
-      { name: 'Ana Sylvia Reis Couto Fernandes', role: 'CJ1', cargo: 'Chefe da Divisão' }
-    ],
-    equipe: [
-      { name: 'Merval Eliel Medeiros Braga', role: 'FC2' },
-      { name: 'Camila dos Santos Zanetti', role: 'FC2' }
-    ],
-    atrib: ['Hasta pública: todos os procedimentos relativos a leilões','Alienação por iniciativa particular','Seção de investigação patrimonial','Reunião de execuções: processos de grandes devedores'],
-    acervo: 'Incluído no acervo EXE3'
-  }
+ "gestao": {
+  "title": "Gestão da Secretaria Conjunta",
+  "sub": "Juízes coordenadores e direção",
+  "chefes": [
+   {
+    "name": "Erica Escarassatte",
+    "role": "",
+    "cargo": "Juíza Coordenadora"
+   },
+   {
+    "name": "Vilson Antonio Previde",
+    "role": "",
+    "cargo": "Juiz Supervisor"
+   },
+   {
+    "name": "Emanuele Pessatti Siqueira Rocha",
+    "role": "",
+    "cargo": "Juíza Supervisora"
+   }
+  ],
+  "equipe": [
+   {
+    "name": "Matheus Junqueira Harder",
+    "role": "CJ3",
+    "cargo": "Diretor da Secretaria Conjunta"
+   },
+   {
+    "name": "Rodrigo Gonçalves Dias Agostineto",
+    "role": "CJ3",
+    "cargo": "Assessor de Gestão"
+   },
+   {
+    "name": "Sisenando Gomes Calixto de Sousa",
+    "role": "FC5",
+    "cargo": "Assistente"
+   }
+  ],
+  "atrib": [],
+  "estag": []
+ },
+ "con-eq1": {
+  "title": "Conhecimento · Equipe 01",
+  "sub": "5 unidades · 17 servidores",
+  "chefes": [
+   {
+    "name": "Deise Maria Cassaniga Azevedo",
+    "role": "CJ3",
+    "cargo": "Gestor(a)"
+   }
+  ],
+  "equipe": [
+   {
+    "name": "Ana Paula d'Elia Vinhal",
+    "role": "FC5",
+    "cargo": "Assistente"
+   },
+   {
+    "name": "Sandra Regina da Conceição Amaral",
+    "role": "FC4",
+    "cargo": "Secretário(a) de audiência · 1ª VT Piracicaba"
+   },
+   {
+    "name": "Adriana Aparecida Pertile Municelli",
+    "role": "FC4",
+    "cargo": "Secretário(a) de audiência · 2ª VT Piracicaba"
+   },
+   {
+    "name": "Erika Cristina Mendes de Campos Garcia",
+    "role": "FC4",
+    "cargo": "Secretário(a) de audiência · 3ª VT Piracicaba"
+   },
+   {
+    "name": "Romilda Maria de Arruda Germano",
+    "role": "FC4",
+    "cargo": "Secretário(a) de audiência · 1ª VT Piracicaba"
+   },
+   {
+    "name": "Joseane de Menezes Conde",
+    "role": "FC5",
+    "cargo": "Secretário(a) de audiência · 2ª VT Piracicaba"
+   },
+   {
+    "name": "Celina Jacintho Pereira",
+    "role": "FC4",
+    "cargo": "Secretário(a) de audiência · 3ª VT Piracicaba"
+   },
+   {
+    "name": "Aguinaldo Junior Yamamoto Peres",
+    "role": "FC4",
+    "cargo": "Secretário(a) de audiência · Santa Bárbara d'Oeste"
+   },
+   {
+    "name": "Leandro Mac Fadden Negri",
+    "role": "FC4",
+    "cargo": "Secretário(a) de audiência · Santa Bárbara d'Oeste"
+   },
+   {
+    "name": "Daniel Carlos Alves de Pilla",
+    "role": "FC4",
+    "cargo": "Secretário(a) de audiência · Sumaré"
+   },
+   {
+    "name": "Thiago Donizete Mendanha",
+    "role": "FC4",
+    "cargo": "Secretário(a) de audiência · Sumaré"
+   },
+   {
+    "name": "Michel Aquino de Souza",
+    "role": "FC4",
+    "cargo": "Secretário(a) de audiência · Sumaré"
+   },
+   {
+    "name": "Debora Aparecida Mendes de Passos",
+    "role": "",
+    "cargo": "Apoio · Novo(a) servidor(a)"
+   },
+   {
+    "name": "Roberta Rodrigues Urbano",
+    "role": "FC2",
+    "cargo": "Apoio"
+   },
+   {
+    "name": "Isabela Freitas de Souza",
+    "role": "FC2",
+    "cargo": "Apoio"
+   },
+   {
+    "name": "Dulce Maria Vasconcellos Seixas",
+    "role": "",
+    "cargo": "Apoio"
+   }
+  ],
+  "varas": [
+   {
+    "nome": "1ª Vara do Trabalho de Piracicaba",
+    "final": "0012",
+    "gab": [
+     {
+      "mag": "Karine Vaz de Melo Mattos Abreu",
+      "sec": [
+       "Sandra Regina da Conceicao Amaral",
+       "Romilda Maria de Arruda Germano"
+      ]
+     },
+     {
+      "mag": "Vilson Antonio Previde",
+      "sec": [
+       "Sandra Regina da Conceicao Amaral",
+       "Romilda Maria de Arruda Germano"
+      ]
+     }
+    ]
+   },
+   {
+    "nome": "2ª Vara do Trabalho de Piracicaba",
+    "final": "0051",
+    "gab": [
+     {
+      "mag": "Carlos Eduardo Vianna Mendes",
+      "sec": [
+       "Adriana Aparecida Pertile Municelli",
+       "Joseane de Menezes Conde"
+      ]
+     },
+     {
+      "mag": "Eduardo Alexandre da Silva",
+      "sec": [
+       "Adriana Aparecida Pertile Municelli",
+       "Joseane de Menezes Conde"
+      ]
+     }
+    ]
+   },
+   {
+    "nome": "3ª Vara do Trabalho de Piracicaba",
+    "final": "0137",
+    "gab": [
+     {
+      "mag": "Erica Escarassatte",
+      "sec": [
+       "Erika Cristina Mendes de Campos Garcia",
+       "Celina Jacintho Pereira"
+      ]
+     },
+     {
+      "mag": "Emanuele Pessatti Siqueira Rocha",
+      "sec": [
+       "Erika Cristina Mendes de Campos Garcia",
+       "Celina Jacintho Pereira"
+      ]
+     }
+    ]
+   },
+   {
+    "nome": "Vara do Trabalho de Santa Bárbara d'Oeste",
+    "final": "0086",
+    "gab": [
+     {
+      "mag": "Cristiane Kawanaka de Pontes",
+      "sec": [
+       "Leandro Mac Fadden Negri"
+      ]
+     },
+     {
+      "mag": "Andre Luiz Menezes Azevedo Sette",
+      "sec": [
+       "Aguinaldo Junior Yamamoto Peres"
+      ]
+     }
+    ]
+   },
+   {
+    "nome": "Vara do Trabalho de Sumaré",
+    "final": "0122",
+    "gab": [
+     {
+      "mag": "Ronaldo Capelari",
+      "sec": [
+       "Thiago Donizete Mendanha"
+      ]
+     },
+     {
+      "mag": "Francina Nunes da Costa",
+      "sec": [
+       "Daniel Carlos Alves de Pilla"
+      ]
+     },
+     {
+      "mag": "Carla Gabriella Grah Sens",
+      "sec": [
+       "Michel Aquino de Souza"
+      ]
+     }
+    ]
+   }
+  ],
+  "atrib": [],
+  "estag": [
+   "Victor Hugo Bailarin",
+   "Julia Fernanda da Costa",
+   "Nicolas Jorge"
+  ]
+ },
+ "con-eq2": {
+  "title": "Conhecimento · Equipe 02",
+  "sub": "6 unidades · 18 servidores",
+  "chefes": [
+   {
+    "name": "Wellington George Braga Paz",
+    "role": "CJ3",
+    "cargo": "Gestor(a)"
+   }
+  ],
+  "equipe": [
+   {
+    "name": "Claudia Ferraz de Camargo",
+    "role": "FC5",
+    "cargo": "Assistente"
+   },
+   {
+    "name": "Claudia Maria Pastor",
+    "role": "FC4",
+    "cargo": "Secretário(a) de audiência · 1ª VT Americana"
+   },
+   {
+    "name": "Sandra Maria Segato Gazzeta",
+    "role": "FC4",
+    "cargo": "Secretário(a) de audiência · 1ª VT Americana"
+   },
+   {
+    "name": "Marina Lira da Silveira Pinto",
+    "role": "FC4",
+    "cargo": "Secretário(a) de audiência · 2ª VT Americana"
+   },
+   {
+    "name": "Rogeria Helena Aparecida Franzini Corazza",
+    "role": "FC4",
+    "cargo": "Secretário(a) de audiência · 2ª VT Americana"
+   },
+   {
+    "name": "Daniele Fernanda Stefani",
+    "role": "FC4",
+    "cargo": "Secretário(a) de audiência · Leme"
+   },
+   {
+    "name": "Dheise Monique Euphrasio",
+    "role": "FC4",
+    "cargo": "Secretário(a) de audiência · Leme"
+   },
+   {
+    "name": "Ana Claudia Rodrigues Abreu Bergonsini",
+    "role": "FC4",
+    "cargo": "Secretário(a) de audiência · São João da Boa Vista"
+   },
+   {
+    "name": "Emerson Alexandre Viola",
+    "role": "FC5",
+    "cargo": "Secretário(a) de audiência · São João da Boa Vista"
+   },
+   {
+    "name": "Tatiana Maeyama",
+    "role": "FC4",
+    "cargo": "Secretário(a) de audiência · 1ª VT Limeira"
+   },
+   {
+    "name": "Gabriel de Oliveira Silva",
+    "role": "FC4",
+    "cargo": "Secretário(a) de audiência · 1ª VT Limeira"
+   },
+   {
+    "name": "Cleilson Damasceno de Oliveira",
+    "role": "FC4",
+    "cargo": "Secretário(a) de audiência · 2ª VT Limeira"
+   },
+   {
+    "name": "Luciana Cristina Rodrigues",
+    "role": "FC4",
+    "cargo": "Secretário(a) de audiência · 2ª VT Limeira"
+   },
+   {
+    "name": "Ivi Cristina Indalecio Bueno",
+    "role": "",
+    "cargo": "Apoio"
+   },
+   {
+    "name": "Domingos Jose de Munno",
+    "role": "FC2",
+    "cargo": "Apoio"
+   },
+   {
+    "name": "Sabrina Noronha Costa Costantini",
+    "role": "",
+    "cargo": "Apoio"
+   },
+   {
+    "name": "Alessandro Costa",
+    "role": "FC1",
+    "cargo": "Apoio"
+   }
+  ],
+  "varas": [
+   {
+    "nome": "1ª Vara do Trabalho de Americana",
+    "final": "0007",
+    "gab": [
+     {
+      "mag": "Artur Ribeiro Gudwin",
+      "sec": [
+       "Sandra Maria Segato Gazzeta"
+      ]
+     },
+     {
+      "mag": "Fabio Camera Capone",
+      "sec": [
+       "Claudia Maria Pastor"
+      ]
+     }
+    ]
+   },
+   {
+    "nome": "2ª Vara do Trabalho de Americana",
+    "final": "0099",
+    "gab": [
+     {
+      "mag": "Milena Casacio Ferreira Beraldo",
+      "sec": [
+       "Marina Lira da Silveira Pinto"
+      ]
+     },
+     {
+      "mag": "Marcelo Luis de Souza Ferreira",
+      "sec": [
+       "Rogeria Helena Aparecida Franzini Corazza"
+      ]
+     }
+    ]
+   },
+   {
+    "nome": "Vara do Trabalho de Leme",
+    "final": "0134",
+    "gab": [
+     {
+      "mag": "Lady Ane de Paula Santos Della Rocca",
+      "sec": [
+       "Dheise Monique Euphrasio"
+      ]
+     },
+     {
+      "mag": "Regina Rodrigues Urbano",
+      "sec": [
+       "Daniele Fernanda Stefani"
+      ]
+     }
+    ]
+   },
+   {
+    "nome": "Vara do Trabalho de São João da Boa Vista",
+    "final": "0034",
+    "gab": [
+     {
+      "mag": "Cristiane Souza de Castro Toledo",
+      "sec": [
+       "Ana Claudia Rodrigues Abreu"
+      ]
+     },
+     {
+      "mag": "Iara Maria Rodrigues",
+      "sec": [
+       "Emerson Alexandre Viola"
+      ]
+     }
+    ]
+   },
+   {
+    "nome": "1ª Vara do Trabalho de Limeira",
+    "final": "0014",
+    "gab": [
+     {
+      "mag": "Sofia Lima Dutra",
+      "sec": [
+       "Gabriel de Oliveira Silva"
+      ]
+     },
+     {
+      "mag": "Erika de Franceschi",
+      "sec": [
+       "Tatiana Maeyama"
+      ]
+     }
+    ]
+   },
+   {
+    "nome": "2ª Vara do Trabalho de Limeira",
+    "final": "0128",
+    "gab": [
+     {
+      "mag": "Carolina Popoff Ferreira da Costa",
+      "sec": [
+       "Luciana Cristina Rodrigues",
+       "Cleilson Damasceno de Oliveira"
+      ]
+     },
+     {
+      "mag": "Ricardo Tsuioshi Fukuda Sanchez",
+      "sec": [
+       "Luciana Cristina Rodrigues",
+       "Cleilson Damasceno de Oliveira"
+      ]
+     }
+    ]
+   }
+  ],
+  "atrib": [],
+  "estag": [
+   "Augusto Aparecido Dias de Souza",
+   "Fernanda Bueno de Andrade",
+   "Estefania Faustino de Sousa"
+  ]
+ },
+ "con-eq3": {
+  "title": "Conhecimento · Equipe 03",
+  "sub": "5 unidades · 18 servidores",
+  "chefes": [
+   {
+    "name": "Silvana Marcelino Braz",
+    "role": "CJ3",
+    "cargo": "Gestor(a)"
+   }
+  ],
+  "equipe": [
+   {
+    "name": "Celio Aparecido Trombetta",
+    "role": "FC5",
+    "cargo": "Assistente"
+   },
+   {
+    "name": "Michelli Cristina Borges Sampaio",
+    "role": "FC4",
+    "cargo": "Secretário(a) de audiência · Rio Claro"
+   },
+   {
+    "name": "Naara de Lucas Barbalho",
+    "role": "FC4",
+    "cargo": "Secretário(a) de audiência · Rio Claro"
+   },
+   {
+    "name": "Cristina Ziani de Moura",
+    "role": "FC4",
+    "cargo": "Secretário(a) de audiência · Araras"
+   },
+   {
+    "name": "Maria Lúcia Alves Cavalcante",
+    "role": "FC4",
+    "cargo": "Secretário(a) de audiência · Araras"
+   },
+   {
+    "name": "Anita Bueno de Moraes Narciso",
+    "role": "FC4",
+    "cargo": "Secretário(a) de audiência · Mogi Guaçu"
+   },
+   {
+    "name": "Paula de Carvalho Ambar Lima",
+    "role": "FC4",
+    "cargo": "Secretário(a) de audiência · Mogi Guaçu"
+   },
+   {
+    "name": "Elenira de Andrade Bicalho",
+    "role": "FC4",
+    "cargo": "Secretário(a) de audiência · Hortolândia"
+   },
+   {
+    "name": "Débora Cerqueira Simao",
+    "role": "FC4",
+    "cargo": "Secretário(a) de audiência · Hortolândia"
+   },
+   {
+    "name": "Tatiana Maffeis da Cunha",
+    "role": "FC5",
+    "cargo": "Secretário(a) de audiência · BAURU - Piracicaba"
+   },
+   {
+    "name": "Luzia Danielle dos Santos Fabiano",
+    "role": "FC5",
+    "cargo": "Secretário(a) de audiência · BAURU - Americana"
+   },
+   {
+    "name": "Paula Burque Besson Boconcelo",
+    "role": "",
+    "cargo": "Secretário(a) de audiência · Bauru · Área de apoio Bauru"
+   },
+   {
+    "name": "Barbara Padovani Minholo Hoffmann",
+    "role": "FC2",
+    "cargo": "Apoio"
+   },
+   {
+    "name": "Mariangela Miranda Duarte",
+    "role": "FC2",
+    "cargo": "Apoio"
+   },
+   {
+    "name": "Rosana Sueli Britto de Jesus",
+    "role": "FC2",
+    "cargo": "Apoio"
+   },
+   {
+    "name": "Claudia Elisa Betti Pedro Bom",
+    "role": "FC2",
+    "cargo": "Apoio"
+   },
+   {
+    "name": "André Luiz Fernandes Rocha",
+    "role": "FC2",
+    "cargo": "Apoio · Rio Claro"
+   }
+  ],
+  "varas": [
+   {
+    "nome": "Vara do Trabalho de Rio Claro",
+    "final": "0010",
+    "gab": [
+     {
+      "mag": "Flavia Farias de Arruda Corseuil",
+      "sec": [
+       "Naara de Lucas Barbalho"
+      ]
+     },
+     {
+      "mag": "Erika Ferrari Zanella",
+      "sec": [
+       "Michelli Cristina Borges Sampaio"
+      ]
+     }
+    ]
+   },
+   {
+    "nome": "Vara do Trabalho de Araras",
+    "final": "0046",
+    "gab": [
+     {
+      "mag": "Andre Luiz Tavares de Castro Pereira",
+      "sec": [
+       "Cristina Ziani de Moura"
+      ]
+     },
+     {
+      "mag": "Renata Mendes Cardoso de Castro Pereira",
+      "sec": [
+       "Maria Lucia Alves Cavalcante"
+      ]
+     }
+    ]
+   },
+   {
+    "nome": "Vara do Trabalho de Mogi Guaçu",
+    "final": "0071",
+    "gab": [
+     {
+      "mag": "Luis Furian Zorzetto",
+      "sec": [
+       "Paula de Carvalho Ambar Lima"
+      ]
+     },
+     {
+      "mag": "Leticia Gouveia Antonioli",
+      "sec": [
+       "Anita Bueno de Moraes Narciso Ferreira"
+      ]
+     }
+    ]
+   },
+   {
+    "nome": "Vara do Trabalho de Hortolândia",
+    "final": "0152",
+    "gab": [
+     {
+      "mag": "Patricia Juliana Marchi Alves",
+      "sec": [
+       "Debora Cerqueira Simao"
+      ]
+     },
+     {
+      "mag": "Luciane Cristina Muraro de Freitas",
+      "sec": [
+       "Elenira de Andrade Bicalho"
+      ]
+     }
+    ]
+   },
+   {
+    "nome": "Auxílio fixo · Simetria (Bauru)",
+    "final": "",
+    "gab": [
+     {
+      "mag": "Cleverson Oliveira Alarcon Lima",
+      "sec": [
+       "Luzia Danielle dos Santos Fabiano"
+      ]
+     },
+     {
+      "mag": "Renata Nunes de Melo",
+      "sec": [
+       "Paula Burque Besson Boconcelo"
+      ]
+     },
+     {
+      "mag": "Gustavo Castro Picchi Martins",
+      "sec": [
+       "Tatiana Maffeis da Cunha"
+      ]
+     }
+    ]
+   }
+  ],
+  "atrib": [],
+  "estag": [
+   "Fernanda Rodrigues Alves Cardoso",
+   "Alessandra Lagacci"
+  ]
+ },
+ "con2": {
+  "title": "CON2 — Conhecimento",
+  "sub": "3 servidores",
+  "chefes": [],
+  "equipe": [
+   {
+    "name": "Heitor Augusto Scarpari Costa",
+    "role": "FC5",
+    "cargo": "Assistente"
+   },
+   {
+    "name": "Debora Assis de Oliveira",
+    "role": "FC2",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Aparecida de Fatima de Souza Franco",
+    "role": "FC1",
+    "cargo": "Servidor(a)"
+   }
+  ],
+  "atrib": [],
+  "estag": [
+   "Aline Depieri de Souza Duarte",
+   "Micaeli de Brito Ferreira",
+   "Polyana Gachet Ochialla",
+   "Helen Caroline Theodoro Ferreira de Lima",
+   "Sarah da Silva Pinheiro",
+   "Livia de Oliveira Gomes"
+  ]
+ },
+ "daa": {
+  "title": "DAA — Divisão de Atendimento e Administração",
+  "sub": "Atendimento ao público, protocolo e administração geral",
+  "chefes": [
+   {
+    "name": "Claudir de Oliveira Junior",
+    "role": "CJ3",
+    "cargo": "Gestor(a) · São João da Boa Vista"
+   },
+   {
+    "name": "Rogerio Zambon Canale",
+    "role": "CJ1",
+    "cargo": "Gestor(a) · Piracicaba"
+   }
+  ],
+  "equipe": [
+   {
+    "name": "Angela Beatriz Gonçales",
+    "role": "FC5",
+    "cargo": "Assistente · Piracicaba"
+   },
+   {
+    "name": "Luiz Paolieri Neto",
+    "role": "",
+    "cargo": "Servidor(a) · Piracicaba"
+   },
+   {
+    "name": "Natalina Maria Borges Xavier",
+    "role": "FC1",
+    "cargo": "Servidor(a) · 2 VT Americana"
+   },
+   {
+    "name": "Nilza Misael Ferreira",
+    "role": "FC1",
+    "cargo": "Servidor(a) · 2 VT Americana"
+   },
+   {
+    "name": "Fábio Pereira da Silva",
+    "role": "FC2",
+    "cargo": "Servidor(a) · Rio Claro"
+   },
+   {
+    "name": "Gabriela Suemi Iguei dos Santos",
+    "role": "FC2",
+    "cargo": "Servidor(a) · Araras"
+   },
+   {
+    "name": "Everton Carpinete de Oliveira",
+    "role": "FC2",
+    "cargo": "Servidor(a) · Leme · Auxílio extra ao CON (notificações)"
+   },
+   {
+    "name": "Regiane Simoni Franco",
+    "role": "FC2",
+    "cargo": "Servidor(a) · Mogi Guaçu"
+   },
+   {
+    "name": "Reginaldo Zimbres",
+    "role": "FC2",
+    "cargo": "Servidor(a) · 2ª VT Limeira"
+   },
+   {
+    "name": "Marcelo Alves Pereira",
+    "role": "FC1",
+    "cargo": "Servidor(a) · Sumaré"
+   },
+   {
+    "name": "Luis Gustavo Fernandes",
+    "role": "FC1",
+    "cargo": "Servidor(a) · Santa Bárbara d'Oeste · Auxílio extra ao CON (notificações)"
+   },
+   {
+    "name": "Roberto Francisco Nogueira Corsi",
+    "role": "FC1",
+    "cargo": "Servidor(a) · Posto São João da Boa Vista · Auxílio extra ao CON (notificações)"
+   },
+   {
+    "name": "Maria Lucia Ramos Buzon Silva",
+    "role": "FC2",
+    "cargo": "Servidor(a) · São João da Boa Vista"
+   },
+   {
+    "name": "Vanessa Mateus Yamaji",
+    "role": "FC4",
+    "cargo": "Servidor(a) · 2ª VT Limeira"
+   },
+   {
+    "name": "Rute Vera Lucia de Oliveira",
+    "role": "",
+    "cargo": "Servidor(a) · Hortolândia"
+   }
+  ],
+  "atrib": [
+   "Atendimento ao público presencial e remoto",
+   "Protocolo de petições e documentos",
+   "Administração geral da secretaria",
+   "Controle de expediente e correspondência",
+   "Suporte administrativo às demais assessorias",
+   "Gestão de salas de audiência e agenda"
+  ],
+  "estag": []
+ },
+ "liq1": {
+  "title": "LIQ1 — Assessoria de Liquidação 1",
+  "sub": "Pré-Homologação · Cálculos e perícias",
+  "chefes": [
+   {
+    "name": "Vanderlei Baldessin",
+    "role": "CJ1",
+    "cargo": "Gestor(a) de LIQ1 e LIQ2"
+   }
+  ],
+  "equipe": [
+   {
+    "name": "Rinaldo Pistolini",
+    "role": "FC5",
+    "cargo": "Assistente"
+   },
+   {
+    "name": "Tiago Souza Dias",
+    "role": "FC2",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Maria Cecília Silveira Granato",
+    "role": "FC2",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Mariana Penachioni Zangirolami",
+    "role": "FC2",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Maria Cristina Ferreira Rodrigues de Lara",
+    "role": "FC2",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Mauricio Jose Roque",
+    "role": "FC2",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Marcio Roberto Vallim",
+    "role": "FC2",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Gabriela Aparecida Severino de Andrade Tavares",
+    "role": "FC2",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Eneias Cristiano Eler",
+    "role": "FC2",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Celso de Arruda Moreira",
+    "role": "FC2",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Joao Victor Medeiros de Lucena",
+    "role": "",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Eduardo Caique Mathias",
+    "role": "",
+    "cargo": "Servidor(a) · Novo(a) servidor(a)"
+   }
+  ],
+  "atrib": [
+   "Despacho inicial para cálculo e cumprimento de obrigação de fazer",
+   "Liberação de valores incontroversos durante apresentação de cálculos",
+   "Controle de perícias (designação, agenda, cobrança)",
+   "Tramitação no PJeCalc",
+   "Acordo do conhecimento",
+   "Nomeação de peritos (excepcional)",
+   "Demais intercorrências até processo apto para homologação"
+  ],
+  "estag": [
+   "Laura Flavia Lemes Mateus de Lima",
+   "Denis Ondei Costa"
+  ]
+ },
+ "liq2": {
+  "title": "LIQ2 — Assessoria de Liquidação 2",
+  "sub": "Homologação e Cumprimento Espontâneo",
+  "chefes": [
+   {
+    "name": "Paulo Sergio Salvador",
+    "role": "CJ3",
+    "cargo": "Gestor(a) de LIQ1 e LIQ2"
+   }
+  ],
+  "equipe": [
+   {
+    "name": "Cristiany Contreras",
+    "role": "FC5",
+    "cargo": "Assistente"
+   },
+   {
+    "name": "Juliana Marconi Penteado Pessin",
+    "role": "FC4",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Jailton Leite da Silva",
+    "role": "FC4",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Leandro Jose Christofoletti",
+    "role": "FC4",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Renata Fabiana Parpinelli Ishihara",
+    "role": "FC4",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Carolina Monteiro da Silveira",
+    "role": "FC4",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Tiago Filipe Calegari",
+    "role": "FC4",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Marcia Regina Marques de Paula",
+    "role": "FC4",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Maria da Penha Alves Gomes Santos",
+    "role": "FC4",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Rafaela Cabral Burato",
+    "role": "FC4",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Marcelo de Jesus Rangel Monteiro",
+    "role": "FC4",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Welder de Oliveira Moraes",
+    "role": "FC4",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Fabiano Maiolini",
+    "role": "FC4",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Mariana Cechinato Lorenzete",
+    "role": "FC4",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Thais Furquim Soledade Neves Dela Vale",
+    "role": "FC4",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Daiane Carla Santos Ledo Marques",
+    "role": "FC4",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Maria Luiza Guerra Martinelli",
+    "role": "FC1",
+    "cargo": "Servidor(a)"
+   }
+  ],
+  "atrib": [
+   "Homologação de cálculos com liberação de valores",
+   "Processamento de incidentes e recursos",
+   "Parcelamento",
+   "Retificação de cálculos",
+   "Parecer de incidentes",
+   "Liberação de valores pós-homologação",
+   "Finalização do processo após pagamento espontâneo"
+  ],
+  "estag": [
+   "Beatriz Pasquini Garcia",
+   "Murilo Gerola"
+  ]
+ },
+ "exe1": {
+  "title": "EXE1 — Assessoria de Execução I",
+  "sub": "Trâmites Iniciais · Garantia e Mandadão",
+  "chefes": [
+   {
+    "name": "Roberta Elena Agostineto Tetzlaff",
+    "role": "CJ3",
+    "cargo": "Gestor(a)"
+   },
+   {
+    "name": "Eduardo Augusto Veloso",
+    "role": "CJ3",
+    "cargo": "Gestor(a)"
+   }
+  ],
+  "equipe": [
+   {
+    "name": "Cristiane Ciolin Setin Pedro",
+    "role": "FC5",
+    "cargo": "Assistente"
+   },
+   {
+    "name": "Janet Helena Faveri",
+    "role": "FC5",
+    "cargo": "Assistente"
+   },
+   {
+    "name": "Maria Gardinali de Lima",
+    "role": "FC2",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Daniela Hertel Grassmann",
+    "role": "FC2",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Anelise Lino de Queiroz",
+    "role": "FC2",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Wallace Diego Resende",
+    "role": "FC2",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Neusa Aparecida Asbahr Bais",
+    "role": "FC2",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Sara Ingrid Santos Souza",
+    "role": "",
+    "cargo": "Servidor(a) · Novo(a) servidor(a)"
+   }
+  ],
+  "atrib": [
+   "SISBAJUD: início da execução — relatório \"Processos Vinculados a um Determinado Réu\"",
+   "Concentração dos atos: agrupamento por reclamada para IDPJ, SISBAJUD e mandadão",
+   "SISBAJUD integral: art. 884 CLT, liberação, incidentes → DAM",
+   "SISBAJUD parcial: intimar, liberar, EXEPJe, mandadão, CNIB",
+   "SISBAJUD negativo: mandadão + CNIB → EXE2 como frustrada",
+   "Retorno com garantia: art. 884 CLT, incidentes → DAM ou expropriação EXE3",
+   "Retorno sem garantia: 30 dias → EXE2 ou EXE3",
+   "Cartas precatórias e classes especiais (alvará, arresto, HTE, extijU, monitório)"
+  ],
+  "estag": [
+   "Graziele Prado de Oliveira",
+   "Maria Luisa Ferreira Mendonça"
+  ]
+ },
+ "exe2": {
+  "title": "EXE2 — Assessoria de Execução II",
+  "sub": "Pesquisas Avançadas e Reunião de Execuções",
+  "chefes": [
+   {
+    "name": "Fabio Ajudarte Lopes",
+    "role": "CJ3",
+    "cargo": "Gestor(a)"
+   },
+   {
+    "name": "Filipe Shinzato Colevati",
+    "role": "CJ3",
+    "cargo": "Gestor(a)"
+   }
+  ],
+  "equipe": [
+   {
+    "name": "Marcio Elias Soares Gonçalves Siqueira",
+    "role": "FC5",
+    "cargo": "Assistente"
+   },
+   {
+    "name": "Juliana Fiamenghi Misse Correia",
+    "role": "FC5",
+    "cargo": "Assistente"
+   },
+   {
+    "name": "Eline Ana Sampaio Coradi Castro",
+    "role": "FC2",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Calefe Alexandre de Oliveira",
+    "role": "FC2",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Antenor Donida Bartoli",
+    "role": "FC2",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Sonia Cristina dos Santos Franco",
+    "role": "FC1",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Pedro Henrique Bisson de Moura",
+    "role": "",
+    "cargo": "Servidor(a) · Novo(a) servidor(a)"
+   }
+  ],
+  "atrib": [
+   "Pesquisas avançadas de bens: CCS, COAF, SIMBA, CAGED, INFOSEG",
+   "Inclusão de devedores localizados até garantia e trânsito",
+   "Novos devedores: grupo econômico, sócios retirantes/ocultos, fraude, IDPJ",
+   "Execução frustrada: intima exequente (30 dias), GIGS de 2 anos, sobrestamento art. 11-A CLT",
+   "Planilha compartilhada de grandes devedores",
+   "Reunião de execuções individuais"
+  ],
+  "estag": [
+   "Larissa Saldanha Bastos"
+  ]
+ },
+ "exe3": {
+  "title": "EXE3 — Assessoria de Execução III",
+  "sub": "Expropriação, Execuções Coletivas e Garimpo",
+  "chefes": [
+   {
+    "name": "Marco César de Oliveira Wan-Meyl",
+    "role": "CJ3",
+    "cargo": "Gestor(a)"
+   },
+   {
+    "name": "Nilton Rafael de Barros Silva",
+    "role": "CJ3",
+    "cargo": "Gestor(a)"
+   }
+  ],
+  "equipe": [
+   {
+    "name": "Cristina Ceratti",
+    "role": "FC5",
+    "cargo": "Assistente"
+   },
+   {
+    "name": "Filipe Pereira dos Santos",
+    "role": "FC5",
+    "cargo": "Assistente"
+   },
+   {
+    "name": "Antônio Abel de Lucca Júnior",
+    "role": "FC2",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Fernando Brait Garros",
+    "role": "FC2",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Agnelo Welington Silveira Castro",
+    "role": "FC2",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Thayane Criscia Souto de Oliveira",
+    "role": "FC2",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Milton Roberto da Silva",
+    "role": "FC2",
+    "cargo": "Servidor(a)"
+   }
+  ],
+  "atrib": [
+   "DIVEX Hasta pública — todos procedimentos de hasta",
+   "Expropriação: alienação particular e hasta pública (EXEPJE)",
+   "Carta de alienação/arrematação/adjudicação",
+   "Seção de Reunião de Execuções × DIVEX (investigação patrimonial)",
+   "Reunião de grandes devedores",
+   "Garimpo: todos os procedimentos (exceto processos físicos de VTs aglutinadas)",
+   "Execuções coletivas e unificadas"
+  ],
+  "estag": [
+   "Alisson Henrique de Oliveira",
+   "Giovanna Prazeres Martins Justo"
+  ]
+ },
+ "exe4": {
+  "title": "EXE4 — Assessoria de Execução IV",
+  "sub": "Precatórios, Garimpo e RJ/Falência",
+  "chefes": [
+   {
+    "name": "Joao Gabriel da Silva Silveira",
+    "role": "CJ3",
+    "cargo": "Gestor(a)"
+   },
+   {
+    "name": "Liliana Squarizzi Ferreira Cantarim",
+    "role": "CJ3",
+    "cargo": "Gestor(a)"
+   }
+  ],
+  "equipe": [
+   {
+    "name": "Elda Kesia de Almeida",
+    "role": "FC5",
+    "cargo": "Assistente"
+   },
+   {
+    "name": "Alexandre de Brito Silva",
+    "role": "FC5",
+    "cargo": "Assistente"
+   },
+   {
+    "name": "Regina Célia Bernardi Jorge",
+    "role": "FC2",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Sueli Aparecida Binati",
+    "role": "FC2",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Julio Cesar Cano",
+    "role": "FC2",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "José Luis Buratto",
+    "role": "FC2",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Aparecida Maria Barbosa Zuqueto",
+    "role": "FC2",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Marcia Helena Domenici",
+    "role": "",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Carmen Lucianita de Sene Bargas Giao",
+    "role": "FC2",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Cristiane Cornelio Donega",
+    "role": "FC2",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "José Adriano Fiori",
+    "role": "FC2",
+    "cargo": "Servidor(a)"
+   }
+  ],
+  "atrib": [
+   "Setor de Precatórios: alinhar procedimentos com Assessoria de Precatórios, atualizar para liberação de valores",
+   "Garimpo: Depósitos judiciais e recursais",
+   "RJ/Falência: certidão de habilitação no Juízo Falimentar e Recuperação Judicial",
+   "IDPJ na fase de falência: apreciar e incluir sócios + SISBAJUD",
+   "Gestão de documentos: desarquivamento físico, e-DOC, planejamento de eliminação",
+   "Critérios para quadro de credores"
+  ],
+  "estag": []
+ },
+ "divex": {
+  "title": "DIVEX — Divisão de Execução de Piracicaba",
+  "sub": "Investigação patrimonial e hasta pública",
+  "chefes": [
+   {
+    "name": "Ana Sylvia Reis Couto Fernandes",
+    "role": "CJ1",
+    "cargo": "Gestor(a)"
+   }
+  ],
+  "equipe": [
+   {
+    "name": "Merval Eliel Medeiros Braga",
+    "role": "FC2",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Camila dos Santos Zanetti",
+    "role": "FC2",
+    "cargo": "Servidor(a)"
+   }
+  ],
+  "atrib": [
+   "Hasta pública: todos os procedimentos relativos a leilões",
+   "Alienação por iniciativa particular",
+   "Seção de investigação patrimonial",
+   "Reunião de execuções: processos de grandes devedores"
+  ],
+  "estag": []
+ },
+ "dam": {
+  "title": "DAM — Divisão de Apoio aos Magistrados",
+  "sub": "Incidentes da execução e atos pós-sentença",
+  "chefes": [
+   {
+    "name": "Rafael Serra Cardoso",
+    "role": "CJ1",
+    "cargo": "Gestor(a)"
+   }
+  ],
+  "equipe": [
+   {
+    "name": "Fernanda Godoy D'Avila",
+    "role": "",
+    "cargo": "Servidor(a)"
+   },
+   {
+    "name": "Ana Paula Fernandes Mesquini",
+    "role": "FC2",
+    "cargo": "Servidor(a)"
+   }
+  ],
+  "atrib": [
+   "Elaborar minutas de sentença dos incidentes em execução (Embargos à Execução, Impugnação à Sentença de Liquidação)",
+   "Designar servidor da LIQ para parecer de cálculos (subsidiar minuta)",
+   "Realizar atos pós-sentença (mandado, alvará, intimação)",
+   "Processar incidentes das sentenças de execução",
+   "Liberação de valores incontroversos pós-sentença",
+   "Após vencimento de prazo, devolver à assessoria de origem"
+  ],
+  "estag": []
+ },
+ "cejusc": {
+  "title": "CEJUSC — Centro Judiciário de Solução de Conflitos",
+  "sub": "Mediação e Conciliação · Piracicaba e Limeira",
+  "chefes": [
+   {
+    "name": "Ana Luisa de Faria",
+    "role": "CJ1",
+    "cargo": "Gestor(a) · CEJUSC Piracicaba"
+   },
+   {
+    "name": "Alexandre Francischetti",
+    "role": "CJ1",
+    "cargo": "Gestor(a) · CEJUSC Limeira"
+   }
+  ],
+  "equipe": [
+   {
+    "name": "Maria Jose Dainez",
+    "role": "FC2",
+    "cargo": "Servidor(a) · CEJUSC Piracicaba"
+   },
+   {
+    "name": "Silvia Raquel Alves de Oliveira",
+    "role": "FC1",
+    "cargo": "Servidor(a) · CEJUSC Limeira"
+   }
+  ],
+  "atrib": [
+   "Sessões de mediação e conciliação pré-processuais e processuais",
+   "Homologação de acordos",
+   "Triagem e encaminhamento de casos aptos à autocomposição",
+   "Gestão da pauta de sessões",
+   "Articulação com magistrados coordenadores"
+  ],
+  "estag": [
+   "Guilherme Chacur",
+   "Karolyne Batistella da Costa Silva",
+   "Susy da Silva Ribeiro"
+  ]
+ },
+ "ojs": {
+  "title": "Oficiais de Justiça",
+  "sub": "27 oficiais distribuídos por 11 cidades",
+  "chefes": [],
+  "equipe": [
+   {
+    "name": "André Luis Bahia Rodrigues",
+    "role": "OJ",
+    "cidade": "Piracicaba"
+   },
+   {
+    "name": "Cláudia Machado Sendin Boscolo",
+    "role": "OJ",
+    "cidade": "Piracicaba"
+   },
+   {
+    "name": "Djalma Batista de Oliveira",
+    "role": "OJ",
+    "cidade": "Piracicaba"
+   },
+   {
+    "name": "Nádia Maria Segatto Agostinho",
+    "role": "OJ",
+    "cidade": "Piracicaba"
+   },
+   {
+    "name": "Pedro Andrade de Albuquerque Pereira",
+    "role": "OJ",
+    "cidade": "Piracicaba"
+   },
+   {
+    "name": "Silvia Machado Sendin Merce",
+    "role": "OJ",
+    "cidade": "Piracicaba"
+   },
+   {
+    "name": "Lilian Barreto Rodrigues Queiroz",
+    "role": "OJ",
+    "cidade": "Americana"
+   },
+   {
+    "name": "Priscila de Cássia Vieira",
+    "role": "OJ",
+    "cidade": "Americana"
+   },
+   {
+    "name": "Fernanda Gonçalves Amaral Lapa",
+    "role": "OJ",
+    "cidade": "Americana"
+   },
+   {
+    "name": "Caio Togni de Carvalho",
+    "role": "OJ",
+    "cidade": "Mogi Guaçu"
+   },
+   {
+    "name": "Maria Stela Rossati",
+    "role": "OJ",
+    "cidade": "Mogi Guaçu"
+   },
+   {
+    "name": "Renato Francisco Normandia Moreira",
+    "role": "OJ",
+    "cidade": "Leme"
+   },
+   {
+    "name": "Fabricio Lima Pereira",
+    "role": "OJ",
+    "cidade": "Leme"
+   },
+   {
+    "name": "Luis Cesar Duarte Prinzo",
+    "role": "OJ",
+    "cidade": "Araras"
+   },
+   {
+    "name": "Igor Duarte de Alvarenga",
+    "role": "OJ",
+    "cidade": "Araras"
+   },
+   {
+    "name": "Renato Fernandes de Oliveira",
+    "role": "OJ",
+    "cidade": "Rio Claro"
+   },
+   {
+    "name": "Bruno Flores Lima",
+    "role": "OJ",
+    "cidade": "Rio Claro"
+   },
+   {
+    "name": "Luciano Henrique Colozza",
+    "role": "OJ",
+    "cidade": "São João da Boa Vista"
+   },
+   {
+    "name": "Marcos Gustavo de Oliveira",
+    "role": "OJ",
+    "cidade": "São João da Boa Vista"
+   },
+   {
+    "name": "Caio Flavio Serette",
+    "role": "OJ",
+    "cidade": "Hortolândia"
+   },
+   {
+    "name": "Cristiane Castilho Mouco",
+    "role": "OJ",
+    "cidade": "Hortolândia"
+   },
+   {
+    "name": "Carlos Eduardo Rivero Araujo Silva",
+    "role": "OJ",
+    "cidade": "Santa Bárbara d'Oeste"
+   },
+   {
+    "name": "Luis Vicente Dondelli",
+    "role": "OJ",
+    "cidade": "Santa Bárbara d'Oeste"
+   },
+   {
+    "name": "Lucas de Souza Pinto",
+    "role": "OJ",
+    "cidade": "Sumaré"
+   },
+   {
+    "name": "Alexandre Terra Peres Donato Santiago",
+    "role": "OJ",
+    "cidade": "Limeira"
+   },
+   {
+    "name": "Milena Rosado da Costa",
+    "role": "OJ",
+    "cidade": "Limeira"
+   },
+   {
+    "name": "Silverio Dias Araujo",
+    "role": "OJ",
+    "cidade": "Limeira"
+   }
+  ],
+  "atrib": [
+   "Cumprimento de mandados judiciais",
+   "Diligências externas nas respectivas comarcas",
+   "Citações, intimações e notificações pessoais",
+   "Penhoras, arrestos e demais constrições"
+  ],
+  "estag": []
+ }
 };
 
 const badgeClass = r => {
@@ -3035,25 +4295,43 @@ function openOJ(id) {
   }
 
   if (d.chefes.length > 0) {
-    html += `<div class="detail-section"><h4>Assessores Responsáveis</h4><div class="team-grid">`;
+    html += `<div class="detail-section"><h4>${id === 'gestao' ? 'Juízes Coordenadores' : 'Gestores(as)'}</h4><div class="team-grid">`;
     d.chefes.forEach(c => {
-      html += `<div class="team-card"><div class="tc-name">${c.name}</div><div class="tc-role"><span class="badge ${badgeClass(c.role)}">${c.role}</span> ${c.cargo}</div></div>`;
+      html += `<div class="team-card"><div class="tc-name">${c.name}</div><div class="tc-role">${c.role ? `<span class="badge ${badgeClass(c.role)}">${c.role}</span> ` : ''}${c.cargo}</div></div>`;
     });
     html += `</div></div>`;
   }
 
-  html += `<div class="detail-section"><h4>Equipe (${d.equipe.length} servidores)</h4><div class="team-grid">`;
+  if (d.varas) {
+    html += `<div class="detail-section"><h4>Unidades atendidas (${d.varas.length})</h4><div class="vara-list">`;
+    d.varas.forEach(v => {
+      html += `<div class="vara-card"><div class="vara-head"><span>${v.nome}</span>${v.final ? `<span class="vara-final">Final ${v.final}</span>` : ''}</div>`;
+      v.gab.forEach(g => {
+        html += `<div class="vara-gab"><div class="vg-mag">⚖️ ${g.mag}</div><div class="vg-sec">${g.sec.length ? g.sec.join(' · ') : '<span style="opacity:.6">secretaria compartilhada / sem indicação</span>'}</div></div>`;
+      });
+      html += `</div>`;
+    });
+    html += `</div></div>`;
+  }
+
+  html += `<div class="detail-section"><h4>${id === 'gestao' ? 'Direção' : `Equipe (${d.equipe.length} servidores)`}</h4><div class="team-grid">`;
   d.equipe.forEach(e => {
-    const isCJ = e.role && e.role.startsWith('CJ');
-    const badge = isCJ ? `<span class="badge ${badgeClass(e.role)}">${e.role}</span> ` : '';
+    const badge = e.role ? `<span class="badge ${badgeClass(e.role)}">${e.role}</span> ` : '';
     html += `<div class="team-card"><div class="tc-name">${e.name}</div><div class="tc-role">${badge}${e.cargo || ''}</div></div>`;
   });
   html += `</div></div>`;
 
-  html += `<div class="detail-section"><h4>Atribuições</h4><ul class="atrib-list">`;
-  d.atrib.forEach(a => { html += `<li>${a}</li>`; });
-  html += `</ul></div>`;
+  if (d.estag && d.estag.length) {
+    html += `<div class="detail-section"><h4>Estagiários (${d.estag.length})</h4><div class="team-grid">`;
+    d.estag.forEach(n => { html += `<div class="team-card"><div class="tc-name">${n}</div><div class="tc-role">🎓 Estagiário(a)</div></div>`; });
+    html += `</div></div>`;
+  }
 
+  if (d.atrib.length) {
+    html += `<div class="detail-section"><h4>Atribuições</h4><ul class="atrib-list">`;
+    d.atrib.forEach(a => { html += `<li>${a}</li>`; });
+    html += `</ul></div>`;
+  }
 
   document.getElementById('modal-body').innerHTML = html;
   document.getElementById('oj-modal').classList.add('open');
@@ -3071,7 +4349,9 @@ function showSection(id) {
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
   document.getElementById('section-'+id).classList.add('active');
   document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-  document.getElementById('nav-'+id).classList.add('active');
+  const nav = document.getElementById('nav-'+id);
+  if (nav) nav.classList.add('active');
+  if (id !== 'unidade' && location.hash.startsWith('#unidade/')) history.replaceState(null, '', location.pathname);
   window.scrollTo({ top: 0, behavior: 'smooth' });
   return false;
 }
@@ -3140,5 +4420,122 @@ function filterEstagiarios(val) {
     else if (dias <= 60) b.classList.add('est-alerta');
   });
 })();
+
+/* ===== página da unidade ===== */
+const UNIT_ORDER = ['gestao','daa','cejusc','dam','con-eq1','con-eq2','con-eq3','con2','liq1','liq2','exe1','exe2','exe3','exe4','divex','ojs'];
+const UNIT_SHORT = {gestao:'Gestão',daa:'DAA',cejusc:'CEJUSC',dam:'DAM','con-eq1':'CON 01','con-eq2':'CON 02','con-eq3':'CON 03',con2:'CON2',liq1:'LIQ1',liq2:'LIQ2',exe1:'EXE1',exe2:'EXE2',exe3:'EXE3',exe4:'EXE4',divex:'DIVEX',ojs:'OJs'};
+const UNIT_COLOR = {gestao:'var(--gold)',daa:'var(--gold-light)',cejusc:'var(--gold)',dam:'var(--accent-dam)',liq1:'var(--accent-liq)',liq2:'var(--accent-liq)',ojs:'var(--gold-light)'};
+/* Manuais publicados para todos: edite esta lista (ou o arquivo manuais.json do repositório). */
+const MANUAIS_PADRAO = {
+  'con-eq1': [{t:'Guia de Processamento do Recurso Ordinário', u:'guia-recurso-ordinario.html', i:'⚖️'}],
+  'con-eq2': [{t:'Guia de Processamento do Recurso Ordinário', u:'guia-recurso-ordinario.html', i:'⚖️'}],
+  'con-eq3': [{t:'Guia de Processamento do Recurso Ordinário', u:'guia-recurso-ordinario.html', i:'⚖️'}],
+  'con2':    [{t:'Guia de Processamento do Recurso Ordinário', u:'guia-recurso-ordinario.html', i:'⚖️'}]
+};
+let MANUAIS_REPO = {};
+fetch('manuais.json', {cache:'no-store'}).then(r => r.ok ? r.json() : {}).then(j => { MANUAIS_REPO = j || {}; if (currentUnit) renderManuais(); }).catch(() => {});
+const MAN_KEY = 'sc-pira-manuais-v1';
+let currentUnit = null;
+const escH = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const initials = n => n.replace(/\(.*?\)/g,'').split(/\s+/).filter(w => w.length > 2).map(w => w[0]).slice(0,2).join('').toUpperCase();
+function localMan() { try { return JSON.parse(localStorage.getItem(MAN_KEY) || '{}') || {}; } catch (e) { return {}; } }
+function saveLocalMan(o) { try { localStorage.setItem(MAN_KEY, JSON.stringify(o)); return true; } catch (e) { return false; } }
+
+function personCard(p, lead) {
+  const role = p.role && p.role !== 'OJ' ? `<span class="badge ${badgeClass(p.role)}">${escH(p.role)}</span>` : '';
+  const sub = p.cargo || (p.cidade ? 'Oficial(a) de Justiça · ' + p.cidade : '');
+  return `<div class="person${lead ? ' lead' : ''}" data-s="${escH((p.name + ' ' + sub).toLowerCase())}"><div class="av">${initials(p.name)}</div><div><div class="pn">${escH(p.name)}</div><div class="pr">${role}${escH(sub)}</div></div></div>`;
+}
+
+function openUnit(id, push = true) {
+  const d = ojData[id];
+  if (!d) return false;
+  currentUnit = id;
+  if (push && location.hash !== '#unidade/' + id) history.pushState(null, '', '#unidade/' + id);
+  const color = UNIT_COLOR[id] || (id.startsWith('con') ? 'var(--accent-con)' : 'var(--accent-exe)');
+  document.getElementById('unit-nav').innerHTML = UNIT_ORDER.map(k => `<a href="#unidade/${k}" class="${k === id ? 'on' : ''}" onclick="return openUnit('${k}')">${UNIT_SHORT[k]}</a>`).join('');
+  const nEst = (d.estag || []).length, nSrv = d.chefes.length + d.equipe.length;
+  const hero = document.getElementById('unit-hero');
+  hero.style.setProperty('--tc', color);
+  hero.innerHTML = `<h2>${escH(d.title)}</h2><p>${escH(d.sub)}</p><div class="unit-stats"><span>👥 ${id === 'gestao' ? d.equipe.length + ' na direção' : nSrv + (id === 'ojs' ? ' oficiais' : ' servidores')}</span>${nEst ? `<span>🎓 ${nEst} estagiários</span>` : ''}${d.varas ? `<span>⚖️ ${d.varas.length} unidades atendidas</span>` : ''}</div>`;
+
+  let m = '';
+  if (d.chefes.length) {
+    m += `<div class="unit-card"><h4>${id === 'gestao' ? 'Juízes coordenadores' : 'Gestores(as)'}</h4><div class="person-grid">${d.chefes.map(p => personCard(p, true)).join('')}</div></div>`;
+  }
+  if (d.varas) {
+    m += `<div class="unit-card"><h4>Varas, magistrados e secretários de audiência</h4><div class="vara-list">` + d.varas.map(v =>
+      `<div class="vara-card"><div class="vara-head"><span>${escH(v.nome)}</span>${v.final ? `<span class="vara-final">Final ${v.final}</span>` : ''}</div>` +
+      v.gab.map(g => `<div class="vara-gab"><div class="vg-mag">⚖️ ${escH(g.mag)}</div><div class="vg-sec">${g.sec.length ? escH(g.sec.join(' · ')) : '<span style="opacity:.6">secretaria compartilhada</span>'}</div></div>`).join('') + `</div>`).join('') + `</div></div>`;
+  }
+  if (d.equipe.length) {
+    let grid;
+    if (id === 'ojs') {
+      const by = {}; d.equipe.forEach(e => (by[e.cidade] = by[e.cidade] || []).push(e));
+      grid = Object.entries(by).map(([c, l]) => `<div style="margin:6px 0 10px"><div style="font-weight:600;color:var(--navy);margin-bottom:6px">${escH(c)} <span style="color:var(--text-muted);font-weight:400">(${l.length})</span></div><div class="person-grid">${l.map(p => personCard(p)).join('')}</div></div>`).join('');
+    } else grid = `<div class="person-grid">${d.equipe.map(p => personCard(p)).join('')}</div>`;
+    m += `<div class="unit-card"><h4>${id === 'gestao' ? 'Direção' : 'Servidores (' + d.equipe.length + ')'}</h4>${d.equipe.length > 8 ? '<input class="unit-search" type="search" placeholder="Buscar nesta unidade…" oninput="filterUnit(this)">' : ''}${grid}</div>`;
+  }
+  if (nEst) {
+    m += `<div class="unit-card"><h4>Estagiários (${nEst})</h4><div class="person-grid">${d.estag.map(n => personCard({name: n, cargo: 'Estagiário(a)'})).join('')}</div></div>`;
+  }
+  if (d.atrib && d.atrib.length) {
+    m += `<div class="unit-card"><h4>Atribuições</h4><ul class="atrib-list">${d.atrib.map(a => `<li>${escH(a)}</li>`).join('')}</ul></div>`;
+  }
+  document.getElementById('unit-main').innerHTML = m;
+  renderManuais();
+  showSection('unidade');
+  const sec = document.getElementById('section-unidade');
+  setTimeout(() => window.scrollTo({ top: sec.getBoundingClientRect().top + window.scrollY - 120, behavior: 'auto' }), 0);
+  return false;
+}
+
+function filterUnit(inp) {
+  const q = inp.value.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+  inp.parentElement.querySelectorAll('.person').forEach(p => {
+    p.style.display = p.dataset.s.normalize('NFD').replace(/[̀-ͯ]/g, '').includes(q) ? '' : 'none';
+  });
+}
+
+function renderManuais() {
+  const id = currentUnit;
+  const shared = [...(MANUAIS_PADRAO[id] || []), ...(MANUAIS_REPO[id] || [])];
+  const mine = localMan()[id] || [];
+  const item = (x, i, own) => `<div class="man-item"><span class="mi-ic">${escH(x.i || '📘')}</span><a class="mi-t" href="${escH(x.u)}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">${escH(x.t)}${own ? '<div class="mi-tag">salvo neste navegador</div>' : ''}</a>${own ? `<button type="button" title="Remover" onclick="delManual(${i})">✕</button>` : ''}</div>`;
+  const html = shared.map(x => item(x)).join('') + mine.map((x, i) => item(x, i, true)).join('');
+  document.getElementById('man-list').innerHTML = html || '<div class="man-empty">Nenhum manual cadastrado para esta unidade ainda.</div>';
+}
+
+function addManual(ev) {
+  ev.preventDefault();
+  const t = document.getElementById('man-title').value.trim(), u = document.getElementById('man-url').value.trim(), i = document.getElementById('man-type').value;
+  if (!t || !u) return false;
+  const all = localMan(); (all[currentUnit] = all[currentUnit] || []).push({t, u, i});
+  const ok = saveLocalMan(all);
+  document.getElementById('man-form').reset();
+  document.getElementById('man-msg').textContent = ok ? 'Manual adicionado.' : 'Não foi possível salvar neste navegador.';
+  renderManuais();
+  return false;
+}
+function delManual(i) {
+  const all = localMan(); (all[currentUnit] || []).splice(i, 1); saveLocalMan(all); renderManuais();
+}
+function copyManuais() {
+  const merged = JSON.parse(JSON.stringify(MANUAIS_REPO));
+  Object.entries(localMan()).forEach(([k, l]) => { merged[k] = [...(merged[k] || []), ...l]; });
+  const txt = JSON.stringify(merged, null, 2);
+  const msg = document.getElementById('man-msg');
+  const done = () => { msg.textContent = 'Copiado. Cole no arquivo manuais.json do GitHub e salve.'; };
+  try { navigator.clipboard.writeText(txt).then(done, () => { prompt('Copie o conteúdo abaixo:', txt); }); } catch (e) { prompt('Copie o conteúdo abaixo:', txt); }
+  return false;
+}
+function backToOrg() { showSection('organograma'); return false; }
+function route() {
+  const m = location.hash.match(/^#unidade\/([\w-]+)/);
+  if (m && ojData[m[1]]) openUnit(m[1], false);
+  else if (document.getElementById('section-unidade').classList.contains('active')) showSection('organograma');
+}
+window.addEventListener('popstate', route);
+route();
 </script>
 </body>
