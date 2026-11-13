@@ -1015,6 +1015,15 @@ nav {
 .norm-btn:hover { background: var(--navy-soft); }
 .norm-soon { display: inline-block; font-size: 14px; padding: 4px 12px; border-radius: 99px; background: var(--gold-pale); color: #7a5c12; }
 @media (max-width: 560px) { .norm-card { grid-template-columns: 1fr; } .norm-num { grid-auto-flow: column; gap: 8px; justify-content: start; padding: 8px 14px; } }
+
+.hero-staff { padding: 12px 18px 16px; }
+.hero-staff .hs-title { font-size: 15px; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+.hero-staff .hs-row { display: flex; gap: 20px; }
+.hero-staff .hs-row > div { min-width: 0; }
+.hero-staff .label { font-size: 15px; }
+.hero-inner { flex-wrap: wrap; }
+.hero-left { flex: 1 1 420px; }
+@media (max-width: 560px) { .hero-staff { width: 100%; } .hero-staff .hs-row { gap: 12px; justify-content: space-between; } .hero-staff .label { font-size: 12px; } .hero-staff .num { font-size: 32px; } }
 </style>
 </head>
 <body>
@@ -1049,16 +1058,20 @@ nav {
   <div class="hero-inner">
     <div class="hero-left">
       <h1>Portal <em>Interno</em><br>Secretaria Conjunta</h1>
-      <p>Piracicaba, Americana, Araras, Leme, Rio Claro, Mogi Guaçu, Sumaré, Hortolândia, São João da Boa Vista, Limeira, Santa Bárbara d'Oeste — 15 unidades, 158 servidores.</p>
+      <p>Piracicaba, Americana, Araras, Leme, Rio Claro, Mogi Guaçu, Sumaré, Hortolândia, São João da Boa Vista, Limeira, Santa Bárbara d'Oeste — 15 unidades.</p>
     </div>
     <div class="hero-stats">
       <div class="hero-stat">
         <div class="num">122.914</div>
         <div class="label">Acervo total</div>
       </div>
-      <div class="hero-stat">
-        <div class="num">158</div>
-        <div class="label">Servidores</div>
+      <div class="hero-stat hero-staff">
+        <div class="hs-title">Quadro de pessoal</div>
+        <div class="hs-row">
+          <div><div class="num">185</div><div class="label">Servidores</div></div>
+          <div><div class="num">26</div><div class="label">Estagiários</div></div>
+          <div><div class="num">27</div><div class="label">Oficiais de Justiça</div></div>
+        </div>
       </div>
       <div class="hero-stat">
         <div class="num">15</div>
@@ -1284,21 +1297,43 @@ nav {
       </div>
     </article>
 
-    <article class="norm-card pend">
+    <article class="norm-card">
       <div class="norm-num">OS<br><b>01</b><small>2026</small></div>
       <div class="norm-body">
-        <h3>Ordem de Serviço nº 01/2026</h3>
-        <p class="norm-em">Norma base de procedimentos da Secretaria Conjunta, alterada pela OS nº 03/2026.</p>
-        <span class="norm-soon">Documento será disponibilizado em breve</span>
+        <h3>Ordem de Serviço nº 01/2026 — Atos Ordinatórios</h3>
+        <p class="norm-meta">Piracicaba, abril de 2026 · com as alterações da OS nº 03/2026 · 43 artigos</p>
+        <p class="norm-em">Lista os atos sem conteúdo decisório que os servidores podem praticar sem prévio despacho judicial, nas fases de conhecimento, liquidação e execução (art. 93, XIV, da CF e arts. 152, VI, e 203, § 4º, do CPC).</p>
+        <details class="norm-det">
+          <summary>Pontos principais</summary>
+          <ul>
+            <li><b>Cap. I – Conhecimento:</b> comunicações, notificações e intimações (inclusive cartas precatórias); autuação, registro e movimentação; instrução e acordo; encerramento da fase.</li>
+            <li><b>Cap. II – Liquidação:</b> cálculos e homologação; providências preliminares à execução.</li>
+            <li><b>Cap. III – Execução:</b> constrições e penhora; requisições de pagamento e Fazenda Pública; saneamento processual e encerramento.</li>
+            <li><b>Cap. IV – Disposições finais:</b> casos omissos vão à coordenação, e havendo dúvida fundada o processo pode ir à conclusão. A OS não substitui despachos com conteúdo decisório.</li>
+            <li><b>Acréscimos da OS nº 03/2026:</b> art. 12-A (designação de audiência sem minuta de despacho) e arts. 35-A a 35-D (SISBAJUD e certidões dos Oficiais de Justiça).</li>
+          </ul>
+        </details>
+        <a class="norm-btn" href="normativos/os-01-2026-atos-ordinatorios.pdf" target="_blank" rel="noopener">Abrir PDF ↗</a>
       </div>
     </article>
 
-    <article class="norm-card pend">
+    <article class="norm-card">
       <div class="norm-num">OS<br><b>02</b><small>2026</small></div>
       <div class="norm-body">
-        <h3>Ordem de Serviço nº 02/2026</h3>
-        <p class="norm-em">&nbsp;</p>
-        <span class="norm-soon">Documento será disponibilizado em breve</span>
+        <h3>Ordem de Serviço nº 02/2026 — Pauta de Audiências e Secretários(as)</h3>
+        <p class="norm-meta">Piracicaba, 17 de abril de 2026</p>
+        <p class="norm-em">Orientações sobre pauta de audiências, carga horária, mobilidade e vedação de compensações informais com Secretários(as) de Audiência.</p>
+        <details class="norm-det">
+          <summary>Pontos principais</summary>
+          <ul>
+            <li><b>Vínculo:</b> os(as) Secretários(as) de Audiência são vinculados(as) à Secretaria Conjunta, não a gabinetes. Escala, substituição e movimentação passam pela Secretaria.</li>
+            <li><b>Carga horária:</b> jornada de 7 horas. A pauta deve respeitar esse limite, e excessos devem ser avisados com antecedência para apoio ou redistribuição.</li>
+            <li><b>Compensações:</b> acordos e compensação de horas são competência exclusiva da Secretaria Conjunta, sem tratativas individuais entre magistrado e servidor(a).</li>
+            <li><b>Processos fora de pauta:</b> força-tarefa para incluir cerca de 5.500 processos em pauta.</li>
+            <li><b>Monitoramento:</b> planilha semanal, com níveis por quantidade de processos sem audiência: abaixo de 100 sob controle, de 100 a 200 em atenção e acima de 200 com atuação imediata da coordenação.</li>
+          </ul>
+        </details>
+        <a class="norm-btn" href="normativos/os-02-2026-pauta-de-audiencias.pdf" target="_blank" rel="noopener">Abrir PDF ↗</a>
       </div>
     </article>
 
