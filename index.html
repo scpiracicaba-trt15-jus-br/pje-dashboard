@@ -1264,6 +1264,15 @@ nav {
   <div class="norm-list">
 
     <article class="norm-card pend">
+      <div class="norm-num">OS<br><b>01</b><small>2025</small></div>
+      <div class="norm-body">
+        <h3>Ordem de Serviço nº 01/2025 — Oficiais de Justiça</h3>
+        <p class="norm-em">Parametrização da atuação dos Oficiais de Justiça.</p>
+        <span class="norm-soon">Documento será disponibilizado em breve</span>
+      </div>
+    </article>
+
+    <article class="norm-card pend">
       <div class="norm-num">OS<br><b>01</b><small>2026</small></div>
       <div class="norm-body">
         <h3>Ordem de Serviço nº 01/2026</h3>
@@ -2396,6 +2405,13 @@ nav {
     <h2 style="font-size:17px">Guias de capacitação</h2>
   </div>
   <div class="links-grid">
+    <a class="link-card" href="guia-execucao-exe1.html" target="_blank" rel="noopener">
+      <div class="lc-icon">📘</div>
+      <div>
+        <div class="lc-title">Guia da Execução — EXE1</div>
+        <div class="lc-desc">Trâmites iniciais da execução</div>
+      </div>
+    </a>
     <a class="link-card" href="guia-recurso-ordinario.html" target="_blank" rel="noopener">
       <div class="lc-icon">⚖️</div>
       <div>
@@ -4501,7 +4517,8 @@ const MANUAIS_PADRAO = {
   'con-eq1': [{t:'Guia de Processamento do Recurso Ordinário', u:'guia-recurso-ordinario.html', i:'⚖️'}],
   'con-eq2': [{t:'Guia de Processamento do Recurso Ordinário', u:'guia-recurso-ordinario.html', i:'⚖️'}],
   'con-eq3': [{t:'Guia de Processamento do Recurso Ordinário', u:'guia-recurso-ordinario.html', i:'⚖️'}],
-  'con2':    [{t:'Guia de Processamento do Recurso Ordinário', u:'guia-recurso-ordinario.html', i:'⚖️'}]
+  'con2':    [{t:'Guia de Processamento do Recurso Ordinário', u:'guia-recurso-ordinario.html', i:'⚖️'}],
+  'exe1':    [{t:'Guia da Execução — EXE1', u:'guia-execucao-exe1.html', i:'📘'}]
 };
 let MANUAIS_REPO = {};
 fetch('manuais.json', {cache:'no-store'}).then(r => r.ok ? r.json() : {}).then(j => { MANUAIS_REPO = j || {}; if (currentUnit) renderManuais(); }).catch(() => {});
