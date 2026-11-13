@@ -1,0 +1,6 @@
+{
+  "name": "estatisticas-sc-pipeline",
+  "private": true,
+  "description": "Gera o documento Word das estatísticas das Secretarias Conjuntas do TRT-15",
+  "dependencies": { "docx": "9.5.1" }
+}

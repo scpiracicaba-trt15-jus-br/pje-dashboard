@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estatísticas do 1º Grau — SC Piracicaba</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{
+  --navy:#0a1628;--navy-mid:#122240;--navy-soft:#1b3560;--gold:#c9a84c;--gold-light:#e8c97a;--gold-pale:#f5e8c4;
+  --cream:#faf7f0;--white:#fff;--text:#0a1628;--text-mid:#2d4470;--muted:#5e7099;--border:rgba(10,22,40,.12);
+  --hl:#fbf1d6;--up:#2e7d5e;--down:#b23b3b;--radius:8px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);line-height:1.5}
+nav{background:var(--navy);border-bottom:2px solid var(--gold);position:sticky;top:0;z-index:50}
+.nav-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px}
+.brand{color:var(--white);text-decoration:none;font-family:'Fraunces',serif;font-weight:500;font-size:1.05rem}
+.brand span{color:var(--gold-light)}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:#cfd7e6;text-decoration:none;font-size:.85rem;padding:6px 10px;border-radius:6px}
+.nav-links a:hover{background:var(--navy-soft);color:var(--white)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 16px}
+header.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-soft) 100%);color:var(--white);padding:28px 0 24px}
+.hero h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.5rem,3.2vw,2.2rem);line-height:1.2}
+.hero p{color:#cfd7e6;margin-top:6px;font-size:.95rem}
+.hero .meta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:16px}
+.pill{background:rgba(255,255,255,.08);border:1px solid rgba(201,168,76,.4);color:var(--gold-pale);padding:5px 12px;border-radius:999px;font-size:.82rem}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy);font-weight:700;border:none;border-radius:6px;padding:8px 14px;font-size:.88rem;text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--gold-light)}
+.controls{display:flex;flex-wrap:wrap;gap:12px;align-items:end;margin:20px 0 6px}
+.controls label{display:flex;flex-direction:column;font-size:.78rem;color:var(--muted);gap:4px;font-weight:500}
+select,input[type=search]{font-family:inherit;font-size:.92rem;padding:7px 10px;border:1px solid var(--border);border-radius:6px;background:var(--white);color:var(--text);min-width:200px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:14px 0 8px}
+.kpi{background:var(--white);border:1px solid var(--border);border-top:3px solid var(--gold);border-radius:var(--radius);padding:12px 14px;cursor:pointer;transition:box-shadow .15s}
+.kpi:hover{box-shadow:0 2px 10px rgba(10,22,40,.08)}
+.kpi.active{border-top-color:var(--navy);box-shadow:0 0 0 2px var(--navy) inset}
+.kpi .lbl{font-size:.78rem;color:var(--muted);font-weight:500}
+.kpi .val{font-family:'Fraunces',serif;font-size:1.65rem;font-weight:700;color:var(--navy);line-height:1.2;margin-top:2px}
+.kpi .rank{display:inline-block;background:var(--navy);color:var(--gold-light);font-size:.75rem;font-weight:700;border-radius:4px;padding:1px 7px;margin-left:6px;vertical-align:middle}
+.kpi .sub{font-size:.8rem;color:var(--text-mid);margin-top:4px}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:22px 0 0;border-bottom:2px solid var(--border)}
+.tab{background:none;border:none;font-family:inherit;font-size:.92rem;padding:9px 14px;color:var(--muted);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;font-weight:500}
+.tab.active{color:var(--navy);border-bottom-color:var(--gold);font-weight:700}
+section{margin:26px 0}
+section h2{font-family:'Fraunces',serif;font-size:1.3rem;color:var(--navy);margin-bottom:4px}
+.lead{color:var(--text-mid);font-size:.9rem;margin-bottom:12px;max-width:900px}
+.card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:14px}
+.chart-box{position:relative;height:340px}
+.caption{background:var(--gold-pale);border-left:4px solid var(--gold);padding:10px 14px;border-radius:4px;font-size:.9rem;margin:12px 0}
+.seg{display:inline-flex;border:1px solid var(--border);border-radius:6px;overflow:hidden;margin-bottom:10px}
+.seg button{border:none;background:var(--white);padding:6px 12px;font-family:inherit;font-size:.82rem;cursor:pointer;color:var(--text-mid)}
+.seg button.on{background:var(--navy);color:var(--white)}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:var(--radius);background:var(--white);max-height:620px;overflow-y:auto}
+table{border-collapse:collapse;width:100%;font-size:.82rem;font-variant-numeric:tabular-nums}
+th{background:var(--navy);color:var(--white);font-weight:500;padding:7px 8px;text-align:center;position:sticky;top:0;z-index:2;white-space:nowrap;cursor:pointer;user-select:none}
+th.l,td.l{text-align:left}
+th .arr{opacity:.6;font-size:.7rem;margin-left:3px}
+td{padding:5px 8px;border-bottom:1px solid var(--border);text-align:center;white-space:nowrap}
+tr.hl td{background:var(--hl);font-weight:700}
+tr.tot td{background:#eef0f4;font-weight:700}
+td.pos{color:var(--muted);font-weight:700}
+td.r1{color:var(--navy);font-weight:700}
+.up{color:var(--down)} .down{color:var(--up)}
+.notes{font-size:.82rem;color:var(--text-mid);border-top:1px solid var(--border);padding:16px 0 40px}
+.notes li{margin:4px 0 4px 18px}
+.count{font-size:.8rem;color:var(--muted);margin:6px 0}
+@media (max-width:640px){
+  .nav-links{display:none}
+  select,input[type=search]{min-width:0;width:100%}
+  .controls label{flex:1 1 100%}
+  .chart-box{height:280px}
+}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner">
+  <a class="brand" href="../">SC <span>Piracicaba</span> · Portal Interno</a>
+  <div class="nav-links">
+    <a href="#sc">Secretarias Conjuntas</a><a href="#varas">Varas</a><a href="#anual">Comparativo anual</a><a href="../">← Voltar ao portal</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <h1>Estatísticas do 1º Grau — Secretarias Conjuntas e Varas do TRT-15</h1>
+  <p>Fases de conhecimento e execução, mês a mês e no acumulado. Fonte: e-Gestão (e-mail "Estatística do 1º Grau").</p>
+  <div class="meta">
+    <span class="pill" id="pill-periodo">—</span>
+    <span class="pill" id="pill-atual">—</span>
+    <span class="pill" id="pill-prelim" title="Os relatórios chegam &quot;para ciência antes da publicação&quot; e podem receber ressalvas.">—</span>
+    <a class="btn" href="Estatisticas_SC_e_VT_TRT15.docx" download>⬇ Baixar documento (Word)</a>
+  </div>
+</div></header>
+
+<main class="wrap">
+  <div class="controls">
+    <label>Secretaria Conjunta em destaque
+      <select id="sel-foco"></select>
+    </label>
+  </div>
+  <div class="kpis" id="kpis"></div>
+
+  <div class="tabs" id="tabs"></div>
+
+  <section id="sc">
+    <h2 id="sc-title">Secretarias Conjuntas</h2>
+    <p class="lead" id="sc-lead"></p>
+    <div class="card">
+      <div class="seg" id="seg-graf"><button class="on" data-v="val">Valores mensais</button><button data-v="pos">Posição mês a mês</button></div>
+      <div class="chart-box"><canvas id="ch-sc"></canvas></div>
+    </div>
+    <div class="caption" id="sc-caption"></div>
+    <div class="tbl-wrap" style="max-height:none"><table id="tb-sc"></table></div>
+  </section>
+
+  <section id="varas">
+    <h2>Varas do Trabalho</h2>
+    <p class="lead">Todas as varas do TRT-15, mês a mês e no acumulado. Clique no cabeçalho de uma coluna para ordenar. As varas da Secretaria Conjunta em destaque aparecem marcadas.</p>
+    <div class="controls" style="margin-top:0">
+      <label>Filtrar por Secretaria Conjunta <select id="sel-vt-sc"></select></label>
+      <label>Buscar vara ou cidade <input type="search" id="q" placeholder="ex.: Limeira, 3ª VT de Campinas"></label>
+    </div>
+    <div class="count" id="vt-count"></div>
+    <div class="tbl-wrap"><table id="tb-vt"></table></div>
+  </section>
+
+  <section id="anual">
+    <h2>Comparativo anual de processos recebidos</h2>
+    <p class="lead" id="an-lead"></p>
+    <div class="card"><div class="chart-box"><canvas id="ch-an"></canvas></div></div>
+    <div class="tbl-wrap" style="max-height:none;margin-top:12px"><table id="tb-an"></table></div>
+  </section>
+
+  <div class="notes">
+    <strong>Sobre os dados</strong>
+    <ul>
+      <li>Os relatórios são enviados pela Coordenadoria de Estatística "para ciência antes da publicação" e podem receber ressalvas na versão publicada.</li>
+      <li>Cada mês só é incluído se a soma das varas bater com a linha "Total" do relatório (pendentes de baixa, extinções na liquidação — item 90493 — e na execução forçada — item 90093).</li>
+      <li>Pendentes de baixa são estoque: o "acumulado" é a posição no último mês, e a variação é a diferença desde janeiro (vermelho = acervo cresceu).</li>
+      <li>Recebidos e solucionados somam os totais de cada vara (incluem redistribuições). Empates recebem a mesma posição. Rancharia, zerada, foi excluída.</li>
+    </ul>
+  </div>
+</main>
+
+<script>
+const IND = {
+  rec:{t:'Processos recebidos',c:'Conhecimento'}, sol:{t:'Processos solucionados',c:'Conhecimento'},
+  pend:{t:'Pendentes de baixa',c:'Conhecimento'}, liq:{t:'Extinções na liquidação',c:'Execução'},
+  exf:{t:'Extinções na execução forçada',c:'Execução'}
+};
+const MES = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
+const fmt = n => Math.round(n).toLocaleString('pt-BR');
+const sgn = n => (n>=0?'+':'−') + fmt(Math.abs(n));
+const pct = n => n.toLocaleString('pt-BR',{minimumFractionDigits:1,maximumFractionDigits:1}) + '%';
+const COLORS = ['#e07b39','#2e7d5e','#7c3a6b','#1a5f8c','#8b4513','#b23b3b','#5e7099','#a08a2c','#3a8fb7','#6b6b6b'];
+let D, foco, ind = 'liq', grafModo = 'val', chSC, chAN, vtSort = {col:'acc', dir:-1};
+const store = {get(k){try{return localStorage.getItem(k)}catch(e){return null}}, set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+
+function rank(obj){ // ranking com empates (maior = 1º)
+  const e = Object.entries(obj).sort((a,b)=>b[1]-a[1]); const r = {}; let prev=null,pos=0;
+  e.forEach(([k,v],i)=>{ if(v!==prev){pos=i+1;prev=v} r[k]=pos; }); return r;
+}
+function scSerie(k){ // {sc: [mensal]}
+  const out = {}; D.scs.forEach(s=>out[s]=D.meses.map(()=>0));
+  D.varas.forEach(v=>D.serie[k][v.id].forEach((x,i)=>out[v.sc][i]+=x)); return out;
+}
+const acc = (k,arr) => k==='pend' ? arr[arr.length-1] : arr.reduce((a,b)=>a+b,0);
+const nVaras = s => D.varas.filter(v=>v.sc===s).length;
+const mesLabels = () => D.meses.map(m=>MES[+m.slice(5)-1]);
+const ultLabel = () => mesLabels().slice(-1)[0].toLowerCase();
+
+function kpis(){
+  const el = document.getElementById('kpis'); el.innerHTML='';
+  Object.keys(IND).forEach(k=>{
+    const S = scSerie(k), A = {}, L = {}; D.scs.forEach(s=>{A[s]=acc(k,S[s]); L[s]=S[s][S[s].length-1]});
+    const rA = rank(A), rL = rank(L);
+    let sub;
+    if(k==='pend'){ const s=S[foco]; const dm = s.length>1? s[s.length-1]-s[s.length-2]:0;
+      sub = `Variação em ${ultLabel()}: <b class="${dm>0?'up':'down'}">${sgn(dm)}</b> · desde jan: ${sgn(s[s.length-1]-s[0])}`;
+    } else sub = `Em ${ultLabel()}: <b>${fmt(L[foco])}</b> (${rL[foco]}º lugar)`;
+    const d = document.createElement('div'); d.className='kpi'+(k===ind?' active':''); d.onclick=()=>setInd(k);
+    d.innerHTML = `<div class="lbl">${IND[k].t}${k==='pend'?' (acervo)':' (acumulado)'}</div>
+      <div class="val">${fmt(A[foco])}<span class="rank">${rA[foco]}º</span></div><div class="sub">${sub}</div>`;
+    el.appendChild(d);
+  });
+}
+function tabs(){
+  const el = document.getElementById('tabs'); el.innerHTML='';
+  Object.keys(IND).forEach(k=>{ const b=document.createElement('button'); b.className='tab'+(k===ind?' active':'');
+    b.textContent=IND[k].t; b.onclick=()=>setInd(k); el.appendChild(b); });
+}
+function setInd(k){ ind=k; store.set('est_ind',k); render(); }
+
+function sectionSC(){
+  const S = scSerie(ind), labels = mesLabels(), A = {}; D.scs.forEach(s=>A[s]=acc(ind,S[s]));
+  const total = Object.values(A).reduce((a,b)=>a+b,0), rA = rank(A);
+  const ord = [...D.scs].sort((a,b)=>A[b]-A[a]);
+  document.getElementById('sc-title').textContent = `${IND[ind].t} — Secretarias Conjuntas`;
+  document.getElementById('sc-lead').textContent = ind==='pend'
+    ? `Estoque de processos pendentes de baixa ao fim de cada mês (${IND[ind].c}). Posição pelo acervo do último mês (1º = maior acervo).`
+    : `Valores mensais e acumulado de ${D.periodo} (${IND[ind].c}), com a posição de cada Secretaria Conjunta.`;
+  const cap = (D.textos && D.textos.cap && foco===D.foco) ? D.textos.cap[ind] : '';
+  const capEl = document.getElementById('sc-caption'); capEl.textContent = cap; capEl.style.display = cap?'block':'none';
+  // tabela
+  const rM = D.meses.map((_,i)=>{const o={};D.scs.forEach(s=>o[s]=S[s][i]);return rank(o)});
+  const last = ind==='pend' ? ['Variação desde jan','% do TRT','Média/vara'] : ['Acumulado','% do TRT','Média/vara'];
+  let h = `<thead><tr><th>Pos.</th><th class="l">Secretaria Conjunta (varas)</th>${labels.map(l=>`<th>${l}</th>`).join('')}${last.map(l=>`<th>${l}</th>`).join('')}</tr></thead><tbody>`;
+  ord.forEach(s=>{
+    const extra = ind==='pend' ? `<td class="${S[s].at(-1)-S[s][0]>0?'up':'down'}">${sgn(S[s].at(-1)-S[s][0])}</td>` : `<td><b>${fmt(A[s])}</b></td>`;
+    h += `<tr class="${s===foco?'hl':''}"><td class="pos">${rA[s]}º</td><td class="l">${s} (${nVaras(s)})</td>`+
+      S[s].map((x,i)=>`<td title="${rM[i][s]}º no mês" class="${rM[i][s]===1?'r1':''}">${fmt(x)}</td>`).join('')+
+      `${extra}<td>${pct(A[s]/total*100)}</td><td>${fmt(A[s]/nVaras(s))}</td></tr>`;
+  });
+  const T = labels.map((_,i)=>D.scs.reduce((a,s)=>a+S[s][i],0));
+  h += `<tr class="tot"><td></td><td class="l">Total TRT-15 (${D.varas.length})</td>${T.map(x=>`<td>${fmt(x)}</td>`).join('')}`+
+    `<td>${ind==='pend'?sgn(T.at(-1)-T[0]):fmt(total)}</td><td>100,0%</td><td>${fmt(total/D.varas.length)}</td></tr></tbody>`;
+  document.getElementById('tb-sc').innerHTML = h;
+  // gráfico
+  const ds = ord.map((s,i)=>({label:s, data: grafModo==='val'? S[s] : rM.map(r=>r[s]),
+    borderColor: s===foco?'#0a1628':COLORS[i%COLORS.length], backgroundColor: s===foco?'#c9a84c':COLORS[i%COLORS.length],
+    borderWidth: s===foco?4:1.6, pointRadius: s===foco?4:2, tension:.25, order: s===foco?0:1}));
+  if(chSC) chSC.destroy();
+  chSC = new Chart(document.getElementById('ch-sc'), {type:'line', data:{labels, datasets:ds},
+    options:{responsive:true, maintainAspectRatio:false, interaction:{mode:'nearest',intersect:false},
+      plugins:{legend:{position: innerWidth<700?'bottom':'right',labels:{boxWidth:12,font:{size:11}}},
+        tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${grafModo==='val'?fmt(c.parsed.y):c.parsed.y+'º'}`}}},
+      scales:{y: grafModo==='val' ? {ticks:{callback:v=>fmt(v)}} : {reverse:true,min:1,max:10,ticks:{stepSize:1,callback:v=>v+'º'}}}}});
+}
+
+function sectionVT(){
+  const filt = document.getElementById('sel-vt-sc').value, q = document.getElementById('q').value.trim().toLowerCase();
+  const labels = mesLabels(), A = {}; D.varas.forEach(v=>A[v.id]=acc(ind,D.serie[ind][v.id])); const rA = rank(A);
+  let rows = D.varas.filter(v=>(!filt||v.sc===filt) && (!q || (v.nome+' '+v.cidade+' '+v.sc).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').includes(q.normalize('NFD').replace(/[̀-ͯ]/g,''))));
+  const key = v => vtSort.col==='acc'?A[v.id] : vtSort.col==='nome'?v.nome : vtSort.col==='sc'?v.sc : D.serie[ind][v.id][vtSort.col];
+  rows.sort((a,b)=>{const x=key(a),y=key(b); return (typeof x==='string'? x.localeCompare(y,'pt-BR') : x-y)*vtSort.dir;});
+  const arr = c => vtSort.col===c ? `<span class="arr">${vtSort.dir<0?'▼':'▲'}</span>` : '';
+  const lastLbl = ind==='pend' ? `Acervo ${ultLabel()} / var. desde jan` : 'Acumulado';
+  let h = `<thead><tr><th data-c="acc">Pos. TRT${arr('acc')}</th><th class="l" data-c="nome">Vara do Trabalho${arr('nome')}</th><th class="l" data-c="sc">Secretaria Conjunta${arr('sc')}</th>`+
+    labels.map((l,i)=>`<th data-c="${i}">${l}${arr(String(i))}</th>`).join('') + `<th data-c="acc">${lastLbl}${arr('acc')}</th></tr></thead><tbody>`;
+  rows.forEach(v=>{ const s = D.serie[ind][v.id];
+    const last = ind==='pend' ? `<b>${fmt(s.at(-1))}</b> <span class="${s.at(-1)-s[0]>0?'up':'down'}">(${sgn(s.at(-1)-s[0])})</span>` : `<b>${fmt(A[v.id])}</b>`;
+    h += `<tr class="${v.sc===foco?'hl':''}"><td class="pos">${rA[v.id]}º</td><td class="l">${v.nome}</td><td class="l">${v.sc}</td>${s.map(x=>`<td>${fmt(x)}</td>`).join('')}<td>${last}</td></tr>`;
+  });
+  const tb = document.getElementById('tb-vt'); tb.innerHTML = h + '</tbody>';
+  tb.querySelectorAll('th').forEach(th=>th.onclick=()=>{ const c=th.dataset.c; const col = c==='acc'||c==='nome'||c==='sc'?c:+c;
+    if(String(vtSort.col)===String(col)) vtSort.dir*=-1; else {vtSort.col=col; vtSort.dir=(c==='nome'||c==='sc')?1:-1;} sectionVT(); });
+  document.getElementById('vt-count').textContent = `${rows.length} de ${D.varas.length} varas`;
+}
+
+function sectionAnual(){
+  const anos = D.anuais.anos, nm = D.meses.length, sc = {};
+  D.scs.forEach(s=>sc[s]={y:anos.map(()=>0),cur:0});
+  D.varas.forEach(v=>{ D.anuais.valores[v.id].forEach((x,i)=>sc[v.sc].y[i]+=x); sc[v.sc].cur += D.serie.rec[v.id].reduce((a,b)=>a+b,0); });
+  const ord = [...D.scs].sort((a,b)=>sc[b].y[2]-sc[a].y[2]);
+  const T = {y:anos.map((_,i)=>D.scs.reduce((a,s)=>a+sc[s].y[i],0)), cur:D.scs.reduce((a,s)=>a+sc[s].cur,0)};
+  document.getElementById('an-lead').textContent = `Total de processos recebidos em ${anos.join(', ')} e em ${D.ano} (${D.periodo}). Como ${D.ano} ainda não tem 12 meses, a comparação é pela média mensal (total ÷ 12 nos anos completos; ÷ ${nm} em ${D.ano}).`;
+  const row = (nome, o, cls) => { const [a,b,c] = o.y; const mc = o.cur/nm, m25 = c/12;
+    return `<tr class="${cls}"><td class="l">${nome}</td><td>${fmt(a)}</td><td>${fmt(b)}</td><td>${fmt(c)}</td><td>${sgn(c-b)}</td><td>${sgn(c-a)}</td><td>${pct((c-a)/a*100)}</td><td>${fmt(o.cur)}</td><td>${fmt(m25)}</td><td>${fmt(mc)}</td><td>${pct((mc/m25-1)*100)}</td></tr>`; };
+  let h = `<thead><tr><th class="l">Secretaria Conjunta</th>${anos.map(a=>`<th>${a}</th>`).join('')}<th>Var. ${anos[1].slice(2)}→${anos[2].slice(2)}</th><th>Var. ${anos[0].slice(2)}→${anos[2].slice(2)}</th><th>% ${anos[0].slice(2)}→${anos[2].slice(2)}</th><th>${D.ano} (${nm} meses)</th><th>Média/mês ${anos[2]}</th><th>Média/mês ${D.ano}</th><th>% média mensal</th></tr></thead><tbody>`;
+  ord.forEach(s=>h+=row(`${s} (${nVaras(s)})`, sc[s], s===foco?'hl':''));
+  h += row(`Total TRT-15 (${D.varas.length})`, T, 'tot') + '</tbody>';
+  document.getElementById('tb-an').innerHTML = h;
+  const cols = ['#9DB4D8','#5B7DB1','#1F3864','#E07B39'];
+  const ds = anos.map((a,i)=>({label:a, data:ord.map(s=>sc[s].y[i]/12), backgroundColor:cols[i]}))
+    .concat([{label:`${D.ano} (até ${ultLabel()})`, data:ord.map(s=>sc[s].cur/nm), backgroundColor:cols[3]}]);
+  if(chAN) chAN.destroy();
+  chAN = new Chart(document.getElementById('ch-an'), {type:'bar', data:{labels:ord, datasets:ds},
+    options:{responsive:true, maintainAspectRatio:false, plugins:{title:{display:true,text:'Média mensal de processos recebidos'},
+      tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${fmt(c.parsed.y)}/mês`}}},
+      scales:{y:{ticks:{callback:v=>fmt(v)}}, x:{ticks:{font:c=>({weight: ord[c.index]===foco?'bold':'normal', size:11})}}}}});
+}
+
+function render(){ kpis(); tabs(); sectionSC(); sectionVT(); sectionAnual(); }
+
+fetch('dados.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{
+  D = d;
+  foco = store.get('est_foco'); if(!D.scs.includes(foco)) foco = D.foco;
+  const si = store.get('est_ind'); if(IND[si]) ind = si;
+  document.getElementById('pill-periodo').textContent = `Período: ${D.periodo}`;
+  document.getElementById('pill-atual').textContent = `Atualizado em ${D.gerado_em}`;
+  document.getElementById('pill-prelim').textContent = `${MES[+D.meses.at(-1).slice(5)-1]}/${D.ano}: dados preliminares, sujeitos a ressalvas`;
+  const sf = document.getElementById('sel-foco'), sv = document.getElementById('sel-vt-sc');
+  sv.innerHTML = '<option value="">Todas</option>';
+  D.scs.forEach(s=>{ sf.add(new Option(s,s,false,s===foco)); sv.add(new Option(s,s)); });
+  sf.onchange = () => { foco = sf.value; store.set('est_foco',foco); render(); };
+  sv.onchange = sectionVT; document.getElementById('q').oninput = sectionVT;
+  document.querySelectorAll('#seg-graf button').forEach(b=>b.onclick=()=>{ grafModo=b.dataset.v;
+    document.querySelectorAll('#seg-graf button').forEach(x=>x.classList.toggle('on',x===b)); sectionSC(); });
+  render();
+}).catch(e=>{ document.querySelector('main').insertAdjacentHTML('afterbegin', `<p style="color:#b23b3b;margin:20px 0">Não foi possível carregar os dados (${e}).</p>`); });
+</script>
+</body>
+</html>
