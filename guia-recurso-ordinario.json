@@ -1,0 +1,2067 @@
+{
+  "titulo": "Guia do Recurso Ordinário",
+  "origem": "Manual Operacional - Processamento de Recurso Ordinário (CON2 – Secretaria Conjunta)",
+  "capa": {
+    "rotulo": "CON2 · Secretaria Conjunta · Capacitação de novos servidores",
+    "titulo": "Processamento de Recurso Ordinário",
+    "objetivo": "Padronizar a análise, a conferência, a admissibilidade e o encaminhamento dos Recursos Ordinários no PJe, com mais segurança, uniformidade e eficiência na tramitação processual.",
+    "numeros_chave": [
+      {
+        "valor": "8",
+        "descricao": "dias úteis: prazo ordinário do Recurso Ordinário"
+      },
+      {
+        "valor": "16",
+        "descricao": "dias úteis: prazo em dobro (MP, Fazenda Pública, Defensoria)"
+      },
+      {
+        "valor": "5",
+        "descricao": "dias para regularizar preparo insuficiente ou com vício"
+      },
+      {
+        "valor": "50%",
+        "descricao": "redução do depósito recursal nas hipóteses do art. 899, § 9º"
+      },
+      {
+        "valor": "+30%",
+        "descricao": "acréscimo exigido no seguro-garantia ou fiança"
+      }
+    ]
+  },
+  "fluxo_10_passos": [
+    {
+      "passo": "PASSO 1",
+      "titulo": "Conferir a sentença",
+      "descricao": "Resultado, condenação, custas e litisconsórcio",
+      "modulo": "m2"
+    },
+    {
+      "passo": "PASSO 2",
+      "titulo": "Verificar os Embargos de Declaração",
+      "descricao": "Todos julgados? Movimento e intimações corretos?",
+      "modulo": "m2"
+    },
+    {
+      "passo": "PASSO 3",
+      "titulo": "Reconstruir intimações e prazos",
+      "descricao": "Histórico completo antes de olhar o recurso",
+      "modulo": "m3"
+    },
+    {
+      "passo": "PASSO 4",
+      "titulo": "Analisar a tempestividade",
+      "descricao": "Um recorrente de cada vez",
+      "modulo": "m3"
+    },
+    {
+      "passo": "PASSO 5",
+      "titulo": "Conferir a representação",
+      "descricao": "Procuração, substabelecimento, mandato tácito",
+      "modulo": "m4"
+    },
+    {
+      "passo": "PASSO 6",
+      "titulo": "Analisar o preparo",
+      "descricao": "Custas e depósito recursal",
+      "modulo": "m5"
+    },
+    {
+      "passo": "PASSO 7",
+      "titulo": "Identificar situações especiais",
+      "descricao": "Adesivo, unirrecorribilidade, reexame, fungibilidade",
+      "modulo": "m7"
+    },
+    {
+      "passo": "PASSO 8",
+      "titulo": "Elaborar a decisão de admissibilidade",
+      "descricao": "Sempre como DECISÃO, com o modelo adequado",
+      "modulo": "m8"
+    },
+    {
+      "passo": "PASSO 9",
+      "titulo": "Conferir movimentos e prazos",
+      "descricao": "A decisão deve refletir a situação real",
+      "modulo": "m8"
+    },
+    {
+      "passo": "PASSO 10",
+      "titulo": "Encaminhar para assinatura",
+      "descricao": "Depois, verificar o cumprimento das providências",
+      "modulo": "m8"
+    }
+  ],
+  "modulos": [
+    {
+      "id": "visao",
+      "numero": "0",
+      "etiqueta": "Comece por aqui",
+      "titulo": "Visão geral",
+      "conteudo": [
+        {
+          "tipo": "referencia",
+          "texto": "Mapa mental (ver chave mapa_mental)"
+        },
+        {
+          "tipo": "paragrafo",
+          "texto": "Clique em qualquer ramo para ir ao módulo correspondente."
+        },
+        {
+          "tipo": "grupo",
+          "itens": [
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "Como estudar"
+                },
+                {
+                  "tipo": "paragrafo",
+                  "texto": "Percorra os módulos na ordem. Cada um abre com a ideia central, traz os pontos de atenção em destaque e termina com o que conferir na prática."
+                }
+              ]
+            },
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "Cores dos avisos"
+                },
+                {
+                  "tipo": "paragrafo",
+                  "texto": "Atenção erro comum Importante regra a fixar Dica rotina de trabalho Risco consequência grave"
+                }
+              ]
+            },
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "Fixação"
+                },
+                {
+                  "tipo": "paragrafo",
+                  "texto": "Ao final há um checklist que salva o seu progresso neste navegador e um quiz de 10 perguntas com explicação de cada resposta."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "m1",
+      "numero": "1",
+      "etiqueta": "Módulo 1",
+      "titulo": "Noções gerais sobre o Recurso Ordinário",
+      "ideia_central": "O RO leva ao TRT o reexame de decisões de primeiro grau, mas, por si só, não suspende os efeitos da sentença.",
+      "conteudo": [
+        {
+          "tipo": "grupo",
+          "itens": [
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "Conceito e cabimento"
+                },
+                {
+                  "tipo": "paragrafo",
+                  "texto": "Instrumento para impugnar determinadas decisões dos órgãos de primeiro grau da Justiça do Trabalho, possibilitando o reexame pelo TRT. Previsão no art. 895 CLT."
+                },
+                {
+                  "tipo": "paragrafo",
+                  "texto": "Também pode ser cabível em outras hipóteses legais: observe sempre a natureza da decisão recorrida."
+                }
+              ]
+            },
+            {
+              "tipo": "aviso",
+              "categoria": "atencao",
+              "rotulo": "Atenção · legitimidade",
+              "texto": "A legitimidade recursal não se restringe às partes principais. Terceiros diretamente atingidos, inclusive testemunhas que sofreram sanção pessoal (por exemplo, multa por falso testemunho ou litigância de má-fé), podem ter legitimidade para recorrer."
+            }
+          ]
+        },
+        {
+          "tipo": "titulo",
+          "nivel": 3,
+          "texto": "Efeitos do recurso"
+        },
+        {
+          "tipo": "grupo",
+          "itens": [
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "Regra Efeito devolutivo"
+                },
+                {
+                  "tipo": "lista",
+                  "itens": [
+                    "Regra geral dos recursos trabalhistas.",
+                    "Devolve ao Tribunal o exame das matérias impugnadas.",
+                    "Permite a execução provisória até a penhora ( art. 899 CLT )."
+                  ]
+                }
+              ]
+            },
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "Exceção Efeito suspensivo"
+                },
+                {
+                  "tipo": "lista",
+                  "itens": [
+                    "Não é automático no RO trabalhista.",
+                    "Só excepcionalmente, mediante decisão judicial.",
+                    "A competência para apreciar o pedido observa as regras processuais e a competência do TRT."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "titulo",
+          "nivel": 3,
+          "texto": "Art. 899 da CLT: o que a Secretaria precisa lembrar"
+        },
+        {
+          "tipo": "tabela",
+          "colunas": [
+            "Dispositivo",
+            "Regra"
+          ],
+          "linhas": [
+            [
+              "§ 7º",
+              "No agravo de instrumento, o depósito recursal corresponde a 50% do depósito do recurso que se pretende destrancar."
+            ],
+            [
+              "§ 8º",
+              "Dispensa o depósito do § 7º no agravo de instrumento que visa destrancar recurso de revista contra decisão que contraria jurisprudência uniforme do TST."
+            ],
+            [
+              "§ 9º",
+              "Redução de 50% do depósito recursal para as entidades e empresas previstas na CLT."
+            ],
+            [
+              "§ 10",
+              "Isenção do depósito para beneficiários da justiça gratuita, entidades filantrópicas e empresas em recuperação judicial."
+            ],
+            [
+              "§ 11",
+              "O depósito pode ser substituído por fiança bancária ou seguro-garantia judicial."
+            ]
+          ]
+        },
+        {
+          "tipo": "aviso",
+          "categoria": "importante",
+          "rotulo": "Importante",
+          "texto": "Os §§ 1º, 2º e 6º, na redação histórica, falam em salário mínimo regional. Não use essas referências para calcular o depósito hoje: consulte os limites vigentes publicados pelo TST."
+        }
+      ]
+    },
+    {
+      "id": "m2",
+      "numero": "2",
+      "etiqueta": "Módulo 2",
+      "titulo": "Providências preliminares",
+      "ideia_central": "Antes de qualquer pressuposto: embargos julgados, sentença lida e histórico reconstruído.",
+      "conteudo": [
+        {
+          "tipo": "cartao",
+          "conteudo": [
+            {
+              "tipo": "titulo",
+              "nivel": 4,
+              "texto": "Primeiro passo Verificar se todos os Embargos de Declaração foram julgados"
+            },
+            {
+              "tipo": "grupo",
+              "itens": [
+                {
+                  "tipo": "lista",
+                  "itens": [
+                    "Houve oposição de ED por alguma das partes?",
+                    "Todos foram efetivamente julgados?",
+                    "A Secretaria registrou o movimento do julgamento?"
+                  ]
+                },
+                {
+                  "tipo": "lista",
+                  "itens": [
+                    "O movimento corresponde ao resultado: acolhidos, acolhidos em parte ou rejeitados?",
+                    "As partes foram intimadas da decisão?"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "aviso",
+          "categoria": "risco",
+          "rotulo": "Risco · interrupção do prazo",
+          "texto": "A oposição tempestiva de ED interrompe o prazo para os demais recursos ( art. 897-A, § 3º CLT ), observadas as exceções legais. Depois do julgamento, o prazo recomeça integralmente."
+        },
+        {
+          "tipo": "titulo",
+          "nivel": 3,
+          "texto": "Depois, abra a sentença e confira quatro blocos"
+        },
+        {
+          "tipo": "grupo",
+          "itens": [
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "A Resultado"
+                },
+                {
+                  "tipo": "lista",
+                  "itens": [
+                    "Procedência",
+                    "Procedência parcial",
+                    "Improcedência",
+                    "Extinção do processo, conforme o fundamento"
+                  ]
+                }
+              ]
+            },
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "B Condenação"
+                },
+                {
+                  "tipo": "lista",
+                  "itens": [
+                    "Existe condenação pecuniária? De quanto?",
+                    "Obrigação de fazer ou não fazer",
+                    "Ausência de condenação pecuniária"
+                  ]
+                }
+              ]
+            },
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "C Custas"
+                },
+                {
+                  "tipo": "lista",
+                  "itens": [
+                    "Valor fixado",
+                    "Parte responsável pelo recolhimento",
+                    "Isenção",
+                    "Justiça gratuita concedida"
+                  ]
+                }
+              ]
+            },
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "D Litisconsórcio passivo"
+                },
+                {
+                  "tipo": "lista",
+                  "itens": [
+                    "Condenação solidária ou subsidiária",
+                    "Quem responde por quê",
+                    "Pedido de exclusão da lide nos recursos"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "aviso",
+          "categoria": "dica",
+          "rotulo": "Dica operacional",
+          "texto": "Leia a sentença antes de conferir o preparo: é nela que você descobre se há condenação pecuniária, o valor, quem paga e as possíveis dispensas."
+        }
+      ]
+    },
+    {
+      "id": "m3",
+      "numero": "3",
+      "etiqueta": "Módulo 3 · Pressuposto extrínseco",
+      "titulo": "Tempestividade",
+      "ideia_central": "8 dias úteis a partir da intimação, ou da intimação do julgamento dos EDs, que reabre o prazo por inteiro.",
+      "conteudo": [
+        {
+          "tipo": "grupo",
+          "itens": [
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "Prazo ordinário 8 dias úteis"
+                },
+                {
+                  "tipo": "dias_uteis",
+                  "quantidade": 8
+                },
+                {
+                  "tipo": "paragrafo",
+                  "texto": "Contados da intimação da decisão recorrida, observadas as regras de contagem."
+                }
+              ]
+            },
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "Prazo em dobro 16 dias úteis"
+                },
+                {
+                  "tipo": "dias_uteis",
+                  "quantidade": 16
+                },
+                {
+                  "tipo": "paragrafo",
+                  "texto": "Ministério Público, Fazenda Pública (nas hipóteses legais) e Defensoria Pública: arts. 180, 183 e 186 do CPC."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "aviso",
+          "categoria": "atencao",
+          "rotulo": "Atenção · prazo em dobro",
+          "texto": "Verifique se a parte realmente tem a prerrogativa e qual a natureza jurídica da entidade. Participar de uma pessoa jurídica ligada à Administração Pública não presume o benefício."
+        },
+        {
+          "tipo": "titulo",
+          "nivel": 3,
+          "texto": "O que conferir na contagem"
+        },
+        {
+          "tipo": "grupo",
+          "itens": [
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "lista",
+                  "itens": [
+                    "Disponibilização, publicação ou ciência, conforme a modalidade de intimação",
+                    "Data efetiva da intimação"
+                  ]
+                }
+              ]
+            },
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "lista",
+                  "itens": [
+                    "Início da contagem",
+                    "Feriados e suspensões de expediente"
+                  ]
+                }
+              ]
+            },
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "lista",
+                  "itens": [
+                    "Data do protocolo do recurso",
+                    "Eventual oposição de Embargos de Declaração"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "titulo",
+          "nivel": 3,
+          "texto": "Como os Embargos de Declaração mudam o prazo"
+        },
+        {
+          "tipo": "infografico_interrupcao",
+          "etapas": [
+            {
+              "fase": "1 · Prazo corre",
+              "destaque": "n dias",
+              "texto": "Dias já consumidos"
+            },
+            {
+              "fase": "2 · ED opostos",
+              "destaque": "INT",
+              "texto": "Oposição tempestiva interrompe o prazo"
+            },
+            {
+              "fase": "3 · ED julgados",
+              "destaque": "intimação",
+              "texto": "Das partes, da decisão dos EDs"
+            },
+            {
+              "fase": "4 · Prazo recomeça",
+              "destaque": "8 dias",
+              "texto": "Integral, e não o que sobrava"
+            }
+          ]
+        },
+        {
+          "tipo": "paragrafo",
+          "texto": "Mnemônico do manual: a INT errupção gera um prazo INT egral."
+        },
+        {
+          "tipo": "cartao",
+          "conteudo": [
+            {
+              "tipo": "bloco",
+              "texto": "Indisponibilidade do PJe: quando o prazo é prorrogado"
+            },
+            {
+              "tipo": "grupo",
+              "itens": [
+                {
+                  "tipo": "paragrafo",
+                  "texto": "A indisponibilidade do sistema pode prorrogar o prazo. Verifique:"
+                },
+                {
+                  "tipo": "lista",
+                  "itens": [
+                    "Houve indisponibilidade oficialmente certificada?",
+                    "Em que período ocorreu?",
+                    "Atingiu os critérios temporais da regulamentação?",
+                    "O vencimento caiu no dia afetado?"
+                  ]
+                },
+                {
+                  "tipo": "paragrafo",
+                  "texto": "Norma de referência: Portaria GP-CR nº 001/2019 e atos posteriores que a alterem ou substituam. Pela regra do material de apoio, o prazo que vence no dia da indisponibilidade passa para o dia útil seguinte quando ela for superior a 60 minutos, ininterruptos ou não, entre 6h e 23h."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "titulo",
+          "nivel": 3,
+          "texto": "Na prática: exemplo de análise"
+        },
+        {
+          "tipo": "paragrafo",
+          "texto": "Cenário de treinamento com duas fases. Cada recurso é analisado contra o marco processual que lhe corresponde."
+        },
+        {
+          "tipo": "grupo",
+          "itens": [
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "Fase 1 Sentença de mérito"
+                },
+                {
+                  "tipo": "linha_do_tempo",
+                  "eventos": [
+                    {
+                      "data": "30/12/2025",
+                      "descricao": "Sentença de mérito"
+                    },
+                    {
+                      "data": "14/01/2026",
+                      "descricao": "Oposição de Embargos de Declaração"
+                    },
+                    {
+                      "data": "26/01/2026",
+                      "descricao": "Ciência das partes. Prazo de 8 dias úteis; vencimento inicialmente indicado em 05/02/2026"
+                    },
+                    {
+                      "data": "31/01/2026",
+                      "descricao": "RO da reclamada protocolado (Id ccfdc79): tempestivo em relação à sentença de mérito"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "Fase 2 Julgamento dos EDs"
+                },
+                {
+                  "tipo": "linha_do_tempo",
+                  "eventos": [
+                    {
+                      "data": "19/05/2026",
+                      "descricao": "Decisão dos EDs: conhecidos, com interrupção do prazo"
+                    },
+                    {
+                      "data": "21/05/2026",
+                      "descricao": "Ciência das partes. Novo prazo integral de 8 dias úteis; vencimento em 02/06/2026"
+                    },
+                    {
+                      "data": "01/06/2026",
+                      "descricao": "RO do reclamante protocolado (Id 1d60438): tempestivo em relação à decisão dos EDs"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "aviso",
+          "categoria": "atencao",
+          "rotulo": "Atenção · conferência indispensável",
+          "texto": "Confronte as datas com o calendário oficial, feriados, suspensões, modalidade de intimação e data real de protocolo. Confronte também a data de oposição dos EDs com a intimação e a publicação da sentença. Havendo interrupção, não use automaticamente o prazo calculado no início."
+        }
+      ]
+    },
+    {
+      "id": "m4",
+      "numero": "4",
+      "etiqueta": "Módulo 4 · Pressuposto extrínseco",
+      "titulo": "Legitimidade e representação processual",
+      "ideia_central": "Procuração não anexada ao recurso não significa irregularidade. Pesquise o processo inteiro antes de qualquer providência.",
+      "conteudo": [
+        {
+          "tipo": "grupo",
+          "itens": [
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "Regra geral"
+                },
+                {
+                  "tipo": "lista",
+                  "itens": [
+                    "Recurso subscrito por advogado regularmente constituído.",
+                    "Procuração válida nos autos.",
+                    "Substabelecimento, quando houver.",
+                    "Mandato tácito, quando possível.",
+                    "Jus postulandi, quando cabível."
+                  ]
+                }
+              ]
+            },
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "Roteiro de conferência"
+                },
+                {
+                  "tipo": "passos",
+                  "itens": [
+                    "Identifique o advogado que assinou o RO.",
+                    "Veja se ele consta da autuação.",
+                    "Consulte os instrumentos de mandato nos autos.",
+                    "Confira procuração ou substabelecimento.",
+                    "Verifique validade e extensão dos poderes.",
+                    "Sem instrumento válido? Veja a possibilidade de regularização."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "aviso",
+          "categoria": "importante",
+          "rotulo": "Importante · regularização",
+          "texto": "Localizada a procuração, o recurso segue normalmente. Se não for localizada, intime o advogado para regularizar a representação, observando o art. 76 CPC e a Súmula 383 TST."
+        }
+      ]
+    },
+    {
+      "id": "m5",
+      "numero": "5",
+      "etiqueta": "Módulo 5 · Pressuposto extrínseco",
+      "titulo": "Preparo recursal e custas",
+      "ideia_central": "Preparo é custas mais depósito recursal, quando exigível. Sem preparo exigível, o recurso é deserto.",
+      "conteudo": [
+        {
+          "tipo": "titulo",
+          "nivel": 3,
+          "texto": "Decisão rápida: o que fazer com o preparo"
+        },
+        {
+          "tipo": "arvore_decisao",
+          "pergunta": "O recolhimento exigível foi comprovado no prazo do recurso?",
+          "resultados": [
+            {
+              "titulo": "Sim e correto",
+              "texto": "Siga para as demais conferências."
+            },
+            {
+              "titulo": "Insuficiente ou com vício sanável",
+              "texto": "Conceder 5 dias para complementar o valor ou corrigir a forma. art. 1.007, §§ 2º, 4º e 7º, CPC"
+            },
+            {
+              "titulo": "Ausência total de comprovação no prazo",
+              "texto": "Não cabe prazo para regularizar: deserção direta. Súmula 245 TST · Tema 271"
+            }
+          ]
+        },
+        {
+          "tipo": "aviso",
+          "categoria": "risco",
+          "rotulo": "Risco · deserção",
+          "texto": "Ausência de preparo exigível pode gerar deserção. O pagamento deve ser feito e comprovado no prazo do recurso ( art. 789, § 1º CLT )."
+        },
+        {
+          "tipo": "grupo",
+          "itens": [
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "O que conferir"
+                },
+                {
+                  "tipo": "lista",
+                  "itens": [
+                    "Há custas devidas? Foram recolhidas, no valor correto?",
+                    "O depósito recursal é exigível?",
+                    "Tudo dentro do prazo recursal?",
+                    "Há isenção ou redução?",
+                    "Houve substituição por seguro-garantia ou fiança?"
+                  ]
+                }
+              ]
+            },
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "Modelo de despacho: regularização do preparo"
+                },
+                {
+                  "tipo": "paragrafo",
+                  "texto": "Intime-se a parte recorrente para, no prazo de 5 (cinco) dias, regularizar o preparo recursal, mediante complementação do valor recolhido ou correção da irregularidade identificada, nos termos do art. 1.007, § 2º, do CPC, aplicado subsidiariamente ao processo do trabalho, e da regulamentação pertinente. Decorrido o prazo, retornem os autos conclusos para análise e emissão do juízo de admissibilidade recursal."
+                },
+                {
+                  "tipo": "paragrafo",
+                  "texto": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "titulo",
+          "nivel": 3,
+          "texto": "Custas processuais"
+        },
+        {
+          "tipo": "grupo",
+          "itens": [
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "Regra geral"
+                },
+                {
+                  "tipo": "paragrafo",
+                  "texto": "Devidas pela parte sucumbente ( art. 789 CLT ). Identifique quem paga, confira o valor fixado na sentença, a isenção, a justiça gratuita e se já existe recolhimento válido nos autos."
+                }
+              ]
+            },
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "Sentença de improcedência"
+                },
+                {
+                  "tipo": "paragrafo",
+                  "texto": "Veja se foram fixadas custas, se o reclamante recebeu justiça gratuita e se há obrigação de recolher por parte do recorrente. A gratuidade pode afastar a exigibilidade."
+                }
+              ]
+            },
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "Aproveitamento"
+                },
+                {
+                  "tipo": "paragrafo",
+                  "texto": "O recolhimento de uma reclamada pode aproveitar às demais, se atendidos os requisitos. Considere a identidade da condenação, a situação dos recorrentes e eventual pedido de exclusão da lide."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "titulo",
+          "nivel": 3,
+          "texto": "Isenção de custas (art. 790-A CLT)"
+        },
+        {
+          "tipo": "grupo",
+          "itens": [
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "Isentos"
+                },
+                {
+                  "tipo": "lista",
+                  "itens": [
+                    "União, Estados, Distrito Federal e Municípios",
+                    "Autarquias e fundações públicas que não explorem atividade econômica",
+                    "Ministério Público do Trabalho",
+                    "Beneficiários da justiça gratuita"
+                  ]
+                }
+              ]
+            },
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "Não são isentos automaticamente"
+                },
+                {
+                  "tipo": "lista",
+                  "itens": [
+                    "Entidades fiscalizadoras do exercício profissional (parágrafo único do art. 790-A): por exemplo CREA, OAB, CRM",
+                    "Sociedades de economia mista e empresas públicas, em regra"
+                  ]
+                },
+                {
+                  "tipo": "paragrafo",
+                  "texto": "Exceção: a Empresa Brasileira de Correios e Telégrafos tem regime jurídico específico, que deve ser considerado."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "aviso",
+          "categoria": "importante",
+          "rotulo": "Importante",
+          "texto": "Isenção de custas não é isenção de depósito recursal. São pressupostos distintos, analisados separadamente."
+        }
+      ]
+    },
+    {
+      "id": "m6",
+      "numero": "6",
+      "etiqueta": "Módulo 6 · Preparo",
+      "titulo": "Depósito recursal",
+      "ideia_central": "Garantia do juízo para futura execução, exigível do empregador condenado em quantia, com limite, reduções, isenções e substituição.",
+      "conteudo": [
+        {
+          "tipo": "grupo",
+          "itens": [
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "Finalidade"
+                },
+                {
+                  "tipo": "paragrafo",
+                  "texto": "Garante a futura execução. Em regra é exigível do empregador condenado ao pagamento de quantia, observadas as hipóteses de dispensa, redução e substituição."
+                },
+                {
+                  "tipo": "paragrafo",
+                  "texto": "Após a Reforma Trabalhista, é feito em conta judicial vinculada ao processo, e não mais na conta vinculada do trabalhador."
+                }
+              ]
+            },
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "Limite do depósito"
+                },
+                {
+                  "tipo": "passos",
+                  "itens": [
+                    "Consulte a tabela vigente do TST (atualização anual, publicada em agosto).",
+                    "Identifique o valor para o tipo de recurso.",
+                    "Confira o valor da condenação.",
+                    "Verifique depósitos anteriores.",
+                    "Considere a situação do recorrente."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "aviso",
+          "categoria": "dica",
+          "rotulo": "Exemplo",
+          "texto": "Condenação de R$ 5.000,00: se o teto do TST é maior, o depósito exigível não pode superar o valor da condenação. O limite é R$ 5.000,00, observadas as demais regras."
+        },
+        {
+          "tipo": "titulo",
+          "nivel": 3,
+          "texto": "Quem paga menos e quem não paga"
+        },
+        {
+          "tipo": "grupo",
+          "itens": [
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "Redução de 50% art. 899, § 9º"
+                },
+                {
+                  "tipo": "lista",
+                  "itens": [
+                    "Entidades sem fins lucrativos (por exemplo SESI/SENAI)",
+                    "Empregadores domésticos",
+                    "Microempreendedores individuais (MEI)",
+                    "Microempresas (ME)",
+                    "Empresas de pequeno porte (EPP)"
+                  ]
+                },
+                {
+                  "tipo": "paragrafo",
+                  "texto": "O material de apoio ainda lista optantes pelo Simples (EIRELI) e sindicatos (por jurisprudência)."
+                },
+                {
+                  "tipo": "aviso",
+                  "categoria": "atencao",
+                  "rotulo": "Atenção",
+                  "texto": "A parte comprova o enquadramento. Não presuma pela denominação ou pela atividade."
+                }
+              ]
+            },
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "Isenção art. 899, § 10"
+                },
+                {
+                  "tipo": "lista",
+                  "itens": [
+                    "Beneficiários da justiça gratuita (o deferimento abrange custas e depósito)",
+                    "Entidades filantrópicas",
+                    "Empresas em recuperação judicial"
+                  ]
+                },
+                {
+                  "tipo": "paragrafo",
+                  "texto": "O material de apoio cita também empregado, Ministério Público, Fazenda Pública sem atividade econômica e massa falida. Considere a natureza do recorrente e a jurisprudência."
+                },
+                {
+                  "tipo": "aviso",
+                  "categoria": "importante",
+                  "rotulo": "Importante",
+                  "texto": "Recuperação judicial dispensa o depósito, mas não as custas, salvo se a gratuidade tiver sido deferida na sentença."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "titulo",
+          "nivel": 3,
+          "texto": "Seguro-garantia judicial ou fiança bancária (art. 899, § 11)"
+        },
+        {
+          "tipo": "grupo",
+          "itens": [
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "Confira na apólice"
+                },
+                {
+                  "tipo": "lista",
+                  "itens": [
+                    "Identificação correta do processo e das partes",
+                    "Valor garantido",
+                    "Acréscimo legal exigido",
+                    "Prazo de vigência e condições de renovação",
+                    "Regularidade da apólice",
+                    "Ato Conjunto TST/CSJT/CGJT nº 1/2019 e alterações"
+                  ]
+                }
+              ]
+            },
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "paragrafo",
+                  "texto": "+30%"
+                },
+                {
+                  "tipo": "paragrafo",
+                  "texto": "sobre o valor do depósito recursal"
+                },
+                {
+                  "tipo": "paragrafo",
+                  "texto": "O material de apoio indica vigência mínima de 3 anos. Confira as regras aplicáveis à data da apresentação."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "titulo",
+          "nivel": 3,
+          "texto": "Condenação solidária e subsidiária: quem aproveita o depósito de quem"
+        },
+        {
+          "tipo": "grupo",
+          "itens": [
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "Solidária Súmula 128, III, TST"
+                },
+                {
+                  "tipo": "grupo",
+                  "itens": [
+                    {
+                      "tipo": "grupo",
+                      "itens": [
+                        {
+                          "tipo": "grupo",
+                          "itens": []
+                        },
+                        {
+                          "tipo": "grupo",
+                          "itens": []
+                        },
+                        {
+                          "tipo": "grupo",
+                          "itens": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tipo": "paragrafo",
+                  "texto": "O depósito de uma aproveita às demais se a depositante não pede sua exclusão da lide."
+                },
+                {
+                  "tipo": "paragrafo",
+                  "texto": "Exemplo: A recorre e deposita; B também recorre. Se A não pretende sair da lide, o depósito pode aproveitar a B."
+                }
+              ]
+            },
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "Subsidiária orientação do TST"
+                },
+                {
+                  "tipo": "grupo",
+                  "itens": [
+                    {
+                      "tipo": "grupo",
+                      "itens": [
+                        {
+                          "tipo": "grupo",
+                          "itens": []
+                        },
+                        {
+                          "tipo": "grupo",
+                          "itens": []
+                        },
+                        {
+                          "tipo": "grupo",
+                          "itens": []
+                        }
+                      ]
+                    },
+                    {
+                      "tipo": "grupo",
+                      "itens": [
+                        {
+                          "tipo": "grupo",
+                          "itens": []
+                        },
+                        {
+                          "tipo": "grupo",
+                          "itens": []
+                        },
+                        {
+                          "tipo": "grupo",
+                          "itens": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tipo": "paragrafo",
+                  "texto": "Sempre verifique se quem depositou pediu exclusão da lide nas razões recursais."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "m7",
+      "numero": "7",
+      "etiqueta": "Módulo 7",
+      "titulo": "Situações especiais",
+      "ideia_central": "Quatro situações fogem do roteiro padrão: adesivo, mais de um recurso da mesma parte, reexame necessário e fungibilidade.",
+      "conteudo": [
+        {
+          "tipo": "titulo",
+          "nivel": 3,
+          "texto": "Recurso adesivo"
+        },
+        {
+          "tipo": "grupo",
+          "itens": [
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "Características"
+                },
+                {
+                  "tipo": "lista",
+                  "itens": [
+                    "Subordinado ao recurso principal da parte contrária.",
+                    "Mesmos pressupostos de admissibilidade, inclusive custas e depósito, quando devidos.",
+                    "Prazo: o mesmo das contrarrazões.",
+                    "Confira tempestividade e representação.",
+                    "Depende da admissibilidade do principal, conforme as regras aplicáveis."
+                  ]
+                }
+              ]
+            },
+            {
+              "tipo": "grupo",
+              "itens": [
+                {
+                  "tipo": "aviso",
+                  "categoria": "atencao",
+                  "rotulo": "Atenção",
+                  "texto": "Não confunda recurso adesivo com recurso principal apresentado fora do prazo."
+                },
+                {
+                  "tipo": "aviso",
+                  "categoria": "risco",
+                  "rotulo": "Sem recurso principal",
+                  "texto": "O adesivo pressupõe recurso principal da parte contrária. Se ele não existe, examine a inadequação da via. Se a parte apresenta RO no prazo do adesivo sem observar os requisitos da modalidade escolhida, analise pelo conteúdo da petição e pela fungibilidade, quando cabível. O material de apoio trata o RO no prazo do adesivo como erro grosseiro."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "titulo",
+          "nivel": 3,
+          "texto": "Unirrecorribilidade: mais de um recurso da mesma parte"
+        },
+        {
+          "tipo": "arvore_decisao",
+          "pergunta": "A mesma parte interpôs dois recursos contra a mesma decisão?",
+          "resultados": [
+            {
+              "titulo": "1º recurso",
+              "texto": "Processar, se preenchidos os pressupostos."
+            },
+            {
+              "titulo": "2º recurso, antes de qualquer exceção",
+              "texto": "Verificar preclusão consumativa. Se for cópia integral do primeiro, denega-se seguimento ao segundo."
+            },
+            {
+              "titulo": "2º recurso após julgamento de EDs",
+              "texto": "Hipótese excepcional: analise a interrupção do prazo e a decisão efetivamente impugnada."
+            }
+          ]
+        },
+        {
+          "tipo": "paragrafo",
+          "texto": "Cópia integral do primeiro: examine a unirrecorribilidade e a preclusão consumativa e, se necessário, submeta a questão ao juiz. Matéria de representatividade sindical: encaminhe ao setor de Dissídios, conforme o fluxo interno."
+        },
+        {
+          "tipo": "titulo",
+          "nivel": 3,
+          "texto": "Reexame necessário (art. 496 CPC · Súmula 303 TST)"
+        },
+        {
+          "tipo": "paragrafo",
+          "texto": "Remessa obrigatória ao Tribunal de decisão contrária à Fazenda Pública, mesmo sem recurso voluntário, salvo quando a condenação ou o proveito econômico não ultrapassar:"
+        },
+        {
+          "tipo": "cartao",
+          "conteudo": [
+            {
+              "tipo": "grafico_barras",
+              "itens": [
+                {
+                  "ente": "União, autarquias e fundações públicas",
+                  "limite": "1.000 salários mínimos"
+                },
+                {
+                  "ente": "Estados, DF, autarquias e fundações; Municípios que sejam capitais",
+                  "limite": "500 salários mínimos"
+                },
+                {
+                  "ente": "Demais Municípios, autarquias e fundações",
+                  "limite": "100 salários mínimos"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "paragrafo",
+          "texto": "Procedimento: identifique a natureza do ente, verifique se a decisão foi desfavorável, confira o valor da condenação ou do proveito econômico, aplique o limite e veja as demais hipóteses de dispensa."
+        },
+        {
+          "tipo": "titulo",
+          "nivel": 3,
+          "texto": "Fungibilidade recursal"
+        },
+        {
+          "tipo": "grupo",
+          "itens": [
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "Exemplo: embargos de terceiro"
+                },
+                {
+                  "tipo": "paragrafo",
+                  "texto": "O recurso cabível contra a sentença em embargos de terceiro é o Agravo de Petição ( art. 897, a, CLT ). Com a controvérsia doutrinária e jurisprudencial, pode-se examinar a fungibilidade se a parte interpôs RO, pois não é, em tese, erro grosseiro."
+                }
+              ]
+            },
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "Requisitos: não é autorização automática"
+                },
+                {
+                  "tipo": "lista",
+                  "itens": [
+                    "Dúvida objetiva",
+                    "Ausência de erro grosseiro",
+                    "Observância do prazo do recurso adequado",
+                    "Compatibilidade entre os meios de impugnação",
+                    "Jurisprudência aplicável"
+                  ]
+                },
+                {
+                  "tipo": "paragrafo",
+                  "texto": "Havendo dúvida relevante, submeta ao magistrado."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "m8",
+      "numero": "8",
+      "etiqueta": "Módulo 8",
+      "titulo": "Pressupostos intrínsecos e decisão no PJe",
+      "ideia_central": "A Secretaria confere requisitos de admissibilidade. Quem julga a questão jurídica é o magistrado, e a minuta sai sempre como DECISÃO.",
+      "conteudo": [
+        {
+          "tipo": "grupo",
+          "itens": [
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "Pressupostos intrínsecos nas razões recursais"
+                },
+                {
+                  "tipo": "lista",
+                  "itens": [
+                    "Cabimento",
+                    "Legitimidade recursal",
+                    "Interesse em recorrer",
+                    "Inexistência de fato impeditivo ou extintivo do direito de recorrer",
+                    "Regularidade formal",
+                    "Delimitação da matéria impugnada"
+                  ]
+                }
+              ]
+            },
+            {
+              "tipo": "aviso",
+              "categoria": "importante",
+              "rotulo": "Importante",
+              "texto": "Admissibilidade não se confunde com julgamento do mérito. A Secretaria confere os requisitos sem substituir o magistrado na análise jurídica das razões."
+            }
+          ]
+        },
+        {
+          "tipo": "titulo",
+          "nivel": 3,
+          "texto": "Roteiro no PJe: localizar os processos"
+        },
+        {
+          "tipo": "cartao",
+          "conteudo": [
+            {
+              "tipo": "passos",
+              "itens": [
+                "No painel da CON2, escolha a tarefa Análises.",
+                "Selecione os chips dos processos que serão trabalhados.",
+                "Clique em Filtrar.",
+                "Selecione GIGS vencidos.",
+                "Clique na opção Prazo para ordenar cronologicamente.",
+                "Selecione os processos a analisar, priorizando os vencimentos mais antigos, ressalvadas as urgências reais."
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "titulo",
+          "nivel": 3,
+          "texto": "Roteiro no processo: a ordem da análise"
+        },
+        {
+          "tipo": "cartao",
+          "conteudo": [
+            {
+              "tipo": "passos",
+              "itens": [
+                "Abrir a sentença de mérito",
+                "Conferir as intimações",
+                "Verificar os prazos",
+                "Localizar os Embargos de Declaração",
+                "Conferir as decisões dos EDs",
+                "Verificar as intimações dos EDs",
+                "Conferir os prazos decorrentes",
+                "Localizar os ROs apresentados",
+                "Identificar as partes recorrentes",
+                "Iniciar a conferência dos pressupostos"
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "aviso",
+          "categoria": "risco",
+          "rotulo": "Regra de ouro",
+          "texto": "Não inicie a análise isolada do recurso sem reconstruir o histórico de intimações e decisões do processo."
+        },
+        {
+          "tipo": "titulo",
+          "nivel": 3,
+          "texto": "Elaborar a decisão de admissibilidade"
+        },
+        {
+          "tipo": "cartao",
+          "conteudo": [
+            {
+              "tipo": "caminho_pje",
+              "passos": [
+                "ANÁLISE",
+                "CONCLUSÃO AO MAGISTRADO",
+                "ADMISSIBILIDADE DE RECURSOS"
+              ]
+            },
+            {
+              "tipo": "paragrafo",
+              "texto": "A unidade já tem modelos no PJe para situações genéricas e recorrentes. Para as específicas, novos modelos ainda serão construídos pela equipe, sempre com validação judicial."
+            }
+          ]
+        },
+        {
+          "tipo": "aviso",
+          "categoria": "atencao",
+          "rotulo": "Atenção · orientação importante",
+          "texto": "A minuta deve ser elaborada como DECISÃO, para gerar o movimento correspondente ao processamento do recurso. Não use modelo genérico sem adaptar fatos, partes, recursos e fundamentos."
+        },
+        {
+          "tipo": "titulo",
+          "nivel": 3,
+          "texto": "Depois da minuta"
+        },
+        {
+          "tipo": "cartao",
+          "conteudo": [
+            {
+              "tipo": "passos",
+              "itens": [
+                "Conferir o conteúdo da decisão.",
+                "Conferir os recursos abrangidos.",
+                "Verificar os movimentos processuais correspondentes.",
+                "Conferir e adequar os prazos legais.",
+                "Encaminhar para assinatura.",
+                "Após a assinatura, verificar o cumprimento das providências determinadas."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "m9",
+      "numero": "9",
+      "etiqueta": "Módulo 9 · FC-05 Chefe de Seção",
+      "titulo": "Gestão de tarefas: Mantra CON2",
+      "ideia_central": "Planejamento da unidade, ordem cronológica dos GIGS e tratamento das urgências reais.",
+      "conteudo": [
+        {
+          "tipo": "titulo",
+          "nivel": 3,
+          "texto": "Tarefa Prazo Vencido: para onde vai cada chip"
+        },
+        {
+          "tipo": "tabela",
+          "colunas": [
+            "Chip",
+            "Destinação"
+          ],
+          "linhas": [
+            [
+              "URGENTE TUTELA",
+              "Análise prioritária"
+            ],
+            [
+              "ADMISSIBILIDADE DE RECURSO(S) REMETER RECURSO",
+              "Tarefa de análise"
+            ],
+            [
+              "APRECIAR ED",
+              "Encaminhar para julgamento"
+            ],
+            [
+              "PRAZO VENCIDO PÓS SENTENÇA",
+              "Registrar Trânsito em Julgado"
+            ]
+          ]
+        },
+        {
+          "tipo": "paragrafo",
+          "texto": "Os processos remanescentes vão para a tarefa Análise."
+        },
+        {
+          "tipo": "titulo",
+          "nivel": 3,
+          "texto": "As demais tarefas"
+        },
+        {
+          "tipo": "grupo",
+          "itens": [
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "A · GIGS DAA"
+                },
+                {
+                  "tipo": "lista",
+                  "itens": [
+                    "Encaminhar para cumprimento respeitando o plano de trabalho.",
+                    "Observar a ordem cronológica de vencimento.",
+                    "Identificar e tratar as urgências reais.",
+                    "Evitar priorizações indevidas que comprometam o fluxo."
+                  ]
+                }
+              ]
+            },
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "B · Escaninho de petições"
+                },
+                {
+                  "tipo": "lista",
+                  "itens": [
+                    "Recursos: dar ciência nas que a equipe vai trabalhar e encaminhar para análise.",
+                    "Manifestações: análise superficial; ciência quando não houver alerta.",
+                    "Embargos de Declaração: dar ciência e encaminhar para apreciação judicial."
+                  ]
+                }
+              ]
+            },
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "D · Triagem Inicial"
+                },
+                {
+                  "tipo": "lista",
+                  "itens": [
+                    "GIGS não vencidos (CON RAZÕES FINAIS, RAZÕES FINAIS): tarefa Cumprimento de Providências.",
+                    "GIGS vencidos (RAZÕES FINAIS): julgamento, em ordem cronológica.",
+                    "Chips prioritários (URGENTE, TUTELA, ADMISSIBILIDADE DE RECURSO(S), REMETER RECURSO): tarefa Análise.",
+                    "Demais processos: fluxo regular."
+                  ]
+                }
+              ]
+            },
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "E · Cumprimento de Providências"
+                },
+                {
+                  "tipo": "lista",
+                  "itens": [
+                    "Identificar processos com GIGS vencidos.",
+                    "Priorizar pela ordem cronológica.",
+                    "Identificar os GIGS de RAZÕES FINAIS.",
+                    "Encaminhar para julgamento, conforme o fluxo da unidade."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "check",
+      "numero": "10",
+      "etiqueta": "Ferramenta de trabalho",
+      "titulo": "Checklist operacional",
+      "conteudo": [
+        {
+          "tipo": "paragrafo",
+          "texto": "Use como roteiro de conferência antes de encaminhar o processo para conclusão. Seu progresso fica salvo neste navegador."
+        }
+      ]
+    },
+    {
+      "id": "quiz",
+      "numero": "11",
+      "etiqueta": "Fixação",
+      "titulo": "Quiz: teste o que você aprendeu",
+      "conteudo": []
+    },
+    {
+      "id": "refs",
+      "numero": "12",
+      "etiqueta": "Consulta permanente",
+      "titulo": "Legislação e referências",
+      "conteudo": [
+        {
+          "tipo": "grupo",
+          "itens": [
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "Legislação"
+                },
+                {
+                  "tipo": "lista",
+                  "itens": [
+                    "CLT: arts. 789, 790-A, 895, 897, 897-A e 899",
+                    "CPC: arts. 76, 180, 183, 186, 496, 995 e 1.007"
+                  ]
+                }
+              ]
+            },
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "Súmulas do TST"
+                },
+                {
+                  "tipo": "lista",
+                  "itens": [
+                    "128: depósito recursal",
+                    "245: depósito recursal e prazo",
+                    "303: reexame necessário",
+                    "383: representação processual"
+                  ]
+                }
+              ]
+            },
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "Atos normativos"
+                },
+                {
+                  "tipo": "lista",
+                  "itens": [
+                    "Ato Conjunto TST/CSJT/CGJT nº 1/2019 e alterações: seguro-garantia e fiança bancária",
+                    "Portarias do TST sobre limites dos depósitos recursais",
+                    "Normas internas do TRT e regulamentação do PJe",
+                    "Portaria GP-CR nº 001/2019, com eventuais alterações"
+                  ]
+                }
+              ]
+            },
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "titulo",
+                  "nivel": 4,
+                  "texto": "Depósitos recursais"
+                },
+                {
+                  "tipo": "paragrafo",
+                  "texto": "Acesse o portal do TST e verifique a tabela vigente na data da interposição do recurso."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "titulo",
+          "nivel": 3,
+          "texto": "Nossa diretriz de trabalho"
+        },
+        {
+          "tipo": "grupo",
+          "itens": [
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "lista",
+                  "itens": [
+                    "Priorizar a segurança jurídica",
+                    "Respeitar a ordem cronológica"
+                  ]
+                }
+              ]
+            },
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "lista",
+                  "itens": [
+                    "Identificar e tratar as urgências efetivas",
+                    "Padronizar procedimentos e evitar retrabalho"
+                  ]
+                }
+              ]
+            },
+            {
+              "tipo": "cartao",
+              "conteudo": [
+                {
+                  "tipo": "lista",
+                  "itens": [
+                    "Registrar corretamente os movimentos",
+                    "Compartilhar dúvidas e situações sem modelo",
+                    "Contribuir para a melhoria contínua"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "aviso",
+          "categoria": "dica",
+          "rotulo": "CON2",
+          "texto": "Conhecimento compartilhado, trabalho padronizado e eficiência na prestação jurisdicional."
+        }
+      ]
+    }
+  ],
+  "mapa_mental": {
+    "centro": "Recurso Ordinário",
+    "ramos": [
+      {
+        "titulo": "Noções gerais",
+        "modulo": "m1",
+        "folhas": [
+          "Art. 895 CLT",
+          "Efeito devolutivo (regra)",
+          "Efeito suspensivo (exceção)"
+        ]
+      },
+      {
+        "titulo": "Providências preliminares",
+        "modulo": "m2",
+        "folhas": [
+          "EDs todos julgados?",
+          "Intimações conferidas",
+          "Ler a sentença"
+        ]
+      },
+      {
+        "titulo": "Tempestividade",
+        "modulo": "m3",
+        "folhas": [
+          "8 dias úteis",
+          "16 dias úteis em dobro",
+          "EDs interrompem o prazo",
+          "Indisponibilidade do PJe"
+        ]
+      },
+      {
+        "titulo": "Representação",
+        "modulo": "m4",
+        "folhas": [
+          "Procuração",
+          "Substabelecimento",
+          "Mandato tácito",
+          "Jus postulandi"
+        ]
+      },
+      {
+        "titulo": "Preparo e custas",
+        "modulo": "m5",
+        "folhas": [
+          "Custas: art. 789 CLT",
+          "Isenção: art. 790-A",
+          "Ausência total = deserção",
+          "Vício = 5 dias"
+        ]
+      },
+      {
+        "titulo": "Depósito recursal",
+        "modulo": "m6",
+        "folhas": [
+          "Teto do TST",
+          "Redução de 50%",
+          "Isenção",
+          "Seguro-garantia +30%",
+          "Solidária e subsidiária"
+        ]
+      },
+      {
+        "titulo": "Situações especiais",
+        "modulo": "m7",
+        "folhas": [
+          "Recurso adesivo",
+          "Unirrecorribilidade",
+          "Reexame necessário",
+          "Fungibilidade"
+        ]
+      },
+      {
+        "titulo": "Decisão no PJe",
+        "modulo": "m8",
+        "folhas": [
+          "Pressupostos intrínsecos",
+          "Minuta como DECISÃO",
+          "Conferir movimentos",
+          "Gestão por chips (Mantra)"
+        ]
+      }
+    ]
+  },
+  "checklist_operacional": [
+    {
+      "etapa": "Etapa 1 · Conferência inicial",
+      "itens": [
+        "Sentença de mérito localizada",
+        "Resultado da sentença identificado",
+        "Valor da condenação conferido",
+        "Custas processuais conferidas",
+        "Justiça gratuita verificada",
+        "Condenação solidária ou subsidiária identificada",
+        "Embargos de Declaração localizados",
+        "Todos os EDs julgados",
+        "Movimentos dos EDs conferidos",
+        "Intimações dos EDs conferidas"
+      ]
+    },
+    {
+      "etapa": "Etapa 2 · Tempestividade",
+      "itens": [
+        "Data da intimação identificada",
+        "Data de início do prazo conferida",
+        "Prazo legal aplicado",
+        "Prazo em dobro verificado, se cabível",
+        "Interrupção por EDs considerada",
+        "Feriados e suspensões conferidos",
+        "Indisponibilidade do PJe verificada, se alegada",
+        "Data do protocolo conferida",
+        "Tempestividade analisada individualmente para cada recorrente"
+      ]
+    },
+    {
+      "etapa": "Etapa 3 · Representação",
+      "itens": [
+        "Advogado subscritor identificado",
+        "Procuração localizada",
+        "Substabelecimento conferido",
+        "Mandato tácito verificado, se aplicável",
+        "Regularidade da representação analisada",
+        "Necessidade de regularização identificada"
+      ]
+    },
+    {
+      "etapa": "Etapa 4 · Preparo",
+      "itens": [
+        "Custas processuais conferidas",
+        "Depósito recursal exigível verificado",
+        "Teto vigente do TST consultado",
+        "Valor da condenação considerado",
+        "Depósito comprovado no prazo",
+        "Redução de 50% verificada, se cabível",
+        "Isenção verificada, se cabível",
+        "Seguro-garantia ou fiança conferidos",
+        "Condenação solidária/subsidiária analisada",
+        "Eventual insuficiência ou vício identificado"
+      ]
+    },
+    {
+      "etapa": "Etapa 5 · Outras situações",
+      "itens": [
+        "Recurso adesivo verificado",
+        "Unirrecorribilidade observada",
+        "Reexame necessário analisado",
+        "Fungibilidade examinada, quando pertinente",
+        "Matéria de representatividade sindical identificada, se existente"
+      ]
+    },
+    {
+      "etapa": "Etapa 6 · Finalização",
+      "itens": [
+        "Pressupostos intrínsecos identificados",
+        "Minuta de decisão elaborada",
+        "Modelo adequado selecionado",
+        "Movimentos processuais conferidos",
+        "Prazos ajustados",
+        "Processo encaminhado para assinatura"
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "pergunta": "Antes de analisar os pressupostos do Recurso Ordinário, qual é o primeiro passo?",
+      "alternativas": [
+        "Conferir o valor do depósito recursal",
+        "Verificar se todos os Embargos de Declaração foram julgados",
+        "Elaborar a minuta de admissibilidade",
+        "Consultar a procuração do advogado"
+      ],
+      "indice_correto": 1,
+      "resposta_correta": "Verificar se todos os Embargos de Declaração foram julgados",
+      "explicacao": "O manual indica como primeiro passo verificar se todos os EDs foram julgados, se o movimento foi lançado corretamente e se as partes foram intimadas."
+    },
+    {
+      "pergunta": "Qual é o prazo ordinário para interpor o Recurso Ordinário?",
+      "alternativas": [
+        "5 dias úteis",
+        "8 dias úteis",
+        "15 dias corridos",
+        "16 dias úteis"
+      ],
+      "indice_correto": 1,
+      "resposta_correta": "8 dias úteis",
+      "explicacao": "O prazo ordinário é de 8 dias úteis, contados da intimação da decisão recorrida."
+    },
+    {
+      "pergunta": "Para o Ministério Público, a Fazenda Pública (nas hipóteses legais) e a Defensoria Pública, o prazo do RO é de:",
+      "alternativas": [
+        "8 dias úteis",
+        "12 dias úteis",
+        "16 dias úteis",
+        "24 dias úteis"
+      ],
+      "indice_correto": 2,
+      "resposta_correta": "16 dias úteis",
+      "explicacao": "Pelos arts. 180, 183 e 186 do CPC, o prazo em dobro leva o RO a 16 dias úteis. Confira se a parte realmente tem a prerrogativa."
+    },
+    {
+      "pergunta": "Embargos de Declaração tempestivos foram julgados. O que acontece com o prazo para os demais recursos?",
+      "alternativas": [
+        "Continua de onde parou",
+        "Recomeça integralmente",
+        "Fica reduzido pela metade",
+        "Não se altera"
+      ],
+      "indice_correto": 1,
+      "resposta_correta": "Recomeça integralmente",
+      "explicacao": "A oposição interrompe o prazo, e ele recomeça integralmente após a intimação da decisão dos EDs (art. 897-A, § 3º, CLT)."
+    },
+    {
+      "pergunta": "O RO foi interposto sem procuração anexada à própria petição. O que fazer primeiro?",
+      "alternativas": [
+        "Declarar o recurso irregular",
+        "Pesquisar todo o processo atrás do instrumento de mandato",
+        "Aplicar deserção direta",
+        "Devolver ao advogado sem análise"
+      ],
+      "indice_correto": 1,
+      "resposta_correta": "Pesquisar todo o processo atrás do instrumento de mandato",
+      "explicacao": "A ausência de procuração na petição não significa irregularidade. Pesquise os autos; só se não localizar o instrumento, intime para regularizar (art. 76 CPC e Súmula 383 TST)."
+    },
+    {
+      "pergunta": "O recolhimento do preparo é insuficiente ou tem vício sanável. Qual o prazo para regularizar?",
+      "alternativas": [
+        "48 horas",
+        "3 dias",
+        "5 dias",
+        "8 dias"
+      ],
+      "indice_correto": 2,
+      "resposta_correta": "5 dias",
+      "explicacao": "Nesses casos concede-se prazo de 5 dias (art. 1.007, §§ 2º, 4º e 7º, CPC). Já a ausência total de comprovação no prazo leva à deserção direta."
+    },
+    {
+      "pergunta": "Uma empresa em recuperação judicial recorre sem depósito recursal e sem custas. Qual a análise correta?",
+      "alternativas": [
+        "Está isenta das duas coisas",
+        "Está dispensada do depósito, mas as custas continuam devidas (salvo gratuidade deferida na sentença)",
+        "Deve pagar depósito e custas integrais",
+        "Está dispensada das custas, mas deve o depósito"
+      ],
+      "indice_correto": 1,
+      "resposta_correta": "Está dispensada do depósito, mas as custas continuam devidas (salvo gratuidade deferida na sentença)",
+      "explicacao": "Isenção de custas e isenção de depósito são pressupostos distintos. A recuperação judicial dispensa o depósito (art. 899, § 10), mas não automaticamente as custas."
+    },
+    {
+      "pergunta": "Condenação subsidiária: a devedora subsidiária deposita e a principal não. O depósito aproveita à principal?",
+      "alternativas": [
+        "Sim, sempre",
+        "Sim, se a principal pedir",
+        "Não, a principal também deve recolher",
+        "Só se houver seguro-garantia"
+      ],
+      "indice_correto": 2,
+      "resposta_correta": "Não, a principal também deve recolher",
+      "explicacao": "O depósito da devedora principal pode aproveitar à subsidiária, mas o contrário não ocorre."
+    },
+    {
+      "pergunta": "Qual é o acréscimo exigido na apólice de seguro-garantia judicial em relação ao depósito recursal?",
+      "alternativas": [
+        "10%",
+        "20%",
+        "30%",
+        "50%"
+      ],
+      "indice_correto": 2,
+      "resposta_correta": "30%",
+      "explicacao": "A garantia deve observar o acréscimo de 30% previsto na regulamentação. Vigência e demais condições seguem as regras aplicáveis à data da apresentação."
+    },
+    {
+      "pergunta": "Como deve ser elaborada a minuta de admissibilidade no PJe?",
+      "alternativas": [
+        "Como despacho",
+        "Como certidão",
+        "Como DECISÃO",
+        "Como ato ordinatório"
+      ],
+      "indice_correto": 2,
+      "resposta_correta": "Como DECISÃO",
+      "explicacao": "A minuta é sempre uma DECISÃO, para gerar o movimento correspondente ao processamento do recurso."
+    }
+  ],
+  "rodape": [
+    "Material didático elaborado a partir do Manual Operacional “Processamento de Recurso Ordinário” (CON2 – Secretaria Conjunta), voltado à orientação e capacitação de novos servidores.",
+    "Este guia é instrumento de apoio operacional e deve ser atualizado sempre que houver alteração legislativa, jurisprudencial, normativa ou dos fluxos internos da unidade. Valores e limites devem ser conferidos nas fontes vigentes."
+  ]
+}
