@@ -1139,6 +1139,11 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
 .nav-logo-trt img { height: 44px; width: auto; display: block; }
 @media (max-width: 900px) { .nav-logo-trt { padding: 6px 8px; margin-right: 0; } .nav-logo-trt img { height: 30px; } }
 @media (max-width: 480px) { .nav-brand-text .sub { display: none; } }
+
+/* ===== Bandeira no lado direito da barra ===== */
+.nav-flag-right { margin-left: auto; margin-right: 16px; height: 40px; }
+@media (max-width: 900px) { .nav-flag-right { height: 26px; margin-right: 6px; } }
+@media (max-width: 400px) { .nav-flag-right { display: none; } }
 </style>
 </head>
 <body>
@@ -1150,12 +1155,12 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
     <a class="nav-logo-trt" href="https://trt15.jus.br" target="_blank" rel="noopener" title="Tribunal Regional do Trabalho da 15ª Região"><img src="img/logo-trt15.png" alt="TRT 15ª Região" height="44"></a>
     <a class="nav-brand" href="#" onclick="return backToOrg()">
       <img class="brand-brasao" src="img/brasao-republica.png" alt="Brasão da República — Justiça do Trabalho" width="46" height="46">
-      <img class="brand-flag" src="img/bandeira-trt15.png" alt="Bandeira do TRT da 15ª Região" height="34" onerror="this.remove()">
       <div class="nav-brand-text">
         <span class="title">Secretaria Conjunta</span>
         <span class="sub">Piracicaba &amp; Outras · TRT15</span>
       </div>
     </a>
+    <img class="brand-flag nav-flag-right" src="img/bandeira-trt15.png" alt="Bandeira do TRT da 15ª Região" height="40">
   </div>
 </nav>
 
