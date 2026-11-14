@@ -15,6 +15,7 @@ Fonte: e-mails **"Solicitação de afastamento"** enviados pelo sistema ROL
 | `consolidar.py` | Aplica as solicitações sobre a escala e gera `../ferias.json` |
 | `base/solicitacoes.json` | Todas as solicitações lidas (desde jul/2025) |
 | `base/ids_processados.json` | IDs das mensagens do Gmail já processadas (evita duplicar) |
+| `base/excluidos.json` | Servidores que deixaram o quadro (só o hash SHA-256 do nome normalizado); seus e-mails são ignorados |
 | `base/escala_2026_portal.json` | Escala de 2026 que estava digitada no portal — usada só para quem não tem pedido de 2026 por e-mail |
 
 ## Regras

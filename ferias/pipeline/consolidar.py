@@ -12,7 +12,7 @@ Regras, em ordem cronológica das solicitações:
   cancelamento                 -> remove o período
   folga compensatória / outros -> lista à parte (afastamentos de curta duração)
 """
-import json, os, re, unicodedata, datetime
+import json, os, re, unicodedata, datetime, hashlib
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
 RAIZ = os.path.abspath(os.path.join(AQUI, '..', '..'))
@@ -94,6 +94,11 @@ def main():
             p['base'].add((a, b))
         p['fonte_base'] = True
     sol = json.load(open(os.path.join(AQUI, 'base', 'solicitacoes.json'), encoding='utf-8'))
+    # servidores que deixaram o quadro: guardados só como hash do nome normalizado (base/excluidos.json)
+    exc_f = os.path.join(AQUI, 'base', 'excluidos.json')
+    exc = set(json.load(open(exc_f))) if os.path.exists(exc_f) else set()
+    fora = lambda nome: hashlib.sha256(norm(nome).encode()).hexdigest() in exc
+    sol = [e for e in sol if not fora(e['nome'])]
     for e in sorted(sol, key=lambda e: e['data']):
         p = idx.obter(e['nome'].title())
         p['matricula'] = p['matricula'] or e['matricula']

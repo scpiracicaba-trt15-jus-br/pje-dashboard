@@ -804,28 +804,6 @@
   "data": "2025-11-07"
  },
  {
-  "nome": "JOSE CARLOS MERCE",
-  "matricula": "28614",
-  "tipo": "Férias",
-  "categoria": "ferias",
-  "periodos": [
-   [
-    "2026-01-07",
-    "2026-01-09"
-   ],
-   [
-    "2026-07-06",
-    "2026-07-17"
-   ],
-   [
-    "2026-11-09",
-    "2026-11-23"
-   ]
-  ],
-  "id": "19a6dee38bd7eb90",
-  "data": "2025-11-10"
- },
- {
   "nome": "MARCO CESAR DE OLIVEIRA WAN MEYL",
   "matricula": "109312",
   "tipo": "Cancelamento de férias",
@@ -1217,20 +1195,6 @@
    ]
   ],
   "id": "19adb07570fed47f",
-  "data": "2025-12-01"
- },
- {
-  "nome": "ROSANA MAZUCHI WELSK",
-  "matricula": "42986",
-  "tipo": "Férias",
-  "categoria": "ferias",
-  "periodos": [
-   [
-    "2026-01-08",
-    "2026-02-06"
-   ]
-  ],
-  "id": "19adb877f7a8c3f9",
   "data": "2025-12-01"
  },
  {
@@ -1937,28 +1901,6 @@
    ]
   ],
   "id": "19beb7902c644142",
-  "data": "2026-01-23"
- },
- {
-  "nome": "MARIA GORETTI GUIMARAES VIEIRA",
-  "matricula": "44407",
-  "tipo": "Férias",
-  "categoria": "ferias",
-  "periodos": [
-   [
-    "2026-05-25",
-    "2026-06-03"
-   ],
-   [
-    "2026-10-05",
-    "2026-10-14"
-   ],
-   [
-    "2026-12-09",
-    "2026-12-18"
-   ]
-  ],
-  "id": "19beb7db38237e60",
   "data": "2026-01-23"
  },
  {
@@ -3550,20 +3492,6 @@
   "data": "2026-06-15"
  },
  {
-  "nome": "FERNANDO BELAM",
-  "matricula": "18503",
-  "tipo": "Férias",
-  "categoria": "ferias",
-  "periodos": [
-   [
-    "2026-08-01",
-    "2026-08-13"
-   ]
-  ],
-  "id": "19ed24edd2ae29c0",
-  "data": "2026-06-16"
- },
- {
   "nome": "LUZIA DANIELLE DOS SANTOS FABIANO",
   "matricula": "92886",
   "tipo": "Férias",
@@ -4084,20 +4012,6 @@
     "2026-09-24"
    ]
   ]
- },
- {
-  "nome": "WALTER BRANDI KOCH RODRIGUES",
-  "matricula": "96326",
-  "tipo": "Férias",
-  "categoria": "ferias",
-  "periodos": [
-   [
-    "2026-09-14",
-    "2026-10-03"
-   ]
-  ],
-  "id": "1a025e84129c03b1",
-  "data": "2026-08-21"
  },
  {
   "nome": "CARMEN LUCIANITA DE SENE BARGAS GIAO",

@@ -92,11 +92,6 @@
   ]
  },
  {
-  "nome": "Rosana Mazuchi Welsk",
-  "setor": "DAA",
-  "periodos": []
- },
- {
   "nome": "Luzia Danielle dos Santos",
   "setor": "DAA",
   "periodos": []
@@ -628,20 +623,6 @@
    [
     "2026-12-13",
     "2026-12-18"
-   ]
-  ]
- },
- {
-  "nome": "Fabiana de Lemos Pedro",
-  "setor": "CON1",
-  "periodos": [
-   [
-    "2026-01-07",
-    "2026-01-21"
-   ],
-   [
-    "2026-07-17",
-    "2026-07-31"
    ]
   ]
  },
@@ -1874,11 +1855,6 @@
  },
  {
   "nome": "Thiago Cesar Costa",
-  "setor": "DAM",
-  "periodos": []
- },
- {
-  "nome": "Fernando Belam",
   "setor": "DAM",
   "periodos": []
  },

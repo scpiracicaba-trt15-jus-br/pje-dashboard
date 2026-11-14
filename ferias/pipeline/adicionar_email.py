@@ -11,6 +11,10 @@ import json, os, sys, subprocess
 AQUI = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, AQUI)
 from rol import parse_texto  # noqa: E402
+from consolidar import norm  # noqa: E402
+import hashlib
+_EXC = os.path.join(AQUI, 'base', 'excluidos.json')
+EXC = set(json.load(open(_EXC))) if os.path.exists(_EXC) else set()
 
 SOL = os.path.join(AQUI, 'base', 'solicitacoes.json')
 IDS = os.path.join(AQUI, 'base', 'ids_processados.json')
@@ -37,11 +41,13 @@ def main(args):
         if e['categoria'] != 'alteracao' and not e.get('periodos'):
             falhas.append(mid); continue
         e.update(id=mid, data=data)
+        if hashlib.sha256(norm(e['nome']).encode()).hexdigest() in EXC:
+            ids.add(mid); ignorados += 1; continue          # servidor que deixou o quadro
         sol.append(e); ids.add(mid); novos += 1
         print(f"+ {data} {e['nome']} — {e['tipo']}: {e.get('periodos') or e.get('novo')}")
     json.dump(sol, open(SOL, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     json.dump(sorted(ids), open(IDS, 'w'))
-    print(f'{novos} solicitação(ões) nova(s); {ignorados} sem afastamento (averbação etc.).')
+    print(f'{novos} solicitação(ões) nova(s); {ignorados} ignorada(s) (averbação ou servidor fora do quadro).')
     subprocess.run([sys.executable, os.path.join(AQUI, 'consolidar.py')], check=True)
     if falhas:
         print('NÃO LIDOS (conferir manualmente):', ', '.join(falhas)); sys.exit(2)
