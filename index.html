@@ -131,6 +131,36 @@ nav {
   border-bottom-color: var(--gold);
 }
 
+
+/* ===== Layout: barra superior só com a marca + menu lateral ===== */
+:root { --nav-h: 76px; --side-w: 250px; }
+nav { position: fixed; top: 0; left: 0; right: 0; }
+body { padding-top: var(--nav-h); padding-left: var(--side-w); }
+.nav-inner { max-width: none; margin: 0; padding: 0 12px; }
+.nav-brand { border-right: none; }
+.side-toggle { display: none; background: none; border: 1px solid rgba(255,255,255,.2); color: var(--gold-light); font-size: 24px; line-height: 1; padding: 6px 11px; border-radius: 8px; cursor: pointer; margin-right: 4px; }
+.side-nav { position: fixed; top: var(--nav-h); left: 0; bottom: 0; width: var(--side-w); background: var(--navy); border-right: 1px solid rgba(201,168,76,.25); overflow-y: auto; z-index: 90; padding: 12px 0 24px; }
+.side-nav .nav-links { display: flex; flex-direction: column; list-style: none; margin: 0; padding: 0 10px; gap: 2px; overflow: visible; }
+.side-nav .nav-links a { display: flex; align-items: center; gap: 12px; height: auto; padding: 11px 12px; font-size: 16px; line-height: 1.25; white-space: normal; color: rgba(255,255,255,.72); border-radius: 8px; border-bottom: none; border-left: 3px solid transparent; margin: 0; }
+.side-nav .nav-links a .ico { font-size: 19px; width: 26px; text-align: center; flex-shrink: 0; }
+.side-nav .nav-links a:hover { background: rgba(255,255,255,.06); color: #fff; }
+.side-nav .nav-links a.active { background: rgba(201,168,76,.14); color: var(--gold-light); border-left-color: var(--gold); font-weight: 500; }
+.side-nav .side-sep { height: 1px; background: rgba(255,255,255,.1); margin: 8px 6px; }
+.side-backdrop { display: none; }
+.unit-side { top: calc(var(--nav-h) + 16px); }
+.section-header { flex-wrap: wrap; }
+.notice a { overflow-wrap: anywhere; }
+@media (max-width: 900px) {
+  body { padding-left: 0; }
+  .side-toggle { display: inline-block; }
+  .side-nav { transform: translateX(-100%); transition: transform .22s ease; box-shadow: 4px 0 18px rgba(0,0,0,.25); width: min(280px, 82vw); }
+  body.side-open .side-nav { transform: none; }
+  body.side-open .side-backdrop { display: block; position: fixed; inset: var(--nav-h) 0 0 0; background: rgba(10,22,40,.45); z-index: 80; }
+  .nav-brand { padding: 10px 8px; }
+  .nav-brand-text .title { font-size: 17px; }
+  .nav-brand-text .sub { font-size: 14px; }
+}
+
 /* HERO */
 .hero {
   background: var(--navy);
@@ -1082,6 +1112,7 @@ nav {
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
+    <button class="side-toggle" type="button" aria-label="Abrir menu" aria-controls="side-nav" aria-expanded="false" onclick="toggleSide()">☰</button>
     <a class="nav-brand" href="#" onclick="return backToOrg()">
       <div class="emblem">SC</div>
       <div class="nav-brand-text">
@@ -1089,21 +1120,25 @@ nav {
         <span class="sub">Piracicaba &amp; Outras · TRT15</span>
       </div>
     </a>
-    <ul class="nav-links">
-      <li><a href="#" onclick="showSection('organograma')" id="nav-organograma" class="active">Organograma</a></li>
-      <li><a href="#" onclick="showSection('home')" id="nav-home">Visão Geral</a></li>
-      <li><a href="#" onclick="showSection('normativos')" id="nav-normativos">Normativos Internos</a></li>
-      <li><a href="#" onclick="showSection('ojs')" id="nav-ojs">Órgãos Julgadores</a></li>
-      <li><a href="#" onclick="showSection('magistrados')" id="nav-magistrados">Magistrados</a></li>
-      <li><a href="#" onclick="showSection('acervo')" id="nav-acervo">GIGs &amp; Robôs</a></li>
-      <li><a href="#" onclick="showSection('ferias')" id="nav-ferias">Férias 2026 e 2027</a></li>
-      <li><a href="#" onclick="showSection('videos')" id="nav-videos">Vídeos &amp; Links</a></li>
-      <li><a href="#" onclick="showSection('estagiarios')" id="nav-estagiarios">Estagiários</a></li>
-      <li><a href="#" onclick="showSection('rotinas')" id="nav-rotinas">Rotinas</a></li>
-      <li><a href="estatisticas/" id="nav-estatisticas">Estatísticas</a></li>
-    </ul>
   </div>
 </nav>
+
+<aside class="side-nav" id="side-nav" aria-label="Seções do portal">
+  <ul class="nav-links">
+      <li><a href="#" onclick="return navGo('organograma')" id="nav-organograma" class="active"><span class="ico" aria-hidden="true">🏛️</span><span class="lbl">Organograma</span></a></li>
+      <li><a href="#" onclick="return navGo('home')" id="nav-home"><span class="ico" aria-hidden="true">📊</span><span class="lbl">Visão Geral</span></a></li>
+      <li><a href="#" onclick="return navGo('normativos')" id="nav-normativos"><span class="ico" aria-hidden="true">📜</span><span class="lbl">Normativos Internos</span></a></li>
+      <li><a href="#" onclick="return navGo('magistrados')" id="nav-magistrados"><span class="ico" aria-hidden="true">⚖️</span><span class="lbl">Magistrados</span></a></li>
+      <li><a href="#" onclick="return navGo('acervo')" id="nav-acervo"><span class="ico" aria-hidden="true">🤖</span><span class="lbl">GIGs &amp; Robôs</span></a></li>
+      <li><a href="#" onclick="return navGo('ferias')" id="nav-ferias"><span class="ico" aria-hidden="true">🏖️</span><span class="lbl">Férias 2026 e 2027</span></a></li>
+      <li><a href="#" onclick="return navGo('videos')" id="nav-videos"><span class="ico" aria-hidden="true">🎬</span><span class="lbl">Vídeos &amp; Links</span></a></li>
+      <li><a href="#" onclick="return navGo('estagiarios')" id="nav-estagiarios"><span class="ico" aria-hidden="true">🎓</span><span class="lbl">Estagiários</span></a></li>
+      <li><a href="#" onclick="return navGo('rotinas')" id="nav-rotinas"><span class="ico" aria-hidden="true">🗓️</span><span class="lbl">Rotinas</span></a></li>
+      <li class="side-sep"></li>
+      <li><a href="estatisticas/" id="nav-estatisticas"><span class="ico" aria-hidden="true">📈</span><span class="lbl">Estatísticas</span></a></li>
+  </ul>
+</aside>
+<div class="side-backdrop" onclick="toggleSide(false)"></div>
 
 <!-- HERO -->
 <div class="hero">
@@ -1543,183 +1578,6 @@ nav {
         <span class="man-msg" id="man-msg" aria-live="polite"></span>
       </div>
     </aside>
-  </div>
-</div>
-
-<!-- OJs -->
-<div id="section-ojs" class="section">
-  <div class="section-header">
-    <h2>Órgãos Julgadores</h2>
-    <span class="tag">Clique para ver os servidores</span>
-  </div>
-
-  <div class="oj-grid" id="oj-grid">
-
-    <div class="oj-card con" onclick="openUnit('con-eq1')\">
-      <div class="oj-card-header">
-        <div class="oj-icon">E1</div>
-        <div><div class="oj-card-title">CON · Equipe 01</div><div class="oj-card-sub">Conhecimento</div></div>
-      </div>
-      <div class="oj-card-body">
-        <div class="oj-attr-row"><span class="key">Responsáveis</span><span class="val">Deise Maria Cassaniga Azevedo</span></div><div class="oj-attr-row"><span class="key">Equipe</span><span class="val">17 servidores · 3 estagiários</span></div>
-        <div><span class="oj-pill">1ª VT Piracicaba</span><span class="oj-pill">2ª VT Piracicaba</span><span class="oj-pill">3ª VT Piracicaba</span><span class="oj-pill">Santa Bárbara d'Oeste</span><span class="oj-pill">Sumaré</span></div>
-      </div>
-    </div>
-
-    <div class="oj-card con" onclick="openUnit('con-eq2')\">
-      <div class="oj-card-header">
-        <div class="oj-icon">E2</div>
-        <div><div class="oj-card-title">CON · Equipe 02</div><div class="oj-card-sub">Conhecimento</div></div>
-      </div>
-      <div class="oj-card-body">
-        <div class="oj-attr-row"><span class="key">Responsáveis</span><span class="val">Wellington George Braga Paz</span></div><div class="oj-attr-row"><span class="key">Equipe</span><span class="val">18 servidores · 3 estagiários</span></div>
-        <div><span class="oj-pill">1ª VT Americana</span><span class="oj-pill">2ª VT Americana</span><span class="oj-pill">Leme</span><span class="oj-pill">São João da Boa Vista</span><span class="oj-pill">1ª VT Limeira</span><span class="oj-pill">2ª VT Limeira</span></div>
-      </div>
-    </div>
-
-    <div class="oj-card con" onclick="openUnit('con-eq3')\">
-      <div class="oj-card-header">
-        <div class="oj-icon">E3</div>
-        <div><div class="oj-card-title">CON · Equipe 03</div><div class="oj-card-sub">Conhecimento</div></div>
-      </div>
-      <div class="oj-card-body">
-        <div class="oj-attr-row"><span class="key">Responsáveis</span><span class="val">Silvana Marcelino Braz</span></div><div class="oj-attr-row"><span class="key">Equipe</span><span class="val">18 servidores · 2 estagiários</span></div>
-        <div><span class="oj-pill">Rio Claro</span><span class="oj-pill">Araras</span><span class="oj-pill">Mogi Guaçu</span><span class="oj-pill">Hortolândia</span><span class="oj-pill">Simetria Bauru</span></div>
-      </div>
-    </div>
-
-    <div class="oj-card con" onclick="openUnit('con2')\">
-      <div class="oj-card-header">
-        <div class="oj-icon">C2</div>
-        <div><div class="oj-card-title">CON2</div><div class="oj-card-sub">Conhecimento 2</div></div>
-      </div>
-      <div class="oj-card-body">
-        <div class="oj-attr-row"><span class="key">Responsáveis</span><span class="val">Heitor Augusto Scarpari Costa (FC5)</span></div><div class="oj-attr-row"><span class="key">Equipe</span><span class="val">3 servidores · 6 estagiários</span></div>
-        <div><span class="oj-pill">Apoio ao Conhecimento</span></div>
-      </div>
-    </div>
-
-    <div class="oj-card liq" onclick="openUnit('liq1')\">
-      <div class="oj-card-header">
-        <div class="oj-icon">L1</div>
-        <div><div class="oj-card-title">LIQ1</div><div class="oj-card-sub">Assessoria de Liquidação 1</div></div>
-      </div>
-      <div class="oj-card-body">
-        <div class="oj-attr-row"><span class="key">Responsáveis</span><span class="val">Vanderlei Baldessin</span></div><div class="oj-attr-row"><span class="key">Equipe</span><span class="val">13 servidores · 2 estagiários</span></div>
-        <div><span class="oj-pill">1ª VT Piracicaba</span><span class="oj-pill">2ª VT Piracicaba</span><span class="oj-pill">3ª VT Piracicaba</span><span class="oj-pill">Santa Bárbara d'Oeste</span><span class="oj-pill">Sumaré</span></div>
-      </div>
-    </div>
-
-    <div class="oj-card liq" onclick="openUnit('liq2')\">
-      <div class="oj-card-header">
-        <div class="oj-icon">L2</div>
-        <div><div class="oj-card-title">LIQ2</div><div class="oj-card-sub">Assessoria de Liquidação 2</div></div>
-      </div>
-      <div class="oj-card-body">
-        <div class="oj-attr-row"><span class="key">Responsáveis</span><span class="val">Paulo Sergio Salvador</span></div><div class="oj-attr-row"><span class="key">Equipe</span><span class="val">18 servidores · 2 estagiários</span></div>
-        <div><span class="oj-pill">1ª VT Piracicaba</span><span class="oj-pill">2ª VT Piracicaba</span><span class="oj-pill">3ª VT Piracicaba</span><span class="oj-pill">Santa Bárbara d'Oeste</span><span class="oj-pill">Sumaré</span></div>
-      </div>
-    </div>
-
-    <div class="oj-card exe" onclick="openUnit('exe1')\">
-      <div class="oj-card-header">
-        <div class="oj-icon">E1</div>
-        <div><div class="oj-card-title">EXE1</div><div class="oj-card-sub">Assessoria de Execução I</div></div>
-      </div>
-      <div class="oj-card-body">
-        <div class="oj-attr-row"><span class="key">Responsáveis</span><span class="val">Roberta Elena Agostineto Tetzlaff · Eduardo Augusto Veloso</span></div><div class="oj-attr-row"><span class="key">Equipe</span><span class="val">10 servidores · 2 estagiários</span></div>
-        <div><span class="oj-pill">1ª VT Piracicaba</span><span class="oj-pill">2ª VT Piracicaba</span><span class="oj-pill">3ª VT Piracicaba</span><span class="oj-pill">Santa Bárbara d'Oeste</span><span class="oj-pill">Sumaré</span></div>
-      </div>
-    </div>
-
-    <div class="oj-card exe" onclick="openUnit('exe2')\">
-      <div class="oj-card-header">
-        <div class="oj-icon">E2</div>
-        <div><div class="oj-card-title">EXE2</div><div class="oj-card-sub">Assessoria de Execução II</div></div>
-      </div>
-      <div class="oj-card-body">
-        <div class="oj-attr-row"><span class="key">Responsáveis</span><span class="val">Fabio Ajudarte Lopes · Filipe Shinzato Colevati</span></div><div class="oj-attr-row"><span class="key">Equipe</span><span class="val">9 servidores · 1 estagiários</span></div>
-        <div><span class="oj-pill">1ª VT Piracicaba</span><span class="oj-pill">2ª VT Piracicaba</span><span class="oj-pill">3ª VT Piracicaba</span><span class="oj-pill">Santa Bárbara d'Oeste</span><span class="oj-pill">Sumaré</span></div>
-      </div>
-    </div>
-
-    <div class="oj-card exe" onclick="openUnit('exe3')\">
-      <div class="oj-card-header">
-        <div class="oj-icon">E3</div>
-        <div><div class="oj-card-title">EXE3</div><div class="oj-card-sub">Assessoria de Execução III</div></div>
-      </div>
-      <div class="oj-card-body">
-        <div class="oj-attr-row"><span class="key">Responsáveis</span><span class="val">Marco César de Oliveira Wan-Meyl · Nilton Rafael de Barros Silva</span></div><div class="oj-attr-row"><span class="key">Equipe</span><span class="val">9 servidores · 2 estagiários</span></div>
-        <div><span class="oj-pill">1ª VT Piracicaba</span><span class="oj-pill">2ª VT Piracicaba</span><span class="oj-pill">3ª VT Piracicaba</span><span class="oj-pill">Santa Bárbara d'Oeste</span><span class="oj-pill">Sumaré</span></div>
-      </div>
-    </div>
-
-    <div class="oj-card exe" onclick="openUnit('exe4')\">
-      <div class="oj-card-header">
-        <div class="oj-icon">E4</div>
-        <div><div class="oj-card-title">EXE4</div><div class="oj-card-sub">Assessoria de Execução IV</div></div>
-      </div>
-      <div class="oj-card-body">
-        <div class="oj-attr-row"><span class="key">Responsáveis</span><span class="val">Joao Gabriel da Silva Silveira · Liliana Squarizzi Ferreira Cantarim</span></div><div class="oj-attr-row"><span class="key">Equipe</span><span class="val">13 servidores</span></div>
-        <div><span class="oj-pill">1ª VT Piracicaba</span><span class="oj-pill">2ª VT Piracicaba</span><span class="oj-pill">3ª VT Piracicaba</span><span class="oj-pill">Santa Bárbara d'Oeste</span><span class="oj-pill">Sumaré</span></div>
-      </div>
-    </div>
-
-    <div class="oj-card exe" onclick="openUnit('divex')\">
-      <div class="oj-card-header">
-        <div class="oj-icon" style="font-size:12px">DIV</div>
-        <div><div class="oj-card-title">DIVEX</div><div class="oj-card-sub">Divisão de Execução de Piracicaba</div></div>
-      </div>
-      <div class="oj-card-body">
-        <div class="oj-attr-row"><span class="key">Responsáveis</span><span class="val">Ana Sylvia Reis Couto Fernandes</span></div><div class="oj-attr-row"><span class="key">Equipe</span><span class="val">3 servidores</span></div>
-        <div><span class="oj-pill">1ª VT Piracicaba</span><span class="oj-pill">2ª VT Piracicaba</span><span class="oj-pill">3ª VT Piracicaba</span><span class="oj-pill">Santa Bárbara d'Oeste</span><span class="oj-pill">Sumaré</span></div>
-      </div>
-    </div>
-
-    <div class="oj-card dam" onclick="openUnit('dam')\">
-      <div class="oj-card-header">
-        <div class="oj-icon" style="font-size:12px">DAM</div>
-        <div><div class="oj-card-title">DAM</div><div class="oj-card-sub">Divisão de Apoio aos Magistrados</div></div>
-      </div>
-      <div class="oj-card-body">
-        <div class="oj-attr-row"><span class="key">Responsáveis</span><span class="val">Rafael Serra Cardoso</span></div><div class="oj-attr-row"><span class="key">Equipe</span><span class="val">3 servidores</span></div>
-        <div><span class="oj-pill">1ª VT Piracicaba</span><span class="oj-pill">2ª VT Piracicaba</span><span class="oj-pill">3ª VT Piracicaba</span><span class="oj-pill">Santa Bárbara d'Oeste</span><span class="oj-pill">Sumaré</span></div>
-      </div>
-    </div>
-
-    <div class="oj-card daa" onclick="openUnit('daa')\">
-      <div class="oj-card-header">
-        <div class="oj-icon" style="font-size:12px">DAA</div>
-        <div><div class="oj-card-title">DAA</div><div class="oj-card-sub">Divisão de Atend. e Administração</div></div>
-      </div>
-      <div class="oj-card-body">
-        <div class="oj-attr-row"><span class="key">Responsáveis</span><span class="val">Claudir de Oliveira Junior · Rogerio Zambon Canale</span></div><div class="oj-attr-row"><span class="key">Equipe</span><span class="val">17 servidores</span></div>
-        <div><span class="oj-pill">1ª VT Piracicaba</span><span class="oj-pill">2ª VT Piracicaba</span><span class="oj-pill">3ª VT Piracicaba</span><span class="oj-pill">Santa Bárbara d'Oeste</span><span class="oj-pill">Sumaré</span></div>
-      </div>
-    </div>
-
-    <div class="oj-card daa" onclick="openUnit('cejusc')\">
-      <div class="oj-card-header">
-        <div class="oj-icon" style="font-size:12px">CEJ</div>
-        <div><div class="oj-card-title">CEJUSC</div><div class="oj-card-sub">Centro Judiciário de Solução de Conflitos</div></div>
-      </div>
-      <div class="oj-card-body">
-        <div class="oj-attr-row"><span class="key">Responsáveis</span><span class="val">Ana Luisa de Faria · Alexandre Francischetti</span></div><div class="oj-attr-row"><span class="key">Equipe</span><span class="val">4 servidores · 3 estagiários</span></div>
-        <div><span class="oj-pill">1ª VT Piracicaba</span><span class="oj-pill">2ª VT Piracicaba</span><span class="oj-pill">3ª VT Piracicaba</span><span class="oj-pill">Santa Bárbara d'Oeste</span><span class="oj-pill">Sumaré</span></div>
-      </div>
-    </div>
-
-    <div class="oj-card daa" onclick="openUnit('ojs')\">
-      <div class="oj-card-header">
-        <div class="oj-icon">OJ</div>
-        <div><div class="oj-card-title">Oficiais de Justiça</div><div class="oj-card-sub">27 oficiais · 11 cidades</div></div>
-      </div>
-      <div class="oj-card-body">
-        <div class="oj-attr-row"><span class="key">Equipe</span><span class="val">27 servidores</span></div>
-        <div><span class="oj-pill">1ª VT Piracicaba</span><span class="oj-pill">2ª VT Piracicaba</span><span class="oj-pill">3ª VT Piracicaba</span><span class="oj-pill">Santa Bárbara d'Oeste</span><span class="oj-pill">Sumaré</span></div>
-      </div>
-    </div>
-
   </div>
 </div>
 
@@ -4657,5 +4515,19 @@ route();
   }).catch(e=>{$('fx-kpis').innerHTML=`<p style="color:#b23b3b">Não foi possível carregar ferias/ferias.json (${esc(e)}).</p>`;});
 })();
 
+
+/* ===== menu lateral ===== */
+function toggleSide(force) {
+  const open = typeof force === 'boolean' ? force : !document.body.classList.contains('side-open');
+  document.body.classList.toggle('side-open', open);
+  const b = document.querySelector('.side-toggle'); if (b) b.setAttribute('aria-expanded', String(open));
+}
+function navGo(id) { showSection(id); toggleSide(false); return false; }
+(function ajustaAltura() {
+  const nav = document.querySelector('nav');
+  const set = () => document.documentElement.style.setProperty('--nav-h', nav.offsetHeight + 'px');
+  set(); window.addEventListener('resize', set);
+  if (window.ResizeObserver) new ResizeObserver(set).observe(nav);
+})();
 </script>
 </body>
