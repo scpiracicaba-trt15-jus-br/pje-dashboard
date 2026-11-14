@@ -1127,6 +1127,12 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
 .hero { background: linear-gradient(90deg, rgba(10,22,40,.93) 0%, rgba(10,22,40,.74) 45%, rgba(10,22,40,.30) 100%), url('img/piracicaba-engenho-central.jpg') center 55% / cover no-repeat, var(--navy); }
 .hero-credit { position: absolute; right: 14px; bottom: 8px; font-size: 11px; color: rgba(255,255,255,.55); text-decoration: none; z-index: 2; }
 .hero-credit:hover { color: var(--gold-light); text-decoration: underline; }
+
+/* ===== Brasão e bandeira na marca ===== */
+.nav-brand { gap: 12px; }
+.brand-brasao { width: 46px; height: 46px; object-fit: contain; flex-shrink: 0; filter: drop-shadow(0 1px 2px rgba(0,0,0,.35)); }
+.brand-flag { height: 34px; width: auto; border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,.4); flex-shrink: 0; }
+@media (max-width: 900px) { .brand-brasao { width: 36px; height: 36px; } .brand-flag { height: 26px; } }
 </style>
 </head>
 <body>
@@ -1136,7 +1142,8 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
   <div class="nav-inner">
     <button class="side-toggle" type="button" aria-label="Abrir menu" aria-controls="side-nav" aria-expanded="false" onclick="toggleSide()">☰</button>
     <a class="nav-brand" href="#" onclick="return backToOrg()">
-      <div class="emblem">SC</div>
+      <img class="brand-brasao" src="img/brasao-republica.png" alt="Brasão da República — Justiça do Trabalho" width="46" height="46">
+      <img class="brand-flag" src="img/bandeira-trt15.png" alt="Bandeira do TRT da 15ª Região" height="34" onerror="this.remove()">
       <div class="nav-brand-text">
         <span class="title">Secretaria Conjunta</span>
         <span class="sub">Piracicaba &amp; Outras · TRT15</span>
