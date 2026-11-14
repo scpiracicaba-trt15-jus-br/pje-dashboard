@@ -1122,6 +1122,11 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
 
 .mag-legend { font-size: 13px; gap: 14px; }
 .mag-legend .afast-badge, .mag-legend .ferias-badge { font-size: 12px; }
+
+/* ===== Foto do Rio Piracicaba no topo ===== */
+.hero { background: linear-gradient(90deg, rgba(10,22,40,.93) 0%, rgba(10,22,40,.74) 45%, rgba(10,22,40,.30) 100%), url('img/rio-piracicaba.jpg') center 30% / cover no-repeat, var(--navy); }
+.hero-credit { position: absolute; right: 14px; bottom: 8px; font-size: 11px; color: rgba(255,255,255,.55); text-decoration: none; z-index: 2; }
+.hero-credit:hover { color: var(--gold-light); text-decoration: underline; }
 </style>
 </head>
 <body>
@@ -1159,6 +1164,7 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
 
 <!-- HERO -->
 <div class="hero">
+  <a class="hero-credit" href="https://commons.wikimedia.org/wiki/File:Piracicaba-SP.jpg" target="_blank" rel="noopener">Foto: Rio Piracicaba · Wikimedia Commons</a>
   <div class="hero-inner">
     <div class="hero-left">
       <h1>Portal <em>Interno</em><br>Secretaria Conjunta</h1>
@@ -2546,8 +2552,8 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
         <ul class="atrib-list">
           <li><strong>EXE1:</strong> SISBAJUD início, mandadão, CNIB, início da execução com relatório "Processos Vinculados a Determinado Réu", concentração de atos por reclamada, art. 884 CLT</li>
           <li><strong>EXE2:</strong> Pesquisas avançadas (CCS, COAF, SIMBA, CAGED, INFOSEG), inclusão de novos devedores (IDPJ, grupo econômico), sobrestamento/prescrição intercorrente</li>
-          <li><strong>EXE3:</strong> Hasta pública, alienação particular, grandes devedores, reunião de execuções, garimpo, carta de alienação/arrematação, DIVEX</li>
-          <li><strong>EXE4:</strong> Precatórios, RPV, RJ/Falência, certidão de habilitação, garimpo PJe, gestão de documentos, e-doc, planejamento para eliminação de arquivos</li>
+          <li><strong>EXE3:</strong> Hasta pública, alienação particular, grandes devedores, reunião de execuções, carta de alienação/arrematação, DIVEX</li>
+          <li><strong>EXE4:</strong> Precatórios, RPV, RJ/Falência, certidão de habilitação, garimpo (todos os procedimentos), gestão de documentos, e-doc, planejamento para eliminação de arquivos</li>
         </ul>
       </div>
       <div id="tab-r-dam" class="tab-content">
@@ -3754,7 +3760,7 @@ const ojData = {
  },
  "exe3": {
   "title": "EXE3 — Assessoria de Execução III",
-  "sub": "Expropriação, Execuções Coletivas e Garimpo",
+  "sub": "Expropriação e Execuções Coletivas",
   "chefes": [
    {
     "name": "Marco César de Oliveira Wan-Meyl",
@@ -3810,7 +3816,6 @@ const ojData = {
    "Carta de alienação/arrematação/adjudicação",
    "Seção de Reunião de Execuções × DIVEX (investigação patrimonial)",
    "Reunião de grandes devedores",
-   "Garimpo: todos os procedimentos (exceto processos físicos de VTs aglutinadas)",
    "Execuções coletivas e unificadas"
   ],
   "estag": [
@@ -3892,7 +3897,7 @@ const ojData = {
   ],
   "atrib": [
    "Setor de Precatórios: alinhar procedimentos com Assessoria de Precatórios, atualizar para liberação de valores",
-   "Garimpo: Depósitos judiciais e recursais",
+   "Garimpo: todos os procedimentos, inclusive depósitos judiciais e recursais (exceto processos físicos de VTs aglutinadas)",
    "RJ/Falência: certidão de habilitação no Juízo Falimentar e Recuperação Judicial",
    "IDPJ na fase de falência: apreciar e incluir sócios + SISBAJUD",
    "Gestão de documentos: desarquivamento físico, e-DOC, planejamento de eliminação",
