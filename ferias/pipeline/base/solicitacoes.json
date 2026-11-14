@@ -5272,5 +5272,28 @@
   ],
   "id": "1a1d978bf3ee6dd6",
   "data": "2026-11-14"
+ },
+ {
+  "id": "manual-2026-11-14-matheus",
+  "data": "2026-11-14",
+  "nome": "MATHEUS JUNQUEIRA HARDER",
+  "matricula": "42595",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-18",
+    "2027-01-29"
+   ],
+   [
+    "2027-07-01",
+    "2027-07-08"
+   ],
+   [
+    "2027-10-13",
+    "2027-10-22"
+   ]
+  ],
+  "origem": "lançamento manual (comprovante do ROL)"
  }
 ]
