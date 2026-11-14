@@ -5295,5 +5295,28 @@
    ]
   ],
   "origem": "lançamento manual (comprovante do ROL)"
+ },
+ {
+  "id": "manual-2026-11-14-rodrigo",
+  "data": "2026-11-14",
+  "nome": "RODRIGO GONCALVES DIAS AGOSTINETO",
+  "matricula": "42501",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-07",
+    "2027-01-15"
+   ],
+   [
+    "2027-07-19",
+    "2027-07-30"
+   ],
+   [
+    "2027-12-09",
+    "2027-12-17"
+   ]
+  ],
+  "origem": "lançamento manual (comprovante do ROL)"
  }
 ]
