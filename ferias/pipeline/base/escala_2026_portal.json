@@ -1,0 +1,1919 @@
+[
+ {
+  "nome": "Matheus Junqueira Harder",
+  "setor": "Direção",
+  "periodos": [
+   [
+    "2026-01-19",
+    "2026-01-28"
+   ]
+  ]
+ },
+ {
+  "nome": "Rodrigo Gonçalves Dias Agostineto",
+  "setor": "Direção",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-07-01",
+    "2026-07-10"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ]
+ },
+ {
+  "nome": "Claudir de Oliveira Junior",
+  "setor": "DAA",
+  "periodos": [
+   [
+    "2026-02-05",
+    "2026-02-13"
+   ],
+   [
+    "2026-10-13",
+    "2026-10-23"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ]
+ },
+ {
+  "nome": "Rogerio Zambon Canale",
+  "setor": "DAA",
+  "periodos": [
+   [
+    "2026-03-23",
+    "2026-03-31"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-24"
+   ],
+   [
+    "2026-11-03",
+    "2026-11-11"
+   ]
+  ]
+ },
+ {
+  "nome": "Angela Beatriz Gonçales",
+  "setor": "DAA",
+  "periodos": [
+   [
+    "2026-05-05",
+    "2026-06-03"
+   ]
+  ]
+ },
+ {
+  "nome": "Luiz Paolieri Neto",
+  "setor": "DAA",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-07-02",
+    "2026-07-10"
+   ],
+   [
+    "2026-12-07",
+    "2026-12-18"
+   ]
+  ]
+ },
+ {
+  "nome": "Rosana Mazuchi Welsk",
+  "setor": "DAA",
+  "periodos": []
+ },
+ {
+  "nome": "Luzia Danielle dos Santos",
+  "setor": "DAA",
+  "periodos": []
+ },
+ {
+  "nome": "Fábio Pereira da Silva",
+  "setor": "DAA",
+  "periodos": [
+   [
+    "2026-05-04",
+    "2026-05-18"
+   ],
+   [
+    "2026-10-13",
+    "2026-10-27"
+   ]
+  ]
+ },
+ {
+  "nome": "Gabriela Suemi Iguei dos Santos",
+  "setor": "DAA",
+  "periodos": [
+   [
+    "2026-03-17",
+    "2026-03-31"
+   ]
+  ]
+ },
+ {
+  "nome": "Everton Carpinete de Oliveira",
+  "setor": "DAA",
+  "periodos": [
+   [
+    "2026-06-08",
+    "2026-06-16"
+   ],
+   [
+    "2026-06-18",
+    "2026-07-08"
+   ]
+  ]
+ },
+ {
+  "nome": "Regiane Simoni Franco",
+  "setor": "DAA",
+  "periodos": [
+   [
+    "2026-03-02",
+    "2026-03-11"
+   ],
+   [
+    "2026-06-24",
+    "2026-07-03"
+   ],
+   [
+    "2026-09-30",
+    "2026-10-09"
+   ]
+  ]
+ },
+ {
+  "nome": "Reginaldo Zimbres",
+  "setor": "DAA",
+  "periodos": [
+   [
+    "2026-04-06",
+    "2026-04-17"
+   ],
+   [
+    "2026-08-19",
+    "2026-09-04"
+   ]
+  ]
+ },
+ {
+  "nome": "Marcelo Alves Pereira",
+  "setor": "DAA",
+  "periodos": []
+ },
+ {
+  "nome": "Luis Gustavo Fernandes",
+  "setor": "DAA",
+  "periodos": [
+   [
+    "2026-11-19",
+    "2026-12-19"
+   ]
+  ]
+ },
+ {
+  "nome": "Roberto Francisco Nogueira Corsi",
+  "setor": "DAA",
+  "periodos": [
+   [
+    "2026-05-05",
+    "2026-05-22"
+   ]
+  ]
+ },
+ {
+  "nome": "Maria Lucia Ramos Buzon Silva",
+  "setor": "DAA",
+  "periodos": [
+   [
+    "2026-01-12",
+    "2026-01-16"
+   ],
+   [
+    "2026-04-06",
+    "2026-04-13"
+   ],
+   [
+    "2026-11-03",
+    "2026-11-19"
+   ]
+  ]
+ },
+ {
+  "nome": "Vanessa Mateus Yamaji",
+  "setor": "DAA",
+  "periodos": [
+   [
+    "2026-01-19",
+    "2026-01-30"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-24"
+   ],
+   [
+    "2026-12-13",
+    "2026-12-18"
+   ]
+  ]
+ },
+ {
+  "nome": "Rute Vera Lucia de Oliveira",
+  "setor": "DAA",
+  "periodos": [
+   [
+    "2026-05-20",
+    "2026-06-03"
+   ],
+   [
+    "2026-11-03",
+    "2026-11-17"
+   ]
+  ]
+ },
+ {
+  "nome": "Deise Maria Cassaniga Azevedo",
+  "setor": "CON1",
+  "periodos": []
+ },
+ {
+  "nome": "Silvana Marcelino Braz",
+  "setor": "CON1",
+  "periodos": [
+   [
+    "2026-02-02",
+    "2026-02-13"
+   ],
+   [
+    "2026-08-10",
+    "2026-08-28"
+   ]
+  ]
+ },
+ {
+  "nome": "Claudia Ferraz de Camargo",
+  "setor": "CON1",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-09"
+   ],
+   [
+    "2026-02-09",
+    "2026-02-13"
+   ]
+  ]
+ },
+ {
+  "nome": "Barbara Padovani Minholo Hoffmann",
+  "setor": "CON1",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-26"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-22"
+   ]
+  ]
+ },
+ {
+  "nome": "Sandra Regina da Conceição Amaral",
+  "setor": "CON1",
+  "periodos": [
+   [
+    "2026-04-06",
+    "2026-04-15"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-22"
+   ],
+   [
+    "2026-10-21",
+    "2026-10-30"
+   ]
+  ]
+ },
+ {
+  "nome": "Adriana Aparecida Pertile Municelli",
+  "setor": "CON1",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-19"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-22"
+   ],
+   [
+    "2026-10-05",
+    "2026-10-09"
+   ]
+  ]
+ },
+ {
+  "nome": "Erika Cristina Mendes de Campos Garcia",
+  "setor": "CON1",
+  "periodos": [
+   [
+    "2026-01-12",
+    "2026-01-26"
+   ]
+  ]
+ },
+ {
+  "nome": "Romilda Maria de Arruda Germano",
+  "setor": "CON1",
+  "periodos": [
+   [
+    "2026-02-23",
+    "2026-02-27"
+   ],
+   [
+    "2026-04-22",
+    "2026-04-30"
+   ],
+   [
+    "2026-11-03",
+    "2026-11-19"
+   ]
+  ]
+ },
+ {
+  "nome": "Debora Assis de Oliveira Bissi",
+  "setor": "CON1",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-22"
+   ],
+   [
+    "2026-11-23",
+    "2026-12-02"
+   ]
+  ]
+ },
+ {
+  "nome": "Celina Jacintho Pereira",
+  "setor": "CON1",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-11"
+   ],
+   [
+    "2026-04-06",
+    "2026-04-17"
+   ],
+   [
+    "2026-10-19",
+    "2026-10-31"
+   ]
+  ]
+ },
+ {
+  "nome": "Claudia Maria Pastor",
+  "setor": "CON1",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-07-13",
+    "2026-08-01"
+   ]
+  ]
+ },
+ {
+  "nome": "Sandra Maria Segato Gazzeta",
+  "setor": "CON1",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-23"
+   ],
+   [
+    "2026-06-29",
+    "2026-07-11"
+   ]
+  ]
+ },
+ {
+  "nome": "Marina Lira Da Silveira Pinto",
+  "setor": "CON1",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-09-08",
+    "2026-09-17"
+   ],
+   [
+    "2026-12-01",
+    "2026-12-10"
+   ]
+  ]
+ },
+ {
+  "nome": "Rogeria Helena Aparecida Franzini Corazza",
+  "setor": "CON1",
+  "periodos": [
+   [
+    "2026-03-16",
+    "2026-03-30"
+   ],
+   [
+    "2026-10-13",
+    "2026-10-27"
+   ]
+  ]
+ },
+ {
+  "nome": "Michelli Cristina Borges Sampaio",
+  "setor": "CON1",
+  "periodos": [
+   [
+    "2026-11-03",
+    "2026-11-22"
+   ]
+  ]
+ },
+ {
+  "nome": "Naara de Lucas Barbalho",
+  "setor": "CON1",
+  "periodos": [
+   [
+    "2026-07-13",
+    "2026-07-22"
+   ],
+   [
+    "2026-10-13",
+    "2026-11-01"
+   ]
+  ]
+ },
+ {
+  "nome": "Cristina Ziani de Moura",
+  "setor": "CON1",
+  "periodos": [
+   [
+    "2026-01-16",
+    "2026-01-30"
+   ],
+   [
+    "2026-07-14",
+    "2026-07-23"
+   ],
+   [
+    "2026-12-14",
+    "2026-12-18"
+   ]
+  ]
+ },
+ {
+  "nome": "Maria Lúcia Alves Cavalcante",
+  "setor": "CON1",
+  "periodos": [
+   [
+    "2026-07-13",
+    "2026-07-27"
+   ]
+  ]
+ },
+ {
+  "nome": "Daniele Fernanda Stefani",
+  "setor": "CON1",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-12"
+   ],
+   [
+    "2026-09-08",
+    "2026-09-11"
+   ]
+  ]
+ },
+ {
+  "nome": "Dheise Monique Euphrasio",
+  "setor": "CON1",
+  "periodos": [
+   [
+    "2026-08-11",
+    "2026-08-23"
+   ],
+   [
+    "2026-11-03",
+    "2026-11-19"
+   ]
+  ]
+ },
+ {
+  "nome": "Anita Bueno de Moraes Narciso",
+  "setor": "CON1",
+  "periodos": [
+   [
+    "2026-04-06",
+    "2026-04-16"
+   ],
+   [
+    "2026-12-01",
+    "2026-12-18"
+   ]
+  ]
+ },
+ {
+  "nome": "Paula de Carvalho Ambar Lima",
+  "setor": "CON1",
+  "periodos": [
+   [
+    "2026-10-13",
+    "2026-10-22"
+   ]
+  ]
+ },
+ {
+  "nome": "Ana Claudia Rodrigues Abreu Bergonsini",
+  "setor": "CON1",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-06-29",
+    "2026-07-08"
+   ],
+   [
+    "2026-08-26",
+    "2026-09-04"
+   ]
+  ]
+ },
+ {
+  "nome": "Emerson Alexandre Viola",
+  "setor": "CON1",
+  "periodos": [
+   [
+    "2025-12-25",
+    "2026-01-23"
+   ]
+  ]
+ },
+ {
+  "nome": "Elenira de Andrade Bicalho",
+  "setor": "CON1",
+  "periodos": [
+   [
+    "2026-04-06",
+    "2026-04-15"
+   ],
+   [
+    "2026-06-29",
+    "2026-07-08"
+   ],
+   [
+    "2026-09-21",
+    "2026-09-30"
+   ]
+  ]
+ },
+ {
+  "nome": "Aguinaldo Junior Yamamoto Peres",
+  "setor": "CON1",
+  "periodos": [
+   [
+    "2026-04-06",
+    "2026-04-17"
+   ]
+  ]
+ },
+ {
+  "nome": "Leandro Mac Fadden Negri",
+  "setor": "CON1",
+  "periodos": [
+   [
+    "2026-01-06",
+    "2026-01-30"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-31"
+   ],
+   [
+    "2026-12-13",
+    "2026-12-18"
+   ]
+  ]
+ },
+ {
+  "nome": "Fabiana de Lemos Pedro",
+  "setor": "CON1",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-21"
+   ],
+   [
+    "2026-07-17",
+    "2026-07-31"
+   ]
+  ]
+ },
+ {
+  "nome": "Thiago Donizete Mendanha",
+  "setor": "CON1",
+  "periodos": [
+   [
+    "2026-07-13",
+    "2026-07-24"
+   ],
+   [
+    "2026-12-01",
+    "2026-12-18"
+   ]
+  ]
+ },
+ {
+  "nome": "Michel Aquino de Souza",
+  "setor": "CON1",
+  "periodos": [
+   [
+    "2026-04-06",
+    "2026-04-17"
+   ],
+   [
+    "2026-09-28",
+    "2026-10-02"
+   ],
+   [
+    "2026-11-23",
+    "2026-12-05"
+   ]
+  ]
+ },
+ {
+  "nome": "Tatiana Maeyama",
+  "setor": "CON1",
+  "periodos": [
+   [
+    "2026-01-09",
+    "2026-01-16"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-24"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ]
+ },
+ {
+  "nome": "Gabriel de Oliveira Silva",
+  "setor": "CON1",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-02-05"
+   ]
+  ]
+ },
+ {
+  "nome": "Cleilson Damasceno de Oliveira",
+  "setor": "CON1",
+  "periodos": [
+   [
+    "2026-07-16",
+    "2026-08-13"
+   ]
+  ]
+ },
+ {
+  "nome": "Luciana Cristina Rodrigues",
+  "setor": "CON1",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-02-04"
+   ]
+  ]
+ },
+ {
+  "nome": "André Luiz Fernandes Rocha",
+  "setor": "CON1",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-22"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ]
+ },
+ {
+  "nome": "Rinaldo Pistolini",
+  "setor": "CON2",
+  "periodos": [
+   [
+    "2026-04-22",
+    "2026-05-08"
+   ],
+   [
+    "2026-10-13",
+    "2026-10-29"
+   ]
+  ]
+ },
+ {
+  "nome": "Celio Aparecido Trombetta",
+  "setor": "CON2",
+  "periodos": [
+   [
+    "2026-06-22",
+    "2026-07-03"
+   ],
+   [
+    "2026-09-15",
+    "2026-10-02"
+   ]
+  ]
+ },
+ {
+  "nome": "Ana Paula D Elia Vinhal",
+  "setor": "CON2",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-21"
+   ],
+   [
+    "2026-03-02",
+    "2026-03-06"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-22"
+   ]
+  ]
+ },
+ {
+  "nome": "Natalina Maria Borges Xavier",
+  "setor": "CON2",
+  "periodos": [
+   [
+    "2026-07-27",
+    "2026-08-10"
+   ],
+   [
+    "2026-12-04",
+    "2026-12-18"
+   ]
+  ]
+ },
+ {
+  "nome": "Nilza Misael Ferreira",
+  "setor": "CON2",
+  "periodos": [
+   [
+    "2026-08-25",
+    "2026-09-04"
+   ],
+   [
+    "2026-11-03",
+    "2026-11-13"
+   ]
+  ]
+ },
+ {
+  "nome": "Rosana Sueli Britto de Jesus",
+  "setor": "CON2",
+  "periodos": [
+   [
+    "2026-03-17",
+    "2026-03-31"
+   ]
+  ]
+ },
+ {
+  "nome": "Tatiana Maffeis da Cunha",
+  "setor": "CON2",
+  "periodos": [
+   [
+    "2026-02-19",
+    "2026-03-03"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-24"
+   ],
+   [
+    "2026-11-23",
+    "2026-11-27"
+   ]
+  ]
+ },
+ {
+  "nome": "Roberta Rodrigues Urbano",
+  "setor": "CON2",
+  "periodos": [
+   [
+    "2026-05-25",
+    "2026-06-03"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-24"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ]
+ },
+ {
+  "nome": "Ivi Cristina Indalecio Bueno",
+  "setor": "CON2",
+  "periodos": [
+   [
+    "2026-07-13",
+    "2026-08-01"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ]
+ },
+ {
+  "nome": "Isabela Freitas de Souza",
+  "setor": "CON2",
+  "periodos": [
+   [
+    "2026-03-16",
+    "2026-03-30"
+   ],
+   [
+    "2026-12-04",
+    "2026-12-18"
+   ]
+  ]
+ },
+ {
+  "nome": "Sisenando Gomes Calixto de Sousa",
+  "setor": "CON2",
+  "periodos": []
+ },
+ {
+  "nome": "Mariangela Miranda Duarte",
+  "setor": "CON2",
+  "periodos": [
+   [
+    "2026-06-25",
+    "2026-07-08"
+   ],
+   [
+    "2026-09-28",
+    "2026-10-03"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ]
+ },
+ {
+  "nome": "Domingos Jose de Munno",
+  "setor": "CON2",
+  "periodos": [
+   [
+    "2026-04-06",
+    "2026-04-17"
+   ]
+  ]
+ },
+ {
+  "nome": "Claudia Elisa Betti Pedro Bom",
+  "setor": "CON2",
+  "periodos": [
+   [
+    "2026-03-18",
+    "2026-03-23"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-17"
+   ],
+   [
+    "2026-12-01",
+    "2026-12-19"
+   ]
+  ]
+ },
+ {
+  "nome": "Alessandro Costa",
+  "setor": "CON2",
+  "periodos": [
+   [
+    "2026-03-02",
+    "2026-03-31"
+   ]
+  ]
+ },
+ {
+  "nome": "Neusa Aparecida Asbahr Bais",
+  "setor": "CON2",
+  "periodos": [
+   [
+    "2026-01-06",
+    "2026-01-15"
+   ],
+   [
+    "2026-06-08",
+    "2026-06-17"
+   ],
+   [
+    "2026-11-03",
+    "2026-11-12"
+   ]
+  ]
+ },
+ {
+  "nome": "Aparecida de Fatima de Souza Franco",
+  "setor": "CON2",
+  "periodos": [
+   [
+    "2026-07-13",
+    "2026-07-24"
+   ],
+   [
+    "2026-12-01",
+    "2026-12-18"
+   ]
+  ]
+ },
+ {
+  "nome": "Dulce Maria Vasconcellos Seixas",
+  "setor": "CON2",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-05-04",
+    "2026-05-12"
+   ],
+   [
+    "2026-09-08",
+    "2026-09-18"
+   ]
+  ]
+ },
+ {
+  "nome": "Wellington George Braga Paz",
+  "setor": "LIQ1",
+  "periodos": [
+   [
+    "2026-01-19",
+    "2026-01-30"
+   ],
+   [
+    "2026-03-16",
+    "2026-03-20"
+   ],
+   [
+    "2026-07-06",
+    "2026-07-18"
+   ]
+  ]
+ },
+ {
+  "nome": "Heitor Augusto Scarpari Costa",
+  "setor": "LIQ1",
+  "periodos": []
+ },
+ {
+  "nome": "Tiago Souza Dias",
+  "setor": "LIQ1",
+  "periodos": []
+ },
+ {
+  "nome": "Maria Cecília Silveira Granato",
+  "setor": "LIQ1",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ]
+ },
+ {
+  "nome": "Mariana Penachioni Zangirolami",
+  "setor": "LIQ1",
+  "periodos": []
+ },
+ {
+  "nome": "Maria Cristina Ferreira Rodrigues de Lara",
+  "setor": "LIQ1",
+  "periodos": []
+ },
+ {
+  "nome": "Mauricio Jose Roque",
+  "setor": "LIQ1",
+  "periodos": []
+ },
+ {
+  "nome": "Marcio Roberto Vallim",
+  "setor": "LIQ1",
+  "periodos": []
+ },
+ {
+  "nome": "Gabriela Aparecida Severino de Andrade Tavares",
+  "setor": "LIQ1",
+  "periodos": [
+   [
+    "2026-01-19",
+    "2026-01-23"
+   ],
+   [
+    "2026-06-08",
+    "2026-06-19"
+   ],
+   [
+    "2026-09-28",
+    "2026-10-10"
+   ]
+  ]
+ },
+ {
+  "nome": "José Adriano Fiori",
+  "setor": "LIQ1",
+  "periodos": [
+   [
+    "2026-06-08",
+    "2026-06-22"
+   ],
+   [
+    "2026-09-21",
+    "2026-10-05"
+   ]
+  ]
+ },
+ {
+  "nome": "Celso de Arruda Moreira",
+  "setor": "LIQ1",
+  "periodos": []
+ },
+ {
+  "nome": "Joao Victor Medeiros de Lucena",
+  "setor": "LIQ1",
+  "periodos": []
+ },
+ {
+  "nome": "Eneias Cristiano Eler",
+  "setor": "LIQ1",
+  "periodos": []
+ },
+ {
+  "nome": "Paulo Sergio Salvador",
+  "setor": "LIQ2",
+  "periodos": [
+   [
+    "2026-04-06",
+    "2026-04-10"
+   ],
+   [
+    "2026-05-18",
+    "2026-05-22"
+   ],
+   [
+    "2026-09-30",
+    "2026-10-19"
+   ]
+  ]
+ },
+ {
+  "nome": "Vanderlei Baldessin",
+  "setor": "LIQ2",
+  "periodos": [
+   [
+    "2026-05-06",
+    "2026-05-15"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-22"
+   ],
+   [
+    "2026-11-10",
+    "2026-11-19"
+   ]
+  ]
+ },
+ {
+  "nome": "Cristiany Contreras",
+  "setor": "LIQ2",
+  "periodos": []
+ },
+ {
+  "nome": "Juliana Marconi Penteado Pessin",
+  "setor": "LIQ2",
+  "periodos": [
+   [
+    "2026-07-13",
+    "2026-07-24"
+   ],
+   [
+    "2026-11-12",
+    "2026-11-19"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ]
+ },
+ {
+  "nome": "Jailton Leite da Silva",
+  "setor": "LIQ2",
+  "periodos": []
+ },
+ {
+  "nome": "Leandro Jose Christofoletti",
+  "setor": "LIQ2",
+  "periodos": [
+   [
+    "2026-03-23",
+    "2026-03-30"
+   ],
+   [
+    "2026-08-11",
+    "2026-08-21"
+   ],
+   [
+    "2026-11-03",
+    "2026-11-13"
+   ]
+  ]
+ },
+ {
+  "nome": "Renata Fabiana Parpinelli Ishihara",
+  "setor": "LIQ2",
+  "periodos": []
+ },
+ {
+  "nome": "Carolina Monteiro da Silveira",
+  "setor": "LIQ2",
+  "periodos": []
+ },
+ {
+  "nome": "Tiago Filipe Calegari",
+  "setor": "LIQ2",
+  "periodos": []
+ },
+ {
+  "nome": "Marcia Regina Marques de Paula",
+  "setor": "LIQ2",
+  "periodos": []
+ },
+ {
+  "nome": "Maria da Penha Alves Gomes Santos",
+  "setor": "LIQ2",
+  "periodos": []
+ },
+ {
+  "nome": "Rafaela Cabral Burato",
+  "setor": "LIQ2",
+  "periodos": [
+   [
+    "2026-04-22",
+    "2026-04-30"
+   ],
+   [
+    "2026-08-11",
+    "2026-08-14"
+   ],
+   [
+    "2026-10-13",
+    "2026-10-29"
+   ]
+  ]
+ },
+ {
+  "nome": "Marcelo de Jesus Rangel Monteiro",
+  "setor": "LIQ2",
+  "periodos": []
+ },
+ {
+  "nome": "Welder de Oliveira Moraes",
+  "setor": "LIQ2",
+  "periodos": []
+ },
+ {
+  "nome": "Fabiano Maiolini",
+  "setor": "LIQ2",
+  "periodos": []
+ },
+ {
+  "nome": "Mariana Cechinato Lorenzete",
+  "setor": "LIQ2",
+  "periodos": []
+ },
+ {
+  "nome": "Thais Furquim Soledade Neves Dela Vale",
+  "setor": "LIQ2",
+  "periodos": [
+   [
+    "2026-03-16",
+    "2026-03-31"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-30"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ]
+ },
+ {
+  "nome": "Maria Luiza Guerra Martinelli",
+  "setor": "LIQ2",
+  "periodos": []
+ },
+ {
+  "nome": "Daiane Carla Santos Ledo Marques",
+  "setor": "LIQ2",
+  "periodos": []
+ },
+ {
+  "nome": "Roberta Elena Agostineto Tetzlaff",
+  "setor": "EXE1",
+  "periodos": [
+   [
+    "2026-02-04",
+    "2026-02-13"
+   ],
+   [
+    "2026-11-03",
+    "2026-11-19"
+   ]
+  ]
+ },
+ {
+  "nome": "Eduardo Augusto Veloso",
+  "setor": "EXE1",
+  "periodos": [
+   [
+    "2026-07-13",
+    "2026-07-24"
+   ],
+   [
+    "2026-10-22",
+    "2026-10-29"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ]
+ },
+ {
+  "nome": "Cristiane Ciolin Setin Pedro",
+  "setor": "EXE1",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-03-10",
+    "2026-03-31"
+   ]
+  ]
+ },
+ {
+  "nome": "Janet Helena Faveri",
+  "setor": "EXE1",
+  "periodos": []
+ },
+ {
+  "nome": "Maria Gardinali de Lima",
+  "setor": "EXE1",
+  "periodos": [
+   [
+    "2026-07-06",
+    "2026-07-17"
+   ],
+   [
+    "2026-11-03",
+    "2026-11-13"
+   ]
+  ]
+ },
+ {
+  "nome": "Daniela Hertel Grassmann",
+  "setor": "EXE1",
+  "periodos": [
+   [
+    "2026-04-06",
+    "2026-04-17"
+   ],
+   [
+    "2026-08-11",
+    "2026-08-17"
+   ],
+   [
+    "2026-11-09",
+    "2026-11-19"
+   ]
+  ]
+ },
+ {
+  "nome": "Anelise Lino de Queiroz",
+  "setor": "EXE1",
+  "periodos": [
+   [
+    "2026-04-22",
+    "2026-04-30"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-16"
+   ],
+   [
+    "2026-10-13",
+    "2026-10-29"
+   ]
+  ]
+ },
+ {
+  "nome": "Wallace Diego Resende",
+  "setor": "EXE1",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-23"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-25"
+   ]
+  ]
+ },
+ {
+  "nome": "Sabrina Noronha Costa Costantini",
+  "setor": "EXE1",
+  "periodos": [
+   [
+    "2026-01-19",
+    "2026-01-23"
+   ],
+   [
+    "2026-07-06",
+    "2026-07-20"
+   ],
+   [
+    "2026-10-13",
+    "2026-10-22"
+   ]
+  ]
+ },
+ {
+  "nome": "Fabio Ajudarte Lopes",
+  "setor": "EXE2",
+  "periodos": [
+   [
+    "2026-01-19",
+    "2026-01-23"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-24"
+   ],
+   [
+    "2026-11-23",
+    "2026-12-04"
+   ]
+  ]
+ },
+ {
+  "nome": "Filipe Shinzato Colevati",
+  "setor": "EXE2",
+  "periodos": [
+   [
+    "2026-04-06",
+    "2026-04-17"
+   ],
+   [
+    "2026-11-03",
+    "2026-11-19"
+   ]
+  ]
+ },
+ {
+  "nome": "Marcio Elias Soares Gonçalves Siqueira",
+  "setor": "EXE2",
+  "periodos": [
+   [
+    "2026-04-06",
+    "2026-04-17"
+   ],
+   [
+    "2026-08-11",
+    "2026-08-17"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ]
+ },
+ {
+  "nome": "Juliana Fiamenghi Misse Correia",
+  "setor": "EXE2",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-31"
+   ]
+  ]
+ },
+ {
+  "nome": "Daniel Carlos Alves de Pilla",
+  "setor": "EXE2",
+  "periodos": [
+   [
+    "2026-02-02",
+    "2026-02-12"
+   ],
+   [
+    "2026-09-20",
+    "2026-10-09"
+   ]
+  ]
+ },
+ {
+  "nome": "Eline Ana Sampaio Coradi Castro",
+  "setor": "EXE2",
+  "periodos": [
+   [
+    "2026-07-27",
+    "2026-08-14"
+   ],
+   [
+    "2026-09-28",
+    "2026-10-02"
+   ],
+   [
+    "2026-12-14",
+    "2026-12-18"
+   ]
+  ]
+ },
+ {
+  "nome": "Calefe Alexandre de Oliveira",
+  "setor": "EXE2",
+  "periodos": [
+   [
+    "2026-04-06",
+    "2026-04-17"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-24"
+   ],
+   [
+    "2026-11-23",
+    "2026-11-28"
+   ]
+  ]
+ },
+ {
+  "nome": "Antenor Donida Bartoli",
+  "setor": "EXE2",
+  "periodos": [
+   [
+    "2026-01-12",
+    "2026-01-16"
+   ],
+   [
+    "2026-07-16",
+    "2026-07-31"
+   ]
+  ]
+ },
+ {
+  "nome": "Sonia Cristina dos Santos Franco",
+  "setor": "EXE2",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-07-17",
+    "2026-07-31"
+   ]
+  ]
+ },
+ {
+  "nome": "Marco César de Oliveira Wan-Meyl",
+  "setor": "EXE3",
+  "periodos": [
+   [
+    "2026-08-12",
+    "2026-09-04"
+   ],
+   [
+    "2026-11-20",
+    "2026-12-19"
+   ]
+  ]
+ },
+ {
+  "nome": "Nilton Rafael de Barros Silva",
+  "setor": "EXE3",
+  "periodos": [
+   [
+    "2026-07-13",
+    "2026-07-22"
+   ],
+   [
+    "2026-11-05",
+    "2026-11-19"
+   ]
+  ]
+ },
+ {
+  "nome": "Ana Sylvia Reis Couto Fernandes",
+  "setor": "DIVEX",
+  "periodos": []
+ },
+ {
+  "nome": "Cristina Ceratti",
+  "setor": "EXE3",
+  "periodos": [
+   [
+    "2026-03-09",
+    "2026-03-23"
+   ],
+   [
+    "2026-09-16",
+    "2026-09-30"
+   ]
+  ]
+ },
+ {
+  "nome": "Filipe Pereira dos Santos",
+  "setor": "EXE3",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-06-01",
+    "2026-06-10"
+   ],
+   [
+    "2026-12-01",
+    "2026-12-10"
+   ]
+  ]
+ },
+ {
+  "nome": "Antônio Abel de Lucca Júnior",
+  "setor": "EXE3",
+  "periodos": []
+ },
+ {
+  "nome": "Fernando Brait Garros",
+  "setor": "EXE3",
+  "periodos": [
+   [
+    "2026-04-06",
+    "2026-04-17"
+   ],
+   [
+    "2026-12-01",
+    "2026-12-18"
+   ]
+  ]
+ },
+ {
+  "nome": "Agnelo Welington Silveira Castro",
+  "setor": "EXE3",
+  "periodos": [
+   [
+    "2026-08-03",
+    "2026-09-01"
+   ]
+  ]
+ },
+ {
+  "nome": "Thayane Criscia Souto de Oliveira",
+  "setor": "EXE3",
+  "periodos": []
+ },
+ {
+  "nome": "Débora Cerqueira Simão",
+  "setor": "EXE3",
+  "periodos": []
+ },
+ {
+  "nome": "Milton Roberto da Silva",
+  "setor": "EXE3",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-06-29",
+    "2026-07-18"
+   ]
+  ]
+ },
+ {
+  "nome": "Merval Eliel Medeiros Braga",
+  "setor": "DIVEX",
+  "periodos": []
+ },
+ {
+  "nome": "Camila dos Santos Zanetti",
+  "setor": "DIVEX",
+  "periodos": []
+ },
+ {
+  "nome": "João Gabriel da Silva Silveira",
+  "setor": "EXE4",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-07-16",
+    "2026-07-31"
+   ],
+   [
+    "2026-11-16",
+    "2026-11-19"
+   ]
+  ]
+ },
+ {
+  "nome": "Liliana Squarizzi Ferreira Cantarim",
+  "setor": "EXE4",
+  "periodos": [
+   [
+    "2026-02-23",
+    "2026-02-27"
+   ],
+   [
+    "2026-06-22",
+    "2026-07-03"
+   ],
+   [
+    "2026-09-28",
+    "2026-10-10"
+   ]
+  ]
+ },
+ {
+  "nome": "Elda Kesia de Almeida",
+  "setor": "EXE4",
+  "periodos": [
+   [
+    "2026-04-22",
+    "2026-04-30"
+   ],
+   [
+    "2026-08-11",
+    "2026-08-21"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ]
+ },
+ {
+  "nome": "Alexandre de Brito Silva",
+  "setor": "EXE4",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-21"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-27"
+   ]
+  ]
+ },
+ {
+  "nome": "Regina Célia Bernardi Jorge",
+  "setor": "EXE4",
+  "periodos": [
+   [
+    "2026-05-13",
+    "2026-05-27"
+   ],
+   [
+    "2026-09-14",
+    "2026-09-18"
+   ],
+   [
+    "2026-11-03",
+    "2026-11-12"
+   ]
+  ]
+ },
+ {
+  "nome": "Sueli Aparecida Binati",
+  "setor": "EXE4",
+  "periodos": [
+   [
+    "2026-06-01",
+    "2026-06-15"
+   ],
+   [
+    "2026-09-08",
+    "2026-09-22"
+   ]
+  ]
+ },
+ {
+  "nome": "Julio Cesar Cano",
+  "setor": "EXE4",
+  "periodos": [
+   [
+    "2026-11-01",
+    "2026-11-30"
+   ]
+  ]
+ },
+ {
+  "nome": "José Luis Buratto",
+  "setor": "EXE4",
+  "periodos": [
+   [
+    "2026-04-06",
+    "2026-04-20"
+   ],
+   [
+    "2026-10-16",
+    "2026-10-30"
+   ]
+  ]
+ },
+ {
+  "nome": "Aparecida Maria Barbosa Zuqueto",
+  "setor": "EXE4",
+  "periodos": [
+   [
+    "2026-01-26",
+    "2026-02-03"
+   ],
+   [
+    "2026-06-30",
+    "2026-07-08"
+   ],
+   [
+    "2026-08-31",
+    "2026-09-11"
+   ]
+  ]
+ },
+ {
+  "nome": "Marcia Helena Domenici",
+  "setor": "EXE4",
+  "periodos": []
+ },
+ {
+  "nome": "Carmen Lucianita de Sene Bargas Giao",
+  "setor": "EXE4",
+  "periodos": [
+   [
+    "2026-06-17",
+    "2026-06-23"
+   ],
+   [
+    "2026-07-20",
+    "2026-07-31"
+   ],
+   [
+    "2026-09-08",
+    "2026-09-18"
+   ]
+  ]
+ },
+ {
+  "nome": "Rafael Serra Cardoso",
+  "setor": "DAM",
+  "periodos": []
+ },
+ {
+  "nome": "Cristiane Cornelio Donega",
+  "setor": "DAM",
+  "periodos": []
+ },
+ {
+  "nome": "Fernanda Godoy D'Avila",
+  "setor": "DAM",
+  "periodos": []
+ },
+ {
+  "nome": "Ana Paula Fernandes Mesquini",
+  "setor": "DAM",
+  "periodos": []
+ },
+ {
+  "nome": "Thiago Cesar Costa",
+  "setor": "DAM",
+  "periodos": []
+ },
+ {
+  "nome": "Fernando Belam",
+  "setor": "DAM",
+  "periodos": []
+ },
+ {
+  "nome": "Ana Luisa de Faria",
+  "setor": "CEJUSC",
+  "periodos": []
+ },
+ {
+  "nome": "Alexandre Francischetti",
+  "setor": "CEJUSC",
+  "periodos": []
+ },
+ {
+  "nome": "Joseane de Menezes Conde",
+  "setor": "CEJUSC",
+  "periodos": [
+   [
+    "2026-07-16",
+    "2026-07-31"
+   ],
+   [
+    "2026-12-01",
+    "2026-12-16"
+   ]
+  ]
+ },
+ {
+  "nome": "Maria Jose Dainez",
+  "setor": "CEJUSC",
+  "periodos": []
+ },
+ {
+  "nome": "Silvia Raquel Alves de Oliveira",
+  "setor": "CEJUSC",
+  "periodos": []
+ }
+]

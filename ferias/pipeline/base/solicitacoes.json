@@ -1,0 +1,5276 @@
+[
+ {
+  "nome": "NAARA DE LUCAS BARBALHO",
+  "matricula": "102547",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2025-09-03",
+    "2025-09-22"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-22"
+   ]
+  ],
+  "id": "1988b319d3ffe37c",
+  "data": "2025-08-08"
+ },
+ {
+  "nome": "ANA SYLVIA REIS COUTO FERNANDES",
+  "matricula": "91987",
+  "tipo": "Folga compensatória de dias trabalhados em Eleição",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2025-08-04",
+    "2025-08-05"
+   ]
+  ],
+  "id": "1989ebfdfa86016a",
+  "data": "2025-08-12"
+ },
+ {
+  "nome": "FERNANDA GONCALVES AMARAL LAPA",
+  "matricula": "94129",
+  "tipo": "Folga compensatória de dias trabalhados em Plantão Judiciário",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2025-10-31",
+    "2025-10-31"
+   ]
+  ],
+  "id": "198a3a1180b73a12",
+  "data": "2025-08-13"
+ },
+ {
+  "nome": "MAURICIO JOSE ROQUE",
+  "matricula": "22225",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2025-10-28",
+    "2025-11-07"
+   ],
+   [
+    "2026-03-02",
+    "2026-03-20"
+   ]
+  ],
+  "id": "198a44e4a815cd44",
+  "data": "2025-08-13"
+ },
+ {
+  "nome": "RENATO FRANCISCO NORMANDIA MOREIRA",
+  "matricula": "12556",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2025-09-29",
+    "2025-10-10"
+   ],
+   [
+    "2025-11-24",
+    "2025-12-11"
+   ]
+  ],
+  "id": "198be23609b98234",
+  "data": "2025-08-18"
+ },
+ {
+  "nome": "PAULA DE CARVALHO AMBAR LIMA",
+  "matricula": "46817",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2025-10-13",
+    "2025-10-22"
+   ],
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-07-20",
+    "2026-07-29"
+   ]
+  ],
+  "id": "198ed475033db915",
+  "data": "2025-08-27"
+ },
+ {
+  "nome": "ROSANA SUELI BRITTO DE JESUS",
+  "matricula": "50938",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2025-10-13",
+    "2025-10-27"
+   ],
+   [
+    "2026-03-17",
+    "2026-03-31"
+   ]
+  ],
+  "id": "198f17f74d7b23d3",
+  "data": "2025-08-28"
+ },
+ {
+  "id": "1991a644d2731c81",
+  "data": "2025-09-05",
+  "nome": "ANA SYLVIA REIS COUTO FERNANDES",
+  "matricula": "91987",
+  "tipo": "Alteração de férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2025-04-22",
+    "2025-04-22"
+   ],
+   [
+    "2025-07-14",
+    "2025-08-01"
+   ],
+   [
+    "2025-11-10",
+    "2025-11-19"
+   ]
+  ],
+  "novo": [
+   [
+    "2025-04-22",
+    "2025-04-22"
+   ],
+   [
+    "2025-07-14",
+    "2025-08-01"
+   ],
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ]
+  ]
+ },
+ {
+  "id": "1991bb45a2766d34",
+  "data": "2025-09-05",
+  "nome": "CAMILA DOS SANTOS ZANETTI",
+  "matricula": "98477",
+  "tipo": "Alteração de férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2025-02-03",
+    "2025-02-07"
+   ],
+   [
+    "2025-04-07",
+    "2025-04-15"
+   ],
+   [
+    "2025-09-08",
+    "2025-09-23"
+   ]
+  ],
+  "novo": [
+   [
+    "2025-02-03",
+    "2025-02-07"
+   ],
+   [
+    "2025-04-07",
+    "2025-04-15"
+   ],
+   [
+    "2025-10-01",
+    "2025-10-16"
+   ]
+  ]
+ },
+ {
+  "id": "1992a316e12e959d",
+  "data": "2025-09-08",
+  "nome": "CAMILA DOS SANTOS ZANETTI",
+  "matricula": "98477",
+  "tipo": "Alteração de férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2025-02-03",
+    "2025-02-07"
+   ],
+   [
+    "2025-04-07",
+    "2025-04-15"
+   ],
+   [
+    "2025-10-01",
+    "2025-10-16"
+   ]
+  ],
+  "novo": [
+   [
+    "2025-02-03",
+    "2025-02-07"
+   ],
+   [
+    "2025-04-07",
+    "2025-04-15"
+   ],
+   [
+    "2025-10-28",
+    "2025-11-12"
+   ]
+  ]
+ },
+ {
+  "nome": "FABRICIO LIMA PEREIRA",
+  "matricula": "46086",
+  "tipo": "Cancelamento de férias",
+  "categoria": "cancelamento",
+  "periodos": [
+   [
+    "2025-11-10",
+    "2025-11-29"
+   ]
+  ],
+  "id": "19934536485a394f",
+  "data": "2025-09-10"
+ },
+ {
+  "nome": "FABRICIO LIMA PEREIRA",
+  "matricula": "46086",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2025-10-22",
+    "2025-11-10"
+   ]
+  ],
+  "id": "19939058f1c61b35",
+  "data": "2025-09-11"
+ },
+ {
+  "nome": "JULIANA MARCONI PENTEADO PESSIN",
+  "matricula": "44253",
+  "tipo": "Folga compensatória de dias trabalhados em Plantão Judiciário",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2025-09-19",
+    "2025-09-19"
+   ]
+  ],
+  "id": "1993e8bce19691a6",
+  "data": "2025-09-12"
+ },
+ {
+  "nome": "DANIELE FERNANDA STEFANI",
+  "matricula": "86797",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2025-11-03",
+    "2025-12-02"
+   ]
+  ],
+  "id": "1995d8a4ca17b8ae",
+  "data": "2025-09-18"
+ },
+ {
+  "nome": "DHEISE MONIQUE EUPHRASIO",
+  "matricula": "106488",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2025-09-22",
+    "2025-10-21"
+   ]
+  ],
+  "id": "199635707b311439",
+  "data": "2025-09-19"
+ },
+ {
+  "nome": "CAROLINA MONTEIRO DA SILVEIRA",
+  "matricula": "103179",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2025-11-03",
+    "2025-12-02"
+   ]
+  ],
+  "id": "199731a8d634e06c",
+  "data": "2025-09-22"
+ },
+ {
+  "id": "19973c6d55e56dc6",
+  "data": "2025-09-22",
+  "nome": "SILVANA MARCELINO BRAZ",
+  "matricula": "49646",
+  "tipo": "Alteração de férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2025-01-20",
+    "2025-01-31"
+   ],
+   [
+    "2025-10-14",
+    "2025-10-31"
+   ]
+  ],
+  "novo": [
+   [
+    "2025-01-20",
+    "2025-01-31"
+   ],
+   [
+    "2025-10-14",
+    "2025-10-24"
+   ],
+   [
+    "2025-12-12",
+    "2025-12-18"
+   ]
+  ]
+ },
+ {
+  "nome": "ROMILDA MARIA DE ARRUDA GERMANO",
+  "matricula": "44423",
+  "tipo": "Folga compensatória de dias trabalhados em Plantão Judiciário",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2025-10-28",
+    "2025-10-30"
+   ]
+  ],
+  "id": "19986a067bff317c",
+  "data": "2025-09-26"
+ },
+ {
+  "nome": "MARCIA REGINA MARQUES DE PAULA",
+  "matricula": "25852",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-01-12",
+    "2026-01-30"
+   ],
+   [
+    "2026-09-08",
+    "2026-09-18"
+   ]
+  ],
+  "id": "199a50f32a10ef2d",
+  "data": "2025-10-02"
+ },
+ {
+  "nome": "LUIZ PAOLIERI NETO",
+  "matricula": "25615",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-11"
+   ],
+   [
+    "2026-07-02",
+    "2026-07-14"
+   ],
+   [
+    "2026-12-07",
+    "2026-12-18"
+   ]
+  ],
+  "id": "199aab45a5c0d9b2",
+  "data": "2025-10-03"
+ },
+ {
+  "nome": "JOAO GABRIEL DA SILVA SILVEIRA",
+  "matricula": "88013",
+  "tipo": "Folga compensatória de dias trabalhados em Plantão Judiciário",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2025-10-20",
+    "2025-10-20"
+   ]
+  ],
+  "id": "199bfc70b73b78c6",
+  "data": "2025-10-07"
+ },
+ {
+  "nome": "JOAO GABRIEL DA SILVA SILVEIRA",
+  "matricula": "88013",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-07-16",
+    "2026-07-31"
+   ],
+   [
+    "2026-11-16",
+    "2026-11-19"
+   ]
+  ],
+  "id": "199bfc9591301857",
+  "data": "2025-10-07"
+ },
+ {
+  "nome": "REGINA CELIA BERNARDI JORGE",
+  "matricula": "55344",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2025-11-24",
+    "2025-12-13"
+   ],
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ]
+  ],
+  "id": "199c4f2b9ad55bfb",
+  "data": "2025-10-08"
+ },
+ {
+  "nome": "IGOR DUARTE DE ALVARENGA",
+  "matricula": "106259",
+  "tipo": "Folga compensatória de dias trabalhados em Plantão Judiciário",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2025-10-16",
+    "2025-10-17"
+   ]
+  ],
+  "id": "199e26df7fd6a2d7",
+  "data": "2025-10-14"
+ },
+ {
+  "nome": "IGOR DUARTE DE ALVARENGA",
+  "matricula": "106259",
+  "tipo": "Folga compensatória de dias trabalhados em Plantão Judiciário",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2025-10-20",
+    "2025-10-21"
+   ]
+  ],
+  "id": "199e26ecd5082501",
+  "data": "2025-10-14"
+ },
+ {
+  "nome": "ANA CLAUDIA RODRIGUES ABREU BERGONSINI",
+  "matricula": "31496",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2025-10-28",
+    "2025-11-06"
+   ]
+  ],
+  "id": "199f2585865199ea",
+  "data": "2025-10-17"
+ },
+ {
+  "nome": "EVERTON CARPINETE DE OLIVEIRA",
+  "matricula": "109320",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2025-10-28",
+    "2025-11-21"
+   ]
+  ],
+  "id": "199f3436a67304a4",
+  "data": "2025-10-17"
+ },
+ {
+  "nome": "TATIANA MAEYAMA",
+  "matricula": "47031",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-01-09",
+    "2026-01-16"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-24"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ],
+  "id": "19a118ab37c17db4",
+  "data": "2025-10-23"
+ },
+ {
+  "nome": "MARIA CECILIA SILVEIRA GRANATO",
+  "matricula": "8753",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-05-06",
+    "2026-05-15"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ],
+  "id": "19a11e74da6aa5bd",
+  "data": "2025-10-23"
+ },
+ {
+  "nome": "ROBERTA RODRIGUES URBANO",
+  "matricula": "81230",
+  "tipo": "Folga compensatória de dias trabalhados em Eleição",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2025-11-19",
+    "2025-11-19"
+   ]
+  ],
+  "id": "19a17c2b53199a7d",
+  "data": "2025-10-24"
+ },
+ {
+  "nome": "CLAUDIA MARIA PASTOR",
+  "matricula": "55875",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-07-13",
+    "2026-08-01"
+   ]
+  ],
+  "id": "19a26d44076baa2b",
+  "data": "2025-10-27"
+ },
+ {
+  "nome": "RODRIGO GONCALVES DIAS AGOSTINETO",
+  "matricula": "42501",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-07-01",
+    "2026-07-10"
+   ]
+  ],
+  "id": "19a31a44edc690a3",
+  "data": "2025-10-29"
+ },
+ {
+  "nome": "ANA PAULA FERNANDES MESQUINI",
+  "matricula": "31658",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-21"
+   ],
+   [
+    "2026-11-09",
+    "2026-11-19"
+   ]
+  ],
+  "id": "19a34f600735d98c",
+  "data": "2025-10-30"
+ },
+ {
+  "nome": "RAFAELA CABRAL BURATO",
+  "matricula": "47058",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-04-22",
+    "2026-04-30"
+   ],
+   [
+    "2026-08-11",
+    "2026-08-14"
+   ],
+   [
+    "2026-10-13",
+    "2026-10-29"
+   ]
+  ],
+  "id": "19a3b8b5dc68a4d8",
+  "data": "2025-10-31"
+ },
+ {
+  "nome": "ANTONIO ABEL DE LUCCA JUNIOR",
+  "matricula": "51330",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-23"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-25"
+   ]
+  ],
+  "id": "19a449aa6b45d896",
+  "data": "2025-11-02"
+ },
+ {
+  "nome": "SANDRA MARIA SEGATO GAZZETA",
+  "matricula": "11797",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-23"
+   ],
+   [
+    "2026-06-29",
+    "2026-07-11"
+   ]
+  ],
+  "id": "19a4a8d0fd898803",
+  "data": "2025-11-03"
+ },
+ {
+  "nome": "MARCELO DE JESUS RANGEL MONTEIRO",
+  "matricula": "48518",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-21"
+   ],
+   [
+    "2026-07-17",
+    "2026-07-31"
+   ]
+  ],
+  "id": "19a4c48ec2bed086",
+  "data": "2025-11-04"
+ },
+ {
+  "nome": "DEBORA ASSIS DE OLIVEIRA",
+  "matricula": "100110",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-22"
+   ],
+   [
+    "2026-11-23",
+    "2026-12-02"
+   ]
+  ],
+  "id": "19a501ea57e2a6d6",
+  "data": "2025-11-04"
+ },
+ {
+  "nome": "CELINA JACINTHO PEREIRA",
+  "matricula": "48259",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-11"
+   ],
+   [
+    "2026-04-06",
+    "2026-04-17"
+   ],
+   [
+    "2026-10-19",
+    "2026-10-31"
+   ]
+  ],
+  "id": "19a54eacbad5764c",
+  "data": "2025-11-05"
+ },
+ {
+  "nome": "ROGERIO ZAMBON CANALE",
+  "matricula": "82740",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-15"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-24"
+   ],
+   [
+    "2026-11-03",
+    "2026-11-11"
+   ]
+  ],
+  "id": "19a557d631a44977",
+  "data": "2025-11-05"
+ },
+ {
+  "nome": "RENATA FABIANA PARPINELLI ISHIHARA",
+  "matricula": "47716",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-23"
+   ],
+   [
+    "2026-07-20",
+    "2026-08-01"
+   ]
+  ],
+  "id": "19a590c4f1b936b8",
+  "data": "2025-11-06"
+ },
+ {
+  "nome": "ISABELA FREITAS DE SOUZA",
+  "matricula": "103608",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-03-16",
+    "2026-03-30"
+   ],
+   [
+    "2026-12-04",
+    "2026-12-18"
+   ]
+  ],
+  "id": "19a5e807e9ba29d4",
+  "data": "2025-11-07"
+ },
+ {
+  "nome": "JOSE CARLOS MERCE",
+  "matricula": "28614",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-09"
+   ],
+   [
+    "2026-07-06",
+    "2026-07-17"
+   ],
+   [
+    "2026-11-09",
+    "2026-11-23"
+   ]
+  ],
+  "id": "19a6dee38bd7eb90",
+  "data": "2025-11-10"
+ },
+ {
+  "nome": "MARCO CESAR DE OLIVEIRA WAN MEYL",
+  "matricula": "109312",
+  "tipo": "Cancelamento de férias",
+  "categoria": "cancelamento",
+  "periodos": [
+   [
+    "2025-11-21",
+    "2025-12-19"
+   ]
+  ],
+  "id": "19a6fbac6a49a54c",
+  "data": "2025-11-10"
+ },
+ {
+  "nome": "DANIEL CARLOS ALVES DE PILLA",
+  "matricula": "51110",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-02-02",
+    "2026-02-11"
+   ],
+   [
+    "2026-09-20",
+    "2026-10-09"
+   ]
+  ],
+  "id": "19a741c3fe048124",
+  "data": "2025-11-11"
+ },
+ {
+  "nome": "SABRINA NORONHA COSTA COSTANTINI",
+  "matricula": "81515",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-01-19",
+    "2026-01-23"
+   ],
+   [
+    "2026-07-06",
+    "2026-07-20"
+   ]
+  ],
+  "id": "19a82b5c2af4393e",
+  "data": "2025-11-14"
+ },
+ {
+  "nome": "NILTON RAFAEL DE BARROS SILVA",
+  "matricula": "85723",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-02-02",
+    "2026-02-06"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-22"
+   ],
+   [
+    "2026-11-05",
+    "2026-11-19"
+   ]
+  ],
+  "id": "19a82dec87b71ebb",
+  "data": "2025-11-14"
+ },
+ {
+  "nome": "CLAUDIA ELISA BETTI PEDRO BOM",
+  "matricula": "44458",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-03-18",
+    "2026-03-23"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-17"
+   ],
+   [
+    "2026-12-01",
+    "2026-12-19"
+   ]
+  ],
+  "id": "19a8359837dd8e03",
+  "data": "2025-11-14"
+ },
+ {
+  "nome": "WELLINGTON GEORGE BRAGA PAZ",
+  "matricula": "54992",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-01-19",
+    "2026-01-30"
+   ],
+   [
+    "2026-03-16",
+    "2026-03-20"
+   ],
+   [
+    "2026-07-06",
+    "2026-07-18"
+   ]
+  ],
+  "id": "19a977f5cdbe178c",
+  "data": "2025-11-18"
+ },
+ {
+  "nome": "LILIANA SQUARIZZI FERREIRA CANTARIM",
+  "matricula": "86096",
+  "tipo": "Cancelamento de férias",
+  "categoria": "cancelamento",
+  "periodos": [
+   [
+    "2025-11-24",
+    "2025-12-05"
+   ]
+  ],
+  "id": "19aa77610b65a7f4",
+  "data": "2025-11-21"
+ },
+ {
+  "nome": "MARINA LIRA DA SILVEIRA PINTO",
+  "matricula": "91030",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2025-12-01",
+    "2025-12-10"
+   ]
+  ],
+  "id": "19aa7c0fcfa22502",
+  "data": "2025-11-21"
+ },
+ {
+  "nome": "ALEXANDRE FRANCISCHETTI",
+  "matricula": "30473",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-01-12",
+    "2026-01-21"
+   ],
+   [
+    "2026-05-11",
+    "2026-05-20"
+   ],
+   [
+    "2026-10-20",
+    "2026-10-29"
+   ]
+  ],
+  "id": "19ab5e5a06d34c9c",
+  "data": "2025-11-24"
+ },
+ {
+  "nome": "MARCO CESAR DE OLIVEIRA WAN MEYL",
+  "matricula": "109312",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-08-12",
+    "2026-09-09"
+   ]
+  ],
+  "id": "19abaa1821d44fa5",
+  "data": "2025-11-25"
+ },
+ {
+  "nome": "ANDRE LUIZ FERNANDES ROCHA",
+  "matricula": "48062",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-22"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ],
+  "id": "19abba8789b99e79",
+  "data": "2025-11-25"
+ },
+ {
+  "nome": "APARECIDA MARIA BARBOSA ZUQUETO",
+  "matricula": "83488",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-01-26",
+    "2026-02-03"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-24"
+   ]
+  ],
+  "id": "19abbf97e997d8e9",
+  "data": "2025-11-25"
+ },
+ {
+  "nome": "ANTENOR DONIDA BARTOLI",
+  "matricula": "31321",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-01-12",
+    "2026-01-16"
+   ],
+   [
+    "2026-07-16",
+    "2026-07-31"
+   ],
+   [
+    "2026-12-10",
+    "2026-12-18"
+   ]
+  ],
+  "id": "19ac02b92829b259",
+  "data": "2025-11-26"
+ },
+ {
+  "nome": "MARINA LIRA DA SILVEIRA PINTO",
+  "matricula": "91030",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-09-08",
+    "2026-09-17"
+   ],
+   [
+    "2026-12-01",
+    "2026-12-10"
+   ]
+  ],
+  "id": "19ac075606f04d12",
+  "data": "2025-11-26"
+ },
+ {
+  "nome": "MARCO CESAR DE OLIVEIRA WAN MEYL",
+  "matricula": "109312",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-11-20",
+    "2026-12-19"
+   ]
+  ],
+  "id": "19ac14ea298aee76",
+  "data": "2025-11-26"
+ },
+ {
+  "id": "19aca9faf711af81",
+  "data": "2025-11-28",
+  "nome": "CLAUDIA ELISA BETTI PEDRO BOM",
+  "matricula": "44458",
+  "tipo": "Alteração de férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2026-03-18",
+    "2026-03-23"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-17"
+   ],
+   [
+    "2026-12-01",
+    "2026-12-19"
+   ]
+  ],
+  "novo": [
+   [
+    "2026-03-18",
+    "2026-03-24"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-17"
+   ],
+   [
+    "2026-12-01",
+    "2026-12-18"
+   ]
+  ]
+ },
+ {
+  "nome": "CLAUDIR DE OLIVEIRA JUNIOR",
+  "matricula": "31976",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-02-05",
+    "2026-02-13"
+   ],
+   [
+    "2026-10-13",
+    "2026-10-23"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ],
+  "id": "19acb64ae2264c8b",
+  "data": "2025-11-28"
+ },
+ {
+  "nome": "ANA CLAUDIA RODRIGUES ABREU BERGONSINI",
+  "matricula": "31496",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-06-29",
+    "2026-07-08"
+   ]
+  ],
+  "id": "19acbbbaaf6e889e",
+  "data": "2025-11-28"
+ },
+ {
+  "nome": "VANESSA MATEUS YAMAJI",
+  "matricula": "100943",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-01-19",
+    "2026-01-30"
+   ],
+   [
+    "2026-07-15",
+    "2026-07-24"
+   ],
+   [
+    "2026-12-11",
+    "2026-12-18"
+   ]
+  ],
+  "id": "19adae8c09db455c",
+  "data": "2025-12-01"
+ },
+ {
+  "nome": "ERIKA CRISTINA MENDES DE CAMPOS GARCIA",
+  "matricula": "26689",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-01-12",
+    "2026-01-26"
+   ],
+   [
+    "2026-08-11",
+    "2026-08-25"
+   ]
+  ],
+  "id": "19adb07570fed47f",
+  "data": "2025-12-01"
+ },
+ {
+  "nome": "ROSANA MAZUCHI WELSK",
+  "matricula": "42986",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-01-08",
+    "2026-02-06"
+   ]
+  ],
+  "id": "19adb877f7a8c3f9",
+  "data": "2025-12-01"
+ },
+ {
+  "nome": "GABRIELA APARECIDA SEVERINO DE ANDRADE TAVARES",
+  "matricula": "47350",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-01-19",
+    "2026-01-23"
+   ],
+   [
+    "2026-06-08",
+    "2026-06-19"
+   ]
+  ],
+  "id": "19adf0d85f6c0388",
+  "data": "2025-12-02"
+ },
+ {
+  "nome": "ALESSANDRO COSTA",
+  "matricula": "107727",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-03-02",
+    "2026-03-31"
+   ]
+  ],
+  "id": "19ae0c540d605b92",
+  "data": "2025-12-02"
+ },
+ {
+  "nome": "LILIANA SQUARIZZI FERREIRA CANTARIM",
+  "matricula": "86096",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2025-11-22",
+    "2025-12-03"
+   ]
+  ],
+  "id": "19ae14fa9f946081",
+  "data": "2025-12-02"
+ },
+ {
+  "nome": "MARIANA CECHINATO LORENZETE",
+  "matricula": "100145",
+  "tipo": "Folga compensatória de dias trabalhados em Plantão Judiciário",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2025-12-02",
+    "2025-12-02"
+   ]
+  ],
+  "id": "19ae4752b564d99d",
+  "data": "2025-12-03"
+ },
+ {
+  "nome": "TIAGO FILIPE CALEGARI",
+  "matricula": "91022",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-04-22",
+    "2026-04-30"
+   ],
+   [
+    "2026-08-25",
+    "2026-09-04"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ],
+  "id": "19ae4c05a5349430",
+  "data": "2025-12-03"
+ },
+ {
+  "nome": "DULCE MARIA VASCONCELLOS SEIXAS",
+  "matricula": "248",
+  "tipo": "Cancelamento de férias",
+  "categoria": "cancelamento",
+  "periodos": [
+   [
+    "2025-12-09",
+    "2025-12-19"
+   ]
+  ],
+  "id": "19aefd14c2ec5583",
+  "data": "2025-12-05"
+ },
+ {
+  "nome": "THAIS FURQUIM SOLEDADE NEVES DELA VALE",
+  "matricula": "81175",
+  "tipo": "Cancelamento de férias",
+  "categoria": "cancelamento",
+  "periodos": [
+   [
+    "2025-12-08",
+    "2025-12-19"
+   ]
+  ],
+  "id": "19af0c1c3af36145",
+  "data": "2025-12-05"
+ },
+ {
+  "nome": "FABIO AJUDARTE LOPES",
+  "matricula": "42005",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-01-19",
+    "2026-01-23"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-24"
+   ],
+   [
+    "2026-11-23",
+    "2026-12-05"
+   ]
+  ],
+  "id": "19b0869896613476",
+  "data": "2025-12-10"
+ },
+ {
+  "nome": "DULCE MARIA VASCONCELLOS SEIXAS",
+  "matricula": "248",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2025-11-24",
+    "2025-12-04"
+   ]
+  ],
+  "id": "19b08c623dd75405",
+  "data": "2025-12-10"
+ },
+ {
+  "nome": "SONIA CRISTINA DOS SANTOS FRANCO",
+  "matricula": "54453",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-07-17",
+    "2026-07-31"
+   ]
+  ],
+  "id": "19b0df9355c33622",
+  "data": "2025-12-11"
+ },
+ {
+  "nome": "ENEIAS CRISTIANO ELER",
+  "matricula": "44385",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-01-21",
+    "2026-01-30"
+   ],
+   [
+    "2026-09-08",
+    "2026-09-17"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ],
+  "id": "19b0ea6ae4ffc85b",
+  "data": "2025-12-11"
+ },
+ {
+  "nome": "DULCE MARIA VASCONCELLOS SEIXAS",
+  "matricula": "248",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-04-22",
+    "2026-04-30"
+   ],
+   [
+    "2026-10-13",
+    "2026-10-23"
+   ]
+  ],
+  "id": "19b22a61a26f96e6",
+  "data": "2025-12-15"
+ },
+ {
+  "nome": "SILVANA MARCELINO BRAZ",
+  "matricula": "49646",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-02-02",
+    "2026-02-13"
+   ],
+   [
+    "2026-11-03",
+    "2026-11-19"
+   ],
+   [
+    "2026-12-18",
+    "2026-12-18"
+   ]
+  ],
+  "id": "19b279cab3e65d9a",
+  "data": "2025-12-16"
+ },
+ {
+  "id": "19b2866a943e5d92",
+  "data": "2025-12-16",
+  "nome": "THAYANE CRISCIA SOUTO DE OLIVEIRA",
+  "matricula": "105473",
+  "tipo": "Alteração de férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2025-10-06",
+    "2025-10-17"
+   ],
+   [
+    "2025-11-24",
+    "2025-11-28"
+   ],
+   [
+    "2026-01-12",
+    "2026-01-24"
+   ]
+  ],
+  "novo": [
+   [
+    "2025-10-06",
+    "2025-10-17"
+   ],
+   [
+    "2025-11-24",
+    "2025-11-28"
+   ],
+   [
+    "2026-02-19",
+    "2026-03-03"
+   ]
+  ]
+ },
+ {
+  "nome": "MARIANA PENACHIONI ZANGIROLAMI",
+  "matricula": "43656",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-01-19"
+   ],
+   [
+    "2026-03-02",
+    "2026-03-06"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-24"
+   ]
+  ],
+  "id": "19b32ba525d12183",
+  "data": "2025-12-18"
+ },
+ {
+  "nome": "TATIANA MAFFEIS DA CUNHA",
+  "matricula": "109070",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-02-19",
+    "2026-03-03"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-24"
+   ],
+   [
+    "2026-11-23",
+    "2026-11-27"
+   ]
+  ],
+  "id": "19b37032407744bb",
+  "data": "2025-12-19"
+ },
+ {
+  "nome": "LILIANA SQUARIZZI FERREIRA CANTARIM",
+  "matricula": "86096",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-02-23",
+    "2026-02-27"
+   ],
+   [
+    "2026-06-08",
+    "2026-06-19"
+   ]
+  ],
+  "id": "19b9533d55bc4b98",
+  "data": "2026-01-06"
+ },
+ {
+  "nome": "CELSO DE ARRUDA MOREIRA",
+  "matricula": "9989",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-02-19",
+    "2026-02-28"
+   ],
+   [
+    "2026-07-20",
+    "2026-08-08"
+   ]
+  ],
+  "id": "19b99355cb2985c4",
+  "data": "2026-01-07"
+ },
+ {
+  "nome": "ELENIRA DE ANDRADE BICALHO",
+  "matricula": "52507",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-04-06",
+    "2026-04-15"
+   ],
+   [
+    "2026-06-08",
+    "2026-06-17"
+   ],
+   [
+    "2026-08-17",
+    "2026-08-26"
+   ]
+  ],
+  "id": "19b9d443d647375c",
+  "data": "2026-01-08"
+ },
+ {
+  "nome": "CRISTINA ZIANI DE MOURA",
+  "matricula": "31615",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-01-16",
+    "2026-01-30"
+   ],
+   [
+    "2026-07-14",
+    "2026-07-23"
+   ],
+   [
+    "2026-12-14",
+    "2026-12-18"
+   ]
+  ],
+  "id": "19b9e589a9a45a2e",
+  "data": "2026-01-08"
+ },
+ {
+  "id": "19b9f3d8e2fdb3b4",
+  "data": "2026-01-08",
+  "nome": "REGIANE SIMONI FRANCO",
+  "matricula": "98027",
+  "tipo": "Alteração de férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2025-06-04",
+    "2025-06-13"
+   ],
+   [
+    "2025-10-01",
+    "2025-10-10"
+   ],
+   [
+    "2026-03-11",
+    "2026-03-20"
+   ]
+  ],
+  "novo": [
+   [
+    "2025-06-04",
+    "2025-06-13"
+   ],
+   [
+    "2025-10-01",
+    "2025-10-10"
+   ],
+   [
+    "2026-03-02",
+    "2026-03-11"
+   ]
+  ]
+ },
+ {
+  "nome": "FILIPE SHINZATO COLEVATI",
+  "matricula": "84182",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-04-20",
+    "2026-05-02"
+   ],
+   [
+    "2026-11-03",
+    "2026-11-19"
+   ]
+  ],
+  "id": "19ba306781c8bd2e",
+  "data": "2026-01-09"
+ },
+ {
+  "nome": "JOSE ADRIANO FIORI",
+  "matricula": "103470",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-06-08",
+    "2026-06-22"
+   ],
+   [
+    "2026-09-14",
+    "2026-09-28"
+   ]
+  ],
+  "id": "19bb3c670eef4817",
+  "data": "2026-01-12"
+ },
+ {
+  "nome": "LEANDRO JOSE CHRISTOFOLETTI",
+  "matricula": "95818",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-03-23",
+    "2026-03-30"
+   ],
+   [
+    "2026-08-11",
+    "2026-08-21"
+   ],
+   [
+    "2026-10-13",
+    "2026-10-23"
+   ]
+  ],
+  "id": "19bb99e30da43cc3",
+  "data": "2026-01-13"
+ },
+ {
+  "nome": "THAIS FURQUIM SOLEDADE NEVES DELA VALE",
+  "matricula": "81175",
+  "tipo": "Cancelamento de férias",
+  "categoria": "cancelamento",
+  "periodos": [
+   [
+    "2026-12-08",
+    "2026-12-18"
+   ]
+  ],
+  "id": "19bbca9ed9607355",
+  "data": "2026-01-14"
+ },
+ {
+  "nome": "MARIANA CECHINATO LORENZETE",
+  "matricula": "100145",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-03-09",
+    "2026-03-26"
+   ],
+   [
+    "2026-08-17",
+    "2026-08-21"
+   ],
+   [
+    "2026-09-08",
+    "2026-09-14"
+   ]
+  ],
+  "id": "19bbcd21361ed517",
+  "data": "2026-01-14"
+ },
+ {
+  "nome": "THAIS FURQUIM SOLEDADE NEVES DELA VALE",
+  "matricula": "81175",
+  "tipo": "Cancelamento de férias",
+  "categoria": "cancelamento",
+  "periodos": [
+   [
+    "2026-06-29",
+    "2026-07-08"
+   ]
+  ],
+  "id": "19bbcf88ff2c1360",
+  "data": "2026-01-14"
+ },
+ {
+  "nome": "MARIA CRISTINA FERREIRA RODRIGUES DE LARA",
+  "matricula": "4316",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-03-02",
+    "2026-03-11"
+   ],
+   [
+    "2026-08-12",
+    "2026-08-21"
+   ]
+  ],
+  "id": "19bbd5b7346e19b9",
+  "data": "2026-01-14"
+ },
+ {
+  "nome": "THAIS FURQUIM SOLEDADE NEVES DELA VALE",
+  "matricula": "81175",
+  "tipo": "Cancelamento de férias",
+  "categoria": "cancelamento",
+  "periodos": [
+   [
+    "2026-03-23",
+    "2026-03-31"
+   ]
+  ],
+  "id": "19bc2a9f19752e4d",
+  "data": "2026-01-15"
+ },
+ {
+  "nome": "REGIANE SIMONI FRANCO",
+  "matricula": "98027",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-06-24",
+    "2026-07-03"
+   ],
+   [
+    "2026-09-30",
+    "2026-10-09"
+   ],
+   [
+    "2027-03-08",
+    "2027-03-17"
+   ]
+  ],
+  "id": "19bc33339d9801cf",
+  "data": "2026-01-15"
+ },
+ {
+  "id": "19bc33ad2bf1acd1",
+  "data": "2026-01-15",
+  "nome": "LUCIANA CRISTINA RODRIGUES",
+  "matricula": "108499",
+  "tipo": "Férias - Fruição de Saldo Interrompido",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-01-07",
+    "2026-02-04"
+   ]
+  ]
+ },
+ {
+  "nome": "LEANDRO JOSE CHRISTOFOLETTI",
+  "matricula": "95818",
+  "tipo": "Cancelamento de férias",
+  "categoria": "cancelamento",
+  "periodos": [
+   [
+    "2026-10-13",
+    "2026-10-23"
+   ]
+  ],
+  "id": "19bcc09664bfe6e2",
+  "data": "2026-01-17"
+ },
+ {
+  "id": "19bd6b44c3db5aa2",
+  "data": "2026-01-19",
+  "nome": "TIAGO FILIPE CALEGARI",
+  "matricula": "91022",
+  "tipo": "Alteração de férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2026-04-22",
+    "2026-04-30"
+   ],
+   [
+    "2026-08-25",
+    "2026-09-04"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ],
+  "novo": [
+   [
+    "2026-05-26",
+    "2026-06-03"
+   ],
+   [
+    "2026-08-25",
+    "2026-09-04"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ]
+ },
+ {
+  "nome": "MICHEL AQUINO DE SOUZA",
+  "matricula": "108731",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-04-06",
+    "2026-04-17"
+   ],
+   [
+    "2026-09-28",
+    "2026-10-02"
+   ],
+   [
+    "2026-11-23",
+    "2026-12-05"
+   ]
+  ],
+  "id": "19bd7dc08de68220",
+  "data": "2026-01-19"
+ },
+ {
+  "nome": "THAIS FURQUIM SOLEDADE NEVES DELA VALE",
+  "matricula": "81175",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-03-16",
+    "2026-03-27"
+   ]
+  ],
+  "id": "19be58674d69fcd8",
+  "data": "2026-01-22"
+ },
+ {
+  "nome": "ROMILDA MARIA DE ARRUDA GERMANO",
+  "matricula": "44423",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-02-23",
+    "2026-02-27"
+   ],
+   [
+    "2026-04-22",
+    "2026-04-30"
+   ]
+  ],
+  "id": "19beb7902c644142",
+  "data": "2026-01-23"
+ },
+ {
+  "nome": "MARIA GORETTI GUIMARAES VIEIRA",
+  "matricula": "44407",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-05-25",
+    "2026-06-03"
+   ],
+   [
+    "2026-10-05",
+    "2026-10-14"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ],
+  "id": "19beb7db38237e60",
+  "data": "2026-01-23"
+ },
+ {
+  "nome": "LEANDRO JOSE CHRISTOFOLETTI",
+  "matricula": "95818",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-11-03",
+    "2026-11-13"
+   ]
+  ],
+  "id": "19bfb02bb8eba4bb",
+  "data": "2026-01-26"
+ },
+ {
+  "nome": "CAMILA DOS SANTOS ZANETTI",
+  "matricula": "98477",
+  "tipo": "Folga compensatória de dias trabalhados em Plantão Judiciário",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2026-01-29",
+    "2026-01-29"
+   ]
+  ],
+  "id": "19c075460fd2b92e",
+  "data": "2026-01-29"
+ },
+ {
+  "nome": "THAIS FURQUIM SOLEDADE NEVES DELA VALE",
+  "matricula": "81175",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-03-30",
+    "2026-03-31"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-30"
+   ]
+  ],
+  "id": "19c096a5abf5e322",
+  "data": "2026-01-29"
+ },
+ {
+  "nome": "CALEFE ALEXANDRE DE OLIVEIRA",
+  "matricula": "108103",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-04-06",
+    "2026-04-17"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-24"
+   ],
+   [
+    "2026-11-23",
+    "2026-11-28"
+   ]
+  ],
+  "id": "19c0a8407211de94",
+  "data": "2026-01-29"
+ },
+ {
+  "nome": "DANIEL CARLOS ALVES DE PILLA",
+  "matricula": "51110",
+  "tipo": "Folga compensatória de dias trabalhados em Eleição",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2026-02-12",
+    "2026-02-13"
+   ]
+  ],
+  "id": "19c0fa2f5be8b4f4",
+  "data": "2026-01-30"
+ },
+ {
+  "id": "19c1050b7fde401d",
+  "data": "2026-01-30",
+  "nome": "FILIPE SHINZATO COLEVATI",
+  "matricula": "84182",
+  "tipo": "Alteração de férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2026-04-20",
+    "2026-05-02"
+   ],
+   [
+    "2026-11-03",
+    "2026-11-19"
+   ]
+  ],
+  "novo": [
+   [
+    "2026-04-06",
+    "2026-04-18"
+   ],
+   [
+    "2026-11-03",
+    "2026-11-19"
+   ]
+  ]
+ },
+ {
+  "nome": "DEBORA ASSIS DE OLIVEIRA",
+  "matricula": "100110",
+  "tipo": "Folga compensatória de dias trabalhados em Plantão Judiciário",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2026-02-27",
+    "2026-02-27"
+   ]
+  ],
+  "id": "19c293b098466073",
+  "data": "2026-02-04"
+ },
+ {
+  "nome": "CAMILA DOS SANTOS ZANETTI",
+  "matricula": "98477",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-02-09",
+    "2026-02-13"
+   ],
+   [
+    "2026-05-25",
+    "2026-06-03"
+   ],
+   [
+    "2026-10-15",
+    "2026-10-29"
+   ]
+  ],
+  "id": "19c29c381ca9aad8",
+  "data": "2026-02-04"
+ },
+ {
+  "id": "19c2f3c7fde12ea1",
+  "data": "2026-02-05",
+  "nome": "GABRIELA SUEMI IGUEI DOS SANTOS",
+  "matricula": "105759",
+  "tipo": "Alteração de férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2025-07-21",
+    "2025-08-04"
+   ],
+   [
+    "2026-03-19",
+    "2026-04-02"
+   ]
+  ],
+  "novo": [
+   [
+    "2025-07-21",
+    "2025-08-04"
+   ],
+   [
+    "2026-03-17",
+    "2026-03-31"
+   ]
+  ]
+ },
+ {
+  "nome": "LUZIA DANIELLE DOS SANTOS",
+  "matricula": "92886",
+  "tipo": "Cancelamento de férias",
+  "categoria": "cancelamento",
+  "periodos": [
+   [
+    "2026-03-03",
+    "2026-04-01"
+   ]
+  ],
+  "id": "19c32ecd1d02595b",
+  "data": "2026-02-06"
+ },
+ {
+  "nome": "FERNANDA GODOY D AVILA",
+  "matricula": "96300",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-03-02",
+    "2026-03-06"
+   ],
+   [
+    "2026-06-29",
+    "2026-07-08"
+   ],
+   [
+    "2026-10-13",
+    "2026-10-27"
+   ]
+  ],
+  "id": "19c331b52e688638",
+  "data": "2026-02-06"
+ },
+ {
+  "nome": "LUZIA DANIELLE DOS SANTOS",
+  "matricula": "92886",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-03-16",
+    "2026-04-14"
+   ]
+  ],
+  "id": "19c4322ca1d38aa9",
+  "data": "2026-02-09"
+ },
+ {
+  "nome": "PAULO SERGIO SALVADOR",
+  "matricula": "29351",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-04-06",
+    "2026-04-10"
+   ],
+   [
+    "2026-05-18",
+    "2026-05-22"
+   ],
+   [
+    "2026-09-30",
+    "2026-10-19"
+   ]
+  ],
+  "id": "19c47f7766556bbc",
+  "data": "2026-02-10"
+ },
+ {
+  "nome": "FABIANO MAIOLINI",
+  "matricula": "48780",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-04-06",
+    "2026-04-15"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-22"
+   ],
+   [
+    "2026-10-13",
+    "2026-10-22"
+   ]
+  ],
+  "id": "19c4c789f5a0b113",
+  "data": "2026-02-11"
+ },
+ {
+  "nome": "RAFAEL SERRA CARDOSO",
+  "matricula": "22209",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-04-22",
+    "2026-04-30"
+   ],
+   [
+    "2026-06-08",
+    "2026-06-18"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ],
+  "id": "19c4e5745e6237c9",
+  "data": "2026-02-11"
+ },
+ {
+  "nome": "AGUINALDO JUNIOR YAMAMOTO PERES",
+  "matricula": "22187",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-04-06",
+    "2026-04-17"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ],
+  "id": "19c762cd5f311861",
+  "data": "2026-02-19"
+ },
+ {
+  "nome": "MARIA LUIZA GUERRA MARTINELLI",
+  "matricula": "101443",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-03-23",
+    "2026-03-31"
+   ],
+   [
+    "2026-09-08",
+    "2026-09-17"
+   ],
+   [
+    "2026-12-08",
+    "2026-12-18"
+   ]
+  ],
+  "id": "19c766054d81db2a",
+  "data": "2026-02-19"
+ },
+ {
+  "nome": "ELINE ANA SAMPAIO CORADI CASTRO",
+  "matricula": "93181",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-07-27",
+    "2026-08-15"
+   ],
+   [
+    "2026-09-28",
+    "2026-10-02"
+   ]
+  ],
+  "id": "19c7b3115da9dd5f",
+  "data": "2026-02-20"
+ },
+ {
+  "nome": "ROGERIA HELENA APARECIDA FRANZINI CORAZZA",
+  "matricula": "52680",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-03-16",
+    "2026-03-30"
+   ],
+   [
+    "2026-10-13",
+    "2026-10-27"
+   ]
+  ],
+  "id": "19c8a3a3e27d6640",
+  "data": "2026-02-23"
+ },
+ {
+  "nome": "MARCIO ROBERTO VALLIM",
+  "matricula": "83577",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-04-06",
+    "2026-04-17"
+   ],
+   [
+    "2026-12-01",
+    "2026-12-18"
+   ]
+  ],
+  "id": "19c9036747c33c96",
+  "data": "2026-02-24"
+ },
+ {
+  "nome": "MARIA DA PENHA ALVES GOMES SANTOS",
+  "matricula": "45446",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-04-22",
+    "2026-04-30"
+   ],
+   [
+    "2026-09-08",
+    "2026-09-18"
+   ]
+  ],
+  "id": "19c9a652266dabcc",
+  "data": "2026-02-26"
+ },
+ {
+  "nome": "DEISE MARIA CASSANIGA AZEVEDO",
+  "matricula": "19194",
+  "tipo": "Folga compensatória de dias trabalhados em Plantão Judiciário",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2026-02-27",
+    "2026-02-27"
+   ]
+  ],
+  "id": "19c9af3c652fe1eb",
+  "data": "2026-02-26"
+ },
+ {
+  "nome": "ANGELA BEATRIZ GONCALES",
+  "matricula": "26913",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-05-05",
+    "2026-06-03"
+   ]
+  ],
+  "id": "19cbaa4e6914524f",
+  "data": "2026-03-04"
+ },
+ {
+  "nome": "REGINALDO ZIMBRES",
+  "matricula": "18937",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-04-06",
+    "2026-04-17"
+   ],
+   [
+    "2026-08-18",
+    "2026-09-04"
+   ]
+  ],
+  "id": "19cbe978fd1ba57e",
+  "data": "2026-03-05"
+ },
+ {
+  "nome": "SANDRA REGINA DA CONCEICAO AMARAL",
+  "matricula": "24333",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-04-06",
+    "2026-04-15"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-22"
+   ]
+  ],
+  "id": "19cc349257b995e6",
+  "data": "2026-03-06"
+ },
+ {
+  "nome": "ANITA BUENO DE MORAES NARCISO FERREIRA",
+  "matricula": "51012",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-07-06",
+    "2026-07-08"
+   ],
+   [
+    "2026-12-01",
+    "2026-12-18"
+   ]
+  ],
+  "id": "19cc4245f2cad32d",
+  "data": "2026-03-06"
+ },
+ {
+  "nome": "JAILTON LEITE DA SILVA",
+  "matricula": "98485",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-04-01",
+    "2026-04-10"
+   ],
+   [
+    "2026-09-08",
+    "2026-09-17"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ],
+  "id": "19cd25c9485f5fc9",
+  "data": "2026-03-09"
+ },
+ {
+  "nome": "CLEILSON DAMASCENO DE OLIVEIRA",
+  "matricula": "105910",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-03-25",
+    "2026-03-25"
+   ],
+   [
+    "2026-07-16",
+    "2026-08-13"
+   ]
+  ],
+  "id": "19cd34af482c3d1f",
+  "data": "2026-03-09"
+ },
+ {
+  "nome": "REGINA CELIA BERNARDI JORGE",
+  "matricula": "55344",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-05-13",
+    "2026-05-27"
+   ],
+   [
+    "2026-09-14",
+    "2026-09-18"
+   ],
+   [
+    "2026-11-03",
+    "2026-11-12"
+   ]
+  ],
+  "id": "19ce29452c4cd1ac",
+  "data": "2026-03-12"
+ },
+ {
+  "id": "19cfc6e2ee4fd61f",
+  "data": "2026-03-17",
+  "nome": "DULCE MARIA VASCONCELLOS SEIXAS",
+  "matricula": "248",
+  "tipo": "Alteração de férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-04-22",
+    "2026-04-30"
+   ],
+   [
+    "2026-10-13",
+    "2026-10-23"
+   ]
+  ],
+  "novo": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-05-04",
+    "2026-05-12"
+   ],
+   [
+    "2026-10-13",
+    "2026-10-23"
+   ]
+  ]
+ },
+ {
+  "id": "19d07fcbb9857f42",
+  "data": "2026-03-19",
+  "nome": "APARECIDA MARIA BARBOSA ZUQUETO",
+  "matricula": "83488",
+  "tipo": "Alteração de férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2026-01-26",
+    "2026-02-03"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-24"
+   ],
+   [
+    "2026-10-13",
+    "2026-10-21"
+   ]
+  ],
+  "novo": [
+   [
+    "2026-01-26",
+    "2026-02-03"
+   ],
+   [
+    "2026-06-30",
+    "2026-07-08"
+   ],
+   [
+    "2026-08-31",
+    "2026-09-11"
+   ]
+  ]
+ },
+ {
+  "nome": "WALLACE DIEGO RESENDE",
+  "matricula": "97616",
+  "tipo": "Folga compensatória de dias trabalhados em Plantão Judiciário",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2026-03-27",
+    "2026-03-27"
+   ]
+  ],
+  "id": "19d1b7287f88c29b",
+  "data": "2026-03-23"
+ },
+ {
+  "nome": "JULIO CESAR CANO",
+  "matricula": "21822",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-05-08",
+    "2026-05-12"
+   ],
+   [
+    "2026-08-20",
+    "2026-09-13"
+   ]
+  ],
+  "id": "19d211af6df00572",
+  "data": "2026-03-24"
+ },
+ {
+  "nome": "ELINE ANA SAMPAIO CORADI CASTRO",
+  "matricula": "93181",
+  "tipo": "Folga compensatória de dias trabalhados em Eleição",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2026-03-30",
+    "2026-03-31"
+   ]
+  ],
+  "id": "19d2a3a2c78924af",
+  "data": "2026-03-26"
+ },
+ {
+  "nome": "MARIANA CECHINATO LORENZETE",
+  "matricula": "100145",
+  "tipo": "Folga compensatória de dias trabalhados em Plantão Judiciário",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2026-03-27",
+    "2026-03-27"
+   ]
+  ],
+  "id": "19d2f59b64573341",
+  "data": "2026-03-27"
+ },
+ {
+  "nome": "DEBORA CERQUEIRA SIMAO",
+  "matricula": "102520",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-07-16",
+    "2026-08-14"
+   ]
+  ],
+  "id": "19d30217cb5257f9",
+  "data": "2026-03-27"
+ },
+ {
+  "id": "19d3ec4fe6ec6105",
+  "data": "2026-03-30",
+  "nome": "MARIA JOSE DAINEZ",
+  "matricula": "12084",
+  "tipo": "Alteração de férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2026-02-09",
+    "2026-02-13"
+   ],
+   [
+    "2026-04-22",
+    "2026-04-30"
+   ],
+   [
+    "2026-10-13",
+    "2026-10-28"
+   ]
+  ],
+  "novo": [
+   [
+    "2026-02-09",
+    "2026-02-13"
+   ],
+   [
+    "2026-05-11",
+    "2026-05-19"
+   ],
+   [
+    "2026-10-13",
+    "2026-10-28"
+   ]
+  ]
+ },
+ {
+  "id": "19d6348153dc9bf7",
+  "data": "2026-04-06",
+  "nome": "MARIA JOSE DAINEZ",
+  "matricula": "12084",
+  "tipo": "Alteração de férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2026-02-09",
+    "2026-02-13"
+   ],
+   [
+    "2026-05-11",
+    "2026-05-19"
+   ],
+   [
+    "2026-10-13",
+    "2026-10-28"
+   ]
+  ],
+  "novo": [
+   [
+    "2026-02-09",
+    "2026-02-13"
+   ],
+   [
+    "2026-04-22",
+    "2026-04-30"
+   ],
+   [
+    "2026-10-13",
+    "2026-10-28"
+   ]
+  ]
+ },
+ {
+  "nome": "JULIANA MARCONI PENTEADO PESSIN",
+  "matricula": "44253",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-07-13",
+    "2026-07-24"
+   ],
+   [
+    "2026-11-12",
+    "2026-11-19"
+   ]
+  ],
+  "id": "19d6850114f762eb",
+  "data": "2026-04-07"
+ },
+ {
+  "nome": "CAROLINA MONTEIRO DA SILVEIRA",
+  "matricula": "103179",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-06-29",
+    "2026-07-08"
+   ],
+   [
+    "2026-11-02",
+    "2026-11-13"
+   ],
+   [
+    "2026-12-11",
+    "2026-12-18"
+   ]
+  ],
+  "id": "19d69ac7cee66f46",
+  "data": "2026-04-07"
+ },
+ {
+  "nome": "MAURICIO JOSE ROQUE",
+  "matricula": "22225",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-06-15",
+    "2026-06-27"
+   ],
+   [
+    "2026-10-13",
+    "2026-10-29"
+   ]
+  ],
+  "id": "19d6da56ef408683",
+  "data": "2026-04-08"
+ },
+ {
+  "id": "19d77fc7b9fe9588",
+  "data": "2026-04-10",
+  "nome": "SILVANA MARCELINO BRAZ",
+  "matricula": "49646",
+  "tipo": "Alteração de férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2026-02-02",
+    "2026-02-13"
+   ],
+   [
+    "2026-11-03",
+    "2026-11-19"
+   ],
+   [
+    "2026-12-18",
+    "2026-12-18"
+   ]
+  ],
+  "novo": [
+   [
+    "2026-02-02",
+    "2026-02-13"
+   ],
+   [
+    "2026-08-10",
+    "2026-08-26"
+   ],
+   [
+    "2026-12-18",
+    "2026-12-18"
+   ]
+  ]
+ },
+ {
+  "nome": "GABRIELA SUEMI IGUEI DOS SANTOS",
+  "matricula": "105759",
+  "tipo": "Folga compensatória de dias trabalhados em Eleição",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2026-04-15",
+    "2026-04-15"
+   ]
+  ],
+  "id": "19d780a92edbb1e1",
+  "data": "2026-04-10"
+ },
+ {
+  "nome": "MARIA JOSE DAINEZ",
+  "matricula": "12084",
+  "tipo": "Folga compensatória de dias trabalhados em Eleição",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2026-05-11",
+    "2026-05-14"
+   ]
+  ],
+  "id": "19d8bf94d1342b41",
+  "data": "2026-04-14"
+ },
+ {
+  "nome": "MARIA JOSE DAINEZ",
+  "matricula": "12084",
+  "tipo": "Folga compensatória de dias trabalhados em Plantão Judiciário",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2026-05-15",
+    "2026-05-15"
+   ]
+  ],
+  "id": "19d8bfad2b13b091",
+  "data": "2026-04-14"
+ },
+ {
+  "id": "19d8d3e40843eacc",
+  "data": "2026-04-14",
+  "nome": "NILTON RAFAEL DE BARROS SILVA",
+  "matricula": "85723",
+  "tipo": "Alteração de férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2026-02-02",
+    "2026-02-06"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-22"
+   ],
+   [
+    "2026-11-05",
+    "2026-11-19"
+   ]
+  ],
+  "novo": [
+   [
+    "2026-02-02",
+    "2026-02-06"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-27"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ]
+ },
+ {
+  "nome": "SUELI APARECIDA BINATI",
+  "matricula": "42650",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-06-01",
+    "2026-06-30"
+   ]
+  ],
+  "id": "19d92af48a090f93",
+  "data": "2026-04-15"
+ },
+ {
+  "nome": "DANIELA HERTEL GRASSMANN",
+  "matricula": "51314",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-06-15",
+    "2026-07-14"
+   ]
+  ],
+  "id": "19db6ca25695ce22",
+  "data": "2026-04-22"
+ },
+ {
+  "nome": "CAROLINA MONTEIRO DA SILVEIRA",
+  "matricula": "103179",
+  "tipo": "Cancelamento de férias",
+  "categoria": "cancelamento",
+  "periodos": [
+   [
+    "2026-12-11",
+    "2026-12-18"
+   ]
+  ],
+  "id": "19dbad52981a3bf7",
+  "data": "2026-04-23"
+ },
+ {
+  "nome": "FABIO PEREIRA DA SILVA",
+  "matricula": "88650",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-05-04",
+    "2026-05-18"
+   ],
+   [
+    "2026-10-13",
+    "2026-10-27"
+   ]
+  ],
+  "id": "19dc0efb94ce246e",
+  "data": "2026-04-24"
+ },
+ {
+  "id": "19dc11dc158c326a",
+  "data": "2026-04-24",
+  "nome": "MARINA LIRA DA SILVEIRA PINTO",
+  "matricula": "91030",
+  "tipo": "Alteração de férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-09-08",
+    "2026-09-17"
+   ],
+   [
+    "2026-12-01",
+    "2026-12-10"
+   ]
+  ],
+  "novo": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-22"
+   ],
+   [
+    "2026-11-27",
+    "2026-12-06"
+   ]
+  ]
+ },
+ {
+  "nome": "MARIANGELA MIRANDA DUARTE",
+  "matricula": "44431",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-06-25",
+    "2026-07-08"
+   ],
+   [
+    "2026-09-28",
+    "2026-10-03"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ],
+  "id": "19dcf1f159e2d069",
+  "data": "2026-04-27"
+ },
+ {
+  "nome": "VANDERLEI BALDESSIN",
+  "matricula": "11959",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-05-06",
+    "2026-05-15"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-22"
+   ],
+   [
+    "2026-11-10",
+    "2026-11-19"
+   ]
+  ],
+  "id": "19df414bef775c44",
+  "data": "2026-05-04"
+ },
+ {
+  "id": "19df8bf9f08c27c9",
+  "data": "2026-05-05",
+  "nome": "ELENIRA DE ANDRADE BICALHO",
+  "matricula": "52507",
+  "tipo": "Alteração de férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2026-04-06",
+    "2026-04-15"
+   ],
+   [
+    "2026-06-08",
+    "2026-06-17"
+   ],
+   [
+    "2026-08-17",
+    "2026-08-26"
+   ]
+  ],
+  "novo": [
+   [
+    "2026-04-06",
+    "2026-04-15"
+   ],
+   [
+    "2026-06-29",
+    "2026-07-08"
+   ],
+   [
+    "2026-09-21",
+    "2026-09-30"
+   ]
+  ]
+ },
+ {
+  "nome": "CARMEN LUCIANITA DE SENE BARGAS GIAO",
+  "matricula": "31712",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-06-17",
+    "2026-06-23"
+   ],
+   [
+    "2026-07-20",
+    "2026-07-31"
+   ]
+  ],
+  "id": "19df99055c43f1df",
+  "data": "2026-05-05"
+ },
+ {
+  "id": "19df9d32214f7872",
+  "data": "2026-05-05",
+  "nome": "MARIA CECILIA SILVEIRA GRANATO",
+  "matricula": "8753",
+  "tipo": "Alteração de férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-05-06",
+    "2026-05-15"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ],
+  "novo": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-06-29",
+    "2026-07-08"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ]
+ },
+ {
+  "nome": "AGNELO WELINGTON SILVEIRA CASTRO",
+  "matricula": "90786",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-08-03",
+    "2026-09-01"
+   ]
+  ],
+  "id": "19e07bf61f67f0d2",
+  "data": "2026-05-08"
+ },
+ {
+  "nome": "THAYANE CRISCIA SOUTO DE OLIVEIRA",
+  "matricula": "105473",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-06-08",
+    "2026-06-19"
+   ],
+   [
+    "2026-10-01",
+    "2026-10-13"
+   ]
+  ],
+  "id": "19e179a892ea555b",
+  "data": "2026-05-11"
+ },
+ {
+  "nome": "TIAGO SOUZA DIAS",
+  "matricula": "50539",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-07-13",
+    "2026-08-01"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ],
+  "id": "19e2ceccd0e74d60",
+  "data": "2026-05-15"
+ },
+ {
+  "nome": "THIAGO DONIZETE MENDANHA",
+  "matricula": "93203",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-07-13",
+    "2026-07-24"
+   ],
+   [
+    "2026-12-01",
+    "2026-12-18"
+   ]
+  ],
+  "id": "19e36f4b0abdf2a4",
+  "data": "2026-05-17"
+ },
+ {
+  "nome": "APARECIDA DE FATIMA DE SOUZA FRANCO",
+  "matricula": "43885",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-07-13",
+    "2026-07-24"
+   ],
+   [
+    "2026-12-01",
+    "2026-12-18"
+   ]
+  ],
+  "id": "19e3c2849b826cb0",
+  "data": "2026-05-18"
+ },
+ {
+  "id": "19e469ad46db2fef",
+  "data": "2026-05-20",
+  "nome": "LILIANA SQUARIZZI FERREIRA CANTARIM",
+  "matricula": "86096",
+  "tipo": "Alteração de férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2026-02-23",
+    "2026-02-27"
+   ],
+   [
+    "2026-06-08",
+    "2026-06-19"
+   ],
+   [
+    "2026-09-28",
+    "2026-10-10"
+   ]
+  ],
+  "novo": [
+   [
+    "2026-02-23",
+    "2026-02-27"
+   ],
+   [
+    "2026-06-22",
+    "2026-07-03"
+   ],
+   [
+    "2026-09-28",
+    "2026-10-10"
+   ]
+  ]
+ },
+ {
+  "nome": "ADRIANA APARECIDA PERTILE MUNICELLI",
+  "matricula": "42161",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-07-13",
+    "2026-07-27"
+   ],
+   [
+    "2027-01-07",
+    "2027-01-21"
+   ]
+  ],
+  "id": "19e46c0ff2da4015",
+  "data": "2026-05-20"
+ },
+ {
+  "id": "19e4a946ff1da913",
+  "data": "2026-05-21",
+  "nome": "RODRIGO GONCALVES DIAS AGOSTINETO",
+  "matricula": "42501",
+  "tipo": "Alteração de férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-07-01",
+    "2026-07-10"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ],
+  "novo": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-07-12",
+    "2026-07-31"
+   ]
+  ]
+ },
+ {
+  "nome": "MARCIA HELENA DOMENICI",
+  "matricula": "15466",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-07-13",
+    "2026-07-18"
+   ],
+   [
+    "2026-09-21",
+    "2026-10-02"
+   ],
+   [
+    "2026-12-07",
+    "2026-12-18"
+   ]
+  ],
+  "id": "19e514c64cf3c9df",
+  "data": "2026-05-22"
+ },
+ {
+  "id": "19e5fc240a808e7e",
+  "data": "2026-05-25",
+  "nome": "LILIANA SQUARIZZI FERREIRA CANTARIM",
+  "matricula": "86096",
+  "tipo": "Alteração de férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2026-02-23",
+    "2026-02-27"
+   ],
+   [
+    "2026-06-22",
+    "2026-07-03"
+   ],
+   [
+    "2026-09-28",
+    "2026-10-10"
+   ]
+  ],
+  "novo": [
+   [
+    "2026-02-23",
+    "2026-02-27"
+   ],
+   [
+    "2026-06-29",
+    "2026-07-10"
+   ],
+   [
+    "2026-09-28",
+    "2026-10-10"
+   ]
+  ]
+ },
+ {
+  "id": "19e5fee03ca21d8d",
+  "data": "2026-05-25",
+  "nome": "AGUINALDO JUNIOR YAMAMOTO PERES",
+  "matricula": "22187",
+  "tipo": "Alteração de férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2026-04-06",
+    "2026-04-17"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ],
+   [
+    "2027-01-07",
+    "2027-01-14"
+   ]
+  ],
+  "novo": [
+   [
+    "2026-04-06",
+    "2026-04-17"
+   ],
+   [
+    "2026-08-17",
+    "2026-08-26"
+   ],
+   [
+    "2026-12-11",
+    "2026-12-18"
+   ]
+  ]
+ },
+ {
+  "id": "19e6b1d180a247ba",
+  "data": "2026-05-27",
+  "nome": "RUTE VERA LUCIA DE OLIVEIRA",
+  "matricula": "31518",
+  "tipo": "Alteração de férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2026-05-20",
+    "2026-06-03"
+   ],
+   [
+    "2026-11-03",
+    "2026-11-17"
+   ]
+  ],
+  "novo": [
+   [
+    "2026-05-20",
+    "2026-06-03"
+   ],
+   [
+    "2026-08-11",
+    "2026-08-25"
+   ]
+  ]
+ },
+ {
+  "nome": "FERNANDA GODOY D AVILA",
+  "matricula": "96300",
+  "tipo": "Folga compensatória de dias trabalhados em Eleição",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2026-06-01",
+    "2026-06-03"
+   ]
+  ],
+  "id": "19e6ec9ee217c715",
+  "data": "2026-05-28"
+ },
+ {
+  "nome": "MARIA LUCIA ALVES CAVALCANTE",
+  "matricula": "42234",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-07-15",
+    "2026-07-29"
+   ],
+   [
+    "2026-10-13",
+    "2026-10-27"
+   ]
+  ],
+  "id": "19e8f28e49379b32",
+  "data": "2026-06-03"
+ },
+ {
+  "nome": "IVI CRISTINA INDALECIO BUENO",
+  "matricula": "95303",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-07-27",
+    "2026-08-15"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ],
+  "id": "19ea7ffb58e41391",
+  "data": "2026-06-08"
+ },
+ {
+  "nome": "AGUINALDO JUNIOR YAMAMOTO PERES",
+  "matricula": "22187",
+  "tipo": "Folga compensatória de dias trabalhados em Plantão Judiciário",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2026-06-12",
+    "2026-06-12"
+   ]
+  ],
+  "id": "19ead099e11200f6",
+  "data": "2026-06-09"
+ },
+ {
+  "id": "19eb2908184ab3a7",
+  "data": "2026-06-10",
+  "nome": "MARIANA CECHINATO LORENZETE",
+  "matricula": "100145",
+  "tipo": "Alteração de férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2026-03-09",
+    "2026-03-26"
+   ],
+   [
+    "2026-08-17",
+    "2026-08-21"
+   ],
+   [
+    "2026-09-08",
+    "2026-09-14"
+   ]
+  ],
+  "novo": [
+   [
+    "2026-03-09",
+    "2026-03-26"
+   ],
+   [
+    "2026-08-11",
+    "2026-08-15"
+   ],
+   [
+    "2026-09-08",
+    "2026-09-14"
+   ]
+  ]
+ },
+ {
+  "nome": "JULIO CESAR CANO",
+  "matricula": "21822",
+  "tipo": "Folga compensatória de dias trabalhados em Plantão Judiciário",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2026-05-29",
+    "2026-05-29"
+   ]
+  ],
+  "id": "19eb5c3faa5477e7",
+  "data": "2026-06-11"
+ },
+ {
+  "nome": "CLAUDIR DE OLIVEIRA JUNIOR",
+  "matricula": "31976",
+  "tipo": "Folga compensatória de dias trabalhados em Plantão Judiciário",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2026-06-19",
+    "2026-06-19"
+   ]
+  ],
+  "id": "19ecbcf7c4422a41",
+  "data": "2026-06-15"
+ },
+ {
+  "nome": "FERNANDO BELAM",
+  "matricula": "18503",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-08-01",
+    "2026-08-13"
+   ]
+  ],
+  "id": "19ed24edd2ae29c0",
+  "data": "2026-06-16"
+ },
+ {
+  "nome": "LUZIA DANIELLE DOS SANTOS FABIANO",
+  "matricula": "92886",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-07-15",
+    "2026-07-29"
+   ],
+   [
+    "2026-10-19",
+    "2026-11-02"
+   ]
+  ],
+  "id": "19ed6bfd69de88d6",
+  "data": "2026-06-17"
+ },
+ {
+  "nome": "RAFAEL SERRA CARDOSO",
+  "matricula": "22209",
+  "tipo": "Folga compensatória de dias trabalhados em Plantão Judiciário",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2026-06-19",
+    "2026-06-19"
+   ]
+  ],
+  "id": "19eda808f6dfb6da",
+  "data": "2026-06-18"
+ },
+ {
+  "nome": "AGUINALDO JUNIOR YAMAMOTO PERES",
+  "matricula": "22187",
+  "tipo": "Folga compensatória de dias trabalhados em Plantão Judiciário",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2026-06-26",
+    "2026-06-26"
+   ]
+  ],
+  "id": "19ee0f3652cf4e85",
+  "data": "2026-06-19"
+ },
+ {
+  "nome": "DOMINGOS JOSE DE MUNNO",
+  "matricula": "101044",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-08-12",
+    "2026-08-20"
+   ],
+   [
+    "2026-11-11",
+    "2026-11-19"
+   ],
+   [
+    "2026-12-05",
+    "2026-12-16"
+   ]
+  ],
+  "id": "19ef4f4c711379d8",
+  "data": "2026-06-23"
+ },
+ {
+  "nome": "CELSO DE ARRUDA MOREIRA",
+  "matricula": "9989",
+  "tipo": "Cancelamento de férias",
+  "categoria": "cancelamento",
+  "periodos": [
+   [
+    "2026-07-20",
+    "2026-08-08"
+   ]
+  ],
+  "id": "19f0e95e082536c5",
+  "data": "2026-06-28"
+ },
+ {
+  "nome": "CELSO DE ARRUDA MOREIRA",
+  "matricula": "9989",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-08-12",
+    "2026-08-21"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ],
+  "id": "19f19428c597f511",
+  "data": "2026-06-30"
+ },
+ {
+  "nome": "FERNANDO BRAIT GARROS",
+  "matricula": "9792",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-09-01",
+    "2026-09-30"
+   ]
+  ],
+  "id": "19f1ea3fbbfcb91a",
+  "data": "2026-07-01"
+ },
+ {
+  "nome": "SISENANDO BRAGA NAVES GOMES TRINDADE CALIXTO",
+  "matricula": "88234",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-08-26",
+    "2026-09-04"
+   ],
+   [
+    "2026-10-13",
+    "2026-10-22"
+   ]
+  ],
+  "id": "19f1f889f2895b60",
+  "data": "2026-07-01"
+ },
+ {
+  "nome": "ROSANA SUELI BRITTO DE JESUS",
+  "matricula": "50938",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-10-15",
+    "2026-10-29"
+   ],
+   [
+    "2027-03-09",
+    "2027-03-23"
+   ]
+  ],
+  "id": "19f376581becda2c",
+  "data": "2026-07-06"
+ },
+ {
+  "nome": "VANESSA MATEUS YAMAJI",
+  "matricula": "100943",
+  "tipo": "Folga compensatória de dias trabalhados em Plantão Judiciário",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2026-07-06",
+    "2026-07-06"
+   ]
+  ],
+  "id": "19f425f700f19ee2",
+  "data": "2026-07-08"
+ },
+ {
+  "nome": "DHEISE MONIQUE EUPHRASIO",
+  "matricula": "106488",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-08-03",
+    "2026-08-07"
+   ],
+   [
+    "2026-09-21",
+    "2026-10-05"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ],
+  "id": "19f8037e40ddccf3",
+  "data": "2026-07-20"
+ },
+ {
+  "nome": "MILTON ROBERTO DA SILVA",
+  "matricula": "22195",
+  "tipo": "Folga compensatória de dias trabalhados em Plantão Judiciário",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2026-07-20",
+    "2026-07-20"
+   ]
+  ],
+  "id": "19f84df9bad69a5d",
+  "data": "2026-07-21"
+ },
+ {
+  "nome": "ANA SYLVIA REIS COUTO FERNANDES",
+  "matricula": "91987",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-08-05",
+    "2026-08-07"
+   ],
+   [
+    "2027-01-07",
+    "2027-01-29"
+   ]
+  ],
+  "id": "19f8fdc3aaead816",
+  "data": "2026-07-23"
+ },
+ {
+  "nome": "MARIA GARDINALI DE LIMA",
+  "matricula": "10898",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-09-15",
+    "2026-10-14"
+   ]
+  ],
+  "id": "19f9426d04a6ef2f",
+  "data": "2026-07-24"
+ },
+ {
+  "id": "19fa8c3cedaa6441",
+  "data": "2026-07-28",
+  "nome": "TATIANA MAFFEIS DA CUNHA",
+  "matricula": "109070",
+  "tipo": "Alteração de férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2026-02-19",
+    "2026-03-03"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-24"
+   ],
+   [
+    "2026-11-23",
+    "2026-11-27"
+   ]
+  ],
+  "novo": [
+   [
+    "2026-02-19",
+    "2026-03-03"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-24"
+   ],
+   [
+    "2026-08-31",
+    "2026-09-04"
+   ]
+  ]
+ },
+ {
+  "id": "19fae27567798ee1",
+  "data": "2026-07-29",
+  "nome": "ANA CLAUDIA RODRIGUES ABREU",
+  "matricula": "31496",
+  "tipo": "Alteração de férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-06-29",
+    "2026-07-08"
+   ],
+   [
+    "2026-08-26",
+    "2026-09-04"
+   ]
+  ],
+  "novo": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-06-29",
+    "2026-07-08"
+   ],
+   [
+    "2026-09-08",
+    "2026-09-17"
+   ]
+  ]
+ },
+ {
+  "nome": "FERNANDA GODOY D AVILA",
+  "matricula": "96300",
+  "tipo": "Folga compensatória de dias trabalhados em Eleição",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2026-07-31",
+    "2026-07-31"
+   ]
+  ],
+  "id": "19fb3e1552aa71a5",
+  "data": "2026-07-30"
+ },
+ {
+  "nome": "MICHELLI CRISTINA BORGES SAMPAIO",
+  "matricula": "54097",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-11-03",
+    "2026-11-22"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ],
+  "id": "19fb9408d044904d",
+  "data": "2026-07-31"
+ },
+ {
+  "nome": "GABRIELA SUEMI IGUEI DOS SANTOS",
+  "matricula": "105759",
+  "tipo": "Folga compensatória de dias trabalhados em Eleição",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2026-08-12",
+    "2026-08-14"
+   ]
+  ],
+  "id": "19fc87e81cd367b4",
+  "data": "2026-08-03"
+ },
+ {
+  "nome": "ANELISE LINO DE QUEIROZ",
+  "matricula": "54950",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-09-28",
+    "2026-10-27"
+   ]
+  ],
+  "id": "19fd1ec8aa8b987f",
+  "data": "2026-08-05"
+ },
+ {
+  "id": "19fd2f2ff4c672e4",
+  "data": "2026-08-05",
+  "nome": "MICHELLI CRISTINA BORGES SAMPAIO",
+  "matricula": "54097",
+  "tipo": "Alteração de férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2026-11-03",
+    "2026-11-22"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ],
+  "novo": [
+   [
+    "2026-11-03",
+    "2026-11-22"
+   ],
+   [
+    "2027-01-07",
+    "2027-01-16"
+   ]
+  ]
+ },
+ {
+  "nome": "LUIS GUSTAVO FERNANDES",
+  "matricula": "84140",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-11-19",
+    "2026-12-18"
+   ]
+  ],
+  "id": "19fdcd08f5b817e6",
+  "data": "2026-08-07"
+ },
+ {
+  "id": "19fdce5f0371f014",
+  "data": "2026-08-07",
+  "nome": "MARCO CESAR DE OLIVEIRA WAN MEYL",
+  "matricula": "109312",
+  "tipo": "Alteração de férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2026-11-20",
+    "2026-12-19"
+   ]
+  ],
+  "novo": [
+   [
+    "2027-07-01",
+    "2027-07-30"
+   ]
+  ]
+ },
+ {
+  "id": "19fdcfb4e04ee321",
+  "data": "2026-08-07",
+  "nome": "JULIO CESAR CANO",
+  "matricula": "21822",
+  "tipo": "Alteração de férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2026-05-08",
+    "2026-05-12"
+   ],
+   [
+    "2026-08-20",
+    "2026-09-13"
+   ]
+  ],
+  "novo": [
+   [
+    "2026-05-08",
+    "2026-05-12"
+   ],
+   [
+    "2026-08-20",
+    "2026-08-29"
+   ],
+   [
+    "2026-10-01",
+    "2026-10-15"
+   ]
+  ]
+ },
+ {
+  "nome": "NATALINA MARIA BORGES XAVIER",
+  "matricula": "41041",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-09-14",
+    "2026-09-28"
+   ],
+   [
+    "2026-11-30",
+    "2026-12-14"
+   ]
+  ],
+  "id": "19ff71d8c4400f7d",
+  "data": "2026-08-12"
+ },
+ {
+  "nome": "DEISE MARIA CASSANIGA AZEVEDO",
+  "matricula": "19194",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-10-13",
+    "2026-10-29"
+   ],
+   [
+    "2026-11-23",
+    "2026-12-05"
+   ]
+  ],
+  "id": "1a01681431b72a69",
+  "data": "2026-08-18"
+ },
+ {
+  "id": "1a02487034ee6350",
+  "data": "2026-08-21",
+  "nome": "MARCIA REGINA MARQUES DE PAULA",
+  "matricula": "25852",
+  "tipo": "Alteração de férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2026-01-12",
+    "2026-01-30"
+   ],
+   [
+    "2026-09-08",
+    "2026-09-18"
+   ]
+  ],
+  "novo": [
+   [
+    "2026-01-12",
+    "2026-01-30"
+   ],
+   [
+    "2026-09-14",
+    "2026-09-24"
+   ]
+  ]
+ },
+ {
+  "nome": "WALTER BRANDI KOCH RODRIGUES",
+  "matricula": "96326",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-09-14",
+    "2026-10-03"
+   ]
+  ],
+  "id": "1a025e84129c03b1",
+  "data": "2026-08-21"
+ },
+ {
+  "nome": "CARMEN LUCIANITA DE SENE BARGAS GIAO",
+  "matricula": "31712",
+  "tipo": "Cancelamento de férias",
+  "categoria": "cancelamento",
+  "periodos": [
+   [
+    "2026-09-08",
+    "2026-09-18"
+   ]
+  ],
+  "id": "1a03a1dbfad24446",
+  "data": "2026-08-25"
+ },
+ {
+  "nome": "LUCIANA CRISTINA RODRIGUES",
+  "matricula": "108499",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-09-15",
+    "2026-10-14"
+   ]
+  ],
+  "id": "1a03e7e0a22d3cb8",
+  "data": "2026-08-26"
+ },
+ {
+  "nome": "JOAO GABRIEL DA SILVA SILVEIRA",
+  "matricula": "88013",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-07",
+    "2027-01-15"
+   ],
+   [
+    "2027-07-15",
+    "2027-07-30"
+   ],
+   [
+    "2027-11-08",
+    "2027-11-12"
+   ]
+  ],
+  "id": "1a03e8e07d85ea71",
+  "data": "2026-08-26"
+ },
+ {
+  "nome": "ROMILDA MARIA DE ARRUDA GERMANO",
+  "matricula": "44423",
+  "tipo": "Folga compensatória de dias trabalhados em Plantão Judiciário",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2026-11-23",
+    "2026-11-27"
+   ]
+  ],
+  "id": "1a04a138772e934d",
+  "data": "2026-08-28"
+ },
+ {
+  "nome": "FABIO PEREIRA DA SILVA",
+  "matricula": "88650",
+  "tipo": "Folga compensatória de dias trabalhados em Eleição",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2026-10-28",
+    "2026-10-29"
+   ]
+  ],
+  "id": "1a087dd6c302e722",
+  "data": "2026-09-09"
+ },
+ {
+  "nome": "ISABELA FREITAS DE SOUZA",
+  "matricula": "103608",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-06-07",
+    "2027-06-21"
+   ],
+   [
+    "2027-12-03",
+    "2027-12-17"
+   ]
+  ],
+  "id": "1a091071f9cf7ae7",
+  "data": "2026-09-11"
+ },
+ {
+  "nome": "APARECIDA MARIA BARBOSA ZUQUETO",
+  "matricula": "83488",
+  "tipo": "Folga compensatória de dias trabalhados em Eleição",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2026-10-09",
+    "2026-10-09"
+   ]
+  ],
+  "id": "1a0a127595c699ff",
+  "data": "2026-09-14"
+ },
+ {
+  "id": "1a0a66e2af80299a",
+  "data": "2026-09-15",
+  "nome": "MARIA LUIZA GUERRA MARTINELLI",
+  "matricula": "101443",
+  "tipo": "Alteração de férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2026-03-23",
+    "2026-03-31"
+   ],
+   [
+    "2026-09-08",
+    "2026-09-17"
+   ],
+   [
+    "2026-12-08",
+    "2026-12-18"
+   ]
+  ],
+  "novo": [
+   [
+    "2026-03-23",
+    "2026-03-31"
+   ],
+   [
+    "2026-09-08",
+    "2026-09-17"
+   ],
+   [
+    "2026-11-03",
+    "2026-11-13"
+   ]
+  ]
+ },
+ {
+  "nome": "VANESSA MATEUS YAMAJI",
+  "matricula": "100943",
+  "tipo": "Folga compensatória de dias trabalhados em Plantão Judiciário",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2026-09-14",
+    "2026-09-14"
+   ]
+  ],
+  "id": "1a0aada7d12885b1",
+  "data": "2026-09-16"
+ },
+ {
+  "nome": "FABIO AJUDARTE LOPES",
+  "matricula": "42005",
+  "tipo": "Cancelamento de férias",
+  "categoria": "cancelamento",
+  "periodos": [
+   [
+    "2026-11-23",
+    "2026-12-05"
+   ]
+  ],
+  "id": "1a0b55f05248d7f8",
+  "data": "2026-09-18"
+ },
+ {
+  "nome": "DANIELE FERNANDA STEFANI",
+  "matricula": "86797",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-11-03",
+    "2026-12-02"
+   ]
+  ],
+  "id": "1a0c53be11837790",
+  "data": "2026-09-21"
+ },
+ {
+  "nome": "FABIO AJUDARTE LOPES",
+  "matricula": "42005",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-12-06",
+    "2026-12-18"
+   ]
+  ],
+  "id": "1a0c5c734925887e",
+  "data": "2026-09-21"
+ },
+ {
+  "id": "1a0c9e69f3cc69c0",
+  "data": "2026-09-22",
+  "nome": "LILIANA SQUARIZZI FERREIRA CANTARIM",
+  "matricula": "86096",
+  "tipo": "Alteração de férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2026-02-23",
+    "2026-02-27"
+   ],
+   [
+    "2026-06-29",
+    "2026-07-10"
+   ],
+   [
+    "2026-09-28",
+    "2026-10-10"
+   ]
+  ],
+  "novo": [
+   [
+    "2026-02-23",
+    "2026-02-27"
+   ],
+   [
+    "2026-06-29",
+    "2026-07-10"
+   ],
+   [
+    "2026-11-03",
+    "2026-11-15"
+   ]
+  ]
+ },
+ {
+  "id": "1a0ca5427c960f43",
+  "data": "2026-09-22",
+  "nome": "CELSO DE ARRUDA MOREIRA",
+  "matricula": "9989",
+  "tipo": "Alteração de férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2026-02-19",
+    "2026-02-28"
+   ],
+   [
+    "2026-08-12",
+    "2026-08-21"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ],
+  "novo": [
+   [
+    "2026-02-19",
+    "2026-02-28"
+   ],
+   [
+    "2026-08-12",
+    "2026-08-21"
+   ],
+   [
+    "2026-10-15",
+    "2026-10-24"
+   ]
+  ]
+ },
+ {
+  "nome": "CARMEN LUCIANITA DE SENE BARGAS GIAO",
+  "matricula": "31712",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-10-13",
+    "2026-10-23"
+   ]
+  ],
+  "id": "1a0d92e27c9d8f7a",
+  "data": "2026-09-25"
+ },
+ {
+  "nome": "NAARA DE LUCAS BARBALHO",
+  "matricula": "102547",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-11-03",
+    "2026-11-12"
+   ],
+   [
+    "2027-01-07",
+    "2027-01-16"
+   ],
+   [
+    "2027-07-12",
+    "2027-07-21"
+   ]
+  ],
+  "id": "1a0ed4abd66cab2e",
+  "data": "2026-09-29"
+ },
+ {
+  "nome": "JOSEANE DE MENEZES CONDE",
+  "matricula": "107972",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-07-01",
+    "2026-07-08"
+   ],
+   [
+    "2026-12-01",
+    "2026-12-22"
+   ]
+  ],
+  "id": "1a0ed98da33dcaeb",
+  "data": "2026-09-29"
+ },
+ {
+  "nome": "MARIANA PENACHIONI ZANGIROLAMI",
+  "matricula": "43656",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-07",
+    "2027-01-22"
+   ],
+   [
+    "2027-07-12",
+    "2027-07-20"
+   ],
+   [
+    "2027-11-22",
+    "2027-11-26"
+   ]
+  ],
+  "id": "1a0f880d27868b1e",
+  "data": "2026-10-01"
+ },
+ {
+  "nome": "ROGERIO ZAMBON CANALE",
+  "matricula": "82740",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-11",
+    "2027-01-22"
+   ],
+   [
+    "2027-07-12",
+    "2027-07-23"
+   ],
+   [
+    "2027-11-03",
+    "2027-11-08"
+   ]
+  ],
+  "id": "1a10d4de34c26e6d",
+  "data": "2026-10-05"
+ },
+ {
+  "id": "1a10d4de2b8d8b65",
+  "data": "2026-10-05",
+  "nome": "LUIZ PAOLIERI NETO",
+  "matricula": "25615",
+  "tipo": "Alteração de férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2026-01-07",
+    "2026-01-11"
+   ],
+   [
+    "2026-07-02",
+    "2026-07-14"
+   ],
+   [
+    "2026-12-07",
+    "2026-12-18"
+   ]
+  ],
+  "novo": [
+   [
+    "2026-01-07",
+    "2026-01-11"
+   ],
+   [
+    "2026-07-02",
+    "2026-07-14"
+   ],
+   [
+    "2026-11-23",
+    "2026-12-04"
+   ]
+  ]
+ },
+ {
+  "nome": "TATIANA MAEYAMA",
+  "matricula": "47031",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-07",
+    "2027-01-15"
+   ],
+   [
+    "2027-07-12",
+    "2027-07-23"
+   ],
+   [
+    "2027-12-09",
+    "2027-12-17"
+   ]
+  ],
+  "id": "1a11243e2f3caa80",
+  "data": "2026-10-06"
+ },
+ {
+  "nome": "LUIZ PAOLIERI NETO",
+  "matricula": "25615",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-25",
+    "2027-02-05"
+   ],
+   [
+    "2027-06-30",
+    "2027-07-08"
+   ],
+   [
+    "2027-12-09",
+    "2027-12-17"
+   ]
+  ],
+  "id": "1a117fdf9cd9f713",
+  "data": "2026-10-07"
+ },
+ {
+  "nome": "DAIANE CARLA SANTOS LEDO MARQUES",
+  "matricula": "42960",
+  "tipo": "Folga compensatória de dias trabalhados em Plantão Judiciário",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2026-10-13",
+    "2026-10-13"
+   ]
+  ],
+  "id": "1a1184be46743bd5",
+  "data": "2026-10-07"
+ },
+ {
+  "nome": "CALEFE ALEXANDRE DE OLIVEIRA",
+  "matricula": "108103",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-07",
+    "2027-01-15"
+   ],
+   [
+    "2027-06-23",
+    "2027-07-08"
+   ],
+   [
+    "2027-12-13",
+    "2027-12-17"
+   ]
+  ],
+  "id": "1a12cede891ea199",
+  "data": "2026-10-11"
+ },
+ {
+  "nome": "ANTENOR DONIDA BARTOLI",
+  "matricula": "31321",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-02-11",
+    "2027-02-19"
+   ],
+   [
+    "2027-07-21",
+    "2027-07-30"
+   ],
+   [
+    "2027-12-07",
+    "2027-12-17"
+   ]
+  ],
+  "id": "1a1357eafd97499e",
+  "data": "2026-10-13"
+ },
+ {
+  "nome": "LEANDRO MAC FADDEN NEGRI",
+  "matricula": "81361",
+  "tipo": "Cancelamento de férias",
+  "categoria": "cancelamento",
+  "periodos": [
+   [
+    "2026-12-13",
+    "2026-12-18"
+   ]
+  ],
+  "id": "1a1359979a13a2ff",
+  "data": "2026-10-13"
+ },
+ {
+  "nome": "BARBARA PADOVANI MINHOLO HOFFMANN",
+  "matricula": "43850",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-11",
+    "2027-01-30"
+   ],
+   [
+    "2027-07-12",
+    "2027-07-21"
+   ]
+  ],
+  "id": "1a13aa6f8d2125f1",
+  "data": "2026-10-14"
+ },
+ {
+  "nome": "ROBERTA ELENA AGOSTINETO TETZLAFF",
+  "matricula": "16179",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-02-15",
+    "2027-02-19"
+   ],
+   [
+    "2027-04-01",
+    "2027-04-20"
+   ]
+  ],
+  "id": "1a13ab04f90e6536",
+  "data": "2026-10-14"
+ },
+ {
+  "nome": "JOAO VICTOR MEDEIROS DE LUCENA",
+  "matricula": "108626",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-11-09",
+    "2026-12-08"
+   ]
+  ],
+  "id": "1a13ad481510f04b",
+  "data": "2026-10-14"
+ },
+ {
+  "nome": "REGIANE SIMONI FRANCO",
+  "matricula": "98027",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-10-18",
+    "2027-10-29"
+   ],
+   [
+    "2028-02-01",
+    "2028-02-18"
+   ]
+  ],
+  "id": "1a13ae9df1136d08",
+  "data": "2026-10-14"
+ },
+ {
+  "nome": "EDUARDO AUGUSTO VELOSO",
+  "matricula": "82996",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-07",
+    "2027-01-15"
+   ],
+   [
+    "2027-07-12",
+    "2027-07-23"
+   ],
+   [
+    "2027-12-09",
+    "2027-12-17"
+   ]
+  ],
+  "id": "1a13b7625a763540",
+  "data": "2026-10-14"
+ },
+ {
+  "nome": "ELINE ANA SAMPAIO CORADI CASTRO",
+  "matricula": "93181",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-25",
+    "2027-01-29"
+   ],
+   [
+    "2027-07-19",
+    "2027-08-06"
+   ]
+  ],
+  "id": "1a145f93270bd4ce",
+  "data": "2026-10-16"
+ },
+ {
+  "nome": "MILTON ROBERTO DA SILVA",
+  "matricula": "22195",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-07",
+    "2027-01-15"
+   ],
+   [
+    "2027-06-28",
+    "2027-07-18"
+   ]
+  ],
+  "id": "1a164aa06d83a1da",
+  "data": "2026-10-22"
+ },
+ {
+  "nome": "LEANDRO MAC FADDEN NEGRI",
+  "matricula": "81361",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-11",
+    "2027-01-16"
+   ]
+  ],
+  "id": "1a169825c5bf6347",
+  "data": "2026-10-23"
+ },
+ {
+  "nome": "ANDRE LUIZ FERNANDES ROCHA",
+  "matricula": "48062",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-07",
+    "2027-01-21"
+   ],
+   [
+    "2027-07-26",
+    "2027-07-30"
+   ],
+   [
+    "2027-12-09",
+    "2027-12-18"
+   ]
+  ],
+  "id": "1a16a4ca27c14a37",
+  "data": "2026-10-23"
+ },
+ {
+  "nome": "CAROLINA MONTEIRO DA SILVEIRA",
+  "matricula": "103179",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-10-27",
+    "2026-11-25"
+   ]
+  ],
+  "id": "1a17910dd836e32b",
+  "data": "2026-10-26"
+ },
+ {
+  "nome": "CAROLINA MONTEIRO DA SILVEIRA",
+  "matricula": "103179",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-12-14",
+    "2026-12-18"
+   ],
+   [
+    "2027-07-05",
+    "2027-07-19"
+   ],
+   [
+    "2027-12-08",
+    "2027-12-17"
+   ]
+  ],
+  "id": "1a179a0e33cc8058",
+  "data": "2026-10-26"
+ },
+ {
+  "nome": "SANDRA MARIA SEGATO GAZZETA",
+  "matricula": "11797",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-07",
+    "2027-01-22"
+   ],
+   [
+    "2027-06-28",
+    "2027-07-11"
+   ]
+  ],
+  "id": "1a17ef6a4d5e1e8c",
+  "data": "2026-10-27"
+ },
+ {
+  "nome": "WALLACE DIEGO RESENDE",
+  "matricula": "97616",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-07",
+    "2027-01-22"
+   ],
+   [
+    "2027-07-12",
+    "2027-07-25"
+   ]
+  ],
+  "id": "1a1834ea2792e118",
+  "data": "2026-10-28"
+ },
+ {
+  "nome": "MARCELO DE JESUS RANGEL MONTEIRO",
+  "matricula": "48518",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-07",
+    "2027-01-21"
+   ],
+   [
+    "2027-07-16",
+    "2027-07-30"
+   ]
+  ],
+  "id": "1a1858a65f4b953f",
+  "data": "2026-10-29"
+ },
+ {
+  "nome": "CELSO DE ARRUDA MOREIRA",
+  "matricula": "9989",
+  "tipo": "Folga compensatória de dias trabalhados em Eleição",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2026-11-03",
+    "2026-11-06"
+   ]
+  ],
+  "id": "1a18952c70ba6b2c",
+  "data": "2026-10-29"
+ },
+ {
+  "nome": "ROBERTO FRANCISCO NOGUEIRA CORSI",
+  "matricula": "82287",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-12-21",
+    "2027-01-07"
+   ],
+   [
+    "2027-05-11",
+    "2027-05-22"
+   ]
+  ],
+  "id": "1a1a19d40baf3145",
+  "data": "2026-11-03"
+ },
+ {
+  "nome": "ENEIAS CRISTIANO ELER",
+  "matricula": "44385",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-20",
+    "2027-01-29"
+   ],
+   [
+    "2027-08-24",
+    "2027-09-03"
+   ],
+   [
+    "2027-12-09",
+    "2027-12-17"
+   ]
+  ],
+  "id": "1a1a1ba4f4947bb0",
+  "data": "2026-11-03"
+ },
+ {
+  "nome": "RODRIGO GONCALVES DIAS AGOSTINETO",
+  "matricula": "42501",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-07",
+    "2027-01-15"
+   ],
+   [
+    "2027-07-19",
+    "2027-07-30"
+   ]
+  ],
+  "id": "1a1a1d53eab9f653",
+  "data": "2026-11-03"
+ },
+ {
+  "nome": "ELENIRA DE ANDRADE BICALHO",
+  "matricula": "52507",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-06-21",
+    "2027-07-05"
+   ],
+   [
+    "2027-09-13",
+    "2027-09-27"
+   ]
+  ],
+  "id": "1a1a1f5d16673ced",
+  "data": "2026-11-03"
+ },
+ {
+  "nome": "MARIA CECILIA SILVEIRA GRANATO",
+  "matricula": "8753",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-27",
+    "2027-02-05"
+   ],
+   [
+    "2027-07-12",
+    "2027-07-22"
+   ],
+   [
+    "2027-12-09",
+    "2027-12-17"
+   ]
+  ],
+  "id": "1a1a65055d9c5afa",
+  "data": "2026-11-04"
+ },
+ {
+  "nome": "FABIO AJUDARTE LOPES",
+  "matricula": "42005",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-18",
+    "2027-01-22"
+   ],
+   [
+    "2027-05-31",
+    "2027-06-11"
+   ],
+   [
+    "2027-12-05",
+    "2027-12-17"
+   ]
+  ],
+  "id": "1a1acb6377cf0eb1",
+  "data": "2026-11-05"
+ },
+ {
+  "nome": "CLAUDIA MARIA PASTOR",
+  "matricula": "55875",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-07",
+    "2027-01-16"
+   ],
+   [
+    "2027-07-12",
+    "2027-07-31"
+   ]
+  ],
+  "id": "1a1b13e5e26f68e0",
+  "data": "2026-11-06"
+ },
+ {
+  "id": "1a1b23ab71b447dc",
+  "data": "2026-11-06",
+  "nome": "DEBORA ASSIS DE OLIVEIRA",
+  "matricula": "100110",
+  "tipo": "Alteração de férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-22"
+   ],
+   [
+    "2026-11-23",
+    "2026-12-02"
+   ]
+  ],
+  "novo": [
+   [
+    "2026-01-07",
+    "2026-01-16"
+   ],
+   [
+    "2026-07-13",
+    "2026-07-22"
+   ],
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ]
+ },
+ {
+  "id": "1a1b267ebd14cb46",
+  "data": "2026-11-06",
+  "nome": "MICHEL AQUINO DE SOUZA",
+  "matricula": "108731",
+  "tipo": "Alteração de férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2026-04-06",
+    "2026-04-17"
+   ],
+   [
+    "2026-09-28",
+    "2026-10-02"
+   ],
+   [
+    "2026-11-23",
+    "2026-12-05"
+   ]
+  ],
+  "novo": [
+   [
+    "2026-04-06",
+    "2026-04-17"
+   ],
+   [
+    "2026-09-28",
+    "2026-10-02"
+   ],
+   [
+    "2027-01-25",
+    "2027-02-06"
+   ]
+  ]
+ },
+ {
+  "nome": "CELINA JACINTHO PEREIRA",
+  "matricula": "48259",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-11",
+    "2027-01-15"
+   ],
+   [
+    "2027-05-17",
+    "2027-05-26"
+   ],
+   [
+    "2027-10-13",
+    "2027-10-27"
+   ]
+  ],
+  "id": "1a1c158adbbd8657",
+  "data": "2026-11-09"
+ },
+ {
+  "nome": "APARECIDA MARIA BARBOSA ZUQUETO",
+  "matricula": "83488",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-25",
+    "2027-02-05"
+   ],
+   [
+    "2027-07-12",
+    "2027-07-23"
+   ]
+  ],
+  "id": "1a1c599ab8e9297e",
+  "data": "2026-11-10"
+ },
+ {
+  "nome": "SILVANA MARCELINO BRAZ",
+  "matricula": "49646",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-02-01",
+    "2027-02-05"
+   ],
+   [
+    "2027-03-29",
+    "2027-04-06"
+   ],
+   [
+    "2027-10-13",
+    "2027-10-28"
+   ]
+  ],
+  "id": "1a1ca9678f161dfc",
+  "data": "2026-11-11"
+ },
+ {
+  "nome": "RENATA FABIANA PARPINELLI ISHIHARA",
+  "matricula": "47716",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-11",
+    "2027-01-22"
+   ],
+   [
+    "2027-06-28",
+    "2027-07-02"
+   ]
+  ],
+  "id": "1a1cbcbb575b5d63",
+  "data": "2026-11-11"
+ },
+ {
+  "nome": "MARINA LIRA DA SILVEIRA PINTO",
+  "matricula": "91030",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-07",
+    "2027-01-16"
+   ],
+   [
+    "2027-06-21",
+    "2027-06-30"
+   ],
+   [
+    "2027-12-09",
+    "2027-12-18"
+   ]
+  ],
+  "id": "1a1cc120904a26c1",
+  "data": "2026-11-11"
+ },
+ {
+  "nome": "ALEXANDRE FRANCISCHETTI",
+  "matricula": "30473",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-11",
+    "2027-01-20"
+   ],
+   [
+    "2027-08-23",
+    "2027-09-01"
+   ],
+   [
+    "2027-11-03",
+    "2027-11-12"
+   ]
+  ],
+  "id": "1a1d09a3132e82da",
+  "data": "2026-11-12"
+ },
+ {
+  "nome": "DULCE MARIA VASCONCELLOS SEIXAS",
+  "matricula": "248",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-27",
+    "2027-02-05"
+   ],
+   [
+    "2027-05-17",
+    "2027-05-26"
+   ],
+   [
+    "2027-09-08",
+    "2027-09-17"
+   ]
+  ],
+  "id": "1a1d0e8ca844c78d",
+  "data": "2026-11-12"
+ },
+ {
+  "nome": "LEANDRO MAC FADDEN NEGRI",
+  "matricula": "81361",
+  "tipo": "Folga compensatória de dias trabalhados em Plantão Judiciário",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2027-01-08",
+    "2027-01-08"
+   ]
+  ],
+  "id": "1a1d6728f808347b",
+  "data": "2026-11-13"
+ },
+ {
+  "nome": "NEUSA APARECIDA ASBAHR BAIS",
+  "matricula": "51969",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-07",
+    "2027-02-05"
+   ]
+  ],
+  "id": "1a1d978bf3ee6dd6",
+  "data": "2026-11-14"
+ }
+]
