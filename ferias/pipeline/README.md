@@ -49,7 +49,7 @@ Fonte: e-mails do mesmo remetente com "teletrabalho" no assunto:
 "Indeferimento de indicação…". Cada indicação abre um registro com o nº do requerimento; a decisão seguinte do
 mesmo servidor o fecha. O `ferias.json` traz, por servidor, `teletrabalho` (registro mais recente: requerimento,
 modalidade, meses, situação, datas e previsão de término = deferimento + meses) e `teletrabalho_historico`.
-No portal aparece o selo **TT** ao lado do nome e a coluna "Teletrabalho" na Lista.
+No portal aparece o selo **TT** ao lado do nome e a coluna "Teletrabalho" na visão em tabela (botão "Teletrabalho", antes chamado "Lista").
 
 ```bash
 # arquivo: 1ª linha "Assunto: <assunto>", depois o corpo do e-mail
