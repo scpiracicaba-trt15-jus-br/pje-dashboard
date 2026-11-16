@@ -1643,11 +1643,7 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
     <input type="text" placeholder="Buscar magistrado, vara, secretário ou assistente..." oninput="filterMagistrados(this.value)" id="mag-search">
   </div>
 
-  <div class="mag-legend">
-    <span><span class="afast-badge afast-ativo">Em curso</span> afastado hoje</span>
-    <span><span class="afast-badge afast-futuro">Programado</span> afastamento futuro</span>
-    <span><span class="afast-badge afast-fim">Encerrado</span> já terminou</span>
-  </div>
+  
 
   <div style="background:white; border:1px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; overflow-x:auto;">
     <table class="magistrados-table" id="mag-table">
@@ -1659,11 +1655,10 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <th>Função</th>
           <th>Secretário(a) de audiência</th>
           <th>Assistente</th>
-          <th>Afastamento</th>
         </tr>
       </thead>
       <tbody>
-        <tr class="mag-group"><td colspan="7">Varas da Secretaria Conjunta</td></tr>
+        <tr class="mag-group"><td colspan="6">Varas da Secretaria Conjunta</td></tr>
         <tr>
           <td class="vt-name">1ª VT Americana (0007)</td>
           <td>PAR</td>
@@ -1671,7 +1666,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-func mag-func-titular">Titular</span></td>
           <td>Sandra Maria Segato Gazzeta</td>
           <td class="mag-assist">Rafaela Gomes Arruda</td>
-          <td><span class="afast-badge" data-de="2026-11-28" data-ate="2026-12-17">Férias · 28/11–17/12</span></td>
         </tr>
         <tr>
           <td class="vt-name">1ª VT Americana (0007)</td>
@@ -1680,7 +1674,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-func mag-func-auxiliar">Auxílio Fixo</span></td>
           <td>Claudia Maria Pastor</td>
           <td class="mag-assist">Karen Sacilotto Pinheiro</td>
-          <td><span class="afast-badge" data-de="2027-07-05" data-ate="2027-07-24">Férias · 05/07–24/07/27</span></td>
         </tr>
         <tr>
           <td class="vt-name">2ª VT Americana (0099)</td>
@@ -1689,7 +1682,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-func mag-func-titular">Titular</span></td>
           <td>Marina Lira da Silveira Pinto</td>
           <td class="mag-assist">Julia Bispo Pitta Inojosa</td>
-          <td><span class="afast-badge" data-de="2026-11-25" data-ate="2026-11-30">Férias · 25/11–30/11</span></td>
         </tr>
         <tr>
           <td class="vt-name">2ª VT Americana (0099)</td>
@@ -1698,7 +1690,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-func mag-func-auxiliar">Auxílio Fixo</span></td>
           <td>Rogeria Helena Aparecida Franzini Corazza</td>
           <td class="mag-assist">Kellen Cristine Petreche</td>
-          <td><span class="afast-badge" data-de="2027-01-17" data-ate="2027-02-05">Férias · 17/01–05/02/27</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT Araras (0046)</td>
@@ -1707,7 +1698,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-func mag-func-titular">Titular</span></td>
           <td>Cristina Ziani de Moura</td>
           <td class="mag-assist">Willian Martins de Oliveira</td>
-          <td><span class="afast-badge" data-de="2027-06-29" data-ate="2027-07-28">Férias · 29/06–28/07/27</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT Araras (0046)</td>
@@ -1716,7 +1706,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-func mag-func-auxiliar">Auxílio Fixo</span></td>
           <td>Maria Lucia Alves Cavalcante</td>
           <td class="mag-assist">Lucimara Leandro</td>
-          <td><span class="afast-badge" data-de="2027-06-29" data-ate="2027-07-28">Férias · 29/06–28/07/27</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT Hortolândia (0152)</td>
@@ -1725,7 +1714,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-func mag-func-titular">Titular</span></td>
           <td>Debora Cerqueira Simao</td>
           <td class="mag-assist">Cristina Barroca</td>
-          <td><span class="afast-badge" data-de="2026-11-28" data-ate="2026-12-17">Férias · 28/11–17/12</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT Hortolândia (0152)</td>
@@ -1734,7 +1722,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-func mag-func-auxiliar">Auxílio Fixo</span></td>
           <td>Elenira de Andrade Bicalho</td>
           <td class="mag-assist">Chrystiane Beck Silva</td>
-          <td><span class="afast-badge" data-de="2027-06-19" data-ate="2027-07-08">Férias · 19/06–08/07/27</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT Leme (0134)</td>
@@ -1743,7 +1730,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-func mag-func-titular">Titular</span></td>
           <td>Dheise Monique Euphrasio</td>
           <td class="mag-assist">Nei Hamilton Fernandes Silva</td>
-          <td><span class="afast-badge" data-de="2027-04-27" data-ate="2027-05-16">Férias · 27/04–16/05/27</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT Leme (0134)</td>
@@ -1752,7 +1738,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-func mag-func-auxiliar">Auxílio Fixo</span></td>
           <td>Daniele Fernanda Stefani</td>
           <td class="mag-assist">Silvia Helena Notario</td>
-          <td><span class="afast-badge" data-de="2027-05-31" data-ate="2027-06-19">Férias · 31/05–19/06/27</span></td>
         </tr>
         <tr>
           <td class="vt-name">1ª VT Limeira (0014)</td>
@@ -1761,7 +1746,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-func mag-func-titular">Titular</span></td>
           <td>Gabriel de Oliveira Silva</td>
           <td class="mag-assist">Anna Caroline Pacelli</td>
-          <td><span class="afast-badge" data-de="2026-11-19" data-ate="2026-12-18">Férias · 19/11–18/12</span></td>
         </tr>
         <tr>
           <td class="vt-name">1ª VT Limeira (0014)</td>
@@ -1770,7 +1754,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-func mag-func-auxiliar">Auxílio Fixo</span></td>
           <td>Tatiana Maeyama</td>
           <td class="mag-assist">Juliano Gislon Luciano</td>
-          <td><span class="afast-badge" data-de="2027-01-25" data-ate="2027-02-13">Férias · 25/01–13/02/27</span></td>
         </tr>
         <tr>
           <td class="vt-name">2ª VT Limeira (0128)</td>
@@ -1779,7 +1762,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-func mag-func-auxiliar">Auxílio Fixo</span></td>
           <td>Luciana Cristina Rodrigues / Cleilson Damasceno de Oliveira</td>
           <td class="mag-assist">Thiago Cesar Costa</td>
-          <td><span class="afast-badge" data-de="2027-07-12" data-ate="2027-07-31">Férias · 12/07–31/07/27</span></td>
         </tr>
         <tr>
           <td class="vt-name">2ª VT Limeira (0128)</td>
@@ -1788,7 +1770,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-none">—</span></td>
           <td>Luciana Cristina Rodrigues / Cleilson Damasceno de Oliveira</td>
           <td class="mag-assist">Luciana Antunes Pimenta de Oliveira</td>
-          <td><span class="afast-badge" data-de="2027-01-17" data-ate="2027-02-05">Férias · 17/01–05/02/27</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT Mogi Guaçu (0071)</td>
@@ -1797,7 +1778,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-func mag-func-auxiliar">Auxílio Fixo</span></td>
           <td>Paula de Carvalho Ambar Lima</td>
           <td class="mag-assist">Gisele Basso Garres</td>
-          <td><span class="afast-badge" data-de="2027-07-14" data-ate="2027-08-02">Férias · 14/07–02/08/27</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT Mogi Guaçu (0071)</td>
@@ -1806,7 +1786,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-func mag-func-titular">Titular</span></td>
           <td>Anita Bueno de Moraes Narciso Ferreira</td>
           <td class="mag-assist">Bruno Vivas Bitencourt</td>
-          <td><span class="afast-badge" data-de="2027-01-11" data-ate="2027-01-30">Férias · 11/01–30/01/27</span></td>
         </tr>
         <tr>
           <td class="vt-name">1ª VT Piracicaba (0012)</td>
@@ -1815,7 +1794,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-func mag-func-titular">Titular</span></td>
           <td>Sandra Regina da Conceicao Amaral / Romilda Maria de Arruda Germano</td>
           <td class="mag-assist">Rita Cassia Bueno de Moraes</td>
-          <td><span class="afast-badge" data-de="2027-06-27" data-ate="2027-07-16">Férias · 27/06–16/07/27</span></td>
         </tr>
         <tr>
           <td class="vt-name">1ª VT Piracicaba (0012)</td>
@@ -1824,7 +1802,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-func mag-func-auxiliar">Auxílio Fixo</span></td>
           <td>Sandra Regina da Conceicao Amaral / Romilda Maria de Arruda Germano</td>
           <td class="mag-assist">Christina Aliende Juliao Gonzalez</td>
-          <td><span class="afast-badge" data-de="2027-02-15" data-ate="2027-03-06">Férias · 15/02–06/03/27</span></td>
         </tr>
         <tr>
           <td class="vt-name">2ª VT Piracicaba (0051)</td>
@@ -1833,7 +1810,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-func mag-func-titular">Titular</span></td>
           <td>Adriana Aparecida Pertile Municelli / Joseane de Menezes Conde</td>
           <td class="mag-assist">Rene Jose Zambon</td>
-          <td><span class="afast-badge" data-de="2027-01-17" data-ate="2027-02-05">Férias · 17/01–05/02/27</span></td>
         </tr>
         <tr>
           <td class="vt-name">2ª VT Piracicaba (0051)</td>
@@ -1842,7 +1818,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-func mag-func-auxiliar">Auxílio Fixo</span></td>
           <td>Adriana Aparecida Pertile Municelli / Joseane de Menezes Conde</td>
           <td class="mag-assist">Mirela Bragalda Atakiama</td>
-          <td><span class="afast-badge" data-de="2026-11-18" data-ate="2026-12-17">Férias · 18/11–17/12</span></td>
         </tr>
         <tr>
           <td class="vt-name">3ª VT Piracicaba (0137)</td>
@@ -1851,7 +1826,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-func mag-func-titular">Titular</span></td>
           <td>Erika Cristina Mendes de Campos Garcia / Celina Jacintho Pereira</td>
           <td class="mag-assist">Saulo Terra Costa</td>
-          <td><span class="afast-badge" data-de="2027-01-12" data-ate="2027-01-31">Férias · 12/01–31/01/27</span></td>
         </tr>
         <tr>
           <td class="vt-name">3ª VT Piracicaba (0137)</td>
@@ -1860,7 +1834,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-none">—</span></td>
           <td>Erika Cristina Mendes de Campos Garcia / Celina Jacintho Pereira</td>
           <td class="mag-assist">Gianluca de Almeida</td>
-          <td><span class="afast-badge" data-de="2026-11-29" data-ate="2026-12-18">Férias · 29/11–18/12</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT Rio Claro (0010)</td>
@@ -1869,7 +1842,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-none">—</span></td>
           <td>Naara de Lucas Barbalho</td>
           <td class="mag-assist">Jairo Maurano Machado / Laura Sant Ana Castro</td>
-          <td><span class="afast-badge" data-de="2026-11-03" data-ate="2026-11-22">Férias · 03/11–22/11</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT Rio Claro (0010)</td>
@@ -1878,7 +1850,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-none">—</span></td>
           <td>Michelli Cristina Borges Sampaio</td>
           <td class="mag-assist">Henrique Amaral de Lima Netto</td>
-          <td><span class="afast-badge" data-de="2027-04-14" data-ate="2027-05-03">Férias · 14/04–03/05/27</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT Santa Bárbara d&#x27;Oeste (0086)</td>
@@ -1887,7 +1858,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-none">—</span></td>
           <td>Leandro Mac Fadden Negri</td>
           <td class="mag-assist">Caroline Fiamenghi Misse Gouvea</td>
-          <td><span class="afast-badge" data-de="2027-06-30" data-ate="2027-07-29">Férias · 30/06–29/07/27</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT Santa Bárbara d&#x27;Oeste (0086)</td>
@@ -1896,7 +1866,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-func mag-func-titular">Titular</span></td>
           <td>Aguinaldo Junior Yamamoto Peres</td>
           <td class="mag-assist">Jorge Alberto Merheje Sernaglia</td>
-          <td><span class="afast-badge" data-de="2027-05-07" data-ate="2027-05-26">Férias · 07/05–26/05/27</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT São João da Boa Vista (0034)</td>
@@ -1905,7 +1874,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-func mag-func-titular">Titular</span></td>
           <td>Ana Claudia Rodrigues Abreu</td>
           <td class="mag-assist">Guilherme Braz Cayres</td>
-          <td><span class="afast-badge" data-de="2027-06-14" data-ate="2027-07-13">Férias · 14/06–13/07/27</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT São João da Boa Vista (0034)</td>
@@ -1914,7 +1882,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-none">—</span></td>
           <td>Emerson Alexandre Viola</td>
           <td class="mag-assist">Roberto Francisco Nogueira Corsi</td>
-          <td><span class="afast-badge" data-de="2026-09-21" data-ate="2026-11-19">Licença gestante · 21/09–19/11</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT Sumaré (0122)</td>
@@ -1923,7 +1890,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-func mag-func-titular">Titular</span></td>
           <td>Thiago Donizete Mendanha</td>
           <td class="mag-assist">Ivan Gabriel Franca de Negri</td>
-          <td><span class="afast-badge" data-de="2027-04-14" data-ate="2027-05-03">Férias · 14/04–03/05/27</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT Sumaré (0122)</td>
@@ -1932,7 +1898,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-none">—</span></td>
           <td>Daniel Carlos Alves de Pilla</td>
           <td class="mag-assist">Juliana Rodrigues Lameira Belchior</td>
-          <td><span class="afast-badge" data-de="2026-11-29" data-ate="2026-12-18">Férias · 29/11–18/12</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT Sumaré (0122)</td>
@@ -1941,9 +1906,8 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-none">—</span></td>
           <td>Michel Aquino de Souza</td>
           <td class="mag-assist">Thais Bernardes Carvalho</td>
-          <td><span class="afast-badge" data-de="2027-03-22" data-ate="2027-04-10">Férias · 22/03–10/04/27</span></td>
         </tr>
-        <tr class="mag-group"><td colspan="7">Auxílio fixo — Simetria</td></tr>
+        <tr class="mag-group"><td colspan="6">Auxílio fixo — Simetria</td></tr>
         <tr>
           <td class="vt-name">Auxílio fixo — Simetria</td>
           <td>—</td>
@@ -1951,7 +1915,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-func mag-func-auxiliar">Auxiliar</span></td>
           <td>Luzia Danielle dos Santos Fabiano</td>
           <td class="mag-assist">Elizabeth Correa de Lima</td>
-          <td><span class="afast-badge" data-de="2026-10-29" data-ate="2026-11-17">Férias · 29/10–17/11</span></td>
         </tr>
         <tr>
           <td class="vt-name">Auxílio fixo — Simetria</td>
@@ -1960,7 +1923,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-func mag-func-auxiliar">Auxiliar</span></td>
           <td>Paula Burque Besson Boconcelo</td>
           <td class="mag-assist">Luciana Almeida Moraes</td>
-          <td><span class="afast-badge" data-de="2026-10-29" data-ate="2026-11-17">Férias · 29/10–17/11</span></td>
         </tr>
         <tr>
           <td class="vt-name">Auxílio fixo — Simetria</td>
@@ -1969,9 +1931,8 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-func mag-func-auxiliar">Auxiliar</span></td>
           <td>Tatiana Maffeis da Cunha</td>
           <td class="mag-assist">Cristiano de Mello</td>
-          <td><span class="afast-badge" data-de="2027-02-11" data-ate="2027-03-12">Férias · 11/02–12/03/27</span></td>
         </tr>
-        <tr class="mag-group"><td colspan="7">Divisão de Execução e CEJUSCs</td></tr>
+        <tr class="mag-group"><td colspan="6">Divisão de Execução e CEJUSCs</td></tr>
         <tr>
           <td class="vt-name">Divisão de Execução</td>
           <td>—</td>
@@ -1979,7 +1940,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-none">—</span></td>
           <td>—</td>
           <td class="mag-assist">Karen Sacilotto Pinheiro</td>
-          <td><span class="afast-badge" data-de="2027-07-05" data-ate="2027-07-24">Férias · 05/07–24/07/27</span></td>
         </tr>
         <tr>
           <td class="vt-name">CEJUSC Piracicaba</td>
@@ -1988,7 +1948,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-none">—</span></td>
           <td>—</td>
           <td class="mag-assist">Mirela Bragalda Atakiama</td>
-          <td><span class="afast-badge" data-de="2026-11-18" data-ate="2026-12-17">Férias · 18/11–17/12</span></td>
         </tr>
         <tr>
           <td class="vt-name">CEJUSC Limeira</td>
@@ -1997,7 +1956,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-none">—</span></td>
           <td>—</td>
           <td class="mag-assist">Henrique Amaral de Lima Netto</td>
-          <td><span class="afast-badge" data-de="2027-04-14" data-ate="2027-05-03">Férias · 14/04–03/05/27</span></td>
         </tr>
         <tr>
           <td class="vt-name">CEJUSC Limeira</td>
@@ -2006,9 +1964,8 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-none">—</span></td>
           <td>—</td>
           <td class="mag-assist">Thiago Cesar Costa</td>
-          <td><span class="afast-badge" data-de="2027-07-12" data-ate="2027-07-31">Férias · 12/07–31/07/27</span></td>
         </tr>
-        <tr class="mag-group"><td colspan="7">Magistrados atuando em mais de uma Secretaria Conjunta</td></tr>
+        <tr class="mag-group"><td colspan="6">Magistrados atuando em mais de uma Secretaria Conjunta</td></tr>
         <tr>
           <td class="vt-name">VT Registro</td>
           <td>—</td>
@@ -2016,7 +1973,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-func mag-func-titular">Titular</span></td>
           <td>Marcio Henrique Rodrigues dos Santos de Freitas / Atila Cabral Branco</td>
           <td class="mag-assist">Waldomiro Antonio Rizato Junior</td>
-          <td><span class="afast-badge" data-de="2027-02-21" data-ate="2027-03-12">Férias · 21/02–12/03/27</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT Campo Limpo Paulista</td>
@@ -2025,7 +1981,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-func mag-func-titular">Titular</span></td>
           <td>Marta Rocha Sanches</td>
           <td class="mag-assist">Anaisa Santos Freitas</td>
-          <td><span class="afast-badge" data-de="2026-11-28" data-ate="2026-12-17">Férias · 28/11–17/12</span></td>
         </tr>
         <tr>
           <td class="vt-name">4ª VT Campinas</td>
@@ -2034,7 +1989,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-func mag-func-titular">Titular</span></td>
           <td>Gleiciane Ferreira dos Santos</td>
           <td class="mag-assist">Andrea Azevedo</td>
-          <td><span class="afast-badge" data-de="2026-11-18" data-ate="2026-12-17">Férias · 18/11–17/12</span></td>
         </tr>
         <tr>
           <td class="vt-name">12ª VT Campinas</td>
@@ -2043,7 +1997,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-func mag-func-titular">Titular</span></td>
           <td>Tamyres Miranda Alves</td>
           <td class="mag-assist">Marcelo Minutti</td>
-          <td><span class="afast-badge" data-de="2027-04-26" data-ate="2027-05-15">Férias · 26/04–15/05/27</span></td>
         </tr>
         <tr>
           <td class="vt-name">VT Mogi Mirim</td>
@@ -2052,7 +2005,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-func mag-func-titular">Titular</span></td>
           <td>Camila Santana Araujo Mutti</td>
           <td class="mag-assist">Mariana Fiamenghi Misse Isaac</td>
-          <td><span class="afast-badge" data-de="2026-11-29" data-ate="2026-12-18">Férias · 29/11–18/12</span></td>
         </tr>
         <tr>
           <td class="vt-name">—</td>
@@ -2061,7 +2013,6 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td><span class="mag-none">—</span></td>
           <td>—</td>
           <td class="mag-assist"><span class="mag-none">—</span></td>
-          <td><span class="afast-badge" data-de="2026-11-25" data-ate="2026-11-25">Férias · 25/11</span></td>
         </tr>
       </tbody>
     </table>
@@ -2142,57 +2093,56 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
     <div class="mag-legend">
       <span><span class="afast-badge afast-ativo">Em curso</span> afastado hoje</span>
       <span><span class="afast-badge afast-futuro">Programado</span></span>
-      <span><span class="afast-badge afast-fim">Encerrado</span></span>
-      <span>Atualizado em 16/11/2026 (fonte: satelites.trt15.jus.br/designacoes)</span>
+            <span>Atualizado em 16/11/2026 (fonte: satelites.trt15.jus.br/designacoes)</span>
     </div>
     <div style="background:white; border:1px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; overflow-x:auto;">
       <table class="ferias-table" id="ferias-mag-table">
-        <thead><tr><th>Magistrado(a)</th><th>Vara / Unidade</th><th>Afastamento atual ou próximo</th><th>Escala 2026 e 2027</th></tr></thead>
+        <thead><tr><th>Magistrado(a)</th><th>Vara / Unidade</th><th>Afastamento atual ou próximo</th><th>Próximos períodos (2026 e 2027)</th></tr></thead>
         <tbody>
           <tr class="mag-group"><td colspan="4">Varas da Secretaria Conjunta</td></tr>
-          <tr><td class="juiz-name">Artur Ribeiro Gudwin</td><td>1ª VT Americana</td><td><span class="afast-badge" data-de="2026-11-28" data-ate="2026-12-17">Férias · 28/11–17/12</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Licença">10/06–09/07 (Licença)</span> <span class="ferias-badge afast-hist" title="Licença">10/07–07/09 (Licença)</span> <span class="ferias-badge afast-hist" title="Férias">08/09–27/09</span> <span class="ferias-badge afast-hist" title="Férias">28/11–17/12</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">14/07–02/08</span> <span class="ferias-badge afast-hist" title="Férias">27/11–16/12</span></td></tr>
-          <tr><td class="juiz-name">Fabio Camera Capone</td><td>1ª VT Americana · DIVEX</td><td><span class="afast-badge" data-de="2027-07-05" data-ate="2027-07-24">Férias · 05/07–24/07/27</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">20/07–08/08</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">05/07–24/07</span> <span class="ferias-badge afast-hist" title="Férias">16/11–05/12</span></td></tr>
-          <tr><td class="juiz-name">Milena Casacio Ferreira Beraldo</td><td>2ª VT Americana</td><td><span class="afast-badge" data-de="2026-11-25" data-ate="2026-11-30">Férias · 25/11–30/11</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">12/07–31/07</span> <span class="ferias-badge afast-hist" title="Compensação">08/09–10/09 (Compensação)</span> <span class="ferias-badge afast-hist" title="Compensação">21/10 (Compensação)</span> <span class="ferias-badge afast-hist" title="Férias">25/11–30/11</span> <span class="ferias-badge afast-hist" title="Férias">02/12–14/12</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">14/06–03/07</span> <span class="ferias-badge afast-hist" title="Férias">27/11–16/12</span></td></tr>
-          <tr><td class="juiz-name">Marcelo Luis de Souza Ferreira</td><td>2ª VT Americana</td><td><span class="afast-badge" data-de="2027-01-17" data-ate="2027-02-05">Férias · 17/01–05/02/27</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">17/01–05/02</span> <span class="ferias-badge afast-hist" title="Férias">15/06–04/07</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">17/01–05/02</span> <span class="ferias-badge afast-hist" title="Férias">24/07–12/08</span></td></tr>
-          <tr><td class="juiz-name">Andre Luiz Tavares de Castro Pereira</td><td>VT Araras</td><td><span class="afast-badge" data-de="2027-06-29" data-ate="2027-07-28">Férias · 29/06–28/07/27</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">21/01–09/02</span> <span class="ferias-badge afast-hist" title="Férias">14/07–12/08</span> <span class="ferias-badge afast-hist" title="Compensação">15/10 (Compensação)</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">29/06–28/07</span> <span class="ferias-badge afast-hist" title="Férias">13/10–11/11</span></td></tr>
-          <tr><td class="juiz-name">Renata Mendes Cardoso de Castro Pereira</td><td>VT Araras</td><td><span class="afast-badge" data-de="2027-06-29" data-ate="2027-07-28">Férias · 29/06–28/07/27</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">21/01–09/02</span> <span class="ferias-badge afast-hist" title="Compensação">07/07 (Compensação)</span> <span class="ferias-badge afast-hist" title="Férias">14/07–12/08</span> <span class="ferias-badge afast-hist" title="Compensação">15/10 (Compensação)</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">29/06–28/07</span> <span class="ferias-badge afast-hist" title="Férias">13/10–01/11</span></td></tr>
-          <tr><td class="juiz-name">Patricia Juliana Marchi Alves</td><td>VT Hortolândia</td><td><span class="afast-badge" data-de="2026-11-28" data-ate="2026-12-17">Férias · 28/11–17/12</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">15/07–03/08</span> <span class="ferias-badge afast-hist" title="Férias">28/11–17/12</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">12/07–31/07</span> <span class="ferias-badge afast-hist" title="Férias">27/11–16/12</span></td></tr>
-          <tr><td class="juiz-name">Luciane Cristina Muraro de Freitas</td><td>VT Hortolândia</td><td><span class="afast-badge" data-de="2027-06-19" data-ate="2027-07-08">Férias · 19/06–08/07/27</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">15/06–14/07</span> <span class="ferias-badge afast-hist" title="Férias">21/09–10/10</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">19/06–08/07</span> <span class="ferias-badge afast-hist" title="Férias">08/09–27/09</span></td></tr>
-          <tr><td class="juiz-name">Lady Ane de Paula Santos Della Rocca</td><td>VT Leme</td><td><span class="afast-badge" data-de="2027-04-27" data-ate="2027-05-16">Férias · 27/04–16/05/27</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">23/06–12/07</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">27/04–16/05</span> <span class="ferias-badge afast-hist" title="Férias">15/09–04/10</span></td></tr>
-          <tr><td class="juiz-name">Regina Rodrigues Urbano</td><td>VT Leme</td><td><span class="afast-badge" data-de="2027-05-31" data-ate="2027-06-19">Férias · 31/05–19/06/27</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">12/03–31/03</span> <span class="ferias-badge afast-hist" title="Férias">31/08–19/09</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">31/05–19/06</span> <span class="ferias-badge afast-hist" title="Férias">09/08–07/09</span></td></tr>
-          <tr><td class="juiz-name">Sofia Lima Dutra</td><td>1ª VT Limeira</td><td><span class="afast-badge" data-de="2026-11-19" data-ate="2026-12-18">Férias · 19/11–18/12</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">15/06–04/07</span> <span class="ferias-badge afast-hist" title="Compensação">29/10 (Compensação)</span> <span class="ferias-badge afast-hist" title="Compensação">03/11–04/11 (Compensação)</span> <span class="ferias-badge afast-hist" title="Férias">19/11–18/12</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">06/05–25/05</span> <span class="ferias-badge afast-hist" title="Férias">23/08–21/09</span></td></tr>
-          <tr><td class="juiz-name">Erika de Franceschi</td><td>1ª VT Limeira</td><td><span class="afast-badge" data-de="2027-01-25" data-ate="2027-02-13">Férias · 25/01–13/02/27</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">22/01–10/02</span> <span class="ferias-badge afast-hist" title="Férias">22/06–21/07</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">25/01–13/02</span> <span class="ferias-badge afast-hist" title="Férias">13/07–01/08</span></td></tr>
-          <tr><td class="juiz-name">Carolina Popoff Ferreira da Costa</td><td>2ª VT Limeira · CEJUSC Limeira</td><td><span class="afast-badge" data-de="2027-07-12" data-ate="2027-07-31">Férias · 12/07–31/07/27</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">17/01–05/02</span> <span class="ferias-badge afast-hist" title="Férias">21/02–12/03</span> <span class="ferias-badge afast-hist" title="Férias">21/09–10/10</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">12/07–31/07</span> <span class="ferias-badge afast-hist" title="Férias">27/11–16/12</span></td></tr>
-          <tr><td class="juiz-name">Natalia Scassiotta Neves</td><td>2ª VT Limeira</td><td><span class="afast-badge" data-de="2027-06-24" data-ate="2027-07-13">Férias · 24/06–13/07/27</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Compensação">26/02 (Compensação)</span> <span class="ferias-badge afast-hist" title="Férias">25/06–14/07</span> <span class="ferias-badge afast-hist" title="Férias">16/09–05/10</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">24/06–13/07</span> <span class="ferias-badge afast-hist" title="Férias">27/11–16/12</span></td></tr>
-          <tr><td class="juiz-name">Luis Furian Zorzetto</td><td>VT Mogi Guaçu</td><td><span class="afast-badge" data-de="2027-07-14" data-ate="2027-08-02">Férias · 14/07–02/08/27</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">15/07–03/08</span> <span class="ferias-badge afast-hist" title="Férias">16/09–15/10</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">14/07–02/08</span> <span class="ferias-badge afast-hist" title="Férias">18/10–16/11</span></td></tr>
-          <tr><td class="juiz-name">Leticia Gouveia Antonioli</td><td>VT Mogi Guaçu</td><td><span class="afast-badge" data-de="2027-01-11" data-ate="2027-01-30">Férias · 11/01–30/01/27</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">12/01–10/02</span> <span class="ferias-badge afast-hist" title="Férias">15/06–14/07</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">11/01–30/01</span> <span class="ferias-badge afast-hist" title="Férias">28/06–17/07</span></td></tr>
-          <tr><td class="juiz-name">Karine Vaz de Melo Mattos Abreu</td><td>1ª VT Piracicaba</td><td><span class="afast-badge" data-de="2027-06-27" data-ate="2027-07-16">Férias · 27/06–16/07/27</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">13/07–01/08</span> <span class="ferias-badge afast-hist" title="Compensação">28/09–29/09 (Compensação)</span> <span class="ferias-badge afast-hist" title="Compensação">01/10 (Compensação)</span> <span class="ferias-badge afast-hist" title="Compensação">05/10 (Compensação)</span> <span class="ferias-badge afast-hist" title="Compensação">13/10–16/10 (Compensação)</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">27/06–16/07</span> <span class="ferias-badge afast-hist" title="Férias">04/10–23/10</span></td></tr>
-          <tr><td class="juiz-name">Vilson Antonio Previde</td><td>1ª VT Piracicaba</td><td><span class="afast-badge" data-de="2027-02-15" data-ate="2027-03-06">Férias · 15/02–06/03/27</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">19/02–10/03</span> <span class="ferias-badge afast-hist" title="Férias">20/07–18/08</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">15/02–06/03</span> <span class="ferias-badge afast-hist" title="Férias">19/07–17/08</span></td></tr>
-          <tr><td class="juiz-name">Carlos Eduardo Vianna Mendes</td><td>2ª VT Piracicaba</td><td><span class="afast-badge" data-de="2027-01-17" data-ate="2027-02-05">Férias · 17/01–05/02/27</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">07/01–26/01</span> <span class="ferias-badge afast-hist" title="Férias">09/02–28/02</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">17/01–05/02</span> <span class="ferias-badge afast-hist" title="Férias">21/02–12/03</span></td></tr>
-          <tr><td class="juiz-name">Eduardo Alexandre da Silva</td><td>2ª VT Piracicaba · CEJUSC Piracicaba</td><td><span class="afast-badge" data-de="2026-11-18" data-ate="2026-12-17">Férias · 18/11–17/12</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Licença">25/02–26/02 (Licença)</span> <span class="ferias-badge afast-hist" title="Licença">08/06–09/06 (Licença)</span> <span class="ferias-badge afast-hist" title="Férias">15/07–13/08</span> <span class="ferias-badge afast-hist" title="Férias">18/11–17/12</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">30/06–29/07</span> <span class="ferias-badge afast-hist" title="Férias">17/11–16/12</span></td></tr>
-          <tr><td class="juiz-name">Erica Escarassatte</td><td>3ª VT Piracicaba</td><td><span class="afast-badge" data-de="2027-01-12" data-ate="2027-01-31">Férias · 12/01–31/01/27</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">17/01–05/02</span> <span class="ferias-badge afast-hist" title="Férias">16/07–04/08</span> <span class="ferias-badge afast-hist" title="Compensação">13/10–16/10 (Compensação)</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">12/01–31/01</span> <span class="ferias-badge afast-hist" title="Férias">01/04–02/04</span></td></tr>
-          <tr><td class="juiz-name">Emanuele Pessatti Siqueira Rocha</td><td>3ª VT Piracicaba</td><td><span class="afast-badge" data-de="2026-11-29" data-ate="2026-12-18">Férias · 29/11–18/12</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">26/06–15/07</span> <span class="ferias-badge afast-hist" title="Férias">29/11–18/12</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">15/06–14/07</span> <span class="ferias-badge afast-hist" title="Férias">17/11–16/12</span></td></tr>
-          <tr><td class="juiz-name">Flavia Farias de Arruda Corseuil</td><td>VT Rio Claro</td><td><span class="afast-badge" data-de="2026-11-03" data-ate="2026-11-22">Férias · 03/11–22/11</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">20/07–18/08</span> <span class="ferias-badge afast-hist" title="Férias">03/11–22/11</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">01/07–30/07</span> <span class="ferias-badge afast-hist" title="Férias">15/09–14/10</span></td></tr>
-          <tr><td class="juiz-name">Erika Ferrari Zanella</td><td>VT Rio Claro · CEJUSC Limeira</td><td><span class="afast-badge" data-de="2027-04-14" data-ate="2027-05-03">Férias · 14/04–03/05/27</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">23/05–24/05</span> <span class="ferias-badge afast-hist" title="Férias">30/05–11/06</span> <span class="ferias-badge afast-hist" title="Férias">15/06–19/06</span> <span class="ferias-badge afast-hist" title="Férias">19/10–04/11</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">14/04–03/05</span> <span class="ferias-badge afast-hist" title="Férias">25/09–14/10</span></td></tr>
-          <tr><td class="juiz-name">Cristiane Kawanaka de Pontes</td><td>VT Santa Bárbara</td><td><span class="afast-badge" data-de="2027-06-30" data-ate="2027-07-29">Férias · 30/06–29/07/27</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">26/01–14/02</span> <span class="ferias-badge afast-hist" title="Licença">03/07–09/07 (Licença)</span> <span class="ferias-badge afast-hist" title="Férias">13/07–01/08</span> <span class="ferias-badge afast-hist" title="Licença">12/08–21/08 (Licença)</span> <span class="ferias-badge afast-hist" title="Licença">25/08–06/09 (Licença)</span> <span class="ferias-badge afast-hist" title="Licença">07/09–08/09 (Licença)</span> <span class="ferias-badge afast-hist" title="Férias">09/09–08/10</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">30/06–29/07</span> <span class="ferias-badge afast-hist" title="Férias">18/11–17/12</span></td></tr>
-          <tr><td class="juiz-name">Henrique Macedo Hinz</td><td>VT Santa Bárbara</td><td><span class="afast-badge" data-de="2026-11-25" data-ate="2026-11-25">Férias · 25/11</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Afastamento">23/02–24/02 (Afastamento)</span> <span class="ferias-badge afast-hist" title="Licença">02/03–09/03 (Licença)</span> <span class="ferias-badge afast-hist" title="Férias">06/04–25/04</span> <span class="ferias-badge afast-hist" title="Férias">08/08–26/08</span> <span class="ferias-badge afast-hist" title="Férias">25/11</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">28/10–16/11</span> <span class="ferias-badge afast-hist" title="Férias">27/11–16/12</span></td></tr>
+          <tr><td class="juiz-name">Artur Ribeiro Gudwin</td><td>1ª VT Americana</td><td><span class="afast-badge" data-de="2026-11-28" data-ate="2026-12-17">Férias · 28/11–17/12</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">28/11–17/12</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">14/07–02/08</span> <span class="ferias-badge afast-hist" title="Férias">27/11–16/12</span></td></tr>
+          <tr><td class="juiz-name">Fabio Camera Capone</td><td>1ª VT Americana · DIVEX</td><td><span class="afast-badge" data-de="2027-07-05" data-ate="2027-07-24">Férias · 05/07–24/07/27</span></td><td><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">05/07–24/07</span> <span class="ferias-badge afast-hist" title="Férias">16/11–05/12</span></td></tr>
+          <tr><td class="juiz-name">Milena Casacio Ferreira Beraldo</td><td>2ª VT Americana</td><td><span class="afast-badge" data-de="2026-11-25" data-ate="2026-11-30">Férias · 25/11–30/11</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">25/11–30/11</span> <span class="ferias-badge afast-hist" title="Férias">02/12–14/12</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">14/06–03/07</span> <span class="ferias-badge afast-hist" title="Férias">27/11–16/12</span></td></tr>
+          <tr><td class="juiz-name">Marcelo Luis de Souza Ferreira</td><td>2ª VT Americana</td><td><span class="afast-badge" data-de="2027-01-17" data-ate="2027-02-05">Férias · 17/01–05/02/27</span></td><td><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">17/01–05/02</span> <span class="ferias-badge afast-hist" title="Férias">24/07–12/08</span></td></tr>
+          <tr><td class="juiz-name">Andre Luiz Tavares de Castro Pereira</td><td>VT Araras</td><td><span class="afast-badge" data-de="2027-06-29" data-ate="2027-07-28">Férias · 29/06–28/07/27</span></td><td><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">29/06–28/07</span> <span class="ferias-badge afast-hist" title="Férias">13/10–11/11</span></td></tr>
+          <tr><td class="juiz-name">Renata Mendes Cardoso de Castro Pereira</td><td>VT Araras</td><td><span class="afast-badge" data-de="2027-06-29" data-ate="2027-07-28">Férias · 29/06–28/07/27</span></td><td><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">29/06–28/07</span> <span class="ferias-badge afast-hist" title="Férias">13/10–01/11</span></td></tr>
+          <tr><td class="juiz-name">Patricia Juliana Marchi Alves</td><td>VT Hortolândia</td><td><span class="afast-badge" data-de="2026-11-28" data-ate="2026-12-17">Férias · 28/11–17/12</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">28/11–17/12</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">12/07–31/07</span> <span class="ferias-badge afast-hist" title="Férias">27/11–16/12</span></td></tr>
+          <tr><td class="juiz-name">Luciane Cristina Muraro de Freitas</td><td>VT Hortolândia</td><td><span class="afast-badge" data-de="2027-06-19" data-ate="2027-07-08">Férias · 19/06–08/07/27</span></td><td><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">19/06–08/07</span> <span class="ferias-badge afast-hist" title="Férias">08/09–27/09</span></td></tr>
+          <tr><td class="juiz-name">Lady Ane de Paula Santos Della Rocca</td><td>VT Leme</td><td><span class="afast-badge" data-de="2027-04-27" data-ate="2027-05-16">Férias · 27/04–16/05/27</span></td><td><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">27/04–16/05</span> <span class="ferias-badge afast-hist" title="Férias">15/09–04/10</span></td></tr>
+          <tr><td class="juiz-name">Regina Rodrigues Urbano</td><td>VT Leme</td><td><span class="afast-badge" data-de="2027-05-31" data-ate="2027-06-19">Férias · 31/05–19/06/27</span></td><td><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">31/05–19/06</span> <span class="ferias-badge afast-hist" title="Férias">09/08–07/09</span></td></tr>
+          <tr><td class="juiz-name">Sofia Lima Dutra</td><td>1ª VT Limeira</td><td><span class="afast-badge" data-de="2026-11-19" data-ate="2026-12-18">Férias · 19/11–18/12</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">19/11–18/12</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">06/05–25/05</span> <span class="ferias-badge afast-hist" title="Férias">23/08–21/09</span></td></tr>
+          <tr><td class="juiz-name">Erika de Franceschi</td><td>1ª VT Limeira</td><td><span class="afast-badge" data-de="2027-01-25" data-ate="2027-02-13">Férias · 25/01–13/02/27</span></td><td><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">25/01–13/02</span> <span class="ferias-badge afast-hist" title="Férias">13/07–01/08</span></td></tr>
+          <tr><td class="juiz-name">Carolina Popoff Ferreira da Costa</td><td>2ª VT Limeira · CEJUSC Limeira</td><td><span class="afast-badge" data-de="2027-07-12" data-ate="2027-07-31">Férias · 12/07–31/07/27</span></td><td><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">12/07–31/07</span> <span class="ferias-badge afast-hist" title="Férias">27/11–16/12</span></td></tr>
+          <tr><td class="juiz-name">Natalia Scassiotta Neves</td><td>2ª VT Limeira</td><td><span class="afast-badge" data-de="2027-06-24" data-ate="2027-07-13">Férias · 24/06–13/07/27</span></td><td><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">24/06–13/07</span> <span class="ferias-badge afast-hist" title="Férias">27/11–16/12</span></td></tr>
+          <tr><td class="juiz-name">Luis Furian Zorzetto</td><td>VT Mogi Guaçu</td><td><span class="afast-badge" data-de="2027-07-14" data-ate="2027-08-02">Férias · 14/07–02/08/27</span></td><td><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">14/07–02/08</span> <span class="ferias-badge afast-hist" title="Férias">18/10–16/11</span></td></tr>
+          <tr><td class="juiz-name">Leticia Gouveia Antonioli</td><td>VT Mogi Guaçu</td><td><span class="afast-badge" data-de="2027-01-11" data-ate="2027-01-30">Férias · 11/01–30/01/27</span></td><td><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">11/01–30/01</span> <span class="ferias-badge afast-hist" title="Férias">28/06–17/07</span></td></tr>
+          <tr><td class="juiz-name">Karine Vaz de Melo Mattos Abreu</td><td>1ª VT Piracicaba</td><td><span class="afast-badge" data-de="2027-06-27" data-ate="2027-07-16">Férias · 27/06–16/07/27</span></td><td><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">27/06–16/07</span> <span class="ferias-badge afast-hist" title="Férias">04/10–23/10</span></td></tr>
+          <tr><td class="juiz-name">Vilson Antonio Previde</td><td>1ª VT Piracicaba</td><td><span class="afast-badge" data-de="2027-02-15" data-ate="2027-03-06">Férias · 15/02–06/03/27</span></td><td><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">15/02–06/03</span> <span class="ferias-badge afast-hist" title="Férias">19/07–17/08</span></td></tr>
+          <tr><td class="juiz-name">Carlos Eduardo Vianna Mendes</td><td>2ª VT Piracicaba</td><td><span class="afast-badge" data-de="2027-01-17" data-ate="2027-02-05">Férias · 17/01–05/02/27</span></td><td><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">17/01–05/02</span> <span class="ferias-badge afast-hist" title="Férias">21/02–12/03</span></td></tr>
+          <tr><td class="juiz-name">Eduardo Alexandre da Silva</td><td>2ª VT Piracicaba · CEJUSC Piracicaba</td><td><span class="afast-badge" data-de="2026-11-18" data-ate="2026-12-17">Férias · 18/11–17/12</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">18/11–17/12</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">30/06–29/07</span> <span class="ferias-badge afast-hist" title="Férias">17/11–16/12</span></td></tr>
+          <tr><td class="juiz-name">Erica Escarassatte</td><td>3ª VT Piracicaba</td><td><span class="afast-badge" data-de="2027-01-12" data-ate="2027-01-31">Férias · 12/01–31/01/27</span></td><td><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">12/01–31/01</span> <span class="ferias-badge afast-hist" title="Férias">01/04–02/04</span></td></tr>
+          <tr><td class="juiz-name">Emanuele Pessatti Siqueira Rocha</td><td>3ª VT Piracicaba</td><td><span class="afast-badge" data-de="2026-11-29" data-ate="2026-12-18">Férias · 29/11–18/12</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">29/11–18/12</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">15/06–14/07</span> <span class="ferias-badge afast-hist" title="Férias">17/11–16/12</span></td></tr>
+          <tr><td class="juiz-name">Flavia Farias de Arruda Corseuil</td><td>VT Rio Claro</td><td><span class="afast-badge" data-de="2026-11-03" data-ate="2026-11-22">Férias · 03/11–22/11</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">03/11–22/11</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">01/07–30/07</span> <span class="ferias-badge afast-hist" title="Férias">15/09–14/10</span></td></tr>
+          <tr><td class="juiz-name">Erika Ferrari Zanella</td><td>VT Rio Claro · CEJUSC Limeira</td><td><span class="afast-badge" data-de="2027-04-14" data-ate="2027-05-03">Férias · 14/04–03/05/27</span></td><td><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">14/04–03/05</span> <span class="ferias-badge afast-hist" title="Férias">25/09–14/10</span></td></tr>
+          <tr><td class="juiz-name">Cristiane Kawanaka de Pontes</td><td>VT Santa Bárbara</td><td><span class="afast-badge" data-de="2027-06-30" data-ate="2027-07-29">Férias · 30/06–29/07/27</span></td><td><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">30/06–29/07</span> <span class="ferias-badge afast-hist" title="Férias">18/11–17/12</span></td></tr>
+          <tr><td class="juiz-name">Henrique Macedo Hinz</td><td>VT Santa Bárbara</td><td><span class="afast-badge" data-de="2026-11-25" data-ate="2026-11-25">Férias · 25/11</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">25/11</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">28/10–16/11</span> <span class="ferias-badge afast-hist" title="Férias">27/11–16/12</span></td></tr>
           <tr><td class="juiz-name">Eduardo Costa Gonzales</td><td>VT Santa Bárbara</td><td><span class="mag-none">Sem afastamento informado</span></td><td><span class="mag-none">—</span></td></tr>
-          <tr><td class="juiz-name">Cristiane Souza de Castro Toledo</td><td>VT São João da B. Vista</td><td><span class="afast-badge" data-de="2027-06-14" data-ate="2027-07-13">Férias · 14/06–13/07/27</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">27/04–16/05</span> <span class="ferias-badge afast-hist" title="Compensação">18/05 (Compensação)</span> <span class="ferias-badge afast-hist" title="Compensação">19/05 (Compensação)</span> <span class="ferias-badge afast-hist" title="Férias">15/06–04/07</span> <span class="ferias-badge afast-hist" title="Compensação">06/07–07/07 (Compensação)</span> <span class="ferias-badge afast-hist" title="Compensação">08/07 (Compensação)</span> <span class="ferias-badge afast-hist" title="Compensação">13/07–14/07 (Compensação)</span> <span class="ferias-badge afast-hist" title="Férias">17/08–05/09</span> <span class="ferias-badge afast-hist" title="Compensação">08/09 (Compensação)</span> <span class="ferias-badge afast-hist" title="Compensação">09/09 (Compensação)</span> <span class="ferias-badge afast-hist" title="Compensação">10/09 (Compensação)</span> <span class="ferias-badge afast-hist" title="Compensação">14/09 (Compensação)</span> <span class="ferias-badge afast-hist" title="Compensação">15/09 (Compensação)</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">14/06–13/07</span> <span class="ferias-badge afast-hist" title="Férias">16/08–14/09</span></td></tr>
-          <tr><td class="juiz-name">Ricardo Tsuioshi Fukuda Sanchez</td><td>VT São João da B. Vista</td><td><span class="afast-badge" data-de="2027-01-17" data-ate="2027-02-05">Férias · 17/01–05/02/27</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">19/02–10/03</span> <span class="ferias-badge afast-hist" title="Férias">28/06–17/07</span> <span class="ferias-badge afast-hist" title="Licença">16/10–30/10 (Licença)</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">17/01–05/02</span> <span class="ferias-badge afast-hist" title="Férias">17/11–06/12</span></td></tr>
-          <tr><td class="juiz-name">Iara Maria Rodrigues</td><td>VT São João da B. Vista</td><td><span class="afast-badge" data-de="2026-09-21" data-ate="2026-11-19">Licença gestante · 21/09–19/11</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Licença">08/05–19/05 (Licença)</span> <span class="ferias-badge afast-hist" title="Férias">20/05–23/05</span> <span class="ferias-badge afast-hist" title="Licença">24/05–20/09 (Licença)</span> <span class="ferias-badge afast-hist" title="Licença gestante">21/09–19/11 (Licença gestante)</span> <span class="ferias-badge afast-hist" title="Férias">23/11–08/12</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">07/01–05/02</span> <span class="ferias-badge afast-hist" title="Férias">11/02–12/03</span> <span class="ferias-badge afast-hist" title="Férias">15/09–14/10</span></td></tr>
-          <tr><td class="juiz-name">Ronaldo Capelari</td><td>VT Sumaré</td><td><span class="afast-badge" data-de="2027-04-14" data-ate="2027-05-03">Férias · 14/04–03/05/27</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">13/04–02/05</span> <span class="ferias-badge afast-hist" title="Férias">01/09–20/09</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">14/04–03/05</span> <span class="ferias-badge afast-hist" title="Férias">21/09–10/10</span></td></tr>
-          <tr><td class="juiz-name">Francina Nunes da Costa</td><td>VT Sumaré</td><td><span class="afast-badge" data-de="2026-11-29" data-ate="2026-12-18">Férias · 29/11–18/12</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">12/08–31/08</span> <span class="ferias-badge afast-hist" title="Licença">13/10–14/10 (Licença)</span> <span class="ferias-badge afast-hist" title="Férias">29/11–18/12</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">18/10–16/11</span> <span class="ferias-badge afast-hist" title="Férias">17/11–16/12</span></td></tr>
-          <tr><td class="juiz-name">Carla Gabriella Grah Sens</td><td>VT Sumaré</td><td><span class="afast-badge" data-de="2027-03-22" data-ate="2027-04-10">Férias · 22/03–10/04/27</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">23/03–11/04</span> <span class="ferias-badge afast-hist" title="Férias">21/09–10/10</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">22/03–10/04</span> <span class="ferias-badge afast-hist" title="Férias">01/09–20/09</span></td></tr>
+          <tr><td class="juiz-name">Cristiane Souza de Castro Toledo</td><td>VT São João da B. Vista</td><td><span class="afast-badge" data-de="2027-06-14" data-ate="2027-07-13">Férias · 14/06–13/07/27</span></td><td><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">14/06–13/07</span> <span class="ferias-badge afast-hist" title="Férias">16/08–14/09</span></td></tr>
+          <tr><td class="juiz-name">Ricardo Tsuioshi Fukuda Sanchez</td><td>VT São João da B. Vista</td><td><span class="afast-badge" data-de="2027-01-17" data-ate="2027-02-05">Férias · 17/01–05/02/27</span></td><td><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">17/01–05/02</span> <span class="ferias-badge afast-hist" title="Férias">17/11–06/12</span></td></tr>
+          <tr><td class="juiz-name">Iara Maria Rodrigues</td><td>VT São João da B. Vista</td><td><span class="afast-badge" data-de="2026-09-21" data-ate="2026-11-19">Licença gestante · 21/09–19/11</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Licença gestante">21/09–19/11 (Licença gestante)</span> <span class="ferias-badge afast-hist" title="Férias">23/11–08/12</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">07/01–05/02</span> <span class="ferias-badge afast-hist" title="Férias">11/02–12/03</span> <span class="ferias-badge afast-hist" title="Férias">15/09–14/10</span></td></tr>
+          <tr><td class="juiz-name">Ronaldo Capelari</td><td>VT Sumaré</td><td><span class="afast-badge" data-de="2027-04-14" data-ate="2027-05-03">Férias · 14/04–03/05/27</span></td><td><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">14/04–03/05</span> <span class="ferias-badge afast-hist" title="Férias">21/09–10/10</span></td></tr>
+          <tr><td class="juiz-name">Francina Nunes da Costa</td><td>VT Sumaré</td><td><span class="afast-badge" data-de="2026-11-29" data-ate="2026-12-18">Férias · 29/11–18/12</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">29/11–18/12</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">18/10–16/11</span> <span class="ferias-badge afast-hist" title="Férias">17/11–16/12</span></td></tr>
+          <tr><td class="juiz-name">Carla Gabriella Grah Sens</td><td>VT Sumaré</td><td><span class="afast-badge" data-de="2027-03-22" data-ate="2027-04-10">Férias · 22/03–10/04/27</span></td><td><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">22/03–10/04</span> <span class="ferias-badge afast-hist" title="Férias">01/09–20/09</span></td></tr>
           <tr class="mag-group"><td colspan="4">Auxílio fixo — Simetria</td></tr>
-          <tr><td class="juiz-name">Cleverson Oliveira Alarcon Lima</td><td>Simetria (auxiliar)</td><td><span class="afast-badge" data-de="2026-10-29" data-ate="2026-11-17">Férias · 29/10–17/11</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">15/07–03/08</span> <span class="ferias-badge afast-hist" title="Férias">29/10–17/11</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">14/05–02/06</span> <span class="ferias-badge afast-hist" title="Férias">28/10–16/11</span></td></tr>
-          <tr><td class="juiz-name">Renata Nunes de Melo</td><td>Simetria (auxiliar)</td><td><span class="afast-badge" data-de="2026-10-29" data-ate="2026-11-17">Férias · 29/10–17/11</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Licença">26/03 (Licença)</span> <span class="ferias-badge afast-hist" title="Licença">25/05–27/05 (Licença)</span> <span class="ferias-badge afast-hist" title="Licença">01/06–03/06 (Licença)</span> <span class="ferias-badge afast-hist" title="Férias">15/06–04/07</span> <span class="ferias-badge afast-hist" title="Licença">21/07–30/07 (Licença)</span> <span class="ferias-badge afast-hist" title="Licença">01/09–10/09 (Licença)</span> <span class="ferias-badge afast-hist" title="Licença">29/09–08/10 (Licença)</span> <span class="ferias-badge afast-hist" title="Férias">29/10–17/11</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">14/05–12/06</span> <span class="ferias-badge afast-hist" title="Férias">17/11–16/12</span></td></tr>
-          <tr><td class="juiz-name">Gustavo Castro Picchi Martins</td><td>Simetria (auxiliar)</td><td><span class="afast-badge" data-de="2027-02-11" data-ate="2027-03-12">Férias · 11/02–12/03/27</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">09/02–10/03</span> <span class="ferias-badge afast-hist" title="Férias">17/08–15/09</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">11/02–12/03</span> <span class="ferias-badge afast-hist" title="Férias">16/08–14/09</span></td></tr>
+          <tr><td class="juiz-name">Cleverson Oliveira Alarcon Lima</td><td>Simetria (auxiliar)</td><td><span class="afast-badge" data-de="2026-10-29" data-ate="2026-11-17">Férias · 29/10–17/11</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">29/10–17/11</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">14/05–02/06</span> <span class="ferias-badge afast-hist" title="Férias">28/10–16/11</span></td></tr>
+          <tr><td class="juiz-name">Renata Nunes de Melo</td><td>Simetria (auxiliar)</td><td><span class="afast-badge" data-de="2026-10-29" data-ate="2026-11-17">Férias · 29/10–17/11</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">29/10–17/11</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">14/05–12/06</span> <span class="ferias-badge afast-hist" title="Férias">17/11–16/12</span></td></tr>
+          <tr><td class="juiz-name">Gustavo Castro Picchi Martins</td><td>Simetria (auxiliar)</td><td><span class="afast-badge" data-de="2027-02-11" data-ate="2027-03-12">Férias · 11/02–12/03/27</span></td><td><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">11/02–12/03</span> <span class="ferias-badge afast-hist" title="Férias">16/08–14/09</span></td></tr>
           <tr class="mag-group"><td colspan="4">Atuando em mais de uma Secretaria Conjunta</td></tr>
-          <tr><td class="juiz-name">Felipe Bernardes Rodrigues</td><td>VT Registro</td><td><span class="afast-badge" data-de="2027-02-21" data-ate="2027-03-12">Férias · 21/02–12/03/27</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">15/06–14/07</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">21/02–12/03</span> <span class="ferias-badge afast-hist" title="Férias">22/07–10/08</span></td></tr>
-          <tr><td class="juiz-name">Solange Denise Belchior Santaella</td><td>VT Campo Limpo Paulista</td><td><span class="afast-badge" data-de="2026-11-28" data-ate="2026-12-17">Férias · 28/11–17/12</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Compensação">13/02 (Compensação)</span> <span class="ferias-badge afast-hist" title="Férias">25/06–14/07</span> <span class="ferias-badge afast-hist" title="Compensação">09/10 (Compensação)</span> <span class="ferias-badge afast-hist" title="Férias">28/11–17/12</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">14/06–13/07</span> <span class="ferias-badge afast-hist" title="Férias">17/11–16/12</span></td></tr>
-          <tr><td class="juiz-name">Aparecido Batista de Oliveira</td><td>4ª VT Campinas</td><td><span class="afast-badge" data-de="2026-11-18" data-ate="2026-12-17">Férias · 18/11–17/12</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">15/06–14/07</span> <span class="ferias-badge afast-hist" title="Férias">18/11–17/12</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">14/06–13/07</span> <span class="ferias-badge afast-hist" title="Férias">17/11–16/12</span></td></tr>
-          <tr><td class="juiz-name">Thiago Henrique Ament</td><td>12ª VT Campinas</td><td><span class="afast-badge" data-de="2027-04-26" data-ate="2027-05-15">Férias · 26/04–15/05/27</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Compensação">07/01–09/01 (Compensação)</span> <span class="ferias-badge afast-hist" title="Férias">22/04–11/05</span> <span class="ferias-badge afast-hist" title="Férias">21/09–10/10</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">26/04–15/05</span> <span class="ferias-badge afast-hist" title="Férias">20/09–09/10</span></td></tr>
-          <tr><td class="juiz-name">Vanessa Cristina Pereira Salomao</td><td>VT Mogi Mirim</td><td><span class="afast-badge" data-de="2026-11-29" data-ate="2026-12-18">Férias · 29/11–18/12</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">15/07–03/08</span> <span class="ferias-badge afast-hist" title="Férias">29/11–18/12</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">14/07–02/08</span> <span class="ferias-badge afast-hist" title="Férias">17/11–16/12</span></td></tr>
+          <tr><td class="juiz-name">Felipe Bernardes Rodrigues</td><td>VT Registro</td><td><span class="afast-badge" data-de="2027-02-21" data-ate="2027-03-12">Férias · 21/02–12/03/27</span></td><td><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">21/02–12/03</span> <span class="ferias-badge afast-hist" title="Férias">22/07–10/08</span></td></tr>
+          <tr><td class="juiz-name">Solange Denise Belchior Santaella</td><td>VT Campo Limpo Paulista</td><td><span class="afast-badge" data-de="2026-11-28" data-ate="2026-12-17">Férias · 28/11–17/12</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">28/11–17/12</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">14/06–13/07</span> <span class="ferias-badge afast-hist" title="Férias">17/11–16/12</span></td></tr>
+          <tr><td class="juiz-name">Aparecido Batista de Oliveira</td><td>4ª VT Campinas</td><td><span class="afast-badge" data-de="2026-11-18" data-ate="2026-12-17">Férias · 18/11–17/12</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">18/11–17/12</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">14/06–13/07</span> <span class="ferias-badge afast-hist" title="Férias">17/11–16/12</span></td></tr>
+          <tr><td class="juiz-name">Thiago Henrique Ament</td><td>12ª VT Campinas</td><td><span class="afast-badge" data-de="2027-04-26" data-ate="2027-05-15">Férias · 26/04–15/05/27</span></td><td><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">26/04–15/05</span> <span class="ferias-badge afast-hist" title="Férias">20/09–09/10</span></td></tr>
+          <tr><td class="juiz-name">Vanessa Cristina Pereira Salomao</td><td>VT Mogi Mirim</td><td><span class="afast-badge" data-de="2026-11-29" data-ate="2026-12-18">Férias · 29/11–18/12</span></td><td><span class="mag-none">2026:</span> <span class="ferias-badge afast-hist" title="Férias">29/11–18/12</span><br><span class="mag-none">2027:</span> <span class="ferias-badge afast-hist" title="Férias">14/07–02/08</span> <span class="ferias-badge afast-hist" title="Férias">17/11–16/12</span></td></tr>
         </tbody>
       </table>
     </div>
