@@ -1,0 +1,648 @@
+[
+ {
+  "evento": "indicacao",
+  "nome": "JULIANA MARCONI PENTEADO PESSIN",
+  "meses": 3,
+  "modalidade": "Teletrabalho Total",
+  "requerimento": "4141/2025-AA",
+  "id": "196399fdbf1e8573",
+  "data": "2025-04-15",
+  "data_hora": "2025-04-15T13:24:59Z"
+ },
+ {
+  "evento": "indicacao",
+  "nome": "MARIA CECILIA SILVEIRA GRANATO",
+  "meses": 4,
+  "modalidade": "Teletrabalho Total",
+  "requerimento": "4918/2025-AA",
+  "id": "196b5b1376caa4ca",
+  "data": "2025-05-09",
+  "data_hora": "2025-05-09T15:36:50Z"
+ },
+ {
+  "evento": "deferimento",
+  "nome": "JULIANA MARCONI PENTEADO PESSIN",
+  "meses": 3,
+  "modalidade": "Teletrabalho Total",
+  "id": "196c4791d3fbc9c6",
+  "data": "2025-05-12",
+  "data_hora": "2025-05-12T12:29:52Z"
+ },
+ {
+  "evento": "deferimento",
+  "nome": "MARIA CECILIA SILVEIRA GRANATO",
+  "meses": 4,
+  "modalidade": "Teletrabalho Total",
+  "id": "196fdba1adbe1a77",
+  "data": "2025-05-23",
+  "data_hora": "2025-05-23T15:19:12Z"
+ },
+ {
+  "evento": "indicacao",
+  "nome": "LEANDRO JOSE CHRISTOFOLETTI",
+  "meses": 4,
+  "modalidade": "Teletrabalho Total",
+  "requerimento": "6438/2025-AA",
+  "id": "197833de3f2cf369",
+  "data": "2025-06-18",
+  "data_hora": "2025-06-18T13:32:39Z"
+ },
+ {
+  "evento": "deferimento",
+  "nome": "LEANDRO JOSE CHRISTOFOLETTI",
+  "meses": 4,
+  "modalidade": "Teletrabalho Total",
+  "id": "197fa74840f1b277",
+  "data": "2025-07-11",
+  "data_hora": "2025-07-11T17:07:07Z"
+ },
+ {
+  "evento": "indicacao",
+  "nome": "MARIA CECILIA SILVEIRA GRANATO",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "requerimento": "9097/2025-AA",
+  "id": "1990a821490af7f0",
+  "data": "2025-09-02",
+  "data_hora": "2025-09-02T12:58:39Z"
+ },
+ {
+  "evento": "deferimento",
+  "nome": "MARIA CECILIA SILVEIRA GRANATO",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "id": "1992ef1d78f832bc",
+  "data": "2025-09-09",
+  "data_hora": "2025-09-09T14:47:03Z"
+ },
+ {
+  "evento": "indicacao",
+  "nome": "BARBARA PADOVANI MINHOLO HOFFMANN",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "requerimento": "9392/2025-AA",
+  "id": "1992f68bbd3ddd9d",
+  "data": "2025-09-09",
+  "data_hora": "2025-09-09T16:56:55Z"
+ },
+ {
+  "evento": "indeferimento",
+  "nome": "BARBARA PADOVANI MINHOLO HOFFMANN",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "id": "1993a11bc7280dd9",
+  "data": "2025-09-11",
+  "data_hora": "2025-09-11T18:37:43Z"
+ },
+ {
+  "evento": "indicacao",
+  "nome": "BARBARA PADOVANI MINHOLO HOFFMANN",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "requerimento": "9659/2025-AA",
+  "id": "1994d994665c2df4",
+  "data": "2025-09-15",
+  "data_hora": "2025-09-15T13:38:33Z"
+ },
+ {
+  "evento": "deferimento",
+  "nome": "BARBARA PADOVANI MINHOLO HOFFMANN",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "id": "1995eaf1f0101fff",
+  "data": "2025-09-18",
+  "data_hora": "2025-09-18T21:15:57Z"
+ },
+ {
+  "evento": "indicacao",
+  "nome": "ANA PAULA FERNANDES MESQUINI",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "requerimento": "10711/2025-AA",
+  "id": "199abb98c073a60a",
+  "data": "2025-10-03",
+  "data_hora": "2025-10-03T20:18:06Z"
+ },
+ {
+  "evento": "deferimento",
+  "nome": "ANA PAULA FERNANDES MESQUINI",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "id": "19a11ac381847d47",
+  "data": "2025-10-23",
+  "data_hora": "2025-10-23T15:24:49Z"
+ },
+ {
+  "evento": "indicacao",
+  "nome": "MARIANGELA MIRANDA DUARTE",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "requerimento": "12493/2025-AA",
+  "id": "19a59a8004e8cd0d",
+  "data": "2025-11-06",
+  "data_hora": "2025-11-06T14:52:52Z"
+ },
+ {
+  "evento": "indeferimento",
+  "nome": "MARIANGELA MIRANDA DUARTE",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "id": "19a5a01ffb5fcbdc",
+  "data": "2025-11-06",
+  "data_hora": "2025-11-06T16:31:10Z"
+ },
+ {
+  "evento": "indicacao",
+  "nome": "AGNELO WELINGTON SILVEIRA CASTRO",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "requerimento": "12510/2025-AA",
+  "id": "19a5a646cc9a3410",
+  "data": "2025-11-06",
+  "data_hora": "2025-11-06T18:18:40Z"
+ },
+ {
+  "evento": "indicacao",
+  "nome": "MARIANGELA MIRANDA DUARTE",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "requerimento": "12511/2025-AA",
+  "id": "19a5a6655e940234",
+  "data": "2025-11-06",
+  "data_hora": "2025-11-06T18:20:45Z"
+ },
+ {
+  "evento": "deferimento",
+  "nome": "MARIANGELA MIRANDA DUARTE",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "id": "19ac0e9209dbf348",
+  "data": "2025-11-26",
+  "data_hora": "2025-11-26T16:04:53Z"
+ },
+ {
+  "evento": "deferimento",
+  "nome": "ROMILDA MARIA DE ARRUDA GERMANO",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "id": "19ada02085601660",
+  "data": "2025-12-01",
+  "data_hora": "2025-12-01T13:02:35Z"
+ },
+ {
+  "evento": "deferimento",
+  "nome": "JOSE LUIS BURATTO",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "id": "19b03bf1e21efe7c",
+  "data": "2025-12-09",
+  "data_hora": "2025-12-09T15:33:33Z"
+ },
+ {
+  "evento": "deferimento",
+  "nome": "JOAO VICTOR MEDEIROS DE LUCENA",
+  "meses": 12,
+  "modalidade": "Teletrabalho Parcial",
+  "id": "19b082fe4c1456c2",
+  "data": "2025-12-10",
+  "data_hora": "2025-12-10T12:15:13Z"
+ },
+ {
+  "evento": "indicacao",
+  "nome": "ROSANA SUELI BRITTO DE JESUS",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "requerimento": "638/2026-AA",
+  "id": "19bbdd4a52b9f32c",
+  "data": "2026-01-14",
+  "data_hora": "2026-01-14T18:46:26Z"
+ },
+ {
+  "evento": "indeferimento",
+  "nome": "ROSANA SUELI BRITTO DE JESUS",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "id": "19bd74d42610c502",
+  "data": "2026-01-19",
+  "data_hora": "2026-01-19T17:28:41Z"
+ },
+ {
+  "evento": "indicacao",
+  "nome": "ROSANA SUELI BRITTO DE JESUS",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "requerimento": "863/2026-AA",
+  "id": "19bdc9cc9a44173b",
+  "data": "2026-01-20",
+  "data_hora": "2026-01-20T18:13:39Z"
+ },
+ {
+  "evento": "indicacao",
+  "nome": "JULIO CESAR CANO",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "requerimento": "1737/2026-AA",
+  "id": "19c52be75cbea34c",
+  "data": "2026-02-12",
+  "data_hora": "2026-02-12T16:45:37Z"
+ },
+ {
+  "evento": "indeferimento",
+  "nome": "JULIO CESAR CANO",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "id": "19c5333855269729",
+  "data": "2026-02-12",
+  "data_hora": "2026-02-12T18:53:29Z"
+ },
+ {
+  "evento": "indicacao",
+  "nome": "JULIO CESAR CANO",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "requerimento": "1781/2026-AA",
+  "id": "19c57366e81bd91f",
+  "data": "2026-02-13",
+  "data_hora": "2026-02-13T13:35:09Z"
+ },
+ {
+  "evento": "indeferimento",
+  "nome": "FABIANO MAIOLINI",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "id": "19c9b3fa1dc2638d",
+  "data": "2026-02-26",
+  "data_hora": "2026-02-26T18:39:22Z"
+ },
+ {
+  "evento": "indicacao",
+  "nome": "FABIANO MAIOLINI",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "requerimento": "2227/2026-AA",
+  "id": "19c9b47d265ab806",
+  "data": "2026-02-26",
+  "data_hora": "2026-02-26T18:48:19Z"
+ },
+ {
+  "evento": "indicacao",
+  "nome": "LEANDRO JOSE CHRISTOFOLETTI",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "requerimento": "2453/2026-AA",
+  "id": "19cba14147d00b87",
+  "data": "2026-03-04",
+  "data_hora": "2026-03-04T18:20:02Z"
+ },
+ {
+  "evento": "deferimento",
+  "nome": "JULIO CESAR CANO",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "id": "19cbdf70cda4ec60",
+  "data": "2026-03-05",
+  "data_hora": "2026-03-05T12:26:48Z"
+ },
+ {
+  "evento": "indicacao",
+  "nome": "MARIA DA PENHA ALVES GOMES SANTOS",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "requerimento": "2504/2026-AA",
+  "id": "19cbf0ae30321d11",
+  "data": "2026-03-05",
+  "data_hora": "2026-03-05T17:28:05Z"
+ },
+ {
+  "evento": "indicacao",
+  "nome": "MARIANA PENACHIONI ZANGIROLAMI",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "requerimento": "2789/2026-AA",
+  "id": "19ce877d6ab32700",
+  "data": "2026-03-13",
+  "data_hora": "2026-03-13T18:31:32Z"
+ },
+ {
+  "evento": "deferimento",
+  "nome": "FABIANO MAIOLINI",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "id": "19cf6ba297f0c5ea",
+  "data": "2026-03-16",
+  "data_hora": "2026-03-16T12:58:39Z"
+ },
+ {
+  "evento": "deferimento",
+  "nome": "THAIS FURQUIM SOLEDADE NEVES DELA VALE",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "id": "19cf6bb8e388760d",
+  "data": "2026-03-16",
+  "data_hora": "2026-03-16T13:00:11Z"
+ },
+ {
+  "evento": "indicacao",
+  "nome": "ANTONIO ABEL DE LUCCA JUNIOR",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "requerimento": "3335/2026-AA",
+  "id": "19d3ef3afd1ade63",
+  "data": "2026-03-30",
+  "data_hora": "2026-03-30T13:34:09Z"
+ },
+ {
+  "evento": "indicacao",
+  "nome": "APARECIDA MARIA BARBOSA ZUQUETO",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "requerimento": "3371/2026-AA",
+  "id": "19d408353baaedab",
+  "data": "2026-03-30",
+  "data_hora": "2026-03-30T20:50:39Z"
+ },
+ {
+  "evento": "indicacao",
+  "nome": "MARCELO DE JESUS RANGEL MONTEIRO",
+  "meses": 3,
+  "modalidade": "Teletrabalho Total",
+  "requerimento": "3388/2026-AA",
+  "id": "19d43e6819b6e9a5",
+  "data": "2026-03-31",
+  "data_hora": "2026-03-31T12:37:50Z"
+ },
+ {
+  "evento": "deferimento",
+  "nome": "MARCIA REGINA MARQUES DE PAULA",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "id": "19d442a12464e162",
+  "data": "2026-03-31",
+  "data_hora": "2026-03-31T13:51:39Z"
+ },
+ {
+  "evento": "deferimento",
+  "nome": "MARIANA PENACHIONI ZANGIROLAMI",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "id": "19d442b964c0c0a4",
+  "data": "2026-03-31",
+  "data_hora": "2026-03-31T13:53:19Z"
+ },
+ {
+  "evento": "deferimento",
+  "nome": "ANTONIO ABEL DE LUCCA JUNIOR",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "id": "19d8d6f5220109e8",
+  "data": "2026-04-14",
+  "data_hora": "2026-04-14T19:19:35Z"
+ },
+ {
+  "evento": "deferimento",
+  "nome": "APARECIDA MARIA BARBOSA ZUQUETO",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "id": "19dbbf8ebca86f00",
+  "data": "2026-04-23",
+  "data_hora": "2026-04-23T20:12:24Z"
+ },
+ {
+  "evento": "deferimento",
+  "nome": "MARCELO DE JESUS RANGEL MONTEIRO",
+  "meses": 3,
+  "modalidade": "Teletrabalho Total",
+  "id": "19dbbfabddfd9a7c",
+  "data": "2026-04-23",
+  "data_hora": "2026-04-23T20:14:23Z"
+ },
+ {
+  "evento": "indicacao",
+  "nome": "THAYANE CRISCIA SOUTO DE OLIVEIRA",
+  "meses": 12,
+  "modalidade": "Teletrabalho Parcial",
+  "requerimento": "4467/2026-AA",
+  "id": "19df50d38da57655",
+  "data": "2026-05-04",
+  "data_hora": "2026-05-04T22:12:56Z"
+ },
+ {
+  "evento": "deferimento",
+  "nome": "THAYANE CRISCIA SOUTO DE OLIVEIRA",
+  "meses": 12,
+  "modalidade": "Teletrabalho Parcial",
+  "id": "19e2286ddb0d9d69",
+  "data": "2026-05-13",
+  "data_hora": "2026-05-13T18:08:42Z"
+ },
+ {
+  "evento": "indicacao",
+  "nome": "ANTENOR DONIDA BARTOLI",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "requerimento": "4988/2026-AA",
+  "id": "19e45dffd86a721b",
+  "data": "2026-05-20",
+  "data_hora": "2026-05-20T14:52:46Z"
+ },
+ {
+  "evento": "indeferimento",
+  "nome": "ANTENOR DONIDA BARTOLI",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "id": "19e460e630ff2053",
+  "data": "2026-05-20",
+  "data_hora": "2026-05-20T15:43:26Z"
+ },
+ {
+  "evento": "indicacao",
+  "nome": "ANTENOR DONIDA BARTOLI",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "requerimento": "4998/2026-AA",
+  "id": "19e4691e5db880c6",
+  "data": "2026-05-20",
+  "data_hora": "2026-05-20T18:07:05Z"
+ },
+ {
+  "evento": "deferimento",
+  "nome": "ANTENOR DONIDA BARTOLI",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "id": "19e8f831d2d7ccf3",
+  "data": "2026-06-03",
+  "data_hora": "2026-06-03T22:03:13Z"
+ },
+ {
+  "evento": "deferimento",
+  "nome": "LEANDRO JOSE CHRISTOFOLETTI",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "id": "19f662695ded5c95",
+  "data": "2026-07-15",
+  "data_hora": "2026-07-15T14:20:30Z"
+ },
+ {
+  "evento": "deferimento",
+  "nome": "MARIA DA PENHA ALVES GOMES SANTOS",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "id": "19f6627db84b5f5e",
+  "data": "2026-07-15",
+  "data_hora": "2026-07-15T14:21:54Z"
+ },
+ {
+  "evento": "deferimento",
+  "nome": "JOSE CARLOS MERCE",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "id": "19f94525f27b841e",
+  "data": "2026-07-24",
+  "data_hora": "2026-07-24T13:30:52Z"
+ },
+ {
+  "evento": "indicacao",
+  "nome": "DHEISE MONIQUE EUPHRASIO",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "requerimento": "7699/2026-AA",
+  "id": "19fd8598c5546001",
+  "data": "2026-08-06",
+  "data_hora": "2026-08-06T18:32:53Z"
+ },
+ {
+  "evento": "indicacao",
+  "nome": "MARCELO DE JESUS RANGEL MONTEIRO",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "requerimento": "9067/2026-AA",
+  "id": "1a0a1005b093cdd6",
+  "data": "2026-09-14",
+  "data_hora": "2026-09-14T17:38:57Z"
+ },
+ {
+  "evento": "indeferimento",
+  "nome": "MARCELO DE JESUS RANGEL MONTEIRO",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "id": "1a0a1bbdf4cc2ea9",
+  "data": "2026-09-14",
+  "data_hora": "2026-09-14T21:03:57Z"
+ },
+ {
+  "evento": "indicacao",
+  "nome": "MARCELO DE JESUS RANGEL MONTEIRO",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "requerimento": "9118/2026-AA",
+  "id": "1a0a5dc25ab0cbe2",
+  "data": "2026-09-15",
+  "data_hora": "2026-09-15T16:17:40Z"
+ },
+ {
+  "evento": "indicacao",
+  "nome": "ROBERTA RODRIGUES URBANO",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "requerimento": "9146/2026-AA",
+  "id": "1a0a6c047a5e99ac",
+  "data": "2026-09-15",
+  "data_hora": "2026-09-15T20:26:51Z"
+ },
+ {
+  "evento": "deferimento",
+  "nome": "MARCELO DE JESUS RANGEL MONTEIRO",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "id": "1a0ca962bbd74063",
+  "data": "2026-09-22",
+  "data_hora": "2026-09-22T19:27:12Z"
+ },
+ {
+  "evento": "indicacao",
+  "nome": "ROMILDA MARIA DE ARRUDA GERMANO",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "requerimento": "9733/2026-AA",
+  "id": "1a0ee001cbf59a66",
+  "data": "2026-09-29",
+  "data_hora": "2026-09-29T16:29:38Z"
+ },
+ {
+  "evento": "deferimento",
+  "nome": "DHEISE MONIQUE EUPHRASIO",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "id": "1a118306c846e367",
+  "data": "2026-10-07",
+  "data_hora": "2026-10-07T21:06:27Z"
+ },
+ {
+  "evento": "deferimento",
+  "nome": "ROBERTA RODRIGUES URBANO",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "id": "1a1363121a28a625",
+  "data": "2026-10-13",
+  "data_hora": "2026-10-13T16:55:50Z"
+ },
+ {
+  "evento": "indicacao",
+  "nome": "MARIANGELA MIRANDA DUARTE",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "requerimento": "12140/2026-AA",
+  "id": "1a1a1f274dd61976",
+  "data": "2026-11-03",
+  "data_hora": "2026-11-03T15:06:22Z"
+ },
+ {
+  "evento": "indicacao",
+  "nome": "ANITA BUENO DE MORAES NARCISO FERREIRA",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "requerimento": "12371/2026-AA",
+  "id": "1a1a7777a6129db1",
+  "data": "2026-11-04",
+  "data_hora": "2026-11-04T16:49:45Z"
+ },
+ {
+  "evento": "deferimento",
+  "nome": "ROMILDA MARIA DE ARRUDA GERMANO",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "id": "1a1a8b2ca9e82181",
+  "data": "2026-11-04",
+  "data_hora": "2026-11-04T22:34:10Z"
+ },
+ {
+  "evento": "indicacao",
+  "nome": "MILTON ROBERTO DA SILVA",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "requerimento": "13035/2026-AA",
+  "id": "1a1cbea43ae7e0f3",
+  "data": "2026-11-11",
+  "data_hora": "2026-11-11T18:41:28Z"
+ },
+ {
+  "evento": "indicacao",
+  "nome": "BARBARA PADOVANI MINHOLO HOFFMANN",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "requerimento": "13208/2026-AA",
+  "id": "1a1d5b0f78841ba3",
+  "data": "2026-11-13",
+  "data_hora": "2026-11-13T16:15:04Z"
+ },
+ {
+  "evento": "indicacao",
+  "nome": "JOSE LUIS BURATTO",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "requerimento": "13209/2026-AA",
+  "id": "1a1d5b195ead3a76",
+  "data": "2026-11-13",
+  "data_hora": "2026-11-13T16:15:45Z"
+ }
+]

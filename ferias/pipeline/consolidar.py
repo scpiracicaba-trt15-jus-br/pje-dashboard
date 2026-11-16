@@ -11,6 +11,11 @@ Regras, em ordem cronológica das solicitações:
   alteração de férias          -> remove os períodos da "Fruição Original" e acrescenta os "Novos"
   cancelamento                 -> remove o período
   folga compensatória / outros -> lista à parte (afastamentos de curta duração)
+
+Teletrabalho (base/teletrabalho.json, e-mails de indicação/deferimento/indeferimento do ROL):
+  cada indicação abre um registro (nº do requerimento, modalidade, meses); o deferimento ou indeferimento
+  seguinte do mesmo servidor fecha o registro. Sai em "teletrabalho" (registro mais recente) e
+  "teletrabalho_historico" de cada servidor.
 """
 import json, os, re, unicodedata, datetime, hashlib
 
@@ -75,7 +80,8 @@ class Indice:
         if not k:
             k = norm(nome)
             self.pessoas[k] = {'nome': nome, 'setor': None, 'unidade': None, 'cargo': '', 'matricula': None,
-                               'ferias': set(), 'base': set(), 'folgas': [], 'eventos': [], 'fonte_base': False}
+                               'ferias': set(), 'base': set(), 'folgas': [], 'eventos': [], 'fonte_base': False,
+                               'tele': []}
         p = self.pessoas[k]
         for a, b in extra.items():
             if b and not p.get(a):
@@ -120,6 +126,36 @@ def main():
         p['eventos'].append({'data': e['data'], 'tipo': e['tipo'],
                              'periodos': e.get('periodos') or e.get('novo'), 'orig': e.get('orig')})
 
+    def mais_meses(d, n):
+        d = datetime.date.fromisoformat(d)
+        a, m = divmod(d.month - 1 + n, 12)
+        ano, mes = d.year + a, m + 1
+        ult = (datetime.date(ano + (mes == 12), mes % 12 + 1, 1) - datetime.timedelta(days=1)).day
+        return (datetime.date(ano, mes, min(d.day, ult)) - datetime.timedelta(days=1)).isoformat()
+
+    tel_f = os.path.join(AQUI, 'base', 'teletrabalho.json')
+    tel = json.load(open(tel_f, encoding='utf-8')) if os.path.exists(tel_f) else []
+    tele_fora = set()
+    for e in sorted(tel, key=lambda e: e.get('data_hora') or e['data']):
+        if fora(e['nome']):
+            continue
+        k = idx.achar(e['nome'].title())
+        if not k:
+            tele_fora.add(e['nome'].title()); continue
+        regs = idx.pessoas[k]['tele']
+        if e['evento'] == 'indicacao':
+            regs.append({'requerimento': e.get('requerimento'), 'modalidade': e['modalidade'], 'meses': e['meses'],
+                         'indicado_em': e['data'], 'situacao': 'em análise'})
+            continue
+        aberto = next((r for r in reversed(regs) if r['situacao'] == 'em análise' and r['meses'] == e['meses']), None)
+        if aberto is None:          # decisão sem a indicação correspondente (ex.: indicação feita por outro gestor)
+            aberto = {'requerimento': None, 'modalidade': e['modalidade'], 'meses': e['meses'], 'indicado_em': None}
+            regs.append(aberto)
+        aberto['situacao'] = 'deferido' if e['evento'] == 'deferimento' else 'indeferido'
+        aberto['decidido_em'] = e['data']
+        if e['evento'] == 'deferimento':
+            aberto['ate_previsto'] = mais_meses(e['data'], e['meses'])
+
     def dias(a, b):
         return (datetime.date.fromisoformat(b) - datetime.date.fromisoformat(a)).days + 1
 
@@ -138,13 +174,16 @@ def main():
         fol = [f for f in p['folgas'] if f['ate'] >= '2026-01-01']
         if not fer and not fol and p['unidade'] is None:
             continue
+        hist = sorted(p['tele'], key=lambda r: r.get('indicado_em') or r.get('decidido_em'))
         saida.append({'nome': p['nome'], 'matricula': p['matricula'], 'setor': p['setor'] or 'Não localizado no organograma',
                       'cargo': p['cargo'], 'ferias': fer, 'folgas': sorted(fol, key=lambda f: f['de']),
-                      'ultima_solicitacao': max((ev['data'] for ev in p['eventos']), default=None)})
+                      'ultima_solicitacao': max((ev['data'] for ev in p['eventos']), default=None),
+                      'teletrabalho': hist[-1] if hist else None, 'teletrabalho_historico': hist})
     ordem = {s: i for i, s in enumerate(ORDEM)}
     saida.sort(key=lambda x: (ordem.get(x['setor'], 99), x['nome']))
     ult = max((e['data'] for e in sol), default=None)
-    dados = {'atualizado_em': datetime.date.today().isoformat(), 'ultimo_email': ult,
+    ult_tel = max((e['data'] for e in tel), default=None)
+    dados = {'atualizado_em': datetime.date.today().isoformat(), 'ultimo_email': ult, 'ultimo_email_teletrabalho': ult_tel,
              'total_solicitacoes': len(sol), 'setores': [s for s in ORDEM if any(x['setor'] == s for x in saida)] +
              sorted({x['setor'] for x in saida} - set(ORDEM)), 'servidores': saida}
     json.dump(dados, open(os.path.join(AQUI, '..', 'ferias.json'), 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
@@ -153,6 +192,10 @@ def main():
           f"{sum(len(x['folgas']) for x in saida)} folgas; último e-mail {ult}.")
     if sem:
         print('Não localizados no organograma:', ', '.join(sem))
+    print(f"Teletrabalho: {sum(1 for x in saida if x['teletrabalho'])} servidores com registro; "
+          f"último e-mail {ult_tel}.")
+    if tele_fora:
+        print('Teletrabalho de servidores fora do organograma (não exibidos):', ', '.join(sorted(tele_fora)))
 
 
 if __name__ == '__main__':

@@ -837,6 +837,12 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
 .fx-pill.past{opacity:.55}
 .fx-pill.fol{background:#f1e4ee;color:#5f2a52}
 .fx-note{font-size:12.5px;color:var(--text-muted);line-height:1.5}
+.fx-tt{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.03em;border-radius:4px;padding:0 4px;margin-left:5px;vertical-align:1px;background:#e3edf7;color:#1d4f80;cursor:help}
+.fx-tt.pend{background:#fff3d6;color:#8a5a00}
+.fx-tt.ind,.fx-tt.venc{background:#eee;color:#777}
+.fx-pill.tt{background:#e3edf7;color:#1d4f80}
+.fx-pill.tt.pend{background:#fff3d6;color:#8a5a00}
+.fx-pill.tt.ind,.fx-pill.tt.venc{background:#eee;color:#777}
 @media (max-width:640px){.fx-toolbar select,.fx-toolbar input{min-width:0;width:100%}.fx-meses{height:100px}.fx-mes .m{font-size:10px}}
 
 .ferias-table {
@@ -2206,7 +2212,7 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
       <div class="fx-meses" id="fx-meses"></div>
     </div>
     <div class="fx-card" id="fx-cal-wrap">
-      <div class="fx-legend"><span><i class="fx-b"></i> Férias</span><span><i class="fx-b fx-now"></i> Em curso</span><span><i class="fx-dot"></i> Folga compensatória</span><span><i class="fx-today-l"></i> Hoje</span></div>
+      <div class="fx-legend"><span><i class="fx-b"></i> Férias</span><span><i class="fx-b fx-now"></i> Em curso</span><span><i class="fx-dot"></i> Folga compensatória</span><span><i class="fx-today-l"></i> Hoje</span><span><i class="fx-tt" style="margin-left:0">TT</i> Teletrabalho (passe o mouse para ver o requerimento)</span></div>
       <div class="fx-cal" id="fx-cal"></div>
     </div>
     <div class="fx-card" id="fx-tab-wrap" style="display:none">
@@ -4483,6 +4489,22 @@ route();
   const norm=s=>s.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
   const estado=p=>{const a=dt(p.de),b=dt(p.ate);return b<hoje?'past':(a<=hoje?'now':'fut');};
   function noAno(p,ano){return p.ate>=ano+'-01-01'&&p.de<=ano+'-12-31';}
+  // Teletrabalho (e-mails de indicação/deferimento/indeferimento do ROL)
+  function tele(s){
+    const t=s.teletrabalho; if(!t) return null;
+    let cls='',sit;
+    if(t.situacao==='deferido'){ if(t.ate_previsto&&dt(t.ate_previsto)<hoje){cls='venc';sit='vencido';} else sit='deferido'; }
+    else if(t.situacao==='indeferido'){cls='ind';sit='indeferido';}
+    else {cls='pend';sit='aguardando decisão';}
+    const req=t.requerimento?`Req. nº ${t.requerimento}`:'Requerimento sem nº no e-mail';
+    const txt=`${req} · ${t.modalidade} · ${t.meses} mês(es) · ${sit}`+
+      (t.indicado_em?` · indicado em ${brA(t.indicado_em)}`:'')+
+      (t.decidido_em?` · ${t.situacao} em ${brA(t.decidido_em)}`:'')+
+      (t.ate_previsto?` · previsão até ${brA(t.ate_previsto)}`:'');
+    const hist=(s.teletrabalho_historico||[]).slice(0,-1).map(h=>`${h.requerimento||'s/ nº'} (${h.situacao})`).join(', ');
+    return {cls,sit,req,txt:txt+(hist?`\nAnteriores: ${hist}`:'')};
+  }
+  function ttBadge(s){const t=tele(s);return t?`<span class="fx-tt ${t.cls}" title="Teletrabalho — ${esc(t.txt)}">TT</span>`:'';}
   function filtrados(){
     return D.servidores.filter(s=>(!st.setor||s.setor===st.setor)&&(!st.q||norm(s.nome).includes(norm(st.q))));
   }
@@ -4522,7 +4544,7 @@ route();
       grupos[g].forEach(s=>{
         const ps=s.ferias.filter(p=>noAno(p,st.ano)), fl=s.folgas.filter(p=>noAno(p,st.ano));
         const tot=ps.reduce((n,p)=>n+p.dias,0);
-        h+=`<div class="fx-name" title="${esc(s.nome)}${s.cargo?' — '+esc(s.cargo):''}">${esc(s.nome)}${tot?`<small>${tot}d</small>`:''}</div><div class="fx-track${ps.length?'':' fx-row-empty'}">`+
+        h+=`<div class="fx-name" title="${esc(s.nome)}${s.cargo?' — '+esc(s.cargo):''}">${esc(s.nome)}${ttBadge(s)}${tot?`<small>${tot}d</small>`:''}</div><div class="fx-track${ps.length?'':' fx-row-empty'}">`+
           ps.map(p=>{const a=pos(p.de),b=pos(p.ate);return `<div class="p ${estado(p)}${p.obs?' obs':''}" style="left:${a}%;width:calc(${b-a}% + ${100/365}%)" title="${esc(s.nome)}: ${brA(p.de)} a ${brA(p.ate)} (${p.dias} dias)${p.obs?'\n⚠ '+esc(p.obs):''}"></div>`;}).join('')+
           fl.map(p=>`<div class="f" style="left:${pos(p.de)}%" title="${esc(p.tipo)}: ${brA(p.de)}${p.ate!==p.de?' a '+brA(p.ate):''}"></div>`).join('')+
           (hp!==null?`<div class="today" style="left:${hp}%"></div>`:'')+`</div>`;
@@ -4532,12 +4554,12 @@ route();
   }
   function tab(){
     const fs=filtrados();
-    let h=`<thead><tr><th>Servidor(a)</th><th>Setor</th><th>Férias em ${st.ano}</th><th>Dias</th><th>Folgas</th></tr></thead><tbody>`;
+    let h=`<thead><tr><th>Servidor(a)</th><th>Setor</th><th>Férias em ${st.ano}</th><th>Dias</th><th>Folgas</th><th>Teletrabalho</th></tr></thead><tbody>`;
     let gAnt=null;
     D.setores.forEach(g=>fs.filter(s=>s.setor===g).forEach(s=>{
-      if(g!==gAnt){h+=`<tr class="mag-group"><td colspan="5">${esc(g)}</td></tr>`;gAnt=g;}
+      if(g!==gAnt){h+=`<tr class="mag-group"><td colspan="6">${esc(g)}</td></tr>`;gAnt=g;}
       const ps=s.ferias.filter(p=>noAno(p,st.ano)), fl=s.folgas.filter(p=>noAno(p,st.ano));
-      h+=`<tr><td>${esc(s.nome)}</td><td>${esc(s.setor)}</td><td>${ps.map(p=>`<span class="fx-pill ${estado(p)}" title="${brA(p.de)} a ${brA(p.ate)}${p.obs?' — '+esc(p.obs):''}">${br(p.de)}–${br(p.ate)} · ${p.dias}d${p.obs?' ⚠':''}</span>`).join('')||'<span class="mag-none">—</span>'}</td><td>${ps.reduce((n,p)=>n+p.dias,0)||'—'}</td><td>${fl.map(p=>`<span class="fx-pill fol" title="${esc(p.tipo)}">${br(p.de)}${p.ate!==p.de?'–'+br(p.ate):''}</span>`).join('')||'—'}</td></tr>`;
+      h+=`<tr><td>${esc(s.nome)}</td><td>${esc(s.setor)}</td><td>${ps.map(p=>`<span class="fx-pill ${estado(p)}" title="${brA(p.de)} a ${brA(p.ate)}${p.obs?' — '+esc(p.obs):''}">${br(p.de)}–${br(p.ate)} · ${p.dias}d${p.obs?' ⚠':''}</span>`).join('')||'<span class="mag-none">—</span>'}</td><td>${ps.reduce((n,p)=>n+p.dias,0)||'—'}</td><td>${fl.map(p=>`<span class="fx-pill fol" title="${esc(p.tipo)}">${br(p.de)}${p.ate!==p.de?'–'+br(p.ate):''}</span>`).join('')||'—'}</td><td>${(t=>t?`<span class="fx-pill tt ${t.cls}" title="${esc(t.txt)}">${esc(s.teletrabalho.requerimento||'s/ nº')} · ${esc(s.teletrabalho.modalidade.replace('Teletrabalho ',''))} · ${esc(t.sit)}</span>`:'—')(tele(s))}</td></tr>`;
     }));
     $('fx-tab').innerHTML=h+'</tbody>';
   }
@@ -4553,7 +4575,7 @@ route();
   $('fx-q').oninput=e=>{st.q=e.target.value.trim();render();};
   fetch('ferias/ferias.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{
     D=d; d.setores.forEach(s=>$('fx-setor').add(new Option(s,s)));
-    $('fx-note').innerHTML=`Fonte: e-mails "Solicitação de afastamento" do sistema ROL (férias, alterações, cancelamentos e folgas compensatórias), aplicados sobre a escala de 2026 do portal. As solicitações são lançadas quando chegam e podem ainda ser indeferidas. Dados atualizados automaticamente; último processamento em ${brA(d.atualizado_em)}.`;
+    $('fx-note').innerHTML=`Fonte: e-mails "Solicitação de afastamento" do sistema ROL (férias, alterações, cancelamentos e folgas compensatórias), aplicados sobre a escala de 2026 do portal. Teletrabalho (selo TT): e-mails de indicação, deferimento e indeferimento do ROL${d.ultimo_email_teletrabalho?' (último em '+brA(d.ultimo_email_teletrabalho)+')':''}; a previsão de término conta os meses a partir do deferimento. As solicitações são lançadas quando chegam e podem ainda ser indeferidas. Dados atualizados automaticamente; último processamento em ${brA(d.atualizado_em)}.`;
     render();
   }).catch(e=>{$('fx-kpis').innerHTML=`<p style="color:#b23b3b">Não foi possível carregar ferias/ferias.json (${esc(e)}).</p>`;});
 })();
