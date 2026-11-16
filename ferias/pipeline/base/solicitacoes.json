@@ -5305,5 +5305,27 @@
   ],
   "id": "1a1e57b94848f2c7",
   "data": "2026-11-16"
+ },
+ {
+  "nome": "MARCIO ELIAS SOARES GONCALVES SIQUEIRA",
+  "matricula": "44237",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ],
+   [
+    "2027-04-12",
+    "2027-04-20"
+   ],
+   [
+    "2027-10-13",
+    "2027-10-23"
+   ]
+  ],
+  "id": "1a1e4d249ce42ae7",
+  "data": "2026-09-18"
  }
 ]
