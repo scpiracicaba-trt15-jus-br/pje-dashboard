@@ -5251,5 +5251,59 @@
    ]
   ],
   "origem": "lançamento manual a pedido do diretor (dez/2026 ajustado para 03/12 a 19/12 em 16/11/2026)"
+ },
+ {
+  "nome": "ERIKA CRISTINA MENDES DE CAMPOS GARCIA",
+  "matricula": "26689",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-13",
+    "2027-01-27"
+   ],
+   [
+    "2027-07-12",
+    "2027-07-26"
+   ]
+  ],
+  "id": "1a1e43bc3b385ae0",
+  "data": "2026-11-16"
+ },
+ {
+  "nome": "ANA CLAUDIA RODRIGUES ABREU",
+  "matricula": "31496",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-07",
+    "2027-01-15"
+   ],
+   [
+    "2027-06-28",
+    "2027-07-08"
+   ],
+   [
+    "2027-09-08",
+    "2027-09-17"
+   ]
+  ],
+  "id": "1a1e4e8e158690b3",
+  "data": "2026-11-16"
+ },
+ {
+  "nome": "NILZA MISAEL FERREIRA",
+  "matricula": "30333",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-07",
+    "2027-02-05"
+   ]
+  ],
+  "id": "1a1e57b94848f2c7",
+  "data": "2026-11-16"
  }
 ]
