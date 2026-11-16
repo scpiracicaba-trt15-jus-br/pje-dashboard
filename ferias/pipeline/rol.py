@@ -43,7 +43,7 @@ def parse_texto(texto):
     if not r:
         # formato "Ciência req. AA - Férias": "servidor(a) NOME, CARGO, código 123, lotado(a) no(a) ..., requereu e
         # teve deferido ou registrado o pedido de Férias para o(s) seguinte(s) período(s): ... referentes ao ano civil"
-        r = re.search(r'servidor\(a\)\s+(.+?),[^,]*?,\s*código\s+(\d+),.*?pedido de\s+(.+?)\s+para o\(s\) seguinte\(s\) período\(s\):', s, re.S)
+        r = re.search(r'servidor\(a\)\s+(.+?),[^,]*?,\s*código\s+(\d+),.*?pedido de\s+(.+?)\s+para\s+o\(s\)\s+seguinte\(s\)\s+período\(s\):', s, re.S)
         if not r:
             return None
     nome, mat, tipo = ' '.join(r.group(1).split()), r.group(2), ' '.join(r.group(3).split())
