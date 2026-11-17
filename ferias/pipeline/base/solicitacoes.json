@@ -5371,5 +5371,231 @@
   ],
   "id": "1a1e517d4a45cf9c",
   "data": "2026-10-13"
+ },
+ {
+  "nome": "ANA PAULA FERNANDES MESQUINI",
+  "matricula": "31658",
+  "tipo": "Férias (relatório do ROL)",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-07",
+    "2027-01-15"
+   ],
+   [
+    "2027-07-12",
+    "2027-07-22"
+   ],
+   [
+    "2027-11-03",
+    "2027-11-12"
+   ]
+  ],
+  "id": "rol-relatorio-2026-11-17-31658",
+  "data": "2026-11-17"
+ },
+ {
+  "nome": "ANITA BUENO DE MORAES NARCISO FERREIRA",
+  "matricula": "51012",
+  "tipo": "Férias (relatório do ROL)",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-04-01",
+    "2027-04-09"
+   ]
+  ],
+  "id": "rol-relatorio-2026-11-17-51012",
+  "data": "2026-11-17"
+ },
+ {
+  "nome": "APARECIDA MARIA BARBOSA ZUQUETO",
+  "matricula": "83488",
+  "tipo": "Férias (relatório do ROL)",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-09-08",
+    "2027-09-13"
+   ]
+  ],
+  "id": "rol-relatorio-2026-11-17-83488",
+  "data": "2026-11-17"
+ },
+ {
+  "nome": "ELINE ANA SAMPAIO CORADI CASTRO",
+  "matricula": "93181",
+  "tipo": "Férias (relatório do ROL)",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-09-27",
+    "2027-10-02"
+   ]
+  ],
+  "id": "rol-relatorio-2026-11-17-93181",
+  "data": "2026-11-17"
+ },
+ {
+  "nome": "GABRIEL DE OLIVEIRA SILVA",
+  "matricula": "108502",
+  "tipo": "Férias (relatório do ROL)",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-07",
+    "2027-02-05"
+   ]
+  ],
+  "id": "rol-relatorio-2026-11-17-108502",
+  "data": "2026-11-17"
+ },
+ {
+  "nome": "JULIANA MARCONI PENTEADO PESSIN",
+  "matricula": "44253",
+  "tipo": "Férias (relatório do ROL)",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ],
+  "id": "rol-relatorio-2026-11-17-44253",
+  "data": "2026-11-17"
+ },
+ {
+  "nome": "MARCELO VALERIANO MACARENKO",
+  "matricula": "19623",
+  "tipo": "Férias (relatório do ROL)",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ],
+  "id": "rol-relatorio-2026-11-17-19623",
+  "data": "2026-11-17"
+ },
+ {
+  "nome": "MARCIA REGINA MARQUES DE PAULA",
+  "matricula": "25852",
+  "tipo": "Férias (relatório do ROL)",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-18",
+    "2027-01-29"
+   ],
+   [
+    "2027-07-06",
+    "2027-07-08"
+   ],
+   [
+    "2027-10-13",
+    "2027-10-27"
+   ]
+  ],
+  "id": "rol-relatorio-2026-11-17-25852",
+  "data": "2026-11-17"
+ },
+ {
+  "nome": "MARIA CRISTINA FERREIRA RODRIGUES DE LARA",
+  "matricula": "4316",
+  "tipo": "Férias (relatório do ROL)",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ],
+  "id": "rol-relatorio-2026-11-17-4316",
+  "data": "2026-11-17"
+ },
+ {
+  "nome": "MARIA DA PENHA ALVES GOMES SANTOS",
+  "matricula": "45446",
+  "tipo": "Férias (relatório do ROL)",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ],
+  "id": "rol-relatorio-2026-11-17-45446",
+  "data": "2026-11-17"
+ },
+ {
+  "nome": "RENATA FABIANA PARPINELLI ISHIHARA",
+  "matricula": "47716",
+  "tipo": "Férias (relatório do ROL)",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-07-19",
+    "2027-07-31"
+   ]
+  ],
+  "id": "rol-relatorio-2026-11-17-47716",
+  "data": "2026-11-17"
+ },
+ {
+  "nome": "ROMILDA MARIA DE ARRUDA GERMANO",
+  "matricula": "44423",
+  "tipo": "Férias (relatório do ROL)",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-11-04",
+    "2026-11-19"
+   ]
+  ],
+  "id": "rol-relatorio-2026-11-17-44423",
+  "data": "2026-11-17"
+ },
+ {
+  "nome": "SONIA CRISTINA DOS SANTOS FRANCO",
+  "matricula": "54453",
+  "tipo": "Férias (relatório do ROL)",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-11-23",
+    "2026-11-27"
+   ]
+  ],
+  "id": "rol-relatorio-2026-11-17-54453",
+  "data": "2026-11-17"
+ },
+ {
+  "nome": "THAIS FURQUIM SOLEDADE NEVES DELA VALE",
+  "matricula": "81175",
+  "tipo": "Férias (relatório do ROL)",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-12-09",
+    "2026-12-18"
+   ]
+  ],
+  "id": "rol-relatorio-2026-11-17-81175",
+  "data": "2026-11-17"
+ },
+ {
+  "nome": "THAYANE CRISCIA SOUTO DE OLIVEIRA",
+  "matricula": "105473",
+  "tipo": "Férias (relatório do ROL)",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-12-14",
+    "2026-12-18"
+   ]
+  ],
+  "id": "rol-relatorio-2026-11-17-105473",
+  "data": "2026-11-17"
  }
 ]
