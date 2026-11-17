@@ -2143,7 +2143,7 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
     <div class="mag-legend" style="flex-wrap:wrap">
       <span><span class="cz-b cz-sob">Coincide</span> magistrado e secretário afastados ao mesmo tempo</span>
       <span><span class="cz-b cz-mag">Só magistrado</span></span>
-      <span><span class="cz-b cz-sec">Só secretário</span> magistrado atuando e secretário afastado — cobertura da SC (✅ colega da unidade pode cobrir · ⛔ cobertura externa)</span>
+      <span><span class="cz-b cz-sec">Só secretário</span> magistrado atuando e secretário afastado — cobertura da SC (✅ colega da unidade pode cobrir · ⛔ cobertura externa). De 07/01 a 20/01 não há audiências: esse intervalo não entra na cobertura.</span>
       <span id="cz-filtros" class="cz-filtros">
         <button data-f="" class="on">Todos</button><button data-f="sob">Com sobreposição</button><button data-f="sem">Sem sobreposição</button><button data-f="cob" class="cob">⚠ Precisa de cobertura</button><button data-f="ext">⛔ Cobertura externa</button>
       </span>
@@ -4640,6 +4640,8 @@ route();
   const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-zA-Z ]/g,' ').replace(/\s+/g,' ').trim().toLowerCase();
   const st={f:'',q:''}; let rows=[];
+  // 07/01 a 20/01: sem audiências — não gera necessidade de cobertura
+  const SEM_AUD=[2027,2028,2029].map(a=>({de:a+'-01-07',ate:a+'-01-20'}));
   const mais1=(x,n)=>{const d=new Date(x+'T12:00:00');d.setDate(d.getDate()+n);return d.toISOString().slice(0,10);};
   // partes do período p que não estão cobertas por nenhum período da lista L
   function menos(p,L){let seg=[{de:p.de,ate:p.ate,t:p.t}];L.forEach(x=>{const n=[];seg.forEach(g=>{if(x.ate<g.de||x.de>g.ate){n.push(g);return;}if(x.de>g.de)n.push({de:g.de,ate:mais1(x.de,-1),t:g.t});if(x.ate<g.ate)n.push({de:mais1(x.ate,1),ate:g.ate,t:g.t});});seg=n;});return seg;}
@@ -4657,7 +4659,7 @@ route();
         if(sp){
           mp.forEach(m=>sp.forEach(x=>{const a=m.de>x.de?m.de:x.de,b=m.ate<x.ate?m.ate:x.ate; if(a<=b) sob.push({de:a,ate:b,t:m.t});}));
           mp.forEach(m=>menos(m,sp).forEach(x=>soM.push(x)));
-          sp.forEach(x=>menos(x,mp).forEach(y=>soS.push(y)));
+          sp.forEach(x=>menos(x,mp.concat(SEM_AUD)).forEach(y=>soS.push(y)));
         }
         rows.push({p,sn,ok:!!s,sp,sob:sob.sort((a,b)=>a.de<b.de?-1:1),soM,soS});
       });
