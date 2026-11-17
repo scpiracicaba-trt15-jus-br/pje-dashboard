@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Guia da Rotina LIQ2</title>
+<meta name="description" content="Guia de estudo interativo da rotina de tarefas da LIQ2: tarefas dos assessores, caminho do processo, calculistas e apoio.">
+<meta name="theme-color" content="#0b6b5c">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Guia da Rotina LIQ2">
+<meta property="og:description" content="Quem faz o quê na liquidação, com mapa mental, checklist e quiz.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b6b5c'/%3E%3Ctext x='32' y='43' font-size='34' font-family='Arial' font-weight='700' text-anchor='middle' fill='white'%3ELQ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Public+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap">
+<style>
+/* Layout: sidebar de trilha (desktop) + coluna de leitura; módulos em faixas com infográficos inline.
+   Paleta: tinta azul-petróleo, verde institucional como acento, cores semânticas por tipo de aviso. */
+:root{
+  --bg:#f2f5f8; --surface:#ffffff; --surface-2:#e8eef4; --ink:#0f1c2b; --muted:#516277; --line:#d5dde7;
+  --brand:#0b6b5c; --brand-ink:#ffffff; --brand-soft:#dcf2ec;
+  --blue:#1c5bc9; --blue-soft:#e2ecfd;
+  --amber:#8f5400; --amber-soft:#fcefd2;
+  --red:#b82f27; --red-soft:#fce6e4;
+  --violet:#6240c4; --violet-soft:#ebe5fa;
+  --green:#1b7339; --green-soft:#dff2e5;
+  --shadow:0 1px 2px rgba(15,28,43,.06),0 4px 14px rgba(15,28,43,.05);
+  --f-display:'Sora','Segoe UI',system-ui,sans-serif;
+  --f-body:'Public Sans','Segoe UI',system-ui,sans-serif;
+  --f-mono:'JetBrains Mono',ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0c1520; --surface:#131f2e; --surface-2:#1a2a3c; --ink:#e9eff7; --muted:#9db0c5; --line:#26394f;
+    --brand:#46d1b5; --brand-ink:#06231d; --brand-soft:#123530;
+    --blue:#86b3ff; --blue-soft:#162a4c;
+    --amber:#f2bb5e; --amber-soft:#3a2c10;
+    --red:#ff948b; --red-soft:#3e1b19;
+    --violet:#bca3ff; --violet-soft:#291f49;
+    --green:#74de98; --green-soft:#123422;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 14px rgba(0,0,0,.25);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0c1520; --surface:#131f2e; --surface-2:#1a2a3c; --ink:#e9eff7; --muted:#9db0c5; --line:#26394f;
+  --brand:#46d1b5; --brand-ink:#06231d; --brand-soft:#123530;
+  --blue:#86b3ff; --blue-soft:#162a4c;
+  --amber:#f2bb5e; --amber-soft:#3a2c10;
+  --red:#ff948b; --red-soft:#3e1b19;
+  --violet:#bca3ff; --violet-soft:#291f49;
+  --green:#74de98; --green-soft:#123422;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 14px rgba(0,0,0,.25);
+  color-scheme:dark;
+}
+[hidden]{display:none!important}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;margin:0;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--surface)}
+h1,h2,h3,h4{font-family:var(--f-display);line-height:1.2;text-wrap:balance;margin:0}
+p{margin:0 0 .8em}
+a{color:var(--blue)}
+.wrap{max-width:1240px;margin:0 auto}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+
+/* ---------- hero ---------- */
+.hero{padding:40px 0 8px;display:grid;gap:28px}
+.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--brand)}
+.hero h1{font-size:clamp(30px,5vw,52px);font-weight:800;letter-spacing:-.02em;margin:8px 0 14px;max-width:18ch}
+.hero .lead{font-size:clamp(16px,2vw,19px);color:var(--muted);max-width:62ch}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:var(--shadow);min-width:0}
+.tile b{display:block;font-family:var(--f-display);font-size:34px;line-height:1;font-weight:800;color:var(--brand)}
+.tile span{display:block;margin-top:8px;font-size:13px;color:var(--muted);line-height:1.35}
+.how{display:flex;flex-wrap:wrap;gap:10px}
+.how a{display:inline-flex;gap:8px;align-items:center;padding:9px 14px;border-radius:999px;background:var(--brand);color:var(--brand-ink);text-decoration:none;font-weight:600;font-size:14px}
+.how a.ghost{background:var(--surface);color:var(--ink);border:1px solid var(--line)}
+
+/* ---------- shell ---------- */
+.shell{display:grid;grid-template-columns:250px minmax(0,1fr);gap:36px;align-items:start;margin-top:28px}
+.side{position:sticky;top:calc(env(safe-area-inset-top,0px) + 16px);display:grid;gap:12px}
+.side nav{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:10px;display:grid;gap:2px;box-shadow:var(--shadow)}
+.side nav a{display:flex;gap:10px;align-items:baseline;padding:7px 10px;border-radius:8px;text-decoration:none;color:var(--muted);font-size:14px;font-weight:500}
+.side nav a i{font-style:normal;font-family:var(--f-mono);font-size:11px;min-width:20px;color:var(--muted)}
+.side nav a:hover{background:var(--surface-2);color:var(--ink)}
+.side nav a.on{background:var(--brand-soft);color:var(--brand);font-weight:700}
+.prog{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:13px;color:var(--muted)}
+.bar{height:8px;border-radius:99px;background:var(--surface-2);overflow:hidden;margin-top:8px}
+.bar>i{display:block;height:100%;width:0;background:var(--brand);border-radius:99px;transition:width .3s}
+
+main{min-width:0;display:grid;gap:56px}
+section.mod{scroll-margin-top:24px;min-width:0}
+.mh{display:flex;gap:16px;align-items:center;margin-bottom:20px}
+.mh .n{flex:none;width:46px;height:46px;border-radius:12px;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;font-family:var(--f-display);font-weight:800;font-size:20px}
+.mh h2{font-size:clamp(23px,3vw,31px);font-weight:700;letter-spacing:-.01em}
+.mh small{display:block;font-family:var(--f-body);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:3px}
+.key{background:var(--brand-soft);color:var(--ink);border-radius:12px;padding:14px 18px;margin-bottom:20px;display:flex;gap:12px;align-items:baseline}
+.key b{flex:none;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--brand)}
+h3{font-size:19px;font-weight:700;margin:26px 0 12px}
+h4{font-size:15px;font-weight:700;margin:0 0 6px}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow);min-width:0}
+.card p:last-child,.card ul:last-child{margin-bottom:0}
+.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px}
+.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:14px}
+ul.ck{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+ul.ck li{position:relative;padding-left:22px}
+ul.ck li::before{content:"";position:absolute;left:2px;top:.62em;width:8px;height:8px;border-radius:2px;background:var(--brand)}
+ul.ck.no li::before{background:var(--red)}
+ol.steps{list-style:none;counter-reset:s;margin:0;padding:0;display:grid;gap:10px}
+ol.steps li{counter-increment:s;position:relative;padding-left:38px;min-height:26px}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:26px;height:26px;border-radius:50%;background:var(--brand-soft);color:var(--brand);font-weight:700;font-size:13px;display:grid;place-items:center;font-family:var(--f-mono)}
+
+.callout{border-radius:12px;padding:14px 16px;margin:18px 0;display:grid;gap:2px;border:1px solid transparent}
+.callout b.t{font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.callout.warn{background:var(--amber-soft);color:var(--ink);border-color:color-mix(in srgb,var(--amber) 35%,transparent)}
+.callout.warn b.t{color:var(--amber)}
+.callout.info{background:var(--blue-soft);border-color:color-mix(in srgb,var(--blue) 30%,transparent)}
+.callout.info b.t{color:var(--blue)}
+.callout.tip{background:var(--green-soft);border-color:color-mix(in srgb,var(--green) 30%,transparent)}
+.callout.tip b.t{color:var(--green)}
+.callout.bad{background:var(--red-soft);border-color:color-mix(in srgb,var(--red) 30%,transparent)}
+.callout.bad b.t{color:var(--red)}
+.callout p{margin:0}
+.tag{display:inline-block;font-family:var(--f-mono);font-size:12px;font-weight:700;padding:2px 8px;border-radius:6px;background:var(--surface-2);color:var(--ink);white-space:nowrap}
+.pill{display:inline-block;font-size:12px;font-weight:700;padding:3px 10px;border-radius:99px;white-space:nowrap}
+.p-red{background:var(--red-soft);color:var(--red)} .p-blue{background:var(--blue-soft);color:var(--blue)}
+.p-green{background:var(--green-soft);color:var(--green)} .p-amber{background:var(--amber-soft);color:var(--amber)}
+.p-violet{background:var(--violet-soft);color:var(--violet)}
+
+/* ---------- fluxo 10 passos ---------- */
+.flow{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));gap:12px;counter-reset:f}
+.fs{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 16px 16px 16px;text-decoration:none;color:var(--ink);display:grid;gap:4px;box-shadow:var(--shadow);border-top:4px solid var(--c);min-width:0}
+.fs:hover{transform:translateY(-2px)}
+.fs i{font-style:normal;font-family:var(--f-mono);font-weight:700;font-size:13px;color:var(--c)}
+.fs b{font-family:var(--f-display);font-size:15px;line-height:1.25}
+.fs span{font-size:13px;color:var(--muted);line-height:1.4}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--muted);margin-bottom:14px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--c);margin-right:6px}
+
+/* ---------- mapa mental ---------- */
+.mm-box{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);overflow-x:auto}
+.mm-box svg{display:block;min-width:960px;width:100%;height:auto}
+.mm-box .hint{display:none;font-size:12px;color:var(--muted);padding:8px 14px 0}
+@media (max-width:720px){.mm-box .hint{display:block}}
+.mm-center{fill:var(--brand)} .mm-ct{fill:var(--brand-ink);font-family:var(--f-display);font-weight:800}
+.mm-b rect{fill:var(--cs);stroke:var(--c);stroke-width:1.6}
+.mm-b text{fill:var(--ink);font-family:var(--f-display);font-weight:700;font-size:14px}
+.mm-l rect{fill:var(--surface);stroke:var(--c);stroke-width:1;opacity:.95}
+.mm-l text{fill:var(--ink);font-family:var(--f-body);font-size:12.5px}
+.mm-p{fill:none;stroke:var(--c);stroke-width:1.6;opacity:.55}
+.mm-g{cursor:pointer;outline:none}
+.mm-g:hover .mm-p,.mm-g:focus .mm-p{opacity:1}
+.mm-g:hover .mm-b rect,.mm-g:focus .mm-b rect{stroke-width:3}
+
+/* ---------- prazos ---------- */
+.days{display:flex;flex-wrap:wrap;gap:5px;margin:10px 0 4px}
+.days i{font-style:normal;width:34px;height:34px;border-radius:8px;background:var(--blue);color:#fff;display:grid;place-items:center;font-family:var(--f-mono);font-size:13px;font-weight:700}
+html[data-theme="dark"] .days i{color:#08142a}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .days i{color:#08142a}}
+.days.dbl i{background:var(--violet)}
+.cmp{display:grid;gap:16px}
+.interrupt{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:0;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--surface)}
+.interrupt>div{padding:16px;display:grid;gap:4px;align-content:start;min-width:0;border-right:1px dashed var(--line)}
+.interrupt>div:last-child{border-right:0}
+.interrupt .big{font-family:var(--f-display);font-weight:800;font-size:26px;line-height:1}
+.interrupt .ph{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.hatch{height:12px;border-radius:6px;background:repeating-linear-gradient(135deg,var(--muted) 0 4px,transparent 4px 8px);opacity:.5;margin-top:6px}
+.solid{height:12px;border-radius:6px;background:var(--blue);margin-top:6px}
+
+/* timeline */
+.tl{position:relative;padding-left:22px;display:grid;gap:14px;border-left:2px solid var(--line);margin-left:6px}
+.tl>div{position:relative}
+.tl>div::before{content:"";position:absolute;left:-29px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--surface);border:3px solid var(--c,var(--blue))}
+.tl .d{font-family:var(--f-mono);font-weight:700;font-size:13px;color:var(--c,var(--blue))}
+.tl p{margin:0;font-size:15px}
+
+/* árvore de decisão */
+.tree{display:grid;gap:10px;justify-items:center}
+.node{background:var(--surface);border:2px solid var(--line);border-radius:12px;padding:12px 16px;text-align:center;font-weight:600;max-width:420px;width:100%}
+.node.q{border-color:var(--blue);background:var(--blue-soft)}
+.arrow{color:var(--muted);font-size:20px;line-height:1}
+.branches{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px;width:100%}
+.out{border-radius:12px;padding:14px;display:grid;gap:6px;align-content:start}
+.out b{font-family:var(--f-display)}
+.out.r{background:var(--red-soft)} .out.r b{color:var(--red)}
+.out.a{background:var(--amber-soft)} .out.a b{color:var(--amber)}
+.out.g{background:var(--green-soft)} .out.g b{color:var(--green)}
+.out small{color:var(--muted);font-size:12px}
+
+/* tabelas */
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--surface-2);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+td:first-child{font-weight:600}
+
+/* barras reexame */
+.bars{display:grid;gap:14px}
+.bars .r{display:grid;gap:6px}
+.bars .l{display:flex;justify-content:space-between;gap:12px;font-size:14px;flex-wrap:wrap}
+.bars .t{height:30px;background:var(--surface-2);border-radius:8px;overflow:hidden}
+.bars .t i{display:flex;align-items:center;padding-left:10px;height:100%;background:var(--violet);color:#fff;font-family:var(--f-mono);font-weight:700;font-size:13px;white-space:nowrap}
+html[data-theme="dark"] .bars .t i{color:#150c33}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .bars .t i{color:#150c33}}
+
+/* aproveitamento */
+.apv{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center}
+.apv .e{background:var(--surface-2);border-radius:10px;padding:10px;text-align:center;font-weight:600;font-size:14px}
+.apv .ar{font-size:12px;font-weight:700;text-align:center;padding:4px 8px;border-radius:99px;white-space:nowrap}
+.apv .ok{background:var(--green-soft);color:var(--green)} .apv .nok{background:var(--red-soft);color:var(--red)}
+.apv-row{display:grid;gap:8px}
+
+/* PJe path */
+.path{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.path span{background:var(--surface-2);border-radius:8px;padding:6px 10px;font-weight:700;font-size:13px}
+.path em{font-style:normal;color:var(--muted)}
+.ui{background:var(--surface-2);border:1px dashed var(--line);border-radius:6px;padding:0 6px;font-weight:600;font-size:.92em}
+
+/* chips */
+.chiprow{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:10px;align-items:center;padding:10px 14px;border-bottom:1px solid var(--line)}
+.chiprow:last-child{border-bottom:0}
+.chiprow .d{font-size:14px;color:var(--muted)}
+@media (max-width:520px){.chiprow{grid-template-columns:1fr}}
+
+/* checklist */
+.stage{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:var(--shadow);min-width:0}
+.stage h4{display:flex;justify-content:space-between;gap:10px;margin-bottom:10px}
+.stage h4 span{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.stage label{display:flex;gap:10px;align-items:flex-start;padding:5px 0;cursor:pointer;font-size:14.5px;line-height:1.4}
+.stage input{margin-top:3px;width:17px;height:17px;accent-color:var(--brand);flex:none}
+.stage label:has(input:checked) span{color:var(--muted);text-decoration:line-through;text-decoration-color:color-mix(in srgb,var(--muted) 50%,transparent)}
+.cl-top{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
+.cl-top .bar{flex:1;min-width:160px;margin:0;height:12px}
+button,.btn{font:inherit;cursor:pointer}
+.btn{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:8px 14px;font-weight:600;font-size:14px}
+.btn:hover{background:var(--surface-2)}
+.btn.pri{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+
+/* quiz */
+.quiz{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
+.qh{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:var(--muted);font-weight:600;margin-bottom:10px}
+.q-t{font-family:var(--f-display);font-size:clamp(18px,2.4vw,22px);font-weight:700;margin-bottom:16px;text-wrap:balance}
+.opts{display:grid;gap:10px}
+.opt{text-align:left;background:var(--surface);border:2px solid var(--line);border-radius:12px;padding:12px 14px;color:var(--ink);display:flex;gap:12px;align-items:flex-start;line-height:1.45}
+.opt:hover:not(:disabled){border-color:var(--blue)}
+.opt b{font-family:var(--f-mono);color:var(--muted);flex:none}
+.opt.ok{border-color:var(--green);background:var(--green-soft)}
+.opt.bad{border-color:var(--red);background:var(--red-soft)}
+.opt:disabled{cursor:default}
+.fb{margin-top:14px;border-radius:12px;padding:12px 14px;background:var(--surface-2);font-size:15px}
+.qf{display:flex;justify-content:flex-end;margin-top:16px}
+.score{font-family:var(--f-display);font-size:52px;font-weight:800;color:var(--brand);line-height:1}
+
+/* mantra */
+.task{border-left:4px solid var(--c);}
+.task h4{color:var(--c)}
+.task ul{margin:0;padding-left:18px;display:grid;gap:4px;font-size:14.5px}
+.src{font-size:13px;color:var(--muted)}
+footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);display:grid;gap:8px}
+
+@media (max-width:900px){
+  .shell{grid-template-columns:minmax(0,1fr);gap:20px}
+  .side{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;margin-inline:calc(-1*max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px));background:var(--bg);padding-block:8px;border-bottom:1px solid var(--line)}
+  .side nav{display:flex;overflow-x:auto;border:0;box-shadow:none;background:transparent;padding:0;gap:6px}
+  .side nav a{white-space:nowrap;background:var(--surface);border:1px solid var(--line)}
+  .prog{display:none}
+  section.mod{scroll-margin-top:70px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.fs:hover{transform:none}.bar>i{transition:none}}
+
+.tile b.sm{font-size:clamp(20px,5.4vw,28px);white-space:nowrap}
+.ladder{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px}
+.rung{display:grid;gap:4px;align-content:start;background:var(--cs);border-radius:14px;padding:16px;text-decoration:none;color:var(--ink);border:1px solid color-mix(in srgb,var(--c) 35%,transparent)}
+.rung i{font-style:normal;font-family:var(--f-mono);font-weight:700;font-size:13px;color:var(--c)}
+.rung b{font-family:var(--f-display);font-size:19px}
+.rung span{font-size:14px;color:var(--muted)}
+.digs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.dg{border-radius:12px;padding:12px 6px;text-align:center;background:var(--cs);border:2px solid var(--c)}
+.dg b{display:block;font-family:var(--f-display);font-size:30px;line-height:1;color:var(--c)}
+.dg span{display:block;font-size:12px;margin-top:6px;color:var(--ink);line-height:1.25}
+@media (max-width:520px){.digs{grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}.dg span{display:none}.dg b{font-size:24px}}
+.par{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.par>div{background:var(--surface-2);border-radius:10px;padding:10px 12px;font-size:14.5px}
+.dest{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px}
+.dest .d{border:2px solid var(--c);border-radius:14px;padding:14px;text-align:center;background:var(--surface)}
+.dest .d b{display:block;font-family:var(--f-display);font-size:26px;color:var(--c)}
+.dest .d span{font-size:13.5px;color:var(--muted)}
+.out{align-content:start}
+.legend span{display:inline-flex;align-items:center}
+table.wk th,table.wk td{text-align:center;white-space:nowrap}
+table.wk td:first-child,table.wk th:first-child{text-align:left}
+table.wk td{color:var(--brand);font-size:18px}
+table.wk .today{background:var(--brand-soft)}
+table.wk th.today{color:var(--brand)}
+</style>
+
+</head><body>
+<div class="wrap">
+<header class="hero">
+  <div>
+    <div class="eyebrow">LIQ2 · Rotina de tarefas</div>
+    <h1>Rotina de tarefas da LIQ2</h1>
+    <p class="lead">Quem faz o quê na liquidação: as tarefas diárias dos assessores, o caminho dos processos até a homologação dos cálculos e o papel de calculistas e apoio.</p>
+  </div>
+  <div class="tiles" aria-label="Números que você precisa saber">
+    <div class="tile"><b>8</b><span>tarefas diárias dos assessores</span></div>
+    <div class="tile"><b>15</b><span>calculistas no total</span></div>
+    <div class="tile"><b>10+5</b><span>com final fixo (0 a 9) e em rotação</span></div>
+    <div class="tile"><b>3</b><span>servidores de apoio, na movimentação processual</span></div>
+  </div>
+  <div class="how">
+    <a href="#fluxo" data-go="fluxo">Ver o caminho do processo</a>
+    <a class="ghost" href="#mapa" data-go="mapa">Abrir o mapa mental</a>
+    <a class="ghost" href="#quiz" data-go="quiz">Testar o que aprendi</a>
+  </div>
+</header>
+
+<div class="shell">
+<aside class="side">
+  <nav id="nav" aria-label="Trilha de estudo">
+    <a href="#visao" data-go="visao"><i>00</i>Visão geral</a>
+    <a href="#m1" data-go="m1"><i>01</i>Novos processos e prazos</a>
+    <a href="#m2" data-go="m2"><i>02</i>Demais tarefas dos assessores</a>
+    <a href="#m3" data-go="m3"><i>03</i>Calculistas</a>
+    <a href="#m4" data-go="m4"><i>04</i>Apoio</a>
+    <a href="#check" data-go="check"><i>05</i>Checklist</a>
+    <a href="#quiz" data-go="quiz"><i>06</i>Quiz</a>
+  </nav>
+  <div class="prog"><span id="progtxt">Checklist: 0%</span><div class="bar"><i id="progbar"></i></div></div>
+</aside>
+
+<main>
+
+<section class="mod" id="visao">
+  <div class="mh"><div class="n">0</div><div><small>Comece por aqui</small><h2>Visão geral</h2></div></div>
+
+  <h3 style="margin-top:0">Três equipes, um fluxo</h3>
+  <div class="ladder">
+    <div class="rung" style="--c:var(--blue);--cs:var(--blue-soft)"><i>ASSESSORES</i><b>Triam e distribuem</b><span>Fazem diariamente as tarefas de triagem e tiram as dúvidas de calculistas e apoio.</span></div>
+    <div class="rung" style="--c:var(--green);--cs:var(--green-soft)"><i>CALCULISTAS · 15</i><b>Homologam cálculos</b><span>Atuam no Cumprimento de Providências e expedem os alvarás.</span></div>
+    <div class="rung" style="--c:var(--violet);--cs:var(--violet-soft)"><i>APOIO · 3</i><b>Movimentam o processo</b><span>Atuam na caixa Análise, com qualquer providência que impulsione o feito.</span></div>
+  </div>
+
+  <div id="fluxo" style="scroll-margin-top:24px">
+  <h3>Caminho do processo na LIQ2</h3>
+  <div class="tree">
+    <div class="node q">Novos Processos: de onde veio?</div>
+    <div class="arrow">↓</div>
+    <div class="branches">
+      <div class="out g"><b>LIQ1</b><span>Já tem cálculos e geralmente algum GIGS da fila de homologação.</span><span>→ <b>Cumprimento de Providências</b>, para o calculista homologar.</span></div>
+      <div class="out a"><b>DAM</b><span>Volta para acolher cálculos refeitos por sentença ou acórdão superveniente.</span><span>→ <b>Análise</b>, para verificar intimações e outras providências, e depois ao calculista no Cumprimento de Providências, se for o caso.</span></div>
+    </div>
+  </div></div>
+
+  <h3 id="mapa" style="scroll-margin-top:24px">Mapa mental</h3>
+  <p class="src" style="margin-bottom:12px">Clique em qualquer ramo para ir ao módulo correspondente.</p>
+  <div class="mm-box">
+    <div class="hint">Deslize para os lados para ver o mapa inteiro.</div>
+    <svg id="mm" viewBox="0 0 1300 700" role="img" aria-label="Mapa mental da rotina da LIQ2"></svg>
+  </div>
+</section>
+
+<section class="mod" id="m1">
+  <div class="mh"><div class="n">1</div><div><small>Módulo 1 · Assessores</small><h2>Novos processos e prazos vencidos</h2></div></div>
+  <div class="key"><b>Ideia central</b><span>Cada processo vai para o calculista (Cumprimento de Providências) ou para a Análise, sempre com GIGS e chips.</span></div>
+
+  <h3 style="margin-top:0">Novos Processos</h3>
+  <div class="g2">
+    <div class="card" style="border-top:4px solid var(--green)"><h4><span class="pill p-green">LIQ1</span> → Cumprimento de Providências</h4><p>Chegam com os cálculos prontos e, em geral, com GIGS que indica a situação e a fila de homologação. Seguem para o calculista, que aprecia e homologa.</p></div>
+    <div class="card" style="border-top:4px solid var(--amber)"><h4><span class="pill p-amber">DAM</span> → Análise</h4><p>Retornam para acolhimento de cálculos refeitos em virtude de sentença ou acórdão superveniente. Na Análise, verifique intimações e outras providências; depois, se for o caso, encaminhe ao calculista no Cumprimento de Providências.</p></div>
+  </div>
+
+  <h3>Prazos Vencidos</h3>
+  <p>Os processos desta caixa são verificados e encaminhados para um de dois destinos:</p>
+  <div class="g2">
+    <div class="card" style="border-top:4px solid var(--blue)"><h4>1 · Cumprimento de Providências</h4><p>Para o calculista apreciar e, eventualmente, homologar os cálculos.</p></div>
+    <div class="card" style="border-top:4px solid var(--violet)"><h4>2 · Análise</h4><p>Para realizar alguma tarefa ou verificar o envio a uma assessoria de execução, ou o arquivamento, se for o caso.</p></div>
+  </div>
+  <div class="callout tip"><b class="t">Dica · GIGS e chips</b><p>Ao verificar os processos, se ainda não tiverem GIGS e chips, atribua-os conforme o caso. Eles servem para filtrar e encaminhar.</p></div>
+</section>
+
+<section class="mod" id="m2">
+  <div class="mh"><div class="n">2</div><div><small>Módulo 2 · Assessores</small><h2>Demais tarefas diárias</h2></div></div>
+  <div class="key"><b>Ideia central</b><span>Escaninhos, alvarás, DAA, acordos e embargos fazem parte da rotina todos os dias.</span></div>
+  <div class="g2">
+    <div class="card" style="border-top:4px solid var(--blue)"><h4>Escaninho de petições</h4><p>Verifique diariamente e, conforme o caso, atribua GIGS e chips aos processos para filtragem e encaminhamento.</p></div>
+    <div class="card" style="border-top:4px solid var(--green)"><h4>Documentos internos e novos depósitos judiciais</h4><p>Verifique esses escaninhos diariamente.</p></div>
+    <div class="card" style="border-top:4px solid var(--amber)"><h4>Conferência de alvarás</h4><p>Confira diariamente os alvarás confeccionados nas plataformas <b>SIF</b> e <b>SISCONDJ</b> e encaminhe ao magistrado para assinatura.</p></div>
+    <div class="card" style="border-top:4px solid var(--red)"><h4>DAA</h4><p>Processos com solicitações do DAA são encaminhados aos servidores para as providências devidas.</p></div>
+    <div class="card" style="border-top:4px solid var(--violet)"><h4>Acordo</h4><p>Processos com acordos vencidos vão à Análise, para verificar o cumprimento e adotar as providências necessárias.</p></div>
+    <div class="card" style="border-top:4px solid var(--brand)"><h4>Embargos declaratórios</h4><p>Os assessores apreciam e elaboram a minuta de decisão dos embargos opostos pelas partes, que pedem pronunciamento sobre decisões proferidas nesta assessoria.</p></div>
+  </div>
+</section>
+
+<section class="mod" id="m3">
+  <div class="mh"><div class="n">3</div><div><small>Módulo 3</small><h2>Calculistas</h2></div></div>
+  <div class="key"><b>Ideia central</b><span>Quinze calculistas homologam os cálculos do Cumprimento de Providências: dez por final fixo e cinco em rotação.</span></div>
+  <div class="digs" id="digs"></div>
+  <div class="legend" id="digleg" style="margin-top:12px"></div>
+
+  <h3>O que os calculistas fazem</h3>
+  <div class="g2">
+    <div class="card"><h4>Homologação de cálculos</h4><ul class="ck"><li>Analisam os processos do Cumprimento de Providências para homologar os cálculos.</li><li>Fazem retificações e pequenas correções, para abreviar o tempo do processo.</li><li>Na homologação, expedem os alvarás nas plataformas bancárias eletrônicas.</li></ul></div>
+    <div class="card"><h4>Arquivo PJC</h4><ul class="ck"><li>Inserem o arquivo PJC, quando necessário.</li><li>Acolhem ou retificam cálculos de processos julgados pela DAM.</li><li>Lançam os dados (arquivo PJC) de processos da execução em que o arquivo está ausente.</li></ul></div>
+    <div class="card"><h4>Acordos e parcelamento</h4><ul class="ck"><li>Homologam acordos.</li><li>Analisam parcelamento (<span class="tag">art. 916 CPC</span>).</li><li>Expedem os alvarás respectivos.</li></ul></div>
+  </div>
+</section>
+
+<section class="mod" id="m4">
+  <div class="mh"><div class="n">4</div><div><small>Módulo 4</small><h2>Apoio</h2></div></div>
+  <div class="key"><b>Ideia central</b><span>Três servidores movimentam os processos na caixa Análise e tomam qualquer providência que impulsione o feito.</span></div>
+  <div class="card"><h4>Providências típicas</h4><p><span class="pill p-blue">Expedição de alvará</span> <span class="pill p-green">Envio de ofício</span> <span class="pill p-amber">Requisição de honorários periciais</span> <span class="pill p-violet">Despacho</span> <span class="pill p-red">Arquivamento</span> <span class="pill p-blue">Homologação de acordo</span> <span class="pill p-green">Análise de parcelamento</span></p><p class="src" style="margin-top:8px">A lista do manual termina com “etc.”: inclui qualquer providência tendente a impulsionar o feito.</p></div>
+  <div class="callout info"><b class="t">Alinhamento</b><p>São realizadas reuniões periódicas de alinhamento com as equipes, conforme a necessidade e a oportunidade.</p></div>
+</section>
+
+<section class="mod" id="check">
+  <div class="mh"><div class="n">5</div><div><small>Ferramenta de trabalho</small><h2>Checklist da rotina</h2></div></div>
+  <p>Use como roteiro diário. Seu progresso fica salvo neste navegador.</p>
+  <div class="cl-top"><b id="cltxt">0 de 0 itens</b><div class="bar"><i id="clbar"></i></div><button class="btn" id="clreset" type="button">Limpar marcações</button></div>
+  <div class="g2" id="cl"></div>
+</section>
+
+<section class="mod" id="quiz">
+  <div class="mh"><div class="n">6</div><div><small>Fixação</small><h2>Quiz: teste o que você aprendeu</h2></div></div>
+  <div class="quiz" id="qz"></div>
+</section>
+
+<footer>
+  <span>Material didático elaborado a partir do documento “Rotina de Tarefas – LIQ2”.</span>
+  <span>Este guia é instrumento de apoio operacional e deve ser atualizado sempre que houver alteração normativa ou dos fluxos internos da unidade.</span>
+</footer>
+</main>
+</div>
+</div>
+<script>
+(function(){
+  /* ---------- navegação ---------- */
+  function go(id){var el=document.getElementById(id);if(el){el.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'})}}
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('[data-go]');
+    if(a){e.preventDefault();go(a.getAttribute('data-go'))}
+  });
+  var links=[].slice.call(document.querySelectorAll('#nav a'));
+  var ids=links.map(function(a){return a.getAttribute('data-go')});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(en){
+        if(en.isIntersecting){
+          links.forEach(function(l){l.classList.toggle('on',l.getAttribute('data-go')===en.target.id)});
+          var on=document.querySelector('#nav a.on');
+          if(on&&matchMedia('(max-width:900px)').matches){var n=document.getElementById('nav');n.scrollLeft=on.offsetLeft-16}
+        }
+      });
+    },{rootMargin:'-20% 0px -70% 0px'});
+    ids.forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)});
+  }
+
+  /* ---------- mapa mental ---------- */
+  var COLORS=[['blue','var(--blue)','var(--blue-soft)'],['green','var(--green)','var(--green-soft)'],['amber','var(--amber)','var(--amber-soft)'],['violet','var(--violet)','var(--violet-soft)'],['red','var(--red)','var(--red-soft)']];
+  var left=[
+    {t:'Novos processos',go:'m1',l:['Da LIQ1: Cumprimento','Da DAM: Análise']},
+    {t:'Prazos vencidos',go:'m1',l:['Cumprimento de Providências','Análise','GIGS e chips']},
+    {t:'Escaninhos',go:'m2',l:['Petições','Documentos internos','Novos depósitos judiciais']},
+    {t:'Alvarás, DAA e acordos',go:'m2',l:['Conferência SIF e SISCONDJ','DAA aos servidores','Acordo vencido: Análise']}
+  ];
+  var right=[
+    {t:'Embargos declaratórios',go:'m2',l:['Minuta de decisão','Decisões da assessoria']},
+    {t:'Calculistas · 15',go:'m3',l:['10 com final fixo (0 a 9)','5 em rotação','Homologam e expedem alvarás']},
+    {t:'Outras atividades dos calculistas',go:'m3',l:['Arquivo PJC','Cálculos da DAM','Acordos e art. 916 CPC']},
+    {t:'Apoio · 3 servidores',go:'m4',l:['Caixa Análise','Alvará, ofício, honorários','Despacho e arquivamento']}
+  ];
+  var NS='http://www.w3.org/2000/svg';
+  function el(n,a,p){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e}
+  function lw(s){return Math.round(s.length*6.4+24)}
+  var svg=document.getElementById('mm');
+  var W=1300,LH=30,GAP=26;
+  function groupH(side){return side.reduce(function(s,b){return s+b.l.length*LH},0)+GAP*(side.length-1)}
+  var H=Math.max(groupH(left),groupH(right))+60;
+  svg.setAttribute('viewBox','0 0 '+W+' '+H);
+  var cx=W/2,cy=H/2;
+  function side(arr,dir,off){
+    var gh=groupH(arr),y=(H-gh)/2,ci=off;
+    arr.forEach(function(b,i){
+      var col=COLORS[(i+off)%COLORS.length];
+      var h=b.l.length*LH, by=y+h/2;
+      var bx=dir<0?380:W-380, bw=190;
+      var g=el('g',{'class':'mm-g',tabindex:'0',role:'link','aria-label':b.t,style:'--c:'+col[1]+';--cs:'+col[2]},svg);
+      g.addEventListener('click',function(){go(b.go)});
+      g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go(b.go)}});
+      var sx=cx+dir*92, ex=bx-dir*bw/2;
+      el('path',{'class':'mm-p',d:'M'+sx+','+cy+' C'+(sx+dir*45)+','+cy+' '+(ex-dir*45)+','+by+' '+ex+','+by},g);
+      var bg=el('g',{'class':'mm-b'},g);
+      el('rect',{x:bx-bw/2,y:by-19,width:bw,height:38,rx:19},bg);
+      var tx=el('text',{x:bx,y:by+5,'text-anchor':'middle'},bg);tx.textContent=b.t;
+      b.l.forEach(function(s,j){
+        var ly=y+j*LH+LH/2, w=lw(s);
+        var edge=dir<0?275:W-275;
+        var x0=dir<0?edge-w:edge;
+        el('path',{'class':'mm-p',d:'M'+(bx+dir*bw/2)+','+by+' C'+(bx+dir*bw/2+dir*30)+','+by+' '+(edge-dir*30)+','+ly+' '+edge+','+ly,style:'opacity:.35;stroke-width:1.2'},g);
+        var lg=el('g',{'class':'mm-l'},g);
+        el('rect',{x:x0,y:ly-12,width:w,height:24,rx:12},lg);
+        var t=el('text',{x:x0+w/2,y:ly+4.5,'text-anchor':'middle'},lg);t.textContent=s;
+      });
+      y+=h+GAP;
+    });
+  }
+  side(left,-1,0);side(right,1,4);
+  el('ellipse',{'class':'mm-center',cx:cx,cy:cy,rx:98,ry:56},svg);
+  var c1=el('text',{'class':'mm-ct',x:cx,y:cy-4,'text-anchor':'middle','font-size':'19'},svg);c1.textContent='Rotina';
+  var c2=el('text',{'class':'mm-ct',x:cx,y:cy+20,'text-anchor':'middle','font-size':'19'},svg);c2.textContent='LIQ2';
+
+  /* ---------- calculistas ---------- */
+  (function(){
+    var box=document.getElementById('digs'),leg=document.getElementById('digleg');
+    var cols=['blue','green','amber','violet','red'];
+    for(var i=0;i<10;i++){
+      var c=cols[i%5];
+      var d=document.createElement('div');d.className='dg';d.style.cssText='--c:var(--'+c+');--cs:var(--'+c+'-soft)';
+      d.innerHTML='<b>'+i+'</b><span>Final fixo</span>';box.appendChild(d);
+    }
+    for(var r=1;r<=5;r++){
+      var e=document.createElement('div');e.className='dg';e.style.cssText='--c:var(--brand);--cs:var(--brand-soft);border-style:dashed';
+      e.innerHTML='<b>R'+r+'</b><span>Rotação</span>';box.appendChild(e);
+    }
+    [['10 calculistas com final fixo, de 0 a 9','blue'],['5 calculistas em esquema de rotação','brand']].forEach(function(x){
+      var cv=x[1]==='brand'?'var(--brand)':'var(--'+x[1]+')';
+      var s=document.createElement('span');s.style.cssText='--c:'+cv;s.innerHTML='<i></i>';s.appendChild(document.createTextNode(x[0]));leg.appendChild(s);
+    });
+  })();
+  /* ---------- checklist ---------- */
+  var STAGES=[
+    ['Triagem dos assessores',['Caixa Novos Processos verificada (LIQ1 e DAM)','Processos da LIQ1 encaminhados ao Cumprimento de Providências','Processos da DAM encaminhados à Análise','Prazos vencidos distribuídos entre Cumprimento de Providências e Análise','GIGS e chips atribuídos onde faltavam']],
+    ['Escaninhos e conferências',['Escaninho de petições verificado','Escaninho de documentos internos e novos depósitos judiciais verificado','Alvarás do SIF e SISCONDJ conferidos e enviados ao magistrado para assinatura','Solicitações do DAA encaminhadas aos servidores','Acordos vencidos encaminhados à Análise','Embargos declaratórios apreciados e minutas elaboradas']],
+    ['Calculistas',['Cumprimento de Providências analisado','Cálculos homologados, com retificações e pequenas correções','Alvarás expedidos na homologação','Arquivo PJC inserido ou lançado quando necessário','Acordos homologados e parcelamentos (art. 916 do CPC) analisados']],
+    ['Apoio',['Caixa Análise movimentada','Providências cumpridas: alvará, ofício, honorários periciais, despacho, arquivamento']]
+  ];
+  var KEY='liq2-checklist-v1',state={};
+  try{state=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(e){state={}}
+  var clEl=document.getElementById('cl'),total=0;
+  STAGES.forEach(function(s,si){
+    var d=document.createElement('div');d.className='stage';
+    var h=document.createElement('h4');h.innerHTML='<b>'+s[0]+'</b><span data-c="'+si+'"></span>';d.appendChild(h);
+    s[1].forEach(function(t,ii){
+      total++;var id='ck'+si+'_'+ii;
+      var l=document.createElement('label');l.setAttribute('for',id);
+      var i=document.createElement('input');i.type='checkbox';i.id=id;i.checked=!!state[id];
+      i.addEventListener('change',function(){state[id]=i.checked;if(!i.checked)delete state[id];save();upd()});
+      var sp=document.createElement('span');sp.textContent=t;
+      l.appendChild(i);l.appendChild(sp);d.appendChild(l);
+    });
+    clEl.appendChild(d);
+  });
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}}
+  function upd(){
+    var done=0;
+    STAGES.forEach(function(s,si){
+      var c=0;s[1].forEach(function(t,ii){if(state['ck'+si+'_'+ii])c++});done+=c;
+      clEl.querySelector('[data-c="'+si+'"]').textContent=c+'/'+s[1].length;
+    });
+    var p=Math.round(done/total*100);
+    document.getElementById('cltxt').textContent=done+' de '+total+' itens';
+    document.getElementById('clbar').style.width=p+'%';
+    document.getElementById('progbar').style.width=p+'%';
+    document.getElementById('progtxt').textContent='Checklist: '+p+'%';
+  }
+  document.getElementById('clreset').addEventListener('click',function(){
+    state={};save();clEl.querySelectorAll('input').forEach(function(i){i.checked=false});upd();
+  });
+  upd();
+
+  /* ---------- quiz ---------- */
+  var Q=[
+    {q:'De onde chegam os processos da caixa Novos Processos na LIQ2?',o:['Apenas da DAM','Da LIQ1 ou da DAM','Do escaninho de petições','Das varas de origem'],a:1,e:'Eles podem vir da LIQ1 ou da DAM, esta para acolhimento de cálculos refeitos por sentença ou acórdão superveniente.'},
+    {q:'Para onde vão os processos da LIQ1, que já têm cálculos e GIGS?',o:['Análise','Arquivamento','Cumprimento de Providências, para o calculista','Escaninho de petições'],a:2,e:'Eles seguem para o calculista, com vistas à homologação dos cálculos.'},
+    {q:'Qual é o primeiro destino dos processos vindos da DAM?',o:['Cumprimento de Providências','Análise, para verificar intimações e outras providências','Conferência de alvarás','Apoio'],a:1,e:'Depois da Análise, se for o caso, vão ao calculista no Cumprimento de Providências.'},
+    {q:'O processo da caixa Prazos Vencidos não tem GIGS nem chips. O que fazer?',o:['Devolver ao cartório','Atribuí-los, conforme o caso','Arquivar','Aguardar a reunião de alinhamento'],a:1,e:'GIGS e chips servem para filtragem e encaminhamento.'},
+    {q:'Em quais plataformas são conferidos os alvarás antes de irem ao magistrado?',o:['PJe e SAO','SIF e SISCONDJ','SISBAJUD e RENAJUD','PJC e DAM'],a:1,e:'Os alvarás confeccionados no SIF e no SISCONDJ são conferidos diariamente e encaminhados ao magistrado para assinatura.'},
+    {q:'Para onde vão os processos com acordos vencidos?',o:['Cumprimento de Providências','Análise, para verificar o cumprimento e adotar providências','Arquivamento direto','Escaninho de petições'],a:1,e:'A verificação define as providências necessárias.'},
+    {q:'Como se dividem os 15 calculistas?',o:['5 com final fixo e 10 em rotação','10 com final fixo (0 a 9) e 5 em rotação','Todos em rotação','15 com final fixo'],a:1,e:'Dez têm final fixo, de 0 a 9, e cinco atuam em esquema de rotação.'},
+    {q:'Quem analisa parcelamento (art. 916 do CPC) e homologa acordos, expedindo os alvarás?',o:['Os calculistas','Somente os assessores','O magistrado','O escaninho de documentos'],a:0,e:'Os calculistas também homologam acordos e analisam parcelamento, com a expedição dos alvarás.'},
+    {q:'Quem elabora a minuta de decisão dos embargos declaratórios opostos às decisões da assessoria?',o:['Os calculistas','O apoio','Os assessores','A DAM'],a:2,e:'Os assessores apreciam os embargos e elaboram a minuta de decisão.'}
+  ];
+  var qz=document.getElementById('qz'),qi=0,score=0,answered=false;
+  function render(){
+    if(qi>=Q.length){
+      var pct=Math.round(score/Q.length*100);
+      var msg=pct>=80?'Excelente. Você domina o roteiro.':pct>=60?'Bom caminho. Revise os módulos das perguntas que errou.':'Vale reler os módulos e refazer o quiz.';
+      qz.innerHTML='<div class="qh"><span>Resultado</span></div><div class="score">'+score+'/'+Q.length+'</div><p class="q-t" style="margin-top:12px">'+msg+'</p><div class="qf" style="justify-content:flex-start"><button class="btn pri" type="button" id="qr">Refazer o quiz</button></div>';
+      document.getElementById('qr').onclick=function(){qi=0;score=0;render()};return;
+    }
+    var q=Q[qi];answered=false;
+    qz.innerHTML='<div class="qh"><span>Pergunta '+(qi+1)+' de '+Q.length+'</span><span>Acertos: '+score+'</span></div><div class="bar" style="margin:0 0 16px"><i style="width:'+(qi/Q.length*100)+'%"></i></div><div class="q-t"></div><div class="opts" role="group"></div><div class="fb" hidden aria-live="polite"></div><div class="qf"><button class="btn pri" type="button" id="qn" hidden>'+(qi===Q.length-1?'Ver resultado':'Próxima')+'</button></div>';
+    qz.querySelector('.q-t').textContent=q.q;
+    var box=qz.querySelector('.opts');
+    q.o.forEach(function(t,i){
+      var b=document.createElement('button');b.type='button';b.className='opt';
+      b.innerHTML='<b>'+'ABCD'[i]+'</b><span></span>';b.querySelector('span').textContent=t;
+      b.onclick=function(){
+        if(answered)return;answered=true;
+        var okk=i===q.a;if(okk)score++;
+        [].forEach.call(box.children,function(c,k){c.disabled=true;if(k===q.a)c.classList.add('ok');else if(k===i)c.classList.add('bad')});
+        var fb=qz.querySelector('.fb');fb.hidden=false;fb.innerHTML='<b>'+(okk?'Correto. ':'Não foi dessa vez. ')+'</b>';fb.appendChild(document.createTextNode(q.e));
+        document.getElementById('qn').hidden=false;document.getElementById('qn').focus();
+      };
+      box.appendChild(b);
+    });
+    document.getElementById('qn').onclick=function(){qi++;render()};
+  }
+  render();
+})();
+</script>
+</body></html>
