@@ -1157,7 +1157,11 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
 /* cruzamento magistrado × secretário */
 .cz-b{display:inline-block;font-size:11px;padding:2px 7px;border-radius:10px;margin:1px 2px;white-space:nowrap;border:1px solid transparent}
 .cz-sob{background:#fbe3e0;color:#9b2c1f;border-color:#f0b9b1;font-weight:600}
-.cz-mag{background:#e7eef8;color:#24456e;border-color:#c5d5ea}
+.cz-mag{background:#fff3cd;color:#7a4a00;border:1.5px solid #e0a800;font-weight:700}
+.cz-mag::before{content:'⚠ '}
+.cz-col-cob{background:#fffaeb}
+#cz-table th.cz-col-cob{background:#f7e3a1;color:#5c3a00}
+.cz-filtros button.cob.on{background:#e0a800;border-color:#e0a800;color:#3b2600}
 .cz-sec{background:#eef5e6;color:#3d6022;border-color:#cfe2bd}
 .cz-st{font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;white-space:nowrap}
 .cz-st.sob{background:#9b2c1f;color:#fff}.cz-st.sem{background:#3d6022;color:#fff}.cz-st.nd{background:#ddd;color:#555}
@@ -2133,17 +2137,17 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
   <div id="tab-f-cruz" class="tab-content">
     <div class="mag-legend" style="flex-wrap:wrap">
       <span><span class="cz-b cz-sob">Coincide</span> magistrado e secretário afastados ao mesmo tempo</span>
-      <span><span class="cz-b cz-mag">Só magistrado</span></span>
+      <span><span class="cz-b cz-mag">Só magistrado</span> período a cobrir (secretário em atividade)</span>
       <span><span class="cz-b cz-sec">Só secretário</span></span>
       <span id="cz-filtros" class="cz-filtros">
-        <button data-f="" class="on">Todos</button><button data-f="sob">Com sobreposição</button><button data-f="sem">Sem sobreposição</button>
+        <button data-f="" class="on">Todos</button><button data-f="sob">Com sobreposição</button><button data-f="sem">Sem sobreposição</button><button data-f="cob" class="cob">⚠ Precisa de cobertura</button>
       </span>
       <input id="cz-q" type="search" placeholder="Filtrar por vara, magistrado ou secretário" style="padding:5px 9px;border:1px solid var(--border);border-radius:6px;font-size:12px;min-width:240px">
     </div>
     <div id="cz-kpis" class="cz-kpis"></div>
     <div style="background:white; border:1px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; overflow-x:auto;">
       <table class="ferias-table" id="cz-table">
-        <thead><tr><th>Vara / finais</th><th>Magistrado(a)</th><th>Secretário(a) de audiência</th><th>Períodos que se sobrepõem</th><th>Só o magistrado afastado</th><th>Só o secretário afastado</th></tr></thead>
+        <thead><tr><th>Vara / finais</th><th>Magistrado(a)</th><th>Secretário(a) de audiência</th><th>Períodos que se sobrepõem</th><th class="cz-col-cob">⚠ Só o magistrado afastado — cobertura</th><th>Só o secretário afastado</th></tr></thead>
         <tbody></tbody>
       </table>
     </div>
@@ -4631,6 +4635,9 @@ route();
   const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-zA-Z ]/g,' ').replace(/\s+/g,' ').trim().toLowerCase();
   const st={f:'',q:''}; let rows=[];
+  const mais1=(x,n)=>{const d=new Date(x+'T12:00:00');d.setDate(d.getDate()+n);return d.toISOString().slice(0,10);};
+  // partes do período p que não estão cobertas por nenhum período da lista L
+  function menos(p,L){let seg=[{de:p.de,ate:p.ate,t:p.t}];L.forEach(x=>{const n=[];seg.forEach(g=>{if(x.ate<g.de||x.de>g.ate){n.push(g);return;}if(x.de>g.de)n.push({de:g.de,ate:mais1(x.de,-1),t:g.t});if(x.ate<g.ate)n.push({de:mais1(x.ate,1),ate:g.ate,t:g.t});});seg=n;});return seg;}
   function montar(D){
     const idx={}; D.servidores.forEach(x=>idx[norm(x.nome)]=x);
     const tk=n=>norm(n).split(' ').filter(w=>w.length>2);
@@ -4644,8 +4651,8 @@ route();
         const sob=[],soM=[],soS=[];
         if(sp){
           mp.forEach(m=>sp.forEach(x=>{const a=m.de>x.de?m.de:x.de,b=m.ate<x.ate?m.ate:x.ate; if(a<=b) sob.push({de:a,ate:b,t:m.t});}));
-          mp.forEach(m=>{ if(!sp.some(x=>x.de<=m.ate&&x.ate>=m.de)) soM.push(m); });
-          sp.forEach(x=>{ if(!mp.some(m=>m.de<=x.ate&&m.ate>=x.de)) soS.push(x); });
+          mp.forEach(m=>menos(m,sp).forEach(x=>soM.push(x)));
+          sp.forEach(x=>menos(x,mp).forEach(y=>soS.push(y)));
         }
         rows.push({p,sn,ok:!!s,sob:sob.sort((a,b)=>a.de<b.de?-1:1),soM,soS});
       });
@@ -4654,14 +4661,15 @@ route();
   }
   function render(){
     const q=norm(st.q);
-    const vis=rows.filter(r=>(!st.f||(st.f==='sob'?r.sob.length:(r.ok&&!r.sob.length)))&&(!q||norm(r.p.vara+' '+r.p.mag+' '+r.sn).includes(q)));
+    const vis=rows.filter(r=>(!st.f||(st.f==='sob'?r.sob.length:st.f==='cob'?r.soM.length:(r.ok&&!r.sob.length)))&&(!q||norm(r.p.vara+' '+r.p.mag+' '+r.sn).includes(q)));
     const tot=rows.filter(r=>r.ok), cs=tot.filter(r=>r.sob.length);
-    $('cz-kpis').innerHTML=`<div><b>${tot.length}</b>duplas magistrado × secretário</div><div><b style="color:#9b2c1f">${cs.length}</b>com períodos sobrepostos</div><div><b style="color:#3d6022">${tot.length-cs.length}</b>sem sobreposição</div><div><b>${cs.reduce((n,r)=>n+r.sob.reduce((m,x)=>m+dias(x.de,x.ate),0),0)}</b>dias coincidentes no total</div>`;
+    const cob=new Map(); tot.forEach(r=>r.soM.forEach(x=>cob.set(r.p.mag+r.sn+x.de,dias(x.de,x.ate))));
+    $('cz-kpis').innerHTML=`<div><b>${tot.length}</b>duplas magistrado × secretário</div><div><b style="color:#9b2c1f">${cs.length}</b>com períodos sobrepostos</div><div><b style="color:#3d6022">${tot.length-cs.length}</b>sem sobreposição</div><div><b>${cs.reduce((n,r)=>n+r.sob.reduce((m,x)=>m+dias(x.de,x.ate),0),0)}</b>dias coincidentes no total</div><div style="border-color:#e0a800;background:#fffaeb"><b style="color:#7a4a00">⚠ ${cob.size}</b>períodos de magistrado com o secretário em atividade — avaliar cobertura (${[...cob.values()].reduce((m,x)=>m+x,0)} dias)</div>`;
     const lst=(a,c,extra)=>a.length?a.map(x=>`<span class="cz-b ${c}" title="${esc(x.t)}">${rng(x.de,x.ate)}${extra?` · ${dias(x.de,x.ate)}d`:''}${x.t&&x.t!=='Férias'?' ('+esc(x.t)+')':''}</span>`).join(' '):'<span class="mag-none">—</span>';
     $('cz-table').querySelector('tbody').innerHTML=vis.map(r=>{
       const stt=!r.ok?'<span class="cz-st nd">sem dados do secretário</span>':(r.sob.length?'<span class="cz-st sob">sobrepõe</span>':'<span class="cz-st sem">não sobrepõe</span>');
       return `<tr><td class="vt-name">${esc(r.p.vara)}<br><span class="mag-none" style="font-size:11px">finais ${esc(r.p.finais)}</span></td><td class="juiz-name">${esc(r.p.mag)}</td><td>${esc(r.sn)}<br>${stt}</td>`+
-        (r.ok?`<td>${lst(r.sob,'cz-sob',1)}</td><td>${lst(r.soM,'cz-mag')}</td><td>${lst(r.soS,'cz-sec')}</td>`:`<td colspan="3"><span class="mag-none">Secretário(a) fora do quadro da SC Piracicaba — férias não disponíveis no site. Afastamentos do magistrado: </span>${lst((CZ.mag[r.p.mag]||[]).filter(x=>x[1]>=H).map(x=>({de:x[0],ate:x[1],t:x[2]})),'cz-mag')}</td>`)+'</tr>';
+        (r.ok?`<td>${lst(r.sob,'cz-sob',1)}</td><td class="cz-col-cob">${lst(r.soM,'cz-mag',1)}</td><td>${lst(r.soS,'cz-sec')}</td>`:`<td colspan="3"><span class="mag-none">Secretário(a) fora do quadro da SC Piracicaba — férias não disponíveis no site. Afastamentos do magistrado: </span>${lst((CZ.mag[r.p.mag]||[]).filter(x=>x[1]>=H).map(x=>({de:x[0],ate:x[1],t:x[2]})),'cz-mag')}</td>`)+'</tr>';
     }).join('')||'<tr><td colspan="6" class="mag-none">Nenhuma dupla encontrada.</td></tr>';
   }
   document.querySelectorAll('#cz-filtros button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#cz-filtros button').forEach(x=>x.classList.toggle('on',x===b));st.f=b.dataset.f;render();});
