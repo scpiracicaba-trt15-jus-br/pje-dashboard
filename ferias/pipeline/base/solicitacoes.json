@@ -5583,5 +5583,255 @@
   ],
   "id": "rol-relatorio-2026-11-17-105473",
   "data": "2026-11-17"
+ },
+ {
+  "nome": "ANA LUISA DE FARIA",
+  "matricula": "43320",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-03-04",
+    "2027-03-23"
+   ],
+   [
+    "2027-10-13",
+    "2027-10-22"
+   ]
+  ],
+  "id": "1a1eaaf6b3e089ff",
+  "data": "2026-11-17"
+ },
+ {
+  "nome": "ANA LUISA DE FARIA",
+  "matricula": "43320",
+  "tipo": "Folga compensatória de dias trabalhados em Plantão Judiciário",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2026-12-09",
+    "2026-12-09"
+   ]
+  ],
+  "id": "1a1eab194cd8cacd",
+  "data": "2026-11-17"
+ },
+ {
+  "nome": "CRISTIANE CORNELIO DONEGA",
+  "matricula": "90123",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-07",
+    "2027-01-15"
+   ],
+   [
+    "2027-07-12",
+    "2027-07-16"
+   ],
+   [
+    "2027-12-02",
+    "2027-12-17"
+   ]
+  ],
+  "id": "1a1ea57c62694d82",
+  "data": "2026-11-17"
+ },
+ {
+  "nome": "REGINALDO ZIMBRES",
+  "matricula": "18937",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-04-22",
+    "2027-05-06"
+   ],
+   [
+    "2027-10-13",
+    "2027-10-27"
+   ]
+  ],
+  "id": "1a1e9e3ab14fbb67",
+  "data": "2026-11-17"
+ },
+ {
+  "nome": "MARINA LIRA DA SILVEIRA PINTO",
+  "matricula": "91030",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-07",
+    "2027-01-16"
+   ],
+   [
+    "2027-06-21",
+    "2027-06-30"
+   ],
+   [
+    "2027-12-09",
+    "2027-12-18"
+   ]
+  ],
+  "id": "1a1e597abdc3c790",
+  "data": "2026-11-16"
+ },
+ {
+  "nome": "ALEXANDRE FRANCISCHETTI",
+  "matricula": "30473",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-11",
+    "2027-01-20"
+   ],
+   [
+    "2027-08-23",
+    "2027-09-01"
+   ],
+   [
+    "2027-11-03",
+    "2027-11-12"
+   ]
+  ],
+  "id": "1a1e597844e0246f",
+  "data": "2026-11-16"
+ },
+ {
+  "nome": "DULCE MARIA VASCONCELLOS SEIXAS",
+  "matricula": "248",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-27",
+    "2027-02-05"
+   ],
+   [
+    "2027-05-17",
+    "2027-05-26"
+   ],
+   [
+    "2027-09-08",
+    "2027-09-17"
+   ]
+  ],
+  "id": "1a1e5976079f6dea",
+  "data": "2026-11-16"
+ },
+ {
+  "nome": "NEUSA APARECIDA ASBAHR BAIS",
+  "matricula": "51969",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-07",
+    "2027-02-05"
+   ]
+  ],
+  "id": "1a1e596da7776816",
+  "data": "2026-11-16"
+ },
+ {
+  "nome": "ERIKA CRISTINA MENDES DE CAMPOS GARCIA",
+  "matricula": "26689",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-13",
+    "2027-01-27"
+   ],
+   [
+    "2027-07-12",
+    "2027-07-26"
+   ]
+  ],
+  "id": "1a1e596a5a6373d8",
+  "data": "2026-11-16"
+ },
+ {
+  "nome": "ANA CLAUDIA RODRIGUES ABREU",
+  "matricula": "31496",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-07",
+    "2027-01-15"
+   ],
+   [
+    "2027-06-28",
+    "2027-07-08"
+   ],
+   [
+    "2027-09-08",
+    "2027-09-17"
+   ]
+  ],
+  "id": "1a1e596762518592",
+  "data": "2026-11-16"
+ },
+ {
+  "nome": "NILZA MISAEL FERREIRA",
+  "matricula": "30333",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-07",
+    "2027-02-05"
+   ]
+  ],
+  "id": "1a1e5964f3c82ae9",
+  "data": "2026-11-16"
+ },
+ {
+  "nome": "RINALDO PISTOLINI",
+  "matricula": "41980",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-07",
+    "2027-01-08"
+   ],
+   [
+    "2027-03-29",
+    "2027-04-09"
+   ],
+   [
+    "2027-10-13",
+    "2027-10-28"
+   ]
+  ],
+  "id": "1a1ea81eb1793f9c",
+  "data": "2026-11-06"
+ },
+ {
+  "nome": "SILVANA MARCELINO BRAZ",
+  "matricula": "49646",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-02-01",
+    "2027-02-05"
+   ],
+   [
+    "2027-03-29",
+    "2027-04-06"
+   ],
+   [
+    "2027-10-13",
+    "2027-10-28"
+   ]
+  ],
+  "id": "1a1ea807b5d34931",
+  "data": "2026-11-11"
  }
 ]
