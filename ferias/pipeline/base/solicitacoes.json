@@ -5856,5 +5856,20 @@
   "id": "manual-20261118-ziani",
   "data": "2026-11-18",
   "obs": "Lançamento manual a pedido do diretor"
+ },
+ {
+  "nome": "MARIA LÚCIA ALVES CAVALCANTE",
+  "matricula": null,
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2026-12-04",
+    "2026-12-18"
+   ]
+  ],
+  "id": "manual-20261118-cavalcante",
+  "data": "2026-11-18",
+  "obs": "Lançamento manual a pedido do diretor"
  }
 ]
