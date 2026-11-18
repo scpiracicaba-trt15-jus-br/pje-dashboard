@@ -5871,5 +5871,99 @@
   "id": "manual-20261118-cavalcante",
   "data": "2026-11-18",
   "obs": "Lançamento manual a pedido do diretor"
+ },
+ {
+  "nome": "FABIO AJUDARTE LOPES",
+  "matricula": "42005",
+  "tipo": "Folga compensatória de dias trabalhados em Plantão Judiciário",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2026-12-04",
+    "2026-12-04"
+   ]
+  ],
+  "id": "1a1f0272b77a77ae",
+  "data": "2026-11-18"
+ },
+ {
+  "nome": "REGINALDO ZIMBRES",
+  "matricula": "18937",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-04-22",
+    "2027-05-06"
+   ],
+   [
+    "2027-10-13",
+    "2027-10-27"
+   ]
+  ],
+  "id": "1a1f01afd62aa80a",
+  "data": "2026-11-18"
+ },
+ {
+  "nome": "VANESSA MATEUS YAMAJI",
+  "matricula": "100943",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-11",
+    "2027-01-22"
+   ],
+   [
+    "2027-07-12",
+    "2027-07-23"
+   ],
+   [
+    "2027-11-03",
+    "2027-11-08"
+   ]
+  ],
+  "id": "1a1f05bea6df900b",
+  "data": "2026-11-18"
+ },
+ {
+  "nome": "CRISTIANE CORNELIO DONEGA",
+  "matricula": "90123",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-07",
+    "2027-01-15"
+   ],
+   [
+    "2027-07-12",
+    "2027-07-16"
+   ],
+   [
+    "2027-12-02",
+    "2027-12-17"
+   ]
+  ],
+  "id": "1a1f01ab3f661e99",
+  "data": "2026-11-18"
+ },
+ {
+  "nome": "ANA LUISA DE FARIA",
+  "matricula": "43320",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-03-04",
+    "2027-03-23"
+   ],
+   [
+    "2027-10-13",
+    "2027-10-22"
+   ]
+  ],
+  "id": "1a1f01a8fec3d838",
+  "data": "2026-11-18"
  }
 ]
