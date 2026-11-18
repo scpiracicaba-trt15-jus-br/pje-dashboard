@@ -5833,5 +5833,28 @@
   ],
   "id": "1a1ea807b5d34931",
   "data": "2026-11-11"
+ },
+ {
+  "nome": "CRISTINA ZIANI DE MOURA",
+  "matricula": "31615",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-03-01",
+    "2027-03-16"
+   ],
+   [
+    "2027-07-12",
+    "2027-07-23"
+   ],
+   [
+    "2027-12-13",
+    "2027-12-14"
+   ]
+  ],
+  "id": "manual-20261118-ziani",
+  "data": "2026-11-18",
+  "obs": "Lançamento manual a pedido do diretor"
  }
 ]
