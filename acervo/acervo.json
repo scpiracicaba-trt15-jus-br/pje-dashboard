@@ -1,6 +1,34 @@
 {
-  "descricao": "Acervo total por unidade da SC Piracicaba, coletado no PJe 1º grau (Exibir todos). Gerado por acervo/pipeline/registrar.py.",
-  "unidades": ["CON1", "CON2", "LIQ1", "LIQ2", "EXE1", "EXE2", "EXE3", "EXE4", "DAM", "DIVEX"],
-  "atualizado": null,
-  "historico": []
+ "descricao": "Acervo total por unidade da SC Piracicaba, coletado no PJe 1º grau (Exibir todos). Gerado por acervo/pipeline/registrar.py.",
+ "unidades": [
+  "CON1",
+  "CON2",
+  "LIQ1",
+  "LIQ2",
+  "EXE1",
+  "EXE2",
+  "EXE3",
+  "EXE4",
+  "DAM",
+  "DIVEX"
+ ],
+ "atualizado": "2026-11-19 10:05",
+ "historico": [
+  {
+   "data": "2026-11-19",
+   "hora": "10:05",
+   "valores": {
+    "CON1": 39490,
+    "CON2": 11680,
+    "LIQ1": 21362,
+    "LIQ2": 6646,
+    "EXE1": 6183,
+    "EXE2": 13921,
+    "EXE3": 8284,
+    "EXE4": 18071,
+    "DAM": 565,
+    "DIVEX": 54
+   }
+  }
+ ]
 }

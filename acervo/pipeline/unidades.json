@@ -1,0 +1,15 @@
+{
+ "calibrado_em": "2026-11-19",
+ "tela": "https://pje.trt15.jus.br/pjekz/painel/global/todos/lista-processos",
+ "como_chegar": "Painel Global (ícone de monitor no menu lateral) > botão 'Exibir todos'. A URL acima abre direto essa tela para o perfil ativo.",
+ "onde_ler": "Paginação no rodapé da tabela: '1 - 20 de N' (N = acervo total). Esperar a tabela carregar (~5-10 s).",
+ "troca_de_unidade": "Botão 'Trocar Órgão Julgador ou Perfil' (nome do usuário, canto superior direito) > item '<UNIDADE> - Piracicaba' > subitem 'Diretor de Secretaria'. O campo de filtro do menu não funciona por digitação; usar a lista. Depois de trocar, o PJe volta ao 'Meu painel': navegar de novo para a tela.",
+ "script": "acervo/pipeline/coletar.js",
+ "unidades": {
+  "CON1": "CON1 - Piracicaba", "CON2": "CON2 - Piracicaba",
+  "LIQ1": "LIQ1 - Piracicaba", "LIQ2": "LIQ2 - Piracicaba",
+  "EXE1": "EXE1 - Piracicaba", "EXE2": "EXE2 - Piracicaba", "EXE3": "EXE3 - Piracicaba", "EXE4": "EXE4 - Piracicaba",
+  "DAM": "DAM - Piracicaba", "DIVEX": "DIVEX - Piracicaba"
+ },
+ "perfil": "Diretor de Secretaria"
+}
