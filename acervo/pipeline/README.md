@@ -30,3 +30,20 @@ python3 registrar.py 2026-11-19 08:40 CON1=24050 CON2=1810 LIQ1=12020 LIQ2=13590
 - Enquanto não houver nenhuma coleta, a Visão Geral mostra a apuração de 30/09/2026.
 
 Depois de gravar: `git add acervo/acervo.json && git commit -m "Acervo: coleta de AAAA-MM-DD" && git push`.
+
+## Tarefa Análise
+
+Além do acervo, a coleta lê no **Painel Global → card "Análises"** de cada unidade:
+- a quantidade de processos na tarefa (rodapé "1 - 20 de N");
+- os **20 mais antigos** na tarefa, com a coluna **"Desde"** ordenada do mais antigo para o mais novo
+  (o script confere a ordem e clica no cabeçalho se precisar).
+
+O roteiro está em `coletar.js` (funções `acv`, `ana` e `salvar`). Os resultados ficam no localStorage do PJe
+(chave `acv_analise`) e são gravados com:
+
+```bash
+python3 registrar_analise.py coleta_analise.json
+```
+
+No site, a seção **"Tarefa Análise"** da Visão Geral mostra os cartões por unidade (com o mais antigo e há quantos dias),
+o gráfico por unidade, a evolução diária e a tabela dos 20 mais antigos por unidade (dias acima de 60 em destaque).
