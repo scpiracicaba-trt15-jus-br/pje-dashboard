@@ -1317,19 +1317,32 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
     </div>
   </div>
 
-  <div class="section-header" style="margin-top: 32px;">
+  <div class="section-header" style="margin-top: 40px;">
     <h2>Tarefa Análise</h2>
     <span class="tag" id="an-tag">aguardando coleta</span>
   </div>
+  <div class="notice gold">
+    <span>🔎</span>
+    <span>Processos na tarefa <strong>Análise</strong> (Painel Global → Análises), coletados diariamente junto com o acervo. Os cartões mostram a variação em relação à coleta anterior.</span>
+  </div>
   <div class="info-grid" id="an-cards"></div>
   <div class="passivo-grid">
+    <div class="passivo-card ac-wide">
+      <h4>Análise por fase</h4>
+      <div class="ac-chart"><canvas id="an-ch-fases"></canvas></div>
+    </div>
     <div class="passivo-card">
-      <h4>Processos em Análise por unidade</h4>
+      <h4>Análise por unidade · última coleta</h4>
       <div class="ac-chart"><canvas id="an-ch-unid"></canvas></div>
     </div>
     <div class="passivo-card">
-      <h4>Evolução da Análise</h4>
+      <h4>Evolução por unidade</h4>
+      <div class="ac-unit-pick" id="an-unit-pick2"></div>
       <div class="ac-chart"><canvas id="an-ch-linha"></canvas></div>
+    </div>
+    <div class="passivo-card ac-wide">
+      <h4>Tabela da última coleta</h4>
+      <div style="overflow-x:auto"><table class="ac-table" id="an-tab-var"></table></div>
     </div>
     <div class="passivo-card ac-wide">
       <h4>20 mais antigos na tarefa Análise</h4>
@@ -4820,34 +4833,56 @@ function navGo(id) { showSection(id); toggleSide(false); return false; }
     if (r) r.onclick = e => { const b = e.target.closest('button'); if (!b) return; range = +b.dataset.d; r.querySelectorAll('button').forEach(x=>x.classList.toggle('on', x===b)); graficos(); };
   }
 
-  let AN = null, anSel = 'CON1';
+  let AN = null, anSel = 'CON1', anSel2 = 'CON1';
   const HA = () => H.filter(x => x.analise && Object.keys(x.analise).length);
   const dias = d => Math.floor((Date.now() - new Date(d+'T12:00:00')) / 864e5);
+  const somaA = (x, us) => soma(x.analise || {}, us);
   function analise(){
     const el = document.getElementById('an-cards'); if (!el) return;
     const A = HA(), last = A[A.length-1], prev = A[A.length-2];
-    if (!last) { el.innerHTML = '<div class="info-card"><div class="ic-label">Sem coleta da tarefa Análise ainda.</div></div>'; document.getElementById('an-table').innerHTML=''; return; }
-    document.getElementById('an-tag').textContent = 'Coleta PJe '+fdata(last.data);
-    let tot = 0, totp = 0, okp = !!prev;
-    let html = UNIDS.map(u => { const v = last.analise[u], p = prev ? prev.analise[u] : null; tot += v||0; if (p==null) okp=false; else totp += p;
-      const ant = AN && AN.unidades && AN.unidades[u] && AN.unidades[u][0];
-      return '<div class="info-card an-card" style="border-top:3px solid '+UCOR[u]+'"><div class="ic-num" style="color:'+UCOR[u]+'">'+fmt(v)+'</div><div class="ic-label">'+u+'</div>'+(ant?'<div class="ic-sub">mais antigo: '+fdata(ant.desde)+' ('+fmt(dias(ant.desde))+' dias)</div>':'')+delta(v,p)+'</div>'; }).join('');
-    html += '<div class="info-card an-card" style="border-top:3px solid var(--gold)"><div class="ic-num" style="color:var(--navy)">'+fmt(tot)+'</div><div class="ic-label">Total em Análise</div>'+delta(tot, okp?totp:null)+'</div>';
+    if (!last) { el.innerHTML = '<div class="info-card"><div class="ic-label">Sem coleta da tarefa Análise ainda.</div></div>'; ['an-table','an-tab-var'].forEach(i=>document.getElementById(i).innerHTML=''); return; }
+    document.getElementById('an-tag').textContent = 'Coleta PJe '+fdata(last.data)+(last.hora?' · '+last.hora:'');
+    const maisAnt = us => { let m = null; us.forEach(u => { const a = AN && AN.unidades && AN.unidades[u] && AN.unidades[u][0]; if (a && (!m || a.desde < m.desde)) m = Object.assign({u}, a); }); return m; };
+    let tot = 0, totp = 0, okp = !!prev, html = '';
+    FASES.forEach(f => {
+      const v = somaA(last, f.u), pv = prev ? somaA(prev, f.u) : null; tot += v||0; if (pv==null) okp=false; else totp += pv;
+      const m = maisAnt(f.u);
+      html += '<div class="info-card" style="border-top:3px solid '+f.c+'"><div class="ic-num" style="color:'+f.c+'">'+fmt(v)+'</div><div class="ic-label">Análise '+(f.k==='DAM'||f.k==='DIVEX'?f.k:(f.k==='Conhecimento'?'do ':'da ')+f.k)+'</div>'
+        +(f.u.length>1?'<div class="ic-sub">'+f.u.map(u=>u+' '+fmt(last.analise[u])).join(' · ')+'</div>':'')
+        +(m?'<div class="ic-sub">mais antigo: '+fdata(m.desde)+' · '+fmt(dias(m.desde))+' dias'+(f.u.length>1?' ('+m.u+')':'')+'</div>':'')+delta(v,pv)+'</div>';
+    });
+    const m = maisAnt(UNIDS);
+    html += '<div class="info-card" style="border-top:3px solid var(--gold)"><div class="ic-num" style="color:var(--navy)">'+fmt(tot)+'</div><div class="ic-label">Total em Análise</div>'+(m?'<div class="ic-sub">mais antigo: '+fdata(m.desde)+' ('+m.u+')</div>':'')+delta(tot, okp?totp:null)+'</div>';
     el.innerHTML = html;
+    // tabela de variação
+    const first = A[0];
+    let h = '<tr><th>Unidade</th><th>'+fdata(last.data)+'</th><th>Anterior'+(prev?' ('+fdata(prev.data)+')':'')+'</th><th>Var.</th><th>Desde '+fdata(first.data)+'</th><th>% do acervo</th><th>Mais antigo</th></tr>';
+    const row = (nome, us, cls) => { const v = somaA(last,us), p = prev?somaA(prev,us):null, f0 = somaA(first,us), ac = soma(last.valores||{},us);
+      const sg = d => d==null?'—':(d>0?'+':'')+fmt(d); const mm = maisAnt(us);
+      return '<tr class="'+(cls||'')+'"><td>'+nome+'</td><td>'+fmt(v)+'</td><td>'+fmt(p)+'</td><td>'+sg(v!=null&&p!=null?v-p:null)+'</td><td>'+sg(v!=null&&f0!=null?v-f0:null)+'</td><td>'+(v!=null&&ac?(v/ac*100).toLocaleString('pt-BR',{maximumFractionDigits:1})+'%':'—')+'</td><td class="'+(mm&&dias(mm.desde)>60?'an-old':'')+'">'+(mm?fdata(mm.desde)+' ('+fmt(dias(mm.desde))+' d)':'—')+'</td></tr>'; };
+    FASES.forEach(f => { if (f.u.length>1) { h += row(f.k, f.u, 'fase'); f.u.forEach(u => h += row('&nbsp;&nbsp;'+u, [u])); } else h += row(f.k, f.u, 'fase'); });
+    h += row('Total', UNIDS, 'fase');
+    document.getElementById('an-tab-var').innerHTML = h;
+    // seletores
+    const pk2 = document.getElementById('an-unit-pick2');
+    pk2.innerHTML = UNIDS.map(u => '<button data-u="'+u+'" class="'+(u===anSel2?'on':'')+'">'+u+'</button>').join('');
+    pk2.onclick = e => { const b = e.target.closest('button'); if (!b) return; anSel2 = b.dataset.u; analise(); graficosAnalise(); };
     const pk = document.getElementById('an-unit-pick');
     pk.innerHTML = UNIDS.map(u => '<button data-u="'+u+'" class="'+(u===anSel?'on':'')+'">'+u+'</button>').join('');
     pk.onclick = e => { const b = e.target.closest('button'); if (!b) return; anSel = b.dataset.u; analise(); };
     const lst = (AN && AN.unidades && AN.unidades[anSel]) || [];
-    const t = document.getElementById('an-table');
-    t.innerHTML = lst.length ? '<tr><th>#</th><th style="text-align:left">Processo</th><th>Na tarefa desde</th><th>Dias na tarefa</th></tr>' + lst.map((a,i) => '<tr><td>'+(i+1)+'</td><td class="proc">'+a.processo+'</td><td>'+fdata(a.desde)+'</td><td class="'+(dias(a.desde)>60?'an-old':'')+'">'+fmt(dias(a.desde))+'</td></tr>').join('')
+    document.getElementById('an-table').innerHTML = lst.length ? '<tr><th>#</th><th style="text-align:left">Processo</th><th>Na tarefa desde</th><th>Dias na tarefa</th></tr>' + lst.map((a,i) => '<tr><td>'+(i+1)+'</td><td class="proc">'+a.processo+'</td><td>'+fdata(a.desde)+'</td><td class="'+(dias(a.desde)>60?'an-old':'')+'">'+fmt(dias(a.desde))+'</td></tr>').join('')
       : '<tr><td style="color:var(--text-muted)">Sem lista para '+anSel+'.</td></tr>';
   }
   function graficosAnalise(){
+    if (!window.Chart) return;
     const A = HA(); if (!A.length) return;
     const last = A[A.length-1];
-    mk('an-ch-unid', {type:'bar', data:{labels:UNIDS, datasets:[{label:fdata(last.data), data:UNIDS.map(u=>last.analise[u]??null), backgroundColor:UNIDS.map(u=>UCOR[u])}]}, options:baseOpts({plugins:{legend:{display:false}}})});
     let W = A; if (range) { const lim = new Date(last.data); lim.setDate(lim.getDate()-range); const iso = lim.toISOString().slice(0,10); W = A.filter(x => x.data >= iso); }
-    mk('an-ch-linha', {type:'line', data:{labels:W.map(x=>fdata(x.data).slice(0,5)), datasets:UNIDS.map(u => ({label:u, data:W.map(x=>x.analise[u]??null), borderColor:UCOR[u], backgroundColor:UCOR[u], tension:.25, pointRadius:W.length>40?0:3, spanGaps:true}))}, options:baseOpts()});
+    const labels = W.map(x=>fdata(x.data).slice(0,5)), pr = W.length>40?0:3;
+    mk('an-ch-fases', {type:'line', data:{labels, datasets:FASES.map(f => ({label:f.k, data:W.map(x=>somaA(x,f.u)), borderColor:f.c, backgroundColor:f.c, tension:.25, pointRadius:pr, spanGaps:true}))}, options:baseOpts()});
+    mk('an-ch-unid', {type:'bar', data:{labels:UNIDS, datasets:[{label:fdata(last.data), data:UNIDS.map(u=>last.analise[u]??null), backgroundColor:UNIDS.map(u=>UCOR[u])}]}, options:baseOpts({plugins:{legend:{display:false}}})});
+    mk('an-ch-linha', {type:'line', data:{labels, datasets:[{label:anSel2, data:W.map(x=>(x.analise||{})[anSel2]??null), borderColor:UCOR[anSel2], backgroundColor:UCOR[anSel2]+'22', fill:true, tension:.25, pointRadius:pr, spanGaps:true}]}, options:baseOpts({plugins:{legend:{display:false}}})});
   }
   window.acervoRender = function(){
     const go = () => { cards(); table(); picks(); analise(); const sec = document.getElementById('section-home'); if (sec && sec.classList.contains('active')) loadChart().then(graficos).catch(()=>{}); };
