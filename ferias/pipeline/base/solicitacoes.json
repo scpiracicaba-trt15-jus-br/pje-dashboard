@@ -5965,5 +5965,85 @@
   ],
   "id": "1a1f01a8fec3d838",
   "data": "2026-11-18"
+ },
+ {
+  "nome": "MARIA CRISTINA FERREIRA RODRIGUES DE LARA",
+  "matricula": "4316",
+  "tipo": "Folga compensatória de dias trabalhados em Eleição",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2026-11-23",
+    "2026-11-23"
+   ]
+  ],
+  "id": "1a1f3ce42488bc7b",
+  "data": "2026-11-19"
+ },
+ {
+  "nome": "TATIANA MAFFEIS DA CUNHA",
+  "matricula": "109070",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-07",
+    "2027-01-15"
+   ],
+   [
+    "2027-02-11",
+    "2027-02-19"
+   ],
+   [
+    "2027-08-23",
+    "2027-09-03"
+   ]
+  ],
+  "id": "1a1f3e1ef1a66fc5",
+  "data": "2026-11-19"
+ },
+ {
+  "nome": "NILTON RAFAEL DE BARROS SILVA",
+  "matricula": "85723",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-03-01",
+    "2027-03-05"
+   ],
+   [
+    "2027-06-29",
+    "2027-07-08"
+   ],
+   [
+    "2027-12-03",
+    "2027-12-17"
+   ]
+  ],
+  "id": "1a1f54c5f1cde8c5",
+  "data": "2026-11-19"
+ },
+ {
+  "nome": "EVERTON CARPINETE DE OLIVEIRA",
+  "matricula": "109320",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-25",
+    "2027-01-29"
+   ],
+   [
+    "2027-06-18",
+    "2027-07-02"
+   ],
+   [
+    "2027-09-08",
+    "2027-09-17"
+   ]
+  ],
+  "id": "1a1f582bcdfdc9be",
+  "data": "2026-11-19"
  }
 ]
