@@ -1180,6 +1180,27 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
 .cz-ext{margin:6px 0 0;padding-left:16px;color:#9b2c1f;font-size:12px}
 .cz-ext li{margin:2px 0}
 .cz-ext b{display:inline;font-size:12px;color:#9b2c1f}
+
+/* ===== Visão Geral: acervo dinâmico ===== */
+.ac-wide { grid-column: 1 / -1; }
+.ac-chart { position: relative; height: 300px; }
+.ac-range { display: flex; gap: 6px; }
+.ac-range button, .ac-unit-pick button { border: 1px solid var(--border); background: #fff; color: var(--text-muted); border-radius: 999px; padding: 5px 12px; font-size: 12.5px; cursor: pointer; font-family: inherit; }
+.ac-range button.on, .ac-unit-pick button.on { background: var(--navy); color: #fff; border-color: var(--navy); }
+.ac-unit-pick { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.ac-delta { font-size: 12.5px; font-weight: 600; margin-top: 4px; }
+.ac-delta.up { color: #b4462e; } .ac-delta.down { color: #2e7d4f; } .ac-delta.eq { color: var(--text-muted); }
+.ac-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.ac-table th, .ac-table td { padding: 8px 10px; border-bottom: 0.5px solid var(--border); text-align: right; white-space: nowrap; }
+.ac-table th:first-child, .ac-table td:first-child { text-align: left; }
+.ac-table th { color: var(--text-muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: .03em; }
+.ac-table tr.fase td { font-weight: 700; background: rgba(10,22,40,0.03); }
+@media (max-width: 760px) { .ac-chart { height: 240px; } }
+/* canais de atendimento no organograma */
+.org-canais { margin-top: 28px; }
+.org-canais .oc-list { display: flex; flex-wrap: wrap; gap: 10px; }
+.org-canais a { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border: 1px solid var(--border); border-radius: 10px; background: #fff; color: var(--navy); font-weight: 500; text-decoration: none; font-size: 14px; }
+.org-canais a:hover { border-color: var(--gold); }
 </style>
 </head>
 <body>
@@ -1226,7 +1247,7 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
     </div>
     <div class="hero-stats">
       <div class="hero-stat">
-        <div class="num">122.914</div>
+        <div class="num" id="hero-acervo">122.914</div>
         <div class="label">Acervo total</div>
       </div>
       <div class="hero-stat hero-staff">
@@ -1256,100 +1277,40 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
 <div id="section-home" class="section">
   <div class="section-header">
     <h2>Visão Geral</h2>
-    <span class="tag">Apuração 30/09/2026</span>
+    <span class="tag" id="ac-tag">Acervo PJe · carregando…</span>
   </div>
 
   <div class="notice gold">
     <span>⚡</span>
-    <span><strong>Acesso rápido:</strong> Use o menu superior para navegar entre organograma, OJs, magistrados, acervo, escalas de férias, vídeos instrucionais e rotinas.</span>
+    <span id="ac-notice"><strong>Acervo total por unidade</strong>, coletado diariamente no PJe 1º grau ("Exibir todos"). Os cartões mostram a variação em relação à coleta anterior.</span>
   </div>
 
-  <div class="info-grid">
-    <div class="info-card" style="border-top:3px solid var(--accent-con)">
-      <div class="ic-num" style="color:var(--accent-con)">50.223</div>
-      <div class="ic-label">Acervo do Conhecimento</div>
-    </div>
-    <div class="info-card" style="border-top:3px solid var(--accent-liq)">
-      <div class="ic-num" style="color:var(--accent-liq)">25.684</div>
-      <div class="ic-label">Acervo de Liquidação</div>
-    </div>
-    <div class="info-card" style="border-top:3px solid var(--accent-exe)">
-      <div class="ic-num" style="color:var(--accent-exe)">46.371</div>
-      <div class="ic-label">Acervo Execução</div>
-    </div>
-    <div class="info-card" style="border-top:3px solid var(--accent-dam)">
-      <div class="ic-num" style="color:var(--accent-dam)">585</div>
-      <div class="ic-label">Acervo DAM</div>
-    </div>
-    <div class="info-card" style="border-top:3px solid #555">
-      <div class="ic-num" style="color:#555">51</div>
-      <div class="ic-label">Acervo DIVEX</div>
-    </div>
-    <div class="info-card" style="border-top: 3px solid var(--gold);">
-      <div class="ic-num" style="color:var(--navy)">122.914</div>
-      <div class="ic-label">Acervo Total</div>
-    </div>
-  </div>
+  <div class="info-grid" id="ac-cards"></div>
 
   <div class="section-header" style="margin-top: 32px;">
-    <h2>Fases Processuais</h2>
-    <span class="tag">Acervo Total: 122.914</span>
+    <h2>Evolução do Acervo</h2>
+    <div class="ac-range" id="ac-range">
+      <button data-d="30" class="on">30 dias</button><button data-d="90">90 dias</button><button data-d="0">Tudo</button>
+    </div>
   </div>
 
   <div class="passivo-grid">
-    <div class="passivo-card">
-      <h4>Distribuição por fase</h4>
-      <div class="bar-row">
-        <span class="bar-label">Conhecimento</span>
-        <div class="bar-track"><div class="bar-fill" style="width:41%; background:var(--accent-con)"></div></div>
-        <span class="bar-num">50.223</span>
-      </div>
-      <div class="bar-row">
-        <span class="bar-label">Execução</span>
-        <div class="bar-track"><div class="bar-fill" style="width:38%; background:var(--accent-exe)"></div></div>
-        <span class="bar-num">46.371</span>
-      </div>
-      <div class="bar-row">
-        <span class="bar-label">Liquidação</span>
-        <div class="bar-track"><div class="bar-fill" style="width:21%; background:var(--accent-liq)"></div></div>
-        <span class="bar-num">25.684</span>
-      </div>
-      <div class="bar-row">
-        <span class="bar-label">DAM</span>
-        <div class="bar-track"><div class="bar-fill" style="width:0.5%; background:var(--accent-dam)"></div></div>
-        <span class="bar-num">585</span>
-      </div>
-      <div class="bar-row">
-        <span class="bar-label">DIVEX</span>
-        <div class="bar-track"><div class="bar-fill" style="width:0.1%; background:#555"></div></div>
-        <span class="bar-num">51</span>
-      </div>
+    <div class="passivo-card ac-wide">
+      <h4>Acervo por fase</h4>
+      <div class="ac-chart"><canvas id="ac-ch-fases"></canvas></div>
     </div>
-
     <div class="passivo-card">
-      <h4>Canais de Contato</h4>
-      <div class="atrib-list">
-        <div class="bar-row" style="font-size:13.5px; border-bottom:0.5px solid var(--border); padding-bottom:7px">
-          <a href="https://trt15.jus.br/servicos/balcao-virtual" target="_blank" style="color:var(--navy); font-weight:500; text-decoration:none; display:flex; align-items:center; gap:6px">🖥️ <span>Balcão Virtual</span></a>
-        </div>
-        <div class="bar-row" style="font-size:13.5px; border-bottom:0.5px solid var(--border); padding-bottom:7px">
-          <a href="https://trt15.jus.br/servicos/balcao-visual-libras" target="_blank" style="color:var(--navy); font-weight:500; text-decoration:none; display:flex; align-items:center; gap:6px">🤟 <span>Balcão Visual Libras</span></a>
-        </div>
-        <div class="bar-row" style="font-size:13.5px; padding-bottom:7px">
-          <a href="mailto:daapiracicaba.scpiracicaba@trt15.jus.br" style="color:var(--navy); font-weight:500; text-decoration:none; display:flex; align-items:center; gap:6px">📧 <span>E-mail da Secretaria Conjunta Piracicaba</span></a>
-        </div>
-      </div>
+      <h4>Acervo por unidade · última coleta</h4>
+      <div class="ac-chart"><canvas id="ac-ch-unid"></canvas></div>
     </div>
-    <div class="passivo-card" style="margin-top:16px">
-      <h4>Ordens de Serviço</h4>
-      <div class="atrib-list">
-        <div class="bar-row" style="font-size:13.5px; border-bottom:0.5px solid var(--border); padding-bottom:7px">
-          <a href="https://drive.google.com/file/d/15AiCFm2Mr__T53UL76gcpFsXiFHZjI52/view?usp=drive_link" target="_blank" style="color:var(--navy); font-weight:500; text-decoration:none; display:flex; align-items:center; gap:6px">📋 <span>Ordem de Serviço nº 01</span></a>
-        </div>
-        <div class="bar-row" style="font-size:13.5px; padding-bottom:7px">
-          <a href="https://drive.google.com/file/d/1590Ln2M0zjymp4HLW6Yiy5eQ-4WW60zb/view?usp=drive_link" target="_blank" style="color:var(--navy); font-weight:500; text-decoration:none; display:flex; align-items:center; gap:6px">📋 <span>Ordem de Serviço nº 02</span></a>
-        </div>
-      </div>
+    <div class="passivo-card">
+      <h4>Evolução por unidade</h4>
+      <div class="ac-unit-pick" id="ac-unit-pick"></div>
+      <div class="ac-chart"><canvas id="ac-ch-linha"></canvas></div>
+    </div>
+    <div class="passivo-card ac-wide">
+      <h4>Tabela da última coleta</h4>
+      <div style="overflow-x:auto"><table class="ac-table" id="ac-table"></table></div>
     </div>
   </div>
 
@@ -1626,6 +1587,14 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
         <span class="ot-sig">OJs</span><span class="ot-name">Oficiais de Justiça por cidade</span><span class="ot-go">→</span>
       </a>
       </div>
+    </div>
+  </div>
+  <div class="org-canais">
+    <div class="section-header"><h2>Canais de Atendimento</h2><span class="tag">Fale com a Secretaria Conjunta</span></div>
+    <div class="oc-list">
+      <a href="https://trt15.jus.br/servicos/balcao-virtual" target="_blank" rel="noopener">🖥️ <span>Balcão Virtual</span></a>
+      <a href="https://trt15.jus.br/servicos/balcao-visual-libras" target="_blank" rel="noopener">🤟 <span>Balcão Visual Libras</span></a>
+      <a href="mailto:daapiracicaba.scpiracicaba@trt15.jus.br">📧 <span>E-mail da Secretaria Conjunta Piracicaba</span></a>
     </div>
   </div>
 </div>
@@ -4328,6 +4297,7 @@ function showSection(id) {
   document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
   const nav = document.getElementById('nav-'+id);
   if (nav) nav.classList.add('active');
+  if (id === 'home' && window.acervoRender) acervoRender();
   if (id !== 'unidade' && location.hash.startsWith('#unidade/')) history.replaceState(null, '', location.pathname);
   window.scrollTo({ top: 0, behavior: 'smooth' });
   return false;
@@ -4732,6 +4702,105 @@ function navGo(id) { showSection(id); toggleSide(false); return false; }
   const set = () => document.documentElement.style.setProperty('--nav-h', nav.offsetHeight + 'px');
   set(); window.addEventListener('resize', set);
   if (window.ResizeObserver) new ResizeObserver(set).observe(nav);
+})();
+</script>
+<script>
+/* ===== Visão Geral — acervo dinâmico (lê acervo/acervo.json, gravado pela coleta diária no PJe) ===== */
+(function(){
+  const UNIDS = ['CON1','CON2','LIQ1','LIQ2','EXE1','EXE2','EXE3','EXE4','DAM','DIVEX'];
+  const FASES = [
+    {k:'Conhecimento', u:['CON1','CON2'], c:'#1a5f8c', v:'--accent-con'},
+    {k:'Liquidação',   u:['LIQ1','LIQ2'], c:'#2e7d4f', v:'--accent-liq'},
+    {k:'Execução',     u:['EXE1','EXE2','EXE3','EXE4'], c:'#b4462e', v:'--accent-exe'},
+    {k:'DAM',          u:['DAM'], c:'#7a4fa0', v:'--accent-dam'},
+    {k:'DIVEX',        u:['DIVEX'], c:'#555555', v:null}
+  ];
+  const UCOR = {CON1:'#1a5f8c',CON2:'#5a93bd',LIQ1:'#2e7d5e',LIQ2:'#6fae93',EXE1:'#5a2550',EXE2:'#7c3a6b',EXE3:'#a4628f',EXE4:'#c995b7',DAM:'#8b4513',DIVEX:'#555555'};
+  // Apuração anterior (e-Gestão, 30/09/2026) — exibida só enquanto não houver coleta diária.
+  const BASE = {data:'2026-09-30', fases:{'Conhecimento':50223,'Liquidação':25684,'Execução':46371,'DAM':585,'DIVEX':51}};
+  const css = v => v ? (getComputedStyle(document.documentElement).getPropertyValue(v).trim() || null) : null;
+  FASES.forEach(f => { const c = css(f.v); if (c) f.c = c; });
+  const fmt = n => (n==null||isNaN(n)) ? '—' : Number(n).toLocaleString('pt-BR');
+  const fdata = d => { const [a,m,dd] = d.split('-'); return dd+'/'+m+'/'+a; };
+  const soma = (vals, us) => { let t=0, ok=false; us.forEach(u => { if (vals[u]!=null) { t+=vals[u]; ok=true; } }); return ok ? t : null; };
+  let H = [], range = 30, unitSel = 'CON1', charts = {}, loaded = false, chartLib = null;
+
+  function loadChart(){
+    if (window.Chart) return Promise.resolve();
+    if (chartLib) return chartLib;
+    chartLib = new Promise((res, rej) => { const sc = document.createElement('script'); sc.src = 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js'; sc.onload = res; sc.onerror = rej; document.head.appendChild(sc); });
+    return chartLib;
+  }
+  function delta(cur, prev){
+    if (cur==null || prev==null) return '';
+    const d = cur - prev; const cls = d>0?'up':d<0?'down':'eq';
+    const pct = prev ? ' ('+(d>0?'+':'')+(d/prev*100).toLocaleString('pt-BR',{maximumFractionDigits:1})+'%)' : '';
+    return '<div class="ac-delta '+cls+'">'+(d>0?'▲ +':d<0?'▼ ':'= ')+fmt(d)+pct+' desde a coleta anterior</div>';
+  }
+  function cards(){
+    const el = document.getElementById('ac-cards'); if (!el) return;
+    const last = H[H.length-1], prev = H[H.length-2];
+    let html = '', tot = 0, totp = 0, okp = !!prev;
+    FASES.forEach(f => {
+      const v = last ? soma(last.valores, f.u) : BASE.fases[f.k];
+      const pv = prev ? soma(prev.valores, f.u) : null;
+      tot += v||0; if (pv==null) okp=false; else totp += pv;
+      html += '<div class="info-card" style="border-top:3px solid '+f.c+'"><div class="ic-num" style="color:'+f.c+'">'+fmt(v)+'</div><div class="ic-label">Acervo '+(f.k==='DAM'||f.k==='DIVEX'?f.k:(f.k==='Conhecimento'?'do ':'da ')+f.k)+'</div>'+(last&&f.u.length>1?'<div class="ic-sub">'+f.u.join(' + ')+'</div>':'')+delta(v,pv)+'</div>';
+    });
+    html += '<div class="info-card" style="border-top:3px solid var(--gold)"><div class="ic-num" style="color:var(--navy)">'+fmt(tot)+'</div><div class="ic-label">Acervo Total</div>'+delta(tot, okp?totp:null)+'</div>';
+    el.innerHTML = html;
+    const hero = document.getElementById('hero-acervo'); if (hero) hero.textContent = fmt(tot);
+    const tag = document.getElementById('ac-tag');
+    if (last) tag.textContent = 'Coleta PJe '+fdata(last.data)+(last.hora?' · '+last.hora:'');
+    else { tag.textContent = 'Apuração '+fdata(BASE.data); document.getElementById('ac-notice').innerHTML = '<strong>Aguardando a primeira coleta diária no PJe.</strong> Até lá, os números abaixo são da apuração de '+fdata(BASE.data)+'.'; }
+  }
+  function table(){
+    const el = document.getElementById('ac-table'); if (!el) return;
+    const last = H[H.length-1], prev = H[H.length-2];
+    if (!last) { el.innerHTML = '<tr><td style="color:var(--text-muted)">Sem coletas ainda.</td></tr>'; return; }
+    const first = H[0];
+    let h = '<tr><th>Unidade</th><th>'+fdata(last.data)+'</th><th>Anterior'+(prev?' ('+fdata(prev.data)+')':'')+'</th><th>Var.</th><th>Desde '+fdata(first.data)+'</th></tr>';
+    const row = (nome, us, cls) => { const v = soma(last.valores,us), p = prev?soma(prev.valores,us):null, f0 = soma(first.valores,us);
+      const dv = (v!=null&&p!=null)?v-p:null, d0 = (v!=null&&f0!=null)?v-f0:null;
+      const sg = d => d==null?'—':(d>0?'+':'')+fmt(d);
+      return '<tr class="'+(cls||'')+'"><td>'+nome+'</td><td>'+fmt(v)+'</td><td>'+fmt(p)+'</td><td>'+sg(dv)+'</td><td>'+sg(d0)+'</td></tr>'; };
+    FASES.forEach(f => { if (f.u.length>1) { h += row(f.k, f.u, 'fase'); f.u.forEach(u => h += row('&nbsp;&nbsp;'+u, [u])); } else h += row(f.k, f.u, 'fase'); });
+    h += row('Total', UNIDS, 'fase');
+    el.innerHTML = h;
+  }
+  function janela(){ if (!range || !H.length) return H; const lim = new Date(H[H.length-1].data); lim.setDate(lim.getDate()-range); const iso = lim.toISOString().slice(0,10); return H.filter(x => x.data >= iso); }
+  function mk(id, cfg){ if (charts[id]) charts[id].destroy(); const c = document.getElementById(id); if (c) charts[id] = new Chart(c, cfg); }
+  const baseOpts = (extra) => Object.assign({responsive:true, maintainAspectRatio:false, interaction:{mode:'index',intersect:false},
+    plugins:{legend:{position:'bottom',labels:{boxWidth:12,font:{size:12}}}, tooltip:{callbacks:{label:c => c.dataset.label+': '+fmt(c.parsed.y ?? c.parsed.x)}}},
+    scales:{y:{ticks:{callback:v=>fmt(v)}}}}, extra||{});
+  function graficos(){
+    if (!window.Chart) return;
+    const W = janela();
+    if (!W.length) { ['ac-ch-fases','ac-ch-linha'].forEach(id => { if (charts[id]) charts[id].destroy(); });
+      mk('ac-ch-unid', {type:'bar', data:{labels:FASES.map(f=>f.k), datasets:[{label:'Apuração '+fdata(BASE.data), data:FASES.map(f=>BASE.fases[f.k]), backgroundColor:FASES.map(f=>f.c)}]}, options:baseOpts({plugins:{legend:{display:false}}})});
+      return; }
+    const labels = W.map(x => fdata(x.data).slice(0,5));
+    mk('ac-ch-fases', {type:'line', data:{labels, datasets:FASES.map(f => ({label:f.k, data:W.map(x=>soma(x.valores,f.u)), borderColor:f.c, backgroundColor:f.c, tension:.25, pointRadius:W.length>40?0:3, spanGaps:true}))},
+      options:baseOpts({scales:{y:{type:'logarithmic', ticks:{callback:v=>{const l=Math.log10(v); return Math.abs(l-Math.round(l))<1e-9||[2,5].includes(v/Math.pow(10,Math.floor(Math.log10(v))))?fmt(v):'';}}}}})});
+    const last = H[H.length-1];
+    mk('ac-ch-unid', {type:'bar', data:{labels:UNIDS, datasets:[{label:fdata(last.data), data:UNIDS.map(u=>last.valores[u]??null), backgroundColor:UNIDS.map(u=>UCOR[u])}]}, options:baseOpts({plugins:{legend:{display:false}}})});
+    mk('ac-ch-linha', {type:'line', data:{labels, datasets:[{label:unitSel, data:W.map(x=>x.valores[unitSel]??null), borderColor:UCOR[unitSel], backgroundColor:UCOR[unitSel]+'22', fill:true, tension:.25, pointRadius:W.length>40?0:3, spanGaps:true}]},
+      options:baseOpts({plugins:{legend:{display:false}}, scales:{y:{beginAtZero:false, ticks:{callback:v=>fmt(v)}}}})});
+  }
+  function picks(){
+    const el = document.getElementById('ac-unit-pick'); if (!el) return;
+    el.innerHTML = UNIDS.map(u => '<button data-u="'+u+'" class="'+(u===unitSel?'on':'')+'">'+u+'</button>').join('');
+    el.onclick = e => { const b = e.target.closest('button'); if (!b) return; unitSel = b.dataset.u; picks(); graficos(); };
+    const r = document.getElementById('ac-range');
+    if (r) r.onclick = e => { const b = e.target.closest('button'); if (!b) return; range = +b.dataset.d; r.querySelectorAll('button').forEach(x=>x.classList.toggle('on', x===b)); graficos(); };
+  }
+  window.acervoRender = function(){
+    const go = () => { cards(); table(); picks(); const sec = document.getElementById('section-home'); if (sec && sec.classList.contains('active')) loadChart().then(graficos).catch(()=>{}); };
+    if (loaded) return go();
+    fetch('acervo/acervo.json', {cache:'no-store'}).then(r => r.ok ? r.json() : {historico:[]}).catch(() => ({historico:[]})).then(j => {
+      H = (j.historico||[]).slice().sort((a,b) => a.data.localeCompare(b.data)); loaded = true; go(); });
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => acervoRender()); else acervoRender();
 })();
 </script>
 </body>

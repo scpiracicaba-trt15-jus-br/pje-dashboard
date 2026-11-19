@@ -1,0 +1,6 @@
+{
+  "descricao": "Acervo total por unidade da SC Piracicaba, coletado no PJe 1º grau (Exibir todos). Gerado por acervo/pipeline/registrar.py.",
+  "unidades": ["CON1", "CON2", "LIQ1", "LIQ2", "EXE1", "EXE2", "EXE3", "EXE4", "DAM", "DIVEX"],
+  "atualizado": null,
+  "historico": []
+}
