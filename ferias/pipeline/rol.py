@@ -44,8 +44,16 @@ def parse_texto(texto):
         # formato "Ciência req. AA - Férias": "servidor(a) NOME, CARGO, código 123, lotado(a) no(a) ..., requereu e
         # teve deferido ou registrado o pedido de Férias para o(s) seguinte(s) período(s): ... referentes ao ano civil"
         r = re.search(r'servidor\(a\)\s+(.+?),[^,]*?,\s*código\s+(\d+),.*?pedido de\s+(.+?)\s+para\s+o\(s\)\s+seguinte\(s\)\s+período\(s\):', s, re.S)
-        if not r:
-            return None
+    if not r:
+        # "Ciência req. AA - Alteração de Férias": "... código 123, lotado(a) no(a) ... pedido de Alteração de
+        # Férias referentes ao ano civil 2027, ... Fruição Original: ... Novo(s) Período(s) de Fruição: ..."
+        r = re.search(r'servidor\(a\)\s+(.+?),[^,]*?,\s*código\s+(\d+),.*?pedido de\s+(.+?)\s+referentes ao ano civil', s, re.S)
+    if not r:
+        # "Ciência req. AA - Folga compensatória ...": "usuário(a) NOME, CARGO, 123, lotado(a) no(a) ... requereu e
+        # teve deferido ou registrado o(a) Folga compensatória ... de 04/12/2026 a 04/12/2026, conforme ..."
+        r = re.search(r'usuário\(a\)\s+(.+?),[^,]*?,\s*(\d+),\s*lotado.*?registrado\s+o\(a\)\s+(.+?)\s+de (?=\d{2}/)', s, re.S)
+    if not r:
+        return None
     nome, mat, tipo = ' '.join(r.group(1).split()), r.group(2), ' '.join(r.group(3).split())
     cat = classificar(tipo)
     if cat is None:

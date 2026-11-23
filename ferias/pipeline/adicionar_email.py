@@ -33,7 +33,7 @@ def main(args):
         texto = open(arq, encoding='utf-8').read()
         e = parse_texto(texto)
         if e is None:
-            if 'servidor(a)' in texto and 'requereu' in texto and 'verbação' not in texto:
+            if ('servidor(a)' in texto or 'usuário(a)' in texto) and 'requereu' in texto and 'verbação' not in texto:
                 falhas.append(mid); continue
             ids.add(mid); ignorados += 1; continue
         if e['categoria'] == 'alteracao' and not e.get('novo'):

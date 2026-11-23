@@ -6081,5 +6081,201 @@
   ],
   "id": "1a204825ef47199b",
   "data": "2026-11-22"
+ },
+ {
+  "nome": "FILIPE SHINZATO COLEVATI",
+  "matricula": "84182",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-03-29",
+    "2027-04-02"
+   ],
+   [
+    "2027-08-12",
+    "2027-08-20"
+   ],
+   [
+    "2027-10-13",
+    "2027-10-28"
+   ]
+  ],
+  "id": "1a2093e4dbf9fb3b",
+  "data": "2026-11-23"
+ },
+ {
+  "nome": "FILIPE SHINZATO COLEVATI",
+  "matricula": "84182",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-03-29",
+    "2027-04-02"
+   ],
+   [
+    "2027-08-12",
+    "2027-08-20"
+   ],
+   [
+    "2027-10-13",
+    "2027-10-28"
+   ]
+  ],
+  "id": "1a20959914cd33db",
+  "data": "2026-11-23"
+ },
+ {
+  "nome": "EVERTON CARPINETE DE OLIVEIRA",
+  "matricula": "109320",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-25",
+    "2027-01-29"
+   ],
+   [
+    "2027-06-18",
+    "2027-07-02"
+   ],
+   [
+    "2027-09-08",
+    "2027-09-17"
+   ]
+  ],
+  "id": "1a20959dccbb1d10",
+  "data": "2026-11-23"
+ },
+ {
+  "nome": "NILTON RAFAEL DE BARROS SILVA",
+  "matricula": "85723",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-03-01",
+    "2027-03-05"
+   ],
+   [
+    "2027-06-29",
+    "2027-07-08"
+   ],
+   [
+    "2027-12-03",
+    "2027-12-17"
+   ]
+  ],
+  "id": "1a2095a04bef7a24",
+  "data": "2026-11-23"
+ },
+ {
+  "nome": "TATIANA MAFFEIS DA CUNHA",
+  "matricula": "109070",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-07",
+    "2027-01-15"
+   ],
+   [
+    "2027-02-11",
+    "2027-02-19"
+   ],
+   [
+    "2027-08-23",
+    "2027-09-03"
+   ]
+  ],
+  "id": "1a2095a48f425244",
+  "data": "2026-11-23"
+ },
+ {
+  "nome": "MARIA CRISTINA FERREIRA RODRIGUES DE LARA",
+  "matricula": "4316",
+  "tipo": "Folga compensatória de dias trabalhados em Eleição",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2026-11-23",
+    "2026-11-23"
+   ]
+  ],
+  "id": "1a2095a637fa2bd2",
+  "data": "2026-11-23"
+ },
+ {
+  "nome": "VANESSA MATEUS YAMAJI",
+  "matricula": "100943",
+  "tipo": "Férias",
+  "categoria": "ferias",
+  "periodos": [
+   [
+    "2027-01-11",
+    "2027-01-22"
+   ],
+   [
+    "2027-07-12",
+    "2027-07-23"
+   ],
+   [
+    "2027-11-03",
+    "2027-11-08"
+   ]
+  ],
+  "id": "1a2095a89c9d3ddb",
+  "data": "2026-11-23"
+ },
+ {
+  "nome": "FABIO AJUDARTE LOPES",
+  "matricula": "42005",
+  "tipo": "Folga compensatória de dias trabalhados em Plantão Judiciário",
+  "categoria": "folga",
+  "periodos": [
+   [
+    "2026-12-04",
+    "2026-12-04"
+   ]
+  ],
+  "id": "1a2095aa0d3ee265",
+  "data": "2026-11-23"
+ },
+ {
+  "nome": "ANTENOR DONIDA BARTOLI",
+  "matricula": "31321",
+  "tipo": "Alteração de Férias",
+  "categoria": "alteracao",
+  "orig": [
+   [
+    "2027-02-11",
+    "2027-02-19"
+   ],
+   [
+    "2027-07-21",
+    "2027-07-30"
+   ],
+   [
+    "2027-12-07",
+    "2027-12-17"
+   ]
+  ],
+  "novo": [
+   [
+    "2027-01-18",
+    "2027-01-26"
+   ],
+   [
+    "2027-07-21",
+    "2027-07-30"
+   ],
+   [
+    "2027-12-07",
+    "2027-12-17"
+   ]
+  ],
+  "id": "1a2096c9b5fac991",
+  "data": "2026-11-23"
  }
 ]
