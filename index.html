@@ -705,6 +705,44 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
 .magistrados-table .juiz-name { font-weight: 500; color: var(--navy); }
 
 
+
+/* ===== Painel "Magistrados em férias agora" (25/11/2026) ===== */
+.fm-agora{background:linear-gradient(135deg,#0a1628,#1b3560);color:#fff;border-radius:var(--radius-lg);padding:18px 20px;margin-bottom:14px;box-shadow:0 4px 18px rgba(10,22,40,.18)}
+.fm-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.fm-title{font-size:19px;font-weight:600;color:var(--gold-light)}
+.fm-sub{font-size:12px;opacity:.7;margin-top:2px}
+.fm-date{font-size:12px;display:flex;align-items:center;gap:8px;opacity:.95}
+.fm-date input{padding:5px 8px;border-radius:6px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:#fff;font:inherit;color-scheme:dark}
+.fm-kpis{display:flex;gap:10px;margin:14px 0 12px;flex-wrap:wrap}
+.fm-kpi{background:rgba(255,255,255,.08);border:1px solid rgba(201,168,76,.35);border-radius:10px;padding:8px 14px;min-width:120px}
+.fm-kpi b{display:block;font-size:24px;color:var(--gold-light);line-height:1.1}
+.fm-kpi span{font-size:11.5px;opacity:.8}
+.fm-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.fm-card{background:#fff;color:var(--text-dark);border-radius:10px;padding:11px 13px;border-left:5px solid #c62828;cursor:pointer;transition:transform .12s}
+.fm-card:hover{transform:translateY(-2px)}
+.fm-card.lic{border-left-color:#7c3a6b}
+.fm-card .n{font-weight:600;color:var(--navy);font-size:14.5px}
+.fm-card .v{font-size:12px;color:var(--text-muted);margin:1px 0 6px}
+.fm-card .p{font-size:12.5px;display:flex;justify-content:space-between;gap:6px}
+.fm-card .t{font-weight:600;color:#b71c1c}
+.fm-card.lic .t{color:#7c3a6b}
+.fm-card .bar{height:5px;background:#eef0f3;border-radius:4px;margin-top:7px;overflow:hidden}
+.fm-card .bar i{display:block;height:100%;background:linear-gradient(90deg,#c62828,#ef9a9a)}
+.fm-card .a{font-size:11.5px;color:var(--text-muted);margin-top:6px}
+.fm-vazio{background:rgba(255,255,255,.08);border-radius:10px;padding:14px;font-size:14px}
+.fm-prox-title{font-size:13px;font-weight:600;color:var(--gold-light);margin:14px 0 6px}
+.fm-prox{display:flex;flex-wrap:wrap;gap:6px}
+.fm-chip{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:4px 10px;font-size:12px;cursor:pointer}
+.fm-chip b{color:var(--gold-light);font-weight:600}
+.fm-filtros{display:flex;gap:6px;margin:0 0 10px;flex-wrap:wrap}
+.fm-filtros button{border:1px solid var(--border);background:#fff;border-radius:20px;padding:5px 12px;font-size:12.5px;cursor:pointer;color:var(--text-mid)}
+.fm-filtros button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+#ferias-mag-table tr.fm-on td{background:#fff5f5}
+#ferias-mag-table tr.fm-on td:first-child{box-shadow:inset 4px 0 0 #c62828}
+#ferias-mag-table tr.fm-flash td{animation:fmflash 1.6s ease}
+@keyframes fmflash{0%,40%{background:#ffe08a}100%{background:inherit}}
+.fm-tag{display:inline-block;margin-left:6px;font-size:10.5px;font-weight:600;background:#c62828;color:#fff;border-radius:10px;padding:1px 7px;vertical-align:middle}
+.tab-btn .fm-cnt{display:inline-block;margin-left:6px;background:#c62828;color:#fff;border-radius:10px;padding:0 7px;font-size:11px}
 /* MAGISTRADOS — grupos e afastamentos (atualização 30/09/2026) */
 .magistrados-table tr.mag-group td {
   background: var(--cream); color: var(--navy); font-weight: 600;
@@ -1669,7 +1707,7 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
 <div id="section-magistrados" class="section">
   <div class="section-header">
     <h2>Magistrados</h2>
-    <span class="tag">15 varas do trabalho · atualizado em 13/11/2026</span>
+    <span class="tag">15 varas do trabalho · atualizado em 25/11/2026</span>
   </div>
 
   <div class="search-bar">
@@ -1803,7 +1841,7 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td class="juiz-name">Ricardo Tsuioshi Fukuda Sanchez</td>
           <td><span class="mag-none">—</span></td>
           <td>Luciana Cristina Rodrigues / Cleilson Damasceno de Oliveira</td>
-          <td class="mag-assist">Luciana Antunes Pimenta de Oliveira</td>
+          <td class="mag-assist">Camila Pinheiro Conceicao de Mendonca</td>
         </tr>
         <tr>
           <td class="vt-name">VT Mogi Guaçu (0071)</td>
@@ -1851,7 +1889,7 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td class="juiz-name">Eduardo Alexandre da Silva</td>
           <td><span class="mag-func mag-func-auxiliar">Auxílio Fixo</span></td>
           <td>Adriana Aparecida Pertile Municelli / Joseane de Menezes Conde</td>
-          <td class="mag-assist">Mirela Bragalda Atakiama</td>
+          <td class="mag-assist">Natalia Delboni Barros de Sena</td>
         </tr>
         <tr>
           <td class="vt-name">3ª VT Piracicaba (0137)</td>
@@ -1859,7 +1897,7 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td class="juiz-name">Erica Escarassatte</td>
           <td><span class="mag-func mag-func-titular">Titular</span></td>
           <td>Erika Cristina Mendes de Campos Garcia / Celina Jacintho Pereira</td>
-          <td class="mag-assist">Saulo Terra Costa</td>
+          <td class="mag-assist"><span class="mag-none">—</span></td>
         </tr>
         <tr>
           <td class="vt-name">3ª VT Piracicaba (0137)</td>
@@ -1964,7 +2002,7 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td class="juiz-name">Iara Maria Rodrigues</td>
           <td><span class="mag-func mag-func-auxiliar">Auxiliar</span></td>
           <td>Emerson Alexandre Viola</td>
-          <td class="mag-assist">Roberto Francisco Nogueira Corsi</td>
+          <td class="mag-assist"><span class="mag-none">—</span></td>
         </tr>
         <tr class="mag-group"><td colspan="6">Divisão de Execução e CEJUSCs</td></tr>
         <tr>
@@ -1981,7 +2019,7 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
           <td class="juiz-name">Eduardo Alexandre da Silva</td>
           <td><span class="mag-none">—</span></td>
           <td>—</td>
-          <td class="mag-assist">Mirela Bragalda Atakiama</td>
+          <td class="mag-assist">Natalia Delboni Barros de Sena</td>
         </tr>
         <tr>
           <td class="vt-name">CEJUSC Piracicaba</td>
@@ -2171,6 +2209,22 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
 
   <!-- MAGISTRADOS -->
   <div id="tab-f-mag" class="tab-content">
+    <div class="fm-agora" id="fm-agora">
+      <div class="fm-head">
+        <div>
+          <div class="fm-title">🏖️ Magistrados afastados em <span id="fm-data-lbl">hoje</span></div>
+          <div class="fm-sub">Calculado automaticamente a partir dos períodos da tabela abaixo</div>
+        </div>
+        <label class="fm-date">Consultar outra data <input type="date" id="fm-data"></label>
+      </div>
+      <div class="fm-kpis" id="fm-kpis"></div>
+      <div class="fm-grid" id="fm-grid"></div>
+      <div class="fm-prox-title">⏭️ Saem nos próximos 30 dias</div>
+      <div class="fm-prox" id="fm-prox"></div>
+    </div>
+    <div class="fm-filtros" id="fm-filtros">
+      <button data-f="" class="on">Todos</button><button data-f="agora">Em férias agora</button><button data-f="30">Saem em até 30 dias</button>
+    </div>
     <div class="mag-legend">
       <span><span class="afast-badge afast-ativo">Em curso</span> afastado hoje</span>
       <span><span class="afast-badge afast-futuro">Programado</span></span>
@@ -4639,6 +4693,84 @@ route();
 })();
 
 
+
+/* ===== Painel "Magistrados em férias agora" — lê os períodos de #ferias-mag-table ===== */
+(function feriasMagAgora(){
+  const tb=document.querySelector('#ferias-mag-table tbody'); if(!tb) return;
+  const pad=n=>String(n).padStart(2,'0'), iso=d=>d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
+  const br=d=>pad(d.getDate())+'/'+pad(d.getMonth()+1)+'/'+d.getFullYear();
+  const D=s=>new Date(s+'T00:00:00'), DAY=86400000;
+  const assist={};
+  document.querySelectorAll('#mag-table tbody tr').forEach(r=>{const n=r.querySelector('.juiz-name'),a=r.querySelector('.mag-assist');
+    if(n&&a){const t=a.textContent.trim(); if(t&&t!=='—'&&!assist[n.textContent.trim()]) assist[n.textContent.trim()]=t;}});
+  const mags=[];
+  tb.querySelectorAll('tr').forEach(r=>{
+    if(r.classList.contains('mag-group')) return;
+    const td=r.querySelectorAll('td'); if(td.length<4) return;
+    const nome=td[0].textContent.trim(), vara=td[1].textContent.trim(), per=[]; let ano=null;
+    td[3].childNodes.forEach(nd=>{
+      if(nd.nodeType!==1) return;
+      const m1=nd.textContent.match(/^(\d{4}):/); if(m1){ano=+m1[1];return;}
+      if(!nd.classList.contains('ferias-badge')||!ano) return;
+      const m=nd.textContent.match(/(\d{2})\/(\d{2})(?:\s*[–-]\s*(\d{2})\/(\d{2}))?/); if(!m) return; if(!m[3]){m[3]=m[1];m[4]=m[2];}
+      const de=new Date(ano,+m[2]-1,+m[1]); let ate=new Date(ano,+m[4]-1,+m[3]); if(ate<de) ate=new Date(ano+1,+m[4]-1,+m[3]);
+      per.push({de,ate,t:nd.getAttribute('title')||'Férias'});
+    });
+    const b=td[2].querySelector('.afast-badge[data-de]');
+    if(b){const de=D(b.dataset.de),ate=D(b.dataset.ate);
+      if(!per.some(p=>+p.de===+de&&+p.ate===+ate)) per.push({de,ate,t:(b.textContent.split('·')[0]||'Férias').trim()});}
+    mags.push({r,nome,vara,per,cel:td[0]});
+  });
+  const inp=document.getElementById('fm-data'), hoje=new Date(); hoje.setHours(0,0,0,0);
+  inp.value=iso(hoje);
+  let filtro='';
+  function render(){
+    const ref=inp.value?D(inp.value):hoje, ehHoje=+ref===+hoje;
+    document.getElementById('fm-data-lbl').textContent=ehHoje?'férias / afastados hoje ('+br(ref).slice(0,5)+')':br(ref);
+    const fora=[], prox=[];
+    mags.forEach(m=>{
+      m.r.classList.remove('fm-on'); const old=m.cel.querySelector('.fm-tag'); if(old) old.remove();
+      const at=m.per.find(p=>p.de<=ref&&p.ate>=ref);
+      m.agora=!!at; m.prox=null;
+      if(at){fora.push({m,p:at}); m.r.classList.add('fm-on'); m.cel.insertAdjacentHTML('beforeend','<span class="fm-tag">'+(ehHoje?'AGORA':'AFASTADO')+'</span>');}
+      else{const f=m.per.filter(p=>p.de>ref&&(p.de-ref)/DAY<=30).sort((a,b)=>a.de-b.de)[0]; if(f){m.prox=f; prox.push({m,p:f});}}
+    });
+    fora.sort((a,b)=>a.p.ate-b.p.ate); prox.sort((a,b)=>a.p.de-b.p.de);
+    const vol7=fora.filter(x=>(x.p.ate-ref)/DAY<=7).length;
+    document.getElementById('fm-kpis').innerHTML=
+      '<div class="fm-kpi"><b>'+fora.length+'</b><span>afastados '+(ehHoje?'hoje':'nessa data')+'</span></div>'+
+      '<div class="fm-kpi"><b>'+(mags.length-fora.length)+'</b><span>em atividade</span></div>'+
+      '<div class="fm-kpi"><b>'+vol7+'</b><span>retornam em até 7 dias</span></div>'+
+      '<div class="fm-kpi"><b>'+prox.length+'</b><span>saem nos próximos 30 dias</span></div>';
+    document.getElementById('fm-grid').innerHTML=fora.length?fora.map(({m,p})=>{
+      const tot=(p.ate-p.de)/DAY+1, dec=(ref-p.de)/DAY+1, falta=Math.round((p.ate-ref)/DAY);
+      const ret=new Date(+p.ate+DAY), lic=!/f[ée]rias/i.test(p.t);
+      return '<div class="fm-card'+(lic?' lic':'')+'" data-n="'+m.nome+'"><div class="n">'+m.nome+'</div><div class="v">'+m.vara+'</div>'+
+        '<div class="p"><span class="t">'+p.t+' · '+br(p.de).slice(0,5)+' a '+br(p.ate).slice(0,5)+'</span><span>'+(falta===0?'último dia':'faltam '+falta+' d')+'</span></div>'+
+        '<div class="bar"><i style="width:'+Math.min(100,dec/tot*100).toFixed(0)+'%"></i></div>'+
+        '<div class="a">Retorna em '+br(ret)+(assist[m.nome]?' · Assistente: '+assist[m.nome]:'')+'</div></div>';
+    }).join(''):'<div class="fm-vazio">✅ Nenhum magistrado afastado '+(ehHoje?'hoje':'nessa data')+'.</div>';
+    document.getElementById('fm-prox').innerHTML=prox.length?prox.map(({m,p})=>
+      '<span class="fm-chip" data-n="'+m.nome+'"><b>'+br(p.de).slice(0,5)+'</b> '+m.nome+' · '+m.vara+'</span>').join(''):'<span style="font-size:12px;opacity:.7">Nenhuma saída prevista.</span>';
+    const btn=document.querySelector('.tab-btn[onclick*="tab-f-mag"]');
+    if(btn){let c=btn.querySelector('.fm-cnt'); if(!c){c=document.createElement('span');c.className='fm-cnt';btn.appendChild(c);} c.textContent=fora.length; c.title=fora.length+' em férias/afastados'; c.style.display=ehHoje&&fora.length?'':'none';}
+    aplicaFiltro();
+  }
+  function aplicaFiltro(){
+    mags.forEach(m=>{m.r.style.display=(!filtro||(filtro==='agora'&&m.agora)||(filtro==='30'&&m.prox))?'':'none';});
+    tb.querySelectorAll('tr.mag-group').forEach(g=>{let n=g.nextElementSibling,vis=false;
+      while(n&&!n.classList.contains('mag-group')){if(n.style.display!=='none')vis=true;n=n.nextElementSibling;}
+      g.style.display=vis?'':'none';});
+  }
+  document.getElementById('fm-filtros').addEventListener('click',e=>{const b=e.target.closest('button'); if(!b) return;
+    filtro=b.dataset.f; document.querySelectorAll('#fm-filtros button').forEach(x=>x.classList.toggle('on',x===b)); aplicaFiltro();});
+  document.getElementById('fm-agora').addEventListener('click',e=>{const c=e.target.closest('[data-n]'); if(!c) return;
+    const m=mags.find(x=>x.nome===c.dataset.n); if(!m) return;
+    if(m.r.style.display==='none'){filtro='';document.querySelectorAll('#fm-filtros button').forEach(x=>x.classList.toggle('on',!x.dataset.f));aplicaFiltro();}
+    m.r.scrollIntoView({behavior:'smooth',block:'center'}); m.r.classList.remove('fm-flash'); void m.r.offsetWidth; m.r.classList.add('fm-flash');});
+  inp.addEventListener('change',render);
+  render();
+})();
 /* ===== Cruzamento férias magistrado × secretário de audiência ===== */
 (function(){
   const CZ={"pairs": [{"vara": "1ª VT Americana (0007)", "finais": "PAR", "mag": "Artur Ribeiro Gudwin", "secs": ["Sandra Maria Segato Gazzeta"]}, {"vara": "1ª VT Americana (0007)", "finais": "ÍMPAR", "mag": "Fabio Camera Capone", "secs": ["Claudia Maria Pastor"]}, {"vara": "2ª VT Americana (0099)", "finais": "PAR", "mag": "Milena Casacio Ferreira Beraldo", "secs": ["Marina Lira da Silveira Pinto"]}, {"vara": "2ª VT Americana (0099)", "finais": "ÍMPAR", "mag": "Marcelo Luis de Souza Ferreira", "secs": ["Rogeria Helena Aparecida Franzini Corazza"]}, {"vara": "VT Araras (0046)", "finais": "0,1,3,5,7,8,9", "mag": "Andre Luiz Tavares de Castro Pereira", "secs": ["Cristina Ziani de Moura"]}, {"vara": "VT Araras (0046)", "finais": "2,4,6", "mag": "Renata Mendes Cardoso de Castro Pereira", "secs": ["Maria Lucia Alves Cavalcante"]}, {"vara": "VT Hortolândia (0152)", "finais": "PAR", "mag": "Patricia Juliana Marchi Alves", "secs": ["Debora Cerqueira Simao"]}, {"vara": "VT Hortolândia (0152)", "finais": "ÍMPAR", "mag": "Luciane Cristina Muraro de Freitas", "secs": ["Elenira de Andrade Bicalho"]}, {"vara": "VT Leme (0134)", "finais": "PAR", "mag": "Lady Ane de Paula Santos Della Rocca", "secs": ["Dheise Monique Euphrasio"]}, {"vara": "VT Leme (0134)", "finais": "ÍMPAR", "mag": "Regina Rodrigues Urbano", "secs": ["Daniele Fernanda Stefani"]}, {"vara": "1ª VT Limeira (0014)", "finais": "PAR", "mag": "Sofia Lima Dutra", "secs": ["Gabriel de Oliveira Silva"]}, {"vara": "1ª VT Limeira (0014)", "finais": "ÍMPAR", "mag": "Erika de Franceschi", "secs": ["Tatiana Maeyama"]}, {"vara": "2ª VT Limeira (0128)", "finais": "PAR", "mag": "Carolina Popoff Ferreira da Costa", "secs": ["Luciana Cristina Rodrigues", "Cleilson Damasceno de Oliveira"]}, {"vara": "2ª VT Limeira (0128)", "finais": "ÍMPAR", "mag": "Ricardo Tsuioshi Fukuda Sanchez", "secs": ["Luciana Cristina Rodrigues", "Cleilson Damasceno de Oliveira"]}, {"vara": "VT Mogi Guaçu (0071)", "finais": "PAR", "mag": "Luis Furian Zorzetto", "secs": ["Paula de Carvalho Ambar Lima"]}, {"vara": "VT Mogi Guaçu (0071)", "finais": "ÍMPAR", "mag": "Leticia Gouveia Antonioli", "secs": ["Anita Bueno de Moraes Narciso Ferreira"]}, {"vara": "1ª VT Piracicaba (0012)", "finais": "PAR", "mag": "Karine Vaz de Melo Mattos Abreu", "secs": ["Sandra Regina da Conceicao Amaral", "Romilda Maria de Arruda Germano"]}, {"vara": "1ª VT Piracicaba (0012)", "finais": "ÍMPAR", "mag": "Vilson Antonio Previde", "secs": ["Sandra Regina da Conceicao Amaral", "Romilda Maria de Arruda Germano"]}, {"vara": "2ª VT Piracicaba (0051)", "finais": "PAR", "mag": "Carlos Eduardo Vianna Mendes", "secs": ["Adriana Aparecida Pertile Municelli", "Joseane de Menezes Conde"]}, {"vara": "2ª VT Piracicaba (0051)", "finais": "ÍMPAR", "mag": "Eduardo Alexandre da Silva", "secs": ["Adriana Aparecida Pertile Municelli", "Joseane de Menezes Conde"]}, {"vara": "3ª VT Piracicaba (0137)", "finais": "PAR", "mag": "Erica Escarassatte", "secs": ["Erika Cristina Mendes de Campos Garcia", "Celina Jacintho Pereira"]}, {"vara": "3ª VT Piracicaba (0137)", "finais": "ÍMPAR", "mag": "Emanuele Pessatti Siqueira Rocha", "secs": ["Erika Cristina Mendes de Campos Garcia", "Celina Jacintho Pereira"]}, {"vara": "VT Rio Claro (0010)", "finais": "PAR", "mag": "Flavia Farias de Arruda Corseuil", "secs": ["Naara de Lucas Barbalho"]}, {"vara": "VT Rio Claro (0010)", "finais": "ÍMPAR", "mag": "Erika Ferrari Zanella", "secs": ["Michelli Cristina Borges Sampaio"]}, {"vara": "VT Santa Bárbara d'Oeste (0086)", "finais": "PAR", "mag": "Cristiane Kawanaka de Pontes", "secs": ["Leandro Mac Fadden Negri"]}, {"vara": "VT Santa Bárbara d'Oeste (0086)", "finais": "ÍMPAR", "mag": "Andre Luiz Menezes Azevedo Sette", "secs": ["Aguinaldo Junior Yamamoto Peres"]}, {"vara": "VT São João da Boa Vista (0034)", "finais": "Todos", "mag": "Cristiane Souza de Castro Toledo", "secs": ["Ana Claudia Rodrigues Abreu"]}, {"vara": "VT Sumaré (0122)", "finais": "0,1,2,3", "mag": "Ronaldo Capelari", "secs": ["Thiago Donizete Mendanha"]}, {"vara": "VT Sumaré (0122)", "finais": "4,5,6", "mag": "Francina Nunes da Costa", "secs": ["Daniel Carlos Alves de Pilla"]}, {"vara": "VT Sumaré (0122)", "finais": "7,8,9", "mag": "Carla Gabriella Grah Sens", "secs": ["Michel Aquino de Souza"]}, {"vara": "Auxílio fixo — Simetria", "finais": "—", "mag": "Cleverson Oliveira Alarcon Lima", "secs": ["Luzia Danielle dos Santos Fabiano"]}, {"vara": "Auxílio fixo — Simetria", "finais": "—", "mag": "Renata Nunes de Melo", "secs": ["Paula Burque Besson Boconcelo"]}, {"vara": "Auxílio fixo — Simetria", "finais": "—", "mag": "Gustavo Castro Picchi Martins", "secs": ["Tatiana Maffeis da Cunha"]}, {"vara": "Auxílio fixo — Simetria", "finais": "—", "mag": "Iara Maria Rodrigues", "secs": ["Emerson Alexandre Viola"], "grupo": "VT São João da Boa Vista (0034)"}, {"vara": "VT Registro", "finais": "—", "mag": "Felipe Bernardes Rodrigues", "secs": ["Marcio Henrique Rodrigues dos Santos de Freitas", "Atila Cabral Branco"]}, {"vara": "VT Campo Limpo Paulista", "finais": "—", "mag": "Solange Denise Belchior Santaella", "secs": ["Marta Rocha Sanches"]}, {"vara": "4ª VT Campinas", "finais": "—", "mag": "Aparecido Batista de Oliveira", "secs": ["Gleiciane Ferreira dos Santos"]}, {"vara": "12ª VT Campinas", "finais": "—", "mag": "Thiago Henrique Ament", "secs": ["Tamyres Miranda Alves"]}, {"vara": "VT Mogi Mirim", "finais": "—", "mag": "Vanessa Cristina Pereira Salomao", "secs": ["Camila Santana Araujo Mutti"]}], "mag": {"Artur Ribeiro Gudwin": [["2026-11-28", "2026-12-17", "Férias"], ["2027-07-14", "2027-08-02", "Férias"], ["2027-11-27", "2027-12-16", "Férias"]], "Fabio Camera Capone": [["2027-07-05", "2027-07-24", "Férias"], ["2027-11-16", "2027-12-05", "Férias"]], "Milena Casacio Ferreira Beraldo": [["2026-11-25", "2026-11-30", "Férias"], ["2026-12-02", "2026-12-14", "Férias"], ["2027-06-14", "2027-07-03", "Férias"], ["2027-11-27", "2027-12-16", "Férias"]], "Marcelo Luis de Souza Ferreira": [["2027-01-17", "2027-02-05", "Férias"], ["2027-07-24", "2027-08-12", "Férias"]], "Andre Luiz Tavares de Castro Pereira": [["2027-06-29", "2027-07-28", "Férias"], ["2027-10-13", "2027-11-11", "Férias"]], "Renata Mendes Cardoso de Castro Pereira": [["2027-06-29", "2027-07-28", "Férias"], ["2027-10-13", "2027-11-01", "Férias"]], "Patricia Juliana Marchi Alves": [["2026-11-28", "2026-12-17", "Férias"], ["2027-07-12", "2027-07-31", "Férias"], ["2027-11-27", "2027-12-16", "Férias"]], "Luciane Cristina Muraro de Freitas": [["2027-06-19", "2027-07-08", "Férias"], ["2027-09-08", "2027-09-27", "Férias"]], "Lady Ane de Paula Santos Della Rocca": [["2027-04-27", "2027-05-16", "Férias"], ["2027-09-15", "2027-10-04", "Férias"]], "Regina Rodrigues Urbano": [["2027-05-31", "2027-06-19", "Férias"], ["2027-08-09", "2027-09-07", "Férias"]], "Sofia Lima Dutra": [["2026-11-03", "2026-11-04", "Licença"], ["2026-11-19", "2026-12-18", "Férias"], ["2027-05-06", "2027-05-25", "Férias"], ["2027-08-23", "2027-09-21", "Férias"]], "Erika de Franceschi": [["2027-01-25", "2027-02-13", "Férias"], ["2027-07-13", "2027-08-01", "Férias"]], "Carolina Popoff Ferreira da Costa": [["2027-07-12", "2027-07-31", "Férias"], ["2027-11-27", "2027-12-16", "Férias"]], "Ricardo Tsuioshi Fukuda Sanchez": [["2027-01-17", "2027-02-05", "Férias"], ["2027-11-17", "2027-12-06", "Férias"]], "Luis Furian Zorzetto": [["2027-07-14", "2027-08-02", "Férias"], ["2027-10-18", "2027-11-16", "Férias"]], "Leticia Gouveia Antonioli": [["2027-01-11", "2027-01-30", "Férias"], ["2027-06-28", "2027-07-17", "Férias"]], "Karine Vaz de Melo Mattos Abreu": [["2027-06-27", "2027-07-16", "Férias"], ["2027-10-04", "2027-10-23", "Férias"]], "Vilson Antonio Previde": [["2027-02-15", "2027-03-06", "Férias"], ["2027-07-19", "2027-08-17", "Férias"]], "Carlos Eduardo Vianna Mendes": [["2027-01-17", "2027-02-05", "Férias"], ["2027-02-21", "2027-03-12", "Férias"]], "Eduardo Alexandre da Silva": [["2026-11-18", "2026-12-17", "Férias"], ["2027-06-30", "2027-07-29", "Férias"], ["2027-11-17", "2027-12-16", "Férias"]], "Erica Escarassatte": [["2027-01-12", "2027-01-31", "Férias"], ["2027-04-01", "2027-04-02", "Férias"], ["2027-09-08", "2027-09-27", "Férias"]], "Emanuele Pessatti Siqueira Rocha": [["2026-11-29", "2026-12-18", "Férias"], ["2027-06-15", "2027-07-14", "Férias"], ["2027-11-17", "2027-12-16", "Férias"]], "Flavia Farias de Arruda Corseuil": [["2026-11-03", "2026-11-22", "Férias"], ["2027-07-01", "2027-07-30", "Férias"], ["2027-09-15", "2027-10-14", "Férias"]], "Erika Ferrari Zanella": [["2026-10-19", "2026-11-04", "Férias"], ["2027-04-14", "2027-05-03", "Férias"], ["2027-09-25", "2027-10-14", "Férias"]], "Cristiane Kawanaka de Pontes": [["2027-06-30", "2027-07-29", "Férias"], ["2027-11-18", "2027-12-17", "Férias"]], "Andre Luiz Menezes Azevedo Sette": [["2027-05-07", "2027-05-26", "Férias"], ["2027-10-18", "2027-11-06", "Férias"]], "Cristiane Souza de Castro Toledo": [["2027-06-14", "2027-07-13", "Férias"], ["2027-08-16", "2027-09-14", "Férias"]], "Ronaldo Capelari": [["2027-04-14", "2027-05-03", "Férias"], ["2027-09-21", "2027-10-10", "Férias"]], "Francina Nunes da Costa": [["2026-11-29", "2026-12-18", "Férias"], ["2027-10-18", "2027-11-16", "Férias"], ["2027-11-17", "2027-12-16", "Férias"]], "Carla Gabriella Grah Sens": [["2027-03-22", "2027-04-10", "Férias"], ["2027-09-01", "2027-09-20", "Férias"]], "Cleverson Oliveira Alarcon Lima": [["2026-10-29", "2026-11-17", "Férias"], ["2027-05-14", "2027-06-02", "Férias"], ["2027-10-28", "2027-11-16", "Férias"]], "Renata Nunes de Melo": [["2026-10-29", "2026-11-17", "Férias"], ["2027-05-14", "2027-06-12", "Férias"], ["2027-11-17", "2027-12-16", "Férias"]], "Gustavo Castro Picchi Martins": [["2027-02-11", "2027-03-12", "Férias"], ["2027-08-16", "2027-09-14", "Férias"]], "Iara Maria Rodrigues": [["2026-09-21", "2026-11-19", "Licença gestante"], ["2026-11-23", "2026-12-08", "Férias"], ["2027-01-07", "2027-02-05", "Férias"], ["2027-02-11", "2027-03-12", "Férias"], ["2027-09-15", "2027-10-14", "Férias"]], "Felipe Bernardes Rodrigues": [["2027-02-21", "2027-03-12", "Férias"], ["2027-07-22", "2027-08-10", "Férias"]], "Solange Denise Belchior Santaella": [["2026-11-28", "2026-12-17", "Férias"], ["2027-06-14", "2027-07-13", "Férias"], ["2027-11-17", "2027-12-16", "Férias"]], "Aparecido Batista de Oliveira": [["2026-11-18", "2026-12-17", "Férias"], ["2027-06-14", "2027-07-13", "Férias"], ["2027-11-17", "2027-12-16", "Férias"]], "Thiago Henrique Ament": [["2027-04-26", "2027-05-15", "Férias"], ["2027-09-20", "2027-10-09", "Férias"]], "Vanessa Cristina Pereira Salomao": [["2026-11-29", "2026-12-18", "Férias"], ["2027-07-14", "2027-08-02", "Férias"], ["2027-11-17", "2027-12-16", "Férias"]]}};
