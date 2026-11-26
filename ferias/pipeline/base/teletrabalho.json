@@ -663,5 +663,14 @@
   "id": "1a1f3f00e236363a",
   "data": "2026-11-19",
   "data_hora": "2026-11-19T13:12:37Z"
+ },
+ {
+  "evento": "deferimento",
+  "nome": "JOSE LUIS BURATTO",
+  "meses": 12,
+  "modalidade": "Teletrabalho Total",
+  "id": "1a217e68ee3af978",
+  "data": "2026-11-26",
+  "data_hora": "2026-11-26T12:48:34Z"
  }
 ]
