@@ -18,6 +18,7 @@ RAIZ = os.path.abspath(os.path.join(AQUI, '..', '..'))
 JUIZOS = os.path.join(RAIZ, 'sise-jt', 'juizos.json')
 BASE = os.path.join(AQUI, 'base_escala.json')
 ESTADO = os.path.join(AQUI, 'estado.json')
+COBERTURA = os.path.join(AQUI, 'cobertura.json')  # vara -> {afastado: colega que assume todos os finais}
 POSTOS = 'Postos Avançados'
 
 
@@ -48,6 +49,7 @@ def main():
     base = json.load(open(BASE, encoding='utf-8'))
     atual = json.load(open(JUIZOS, encoding='utf-8'))
     estado = json.load(open(ESTADO, encoding='utf-8')) if os.path.exists(ESTADO) else {}
+    cobertura = json.load(open(COBERTURA, encoding='utf-8')) if os.path.exists(COBERTURA) else {}
     nm = lambda n: (mags.get(ler_site.norm(n)) or {}).get('nome') or n.title()
     novo = dict(atual); mud = []; avisos = []; afastados_hoje = []
 
@@ -75,11 +77,16 @@ def main():
                 alvo = {n: list(f) for n, f in juizes.items()}
             else:
                 alvo = {n: list(juizes[n]) for n in pres}
-                extra = sorted(f for n in afast for f in juizes[n])
-                for i, f in enumerate(extra):
+                regra = cobertura.get(vara, {})
+                livres = []
+                for n in afast:
+                    sub = regra.get(n)
+                    if sub in alvo: alvo[sub] += juizes[n]
+                    else: livres += juizes[n]
+                for i, f in enumerate(sorted(livres)):
                     alvo[pres[i % len(pres)]].append(f)
                 for n in alvo: alvo[n] = sorted(alvo[n])
-                if len(pres) > 1:
+                if len(pres) > 1 and livres:
                     avisos.append(f'{vara}: finais do(a) afastado(a) divididos entre {len(pres)} colegas — conferir')
             motivo = 'afastamento de ' + ', '.join(nm(n) for n in afast)
             estado[vara] = {'desde': estado.get(vara, {}).get('desde', ref.isoformat()), 'motivo': motivo}
