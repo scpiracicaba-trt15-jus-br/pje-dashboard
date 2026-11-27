@@ -789,6 +789,16 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
 .afast-badge.afast-hist, .ferias-badge.afast-hist { background:#eef0f3; color:#4b5563; }
 .ferias-table tr.mag-group td { background:var(--cream); color:var(--navy); font-weight:600; border-top:1px solid var(--border-gold); }
 
+/* REUNIÕES GRAVADAS */
+.reun-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(340px,1fr)); gap:14px; }
+.reun-card { background:white; border:1px solid var(--border); border-left:4px solid var(--gold); border-radius:var(--radius); padding:14px 16px; display:flex; flex-direction:column; gap:8px; }
+.reun-head { display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; }
+.reun-data { background:var(--navy); color:white; font-size:14px; font-weight:600; padding:3px 10px; border-radius:4px; white-space:nowrap; }
+.reun-card ul { margin:0; padding-left:18px; font-size:15px; color:var(--text-mid); line-height:1.45; }
+.reun-card li { margin-bottom:3px; }
+.reun-link { align-self:flex-start; background:var(--navy); color:white; text-decoration:none; padding:6px 14px; border-radius:6px; font-size:14px; font-weight:500; }
+.reun-link:hover, .reun-link:focus-visible { background:var(--navy-soft); }
+
 /* LINKS / VIDEOS */
 .links-grid {
   display: grid;
@@ -2446,6 +2456,78 @@ body { padding-top: var(--nav-h); padding-left: var(--side-w); }
         <div class="lc-desc">Como atualizar a configuração de magistrados no SISE (arquivo juizos.json) após mudanças na escala.</div>
       </div>
     </a>
+  </div>
+
+  <div class="section-header" style="margin-top:28px; margin-bottom:12px">
+    <h2 style="font-size:20px">Reuniões de secretários e secretárias gravadas</h2>
+    <span class="tag">Reunião semanal · SC Piracicaba</span>
+  </div>
+  <div class="reun-grid">
+    <article class="reun-card">
+      <div class="reun-head">
+        <span class="reun-data">06/11/2026</span>
+        <span class="lc-title" style="margin:0">Ferramenta das perícias — Abel</span>
+      </div>
+      <ul>
+        <li>Abel apresenta a extensão <b>ATP PJe</b>: o botão “Perícia” substitui a planilha de nomeação de peritos técnicos — lista por vara com o nº de nomeações de cada perito, observações, impedimentos e dados bancários.</li>
+        <li>Calcula sozinha os GIGS a partir da data da audiência, copia a minuta para a ata e só conta a nomeação ao clicar em “Designar”. Configuração com dois links (no grupo do conhecimento), vara padrão e minuta personalizável; o assessor zera as nomeações no início do mês.</li>
+        <li>Próximos passos: perícia médica e botão direto no AUD 4. Em preparo, a ferramenta de notificações para tirar o pré-pauta dos secretários.</li>
+        <li>Avisos: Wellington na assessoria do conhecimento; Equipes 1, 2 e 3 com GIGS de equipe a partir de 23/11 (~39,5 mil processos mapeados) — nenhum processo sai da triagem sem gabinete; Heitor na CON2; arquivamento com prazo de justificativa/custas fica na CON1 (15 dias); AutoGIGS pode ser editado por cada um.</li>
+      </ul>
+      <a class="reun-link" href="https://drive.google.com/file/d/1qSY3IdC2kD6NESUJ3Kx29kFHumAxtlJD/view" target="_blank" rel="noopener">▶ Assistir à gravação</a>
+    </article>
+    <article class="reun-card">
+      <div class="reun-head">
+        <span class="reun-data">07/08/2026</span>
+        <span class="lc-title" style="margin:0">Designação sem despacho e novos modelos de perícia</span>
+      </div>
+      <ul>
+        <li>Aprovado por Dra. Érica e Dr. Vilson: designar audiência apenas com <b>inclusão em pauta + notificação</b>, sem despacho, e mandar para “Aguardando audiência”. Redesignação continua exigindo despacho fundamentado.</li>
+        <li>Modelos de notificação renomeados (“domicílio ou correios”): o sistema escolhe sozinho Domicílio Eletrônico ou e-Carta; as automações individuais precisam do nome novo do modelo. Sugestão de incluir uma observação na notificação para evitar petições de advogados.</li>
+        <li>Novos modelos de designação de perícia (Conhecimento › Secretaria › Despachos), com as datas concentradas no item 4; troca de ideias sobre autotextos de peritos no AUD 4 e pedido de unificar os dados bancários no modelo da perícia médica.</li>
+        <li>Simetria: o juiz mantém o processo mesmo após incompetência declarada para outra vara da SC.</li>
+      </ul>
+      <a class="reun-link" href="https://drive.google.com/file/d/16Lhiehv7O-rC3jKEBaQjArmRD1OJIiMc/view" target="_blank" rel="noopener">▶ Assistir à gravação</a>
+    </article>
+    <article class="reun-card">
+      <div class="reun-head">
+        <span class="reun-data">24/07/2026</span>
+        <span class="lc-title" style="margin:0">Troca de OJ sem cair o processo e entes públicos</span>
+      </div>
+      <ul>
+        <li>Demonstração na extensão SIS (desabilitar checagem e “otimizar layout”) para encaminhar o processo a outro OJ pelo posto avançado e continuar trabalhando nele sem que caia.</li>
+        <li>Cartas precatórias para outros tribunais agora pelo sistema do convênio (sem malote digital): basta preencher, o juiz assina e vem certidão com a vara de destino.</li>
+        <li>Processos de <b>ente público</b>: a Cláudia passa a designar iniciais e instruções, despachar e intimar — secretários devem colher a autorização dos magistrados; atenção a juízes que atuam em mais de uma SC.</li>
+        <li>Simetria: filtrar pelo chip do Simetria e não incluir manualmente gabinete em processos fora dele. Ao final, consulta ao painel do Simetria para conferir a origem dos processos atribuídos por magistrado.</li>
+      </ul>
+      <a class="reun-link" href="https://drive.google.com/file/d/1dJNZih7fS1MzQ-3p4yZCxWrAsnByPD0F/view" target="_blank" rel="noopener">▶ Assistir à gravação</a>
+    </article>
+    <article class="reun-card">
+      <div class="reun-head">
+        <span class="reun-data">17/04/2026</span>
+        <span class="lc-title" style="margin:0">AutoGIGS novo e certidão de comparecimento</span>
+      </div>
+      <ul>
+        <li>Atualização da extensão do Sisenando (versão 48.8): número de configuração do <b>AutoGIGS</b> e botão “Importar do modelo”, com filtros por fase — acaba a importação manual de padrões. O Quinzinho segue para a vinculação ao gabinete.</li>
+        <li><b>Certidão automática de comparecimento</b> de reclamante e de testemunha (pedido do Leandro), copiando nome e CPF da ata.</li>
+        <li>Força-tarefa de inclusão em pauta: o que for pautado até a sexta seguinte recebe despacho e notificação em lote pela gestão; não filtrar a planilha compartilhada; até 100 processos por juiz está sob controle, 100–200 é atenção e acima de 200 exige ação. Uso da automação passa a ser obrigatório.</li>
+        <li>Atenção às tutelas pendentes (bolinha vermelha) e aos feriados municipais em processos de outras cidades vindos pelo Simetria.</li>
+      </ul>
+      <a class="reun-link" href="https://drive.google.com/file/d/1RdVZrVazUFwYJAgiDmZFPPbZv4LO8e4N/view?usp=sharing" target="_blank" rel="noopener">▶ Assistir à gravação</a>
+    </article>
+    <article class="reun-card">
+      <div class="reun-head">
+        <span class="reun-data">10/04/2026</span>
+        <span class="lc-title" style="margin:0">Botões novos no AUD 4 e fluxo de pauta</span>
+      </div>
+      <ul>
+        <li>Cristina e Sisenando mostram os botões novos: copiar o número do processo, painel com todos os dados do processo (um clique copia; atalho para WhatsApp) e certidão automática do link da audiência. Dica: colar o nº do processo no chat do Zoom ao iniciar a gravação.</li>
+        <li>Estagiários fazem a triagem inicial de todas as unidades e retiram o GIGS “triagem pendente”; filtro padrão dos secretários: chip “Incluir em pauta” + gabinete do juiz, priorizando o cumprimento de providências. Tutelas seguem para minutar decisão.</li>
+        <li>Incluir na pauta o link, o ID e a senha da sala (Romilda demonstra), para o despacho sair completo e evitar atendimentos.</li>
+        <li>Planilha da força-tarefa por juiz com despacho “coringa” em lote, checagem semanal das pautas em grupos e limite de alerta de 100 processos por juiz; sugestão de concentrar estagiários no pós-pauta.</li>
+      </ul>
+      <a class="reun-link" href="https://drive.google.com/file/d/1E77gto7U3trAzXy6UnPh9UT36bXeTEpQ/view?usp=sharing" target="_blank" rel="noopener">▶ Assistir à gravação</a>
+    </article>
   </div>
 
   <div class="section-header" style="margin-top:28px; margin-bottom:16px">
