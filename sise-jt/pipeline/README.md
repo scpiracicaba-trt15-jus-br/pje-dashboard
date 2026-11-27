@@ -9,7 +9,7 @@ Magistrados** (`index.html`, tabela `#ferias-mag-table`, fonte satelites.trt15.j
 | `ler_site.py` | Lê a tabela de magistrados do `index.html` (mesma lógica do painel "Magistrados afastados hoje") |
 | `atualizar_juizos.py` | Calcula o `juizos.json` do dia e grava se mudou; imprime um resumo em JSON |
 | `base_escala.json` | **Escala normal** (todos presentes). Mudou a divisão de finais ou entrou/saiu juiz da vara? Atualize aqui |
-| `cobertura.json` | Quem assume **todos** os finais de um juiz afastado, quando a vara tem mais de um colega (ex.: Sumaré — Dra. Francina → Dr. Ronaldo) |
+| `cobertura.json` | Quem assume **todos** os finais de um juiz afastado, quando a vara tem mais de um colega (ex.: Sumaré — Dra. Francina → Dra. Carla) |
 | `estado.json` | Varas que a rotina ajustou por afastamento (para restaurar no retorno) |
 
 ## Regras
