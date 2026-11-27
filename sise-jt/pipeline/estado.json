@@ -10,5 +10,21 @@
  "1ª Vara do Trabalho de Limeira": {
   "desde": "2026-11-26",
   "motivo": "afastamento de Sofia Lima Dutra"
+ },
+ "1ª Vara do Trabalho de Americana": {
+  "desde": "2026-11-30",
+  "motivo": "afastamento de Artur Ribeiro Gudwin"
+ },
+ "3ª Vara do Trabalho de Piracicaba": {
+  "desde": "2026-11-30",
+  "motivo": "afastamento de Emanuele Pessatti Siqueira Rocha"
+ },
+ "Vara do Trabalho de Hortolândia": {
+  "desde": "2026-11-30",
+  "motivo": "afastamento de Patricia Juliana Marchi Alves"
+ },
+ "Vara do Trabalho de Sumaré": {
+  "desde": "2026-11-30",
+  "motivo": "afastamento de Francina Nunes da Costa"
  }
 }
